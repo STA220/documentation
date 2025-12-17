@@ -1,5 +1,12 @@
 ---
 title: "Lecture 3"
 subtitle: "Ethics and legal"
-format: revealjs
+format:
+  revealjs:
+    theme: dark
+    transition: fade
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
 ---

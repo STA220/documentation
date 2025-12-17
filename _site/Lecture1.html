@@ -27,7 +27,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
   <link rel="stylesheet" href="styles.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -135,6 +155,28 @@
 </div>
 
 </section>
+<section id="important-aspects" class="slide level2">
+<h2>Important aspects</h2>
+<ul>
+<li>Data (where does is come from, what does it contain)</li>
+<li>Ethics and legal (how to handle sensitive data, what laws and regulations apply)</li>
+<li>Project management (how to plan and execute a data project, version control, reproducibility)</li>
+</ul>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li>Lectures on different data sources</li>
+<li>Exercises on data management and analysis
+<ul>
+<li>R with some additional tools (Git, GitHub, targets, data.table)</li>
+</ul></li>
+<li>A data project with written report and presentation</li>
+<li>Final exam</li>
+<li>Instruction web page (in addition to Canvas: https://sta220.github.io/documentation/)</li>
+<li>Litterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)</li>
+</ul>
+</section>
 <section id="different-types-of-data" class="slide level2">
 <h2>Different types of data</h2>
 <ul>
@@ -228,7 +270,7 @@
 <li><strong>Institutional coverage</strong>: proportion of all eligible units/clinics that are connected to the registry
 <ul>
 <li>e.g., 90% of hospitals performing the procedure are connected</li>
-<li>Should be known by the register holder</li>
+<li>Should be known by the “register holder”</li>
 </ul></li>
 <li><strong>Case coverage</strong>: proportion of patients who should have been reported from connected units that are actually included
 <ul>
@@ -264,7 +306,7 @@
 </section>
 <section id="unique-personal-identifier" class="slide level2">
 <h2>Unique personal identifier</h2>
-<p>(Swedish: personnummer)</p>
+<p>(Swedish: personnummer, reading: <span class="citation" data-cites="ludvigsson2009">(<a href="#/reading-list" role="doc-biblioref" onclick="">Ludvigsson et al. 2009</a>)</span>)</p>
 <blockquote>
 <p>121212-1212 <a href="https://www.svd.se/a/164e04fe-7175-318e-b4d2-bc85530cee68/tolvansson-staller-till-problem">Tolvan Tolvansson</a></p>
 </blockquote>
@@ -335,8 +377,22 @@
 <li>GitHub for colaboration</li>
 <li>Quarto for reporting</li>
 </ul>
+</section>
+<section id="reading-list" class="slide level2 smaller scrollable">
+<h2>Reading list</h2>
+<ul>
+<li>Chapter 1 from <span class="citation" data-cites="nguyen2022a">(<a href="#/reading-list" role="doc-biblioref" onclick="">Nguyen 2022</a>)</span></li>
+</ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ludvigsson2009" class="csl-entry" role="listitem">
+Ludvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. <span>“The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.”</span> <em>European Journal of Epidemiology</em> 24 (11): 659–67. <a href="https://doi.org/10.1007/s10654-009-9350-y">https://doi.org/10.1007/s10654-009-9350-y</a>.
+</div>
+<div id="ref-nguyen2022a" class="csl-entry" role="listitem">
+Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
+</div>
+</div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

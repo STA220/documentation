@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://sta220.github.io/documentation/Lecture2.html</loc>
+    <lastmod>2025-12-17T16:14:10.451Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/Lecture1.html</loc>
+    <lastmod>2025-12-17T13:50:09.412Z</lastmod>
+  </url>
+  <url>
     <loc>https://sta220.github.io/documentation/index.html</loc>
     <lastmod>2025-12-17T13:04:50.135Z</lastmod>
   </url>
   <url>
-    <loc>https://sta220.github.io/documentation/Lecture1.html</loc>
-    <lastmod>2025-12-17T13:13:43.356Z</lastmod>
+    <loc>https://sta220.github.io/documentation/ws1.html</loc>
+    <lastmod>2025-12-17T12:30:02.288Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/seminar_legal.html</loc>
+    <lastmod>2025-12-17T12:30:02.287Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/Lecture3.html</loc>
+    <lastmod>2025-12-17T13:15:19.187Z</lastmod>
   </url>
 </urlset>

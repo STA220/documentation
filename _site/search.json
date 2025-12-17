@@ -1,17 +1,213 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
-    "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
+    "objectID": "Lecture2.html#swedish-law",
+    "href": "Lecture2.html#swedish-law",
+    "title": "Legal aspects of health data",
+    "section": "Swedish law",
+    "text": "Swedish law\n\nFundamental laws (parliament but difficult to change)\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing regulations\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
   },
   {
-    "objectID": "index.html#positron-extensions",
-    "href": "index.html#positron-extensions",
-    "title": "Health data",
-    "section": "Positron extensions",
-    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
+    "objectID": "Lecture2.html#two-main-branches-of-law",
+    "href": "Lecture2.html#two-main-branches-of-law",
+    "title": "Legal aspects of health data",
+    "section": "Two main branches of law",
+    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
+  },
+  {
+    "objectID": "Lecture2.html#tryckfrihetsförordningen-tf",
+    "href": "Lecture2.html#tryckfrihetsförordningen-tf",
+    "title": "Legal aspects of health data",
+    "section": "Tryckfrihetsförordningen (TF)",
+    "text": "Tryckfrihetsförordningen (TF)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\nEveryone has the right to access official documents (TF 2.1)\nbut there are exceptions (TF 2.2)\n\ne.g., if disclosure would violate privacy or national security\nif so, the goverment has the right to provide ordinary laws that restrict access (which they do …)"
+  },
+  {
+    "objectID": "Lecture2.html#offentlighets--och-sekretesslagen-osl",
+    "href": "Lecture2.html#offentlighets--och-sekretesslagen-osl",
+    "title": "Legal aspects of health data",
+    "section": "Offentlighets- och sekretesslagen (OSL)",
+    "text": "Offentlighets- och sekretesslagen (OSL)\n\nLaw that regulates public access to official documents and secrecy\nApplies to public authorities and institutions\nDefines what information is considered secret and under what circumstances"
+  },
+  {
+    "objectID": "Lecture2.html#chap-21",
+    "href": "Lecture2.html#chap-21",
+    "title": "Legal aspects of health data",
+    "section": "Chap 21",
+    "text": "Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
+  },
+  {
+    "objectID": "Lecture2.html#chap-24",
+    "href": "Lecture2.html#chap-24",
+    "title": "Legal aspects of health data",
+    "section": "Chap 24",
+    "text": "Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
+  },
+  {
+    "objectID": "Lecture2.html#chapter-25",
+    "href": "Lecture2.html#chapter-25",
+    "title": "Legal aspects of health data",
+    "section": "Chapter 25",
+    "text": "Chapter 25\nSecrecy for the protection of individuals in activities relating to health and medical care etc.\n\nOFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, unless it is clear that the information may be disclosed without causing harm to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.\n\n\nExceptions exists,\n\nfor example to submit medical patient data to quality registers\nto share data between public organisations for research purposes or statistics (OFS 25.11 p. 5)."
+  },
+  {
+    "objectID": "Lecture2.html#chapter-10",
+    "href": "Lecture2.html#chapter-10",
+    "title": "Legal aspects of health data",
+    "section": "Chapter 10",
+    "text": "Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
+  },
+  {
+    "objectID": "Lecture2.html#patientdatalagen-pdl",
+    "href": "Lecture2.html#patientdatalagen-pdl",
+    "title": "Legal aspects of health data",
+    "section": "Patientdatalagen (PDL)",
+    "text": "Patientdatalagen (PDL)\nThe Patient Data Act (PDL)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
+  },
+  {
+    "objectID": "Lecture2.html#chapter-7-pdl",
+    "href": "Lecture2.html#chapter-7-pdl",
+    "title": "Legal aspects of health data",
+    "section": "Chapter 7 PDL",
+    "text": "Chapter 7 PDL\nNational and regionel quality registers\nOpt-out for patients (every one is included by default until they opt out)\n\nPDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.\n\nPDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of\n\nthe production of statistics,\nestimating numbers for the planning of clinical research,\nresearch within health and medical care,\ndisclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and\n…"
+  },
+  {
+    "objectID": "Lecture2.html#lag-om-hälsodataregister-sfs-1998543",
+    "href": "Lecture2.html#lag-om-hälsodataregister-sfs-1998543",
+    "title": "Legal aspects of health data",
+    "section": "Lag om hälsodataregister (SFS 1998:543)",
+    "text": "Lag om hälsodataregister (SFS 1998:543)\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
+  },
+  {
+    "objectID": "Lecture2.html#specific-registers",
+    "href": "Lecture2.html#specific-registers",
+    "title": "Legal aspects of health data",
+    "section": "Specific registers",
+    "text": "Specific registers\n\n\n\n\n\n\n\n\nRegister (Swedish)\nRegister (English)\nGoverning act / ordinance\n\n\n\n\nFolkbokföringen\nPopulation Register\nPopulation Registration Act (1991:481); Population Registration Ordinance (1991:749)\n\n\nTotalbefolkningsregistret (RTB)\nTotal Population Register\nOfficial Statistics Act (2001:99); Official Statistics Ordinance (2001:100)\n\n\nNationella patientregistret\nNational Patient Register\nHealth Data Act (1998:543); Ordinance on the National Patient Register (2001:707)\n\n\nCancerregistret\nSwedish Cancer Register\nHealth Data Act (1998:543); Cancer Register Ordinance (2001:709)\n\n\nDödsorsaksregistret\nCause of Death Register\nHealth Data Act (1998:543); Cause of Death Register Ordinance (2001:709)\n\n\nLäkemedelsregistret\nPrescribed Drug Register\nAct on the Prescribed Drug Register (2005:258); Ordinance (2005:363)\n\n\nMedicinska födelseregistret\nMedical Birth Register\nHealth Data Act (1998:543); Medical Birth Register Ordinance (2001:708)\n\n\nTandhälsoregistret\nDental Health Register\nHealth Data Act (1998:543); Dental Health Register Ordinance (2008:194)"
+  },
+  {
+    "objectID": "Lecture2.html#arkivdatalagen-adl",
+    "href": "Lecture2.html#arkivdatalagen-adl",
+    "title": "Legal aspects of health data",
+    "section": "Arkivdatalagen (ADL)",
+    "text": "Arkivdatalagen (ADL)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example healthcare data is often required to be kept for at least 10 years"
+  },
+  {
+    "objectID": "Lecture2.html#gdpr",
+    "href": "Lecture2.html#gdpr",
+    "title": "Legal aspects of health data",
+    "section": "GDPR",
+    "text": "GDPR\n\nRegulation (EU) 2016/679 (GDPR)\nEnforced since May 25, 2018\nApplies to all EU member states\nRegulates the processing of personal data\nAims to protect the privacy and rights of individuals\nSets out rules for data controllers and processors"
+  },
+  {
+    "objectID": "Lecture2.html#special-categories-of-personal-data",
+    "href": "Lecture2.html#special-categories-of-personal-data",
+    "title": "Legal aspects of health data",
+    "section": "Special categories of personal data",
+    "text": "Special categories of personal data\n\npersonal data revealing racial or ethnic origin,\npolitical opinions,\nreligious or philosophical beliefs,\ntrade union membership,\ngenetic data,\nbiometric data for the purpose of uniquely identifying a natural person,\ndata concerning health,\ndata concerning a natural person’s sex life or sexual orientation."
+  },
+  {
+    "objectID": "Lecture2.html#legal-grounds-for-processing-personal-data",
+    "href": "Lecture2.html#legal-grounds-for-processing-personal-data",
+    "title": "Legal aspects of health data",
+    "section": "Legal grounds for processing personal data:",
+    "text": "Legal grounds for processing personal data:\n\nthe data subject has given consent to the processing of his or her personal data for one or more specific purposes;\n\nprocessing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;\nprocessing is necessary for compliance with a legal obligation to which the controller is subject;\nprocessing is necessary in order to protect the vital interests of the data subject or of another natural person;\nprocessing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;\nprocessing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.\nprocessing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose."
+  },
+  {
+    "objectID": "Lecture2.html#data-controller-pua-under-gdpr",
+    "href": "Lecture2.html#data-controller-pua-under-gdpr",
+    "title": "Legal aspects of health data",
+    "section": "Data Controller (PUA) under GDPR",
+    "text": "Data Controller (PUA) under GDPR\n\nThe entity that determines the purposes and means of the processing of personal data\nBears the primary legal responsibility\nResponsible for:\n\nLawful basis\nCompliance with GDPR principles\nTransparency and information to data subjects\nAppropriate technical and organisational measures\n\nTypical examples:\n\nPublic authorities\nUniversities\nRegions and municipalities"
+  },
+  {
+    "objectID": "Lecture2.html#data-processor-pub-under-gdpr",
+    "href": "Lecture2.html#data-processor-pub-under-gdpr",
+    "title": "Legal aspects of health data",
+    "section": "Data Processor (PUB) under GDPR",
+    "text": "Data Processor (PUB) under GDPR\n\nProcesses personal data on behalf of the controller\nActs only on documented instructions from the controller\nMay not determine purposes of processing\nHas direct responsibilities for:\n\nSecurity of processing (Article 32)\nConfidentiality\n\nMust be governed by a data processing agreement"
+  },
+  {
+    "objectID": "Lecture2.html#controllerprocessor-relationship",
+    "href": "Lecture2.html#controllerprocessor-relationship",
+    "title": "Legal aspects of health data",
+    "section": "Controller–Processor Relationship",
+    "text": "Controller–Processor Relationship\n\nA formal Data Processing Agreement (DPA) is required\nThe agreement must specify:\n\nSubject matter and duration\nNature and purpose of processing\nTypes of personal data\nCategories of data subjects\nSecurity measures\n\nThe controller remains responsible even when processing is outsourced"
+  },
+  {
+    "objectID": "Lecture2.html#example-sahlgrenska",
+    "href": "Lecture2.html#example-sahlgrenska",
+    "title": "Legal aspects of health data",
+    "section": "Example: Sahlgrenska",
+    "text": "Example: Sahlgrenska\n\nIf a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)\nIf he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)"
+  },
+  {
+    "objectID": "Lecture2.html#technical-safeguards",
+    "href": "Lecture2.html#technical-safeguards",
+    "title": "Legal aspects of health data",
+    "section": "Technical Safeguards",
+    "text": "Technical Safeguards\nExamples of technical safeguards include:\n\nPseudonymisation\nEncryption of personal data\nAccess controls and authentication\nLogging and monitoring of access\nSecure storage and transmission"
+  },
+  {
+    "objectID": "Lecture2.html#organisational-safeguards",
+    "href": "Lecture2.html#organisational-safeguards",
+    "title": "Legal aspects of health data",
+    "section": "Organisational Safeguards",
+    "text": "Organisational Safeguards\nExamples of organisational safeguards include:\n\nDefined roles and responsibilities\nInternal policies and procedures\nStaff training and confidentiality obligations\nData protection by design and by default\nIncident and breach response procedures\nDocumentation and accountability measures"
+  },
+  {
+    "objectID": "Lecture2.html#data-minimisation-and-purpose-limitation",
+    "href": "Lecture2.html#data-minimisation-and-purpose-limitation",
+    "title": "Legal aspects of health data",
+    "section": "Data Minimisation and Purpose Limitation",
+    "text": "Data Minimisation and Purpose Limitation\n\nOnly data that are necessary are processed\nData are processed only for specified purposes\nAccess is limited to authorised personnel\nRetention periods are defined and respected"
+  },
+  {
+    "objectID": "Lecture2.html#pseudonymisation-and-anonymisation",
+    "href": "Lecture2.html#pseudonymisation-and-anonymisation",
+    "title": "Legal aspects of health data",
+    "section": "Pseudonymisation and Anonymisation",
+    "text": "Pseudonymisation and Anonymisation\n\nPseudonymisation reduces risks while allowing reuse\nIdentifiers are kept separately and protected\nAnonymisation removes data from GDPR scope (if irreversible)"
+  },
+  {
+    "objectID": "Lecture2.html#safeguards-for-special-categories-of-data",
+    "href": "Lecture2.html#safeguards-for-special-categories-of-data",
+    "title": "Legal aspects of health data",
+    "section": "Safeguards for Special Categories of Data",
+    "text": "Safeguards for Special Categories of Data\nWhen processing sensitive data (e.g. health data), additional safeguards are required:\n\nStrict access control\nEnhanced security measures\nEthical approval where applicable\nClear separation of identifiers and content data"
+  },
+  {
+    "objectID": "Lecture2.html#gdpr-and-swedish-law",
+    "href": "Lecture2.html#gdpr-and-swedish-law",
+    "title": "Legal aspects of health data",
+    "section": "GDPR and Swedish law",
+    "text": "GDPR and Swedish law\n\nGDPR is directly applicable in Sweden\nThere are refereces to GDPR in Swedish laws such as PDL and OSL\nSwedish laws may provide additional regulations and requirements beyond GDPR\nData protection authorities in Sweden: Integritetsskyddsmyndigheten (IMY)\nShould be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries"
+  },
+  {
+    "objectID": "Lecture2.html#etikprövningslagen-epl",
+    "href": "Lecture2.html#etikprövningslagen-epl",
+    "title": "Legal aspects of health data",
+    "section": "Etikprövningslagen (EPL)",
+    "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority"
+  },
+  {
+    "objectID": "Lecture2.html#reading",
+    "href": "Lecture2.html#reading",
+    "title": "Legal aspects of health data",
+    "section": "Reading",
+    "text": "Reading\nPublic access and secrecy"
+  },
+  {
+    "objectID": "Lecture1.html#important-aspects",
+    "href": "Lecture1.html#important-aspects",
+    "title": "Lecture 1",
+    "section": "Important aspects",
+    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
+  },
+  {
+    "objectID": "Lecture1.html#structure",
+    "href": "Lecture1.html#structure",
+    "title": "Lecture 1",
+    "section": "Structure",
+    "text": "Structure\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
   },
   {
     "objectID": "Lecture1.html#different-types-of-data",
@@ -46,7 +242,7 @@
     "href": "Lecture1.html#coverage-and-completeness",
     "title": "Lecture 1",
     "section": "Coverage and completeness",
-    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the register holder\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
+    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
   },
   {
     "objectID": "Lecture1.html#what-is-recorded",
@@ -67,7 +263,7 @@
     "href": "Lecture1.html#unique-personal-identifier",
     "title": "Lecture 1",
     "section": "Unique personal identifier",
-    "text": "Unique personal identifier\n(Swedish: personnummer)\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
+    "text": "Unique personal identifier\n(Swedish: personnummer, reading: (Ludvigsson et al. 2009))\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
   },
   {
     "objectID": "Lecture1.html#combining-data",
@@ -96,5 +292,89 @@
     "title": "Lecture 1",
     "section": "Our use of R",
     "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
+  },
+  {
+    "objectID": "Lecture1.html#reading-list",
+    "href": "Lecture1.html#reading-list",
+    "title": "Lecture 1",
+    "section": "Reading list",
+    "text": "Reading list\n\nChapter 1 from (Nguyen 2022)\n\n\n\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
+    "section": "",
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
+  },
+  {
+    "objectID": "index.html#positron-extensions",
+    "href": "index.html#positron-extensions",
+    "title": "Health data",
+    "section": "Positron extensions",
+    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
+  },
+  {
+    "objectID": "ws1.html",
+    "href": "ws1.html",
+    "title": "Worskshop 1",
+    "section": "",
+    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
+  },
+  {
+    "objectID": "ws1.html#positron",
+    "href": "ws1.html#positron",
+    "title": "Worskshop 1",
+    "section": "",
+    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
+  },
+  {
+    "objectID": "ws1.html#version-control-git",
+    "href": "ws1.html#version-control-git",
+    "title": "Worskshop 1",
+    "section": "Version control (Git)",
+    "text": "Version control (Git)\nhttps://git-scm.com\n\nTrack changes in files\nCollaborate with others\nGit\nCommand line interface (CLI)\nGUI integrated in RStudio/Positron\nA bit old but still relevant: https://happygitwithr.com/"
+  },
+  {
+    "objectID": "ws1.html#github",
+    "href": "ws1.html#github",
+    "title": "Worskshop 1",
+    "section": "GitHub",
+    "text": "GitHub\n\nOne (of several) cload services for Git (most popular) Link\nGood way to share code with others\nBut do NOT upload sensitive data!\n\nPersonal healthcare data is always sensitive!\n\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)"
+  },
+  {
+    "objectID": "ws1.html#clone-and-commit",
+    "href": "ws1.html#clone-and-commit",
+    "title": "Worskshop 1",
+    "section": "Clone and commit!",
+    "text": "Clone and commit!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
+  },
+  {
+    "objectID": "ws1.html#new-project",
+    "href": "ws1.html#new-project",
+    "title": "Worskshop 1",
+    "section": "New project",
+    "text": "New project\nLet’s make a new project from scratch!\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.\nAdd some data to the data folder by exectuting write.csv(iris, \"data/iris.csv\") from the R console.\nCheck that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file.\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
+  },
+  {
+    "objectID": "ws1.html#data.table",
+    "href": "ws1.html#data.table",
+    "title": "Worskshop 1",
+    "section": "data.table",
+    "text": "data.table\ninstall.packages(\"data.table\")\nRead through (and replicate the examples) from the vignettes found at: https://r-datatable.com/ (start with “Introduction to data.table”)"
+  },
+  {
+    "objectID": "ws1.html#targets",
+    "href": "ws1.html#targets",
+    "title": "Worskshop 1",
+    "section": "targets",
+    "text": "targets\n\n\n\n\ninstall.packages(\"targets\")\n\nMake your data analysis reproducible\nhttps://docs.ropensci.org/targets/\nRead through (and replicate the examples) from this book: https://books.ropensci.org/targets/"
+  },
+  {
+    "objectID": "ws1.html#whats-next",
+    "href": "ws1.html#whats-next",
+    "title": "Worskshop 1",
+    "section": "What’s next?",
+    "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nClone the https://github.com/eribul/cs1 repo and work as much as possible according to the instructions found within it.\nYou are free to help each other and to use any resources you find useful!\nTry to do some work every day (it will not be easy, but it is good practice!)"
   }
 ]
