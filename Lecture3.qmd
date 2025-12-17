@@ -1,6 +1,6 @@
 ---
-title: "Lecture 3"
-subtitle: "Ethics and legal"
+title: "LE3"
+subtitle: ""
 format:
   revealjs:
     theme: dark

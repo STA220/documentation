@@ -1,6 +1,5 @@
 ---
-title: "Lecture 1"
-subtitle: "Introduction to health care data"
+title: "LE1: Intro"
 format: 
   revealjs:
     theme: dark

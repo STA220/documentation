@@ -1,6 +1,5 @@
 ---
-title: "Legal aspects of health data"
-subtitle: "Lecture E2"
+title: "LE2. Legal"
 format:
   revealjs:
     theme: dark

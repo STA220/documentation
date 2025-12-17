@@ -1,5 +1,5 @@
 ---
-title: "Worskshop 1"
+title: "WS1"
 subtitle: "R data project"
 format: html
 ---
@@ -60,8 +60,25 @@ Let's make a new project from scratch!
 13. Make some changes to the file in the online text editor and press "Commit changes ...". Write a message and click "Commit changes".
 14. Go back to Positron and look at the source control pane. Press "Sync changes".
 15. The changes you made online should now be visable locally as well.
+16. Go back to the repo website. Click "Issues" \> "New issues" and give yourself a task to complete. For example to write a poem in the README.md file or to add some R functions in a script.
+17. In Positron: Do what way previously described in the issue.
+18. Commit changes and in the commit message, write "Fix #N" where N is the number of the issue you were working on (probably no 1, hence "Fix #1"). Sync the local repo with GitHub.
+19. Have a new look at the issue and check if it was updated/slosed automatically by your commit.
 
 To share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now.
+
+## Contribute to an R package
+
+ROpenSci is an open community of R developers. Help them according to their instructions here: <https://contributing.ropensci.org/resources.html#issues>
+
+1.  Read the instructions above.
+2.  Look for an open issue (start with the "good first issue" or "documentation" issue lists)
+3.  Read everything that is written/discussed in your issue of choice and try to understand the problem/task.
+4.  When you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.
+5.  Try to fix the issue! Note that this can be (VERY) difficult and you don't have to actually fix it if it seems impossible. But give it a try!
+6.  Submit your changes locally with an informative message and a reference to "#N" (where N is the issue number). Do this regardless if you fixed the issue or not.
+7.  If you were able to fix the issue, submit your suggested changes back to GitHub (don't do this if you were not able to fix it).
+8.  If you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (click on the smiley at the end of a comment you agree with and chose a relevant emoji).
 
 ## data.table
 
