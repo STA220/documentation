@@ -1,7 +1,14 @@
 ---
 title: "Lecture 1"
 subtitle: "Introduction to health care data"
-format: revealjs
+format: 
+  revealjs:
+    theme: dark
+    transition: fade
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
 ---
 
 ## Different types of data
@@ -150,9 +157,8 @@ A lot to do before the statistical analysis!
 
 ## Our use of R
 
-- data.table to handle large data sets
+- data.table to handle large data sets efficiently
 - targets to streamline a reproducible pipeline
 - Git for version control
 - GitHub for colaboration
 - Quarto for reporting
-

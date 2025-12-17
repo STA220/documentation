@@ -1,38 +1,17 @@
 [
   {
-    "objectID": "Lecture2.html#ethics",
-    "href": "Lecture2.html#ethics",
-    "title": "Lecture 2",
-    "section": "Ethics",
-    "text": "Ethics\n\nForskningshuvudman"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
+    "section": "",
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
   },
   {
-    "objectID": "Lecture2.html#swedish-law",
-    "href": "Lecture2.html#swedish-law",
-    "title": "Lecture 2",
-    "section": "Swedish law",
-    "text": "Swedish law\nTryckfrihetsförordningen (TF)\nOffentlighets- och sekretesslagen (OSL)\nPatientdatalagen (PDL)\nLag om hälsodataregister\nArkivdatalagen (ADL)"
-  },
-  {
-    "objectID": "Lecture2.html#gdpr",
-    "href": "Lecture2.html#gdpr",
-    "title": "Lecture 2",
-    "section": "GDPR",
-    "text": "GDPR\nLegal grounds for processing personal data:"
-  },
-  {
-    "objectID": "Lecture2.html#data-protection",
-    "href": "Lecture2.html#data-protection",
-    "title": "Lecture 2",
-    "section": "Data protection",
-    "text": "Data protection"
-  },
-  {
-    "objectID": "Lecture2.html#fair-data-principles",
-    "href": "Lecture2.html#fair-data-principles",
-    "title": "Lecture 2",
-    "section": "FAIR data principles",
-    "text": "FAIR data principles"
+    "objectID": "index.html#positron-extensions",
+    "href": "index.html#positron-extensions",
+    "title": "Health data",
+    "section": "Positron extensions",
+    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
   },
   {
     "objectID": "Lecture1.html#different-types-of-data",
@@ -116,83 +95,6 @@
     "href": "Lecture1.html#our-use-of-r",
     "title": "Lecture 1",
     "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
-    "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
-  },
-  {
-    "objectID": "index.html#positron-extensions",
-    "href": "index.html#positron-extensions",
-    "title": "Health data",
-    "section": "Positron extensions",
-    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
-  },
-  {
-    "objectID": "ws1.html",
-    "href": "ws1.html",
-    "title": "Worskshop 1",
-    "section": "",
-    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
-  },
-  {
-    "objectID": "ws1.html#positron",
-    "href": "ws1.html#positron",
-    "title": "Worskshop 1",
-    "section": "",
-    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
-  },
-  {
-    "objectID": "ws1.html#version-control-git",
-    "href": "ws1.html#version-control-git",
-    "title": "Worskshop 1",
-    "section": "Version control (Git)",
-    "text": "Version control (Git)\nhttps://git-scm.com\n\nTrack changes in files\nCollaborate with others\nGit\nCommand line interface (CLI)\nGUI integrated in RStudio/Positron\nA bit old but still relevant: https://happygitwithr.com/"
-  },
-  {
-    "objectID": "ws1.html#github",
-    "href": "ws1.html#github",
-    "title": "Worskshop 1",
-    "section": "GitHub",
-    "text": "GitHub\n\nOne (of several) cload services for Git (most popular) Link\nGood way to share code with others\nBut do NOT upload sensitive data!\n\nPersonal healthcare data is always sensitive!\n\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)"
-  },
-  {
-    "objectID": "ws1.html#clone-and-commit",
-    "href": "ws1.html#clone-and-commit",
-    "title": "Worskshop 1",
-    "section": "Clone and commit!",
-    "text": "Clone and commit!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
-  },
-  {
-    "objectID": "ws1.html#new-project",
-    "href": "ws1.html#new-project",
-    "title": "Worskshop 1",
-    "section": "New project",
-    "text": "New project\nLet’s make a new project from scratch!\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.\nAdd some data to the data folder by exectuting write.csv(iris, \"data/iris.csv\") from the R console.\nCheck that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file.\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
-  },
-  {
-    "objectID": "ws1.html#data.table",
-    "href": "ws1.html#data.table",
-    "title": "Worskshop 1",
-    "section": "data.table",
-    "text": "data.table\ninstall.packages(\"data.table\")\nRead through (and replicate the examples) from the vignettes found at: https://r-datatable.com/ (start with “Introduction to data.table”)"
-  },
-  {
-    "objectID": "ws1.html#targets",
-    "href": "ws1.html#targets",
-    "title": "Worskshop 1",
-    "section": "targets",
-    "text": "targets\n\n\n\n\ninstall.packages(\"targets\")\n\nMake your data analysis reproducible\nhttps://docs.ropensci.org/targets/\nRead through (and replicate the examples) from this book: https://books.ropensci.org/targets/"
-  },
-  {
-    "objectID": "ws1.html#whats-next",
-    "href": "ws1.html#whats-next",
-    "title": "Worskshop 1",
-    "section": "What’s next?",
-    "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nClone the https://github.com/eribul/cs1 repo and work as much as possible according to the instructions found within it.\nYou are free to help each other and to use any resources you find useful!\nTry to do some work every day (it will not be easy, but it is good practice!)"
+    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   }
 ]
