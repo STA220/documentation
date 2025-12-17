@@ -6,10 +6,10 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – Lecture 2</title>
+  <title>STA220 – Legal aspects of health data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,7 +28,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-327cab17de08e4a17faa7d61f48ae591.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -44,6 +45,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -121,41 +123,405 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture 2</h1>
-  <p class="subtitle">Ethics and legal</p>
+  <h1 class="title">Legal aspects of health data</h1>
+  <p class="subtitle">Lecture E2</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="ethics" class="slide level2">
-<h2>Ethics</h2>
-<ul>
-<li>Forskningshuvudman</li>
-</ul>
-</section>
 <section id="swedish-law" class="slide level2">
 <h2>Swedish law</h2>
-<h3 id="tryckfrihetsförordningen-tf">Tryckfrihetsförordningen (TF)</h3>
-<h3 id="offentlighets--och-sekretesslagen-osl">Offentlighets- och sekretesslagen (OSL)</h3>
-<h3 id="patientdatalagen-pdl">Patientdatalagen (PDL)</h3>
-<h3 id="lag-om-hälsodataregister">Lag om hälsodataregister</h3>
-<h3 id="arkivdatalagen-adl">Arkivdatalagen (ADL)</h3>
+<ul>
+<li>Fundamental laws (parliament but difficult to change)</li>
+<li>Ordinary laws (parliament)
+<ul>
+<li>New ones all the time</li>
+<li>New laws to update existing regulations</li>
+</ul></li>
+<li>Published in <a href="https://svenskforfattningssamling.se/">Svensk författningsamling, SFS</a>
+<ul>
+<li>The “big blue book” is only a smaller collection of important laws</li>
+</ul></li>
+<li>ordinances (“förordning”) from the goverment to implement laws</li>
+<li>regulations (“föreskrifter”) from authorities to implement laws and ordinances</li>
+</ul>
+</section>
+<section id="two-main-branches-of-law" class="slide level2">
+<h2>Two main branches of law</h2>
+<ul>
+<li>Civil and criminal law:
+<ul>
+<li>state what you can not do (everything else is “legal”)</li>
+<li>Handled by ordinary courts</li>
+<li>Ex: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)</li>
+</ul></li>
+<li>Public law: relationship between individuals and the state etc
+<ul>
+<li>state what the public authorities must do (everything else is “illegal”)</li>
+<li>Handled by administrative courts</li>
+<li>What we mostly care of here</li>
+</ul></li>
+</ul>
+</section>
+<section id="tryckfrihetsförordningen-tf" class="slide level2">
+<h2>Tryckfrihetsförordningen (TF)</h2>
+<ul>
+<li>World’s oldest freedom of the press law (since 1766)</li>
+<li>Chapter 2: Public access to official documents</li>
+<li>Applies to public authorities and institutions
+<ul>
+<li>Including health care registers and medical records held by public authorities</li>
+</ul></li>
+<li>Everyone has the right to access official documents (TF 2.1)</li>
+<li>but there are exceptions (TF 2.2)
+<ul>
+<li>e.g., if disclosure would violate privacy or national security</li>
+<li>if so, the goverment has the right to provide ordinary laws that restrict access (which they do …)</li>
+</ul></li>
+</ul>
+</section>
+<section id="offentlighets--och-sekretesslagen-osl" class="slide level2">
+<h2>Offentlighets- och sekretesslagen (OSL)</h2>
+<ul>
+<li>Law that regulates public access to official documents and secrecy</li>
+<li>Applies to public authorities and institutions</li>
+<li>Defines what information is considered secret and under what circumstances</li>
+</ul>
+</section>
+<section id="chap-21" class="slide level2">
+<h2>Chap 21</h2>
+<p>Secrecy for private individuals’ personal circumstances <strong>no mather the context</strong></p>
+<ul>
+<li>E.g., health data, economic circumstances, family relations</li>
+</ul>
+<blockquote>
+<p>OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, <strong>if it can be assumed</strong> that disclosure of the information would <strong>cause significant harm</strong> to the individual or to someone closely related to them.</p>
+</blockquote>
+</section>
+<section id="chap-24" class="slide level2">
+<h2>Chap 24</h2>
+<p>Secrecy for the protection of individuals in research and statistics.</p>
+<ul>
+<li>Special research databases etc</li>
+<li>Some regulations for research ethics boards</li>
+</ul>
+</section>
+<section id="chapter-25" class="slide level2">
+<h2>Chapter 25</h2>
+<p>Secrecy for the protection of individuals in activities relating to <strong>health and medical care</strong> etc.</p>
+<blockquote>
+<p>OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, <strong>unless it is clear</strong> that the information may be disclosed <strong>without causing harm</strong> to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.</p>
+</blockquote>
+<ul>
+<li>Exceptions exists,
+<ul>
+<li>for example to submit medical patient data to quality registers</li>
+<li>to share data between public organisations for research purposes or statistics (OFS 25.11 p.&nbsp;5).</li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-10" class="slide level2">
+<h2>Chapter 10</h2>
+<p>Provisions on disclosure overriding secrecy and provisions on exemptions from secrecy</p>
+<blockquote>
+<p>OFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.</p>
+</blockquote>
+<ul>
+<li>This would apply to data sharing for research purposes when there is a legal basis for that</li>
+</ul>
+</section>
+<section id="patientdatalagen-pdl" class="slide level2">
+<h2>Patientdatalagen (PDL)</h2>
+<p>The Patient Data Act (PDL)</p>
+<ul>
+<li>regulates the processing of personal data within <strong>health and medical care</strong> in Sweden.</li>
+<li>Applies to <strong>healthcare providers</strong> (public and private).</li>
+<li>Main objectives:
+<ul>
+<li>Protect patient privacy</li>
+<li>Ensure safe and effective healthcare</li>
+<li>Enable <strong>secondary use</strong> of health data under strict conditions</li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-7-pdl" class="slide level2">
+<h2>Chapter 7 PDL</h2>
+<p>National and regionel quality registers</p>
+<p>Opt-out for patients (every one is included by default until they opt out)</p>
+<blockquote>
+<p>PDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.</p>
+</blockquote>
+<p>PDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of</p>
+<ul>
+<li>the production of <strong>statistics</strong>,</li>
+<li>estimating numbers for the planning of clinical research,</li>
+<li><strong>research within health and medical care</strong>,</li>
+<li>disclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and</li>
+<li>…</li>
+</ul>
+</section>
+<section id="lag-om-hälsodataregister-sfs-1998543" class="slide level2">
+<h2>Lag om hälsodataregister (SFS 1998:543)</h2>
+<p>This law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.</p>
+<p>§ 3: Personal data in a health data register may be processed for for the following purposes:</p>
+<ul>
+<li>the production of statistics,</li>
+<li>follow-up, evaluation and quality assurance of health and medical care, and</li>
+<li>research and epidemiological studies</li>
+</ul>
+</section>
+<section id="specific-registers" class="slide level2">
+<h2>Specific registers</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Register (Swedish)</th>
+<th>Register (English)</th>
+<th>Governing act / ordinance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Folkbokföringen</td>
+<td>Population Register</td>
+<td>Population Registration Act (1991:481); Population Registration Ordinance (1991:749)</td>
+</tr>
+<tr class="even">
+<td>Totalbefolkningsregistret (RTB)</td>
+<td>Total Population Register</td>
+<td>Official Statistics Act (2001:99); Official Statistics Ordinance (2001:100)</td>
+</tr>
+<tr class="odd">
+<td>Nationella patientregistret</td>
+<td>National Patient Register</td>
+<td>Health Data Act (1998:543); Ordinance on the National Patient Register (2001:707)</td>
+</tr>
+<tr class="even">
+<td>Cancerregistret</td>
+<td>Swedish Cancer Register</td>
+<td>Health Data Act (1998:543); Cancer Register Ordinance (2001:709)</td>
+</tr>
+<tr class="odd">
+<td>Dödsorsaksregistret</td>
+<td>Cause of Death Register</td>
+<td>Health Data Act (1998:543); Cause of Death Register Ordinance (2001:709)</td>
+</tr>
+<tr class="even">
+<td>Läkemedelsregistret</td>
+<td>Prescribed Drug Register</td>
+<td>Act on the Prescribed Drug Register (2005:258); Ordinance (2005:363)</td>
+</tr>
+<tr class="odd">
+<td>Medicinska födelseregistret</td>
+<td>Medical Birth Register</td>
+<td>Health Data Act (1998:543); Medical Birth Register Ordinance (2001:708)</td>
+</tr>
+<tr class="even">
+<td>Tandhälsoregistret</td>
+<td>Dental Health Register</td>
+<td>Health Data Act (1998:543); Dental Health Register Ordinance (2008:194)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="arkivdatalagen-adl" class="slide level2">
+<h2>Arkivdatalagen (ADL)</h2>
+<ul>
+<li>Regulates the management of public records and archives</li>
+<li>Applies to public authorities and institutions</li>
+<li>Differnt authorities then have different rules for how long data must be kept
+<ul>
+<li>For example healthcare data is often required to be kept for at least 10 years</li>
+</ul></li>
+</ul>
 </section>
 <section id="gdpr" class="slide level2">
 <h2>GDPR</h2>
-<p>Legal grounds for processing personal data:</p>
+<ul>
+<li>Regulation (EU) 2016/679 (GDPR)</li>
+<li>Enforced since May 25, 2018</li>
+<li>Applies to all EU member states</li>
+<li>Regulates the processing of personal data</li>
+<li>Aims to protect the privacy and rights of individuals</li>
+<li>Sets out rules for data controllers and processors</li>
+</ul>
 </section>
-<section id="data-protection" class="slide level2">
-<h2>Data protection</h2>
+<section id="special-categories-of-personal-data" class="slide level2 scrollable">
+<h2>Special categories of personal data</h2>
+<ol type="1">
+<li>personal data revealing racial or ethnic origin,</li>
+<li>political opinions,</li>
+<li>religious or philosophical beliefs,</li>
+<li>trade union membership,</li>
+<li>genetic data,</li>
+<li>biometric data for the purpose of uniquely identifying a natural person,</li>
+<li><strong>data concerning health</strong>,</li>
+<li>data concerning a natural person’s sex life or sexual orientation.</li>
+</ol>
 </section>
-<section id="fair-data-principles" class="slide level2">
-<h2>FAIR data principles</h2>
+<section id="legal-grounds-for-processing-personal-data" class="slide level2 scrollable">
+<h2>Legal grounds for processing personal data:</h2>
+<ol type="1">
+<li>the data subject has given <strong>consent</strong> to the processing of his or her personal data for one or more specific purposes;
+<ol start="2" type="1">
+<li>processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;</li>
+<li>processing is necessary for compliance with a legal obligation to which the controller is subject;</li>
+<li>processing is necessary in order to protect the vital interests of the data subject or of another natural person;</li>
+<li>processing is necessary for the performance of a task carried out in the <strong>public interest</strong> or in the exercise of official authority vested in the controller;</li>
+<li>processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.</li>
+<li>processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.</li>
+</ol></li>
+</ol>
+</section>
+<section id="data-controller-pua-under-gdpr" class="slide level2">
+<h2>Data Controller (PUA) under GDPR</h2>
+<ul>
+<li>The entity that <strong>determines the purposes and means</strong> of the processing of personal data</li>
+<li>Bears the <strong>primary legal responsibility</strong></li>
+<li>Responsible for:
+<ul>
+<li>Lawful basis</li>
+<li>Compliance with GDPR principles</li>
+<li>Transparency and information to data subjects</li>
+<li>Appropriate technical and organisational measures</li>
+</ul></li>
+<li>Typical examples:
+<ul>
+<li>Public authorities</li>
+<li>Universities</li>
+<li>Regions and municipalities</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-processor-pub-under-gdpr" class="slide level2">
+<h2>Data Processor (PUB) under GDPR</h2>
+<ul>
+<li>Processes personal data <strong>on behalf of the controller</strong></li>
+<li>Acts <strong>only on documented instructions</strong> from the controller</li>
+<li>May <strong>not</strong> determine purposes of processing</li>
+<li>Has direct responsibilities for:
+<ul>
+<li>Security of processing (Article 32)</li>
+<li>Confidentiality</li>
+</ul></li>
+<li>Must be governed by a <strong>data processing agreement</strong></li>
+</ul>
+</section>
+<section id="controllerprocessor-relationship" class="slide level2">
+<h2>Controller–Processor Relationship</h2>
+<ul>
+<li>A formal <strong>Data Processing Agreement (DPA)</strong> is required</li>
+<li>The agreement must specify:
+<ul>
+<li>Subject matter and duration</li>
+<li>Nature and purpose of processing</li>
+<li>Types of personal data</li>
+<li>Categories of data subjects</li>
+<li>Security measures</li>
+</ul></li>
+<li>The controller remains responsible even when processing is outsourced</li>
+</ul>
+</section>
+<section id="example-sahlgrenska" class="slide level2">
+<h2>Example: Sahlgrenska</h2>
+<ul>
+<li>If a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)</li>
+<li>If he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)</li>
+</ul>
+</section>
+<section id="technical-safeguards" class="slide level2">
+<h2>Technical Safeguards</h2>
+<p>Examples of technical safeguards include:</p>
+<ul>
+<li>Pseudonymisation</li>
+<li>Encryption of personal data</li>
+<li>Access controls and authentication</li>
+<li>Logging and monitoring of access</li>
+<li>Secure storage and transmission</li>
+</ul>
+</section>
+<section id="organisational-safeguards" class="slide level2">
+<h2>Organisational Safeguards</h2>
+<p>Examples of organisational safeguards include:</p>
+<ul>
+<li>Defined roles and responsibilities</li>
+<li>Internal policies and procedures</li>
+<li>Staff training and confidentiality obligations</li>
+<li>Data protection by design and by default</li>
+<li>Incident and breach response procedures</li>
+<li>Documentation and accountability measures</li>
+</ul>
+</section>
+<section id="data-minimisation-and-purpose-limitation" class="slide level2">
+<h2>Data Minimisation and Purpose Limitation</h2>
+<ul>
+<li>Only data that are <strong>necessary</strong> are processed</li>
+<li>Data are processed <strong>only for specified purposes</strong></li>
+<li>Access is limited to authorised personnel</li>
+<li>Retention periods are defined and respected</li>
+</ul>
+</section>
+<section id="pseudonymisation-and-anonymisation" class="slide level2">
+<h2>Pseudonymisation and Anonymisation</h2>
+<ul>
+<li><strong>Pseudonymisation</strong> reduces risks while allowing reuse</li>
+<li>Identifiers are kept separately and protected</li>
+<li>Anonymisation removes data from GDPR scope (if irreversible)</li>
+</ul>
+</section>
+<section id="safeguards-for-special-categories-of-data" class="slide level2">
+<h2>Safeguards for Special Categories of Data</h2>
+<p>When processing sensitive data (e.g.&nbsp;health data), additional safeguards are required:</p>
+<ul>
+<li>Strict access control</li>
+<li>Enhanced security measures</li>
+<li>Ethical approval where applicable</li>
+<li>Clear separation of identifiers and content data</li>
+</ul>
+</section>
+<section id="gdpr-and-swedish-law" class="slide level2">
+<h2>GDPR and Swedish law</h2>
+<ul>
+<li>GDPR is directly applicable in Sweden</li>
+<li>There are refereces to GDPR in Swedish laws such as PDL and OSL</li>
+<li>Swedish laws may provide additional regulations and requirements beyond GDPR</li>
+<li>Data protection authorities in Sweden: <a href="https://imy.se/">Integritetsskyddsmyndigheten (IMY)</a></li>
+<li>Should be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries</li>
+</ul>
+</section>
+<section id="etikprövningslagen-epl" class="slide level2">
+<h2>Etikprövningslagen (EPL)</h2>
+<ul>
+<li>Regulates ethical review of research involving humans (including their data!)
+<ul>
+<li>Had received some critisism and might be revised</li>
+</ul></li>
+<li>Applies to research projects conducted in Sweden</li>
+<li>Requires ethical review and approval by an ethics review board</li>
+<li>Aims to protect the rights, safety, and well-being of research participants</li>
+<li>Based on the Declaration of Helsinki and other international ethical guidelines</li>
+<li>One application for each new research project
+<ul>
+<li>Ammendments for changes in already approved projects</li>
+</ul></li>
+<li>Application fees applies</li>
+<li><a href="https://etikprovningsmyndigheten.se/en/">Swedish Ethical Review Authority</a></li>
+</ul>
+</section>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
+<p><a href="https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy">Public access and secrecy</a></p>
 
 
 </section>
@@ -195,7 +561,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -215,7 +581,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -320,7 +686,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
