@@ -1,5 +1,40 @@
 [
   {
+    "objectID": "Lecture2.html#ethics",
+    "href": "Lecture2.html#ethics",
+    "title": "Lecture 2",
+    "section": "Ethics",
+    "text": "Ethics\n\nForskningshuvudman"
+  },
+  {
+    "objectID": "Lecture2.html#swedish-law",
+    "href": "Lecture2.html#swedish-law",
+    "title": "Lecture 2",
+    "section": "Swedish law",
+    "text": "Swedish law\nTryckfrihetsförordningen (TF)\nOffentlighets- och sekretesslagen (OSL)\nPatientdatalagen (PDL)\nLag om hälsodataregister\nArkivdatalagen (ADL)"
+  },
+  {
+    "objectID": "Lecture2.html#gdpr",
+    "href": "Lecture2.html#gdpr",
+    "title": "Lecture 2",
+    "section": "GDPR",
+    "text": "GDPR\nLegal grounds for processing personal data:"
+  },
+  {
+    "objectID": "Lecture2.html#data-protection",
+    "href": "Lecture2.html#data-protection",
+    "title": "Lecture 2",
+    "section": "Data protection",
+    "text": "Data protection"
+  },
+  {
+    "objectID": "Lecture2.html#fair-data-principles",
+    "href": "Lecture2.html#fair-data-principles",
+    "title": "Lecture 2",
+    "section": "FAIR data principles",
+    "text": "FAIR data principles"
+  },
+  {
     "objectID": "Lecture1.html#different-types-of-data",
     "href": "Lecture1.html#different-types-of-data",
     "title": "Lecture 1",
@@ -84,6 +119,20 @@
     "text": "Our use of R\n\ndata.table to handle large data sets\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
+    "section": "",
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page.\n\nLitterature\nCourse books are available for GU students through the “O’Reilly Learning for Higher Education”. Instructions for access\nPrimary course book\nRecommended books\n\n\nLectures\nThere are"
+  },
+  {
+    "objectID": "ws1.html",
+    "href": "ws1.html",
+    "title": "Worskshop 1",
+    "section": "",
+    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
+  },
+  {
     "objectID": "ws1.html#positron",
     "href": "ws1.html#positron",
     "title": "Worskshop 1",
@@ -105,11 +154,18 @@
     "text": "GitHub\n\nOne (of several) cload services for Git (most popular) Link\nGood way to share code with others\nBut do NOT upload sensitive data!\n\nPersonal healthcare data is always sensitive!\n\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)"
   },
   {
-    "objectID": "ws1.html#to-do",
-    "href": "ws1.html#to-do",
+    "objectID": "ws1.html#clone-and-commit",
+    "href": "ws1.html#clone-and-commit",
     "title": "Worskshop 1",
-    "section": "To do!",
-    "text": "To do!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\n\n\nLog in with your GitHub account: https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_set-up-git-in-vs-code\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap (place it somewhere you can find it and open it)\n\n\nOpen the TODO file within and folder and follow the instructions there"
+    "section": "Clone and commit!",
+    "text": "Clone and commit!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
+  },
+  {
+    "objectID": "ws1.html#new-project",
+    "href": "ws1.html#new-project",
+    "title": "Worskshop 1",
+    "section": "New project",
+    "text": "New project\nLet’s make a new project from scratch!\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.\nAdd some data to the data folder by exectuting write.csv(iris, \"data/iris.csv\") from the R console.\nCheck that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file.\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
   },
   {
     "objectID": "ws1.html#data.table",
@@ -131,236 +187,5 @@
     "title": "Worskshop 1",
     "section": "What’s next?",
     "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nClone the https://github.com/eribul/cs1 repo and work as much as possible according to the instructions found within it.\nYou are free to help each other and to use any resources you find useful!\nTry to do some work every day (it will not be easy, but it is good practice!)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
-    "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page.\n\nLitterature\nCourse books are available for GU students through the “O’Reilly Learning for Higher Education”. Instructions for access\nPrimary course book\nRecommended books\n\n\nLectures\nThere are"
-  },
-  {
-    "objectID": "Lecture2.html#different-types-of-data",
-    "href": "Lecture2.html#different-types-of-data",
-    "title": "Lecture 2",
-    "section": "Different types of data",
-    "text": "Different types of data\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
-  },
-  {
-    "objectID": "Lecture2.html#usages",
-    "href": "Lecture2.html#usages",
-    "title": "Lecture 2",
-    "section": "Usages",
-    "text": "Usages\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
-  },
-  {
-    "objectID": "Lecture2.html#register-data",
-    "href": "Lecture2.html#register-data",
-    "title": "Lecture 2",
-    "section": "Register data",
-    "text": "Register data\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
-  },
-  {
-    "objectID": "Lecture2.html#inclusion-criteria",
-    "href": "Lecture2.html#inclusion-criteria",
-    "title": "Lecture 2",
-    "section": "Inclusion criteria",
-    "text": "Inclusion criteria\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
-  },
-  {
-    "objectID": "Lecture2.html#coverage-and-completeness",
-    "href": "Lecture2.html#coverage-and-completeness",
-    "title": "Lecture 2",
-    "section": "Coverage and completeness",
-    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the register holder\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
-  },
-  {
-    "objectID": "Lecture2.html#what-is-recorded",
-    "href": "Lecture2.html#what-is-recorded",
-    "title": "Lecture 2",
-    "section": "What is recorded?",
-    "text": "What is recorded?\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
-  },
-  {
-    "objectID": "Lecture2.html#data-linking",
-    "href": "Lecture2.html#data-linking",
-    "title": "Lecture 2",
-    "section": "Data linking",
-    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
-  },
-  {
-    "objectID": "Lecture2.html#unique-personal-identifier",
-    "href": "Lecture2.html#unique-personal-identifier",
-    "title": "Lecture 2",
-    "section": "Unique personal identifier",
-    "text": "Unique personal identifier\n(Swedish: personnummer)\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
-  },
-  {
-    "objectID": "Lecture2.html#combining-data",
-    "href": "Lecture2.html#combining-data",
-    "title": "Lecture 2",
-    "section": "Combining data",
-    "text": "Combining data\n\nSimilar registries in different areas/regions/countries\n\nDifferent individuals but similar data\n\nSame definitions and variables?\nSame inclusion criteria?\nDon’t get fooled by similar names!"
-  },
-  {
-    "objectID": "Lecture2.html#working-with-health-care-data",
-    "href": "Lecture2.html#working-with-health-care-data",
-    "title": "Lecture 2",
-    "section": "Working with health care data",
-    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
-  },
-  {
-    "objectID": "Lecture2.html#r-as-a-tool-but",
-    "href": "Lecture2.html#r-as-a-tool-but",
-    "title": "Lecture 2",
-    "section": "R as a tool but …",
-    "text": "R as a tool but …\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
-  },
-  {
-    "objectID": "Lecture2.html#our-use-of-r",
-    "href": "Lecture2.html#our-use-of-r",
-    "title": "Lecture 2",
-    "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
-  },
-  {
-    "objectID": "Lecture2.html#ethics",
-    "href": "Lecture2.html#ethics",
-    "title": "Lecture 2",
-    "section": "Ethics",
-    "text": "Ethics\n\nForskningshuvudman"
-  },
-  {
-    "objectID": "Lecture2.html#swedish-law",
-    "href": "Lecture2.html#swedish-law",
-    "title": "Lecture 2",
-    "section": "Swedish law",
-    "text": "Swedish law\nTryckfrihetsförordningen (TF)\nOffentlighets- och sekretesslagen (OSL)\nPatientdatalagen (PDL)\nLag om hälsodataregister\nArkivdatalagen (ADL)"
-  },
-  {
-    "objectID": "Lecture2.html#gdpr",
-    "href": "Lecture2.html#gdpr",
-    "title": "Lecture 2",
-    "section": "GDPR",
-    "text": "GDPR\nLegal grounds for processing personal data:"
-  },
-  {
-    "objectID": "Lecture2.html#data-protection",
-    "href": "Lecture2.html#data-protection",
-    "title": "Lecture 2",
-    "section": "Data protection",
-    "text": "Data protection"
-  },
-  {
-    "objectID": "seminar_legal.html#positron",
-    "href": "seminar_legal.html#positron",
-    "title": "Worskshop 1",
-    "section": "Positron",
-    "text": "Positron\n\nNew generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
-  },
-  {
-    "objectID": "seminar_legal.html#version-control-git",
-    "href": "seminar_legal.html#version-control-git",
-    "title": "Worskshop 1",
-    "section": "Version control (Git)",
-    "text": "Version control (Git)\nhttps://git-scm.com\n\nTrack changes in files\nCollaborate with others\nGit\nCommand line interface (CLI)\nGUI integrated in RStudio/Positron\nA bit old but still relevant: https://happygitwithr.com/"
-  },
-  {
-    "objectID": "seminar_legal.html#github",
-    "href": "seminar_legal.html#github",
-    "title": "Worskshop 1",
-    "section": "GitHub",
-    "text": "GitHub\n\nOne (of several) cload services for Git (most popular) Link\nGood way to share code with others\nBut do NOT upload sensitive data!\n\nPersonal healthcare data is always sensitive!\n\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)"
-  },
-  {
-    "objectID": "seminar_legal.html#to-do",
-    "href": "seminar_legal.html#to-do",
-    "title": "Worskshop 1",
-    "section": "To do!",
-    "text": "To do!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\n\n\nLog in with your GitHub account: https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_set-up-git-in-vs-code\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap (place it somewhere you can find it and open it)\n\n\nOpen the TODO file within and folder and follow the instructions there"
-  },
-  {
-    "objectID": "seminar_legal.html#data.table",
-    "href": "seminar_legal.html#data.table",
-    "title": "Worskshop 1",
-    "section": "data.table",
-    "text": "data.table\ninstall.packages(\"data.table\")\nRead through (and replicate the examples) from the vignettes found at: https://r-datatable.com/ (start with “Introduction to data.table”)"
-  },
-  {
-    "objectID": "seminar_legal.html#targets",
-    "href": "seminar_legal.html#targets",
-    "title": "Worskshop 1",
-    "section": "targets",
-    "text": "targets\ninstall.packages(\"targets\")\n\nMake your data analysis reproducible\nhttps://docs.ropensci.org/targets/\nRead through (and replicate the examples) from this book: https://books.ropensci.org/targets/"
-  },
-  {
-    "objectID": "seminar_legal.html#whats-next",
-    "href": "seminar_legal.html#whats-next",
-    "title": "Worskshop 1",
-    "section": "What’s next?",
-    "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nAt the next workshop we will start working with (syntethic) health care data!"
-  },
-  {
-    "objectID": "Lecture2.html#fair-data-principles",
-    "href": "Lecture2.html#fair-data-principles",
-    "title": "Lecture 2",
-    "section": "FAIR data principles",
-    "text": "FAIR data principles"
-  },
-  {
-    "objectID": "Lecture3.html#ethics",
-    "href": "Lecture3.html#ethics",
-    "title": "Lecture 2",
-    "section": "Ethics",
-    "text": "Ethics\n\nForskningshuvudman"
-  },
-  {
-    "objectID": "Lecture3.html#swedish-law",
-    "href": "Lecture3.html#swedish-law",
-    "title": "Lecture 2",
-    "section": "Swedish law",
-    "text": "Swedish law\nTryckfrihetsförordningen (TF)\nOffentlighets- och sekretesslagen (OSL)\nPatientdatalagen (PDL)\nLag om hälsodataregister\nArkivdatalagen (ADL)"
-  },
-  {
-    "objectID": "Lecture3.html#gdpr",
-    "href": "Lecture3.html#gdpr",
-    "title": "Lecture 2",
-    "section": "GDPR",
-    "text": "GDPR\nLegal grounds for processing personal data:"
-  },
-  {
-    "objectID": "Lecture3.html#data-protection",
-    "href": "Lecture3.html#data-protection",
-    "title": "Lecture 2",
-    "section": "Data protection",
-    "text": "Data protection"
-  },
-  {
-    "objectID": "Lecture3.html#fair-data-principles",
-    "href": "Lecture3.html#fair-data-principles",
-    "title": "Lecture 2",
-    "section": "FAIR data principles",
-    "text": "FAIR data principles"
-  },
-  {
-    "objectID": "ws1.html#clone-and-commit",
-    "href": "ws1.html#clone-and-commit",
-    "title": "Worskshop 1",
-    "section": "Clone and commit!",
-    "text": "Clone and commit!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
-  },
-  {
-    "objectID": "ws1.html#new-project",
-    "href": "ws1.html#new-project",
-    "title": "Worskshop 1",
-    "section": "New project",
-    "text": "New project\nLet’s make a new project from scratch!\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.\nAdd some data to the data folder by exectuting write.csv(iris, \"data/iris.csv\") from the R console.\nCheck that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file.\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
-  },
-  {
-    "objectID": "ws1.html",
-    "href": "ws1.html",
-    "title": "Worskshop 1",
-    "section": "",
-    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
   }
 ]

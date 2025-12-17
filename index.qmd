@@ -14,6 +14,29 @@ Course books are available for GU students through the "O'Reilly Learning for Hi
 
 [Recommended books](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)
 
+# Software
+
+To complete the exercises and assignments for this course you need to install the following software (which are free and available for all major operating systems):
+
+- [R](https://cran.r-project.org/)
+- [Positron](https://posit.co/download/)
+- [Git](https://git-scm.com/downloads)
+
+Some additional recommended software (also free but not not mandatory for the course):
+
+- [GitHub Desktop](https://desktop.github.com/)
+- [GitHub CLI](https://cli.github.com/)
+
+## Positron extensions
+
+Positron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.
+
+Positron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of [extensions](https://open-vsx.org/) and customization options. 
+
+We will use [GitHub Pull Requests](https://open-vsx.org/extension/GitHub/vscode-pull-request-github). Search for it in the Extensions pane in Positron and install it.
+
+[Instructions for Git in Positron](https://code.visualstudio.com/docs/sourcecontrol/quickstart#_set-up-git-in-vs-code)
+
 # Lectures
 
 There are 

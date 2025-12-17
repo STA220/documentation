@@ -3,6 +3,7 @@ project:
 
 website:
   title: "STA220"
+  site-url: "https://sta220.github.io/documentation/"
   navbar:
     left:
       - index.qmd
