@@ -116,7 +116,7 @@
     "href": "Lecture1.html#our-use-of-r",
     "title": "Lecture 1",
     "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
+    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   },
   {
     "objectID": "index.html",
