@@ -1,0 +1,19 @@
+---
+title: "Health data"
+---
+
+This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires.
+General information about the course is fuond on the corresponding Canvas page. 
+
+# Litterature
+
+Course books are available for GU students through the "O'Reilly Learning for Higher Education".
+[Instructions for access](https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en)
+
+[Primary course book](https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/)
+
+[Recommended books](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)
+
+# Lectures
+
+There are 

@@ -1,0 +1,96 @@
+---
+title: "Worskshop 1"
+subtitle: "R data project"
+format: html
+---
+
+## Positron
+
+-   New generation IDE for data science
+-   From Posit PBC
+-   https://posit.co/download/
+-   Free for individual use
+
+## Version control (Git)
+
+[https://git-scm.com]()
+
+-   Track changes in files
+-   Collaborate with others
+-   Git
+-   Command line interface (CLI)
+-   GUI integrated in RStudio/Positron
+-   A bit old but still relevant: [https://happygitwithr.com/]()
+
+## GitHub
+
+-   One (of several) cload services for Git (most popular) [Link](https://github.com/)
+-   Good way to share code with others
+-   But do NOT upload sensitive data!
+    -   Personal healthcare data is always sensitive!
+-   [Gitea](https://gitea.com/) - open source alternative to GitHub (get the same functionallity locally or on a server)
+
+## Clone and commit!
+
+1.  Install Positron: [https://posit.co/download/]()
+2.  Install Git: [https://git-scm.com/downloads]()
+3.  Create a GitHub account (if you do not already have one): [https://github.com]()
+4.  Open Positron
+5.  In the upper right corner press the folder button and choose "New folder from Git ..." with the URL: `https://github.com/eribul/crap` and place the folder somewhere you can find it, tick the box "Open in a new window" and press OK
+6.  In the cloned project, open the TODO file and follow the instructions there
+
+You have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo.
+
+## New project
+
+Let's make a new project from scratch!
+
+1.  Press the folder button in the upper right corner of Positron and select "New folder from template" \> R project and specify a folder name as well as a parent folder. Check the box "Create a git repository". Choose which version of R you are using but don't use "renv". Open the new project.
+2.  Create a "data" subfolder (use the "Explorer" pane from the left side bar to navigate through your files). This is a good place to store your data later.
+3.  Create an "R" folder where you can later save your R scripts.
+4.  Open the already existing .`gitignore` file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).
+5.  You should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in "data" subfolder. Simply type "data/\*" on a new line in the .gitignore and save the file.
+6.  Add some data to the data folder by exectuting `write.csv(iris, "data/iris.csv")` from the R console.
+7.  Check that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).
+8.  Open the README.md file and make some changes to that file.
+9.  Commit your changes (as you did for the previous crap repo).
+10. Press "Publish to GitHub" (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!
+11. Open the README.md file in the browser to have a look
+12. Press "edit this file" (the pencil symbol to the upper right of the file).
+13. Make some changes to the file in the online text editor and press "Commit changes ...". Write a message and click "Commit changes".
+14. Go back to Positron and look at the source control pane. Press "Sync changes".
+15. The changes you made online should now be visable locally as well.
+
+To share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now.
+
+## data.table
+
+``` r
+install.packages("data.table")
+```
+
+Read through (and replicate the examples) from the vignettes found at: <https://r-datatable.com/> (start with "Introduction to data.table")
+
+## targets
+
+::: video-wrapper
+<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
+
+``` r
+install.packages("targets")
+```
+
+-   Make your data analysis reproducible
+-   <https://docs.ropensci.org/targets/>
+-   Read through (and replicate the examples) from this book: <https://books.ropensci.org/targets/>
+
+## What's next?
+
+-   You will now have a couple of weeks to familiarize yourself with the tools we have introduced here.
+-   Take the time to read and practice to improve your skills.
+-   Clone the <https://github.com/eribul/cs1> repo and work as much as possible according to the instructions found within it.
+-   You are free to help each other and to use any resources you find useful!
+-   Try to do some work every day (it will not be easy, but it is good practice!)

@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "STA220"
+  navbar:
+    left:
+      - index.qmd
+      - Lecture1.qmd
+      - ws1.qmd
+      - Lecture2.qmd
+      - seminar_legal.qmd
+      - Lecture3.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+revealjs: 
+  theme: dark
+  transition: fade
+  slide-number: true
+  css: styles.css
+  smaller: true
+  scrollable: true

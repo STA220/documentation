@@ -1,0 +1,4 @@
+---
+title: "Seminar ethics and legal"
+format: revealjs
+---

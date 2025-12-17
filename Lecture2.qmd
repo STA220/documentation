@@ -1,0 +1,29 @@
+---
+title: "Lecture 2"
+subtitle: "Ethics and legal"
+format: revealjs
+---
+
+## Ethics
+
+- Forskningshuvudman
+
+## Swedish law
+
+### Tryckfrihetsförordningen (TF)
+
+### Offentlighets- och sekretesslagen (OSL)
+
+### Patientdatalagen (PDL)
+
+### Lag om hälsodataregister
+
+### Arkivdatalagen (ADL)
+
+## GDPR
+
+Legal grounds for processing personal data: 
+
+## Data protection
+
+## FAIR data principles

@@ -1,0 +1,158 @@
+---
+title: "Lecture 1"
+subtitle: "Introduction to health care data"
+format: revealjs
+---
+
+## Different types of data
+
+- Images
+- Lab samples
+- Unstructured medical records
+- Sensor data
+- EHRs (electronic health records)
+- **Structured medical records (tabular data)**
+
+## Usages
+
+- Research
+- Quality control/improvement
+- Administration/reporting
+- News coverage
+- Building prediction models and tools
+
+
+## Register data
+
+- Administrative registers
+- Health care registers
+- Quality registers
+- Administrative data
+  - Billing codes
+  - Claims data
+  - Registries
+  - Demographic data
+- Clinical data
+  - health care registers
+  - quality registers
+    - conditions (diabetes, cancer, etc)
+    - procedures (total hip arthroplasty)
+- Individual background data
+  - socioeconomic data
+  - education
+  - income
+  - occupation
+  - family relations
+  - migration status
+  - Mortality data
+    - date of death
+    - cause of death
+  - Hospital background data
+    - hospital characteristics
+    - staffing
+    - resources
+    - geographical area
+    - level of specialization
+    - private, public
+- aggregated data
+  - population data
+  - neighborhood characteristics
+  - pollution
+  - crime rates
+
+## Inclusion criteria
+
+- Defines the study population
+- Defines the exclusion criteria
+
+- Simple example: "Everyone who had a total hip arthroplasty in Sweden"
+  - Includes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis
+- Complicated example: [Ovarian cancer](https://cancercentrum.se/download/18.3de350c219545ea25bd2470a/1741112639724/inklusionskriterier-aggstockscancer-20140819.pdf) 
+
+## Coverage and completeness
+
+- **Institutional coverage**: proportion of all eligible units/clinics that are connected to the registry  
+  - e.g., 90% of hospitals performing the procedure are connected
+  - Should be known by the register holder
+
+- **Case coverage**: proportion of patients who should have been reported from connected units that are actually included  
+  - e.g., 85% of eligible patients registered
+  - The aim is to use 100 % but this is not always possible
+
+- **Data completeness**: proportion of required data fields that are filled in for the registered patients  
+  - e.g., 95% of patients have smoking status recorded  
+  - e.g., 80% of patients have blood pressure data available  
+
+## What is recorded?
+
+- Some registers are mandated by law and regulations
+- Quality registers often have a steering committee and register holder
+- Reseasrh initiated databases according to specific protocols
+
+
+## Data linking
+
+- Unique personal identifier
+  - Not in every country!
+- study specific id number
+- HSA
+
+## Unique personal identifier
+
+(Swedish: personnummer)
+
+> 121212-1212 [Tolvan Tolvansson](https://www.svd.se/a/164e04fe-7175-318e-b4d2-bc85530cee68/tolvansson-staller-till-problem)
+
+  - 10 (or 12) digits
+  - date of birth-4 digits
+  - assigned at birth or immigration
+  - used in all health care contacts
+  - used for all administrative data
+  - sometimes reused after death
+  - sometimes changed (uncommon)
+  - sometimes inclusion criteria for register
+  - similair in the Nordic countries
+    - Denmark: CPR number
+    - Norway: Fødselsnummer
+    - Finland: Henkilötunnus
+    - Iceland: Kennitala
+
+## Combining data 
+
+- Similar registries in different areas/regions/countries
+  - Different individuals but similar data
+- Same definitions and variables?
+- Same inclusion criteria?
+- Don't get fooled by similar names!
+
+## Working with health care data
+
+A lot to do before the statistical analysis!
+
+- Data management
+  - large datasets
+  - multiple datasets
+  - different formats
+  - missing data
+  - data cleaning
+  - data transformation
+  - data wrangling
+  - data munging
+  - data governance
+  - data engineering
+
+## R as a tool but ...
+
+- Large files often comes exported from SAS
+- csv or text files
+- API calls
+- SQL databases
+
+## Our use of R
+
+- data.table to handle large data sets
+- targets to streamline a reproducible pipeline
+- Git for version control
+- GitHub for colaboration
+- Quarto for reporting
+
