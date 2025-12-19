@@ -134,12 +134,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">LE1: Intro</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./ws1.html" aria-current="page"> 
-<span class="menu-text">WS1</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./Lecture2.html"> 
 <span class="menu-text">LE2. Legal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./ws1.html" aria-current="page"> 
+<span class="menu-text">WS1</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./seminar_legal.html"> 
@@ -148,6 +148,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="./Lecture3.html"> 
 <span class="menu-text">LE3</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Lecture4.html"> 
+<span class="menu-text">LE4</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -165,10 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#positron" id="toc-positron" class="nav-link active" data-scroll-target="#positron">Positron</a></li>
-  <li><a href="#version-control-git" id="toc-version-control-git" class="nav-link" data-scroll-target="#version-control-git">Version control (Git)</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">GitHub</a></li>
-  <li><a href="#clone-and-commit" id="toc-clone-and-commit" class="nav-link" data-scroll-target="#clone-and-commit">Clone and commit!</a></li>
+  <li><a href="#preparations" id="toc-preparations" class="nav-link active" data-scroll-target="#preparations">Preparations</a></li>
   <li><a href="#new-project" id="toc-new-project" class="nav-link" data-scroll-target="#new-project">New project</a></li>
   <li><a href="#contribute-to-an-r-package" id="toc-contribute-to-an-r-package" class="nav-link" data-scroll-target="#contribute-to-an-r-package">Contribute to an R package</a></li>
   <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">data.table</a></li>
@@ -183,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">WS1</h1>
-<p class="subtitle lead">R data project</p>
+<p class="subtitle lead">Tooling: Positron, Git, GitHub, data.table, targets</p>
 </div>
 
 
@@ -200,48 +201,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="positron" class="level2">
-<h2 class="anchored" data-anchor-id="positron">Positron</h2>
-<ul>
-<li>New generation IDE for data science</li>
-<li>From Posit PBC</li>
-<li>https://posit.co/download/</li>
-<li>Free for individual use</li>
-</ul>
-</section>
-<section id="version-control-git" class="level2">
-<h2 class="anchored" data-anchor-id="version-control-git">Version control (Git)</h2>
-<p><a href="">https://git-scm.com</a></p>
-<ul>
-<li>Track changes in files</li>
-<li>Collaborate with others</li>
-<li>Git</li>
-<li>Command line interface (CLI)</li>
-<li>GUI integrated in RStudio/Positron</li>
-<li>A bit old but still relevant: <a href="">https://happygitwithr.com/</a></li>
-</ul>
-</section>
-<section id="github" class="level2">
-<h2 class="anchored" data-anchor-id="github">GitHub</h2>
-<ul>
-<li>One (of several) cload services for Git (most popular) <a href="https://github.com/">Link</a></li>
-<li>Good way to share code with others</li>
-<li>But do NOT upload sensitive data!
-<ul>
-<li>Personal healthcare data is always sensitive!</li>
-</ul></li>
-<li><a href="https://gitea.com/">Gitea</a> - open source alternative to GitHub (get the same functionallity locally or on a server)</li>
-</ul>
-</section>
-<section id="clone-and-commit" class="level2">
-<h2 class="anchored" data-anchor-id="clone-and-commit">Clone and commit!</h2>
+<section id="preparations" class="level2">
+<h2 class="anchored" data-anchor-id="preparations">Preparations</h2>
+<p>If you have not already done so, please install the following software on your computer:</p>
 <ol type="1">
-<li>Install Positron: <a href="">https://posit.co/download/</a></li>
-<li>Install Git: <a href="">https://git-scm.com/downloads</a></li>
-<li>Create a GitHub account (if you do not already have one): <a href="">https://github.com</a></li>
-<li>Open Positron</li>
-<li>In the upper right corner press the folder button and choose “New folder from Git …” with the URL: <code>https://github.com/eribul/crap</code> and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK</li>
-<li>In the cloned project, open the TODO file and follow the instructions there</li>
+<li><p>Install Positron: <a href="">https://posit.co/download/</a></p></li>
+<li><p>Install Git: <a href="">https://git-scm.com/downloads</a></p></li>
+<li><p>Create a GitHub account (if you do not already have one): <a href="">https://github.com</a></p></li>
+<li><p>Open Positron</p></li>
+<li><p>In the upper right corner press the folder button and choose “New folder from Git …” with the URL: <code>https://github.com/eribul/crap</code> and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK</p></li>
+<li><p>In the cloned project, open the TODO file and follow the instructions there</p></li>
 </ol>
 <p>You have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo.</p>
 </section>
@@ -265,9 +234,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Go back to Positron and look at the source control pane. Press “Sync changes”.</li>
 <li>The changes you made online should now be visable locally as well.</li>
 <li>Go back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete. For example to write a poem in the README.md file or to add some R functions in a script.</li>
-<li>In Positron: Do what way previously described in the issue.</li>
+<li>In Positron: Perform the task you previosly gave yourself through the issue tracker.</li>
 <li>Commit changes and in the commit message, write “Fix #N” where N is the number of the issue you were working on (probably no 1, hence “Fix #1”). Sync the local repo with GitHub.</li>
-<li>Have a new look at the issue and check if it was updated/slosed automatically by your commit.</li>
+<li>Have a new look at the issue and check if it was updated/closed automatically by your commit.</li>
 </ol>
 <p>To share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now.</p>
 </section>
@@ -292,10 +261,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="targets" class="level2">
 <h2 class="anchored" data-anchor-id="targets">targets</h2>
-<div class="video-wrapper">
-<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
-</iframe>
-</div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"targets"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Make your data analysis reproducible</li>

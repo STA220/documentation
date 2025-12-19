@@ -1,5 +1,516 @@
 [
   {
+    "objectID": "Lecture4.html#not-a-single-r-script",
+    "href": "Lecture4.html#not-a-single-r-script",
+    "title": "LE4",
+    "section": "Not a single R script",
+    "text": "Not a single R script\n\nReal projects are more complex than a single R script!\nMultiple scripts\nData files\nDocumentation\nReports\nVersion control\nReproducible workflows"
+  },
+  {
+    "objectID": "Lecture4.html#project-structure",
+    "href": "Lecture4.html#project-structure",
+    "title": "LE4",
+    "section": "Project structure",
+    "text": "Project structure\nCommon file structures\n\nHelp you organize your thoughts\nHelp others to collaborate\nsimplifies paths used in your code"
+  },
+  {
+    "objectID": "Lecture4.html#example-structure",
+    "href": "Lecture4.html#example-structure",
+    "title": "LE4",
+    "section": "Example structure",
+    "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── reports/\n  └── _targets.R       - targets pipeline script"
+  },
+  {
+    "objectID": "Lecture4.html#readme.md",
+    "href": "Lecture4.html#readme.md",
+    "title": "LE4",
+    "section": "README.md",
+    "text": "README.md\n\nDocument the purpose of the project\nWhat is it about?\nWhat is the aim?\nWho to contact for questions?\nIn what circumstances was it created?\n\nMarkdown format (simple text with some possible formatting)"
+  },
+  {
+    "objectID": "Lecture4.html#data-folder",
+    "href": "Lecture4.html#data-folder",
+    "title": "LE4",
+    "section": "data folder",
+    "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc\nsome files might be very big (gigabytes not uncommon)"
+  },
+  {
+    "objectID": "Lecture4.html#r-folder",
+    "href": "Lecture4.html#r-folder",
+    "title": "LE4",
+    "section": "R folder",
+    "text": "R folder\n\nStore your R functions here\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts\nEasier to test and debug code\nEasier to share code between projects"
+  },
+  {
+    "objectID": "Lecture4.html#reports-folder",
+    "href": "Lecture4.html#reports-folder",
+    "title": "LE4",
+    "section": "reports folder",
+    "text": "reports folder\n\nStore your reports here\nQuarto documents\nDocumemnt your analysis\nInclude figures and tables\nShare with external collaborators"
+  },
+  {
+    "objectID": "Lecture4.html#targets.r-file",
+    "href": "Lecture4.html#targets.r-file",
+    "title": "LE4",
+    "section": "_targets.R file",
+    "text": "_targets.R file\nUse the targets package to create a reproducible data analysis pipeline"
+  },
+  {
+    "objectID": "Lecture4.html#pipeline",
+    "href": "Lecture4.html#pipeline",
+    "title": "LE4",
+    "section": "Pipeline",
+    "text": "Pipeline\n\nDefine steps in your analysis as targets\nDefine dependencies between targets\nAutomatically track changes and rerun only necessary parts"
+  },
+  {
+    "objectID": "Lecture4.html#why",
+    "href": "Lecture4.html#why",
+    "title": "LE4",
+    "section": "Why?",
+    "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
+  },
+  {
+    "objectID": "Lecture4.html#reading",
+    "href": "Lecture4.html#reading",
+    "title": "LE4",
+    "section": "Reading",
+    "text": "Reading\n\nA bit old but still relevant: https://happygitwithr.com/\nTargets overview\nTarget manual"
+  },
+  {
+    "objectID": "Lecture3.html#general-purpose-programming-languages",
+    "href": "Lecture3.html#general-purpose-programming-languages",
+    "title": "LE3",
+    "section": "General-Purpose Programming Languages",
+    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as subroutines in modern statistical software!\n\nALGOL / ALGOL 60\n\nUsed mainly in academic environments\n\nPL/I\n\nUsed in some government and industrial contexts\n\n\n📌 These languages required substantial programming expertise."
+  },
+  {
+    "objectID": "Lecture3.html#early-statistical-packages",
+    "href": "Lecture3.html#early-statistical-packages",
+    "title": "LE3",
+    "section": "Early Statistical Packages",
+    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nDeveloped at UCLA\nCommon in medical statistics\nBio-Medical Data Package\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
+  },
+  {
+    "objectID": "Lecture3.html#sas-a-transitional-system",
+    "href": "Lecture3.html#sas-a-transitional-system",
+    "title": "LE3",
+    "section": "SAS: A Transitional System",
+    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry and clinical trials\n\n📌 SAS predates S but influenced later statistical workflows."
+  },
+  {
+    "objectID": "Lecture3.html#limitations-of-pre-s-systems",
+    "href": "Lecture3.html#limitations-of-pre-s-systems",
+    "title": "LE3",
+    "section": "Limitations of Pre-S Systems",
+    "text": "Limitations of Pre-S Systems\nCommon limitations included:\n\nBatch processing rather than interactivity\nSeparation of data management and analysis\nLimited graphics capabilities\nHigh barriers to exploratory data analysis"
+  },
+  {
+    "objectID": "Lecture3.html#s",
+    "href": "Lecture3.html#s",
+    "title": "LE3",
+    "section": "S",
+    "text": "S\n\nS takes form at Bell Laboratories (interactive statistical computing).\nJohn Chambers leads the effort.\n1976: first working version of S runs on GCOS\n1979: S2 is ported to UNIX; UNIX becomes the primary platform\n1980: S is first distributed outside Bell Labs\n1981: source versions are made available\n1984: key S books published (often called the “Brown Book” era)"
+  },
+  {
+    "objectID": "Lecture3.html#the-new-s-language",
+    "href": "Lecture3.html#the-new-s-language",
+    "title": "LE3",
+    "section": "The New S Language",
+    "text": "The New S Language\n\n1988: “New S” is released (major language redesign)\n1988: S-PLUS is first released as a commercial implementation of S\n1991: Statistical Models in S (“White Book”) popularizes formula notation (the ~ operator), data frames, and modeling workflows"
+  },
+  {
+    "objectID": "Lecture3.html#r",
+    "href": "Lecture3.html#r",
+    "title": "LE3",
+    "section": "R",
+    "text": "R\n\n1993: first versions of R are published (Auckland; Ross Ihaka & Robert Gentleman)\n1995: R becomes open source (GPL)\n1997: the R Core group forms; CRAN is founded (Kurt Hornik)\n2000: R 1.0.0 is released 2000-02-29"
+  },
+  {
+    "objectID": "Lecture3.html#rstudio-brings-an-ide-to-the-r-community",
+    "href": "Lecture3.html#rstudio-brings-an-ide-to-the-r-community",
+    "title": "LE3",
+    "section": "RStudio brings an IDE to the R community",
+    "text": "RStudio brings an IDE to the R community\n\n2009: RStudio (the company) is founded\n2011: RStudio IDE is introduced as an open-source IDE for R (desktop + server)"
+  },
+  {
+    "objectID": "Lecture3.html#microsoft-revolution-analytics",
+    "href": "Lecture3.html#microsoft-revolution-analytics",
+    "title": "LE3",
+    "section": "Microsoft (Revolution Analytics)",
+    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server\nJuly 1, 2023: Microsoft era over"
+  },
+  {
+    "objectID": "Lecture3.html#rstudio-becomes-posit",
+    "href": "Lecture3.html#rstudio-becomes-posit",
+    "title": "LE3",
+    "section": "RStudio becomes Posit",
+    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)"
+  },
+  {
+    "objectID": "Lecture3.html#positron",
+    "href": "Lecture3.html#positron",
+    "title": "LE3",
+    "section": "Positron",
+    "text": "Positron\n\nNew generation IDE for data science\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
+  },
+  {
+    "objectID": "Lecture3.html#quick-tour",
+    "href": "Lecture3.html#quick-tour",
+    "title": "LE3",
+    "section": "Quick tour",
+    "text": "Quick tour\n\n\n\n\n\n\n\n\nPositron assistant (mentioned in the video)\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!"
+  },
+  {
+    "objectID": "Lecture3.html#before-version-control-systems",
+    "href": "Lecture3.html#before-version-control-systems",
+    "title": "LE3",
+    "section": "Before Version Control Systems",
+    "text": "Before Version Control Systems\n1950s–1970s: Early software development relied on:\n\nManual file naming:\n\nanalysis_final.f\nanalysis_final_v2.f\n\nPhysical media:\n\nPunch cards\nMagnetic tape\n\nCentralised mainframes\n\n📌 No automated tracking of changes."
+  },
+  {
+    "objectID": "Lecture3.html#floppy-discs-mail-and-shared-directories",
+    "href": "Lecture3.html#floppy-discs-mail-and-shared-directories",
+    "title": "LE3",
+    "section": "Floppy discs, Mail, and Shared Directories",
+    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
+  },
+  {
+    "objectID": "Lecture3.html#early-version-control-systems",
+    "href": "Lecture3.html#early-version-control-systems",
+    "title": "LE3",
+    "section": "Early Version Control Systems",
+    "text": "Early Version Control Systems\n1980s: First-generation tools focused on single files:\n\nSCCS (Source Code Control System, 1972)\nRCS (Revision Control System, 1982)\n\nCharacteristics:\n\nVersioning per file\nLinear history\nCentral storage"
+  },
+  {
+    "objectID": "Lecture3.html#centralised-version-control",
+    "href": "Lecture3.html#centralised-version-control",
+    "title": "LE3",
+    "section": "Centralised Version Control",
+    "text": "Centralised Version Control\n1990s: Project-level systems emerge:\n\nCVS (Concurrent Versions System)\nSubversion (SVN)\n\nKey features:\n\nCentral repository\nMultiple users\nCheck-in / check-out model\n\n📌 Still required constant access to the central server."
+  },
+  {
+    "objectID": "Lecture3.html#limitations-of-centralised-systems",
+    "href": "Lecture3.html#limitations-of-centralised-systems",
+    "title": "LE3",
+    "section": "Limitations of Centralised Systems",
+    "text": "Limitations of Centralised Systems\nCommon problems:\n\nSingle point of failure\nPoor support for branching and merging\nDifficult offline work\nSlow operations on large repositories\n\nThese limitations became critical for large projects."
+  },
+  {
+    "objectID": "Lecture3.html#git",
+    "href": "Lecture3.html#git",
+    "title": "LE3",
+    "section": "Git",
+    "text": "Git\n\nGit is created by Linus Torvalds in 2005\nOriginal motivation:\n\nSupport Linux kernel development\nReplace proprietary tools\n\n\nDesign principles:\n\nDistributed architecture\nFast local operations\nStrong support for branching and merging"
+  },
+  {
+    "objectID": "Lecture3.html#distributed-version-control-with-git",
+    "href": "Lecture3.html#distributed-version-control-with-git",
+    "title": "LE3",
+    "section": "Distributed Version Control with Git",
+    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
+  },
+  {
+    "objectID": "Lecture3.html#hosting-platforms",
+    "href": "Lecture3.html#hosting-platforms",
+    "title": "LE3",
+    "section": "Hosting Platforms",
+    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests\nIssue tracking\nCode review\nCI/CD integration"
+  },
+  {
+    "objectID": "Lecture3.html#version-control-today",
+    "href": "Lecture3.html#version-control-today",
+    "title": "LE3",
+    "section": "Version Control Today",
+    "text": "Version Control Today\nModern usage includes:\n\nCode\nDocumentation\nData analysis (scripts, notebooks)\nConfiguration and infrastructure\n\nGit is integrated into:\n\nIDEs (VS Code, Positron)\nCI/CD pipelines\nCloud platforms"
+  },
+  {
+    "objectID": "Lecture3.html#version-control-beyond-code",
+    "href": "Lecture3.html#version-control-beyond-code",
+    "title": "LE3",
+    "section": "Version Control Beyond Code",
+    "text": "Version Control Beyond Code\nToday, version control supports:\n\nReproducible research\nCollaborative writing\nData science workflows\nTeaching and learning\n\n📌 Version control is now a core professional skill."
+  },
+  {
+    "objectID": "Lecture3.html#warning",
+    "href": "Lecture3.html#warning",
+    "title": "LE3",
+    "section": "WARNING!",
+    "text": "WARNING!\n\nNot everything should be shared!\nScripts and documentation yes!\nBut Health data is sensitive!\n\nDo not share it!\nAvoid unintentional sharing!\nPrivate repositories are still shared with hosting provider!\n\nAvoid explicit file paths and sensitive info in scripts!\nCan give information about data location and internal structure!\nNo hard-coded passwords or API keys!"
+  },
+  {
+    "objectID": "Lecture3.html#git-basics",
+    "href": "Lecture3.html#git-basics",
+    "title": "LE3",
+    "section": "Git basics",
+    "text": "Git basics\n(After installing the Git software)\n\nCollect all files related to a project in a folder\nInitialize a git repository in that folder\nMake changes to files\nStage changes for commit\nCommit changes with a message\nPossibly push commits to remote repository\n\ncd path/to/your/project\ngit init\ngit status\n# make changes to files\ngit add filename1 filename2\ngit commit -m \"Descriptive message about changes\"\ngit remote add origin"
+  },
+  {
+    "objectID": "Lecture3.html#video-tutorials",
+    "href": "Lecture3.html#video-tutorials",
+    "title": "LE3",
+    "section": "Video tutorials",
+    "text": "Video tutorials\nThe video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here."
+  },
+  {
+    "objectID": "Lecture3.html#inspirational-video",
+    "href": "Lecture3.html#inspirational-video",
+    "title": "LE3",
+    "section": "Inspirational video",
+    "text": "Inspirational video\nWatch this video even though some parts might be overwhelming. It gives a good overview of the current state (2025), even though many things will be too advanced for this course (it is not specifically aimed for statisticians or R users).\n\n\n\n\n\n\n\n\n.gitignore\n\n\nThe .gitignore file is very important in settings with health data! Pay close attention to this section of the video!"
+  },
+  {
+    "objectID": "Lecture3.html#git-in-positron",
+    "href": "Lecture3.html#git-in-positron",
+    "title": "LE3",
+    "section": "Git in Positron",
+    "text": "Git in Positron\n\nRemember that Positron is build on Code OSS (which shares a lot of features with VS Code).\nBranching and merging is possible but we will not cover that here.\n\nShort official introduction from Microsoft:\n\n\nMore detailed introductions. Watch both! The first one is based on a Windows version of VS code and the second on Mac but the concepts are the same:\n\n\n\n\n\n\n\n\n\n\nOverwhelmed?\n\n\nThis video includes some parts which might be overwhelming if you are new to Git and GitHub. Don’t worry! You don’t need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice."
+  },
+  {
+    "objectID": "Lecture3.html#not-a-single-r-script",
+    "href": "Lecture3.html#not-a-single-r-script",
+    "title": "LE3",
+    "section": "Not a single R script",
+    "text": "Not a single R script\n\nReal projects are more complex than a single R script!\nMultiple scripts\nData files\nDocumentation\nReports\nVersion control\nReproducible workflows"
+  },
+  {
+    "objectID": "Lecture3.html#project-structure",
+    "href": "Lecture3.html#project-structure",
+    "title": "LE3",
+    "section": "Project structure",
+    "text": "Project structure\nCommon file structures\n\nHelp you organize your thoughts\nHelp others to collaborate\nsimplifies paths used in your code"
+  },
+  {
+    "objectID": "Lecture3.html#example-structure",
+    "href": "Lecture3.html#example-structure",
+    "title": "LE3",
+    "section": "Example structure",
+    "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── reports/\n  └── _targets.R       - targets pipeline script"
+  },
+  {
+    "objectID": "Lecture3.html#readme.md",
+    "href": "Lecture3.html#readme.md",
+    "title": "LE3",
+    "section": "README.md",
+    "text": "README.md\n\nDocument the purpose of the project\nWhat is it about?\nWhat is the aim?\nWho to contact for questions?\nIn what circumstances was it created?\n\nMarkdown format (simple text with some possible formatting)"
+  },
+  {
+    "objectID": "Lecture3.html#data-folder",
+    "href": "Lecture3.html#data-folder",
+    "title": "LE3",
+    "section": "data folder",
+    "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc\nsome files might be very big (gigabytes not uncommon)"
+  },
+  {
+    "objectID": "Lecture3.html#r-folder",
+    "href": "Lecture3.html#r-folder",
+    "title": "LE3",
+    "section": "R folder",
+    "text": "R folder\n\nStore your R functions here\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts\nEasier to test and debug code\nEasier to share code between projects"
+  },
+  {
+    "objectID": "Lecture3.html#reports-folder",
+    "href": "Lecture3.html#reports-folder",
+    "title": "LE3",
+    "section": "reports folder",
+    "text": "reports folder\n\nStore your reports here\nQuarto documents\nDocumemnt your analysis\nInclude figures and tables\nShare with external collaborators"
+  },
+  {
+    "objectID": "Lecture3.html#targets.r-file",
+    "href": "Lecture3.html#targets.r-file",
+    "title": "LE3",
+    "section": "_targets.R file",
+    "text": "_targets.R file\nUse the targets package to create a reproducible data analysis pipeline"
+  },
+  {
+    "objectID": "Lecture3.html#pipeline",
+    "href": "Lecture3.html#pipeline",
+    "title": "LE3",
+    "section": "Pipeline",
+    "text": "Pipeline\n\nDefine steps in your analysis as targets\nDefine dependencies between targets\nAutomatically track changes and rerun only necessary parts"
+  },
+  {
+    "objectID": "Lecture3.html#why",
+    "href": "Lecture3.html#why",
+    "title": "LE3",
+    "section": "Why?",
+    "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
+  },
+  {
+    "objectID": "Lecture3.html#reading",
+    "href": "Lecture3.html#reading",
+    "title": "LE3",
+    "section": "Reading",
+    "text": "Reading\n\nA bit old but still relevant: https://happygitwithr.com/\nTargets overview\nTarget manual"
+  },
+  {
+    "objectID": "ws1.html",
+    "href": "ws1.html",
+    "title": "WS1",
+    "section": "",
+    "text": "If you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
+  },
+  {
+    "objectID": "ws1.html#preparations",
+    "href": "ws1.html#preparations",
+    "title": "WS1",
+    "section": "",
+    "text": "If you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
+  },
+  {
+    "objectID": "ws1.html#new-project",
+    "href": "ws1.html#new-project",
+    "title": "WS1",
+    "section": "New project",
+    "text": "New project\nLet’s make a new project from scratch!\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.\nAdd some data to the data folder by exectuting write.csv(iris, \"data/iris.csv\") from the R console.\nCheck that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file.\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\nGo back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete. For example to write a poem in the README.md file or to add some R functions in a script.\nIn Positron: Perform the task you previosly gave yourself through the issue tracker.\nCommit changes and in the commit message, write “Fix #N” where N is the number of the issue you were working on (probably no 1, hence “Fix #1”). Sync the local repo with GitHub.\nHave a new look at the issue and check if it was updated/closed automatically by your commit.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
+  },
+  {
+    "objectID": "ws1.html#contribute-to-an-r-package",
+    "href": "ws1.html#contribute-to-an-r-package",
+    "title": "WS1",
+    "section": "Contribute to an R package",
+    "text": "Contribute to an R package\nROpenSci is an open community of R developers. Help them according to their instructions here: https://contributing.ropensci.org/resources.html#issues\n\nRead the instructions above.\nLook for an open issue (start with the “good first issue” or “documentation” issue lists)\nRead everything that is written/discussed in your issue of choice and try to understand the problem/task.\nWhen you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.\nTry to fix the issue! Note that this can be (VERY) difficult and you don’t have to actually fix it if it seems impossible. But give it a try!\nSubmit your changes locally with an informative message and a reference to “#N” (where N is the issue number). Do this regardless if you fixed the issue or not.\nIf you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).\nIf you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (click on the smiley at the end of a comment you agree with and chose a relevant emoji)."
+  },
+  {
+    "objectID": "ws1.html#data.table",
+    "href": "ws1.html#data.table",
+    "title": "WS1",
+    "section": "data.table",
+    "text": "data.table\ninstall.packages(\"data.table\")\nRead through (and replicate the examples) from the vignettes found at: https://r-datatable.com/ (start with “Introduction to data.table”)"
+  },
+  {
+    "objectID": "ws1.html#targets",
+    "href": "ws1.html#targets",
+    "title": "WS1",
+    "section": "targets",
+    "text": "targets\ninstall.packages(\"targets\")\n\nMake your data analysis reproducible\nhttps://docs.ropensci.org/targets/\nRead through (and replicate the examples) from this book: https://books.ropensci.org/targets/"
+  },
+  {
+    "objectID": "ws1.html#whats-next",
+    "href": "ws1.html#whats-next",
+    "title": "WS1",
+    "section": "What’s next?",
+    "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nClone the https://github.com/eribul/cs1 repo and work as much as possible according to the instructions found within it.\nYou are free to help each other and to use any resources you find useful!\nTry to do some work every day (it will not be easy, but it is good practice!)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
+    "section": "",
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
+  },
+  {
+    "objectID": "index.html#positron-extensions",
+    "href": "index.html#positron-extensions",
+    "title": "Health data",
+    "section": "Positron extensions",
+    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
+  },
+  {
+    "objectID": "Lecture1.html#important-aspects",
+    "href": "Lecture1.html#important-aspects",
+    "title": "LE1: Intro",
+    "section": "Important aspects",
+    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
+  },
+  {
+    "objectID": "Lecture1.html#structure",
+    "href": "Lecture1.html#structure",
+    "title": "LE1: Intro",
+    "section": "Structure",
+    "text": "Structure\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
+  },
+  {
+    "objectID": "Lecture1.html#different-types-of-data",
+    "href": "Lecture1.html#different-types-of-data",
+    "title": "LE1: Intro",
+    "section": "Different types of data",
+    "text": "Different types of data\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
+  },
+  {
+    "objectID": "Lecture1.html#usages",
+    "href": "Lecture1.html#usages",
+    "title": "LE1: Intro",
+    "section": "Usages",
+    "text": "Usages\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
+  },
+  {
+    "objectID": "Lecture1.html#register-data",
+    "href": "Lecture1.html#register-data",
+    "title": "LE1: Intro",
+    "section": "Register data",
+    "text": "Register data\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
+  },
+  {
+    "objectID": "Lecture1.html#inclusion-criteria",
+    "href": "Lecture1.html#inclusion-criteria",
+    "title": "LE1: Intro",
+    "section": "Inclusion criteria",
+    "text": "Inclusion criteria\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
+  },
+  {
+    "objectID": "Lecture1.html#coverage-and-completeness",
+    "href": "Lecture1.html#coverage-and-completeness",
+    "title": "LE1: Intro",
+    "section": "Coverage and completeness",
+    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
+  },
+  {
+    "objectID": "Lecture1.html#what-is-recorded",
+    "href": "Lecture1.html#what-is-recorded",
+    "title": "LE1: Intro",
+    "section": "What is recorded?",
+    "text": "What is recorded?\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
+  },
+  {
+    "objectID": "Lecture1.html#data-linking",
+    "href": "Lecture1.html#data-linking",
+    "title": "LE1: Intro",
+    "section": "Data linking",
+    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
+  },
+  {
+    "objectID": "Lecture1.html#unique-personal-identifier",
+    "href": "Lecture1.html#unique-personal-identifier",
+    "title": "LE1: Intro",
+    "section": "Unique personal identifier",
+    "text": "Unique personal identifier\n(Swedish: personnummer, reading: (Ludvigsson et al. 2009))\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
+  },
+  {
+    "objectID": "Lecture1.html#combining-data",
+    "href": "Lecture1.html#combining-data",
+    "title": "LE1: Intro",
+    "section": "Combining data",
+    "text": "Combining data\n\nSimilar registries in different areas/regions/countries\n\nDifferent individuals but similar data\n\nSame definitions and variables?\nSame inclusion criteria?\nDon’t get fooled by similar names!"
+  },
+  {
+    "objectID": "Lecture1.html#working-with-health-care-data",
+    "href": "Lecture1.html#working-with-health-care-data",
+    "title": "LE1: Intro",
+    "section": "Working with health care data",
+    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
+  },
+  {
+    "objectID": "Lecture1.html#r-as-a-tool-but",
+    "href": "Lecture1.html#r-as-a-tool-but",
+    "title": "LE1: Intro",
+    "section": "R as a tool but …",
+    "text": "R as a tool but …\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
+  },
+  {
+    "objectID": "Lecture1.html#our-use-of-r",
+    "href": "Lecture1.html#our-use-of-r",
+    "title": "LE1: Intro",
+    "section": "Our use of R",
+    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
+  },
+  {
+    "objectID": "Lecture1.html#reading-list",
+    "href": "Lecture1.html#reading-list",
+    "title": "LE1: Intro",
+    "section": "Reading list",
+    "text": "Reading list\n\nChapter 1 from (Nguyen 2022)\n\n\n\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+  },
+  {
     "objectID": "Lecture2.html#swedish-law",
     "href": "Lecture2.html#swedish-law",
     "title": "LE2. Legal",
@@ -189,199 +700,17 @@
     "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority"
   },
   {
+    "objectID": "Lecture2.html#international-laws",
+    "href": "Lecture2.html#international-laws",
+    "title": "LE2. Legal",
+    "section": "International laws",
+    "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
+  },
+  {
     "objectID": "Lecture2.html#reading",
     "href": "Lecture2.html#reading",
     "title": "LE2. Legal",
     "section": "Reading",
     "text": "Reading\nPublic access and secrecy"
-  },
-  {
-    "objectID": "Lecture1.html#important-aspects",
-    "href": "Lecture1.html#important-aspects",
-    "title": "LE1: Intro",
-    "section": "Important aspects",
-    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
-  },
-  {
-    "objectID": "Lecture1.html#structure",
-    "href": "Lecture1.html#structure",
-    "title": "LE1: Intro",
-    "section": "Structure",
-    "text": "Structure\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
-  },
-  {
-    "objectID": "Lecture1.html#different-types-of-data",
-    "href": "Lecture1.html#different-types-of-data",
-    "title": "LE1: Intro",
-    "section": "Different types of data",
-    "text": "Different types of data\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
-  },
-  {
-    "objectID": "Lecture1.html#usages",
-    "href": "Lecture1.html#usages",
-    "title": "LE1: Intro",
-    "section": "Usages",
-    "text": "Usages\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
-  },
-  {
-    "objectID": "Lecture1.html#register-data",
-    "href": "Lecture1.html#register-data",
-    "title": "LE1: Intro",
-    "section": "Register data",
-    "text": "Register data\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
-  },
-  {
-    "objectID": "Lecture1.html#inclusion-criteria",
-    "href": "Lecture1.html#inclusion-criteria",
-    "title": "LE1: Intro",
-    "section": "Inclusion criteria",
-    "text": "Inclusion criteria\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
-  },
-  {
-    "objectID": "Lecture1.html#coverage-and-completeness",
-    "href": "Lecture1.html#coverage-and-completeness",
-    "title": "LE1: Intro",
-    "section": "Coverage and completeness",
-    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
-  },
-  {
-    "objectID": "Lecture1.html#what-is-recorded",
-    "href": "Lecture1.html#what-is-recorded",
-    "title": "LE1: Intro",
-    "section": "What is recorded?",
-    "text": "What is recorded?\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
-  },
-  {
-    "objectID": "Lecture1.html#data-linking",
-    "href": "Lecture1.html#data-linking",
-    "title": "LE1: Intro",
-    "section": "Data linking",
-    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
-  },
-  {
-    "objectID": "Lecture1.html#unique-personal-identifier",
-    "href": "Lecture1.html#unique-personal-identifier",
-    "title": "LE1: Intro",
-    "section": "Unique personal identifier",
-    "text": "Unique personal identifier\n(Swedish: personnummer, reading: (Ludvigsson et al. 2009))\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
-  },
-  {
-    "objectID": "Lecture1.html#combining-data",
-    "href": "Lecture1.html#combining-data",
-    "title": "LE1: Intro",
-    "section": "Combining data",
-    "text": "Combining data\n\nSimilar registries in different areas/regions/countries\n\nDifferent individuals but similar data\n\nSame definitions and variables?\nSame inclusion criteria?\nDon’t get fooled by similar names!"
-  },
-  {
-    "objectID": "Lecture1.html#working-with-health-care-data",
-    "href": "Lecture1.html#working-with-health-care-data",
-    "title": "LE1: Intro",
-    "section": "Working with health care data",
-    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
-  },
-  {
-    "objectID": "Lecture1.html#r-as-a-tool-but",
-    "href": "Lecture1.html#r-as-a-tool-but",
-    "title": "LE1: Intro",
-    "section": "R as a tool but …",
-    "text": "R as a tool but …\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
-  },
-  {
-    "objectID": "Lecture1.html#our-use-of-r",
-    "href": "Lecture1.html#our-use-of-r",
-    "title": "LE1: Intro",
-    "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
-  },
-  {
-    "objectID": "Lecture1.html#reading-list",
-    "href": "Lecture1.html#reading-list",
-    "title": "LE1: Intro",
-    "section": "Reading list",
-    "text": "Reading list\n\nChapter 1 from (Nguyen 2022)\n\n\n\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
-    "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
-  },
-  {
-    "objectID": "index.html#positron-extensions",
-    "href": "index.html#positron-extensions",
-    "title": "Health data",
-    "section": "Positron extensions",
-    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
-  },
-  {
-    "objectID": "ws1.html",
-    "href": "ws1.html",
-    "title": "WS1",
-    "section": "",
-    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
-  },
-  {
-    "objectID": "ws1.html#positron",
-    "href": "ws1.html#positron",
-    "title": "WS1",
-    "section": "",
-    "text": "New generation IDE for data science\nFrom Posit PBC\nhttps://posit.co/download/\nFree for individual use"
-  },
-  {
-    "objectID": "ws1.html#version-control-git",
-    "href": "ws1.html#version-control-git",
-    "title": "WS1",
-    "section": "Version control (Git)",
-    "text": "Version control (Git)\nhttps://git-scm.com\n\nTrack changes in files\nCollaborate with others\nGit\nCommand line interface (CLI)\nGUI integrated in RStudio/Positron\nA bit old but still relevant: https://happygitwithr.com/"
-  },
-  {
-    "objectID": "ws1.html#github",
-    "href": "ws1.html#github",
-    "title": "WS1",
-    "section": "GitHub",
-    "text": "GitHub\n\nOne (of several) cload services for Git (most popular) Link\nGood way to share code with others\nBut do NOT upload sensitive data!\n\nPersonal healthcare data is always sensitive!\n\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)"
-  },
-  {
-    "objectID": "ws1.html#clone-and-commit",
-    "href": "ws1.html#clone-and-commit",
-    "title": "WS1",
-    "section": "Clone and commit!",
-    "text": "Clone and commit!\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/eribul/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
-  },
-  {
-    "objectID": "ws1.html#new-project",
-    "href": "ws1.html#new-project",
-    "title": "WS1",
-    "section": "New project",
-    "text": "New project\nLet’s make a new project from scratch!\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.\nAdd some data to the data folder by exectuting write.csv(iris, \"data/iris.csv\") from the R console.\nCheck that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file.\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\nGo back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete. For example to write a poem in the README.md file or to add some R functions in a script.\nIn Positron: Do what way previously described in the issue.\nCommit changes and in the commit message, write “Fix #N” where N is the number of the issue you were working on (probably no 1, hence “Fix #1”). Sync the local repo with GitHub.\nHave a new look at the issue and check if it was updated/slosed automatically by your commit.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
-  },
-  {
-    "objectID": "ws1.html#contribute-to-an-r-package",
-    "href": "ws1.html#contribute-to-an-r-package",
-    "title": "WS1",
-    "section": "Contribute to an R package",
-    "text": "Contribute to an R package\nROpenSci is an open community of R developers. Help them according to their instructions here: https://contributing.ropensci.org/resources.html#issues\n\nRead the instructions above.\nLook for an open issue (start with the “good first issue” or “documentation” issue lists)\nRead everything that is written/discussed in your issue of choice and try to understand the problem/task.\nWhen you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.\nTry to fix the issue! Note that this can be (VERY) difficult and you don’t have to actually fix it if it seems impossible. But give it a try!\nSubmit your changes locally with an informative message and a reference to “#N” (where N is the issue number). Do this regardless if you fixed the issue or not.\nIf you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).\nIf you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (click on the smiley at the end of a comment you agree with and chose a relevant emoji)."
-  },
-  {
-    "objectID": "ws1.html#data.table",
-    "href": "ws1.html#data.table",
-    "title": "WS1",
-    "section": "data.table",
-    "text": "data.table\ninstall.packages(\"data.table\")\nRead through (and replicate the examples) from the vignettes found at: https://r-datatable.com/ (start with “Introduction to data.table”)"
-  },
-  {
-    "objectID": "ws1.html#targets",
-    "href": "ws1.html#targets",
-    "title": "WS1",
-    "section": "targets",
-    "text": "targets\n\n\n\n\ninstall.packages(\"targets\")\n\nMake your data analysis reproducible\nhttps://docs.ropensci.org/targets/\nRead through (and replicate the examples) from this book: https://books.ropensci.org/targets/"
-  },
-  {
-    "objectID": "ws1.html#whats-next",
-    "href": "ws1.html#whats-next",
-    "title": "WS1",
-    "section": "What’s next?",
-    "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nClone the https://github.com/eribul/cs1 repo and work as much as possible according to the instructions found within it.\nYou are free to help each other and to use any resources you find useful!\nTry to do some work every day (it will not be easy, but it is good practice!)"
   }
 ]

@@ -129,16 +129,557 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">LE3</h1>
+  <p class="subtitle">Version control</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section>
+<section id="history" class="title-slide slide level1 center">
+<h1>History</h1>
+<blockquote>
+<p>It is widely acknowledged that the most fundamental developments in statistics in the past 60 years are driven by information technology (IT). We should not underestimate the importance of pen and paper as a form of IT but it is since people start using computers to do statistical analysis that we really changed the role statistics plays in our research as well as normal life.</p>
+</blockquote>
+<blockquote>
+<p>Although: “Let’s not kid ourselves: the most widely used piece of software for statistics is Excel.”” /Brian Ripley (2002)</p>
+</blockquote>
+<p><a href="https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com">Short overview</a></p>
+</section>
+<section id="general-purpose-programming-languages" class="slide level2">
+<h2>General-Purpose Programming Languages</h2>
+<p>Early statistical computing relied heavily on:</p>
+<ul>
+<li><strong>FORTRAN</strong>
+<ul>
+<li>Dominant language for numerical and statistical computation</li>
+<li>Statistical methods implemented as libraries and subroutines</li>
+<li>Still used as subroutines in modern statistical software!</li>
+</ul></li>
+<li><strong>ALGOL / ALGOL 60</strong>
+<ul>
+<li>Used mainly in academic environments</li>
+</ul></li>
+<li><strong>PL/I</strong>
+<ul>
+<li>Used in some government and industrial contexts</li>
+</ul></li>
+</ul>
+<p>📌 These languages required substantial programming expertise.</p>
+</section>
+<section id="early-statistical-packages" class="slide level2">
+<h2>Early Statistical Packages</h2>
+<p>Several dedicated statistical systems emerged:</p>
+<ul>
+<li><strong>SPSS</strong> (1968)
+<ul>
+<li>Originally batch-oriented</li>
+<li>Widely used in social sciences</li>
+<li>Originaly “Statistical Package for the Social Sciences”</li>
+</ul></li>
+<li><strong>BMDP</strong> (1960s)
+<ul>
+<li>Developed at UCLA</li>
+<li>Common in medical statistics</li>
+<li>Bio-Medical Data Package</li>
+</ul></li>
+<li><strong>GENSTAT</strong> (1968)
+<ul>
+<li>Focused on agricultural statistics</li>
+</ul></li>
+<li><strong>MINITAB</strong> (1972)
+<ul>
+<li>Designed for teaching and education</li>
+<li>Still popular in quality control</li>
+</ul></li>
+</ul>
+</section>
+<section id="sas-a-transitional-system" class="slide level2">
+<h2>SAS: A Transitional System</h2>
+<ul>
+<li><strong>SAS</strong> (early 1970s)</li>
+<li>Developed for agricultural and biostatistical analysis</li>
+<li>Script-based, but largely batch-oriented</li>
+<li>Became a standard in:
+<ul>
+<li>Government agencies</li>
+<li>Large organisations</li>
+</ul></li>
+<li>Known for strong data management capabilities</li>
+<li>Still widely used in pharmaceutical industry and clinical trials</li>
+</ul>
+<p>📌 SAS predates S but influenced later statistical workflows.</p>
+</section>
+<section id="limitations-of-pre-s-systems" class="slide level2">
+<h2>Limitations of Pre-S Systems</h2>
+<p>Common limitations included:</p>
+<ul>
+<li>Batch processing rather than interactivity</li>
+<li>Separation of data management and analysis</li>
+<li>Limited graphics capabilities</li>
+<li>High barriers to exploratory data analysis</li>
+</ul>
+</section>
+<section id="s" class="slide level2">
+<h2>S</h2>
+<ul>
+<li>S takes form at Bell Laboratories (interactive statistical computing).</li>
+<li>John Chambers leads the effort.</li>
+<li><strong>1976:</strong> first working version of S runs on GCOS</li>
+<li><strong>1979:</strong> S2 is ported to UNIX; UNIX becomes the primary platform</li>
+<li><strong>1980:</strong> S is first distributed outside Bell Labs</li>
+<li><strong>1981:</strong> source versions are made available</li>
+<li><strong>1984:</strong> key S books published (often called the “Brown Book” era)</li>
+</ul>
+</section>
+<section id="the-new-s-language" class="slide level2">
+<h2>The New S Language</h2>
+<ul>
+<li><strong>1988:</strong> “New S” is released (major language redesign)</li>
+<li><strong>1988:</strong> <strong>S-PLUS</strong> is first released as a commercial implementation of S</li>
+<li><strong>1991:</strong> <em>Statistical Models in S</em> (“White Book”) popularizes formula notation (the <code>~</code> operator), data frames, and modeling workflows</li>
+</ul>
+</section>
+<section id="r" class="slide level2">
+<h2>R</h2>
+<ul>
+<li><strong>1993:</strong> first versions of <strong>R</strong> are published (Auckland; Ross Ihaka &amp; Robert Gentleman)</li>
+<li><strong>1995:</strong> R becomes open source (GPL)</li>
+<li><strong>1997:</strong> the R Core group forms; <strong>CRAN</strong> is founded (Kurt Hornik)</li>
+<li><strong>2000:</strong> <strong>R 1.0.0</strong> is released 2000-02-29</li>
+</ul>
+</section>
+<section id="rstudio-brings-an-ide-to-the-r-community" class="slide level2">
+<h2>RStudio brings an IDE to the R community</h2>
+<ul>
+<li><strong>2009:</strong> RStudio (the company) is founded</li>
+<li><strong>2011:</strong> RStudio IDE is introduced as an open-source IDE for R (desktop + server)</li>
+</ul>
+</section>
+<section id="microsoft-revolution-analytics" class="slide level2">
+<h2>Microsoft (Revolution Analytics)</h2>
+<ul>
+<li><strong>Jan 2015:</strong> Microsoft announces it will acquire <strong>Revolution Analytics</strong></li>
+<li>Microsoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)</li>
+<li><strong>2016:</strong> SQL Server 2016 introduces <strong>R Services</strong> (in-database R)</li>
+<li><strong>2017:</strong> Microsoft expands the stack under “Machine Learning Server” branding</li>
+<li><strong>June 2021:</strong> Microsoft announces retirement of <strong>Microsoft Machine Learning Server</strong></li>
+<li><strong>July 1, 2023:</strong> Microsoft era over</li>
+</ul>
+</section>
+<section id="rstudio-becomes-posit" class="slide level2">
+<h2>RStudio becomes Posit</h2>
+<ul>
+<li><strong>July 27, 2022:</strong> RStudio rebrands as <strong>Posit</strong></li>
+<li><strong>July 28, 2022:</strong> <strong>Quarto</strong> is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)</li>
+</ul>
+</section></section>
+<section>
+<section id="modern-ide" class="title-slide slide level1 center">
+<h1>Modern IDE</h1>
+
+</section>
+<section id="positron" class="slide level2">
+<h2>Positron</h2>
+<ul>
+<li>New generation IDE for data science</li>
+<li>From Posit PBC</li>
+<li>Free for individual use</li>
+<li>Based on Code OSS (open source version of VS Code from Microsoft)</li>
+<li>For both R and Python (<a href="https://github.com/posit-dev/positron/issues/3679">Julia?</a>)</li>
+</ul>
+</section>
+<section id="quick-tour" class="slide level2">
+<h2>Quick tour</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Ir_HX4riHw?si=wu9-boO8Z4BKDSUZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Positron assistant (mentioned in the video)</strong></p>
+</div>
+<div class="callout-content">
+<p>This feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.</p>
+<p>It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="version-control" class="title-slide slide level1 center">
+<h1>Version control</h1>
+
+</section>
+<section id="before-version-control-systems" class="slide level2">
+<h2>Before Version Control Systems</h2>
+<p>1950s–1970s: Early software development relied on:</p>
+<ul>
+<li>Manual file naming:
+<ul>
+<li><code>analysis_final.f</code></li>
+<li><code>analysis_final_v2.f</code></li>
+</ul></li>
+<li>Physical media:
+<ul>
+<li>Punch cards</li>
+<li>Magnetic tape</li>
+</ul></li>
+<li>Centralised mainframes</li>
+</ul>
+<p>📌 No automated tracking of changes.</p>
+</section>
+<section id="floppy-discs-mail-and-shared-directories" class="slide level2">
+<h2>Floppy discs, Mail, and Shared Directories</h2>
+<p>1970s–1980s: Common practices included:</p>
+<ul>
+<li>Copying files to:
+<ul>
+<li>Floppy disks</li>
+<li>Magnetic tapes</li>
+</ul></li>
+<li>Sending media by <strong>postal mail</strong></li>
+<li>Sharing files via:
+<ul>
+<li>Network drives</li>
+<li>FTP servers</li>
+</ul></li>
+</ul>
+<p>📌 Version control was social, not technical.</p>
+</section>
+<section id="early-version-control-systems" class="slide level2">
+<h2>Early Version Control Systems</h2>
+<p>1980s: First-generation tools focused on single files:</p>
+<ul>
+<li><strong>SCCS</strong> (Source Code Control System, 1972)</li>
+<li><strong>RCS</strong> (Revision Control System, 1982)</li>
+</ul>
+<p>Characteristics:</p>
+<ul>
+<li>Versioning per file</li>
+<li>Linear history</li>
+<li>Central storage</li>
+</ul>
+</section>
+<section id="centralised-version-control" class="slide level2">
+<h2>Centralised Version Control</h2>
+<p>1990s: Project-level systems emerge:</p>
+<ul>
+<li><strong>CVS</strong> (Concurrent Versions System)</li>
+<li><strong>Subversion (SVN)</strong></li>
+</ul>
+<p>Key features:</p>
+<ul>
+<li>Central repository</li>
+<li>Multiple users</li>
+<li>Check-in / check-out model</li>
+</ul>
+<p>📌 Still required constant access to the central server.</p>
+</section>
+<section id="limitations-of-centralised-systems" class="slide level2">
+<h2>Limitations of Centralised Systems</h2>
+<p>Common problems:</p>
+<ul>
+<li>Single point of failure</li>
+<li>Poor support for branching and merging</li>
+<li>Difficult offline work</li>
+<li>Slow operations on large repositories</li>
+</ul>
+<p>These limitations became critical for large projects.</p>
+</section>
+<section id="git" class="slide level2">
+<h2>Git</h2>
+<ul>
+<li><strong>Git</strong> is created by Linus Torvalds in 2005</li>
+<li>Original motivation:
+<ul>
+<li>Support Linux kernel development</li>
+<li>Replace proprietary tools</li>
+</ul></li>
+</ul>
+<p>Design principles:</p>
+<ul>
+<li>Distributed architecture</li>
+<li>Fast local operations</li>
+<li>Strong support for branching and merging</li>
+</ul>
+</section>
+<section id="distributed-version-control-with-git" class="slide level2">
+<h2>Distributed Version Control with Git</h2>
+<p>Key ideas in Git:</p>
+<ul>
+<li>Every clone is a full repository</li>
+<li>Local commits without network access</li>
+<li>Cheap and fast branches</li>
+<li>Cryptographic integrity (hash-based)</li>
+</ul>
+<p>📌 Collaboration becomes more flexible and robust.</p>
+</section>
+<section id="hosting-platforms" class="slide level2">
+<h2>Hosting Platforms</h2>
+<p>Platforms built around Git:</p>
+<ul>
+<li><strong>GitHub</strong> (2008)</li>
+<li><strong>Bitbucket</strong> (2008)</li>
+<li><strong>GitLab</strong> (2011)</li>
+<li><a href="https://gitea.com/">Gitea</a> - open source alternative to GitHub (get the same functionallity locally or on a server)</li>
+</ul>
+<p>They add:</p>
+<ul>
+<li>Pull requests / merge requests</li>
+<li>Issue tracking</li>
+<li>Code review</li>
+<li>CI/CD integration</li>
+</ul>
+</section>
+<section id="version-control-today" class="slide level2">
+<h2>Version Control Today</h2>
+<p>Modern usage includes:</p>
+<ul>
+<li>Code</li>
+<li>Documentation</li>
+<li>Data analysis (scripts, notebooks)</li>
+<li>Configuration and infrastructure</li>
+</ul>
+<p>Git is integrated into:</p>
+<ul>
+<li>IDEs (VS Code, Positron)</li>
+<li>CI/CD pipelines</li>
+<li>Cloud platforms</li>
+</ul>
+</section>
+<section id="version-control-beyond-code" class="slide level2">
+<h2>Version Control Beyond Code</h2>
+<p>Today, version control supports:</p>
+<ul>
+<li>Reproducible research</li>
+<li>Collaborative writing</li>
+<li>Data science workflows</li>
+<li>Teaching and learning</li>
+</ul>
+<p>📌 Version control is now a core professional skill.</p>
+</section>
+<section id="warning" class="slide level2">
+<h2>WARNING!</h2>
+<ul>
+<li>Not everything should be shared!</li>
+<li>Scripts and documentation yes!</li>
+<li>But <strong>Health data is sensitive!</strong>
+<ul>
+<li>Do not share it!</li>
+<li>Avoid unintentional sharing!</li>
+<li>Private repositories are still shared with hosting provider!</li>
+</ul></li>
+<li>Avoid explicit file paths and sensitive info in scripts!</li>
+<li>Can give information about data location and internal structure!</li>
+<li>No hard-coded passwords or API keys!</li>
+</ul>
+</section>
+<section id="git-basics" class="slide level2">
+<h2>Git basics</h2>
+<p>(After installing the Git software)</p>
+<ul>
+<li>Collect all files related to a project in a folder</li>
+<li>Initialize a git repository in that folder</li>
+<li>Make changes to files</li>
+<li>Stage changes for commit</li>
+<li>Commit changes with a message</li>
+<li>Possibly push commits to remote repository</li>
+</ul>
+<pre><code>cd path/to/your/project
+git init
+git status
+# make changes to files
+git add filename1 filename2
+git commit -m "Descriptive message about changes"
+git remote add origin</code></pre>
+</section>
+<section id="video-tutorials" class="slide level2">
+<h2>Video tutorials</h2>
+<p>The video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mJ-qvsxPHpY?si=vL8ERoEp0OnGzotn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+</section>
+<section id="inspirational-video" class="slide level2">
+<h2>Inspirational video</h2>
+<p>Watch this video even though some parts might be overwhelming. It gives a good overview of the current state (2025), even though many things will be too advanced for this course (it is not specifically aimed for statisticians or R users).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vA5TTz6BXhY?si=ctFccFSel_GLwzuh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>.gitignore</strong></p>
+</div>
+<div class="callout-content">
+<p>The <code>.gitignore</code> file is very important in settings with health data! Pay close attention to <a href="https://www.youtube.com/watch?v=vA5TTz6BXhY&amp;t=1545s">this section</a> of the video!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="git-in-positron" class="slide level2">
+<h2>Git in Positron</h2>
+<ul>
+<li>Remember that Positron is build on Code OSS (which shares a lot of features with VS Code).</li>
+<li>Branching and merging is possible but we will not cover that here.</li>
+</ul>
+<p>Short official introduction from Microsoft:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i_23KUAEtUM?si=KNUO6Pr8UatA35kh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p>More detailed introductions. Watch both! The first one is based on a Windows version of VS code and the second on Mac but the concepts are the same:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z5jZ9lrSpqk?si=tajG6Mkm84wlJBYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/twsYxYaQikI?si=2QEK70Shtfvz5IA7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Overwhelmed?</strong></p>
+</div>
+<div class="callout-content">
+<p>This video includes some parts which might be overwhelming if you are new to Git and GitHub. Don’t worry! You don’t need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="statistics-projects" class="title-slide slide level1 center">
+<h1>Statistics projects</h1>
+
+</section>
+<section id="not-a-single-r-script" class="slide level2">
+<h2>Not a single R script</h2>
+<ul>
+<li>Real projects are more complex than a single R script!</li>
+<li>Multiple scripts</li>
+<li>Data files</li>
+<li>Documentation</li>
+<li>Reports</li>
+<li>Version control</li>
+<li>Reproducible workflows</li>
+</ul>
+</section>
+<section id="project-structure" class="slide level2">
+<h2>Project structure</h2>
+<p>Common file structures</p>
+<ul>
+<li>Help you organize your thoughts</li>
+<li>Help others to collaborate</li>
+<li>simplifies paths used in your code</li>
+</ul>
+
+<img data-src="images/paste-1.png" class="r-stretch"></section>
+<section id="example-structure" class="slide level2">
+<h2>Example structure</h2>
+<pre><code>/.../my_project/
+  ├── README.md        - project documentation
+  ├── TODO             - what should be done next?
+  ├── .git             - handled by git (hidden folder)
+  ├── .gitignore       - used by git but your responsibility!
+  ├── data/            - your data files (not under version control!)
+      ├── cancer.csv 
+      └── patients.qs 
+  ├── R/               - your saved R functions
+      ├── function1.R 
+      └── function2.R
+  ├── reports/
+  └── _targets.R       - targets pipeline script</code></pre>
+</section>
+<section id="readme.md" class="slide level2">
+<h2><code>README.md</code></h2>
+<ul>
+<li>Document the purpose of the project</li>
+<li>What is it about?</li>
+<li>What is the aim?</li>
+<li>Who to contact for questions?</li>
+<li>In what circumstances was it created?</li>
+</ul>
+<p>Markdown format (simple text with some possible formatting)</p>
+</section>
+<section id="data-folder" class="slide level2">
+<h2><code>data</code> folder</h2>
+<ul>
+<li>Store your data files here as they are when you get them</li>
+<li>Avoid any modifications to the raw files!</li>
+<li>It is very easy to forget what you do if it can not be traced by code</li>
+<li>Do NOT include this folder in version control!</li>
+<li>Git is not good at handling large files</li>
+<li>Sensitive data should not be shared!</li>
+<li>Add <code>data/*</code> to your <code>.gitignore</code> file</li>
+<li>In realistic projects, data might come in varying formats
+<ul>
+<li>csv, txt, xlsx, sas7bdat, sav, dta, etc</li>
+<li>some files might be very big (gigabytes not uncommon)</li>
+</ul></li>
+</ul>
+</section>
+<section id="r-folder" class="slide level2">
+<h2><code>R</code> folder</h2>
+<ul>
+<li>Store your R functions here</li>
+<li>Document their purpose inline!</li>
+<li>Helps you to reuse code</li>
+<li>Easier to read main scripts</li>
+<li>Easier to test and debug code</li>
+<li>Easier to share code between projects</li>
+</ul>
+</section>
+<section id="reports-folder" class="slide level2">
+<h2><code>reports</code> folder</h2>
+<ul>
+<li>Store your reports here</li>
+<li>Quarto documents</li>
+<li>Documemnt your analysis</li>
+<li>Include figures and tables</li>
+<li>Share with external collaborators</li>
+</ul>
+</section>
+<section id="targets.r-file" class="slide level2">
+<h2><code>_targets.R</code> file</h2>
+<p>Use the <code>targets</code> package to create a reproducible data analysis pipeline</p>
+<div class="video-wrapper">
+<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="pipeline" class="slide level2">
+<h2>Pipeline</h2>
+<ul>
+<li>Define steps in your analysis as targets</li>
+<li>Define dependencies between targets</li>
+<li>Automatically track changes and rerun only necessary parts</li>
+</ul>
+</section>
 <section class="slide level2">
 
 
-
+<img data-src="images/paste-2.png" class="r-stretch"></section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<ul>
+<li>You do not want to rerun everything all the time!</li>
+<li>You want to keep track of what you have done</li>
+<li>You want to be able to reproduce your results later</li>
+<li>You want to share your workflow with others</li>
+</ul>
 </section>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
+<ul>
+<li>A bit old but still relevant: <a href="">https://happygitwithr.com/</a></li>
+<li><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></li>
+<li><a href="https://books.ropensci.org/targets/">Target manual</a></li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
