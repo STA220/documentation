@@ -2,77 +2,77 @@
   {
     "objectID": "Lecture4.html#not-a-single-r-script",
     "href": "Lecture4.html#not-a-single-r-script",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "Not a single R script",
     "text": "Not a single R script\n\nReal projects are more complex than a single R script!\nMultiple scripts\nData files\nDocumentation\nReports\nVersion control\nReproducible workflows"
   },
   {
     "objectID": "Lecture4.html#project-structure",
     "href": "Lecture4.html#project-structure",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "Project structure",
     "text": "Project structure\nCommon file structures\n\nHelp you organize your thoughts\nHelp others to collaborate\nsimplifies paths used in your code"
   },
   {
     "objectID": "Lecture4.html#example-structure",
     "href": "Lecture4.html#example-structure",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "Example structure",
     "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── reports/\n  └── _targets.R       - targets pipeline script"
   },
   {
     "objectID": "Lecture4.html#readme.md",
     "href": "Lecture4.html#readme.md",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "README.md",
     "text": "README.md\n\nDocument the purpose of the project\nWhat is it about?\nWhat is the aim?\nWho to contact for questions?\nIn what circumstances was it created?\n\nMarkdown format (simple text with some possible formatting)"
   },
   {
     "objectID": "Lecture4.html#data-folder",
     "href": "Lecture4.html#data-folder",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "data folder",
     "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc\nsome files might be very big (gigabytes not uncommon)"
   },
   {
     "objectID": "Lecture4.html#r-folder",
     "href": "Lecture4.html#r-folder",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "R folder",
     "text": "R folder\n\nStore your R functions here\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts\nEasier to test and debug code\nEasier to share code between projects"
   },
   {
     "objectID": "Lecture4.html#reports-folder",
     "href": "Lecture4.html#reports-folder",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "reports folder",
     "text": "reports folder\n\nStore your reports here\nQuarto documents\nDocumemnt your analysis\nInclude figures and tables\nShare with external collaborators"
   },
   {
     "objectID": "Lecture4.html#targets.r-file",
     "href": "Lecture4.html#targets.r-file",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "_targets.R file",
     "text": "_targets.R file\nUse the targets package to create a reproducible data analysis pipeline"
   },
   {
     "objectID": "Lecture4.html#pipeline",
     "href": "Lecture4.html#pipeline",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "Pipeline",
     "text": "Pipeline\n\nDefine steps in your analysis as targets\nDefine dependencies between targets\nAutomatically track changes and rerun only necessary parts"
   },
   {
     "objectID": "Lecture4.html#why",
     "href": "Lecture4.html#why",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "Why?",
     "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
   },
   {
     "objectID": "Lecture4.html#reading",
     "href": "Lecture4.html#reading",
-    "title": "Statistics projects",
+    "title": "Analysis pipelines",
     "section": "Reading",
     "text": "Reading\n\nA bit old but still relevant: https://happygitwithr.com/\nTargets overview\nTarget manual"
   },
