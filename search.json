@@ -371,27 +371,6 @@
     "text": "Contribute to an R package\nROpenSci is an open community of R developers. Help them according to their instructions here: https://contributing.ropensci.org/resources.html#issues\n\nRead the instructions above.\nLook for an open issue (start with the “good first issue” or “documentation” issue lists)\nRead everything that is written/discussed in your issue of choice and try to understand the problem/task.\nWhen you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.\nTry to fix the issue! Note that this can be (VERY) difficult and you don’t have to actually fix it if it seems impossible. But give it a try!\nSubmit your changes locally with an informative message and a reference to “#N” (where N is the issue number). Do this regardless if you fixed the issue or not.\nIf you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).\nIf you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (click on the smiley at the end of a comment you agree with and chose a relevant emoji)."
   },
   {
-    "objectID": "ws1.html#data.table",
-    "href": "ws1.html#data.table",
-    "title": "WS1",
-    "section": "data.table",
-    "text": "data.table\ninstall.packages(\"data.table\")\nRead through (and replicate the examples) from the vignettes found at: https://r-datatable.com/ (start with “Introduction to data.table”)"
-  },
-  {
-    "objectID": "ws1.html#targets",
-    "href": "ws1.html#targets",
-    "title": "WS1",
-    "section": "targets",
-    "text": "targets\ninstall.packages(\"targets\")\n\nMake your data analysis reproducible\nhttps://docs.ropensci.org/targets/\nRead through (and replicate the examples) from this book: https://books.ropensci.org/targets/"
-  },
-  {
-    "objectID": "ws1.html#whats-next",
-    "href": "ws1.html#whats-next",
-    "title": "WS1",
-    "section": "What’s next?",
-    "text": "What’s next?\n\nYou will now have a couple of weeks to familiarize yourself with the tools we have introduced here.\nTake the time to read and practice to improve your skills.\nClone the https://github.com/eribul/cs1 repo and work as much as possible according to the instructions found within it.\nYou are free to help each other and to use any resources you find useful!\nTry to do some work every day (it will not be easy, but it is good practice!)"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Health data",

@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -193,9 +158,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#preparations" id="toc-preparations" class="nav-link active" data-scroll-target="#preparations">Preparations</a></li>
   <li><a href="#new-project" id="toc-new-project" class="nav-link" data-scroll-target="#new-project">New project</a></li>
   <li><a href="#contribute-to-an-r-package" id="toc-contribute-to-an-r-package" class="nav-link" data-scroll-target="#contribute-to-an-r-package">Contribute to an R package</a></li>
-  <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">data.table</a></li>
-  <li><a href="#targets" id="toc-targets" class="nav-link" data-scroll-target="#targets">targets</a></li>
-  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s next?</a></li>
   </ul>
 </nav>
     </div>
@@ -274,30 +236,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>If you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).</li>
 <li>If you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (click on the smiley at the end of a comment you agree with and chose a relevant emoji).</li>
 </ol>
-</section>
-<section id="data.table" class="level2">
-<h2 class="anchored" data-anchor-id="data.table">data.table</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"data.table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Read through (and replicate the examples) from the vignettes found at: <a href="https://r-datatable.com/" class="uri">https://r-datatable.com/</a> (start with “Introduction to data.table”)</p>
-</section>
-<section id="targets" class="level2">
-<h2 class="anchored" data-anchor-id="targets">targets</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"targets"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Make your data analysis reproducible</li>
-<li><a href="https://docs.ropensci.org/targets/" class="uri">https://docs.ropensci.org/targets/</a></li>
-<li>Read through (and replicate the examples) from this book: <a href="https://books.ropensci.org/targets/" class="uri">https://books.ropensci.org/targets/</a></li>
-</ul>
-</section>
-<section id="whats-next" class="level2">
-<h2 class="anchored" data-anchor-id="whats-next">What’s next?</h2>
-<ul>
-<li>You will now have a couple of weeks to familiarize yourself with the tools we have introduced here.</li>
-<li>Take the time to read and practice to improve your skills.</li>
-<li>Clone the <a href="https://github.com/eribul/cs1" class="uri">https://github.com/eribul/cs1</a> repo and work as much as possible according to the instructions found within it.</li>
-<li>You are free to help each other and to use any resources you find useful!</li>
-<li>Try to do some work every day (it will not be easy, but it is good practice!)</li>
-</ul>
 
 
 </section>
