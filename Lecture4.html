@@ -170,8 +170,9 @@
   ├── R/               - your saved R functions
       ├── function1.R 
       └── function2.R
-  ├── reports/
-  └── _targets.R       - targets pipeline script</code></pre>
+  ├── ...
+  ├── ...
+  └── _targets.R       - targets pipeline script (WHAT??? :-))</code></pre>
 </section>
 <section id="readme.md" class="slide level2">
 <h2><code>README.md</code></h2>
@@ -183,6 +184,10 @@
 <li>In what circumstances was it created?</li>
 </ul>
 <p>Markdown format (simple text with some possible formatting)</p>
+</section>
+<section id="markdown" class="slide level2">
+<h2>Markdown</h2>
+<p>TODO: intro and give examples + link etc</p>
 </section>
 <section id="data-folder" class="slide level2">
 <h2><code>data</code> folder</h2>
@@ -196,30 +201,37 @@
 <li>Add <code>data/*</code> to your <code>.gitignore</code> file</li>
 <li>In realistic projects, data might come in varying formats
 <ul>
-<li>csv, txt, xlsx, sas7bdat, sav, dta, etc</li>
+<li>csv, txt, xlsx, sas7bdat, sav, dta, etc (we will cover some of these later)</li>
 <li>some files might be very big (gigabytes not uncommon)</li>
 </ul></li>
 </ul>
+</section>
+<section id="gitignore-fiile" class="slide level2">
+<h2><code>.gitignore</code> fiile</h2>
+<p>TODO</p>
 </section>
 <section id="r-folder" class="slide level2">
 <h2><code>R</code> folder</h2>
 <ul>
 <li>Store your R functions here</li>
+<li>You have learned about R functions in the earlier R course</li>
+<li>We will cover some more of that later</li>
 <li>Document their purpose inline!</li>
 <li>Helps you to reuse code</li>
-<li>Easier to read main scripts</li>
+<li>Easier to read main scripts if functions are defined elsewhere</li>
 <li>Easier to test and debug code</li>
+<li>we eill not cover testing but some about debugging later</li>
 <li>Easier to share code between projects</li>
 </ul>
 </section>
-<section id="reports-folder" class="slide level2">
-<h2><code>reports</code> folder</h2>
+<section id="reports" class="slide level2">
+<h2><code>reports</code></h2>
 <ul>
-<li>Store your reports here</li>
+<li>Separate reports from analysis/data management but integrate them with the analysis pipeline</li>
 <li>Quarto documents</li>
-<li>Documemnt your analysis</li>
+<li>Documemnt your analysis and thoughts/decisions along the way</li>
 <li>Include figures and tables</li>
-<li>Share with external collaborators</li>
+<li>To share with external collaborators</li>
 </ul>
 </section>
 <section id="targets.r-file" class="slide level2">
@@ -254,7 +266,6 @@
 <section id="reading" class="slide level2">
 <h2>Reading</h2>
 <ul>
-<li>A bit old but still relevant: <a href="">https://happygitwithr.com/</a></li>
 <li><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></li>
 <li><a href="https://books.ropensci.org/targets/">Target manual</a></li>
 </ul>
