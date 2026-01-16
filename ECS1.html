@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WS1 – STA220</title>
+<title>ECS1: IDE and version control – STA220</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,11 +109,29 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL3.html">
- <span class="dropdown-text">EL3: Version control</span></a>
+ <span class="dropdown-text">EL3: Tooling</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL4.html">
  <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL4.html">
+ <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL4.html">
+ <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+  </li>  
+        <li class="dropdown-header">EL5.qmd</li>
+        <li class="dropdown-header">EL6.qmd</li>
+        <li class="dropdown-header">EL7.qmd</li>
+        <li class="dropdown-header">EL8.qmd</li>
+        <li class="dropdown-header">EL9.qmd</li>
+        <li class="dropdown-header">EL10.qmd</li>
+        <li>
+    <a class="dropdown-item" href="./EL11.html">
+ <span class="dropdown-text">EL11: Repetition</span></a>
   </li>  
     </ul>
   </li>
@@ -127,8 +145,8 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-computer-exercises">    
         <li>
-    <a class="dropdown-item" href="./ws1.html">
- <span class="dropdown-text">WS1</span></a>
+    <a class="dropdown-item" href="./ECS1.html">
+ <span class="dropdown-text">ECS1: IDE and version control</span></a>
   </li>  
     </ul>
   </li>
@@ -161,17 +179,18 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#preparations" id="toc-preparations" class="nav-link active" data-scroll-target="#preparations">Preparations</a></li>
   <li><a href="#new-project" id="toc-new-project" class="nav-link" data-scroll-target="#new-project">New project</a></li>
-  <li><a href="#contribute-to-an-r-package" id="toc-contribute-to-an-r-package" class="nav-link" data-scroll-target="#contribute-to-an-r-package">Contribute to an R package</a></li>
+  <li><a href="#source-code-for-sta220-website" id="toc-source-code-for-sta220-website" class="nav-link" data-scroll-target="#source-code-for-sta220-website">Source code for STA220 website</a></li>
+  <li><a href="#try-to-contribute-to-an-r-package" id="toc-try-to-contribute-to-an-r-package" class="nav-link" data-scroll-target="#try-to-contribute-to-an-r-package">(Try to) contribute to an R package</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS1.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WS1</h1>
-<p class="subtitle lead">Tooling: Positron, Git, GitHub, data.table, targets</p>
+<h1 class="title">ECS1: IDE and version control</h1>
+<p class="subtitle lead">Positron, git and GitHub</p>
 </div>
 
 
@@ -188,6 +207,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Take your time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might not finnish all the exercises during the scheduled hours. No, worries. Continue later!</p>
+</div>
+</div>
 <section id="preparations" class="level2">
 <h2 class="anchored" data-anchor-id="preparations">Preparations</h2>
 <p>If you have not already done so, please install the following software on your computer:</p>
@@ -204,41 +236,46 @@ ul.task-list li input[type="checkbox"] {
 <section id="new-project" class="level2">
 <h2 class="anchored" data-anchor-id="new-project">New project</h2>
 <p>Let’s make a new project from scratch!</p>
+<p>You will now re-use your data and R-scripts from the first computer exercise in the course (with questionaire data led by AGE). This will be refferd to as <code>CSQ</code> below.</p>
 <ol type="1">
-<li>Press the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv”. Open the new project.</li>
+<li>Press the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv” (it’s a good tool but that can wait to some other time). Open the new project.</li>
 <li>Create a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.</li>
 <li>Create an “R” folder where you can later save your R scripts.</li>
 <li>Open the already existing .<code>gitignore</code> file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).</li>
-<li>You should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in “data” subfolder. Simply type “data/*” on a new line in the .gitignore and save the file.</li>
-<li>Add some data to the data folder by exectuting <code>write.csv(iris, "data/iris.csv")</code> from the R console.</li>
-<li>Check that the file name of the new file in the Explorer pane is in gray. This means that this file will not be included in later git commits (because it is found in a folder which is ignored by git).</li>
-<li>Open the README.md file and make some changes to that file.</li>
-<li>Commit your changes (as you did for the previous crap repo).</li>
+<li>You should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in the “data” subfolder. Simply type “data/*” on a new line in the <code>.gitignore</code> file and save the file.</li>
+<li>Copy your old data files used in <code>CSQ</code> (SPSS-files, Excel, or whatever format they are in) to the data folder.</li>
+<li>Check that the the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git).</li>
+<li>Open the <code>README.md</code> file and make some changes to that file. Briefly describe what this repo is used for; the purpose of <code>CSQ</code> etc. Make some spelling misstakes on purpose :-)</li>
+<li>Commit your changes (as you did for the previous <code>crap</code> repo).</li>
 <li>Press “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!</li>
-<li>Open the README.md file in the browser to have a look</li>
+<li>Open the <code>README.md</code> file in the browser to have a look</li>
 <li>Press “edit this file” (the pencil symbol to the upper right of the file).</li>
-<li>Make some changes to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.</li>
+<li>Make some changes (correct your intential spelling mistakees!) to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.</li>
 <li>Go back to Positron and look at the source control pane. Press “Sync changes”.</li>
 <li>The changes you made online should now be visable locally as well.</li>
-<li>Go back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete. For example to write a poem in the README.md file or to add some R functions in a script.</li>
+<li>Go back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete: “Include all R scripts from CSQ in the R folder”.</li>
 <li>In Positron: Perform the task you previosly gave yourself through the issue tracker.</li>
 <li>Commit changes and in the commit message, write “Fix #N” where N is the number of the issue you were working on (probably no 1, hence “Fix #1”). Sync the local repo with GitHub.</li>
 <li>Have a new look at the issue and check if it was updated/closed automatically by your commit.</li>
 </ol>
 <p>To share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now.</p>
 </section>
-<section id="contribute-to-an-r-package" class="level2">
-<h2 class="anchored" data-anchor-id="contribute-to-an-r-package">Contribute to an R package</h2>
+<section id="source-code-for-sta220-website" class="level2">
+<h2 class="anchored" data-anchor-id="source-code-for-sta220-website">Source code for STA220 website</h2>
+<p>The course web site is itself a GitHub repo! You can see a small link and icon “View source” in the right hand menu. Explore those links. Clone the repo, play around! File an issue or make some edits if you find anything to improve! Make a pull request if you have concrete suggestions!</p>
+</section>
+<section id="try-to-contribute-to-an-r-package" class="level2">
+<h2 class="anchored" data-anchor-id="try-to-contribute-to-an-r-package">(Try to) contribute to an R package</h2>
 <p>ROpenSci is an open community of R developers. Help them according to their instructions here: <a href="https://contributing.ropensci.org/resources.html#issues" class="uri">https://contributing.ropensci.org/resources.html#issues</a></p>
 <ol type="1">
 <li>Read the instructions above.</li>
 <li>Look for an open issue (start with the “good first issue” or “documentation” issue lists)</li>
 <li>Read everything that is written/discussed in your issue of choice and try to understand the problem/task.</li>
 <li>When you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.</li>
-<li>Try to fix the issue! Note that this can be (VERY) difficult and you don’t have to actually fix it if it seems impossible. But give it a try!</li>
+<li>Try to fix the issue! Note that this can be (VERY!) difficult and you don’t have to actually fix it if it seems impossible. But don’t give up to easy!</li>
 <li>Submit your changes locally with an informative message and a reference to “#N” (where N is the issue number). Do this regardless if you fixed the issue or not.</li>
 <li>If you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).</li>
-<li>If you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (click on the smiley at the end of a comment you agree with and chose a relevant emoji).</li>
+<li>If you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (for example click on the smiley at the end of a comment you agree with and chose a relevant emoji).</li>
 </ol>
 
 
@@ -650,4 +687,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS1.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
