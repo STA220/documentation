@@ -95,14 +95,7 @@
     "href": "EL1.html#our-use-of-r",
     "title": "EL1: Intro",
     "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
-  },
-  {
-    "objectID": "EL1.html#reading-list",
-    "href": "EL1.html#reading-list",
-    "title": "EL1: Intro",
-    "section": "Reading list",
-    "text": "Reading list\n\nChapter 1 from (Nguyen 2022)\n\n\n\n\n\nLaugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. “Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.” Clinical Epidemiology Volume 13 (July): 533–54. https://doi.org/10.2147/CLEP.S314959.\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting\n\n\n\n\n\nLaugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. “Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.” Clinical Epidemiology Volume 13 (July): 533–54. https://doi.org/10.2147/CLEP.S314959.\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
   },
   {
     "objectID": "EL2.html#swedish-law",
@@ -301,11 +294,11 @@
     "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
   },
   {
-    "objectID": "EL2.html#reading",
-    "href": "EL2.html#reading",
+    "objectID": "EL2.html#section",
+    "href": "EL2.html#section",
     "title": "EL2: Legal",
-    "section": "Reading",
-    "text": "Reading\nPublic access and secrecy"
+    "section": "",
+    "text": "“Public Access and Secrecy | Swedish National Data Service.” 2025. https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy."
   },
   {
     "objectID": "EL4.html#not-a-single-r-script",
@@ -711,7 +704,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\nThis document is generated automatically and contains all lecture slides. When modifications are made to any of the lecture slides, this should be reflected here automatically. If you are viewing the HTML version of the handouts, a static PDF might be downloaded by clicking Other formats &gt; Typst in the right side menu of the page. This PDF is also automatically copied to CANVAS when rendered.\nThose handouts where last modified: 2026-01-16."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page. This PDF is also automatically copied to CANVAS when rendered.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-16."
   },
   {
     "objectID": "handouts.html#important-aspects",
@@ -810,13 +803,6 @@
     "title": "Handouts",
     "section": "Our use of R",
     "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
-  },
-  {
-    "objectID": "handouts.html#reading-list",
-    "href": "handouts.html#reading-list",
-    "title": "Handouts",
-    "section": "Reading list",
-    "text": "Reading list\n\nChapter 1 from (Nguyen 2022)"
   },
   {
     "objectID": "handouts.html#swedish-law",
@@ -1013,13 +999,6 @@
     "title": "Handouts",
     "section": "International laws",
     "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
-  },
-  {
-    "objectID": "handouts.html#reading",
-    "href": "handouts.html#reading",
-    "title": "Handouts",
-    "section": "Reading",
-    "text": "Reading\nPublic access and secrecy"
   },
   {
     "objectID": "handouts.html#history",
@@ -1309,8 +1288,8 @@
     "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
   },
   {
-    "objectID": "handouts.html#reading-1",
-    "href": "handouts.html#reading-1",
+    "objectID": "handouts.html#reading",
+    "href": "handouts.html#reading",
     "title": "Handouts",
     "section": "Reading",
     "text": "Reading\n\nA bit old but still relevant: https://happygitwithr.com/\nTargets overview\nTarget manual"
@@ -1400,8 +1379,8 @@
     "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
   },
   {
-    "objectID": "handouts.html#reading-2",
-    "href": "handouts.html#reading-2",
+    "objectID": "handouts.html#reading-1",
+    "href": "handouts.html#reading-1",
     "title": "Handouts",
     "section": "Reading",
     "text": "Reading\n\nTargets overview\nTarget manual"

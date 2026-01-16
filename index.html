@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -160,12 +180,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#plan" id="toc-plan" class="nav-link active" data-scroll-target="#plan">Plan</a></li>
-  <li><a href="#litterature" id="toc-litterature" class="nav-link" data-scroll-target="#litterature">Litterature</a></li>
   <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
   <ul class="collapse">
   <li><a href="#positron-extensions" id="toc-positron-extensions" class="nav-link" data-scroll-target="#positron-extensions">Positron extensions</a></li>
   </ul></li>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
+  <li><a href="#litterature" id="toc-litterature" class="nav-link" data-scroll-target="#litterature">Litterature</a>
+  <ul class="collapse">
+  <li><a href="#additional-mandatory-reading" id="toc-additional-mandatory-reading" class="nav-link" data-scroll-target="#additional-mandatory-reading">Additional mandatory reading</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -196,30 +218,30 @@ ul.task-list li input[type="checkbox"] {
 <h1>Plan</h1>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ocilthamzf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ocilthamzf table {
+<div id="zlswgrddma" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zlswgrddma table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ocilthamzf thead, #ocilthamzf tbody, #ocilthamzf tfoot, #ocilthamzf tr, #ocilthamzf td, #ocilthamzf th {
+#zlswgrddma thead, #zlswgrddma tbody, #zlswgrddma tfoot, #zlswgrddma tr, #zlswgrddma td, #zlswgrddma th {
   border-style: none;
 }
 
-#ocilthamzf p {
+#zlswgrddma p {
   margin: 0;
   padding: 0;
 }
 
-#ocilthamzf .gt_table {
+#zlswgrddma .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
@@ -238,12 +260,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_caption {
+#zlswgrddma .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ocilthamzf .gt_title {
+#zlswgrddma .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -255,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#ocilthamzf .gt_subtitle {
+#zlswgrddma .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -267,7 +289,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#ocilthamzf .gt_heading {
+#zlswgrddma .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -279,13 +301,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_bottom_border {
+#zlswgrddma .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_col_headings {
+#zlswgrddma .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -300,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_col_heading {
+#zlswgrddma .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -320,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ocilthamzf .gt_column_spanner_outer {
+#zlswgrddma .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -332,15 +354,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#ocilthamzf .gt_column_spanner_outer:first-child {
+#zlswgrddma .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ocilthamzf .gt_column_spanner_outer:last-child {
+#zlswgrddma .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ocilthamzf .gt_column_spanner {
+#zlswgrddma .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -352,11 +374,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#ocilthamzf .gt_spanner_row {
+#zlswgrddma .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ocilthamzf .gt_group_heading {
+#zlswgrddma .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -382,7 +404,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#ocilthamzf .gt_empty_group_heading {
+#zlswgrddma .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -397,15 +419,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#ocilthamzf .gt_from_md > :first-child {
+#zlswgrddma .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ocilthamzf .gt_from_md > :last-child {
+#zlswgrddma .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ocilthamzf .gt_row {
+#zlswgrddma .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -424,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ocilthamzf .gt_stub {
+#zlswgrddma .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -437,7 +459,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ocilthamzf .gt_stub_row_group {
+#zlswgrddma .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -451,15 +473,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#ocilthamzf .gt_row_group_first td {
+#zlswgrddma .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ocilthamzf .gt_row_group_first th {
+#zlswgrddma .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ocilthamzf .gt_summary_row {
+#zlswgrddma .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -469,16 +491,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ocilthamzf .gt_first_summary_row {
+#zlswgrddma .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_first_summary_row.thick {
+#zlswgrddma .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ocilthamzf .gt_last_summary_row {
+#zlswgrddma .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -488,7 +510,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_grand_summary_row {
+#zlswgrddma .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -498,7 +520,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ocilthamzf .gt_first_grand_summary_row {
+#zlswgrddma .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -508,7 +530,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_last_grand_summary_row_top {
+#zlswgrddma .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -518,11 +540,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_striped {
+#zlswgrddma .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ocilthamzf .gt_table_body {
+#zlswgrddma .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -531,7 +553,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_footnotes {
+#zlswgrddma .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -545,7 +567,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_footnote {
+#zlswgrddma .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -554,7 +576,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ocilthamzf .gt_sourcenotes {
+#zlswgrddma .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -568,7 +590,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ocilthamzf .gt_sourcenote {
+#zlswgrddma .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -576,73 +598,77 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ocilthamzf .gt_left {
+#zlswgrddma .gt_left {
   text-align: left;
 }
 
-#ocilthamzf .gt_center {
+#zlswgrddma .gt_center {
   text-align: center;
 }
 
-#ocilthamzf .gt_right {
+#zlswgrddma .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ocilthamzf .gt_font_normal {
+#zlswgrddma .gt_font_normal {
   font-weight: normal;
 }
 
-#ocilthamzf .gt_font_bold {
+#zlswgrddma .gt_font_bold {
   font-weight: bold;
 }
 
-#ocilthamzf .gt_font_italic {
+#zlswgrddma .gt_font_italic {
   font-style: italic;
 }
 
-#ocilthamzf .gt_super {
+#zlswgrddma .gt_super {
   font-size: 65%;
 }
 
-#ocilthamzf .gt_footnote_marks {
+#zlswgrddma .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ocilthamzf .gt_asterisk {
+#zlswgrddma .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ocilthamzf .gt_indent_1 {
+#zlswgrddma .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ocilthamzf .gt_indent_2 {
+#zlswgrddma .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ocilthamzf .gt_indent_3 {
+#zlswgrddma .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ocilthamzf .gt_indent_4 {
+#zlswgrddma .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ocilthamzf .gt_indent_5 {
+#zlswgrddma .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ocilthamzf .katex-display {
+#zlswgrddma .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ocilthamzf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zlswgrddma div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
+}
+
+th, td {
+  white-space: normal;
 }
 </style>
 
@@ -660,13 +686,13 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="gt_col_headings header">
 <th id="Weekday" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Weekday</th>
-<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Date</th>
 <th id="Time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Time</th>
 <th id="AGE" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">AGE</th>
 <th id="Activity" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Activity</th>
 <th id="Session" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Session</th>
 <th id="title" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">title</th>
 <th id="subtitle" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">subtitle</th>
+<th id="literature" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">literature</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -674,42 +700,41 @@ ul.task-list li input[type="checkbox"] {
 <th colspan="8" id="w4" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w4</th>
 </tr>
 <tr class="gt_row_group_first even">
-<td class="gt_row gt_left" headers="w4  Weekday">Monday</td>
-<td class="gt_row gt_right" headers="w4  Date">2026-01-19</td>
-<td class="gt_row gt_right" headers="w4  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w4  Weekday">Mon</td>
+<td class="gt_row gt_right" headers="w4  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w4  AGE">X</td>
 <td class="gt_row gt_left" headers="w4  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w4  Session"><a href="./EL1.html">EL1</a></td>
 <td class="gt_row gt_left" headers="w4  title">Intro</td>
 <td class="gt_row gt_left" headers="w4  subtitle">Overwiev of this part of the course</td>
+<td class="gt_row gt_left" headers="w4  literature"><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;1)</span>, <span class="citation" data-cites="ludvigsson2009">(<a href="#ref-ludvigsson2009" role="doc-biblioref">Ludvigsson et al. 2009</a>)</span>, <span class="citation" data-cites="laugesen2021">(<a href="#ref-laugesen2021" role="doc-biblioref">Laugesen et al. 2021</a>)</span></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="w4  Weekday">Wednesday</td>
-<td class="gt_row gt_right" headers="w4  Date">2026-01-21</td>
-<td class="gt_row gt_right" headers="w4  Time">08:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w4  Weekday">Wed</td>
+<td class="gt_row gt_right" headers="w4  Time">08:15-12:00</td>
 <td class="gt_row gt_left" headers="w4  AGE">X</td>
 <td class="gt_row gt_left" headers="w4  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w4  Session"><a href="./EL2.html">EL2</a></td>
 <td class="gt_row gt_left" headers="w4  title">Legal</td>
 <td class="gt_row gt_left" headers="w4  subtitle">Swedish and European legislation considering personal data</td>
+<td class="gt_row gt_left" headers="w4  literature"><span class="citation" data-cites="publica2025">(<a href="#ref-publica2025" role="doc-biblioref"><span>“Public Access and Secrecy | Swedish National Data Service”</span> 2025</a>)</span></td>
 </tr>
 <tr class="gt_group_heading_row even">
 <th colspan="8" id="w5" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w5</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td class="gt_row gt_left" headers="w5  Weekday">Monday</td>
-<td class="gt_row gt_right" headers="w5  Date">2026-01-26</td>
-<td class="gt_row gt_right" headers="w5  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w5  Weekday">Mon</td>
+<td class="gt_row gt_right" headers="w5  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w5  AGE">X</td>
 <td class="gt_row gt_left" headers="w5  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w5  Session"><a href="./EL3.html">EL3</a></td>
 <td class="gt_row gt_left" headers="w5  title">Version control</td>
 <td class="gt_row gt_left" headers="w5  subtitle">Git and GitHub</td>
+<td class="gt_row gt_left" headers="w5  literature"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="w5  Weekday"></td>
-<td class="gt_row gt_right" headers="w5  Date">2026-01-26</td>
-<td class="gt_row gt_right" headers="w5  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w5  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w5  AGE">X</td>
 <td class="gt_row gt_left" headers="w5  Activity" style="background-color: #FFFF00">Computer training</td>
 <td class="gt_row gt_left" headers="w5  Session">ECS1</td>
@@ -717,24 +742,25 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w5  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w5  literature"><br>
+</td>
 </tr>
 <tr class="gt_group_heading_row odd">
 <th colspan="8" id="w9" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w9</th>
 </tr>
 <tr class="gt_row_group_first even">
-<td class="gt_row gt_left" headers="w9  Weekday">Monday</td>
-<td class="gt_row gt_right" headers="w9  Date">2026-02-23</td>
-<td class="gt_row gt_right" headers="w9  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w9  Weekday">Mon</td>
+<td class="gt_row gt_right" headers="w9  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w9  AGE"></td>
 <td class="gt_row gt_left" headers="w9  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w9  Session"><a href="./EL4.html">EL4</a></td>
 <td class="gt_row gt_left" headers="w9  title">Analysis pipelines</td>
 <td class="gt_row gt_left" headers="w9  subtitle">{targets} and reproducible analysis</td>
+<td class="gt_row gt_left" headers="w9  literature"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="w9  Weekday"></td>
-<td class="gt_row gt_right" headers="w9  Date">2026-02-23</td>
-<td class="gt_row gt_right" headers="w9  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w9  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w9  AGE"></td>
 <td class="gt_row gt_left" headers="w9  Activity" style="background-color: #FFFF00">Computer training</td>
 <td class="gt_row gt_left" headers="w9  Session">ECS2</td>
@@ -742,11 +768,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w9  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w9  literature"><br>
+</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="w9  Weekday">Wednesday</td>
-<td class="gt_row gt_right" headers="w9  Date">2026-02-25</td>
-<td class="gt_row gt_right" headers="w9  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w9  Weekday">Wed</td>
+<td class="gt_row gt_right" headers="w9  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w9  AGE"></td>
 <td class="gt_row gt_left" headers="w9  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w9  Session">EL5</td>
@@ -754,11 +781,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w9  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w9  literature"><br>
+</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="w9  Weekday"></td>
-<td class="gt_row gt_right" headers="w9  Date">2026-02-25</td>
-<td class="gt_row gt_right" headers="w9  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w9  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w9  AGE"></td>
 <td class="gt_row gt_left" headers="w9  Activity" style="background-color: #ADD8E6">Compulsory, Seminar</td>
 <td class="gt_row gt_left" headers="w9  Session">ES1</td>
@@ -766,14 +794,15 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w9  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w9  literature"><br>
+</td>
 </tr>
 <tr class="gt_group_heading_row even">
 <th colspan="8" id="w10" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w10</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td class="gt_row gt_left" headers="w10  Weekday">Wednesday</td>
-<td class="gt_row gt_right" headers="w10  Date">2026-03-04</td>
-<td class="gt_row gt_right" headers="w10  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w10  Weekday">Wed</td>
+<td class="gt_row gt_right" headers="w10  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w10  AGE"></td>
 <td class="gt_row gt_left" headers="w10  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w10  Session">EL6</td>
@@ -781,11 +810,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w10  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w10  literature"><br>
+</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="w10  Weekday"></td>
-<td class="gt_row gt_right" headers="w10  Date">2026-03-04</td>
-<td class="gt_row gt_right" headers="w10  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w10  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w10  AGE"></td>
 <td class="gt_row gt_left" headers="w10  Activity" style="background-color: #FFA500">Compulsory, Computer training</td>
 <td class="gt_row gt_left" headers="w10  Session">ECSM1</td>
@@ -793,14 +823,15 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w10  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w10  literature"><br>
+</td>
 </tr>
 <tr class="gt_group_heading_row odd">
 <th colspan="8" id="w11" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w11</th>
 </tr>
 <tr class="gt_row_group_first even">
-<td class="gt_row gt_left" headers="w11  Weekday">Monday</td>
-<td class="gt_row gt_right" headers="w11  Date">2026-03-09</td>
-<td class="gt_row gt_right" headers="w11  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w11  Weekday">Mon</td>
+<td class="gt_row gt_right" headers="w11  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w11  AGE"></td>
 <td class="gt_row gt_left" headers="w11  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w11  Session">EL7</td>
@@ -808,11 +839,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w11  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w11  literature"><br>
+</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="w11  Weekday"></td>
-<td class="gt_row gt_right" headers="w11  Date">2026-03-09</td>
-<td class="gt_row gt_right" headers="w11  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w11  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w11  AGE"></td>
 <td class="gt_row gt_left" headers="w11  Activity" style="background-color: #FFA500">Compulsory, Computer training</td>
 <td class="gt_row gt_left" headers="w11  Session">ECSM2</td>
@@ -820,11 +852,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w11  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w11  literature"><br>
+</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="w11  Weekday">Wednesday</td>
-<td class="gt_row gt_right" headers="w11  Date">2026-03-11</td>
-<td class="gt_row gt_right" headers="w11  Time">11:15 - 13:00</td>
+<td class="gt_row gt_left" headers="w11  Weekday">Wed</td>
+<td class="gt_row gt_right" headers="w11  Time">11:15-13:00</td>
 <td class="gt_row gt_left" headers="w11  AGE"></td>
 <td class="gt_row gt_left" headers="w11  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w11  Session">EL8</td>
@@ -832,11 +865,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w11  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w11  literature"><br>
+</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="w11  Weekday"></td>
-<td class="gt_row gt_right" headers="w11  Date">2026-03-11</td>
-<td class="gt_row gt_right" headers="w11  Time">14:15 - 17:00</td>
+<td class="gt_row gt_right" headers="w11  Time">14:15-17:00</td>
 <td class="gt_row gt_left" headers="w11  AGE"></td>
 <td class="gt_row gt_left" headers="w11  Activity" style="background-color: #FFA500">Compulsory, Computer training</td>
 <td class="gt_row gt_left" headers="w11  Session">ECSM3</td>
@@ -844,14 +878,15 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w11  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w11  literature"><br>
+</td>
 </tr>
 <tr class="gt_group_heading_row even">
 <th colspan="8" id="w12" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w12</th>
 </tr>
 <tr class="gt_row_group_first odd">
-<td class="gt_row gt_left" headers="w12  Weekday">Monday</td>
-<td class="gt_row gt_right" headers="w12  Date">2026-03-16</td>
-<td class="gt_row gt_right" headers="w12  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w12  Weekday">Mon</td>
+<td class="gt_row gt_right" headers="w12  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w12  AGE"></td>
 <td class="gt_row gt_left" headers="w12  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w12  Session">EL9</td>
@@ -859,11 +894,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w12  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w12  literature"><br>
+</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="w12  Weekday"></td>
-<td class="gt_row gt_right" headers="w12  Date">2026-03-16</td>
-<td class="gt_row gt_right" headers="w12  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w12  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w12  AGE"></td>
 <td class="gt_row gt_left" headers="w12  Activity" style="background-color: #FFFF00">Computer training</td>
 <td class="gt_row gt_left" headers="w12  Session">ECS3</td>
@@ -871,11 +907,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w12  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w12  literature"><br>
+</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="w12  Weekday">Wednesday</td>
-<td class="gt_row gt_right" headers="w12  Date">2026-03-18</td>
-<td class="gt_row gt_right" headers="w12  Time">10:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w12  Weekday">Wed</td>
+<td class="gt_row gt_right" headers="w12  Time">10:15-12:00</td>
 <td class="gt_row gt_left" headers="w12  AGE"></td>
 <td class="gt_row gt_left" headers="w12  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w12  Session">EL10</td>
@@ -883,11 +920,12 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w12  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w12  literature"><br>
+</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="w12  Weekday"></td>
-<td class="gt_row gt_right" headers="w12  Date">2026-03-18</td>
-<td class="gt_row gt_right" headers="w12  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w12  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w12  AGE"></td>
 <td class="gt_row gt_left" headers="w12  Activity" style="background-color: #FFFF00">Computer training</td>
 <td class="gt_row gt_left" headers="w12  Session">ECS4</td>
@@ -895,14 +933,15 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w12  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w12  literature"><br>
+</td>
 </tr>
 <tr class="gt_group_heading_row odd">
 <th colspan="8" id="w13" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">w13</th>
 </tr>
 <tr class="gt_row_group_first even">
-<td class="gt_row gt_left" headers="w13  Weekday">Monday</td>
-<td class="gt_row gt_right" headers="w13  Date">2026-03-23</td>
-<td class="gt_row gt_right" headers="w13  Time">08:15 - 12:00</td>
+<td class="gt_row gt_left" headers="w13  Weekday">Mon</td>
+<td class="gt_row gt_right" headers="w13  Time">08:15-12:00</td>
 <td class="gt_row gt_left" headers="w13  AGE">X</td>
 <td class="gt_row gt_left" headers="w13  Activity" style="background-color: #90EE90">Lecture</td>
 <td class="gt_row gt_left" headers="w13  Session">EL11</td>
@@ -910,17 +949,20 @@ ul.task-list li input[type="checkbox"] {
 </td>
 <td class="gt_row gt_left" headers="w13  subtitle"><br>
 </td>
+<td class="gt_row gt_left" headers="w13  literature"><br>
+</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="w13  Weekday"></td>
-<td class="gt_row gt_right" headers="w13  Date">2026-03-23</td>
-<td class="gt_row gt_right" headers="w13  Time">13:15 - 16:00</td>
+<td class="gt_row gt_right" headers="w13  Time">13:15-16:00</td>
 <td class="gt_row gt_left" headers="w13  AGE"></td>
 <td class="gt_row gt_left" headers="w13  Activity" style="background-color: #ADD8E6">Compulsory, Seminar</td>
 <td class="gt_row gt_left" headers="w13  Session">ES2</td>
 <td class="gt_row gt_left" headers="w13  title"><br>
 </td>
 <td class="gt_row gt_left" headers="w13  subtitle"><br>
+</td>
+<td class="gt_row gt_left" headers="w13  literature"><br>
 </td>
 </tr>
 </tbody>
@@ -929,12 +971,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-</section>
-<section id="litterature" class="level1">
-<h1>Litterature</h1>
-<p>Course books are available for GU students through the “O’Reilly Learning for Higher Education”. <a href="https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en">Instructions for access</a></p>
-<p><a href="https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/">Primary course book</a></p>
-<p><a href="https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c">Recommended books</a></p>
 </section>
 <section id="software" class="level1">
 <h1>Software</h1>
@@ -957,14 +993,33 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://code.visualstudio.com/docs/sourcecontrol/quickstart#_set-up-git-in-vs-code">Instructions for Git in Positron</a></p>
 </section>
 </section>
-<section id="lectures" class="level1">
-<h1>Lectures</h1>
-<p>There are</p>
+<section id="litterature" class="level1">
+<h1>Litterature</h1>
+<p>Course books are available for GU students through the “O’Reilly Learning for Higher Education”. <a href="https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en">Instructions for access</a></p>
+<p><a href="https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/">Primary course book</a></p>
+<p><a href="https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c">Recommended books</a></p>
+<section id="additional-mandatory-reading" class="level2">
+
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Additional mandatory reading</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-laugesen2021" class="csl-entry" role="listitem">
+Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. <span>“Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.”</span> <em>Clinical Epidemiology</em> Volume 13 (July): 533–54. <a href="https://doi.org/10.2147/CLEP.S314959">https://doi.org/10.2147/CLEP.S314959</a>.
+</div>
+<div id="ref-ludvigsson2009" class="csl-entry" role="listitem">
+Ludvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. <span>“The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.”</span> <em>European Journal of Epidemiology</em> 24 (11): 659–67. <a href="https://doi.org/10.1007/s10654-009-9350-y">https://doi.org/10.1007/s10654-009-9350-y</a>.
+</div>
+<div id="ref-nguyen2022a" class="csl-entry" role="listitem">
+Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
+</div>
+<div id="ref-publica2025" class="csl-entry" role="listitem">
+<span>“Public Access and Secrecy | Swedish National Data Service.”</span> 2025. <a href="https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy">https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
