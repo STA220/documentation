@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sta220.github.io/documentation/Lecture4.html</loc>
-    <lastmod>2025-12-19T08:33:07.925Z</lastmod>
+    <loc>https://sta220.github.io/documentation/EL1.html</loc>
+    <lastmod>2026-01-16T06:46:11.003Z</lastmod>
   </url>
   <url>
-    <loc>https://sta220.github.io/documentation/Lecture3.html</loc>
-    <lastmod>2025-12-19T07:52:21.993Z</lastmod>
+    <loc>https://sta220.github.io/documentation/EL2.html</loc>
+    <lastmod>2026-01-15T15:01:14.274Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/EL4.html</loc>
+    <lastmod>2026-01-15T15:01:18.090Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/index.html</loc>
+    <lastmod>2026-01-15T14:53:55.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/ws1.html</loc>
+    <lastmod>2026-01-08T13:20:34.044Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/seminar_legal.html</loc>
     <lastmod>2025-12-17T12:30:02.287Z</lastmod>
   </url>
   <url>
-    <loc>https://sta220.github.io/documentation/ws1.html</loc>
-    <lastmod>2025-12-19T07:58:17.061Z</lastmod>
+    <loc>https://sta220.github.io/documentation/EL3.html</loc>
+    <lastmod>2026-01-15T15:01:21.718Z</lastmod>
   </url>
   <url>
-    <loc>https://sta220.github.io/documentation/index.html</loc>
-    <lastmod>2025-12-19T07:56:57.215Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta220.github.io/documentation/Lecture1.html</loc>
-    <lastmod>2025-12-19T07:51:19.961Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sta220.github.io/documentation/Lecture2.html</loc>
-    <lastmod>2025-12-19T07:51:59.208Z</lastmod>
+    <loc>https://sta220.github.io/documentation/handouts.html</loc>
+    <lastmod>2026-01-15T15:50:22.818Z</lastmod>
   </url>
 </urlset>
