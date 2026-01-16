@@ -711,112 +711,112 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "Data (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)\n\n\n\n\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)\n\n\n\n\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)\n\n\n\n\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools\n\n\n\n\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates\n\n\n\n\n\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer\n\n\n\n\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available\n\n\n\n\n\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols\n\n\n\n\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA\n\n\n\n\n(Swedish: personnummer, reading: (Ludvigsson et al. 2009))\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala\n\n\n\n\n\n\nSimilar registries in different areas/regions/countries\n\nDifferent individuals but similar data\n\nSame definitions and variables?\nSame inclusion criteria?\nDon’t get fooled by similar names!\nDifferences and similarities within the Nordic countries (Laugesen et al. 2021)\n\n\n\n\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering\n\n\n\n\n\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases\n\n\n\n\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting\n\n\n\n\n\nChapter 1 from (Nguyen 2022)"
+    "text": "NoteUpdated handouts\n\n\n\nThis document is generated automatically and contains all lecture slides. When modifications are made to any of the lecture slides, this should be reflected here automatically. If you are viewing the HTML version of the handouts, a static PDF might be downloaded by clicking Other formats &gt; Typst in the right side menu of the page. This PDF is also automatically copied to CANVAS when rendered.\nThose handouts where last modified: 2026-01-16."
   },
   {
     "objectID": "handouts.html#important-aspects",
     "href": "handouts.html#important-aspects",
     "title": "Handouts",
-    "section": "",
-    "text": "Data (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
+    "section": "Important aspects",
+    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
   },
   {
     "objectID": "handouts.html#structure",
     "href": "handouts.html#structure",
     "title": "Handouts",
-    "section": "",
-    "text": "Lectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
+    "section": "Structure",
+    "text": "Structure\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
   },
   {
     "objectID": "handouts.html#different-types-of-data",
     "href": "handouts.html#different-types-of-data",
     "title": "Handouts",
-    "section": "",
-    "text": "Images\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
+    "section": "Different types of data",
+    "text": "Different types of data\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
   },
   {
     "objectID": "handouts.html#usages",
     "href": "handouts.html#usages",
     "title": "Handouts",
-    "section": "",
-    "text": "Research\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
+    "section": "Usages",
+    "text": "Usages\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
   },
   {
     "objectID": "handouts.html#register-data",
     "href": "handouts.html#register-data",
     "title": "Handouts",
-    "section": "",
-    "text": "Administrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
+    "section": "Register data",
+    "text": "Register data\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
   },
   {
     "objectID": "handouts.html#inclusion-criteria",
     "href": "handouts.html#inclusion-criteria",
     "title": "Handouts",
-    "section": "",
-    "text": "Defines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
+    "section": "Inclusion criteria",
+    "text": "Inclusion criteria\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
   },
   {
     "objectID": "handouts.html#coverage-and-completeness",
     "href": "handouts.html#coverage-and-completeness",
     "title": "Handouts",
-    "section": "",
-    "text": "Institutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
+    "section": "Coverage and completeness",
+    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
   },
   {
     "objectID": "handouts.html#what-is-recorded",
     "href": "handouts.html#what-is-recorded",
     "title": "Handouts",
-    "section": "",
-    "text": "Some registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
+    "section": "What is recorded?",
+    "text": "What is recorded?\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
   },
   {
     "objectID": "handouts.html#data-linking",
     "href": "handouts.html#data-linking",
     "title": "Handouts",
-    "section": "",
-    "text": "Unique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
+    "section": "Data linking",
+    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
   },
   {
     "objectID": "handouts.html#unique-personal-identifier",
     "href": "handouts.html#unique-personal-identifier",
     "title": "Handouts",
-    "section": "",
-    "text": "(Swedish: personnummer, reading: (Ludvigsson et al. 2009))\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
+    "section": "Unique personal identifier",
+    "text": "Unique personal identifier\n(Swedish: personnummer, reading: (Ludvigsson et al. 2009))\n\n121212-1212 Tolvan Tolvansson\n\n\n10 (or 12) digits\ndate of birth-4 digits\nassigned at birth or immigration\nused in all health care contacts\nused for all administrative data\nsometimes reused after death\nsometimes changed (uncommon)\nsometimes inclusion criteria for register\nsimilair in the Nordic countries\n\nDenmark: CPR number\nNorway: Fødselsnummer\nFinland: Henkilötunnus\nIceland: Kennitala"
   },
   {
     "objectID": "handouts.html#combining-data",
     "href": "handouts.html#combining-data",
     "title": "Handouts",
-    "section": "",
-    "text": "Similar registries in different areas/regions/countries\n\nDifferent individuals but similar data\n\nSame definitions and variables?\nSame inclusion criteria?\nDon’t get fooled by similar names!\nDifferences and similarities within the Nordic countries (Laugesen et al. 2021)"
+    "section": "Combining data",
+    "text": "Combining data\n\nSimilar registries in different areas/regions/countries\n\nDifferent individuals but similar data\n\nSame definitions and variables?\nSame inclusion criteria?\nDon’t get fooled by similar names!\nDifferences and similarities within the Nordic countries (Laugesen et al. 2021)"
   },
   {
     "objectID": "handouts.html#working-with-health-care-data",
     "href": "handouts.html#working-with-health-care-data",
     "title": "Handouts",
-    "section": "",
-    "text": "A lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
+    "section": "Working with health care data",
+    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
   },
   {
     "objectID": "handouts.html#r-as-a-tool-but",
     "href": "handouts.html#r-as-a-tool-but",
     "title": "Handouts",
-    "section": "",
-    "text": "Large files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
+    "section": "R as a tool but …",
+    "text": "R as a tool but …\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
   },
   {
     "objectID": "handouts.html#our-use-of-r",
     "href": "handouts.html#our-use-of-r",
     "title": "Handouts",
-    "section": "",
-    "text": "data.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
+    "section": "Our use of R",
+    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   },
   {
     "objectID": "handouts.html#reading-list",
     "href": "handouts.html#reading-list",
     "title": "Handouts",
-    "section": "",
-    "text": "Chapter 1 from (Nguyen 2022)"
+    "section": "Reading list",
+    "text": "Reading list\n\nChapter 1 from (Nguyen 2022)"
   },
   {
     "objectID": "handouts.html#swedish-law",
