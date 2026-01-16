@@ -1,0 +1,16 @@
+---
+title: "EL11: Repetition"
+subtitle: "Repetition before DISA exam"
+reading: ""
+format: 
+  revealjs:
+    theme: dark
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
+    incremental: true
+bibliography: references.bib
+---
+
+# Bla bla bla ...

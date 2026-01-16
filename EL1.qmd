@@ -1,13 +1,15 @@
 ---
-title: "LE1: Intro"
+title: "EL1: Intro"
+subtitle: "Overwiev of this part of the course"
+reading: "[@nguyen2022a, ch. 1], [@ludvigsson2009], [@laugesen2021]"
 format: 
   revealjs:
     theme: dark
-    transition: fade
     slide-number: true
     css: styles.css
     smaller: true
     scrollable: true
+    incremental: true
 bibliography: references.bib
 ---
 
@@ -146,6 +148,7 @@ bibliography: references.bib
 -   Same definitions and variables?
 -   Same inclusion criteria?
 -   Don't get fooled by similar names!
+-   Differences and similarities within the Nordic countries [@laugesen2021]
 
 ## Working with health care data
 
@@ -177,7 +180,3 @@ A lot to do before the statistical analysis!
 -   Git for version control
 -   GitHub for colaboration
 -   Quarto for reporting
-
-## Reading list
-
--   Chapter 1 from [@nguyen2022a]

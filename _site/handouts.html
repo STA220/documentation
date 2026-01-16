@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Handouts – STA220</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STA220</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lectures</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lectures">    
+        <li>
+    <a class="dropdown-item" href="./EL1.html">
+ <span class="dropdown-text">EL1: Intro</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL2.html">
+ <span class="dropdown-text">EL2: Legal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL3.html">
+ <span class="dropdown-text">EL3: Tooling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL4.html">
+ <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL4.html">
+ <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./EL4.html">
+ <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+  </li>  
+        <li class="dropdown-header">EL5.qmd</li>
+        <li class="dropdown-header">EL6.qmd</li>
+        <li class="dropdown-header">EL7.qmd</li>
+        <li class="dropdown-header">EL8.qmd</li>
+        <li class="dropdown-header">EL9.qmd</li>
+        <li class="dropdown-header">EL10.qmd</li>
+        <li>
+    <a class="dropdown-item" href="./EL11.html">
+ <span class="dropdown-text">EL11: Repetition</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./handouts.html" aria-current="page"> 
+<span class="menu-text">Handouts</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-computer-exercises" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Computer exercises</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-computer-exercises">    
+        <li>
+    <a class="dropdown-item" href="./ECS1.html">
+ <span class="dropdown-text">ECS1: IDE and version control</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-seminars" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Seminars</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-seminars">    
+        <li>
+    <a class="dropdown-item" href="./seminar_legal.html">
+ <span class="dropdown-text">Seminar ethics and legal</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#el1-intro" id="toc-el1-intro" class="nav-link active" data-scroll-target="#el1-intro">EL1: Intro</a>
+  <ul class="collapse">
+  <li><a href="#important-aspects" id="toc-important-aspects" class="nav-link" data-scroll-target="#important-aspects">Important aspects</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#different-types-of-data" id="toc-different-types-of-data" class="nav-link" data-scroll-target="#different-types-of-data">Different types of data</a></li>
+  <li><a href="#usages" id="toc-usages" class="nav-link" data-scroll-target="#usages">Usages</a></li>
+  <li><a href="#register-data" id="toc-register-data" class="nav-link" data-scroll-target="#register-data">Register data</a></li>
+  <li><a href="#inclusion-criteria" id="toc-inclusion-criteria" class="nav-link" data-scroll-target="#inclusion-criteria">Inclusion criteria</a></li>
+  <li><a href="#coverage-and-completeness" id="toc-coverage-and-completeness" class="nav-link" data-scroll-target="#coverage-and-completeness">Coverage and completeness</a></li>
+  <li><a href="#what-is-recorded" id="toc-what-is-recorded" class="nav-link" data-scroll-target="#what-is-recorded">What is recorded?</a></li>
+  <li><a href="#data-linking" id="toc-data-linking" class="nav-link" data-scroll-target="#data-linking">Data linking</a></li>
+  <li><a href="#unique-personal-identifier" id="toc-unique-personal-identifier" class="nav-link" data-scroll-target="#unique-personal-identifier">Unique personal identifier</a></li>
+  <li><a href="#combining-data" id="toc-combining-data" class="nav-link" data-scroll-target="#combining-data">Combining data</a></li>
+  <li><a href="#working-with-health-care-data" id="toc-working-with-health-care-data" class="nav-link" data-scroll-target="#working-with-health-care-data">Working with health care data</a></li>
+  <li><a href="#r-as-a-tool-but" id="toc-r-as-a-tool-but" class="nav-link" data-scroll-target="#r-as-a-tool-but">R as a tool but …</a></li>
+  <li><a href="#our-use-of-r" id="toc-our-use-of-r" class="nav-link" data-scroll-target="#our-use-of-r">Our use of R</a></li>
+  </ul></li>
+  <li><a href="#el2-legal" id="toc-el2-legal" class="nav-link" data-scroll-target="#el2-legal">EL2: Legal</a>
+  <ul class="collapse">
+  <li><a href="#swedish-law" id="toc-swedish-law" class="nav-link" data-scroll-target="#swedish-law">Swedish law</a></li>
+  <li><a href="#two-main-branches-of-law" id="toc-two-main-branches-of-law" class="nav-link" data-scroll-target="#two-main-branches-of-law">Two main branches of law</a></li>
+  <li><a href="#tryckfrihetsförordningen-tf" id="toc-tryckfrihetsförordningen-tf" class="nav-link" data-scroll-target="#tryckfrihetsförordningen-tf">Tryckfrihetsförordningen (TF)</a></li>
+  <li><a href="#offentlighets--och-sekretesslagen-osl" id="toc-offentlighets--och-sekretesslagen-osl" class="nav-link" data-scroll-target="#offentlighets--och-sekretesslagen-osl">Offentlighets- och sekretesslagen (OSL)</a></li>
+  <li><a href="#chap-21" id="toc-chap-21" class="nav-link" data-scroll-target="#chap-21">Chap 21</a></li>
+  <li><a href="#chap-24" id="toc-chap-24" class="nav-link" data-scroll-target="#chap-24">Chap 24</a></li>
+  <li><a href="#chapter-25" id="toc-chapter-25" class="nav-link" data-scroll-target="#chapter-25">Chapter 25</a></li>
+  <li><a href="#chapter-10" id="toc-chapter-10" class="nav-link" data-scroll-target="#chapter-10">Chapter 10</a></li>
+  <li><a href="#patientdatalagen-pdl" id="toc-patientdatalagen-pdl" class="nav-link" data-scroll-target="#patientdatalagen-pdl">Patientdatalagen (PDL)</a></li>
+  <li><a href="#chapter-7-pdl" id="toc-chapter-7-pdl" class="nav-link" data-scroll-target="#chapter-7-pdl">Chapter 7 PDL</a></li>
+  <li><a href="#lag-om-hälsodataregister-sfs-1998543" id="toc-lag-om-hälsodataregister-sfs-1998543" class="nav-link" data-scroll-target="#lag-om-hälsodataregister-sfs-1998543">Lag om hälsodataregister (SFS 1998:543)</a></li>
+  <li><a href="#specific-registers" id="toc-specific-registers" class="nav-link" data-scroll-target="#specific-registers">Specific registers</a></li>
+  <li><a href="#arkivdatalagen-adl" id="toc-arkivdatalagen-adl" class="nav-link" data-scroll-target="#arkivdatalagen-adl">Arkivdatalagen (ADL)</a></li>
+  <li><a href="#gdpr" id="toc-gdpr" class="nav-link" data-scroll-target="#gdpr">GDPR</a></li>
+  <li><a href="#special-categories-of-personal-data" id="toc-special-categories-of-personal-data" class="nav-link" data-scroll-target="#special-categories-of-personal-data">Special categories of personal data</a></li>
+  <li><a href="#legal-grounds-for-processing-personal-data" id="toc-legal-grounds-for-processing-personal-data" class="nav-link" data-scroll-target="#legal-grounds-for-processing-personal-data">Legal grounds for processing personal data:</a></li>
+  <li><a href="#data-controller-pua-under-gdpr" id="toc-data-controller-pua-under-gdpr" class="nav-link" data-scroll-target="#data-controller-pua-under-gdpr">Data Controller (PUA) under GDPR</a></li>
+  <li><a href="#data-processor-pub-under-gdpr" id="toc-data-processor-pub-under-gdpr" class="nav-link" data-scroll-target="#data-processor-pub-under-gdpr">Data Processor (PUB) under GDPR</a></li>
+  <li><a href="#controllerprocessor-relationship" id="toc-controllerprocessor-relationship" class="nav-link" data-scroll-target="#controllerprocessor-relationship">Controller–Processor Relationship</a></li>
+  <li><a href="#example-sahlgrenska" id="toc-example-sahlgrenska" class="nav-link" data-scroll-target="#example-sahlgrenska">Example: Sahlgrenska</a></li>
+  <li><a href="#technical-safeguards" id="toc-technical-safeguards" class="nav-link" data-scroll-target="#technical-safeguards">Technical Safeguards</a></li>
+  <li><a href="#organisational-safeguards" id="toc-organisational-safeguards" class="nav-link" data-scroll-target="#organisational-safeguards">Organisational Safeguards</a></li>
+  <li><a href="#data-minimisation-and-purpose-limitation" id="toc-data-minimisation-and-purpose-limitation" class="nav-link" data-scroll-target="#data-minimisation-and-purpose-limitation">Data Minimisation and Purpose Limitation</a></li>
+  <li><a href="#pseudonymisation-and-anonymisation" id="toc-pseudonymisation-and-anonymisation" class="nav-link" data-scroll-target="#pseudonymisation-and-anonymisation">Pseudonymisation and Anonymisation</a></li>
+  <li><a href="#safeguards-for-special-categories-of-data" id="toc-safeguards-for-special-categories-of-data" class="nav-link" data-scroll-target="#safeguards-for-special-categories-of-data">Safeguards for Special Categories of Data</a></li>
+  <li><a href="#gdpr-and-swedish-law" id="toc-gdpr-and-swedish-law" class="nav-link" data-scroll-target="#gdpr-and-swedish-law">GDPR and Swedish law</a></li>
+  <li><a href="#etikprövningslagen-epl" id="toc-etikprövningslagen-epl" class="nav-link" data-scroll-target="#etikprövningslagen-epl">Etikprövningslagen (EPL)</a></li>
+  <li><a href="#international-laws" id="toc-international-laws" class="nav-link" data-scroll-target="#international-laws">International laws</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  <li><a href="#el3-tooling" id="toc-el3-tooling" class="nav-link" data-scroll-target="#el3-tooling">EL3: Tooling</a>
+  <ul class="collapse">
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
+  <li><a href="#general-purpose-programming-languages" id="toc-general-purpose-programming-languages" class="nav-link" data-scroll-target="#general-purpose-programming-languages">General-Purpose Programming Languages</a></li>
+  <li><a href="#early-statistical-packages" id="toc-early-statistical-packages" class="nav-link" data-scroll-target="#early-statistical-packages">Early Statistical Packages</a></li>
+  <li><a href="#sas-a-transitional-system" id="toc-sas-a-transitional-system" class="nav-link" data-scroll-target="#sas-a-transitional-system">SAS: A Transitional System</a></li>
+  <li><a href="#limitations-of-pre-s-systems" id="toc-limitations-of-pre-s-systems" class="nav-link" data-scroll-target="#limitations-of-pre-s-systems">Limitations of Pre-S Systems</a></li>
+  <li><a href="#s" id="toc-s" class="nav-link" data-scroll-target="#s">S</a></li>
+  <li><a href="#the-new-s-language" id="toc-the-new-s-language" class="nav-link" data-scroll-target="#the-new-s-language">The New S Language</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#rstudio-brings-an-ide-to-the-r-community" id="toc-rstudio-brings-an-ide-to-the-r-community" class="nav-link" data-scroll-target="#rstudio-brings-an-ide-to-the-r-community">RStudio brings an IDE to the R community</a></li>
+  <li><a href="#microsoft-revolution-analytics" id="toc-microsoft-revolution-analytics" class="nav-link" data-scroll-target="#microsoft-revolution-analytics">Microsoft (Revolution Analytics)</a></li>
+  <li><a href="#rstudio-becomes-posit" id="toc-rstudio-becomes-posit" class="nav-link" data-scroll-target="#rstudio-becomes-posit">RStudio becomes Posit</a></li>
+  <li><a href="#modern-ide" id="toc-modern-ide" class="nav-link" data-scroll-target="#modern-ide">Modern IDE</a></li>
+  <li><a href="#positron" id="toc-positron" class="nav-link" data-scroll-target="#positron">Positron</a></li>
+  <li><a href="#quick-tour" id="toc-quick-tour" class="nav-link" data-scroll-target="#quick-tour">Quick tour</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version control</a></li>
+  <li><a href="#before-version-control-systems" id="toc-before-version-control-systems" class="nav-link" data-scroll-target="#before-version-control-systems">Before Version Control Systems</a></li>
+  <li><a href="#floppy-discs-mail-and-shared-directories" id="toc-floppy-discs-mail-and-shared-directories" class="nav-link" data-scroll-target="#floppy-discs-mail-and-shared-directories">Floppy discs, Mail, and Shared Directories</a></li>
+  <li><a href="#early-version-control-systems" id="toc-early-version-control-systems" class="nav-link" data-scroll-target="#early-version-control-systems">Early Version Control Systems</a></li>
+  <li><a href="#centralised-version-control" id="toc-centralised-version-control" class="nav-link" data-scroll-target="#centralised-version-control">Centralised Version Control</a></li>
+  <li><a href="#limitations-of-centralised-systems" id="toc-limitations-of-centralised-systems" class="nav-link" data-scroll-target="#limitations-of-centralised-systems">Limitations of Centralised Systems</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <li><a href="#distributed-version-control-with-git" id="toc-distributed-version-control-with-git" class="nav-link" data-scroll-target="#distributed-version-control-with-git">Distributed Version Control with Git</a></li>
+  <li><a href="#hosting-platforms" id="toc-hosting-platforms" class="nav-link" data-scroll-target="#hosting-platforms">Hosting Platforms</a></li>
+  <li><a href="#version-control-today" id="toc-version-control-today" class="nav-link" data-scroll-target="#version-control-today">Version Control Today</a></li>
+  <li><a href="#version-control-beyond-code" id="toc-version-control-beyond-code" class="nav-link" data-scroll-target="#version-control-beyond-code">Version Control Beyond Code</a></li>
+  <li><a href="#warning" id="toc-warning" class="nav-link" data-scroll-target="#warning">WARNING!</a></li>
+  <li><a href="#git-basics" id="toc-git-basics" class="nav-link" data-scroll-target="#git-basics">Git basics</a></li>
+  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video tutorials</a></li>
+  <li><a href="#inspirational-video" id="toc-inspirational-video" class="nav-link" data-scroll-target="#inspirational-video">Inspirational video</a></li>
+  <li><a href="#git-in-positron" id="toc-git-in-positron" class="nav-link" data-scroll-target="#git-in-positron">Git in Positron</a></li>
+  <li><a href="#statistics-projects" id="toc-statistics-projects" class="nav-link" data-scroll-target="#statistics-projects">Statistics projects</a></li>
+  <li><a href="#not-a-single-r-script" id="toc-not-a-single-r-script" class="nav-link" data-scroll-target="#not-a-single-r-script">Not a single R script</a></li>
+  <li><a href="#project-structure" id="toc-project-structure" class="nav-link" data-scroll-target="#project-structure">Project structure</a></li>
+  <li><a href="#example-structure" id="toc-example-structure" class="nav-link" data-scroll-target="#example-structure">Example structure</a></li>
+  <li><a href="#readme.md" id="toc-readme.md" class="nav-link" data-scroll-target="#readme.md"><code>README.md</code></a></li>
+  <li><a href="#data-folder" id="toc-data-folder" class="nav-link" data-scroll-target="#data-folder"><code>data</code> folder</a></li>
+  <li><a href="#r-folder" id="toc-r-folder" class="nav-link" data-scroll-target="#r-folder"><code>R</code> folder</a></li>
+  <li><a href="#reports-folder" id="toc-reports-folder" class="nav-link" data-scroll-target="#reports-folder"><code>reports</code> folder</a></li>
+  <li><a href="#targets.r-file" id="toc-targets.r-file" class="nav-link" data-scroll-target="#targets.r-file"><code>_targets.R</code> file</a></li>
+  <li><a href="#pipeline" id="toc-pipeline" class="nav-link" data-scroll-target="#pipeline">Pipeline</a></li>
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why">Why?</a></li>
+  <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">Reading</a></li>
+  </ul></li>
+  <li><a href="#el4-analysis-pipelines" id="toc-el4-analysis-pipelines" class="nav-link" data-scroll-target="#el4-analysis-pipelines">EL4: Analysis pipelines</a>
+  <ul class="collapse">
+  <li><a href="#not-a-single-r-script-1" id="toc-not-a-single-r-script-1" class="nav-link" data-scroll-target="#not-a-single-r-script-1">Not a single R script</a></li>
+  <li><a href="#project-structure-1" id="toc-project-structure-1" class="nav-link" data-scroll-target="#project-structure-1">Project structure</a></li>
+  <li><a href="#example-structure-1" id="toc-example-structure-1" class="nav-link" data-scroll-target="#example-structure-1">Example structure</a></li>
+  <li><a href="#readme.md-1" id="toc-readme.md-1" class="nav-link" data-scroll-target="#readme.md-1"><code>README.md</code></a></li>
+  <li><a href="#markdown" id="toc-markdown" class="nav-link" data-scroll-target="#markdown">Markdown</a></li>
+  <li><a href="#data-folder-1" id="toc-data-folder-1" class="nav-link" data-scroll-target="#data-folder-1"><code>data</code> folder</a></li>
+  <li><a href="#gitignore-fiile" id="toc-gitignore-fiile" class="nav-link" data-scroll-target="#gitignore-fiile"><code>.gitignore</code> fiile</a></li>
+  <li><a href="#r-folder-1" id="toc-r-folder-1" class="nav-link" data-scroll-target="#r-folder-1"><code>R</code> folder</a></li>
+  <li><a href="#reports" id="toc-reports" class="nav-link" data-scroll-target="#reports"><code>reports</code></a></li>
+  <li><a href="#targets.r-file-1" id="toc-targets.r-file-1" class="nav-link" data-scroll-target="#targets.r-file-1"><code>_targets.R</code> file</a></li>
+  <li><a href="#pipeline-1" id="toc-pipeline-1" class="nav-link" data-scroll-target="#pipeline-1">Pipeline</a></li>
+  <li><a href="#why-1" id="toc-why-1" class="nav-link" data-scroll-target="#why-1">Why?</a></li>
+  <li><a href="#reading-1" id="toc-reading-1" class="nav-link" data-scroll-target="#reading-1">Reading</a></li>
+  </ul></li>
+  <li><a href="#el11-repetition" id="toc-el11-repetition" class="nav-link" data-scroll-target="#el11-repetition">EL11: Repetition</a>
+  <ul class="collapse">
+  <li><a href="#bla-bla-bla" id="toc-bla-bla-bla" class="nav-link" data-scroll-target="#bla-bla-bla">Bla bla bla …</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/handouts.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="handouts.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Handouts</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Updated handouts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>This document is generated automatically and contains all lecture slides.</li>
+<li>When modifications are made to any of the lecture slides, this should be reflected here automatically.</li>
+<li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
+<li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
+</ul>
+<p>Those handouts where last modified: <strong>2026-01-16</strong>.</p>
+</div>
+</div>
+<section id="el1-intro" class="level1">
+<h1>EL1: Intro</h1>
+<p><a href="https://sta220.github.io/documentation/EL1.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;1)</span></li>
+<li><span class="citation" data-cites="ludvigsson2009">(<a href="#ref-ludvigsson2009" role="doc-biblioref">Ludvigsson et al. 2009</a>)</span></li>
+<li><span class="citation" data-cites="laugesen2021">(<a href="#ref-laugesen2021" role="doc-biblioref">Laugesen et al. 2021</a>)</span></li>
+</ul>
+</div>
+</div>
+<section id="important-aspects" class="level2">
+<h2 class="anchored" data-anchor-id="important-aspects">Important aspects</h2>
+<ul>
+<li>Data (where does is come from, what does it contain)</li>
+<li>Ethics and legal (how to handle sensitive data, what laws and regulations apply)</li>
+<li>Project management (how to plan and execute a data project, version control, reproducibility)</li>
+</ul>
+</section>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<ul>
+<li>Lectures on different data sources</li>
+<li>Exercises on data management and analysis
+<ul>
+<li>R with some additional tools (Git, GitHub, targets, data.table)</li>
+</ul></li>
+<li>A data project with written report and presentation</li>
+<li>Final exam</li>
+<li>Instruction web page (in addition to Canvas: https://sta220.github.io/documentation/)</li>
+<li>Litterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)</li>
+</ul>
+</section>
+<section id="different-types-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="different-types-of-data">Different types of data</h2>
+<ul>
+<li>Images</li>
+<li>Lab samples</li>
+<li>Unstructured medical records</li>
+<li>Sensor data</li>
+<li>EHRs (electronic health records)</li>
+<li><strong>Structured medical records (tabular data)</strong></li>
+</ul>
+</section>
+<section id="usages" class="level2">
+<h2 class="anchored" data-anchor-id="usages">Usages</h2>
+<ul>
+<li>Research</li>
+<li>Quality control/improvement</li>
+<li>Administration/reporting</li>
+<li>News coverage</li>
+<li>Building prediction models and tools</li>
+</ul>
+</section>
+<section id="register-data" class="level2">
+<h2 class="anchored" data-anchor-id="register-data">Register data</h2>
+<ul>
+<li>Administrative registers</li>
+<li>Health care registers</li>
+<li>Quality registers</li>
+<li>Administrative data
+<ul>
+<li>Billing codes</li>
+<li>Claims data</li>
+<li>Registries</li>
+<li>Demographic data</li>
+</ul></li>
+<li>Clinical data
+<ul>
+<li>health care registers</li>
+<li>quality registers
+<ul>
+<li>conditions (diabetes, cancer, etc)</li>
+<li>procedures (total hip arthroplasty)</li>
+</ul></li>
+</ul></li>
+<li>Individual background data
+<ul>
+<li>socioeconomic data</li>
+<li>education</li>
+<li>income</li>
+<li>occupation</li>
+<li>family relations</li>
+<li>migration status</li>
+<li>Mortality data
+<ul>
+<li>date of death</li>
+<li>cause of death</li>
+</ul></li>
+<li>Hospital background data
+<ul>
+<li>hospital characteristics</li>
+<li>staffing</li>
+<li>resources</li>
+<li>geographical area</li>
+<li>level of specialization</li>
+<li>private, public</li>
+</ul></li>
+</ul></li>
+<li>aggregated data
+<ul>
+<li>population data</li>
+<li>neighborhood characteristics</li>
+<li>pollution</li>
+<li>crime rates</li>
+</ul></li>
+</ul>
+</section>
+<section id="inclusion-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="inclusion-criteria">Inclusion criteria</h2>
+<ul>
+<li><p>Defines the study population</p></li>
+<li><p>Defines the exclusion criteria</p></li>
+<li><p>Simple example: “Everyone who had a total hip arthroplasty in Sweden”</p>
+<ul>
+<li>Includes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis</li>
+</ul></li>
+<li><p>Complicated example: <a href="https://cancercentrum.se/download/18.3de350c219545ea25bd2470a/1741112639724/inklusionskriterier-aggstockscancer-20140819.pdf">Ovarian cancer</a></p></li>
+</ul>
+</section>
+<section id="coverage-and-completeness" class="level2">
+<h2 class="anchored" data-anchor-id="coverage-and-completeness">Coverage and completeness</h2>
+<ul>
+<li><strong>Institutional coverage</strong>: proportion of all eligible units/clinics that are connected to the registry
+<ul>
+<li>e.g., 90% of hospitals performing the procedure are connected</li>
+<li>Should be known by the “register holder”</li>
+</ul></li>
+<li><strong>Case coverage</strong>: proportion of patients who should have been reported from connected units that are actually included
+<ul>
+<li>e.g., 85% of eligible patients registered</li>
+<li>The aim is to use 100 % but this is not always possible</li>
+</ul></li>
+<li><strong>Data completeness</strong>: proportion of required data fields that are filled in for the registered patients
+<ul>
+<li>e.g., 95% of patients have smoking status recorded<br>
+</li>
+<li>e.g., 80% of patients have blood pressure data available</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-recorded" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-recorded">What is recorded?</h2>
+<ul>
+<li>Some registers are mandated by law and regulations</li>
+<li>Quality registers often have a steering committee and register holder</li>
+<li>Reseasrh initiated databases according to specific protocols</li>
+</ul>
+</section>
+<section id="data-linking" class="level2">
+<h2 class="anchored" data-anchor-id="data-linking">Data linking</h2>
+<ul>
+<li>Unique personal identifier
+<ul>
+<li>Not in every country!</li>
+</ul></li>
+<li>study specific id number</li>
+<li>HSA</li>
+</ul>
+</section>
+<section id="unique-personal-identifier" class="level2">
+<h2 class="anchored" data-anchor-id="unique-personal-identifier">Unique personal identifier</h2>
+<p>(Swedish: personnummer, reading: <span class="citation" data-cites="ludvigsson2009">(<a href="#ref-ludvigsson2009" role="doc-biblioref">Ludvigsson et al. 2009</a>)</span>)</p>
+<blockquote class="blockquote">
+<p>121212-1212 <a href="https://www.svd.se/a/164e04fe-7175-318e-b4d2-bc85530cee68/tolvansson-staller-till-problem">Tolvan Tolvansson</a></p>
+</blockquote>
+<ul>
+<li>10 (or 12) digits</li>
+<li>date of birth-4 digits</li>
+<li>assigned at birth or immigration</li>
+<li>used in all health care contacts</li>
+<li>used for all administrative data</li>
+<li>sometimes reused after death</li>
+<li>sometimes changed (uncommon)</li>
+<li>sometimes inclusion criteria for register</li>
+<li>similair in the Nordic countries
+<ul>
+<li>Denmark: CPR number</li>
+<li>Norway: Fødselsnummer</li>
+<li>Finland: Henkilötunnus</li>
+<li>Iceland: Kennitala</li>
+</ul></li>
+</ul>
+</section>
+<section id="combining-data" class="level2">
+<h2 class="anchored" data-anchor-id="combining-data">Combining data</h2>
+<ul>
+<li>Similar registries in different areas/regions/countries
+<ul>
+<li>Different individuals but similar data</li>
+</ul></li>
+<li>Same definitions and variables?</li>
+<li>Same inclusion criteria?</li>
+<li>Don’t get fooled by similar names!</li>
+<li>Differences and similarities within the Nordic countries <span class="citation" data-cites="laugesen2021">(<a href="#ref-laugesen2021" role="doc-biblioref">Laugesen et al. 2021</a>)</span></li>
+</ul>
+</section>
+<section id="working-with-health-care-data" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-health-care-data">Working with health care data</h2>
+<p>A lot to do before the statistical analysis!</p>
+<ul>
+<li>Data management
+<ul>
+<li>large datasets</li>
+<li>multiple datasets</li>
+<li>different formats</li>
+<li>missing data</li>
+<li>data cleaning</li>
+<li>data transformation</li>
+<li>data wrangling</li>
+<li>data munging</li>
+<li>data governance</li>
+<li>data engineering</li>
+</ul></li>
+</ul>
+</section>
+<section id="r-as-a-tool-but" class="level2">
+<h2 class="anchored" data-anchor-id="r-as-a-tool-but">R as a tool but …</h2>
+<ul>
+<li>Large files often comes exported from SAS</li>
+<li>csv or text files</li>
+<li>API calls</li>
+<li>SQL databases</li>
+</ul>
+</section>
+<section id="our-use-of-r" class="level2">
+<h2 class="anchored" data-anchor-id="our-use-of-r">Our use of R</h2>
+<ul>
+<li>data.table to handle large data sets efficiently</li>
+<li>targets to streamline a reproducible pipeline</li>
+<li>Git for version control</li>
+<li>GitHub for colaboration</li>
+<li>Quarto for reporting</li>
+</ul>
+</section>
+</section>
+<section id="el2-legal" class="level1">
+<h1>EL2: Legal</h1>
+<p><a href="https://sta220.github.io/documentation/EL2.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="citation" data-cites="publica2025">(<a href="#ref-publica2025" role="doc-biblioref"><span>“Public Access and Secrecy | Swedish National Data Service”</span> 2025</a>)</span></li>
+</ul>
+</div>
+</div>
+<section id="swedish-law" class="level2">
+<h2 class="anchored" data-anchor-id="swedish-law">Swedish law</h2>
+<ul>
+<li>Fundamental laws (parliament but difficult to change)</li>
+<li>Ordinary laws (parliament)
+<ul>
+<li>New ones all the time</li>
+<li>New laws to update existing regulations</li>
+</ul></li>
+<li>Published in <a href="https://svenskforfattningssamling.se/">Svensk författningsamling, SFS</a>
+<ul>
+<li>The “big blue book” is only a smaller collection of important laws</li>
+</ul></li>
+<li>ordinances (“förordning”) from the goverment to implement laws</li>
+<li>regulations (“föreskrifter”) from authorities to implement laws and ordinances</li>
+</ul>
+</section>
+<section id="two-main-branches-of-law" class="level2">
+<h2 class="anchored" data-anchor-id="two-main-branches-of-law">Two main branches of law</h2>
+<ul>
+<li>Civil and criminal law:
+<ul>
+<li>state what you can not do (everything else is “legal”)</li>
+<li>Handled by ordinary courts</li>
+<li>Ex: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)</li>
+</ul></li>
+<li>Public law: relationship between individuals and the state etc
+<ul>
+<li>state what the public authorities must do (everything else is “illegal”)</li>
+<li>Handled by administrative courts</li>
+<li>What we mostly care of here</li>
+</ul></li>
+</ul>
+</section>
+<section id="tryckfrihetsförordningen-tf" class="level2">
+<h2 class="anchored" data-anchor-id="tryckfrihetsförordningen-tf">Tryckfrihetsförordningen (TF)</h2>
+<ul>
+<li>World’s oldest freedom of the press law (since 1766)</li>
+<li>Chapter 2: Public access to official documents</li>
+<li>Applies to public authorities and institutions
+<ul>
+<li>Including health care registers and medical records held by public authorities</li>
+</ul></li>
+<li>Everyone has the right to access official documents (TF 2.1)</li>
+<li>but there are exceptions (TF 2.2)
+<ul>
+<li>e.g., if disclosure would violate privacy or national security</li>
+<li>if so, the goverment has the right to provide ordinary laws that restrict access (which they do …)</li>
+</ul></li>
+</ul>
+</section>
+<section id="offentlighets--och-sekretesslagen-osl" class="level2">
+<h2 class="anchored" data-anchor-id="offentlighets--och-sekretesslagen-osl">Offentlighets- och sekretesslagen (OSL)</h2>
+<ul>
+<li>Law that regulates public access to official documents and secrecy</li>
+<li>Applies to public authorities and institutions</li>
+<li>Defines what information is considered secret and under what circumstances</li>
+</ul>
+</section>
+<section id="chap-21" class="level2">
+<h2 class="anchored" data-anchor-id="chap-21">Chap 21</h2>
+<p>Secrecy for private individuals’ personal circumstances <strong>no mather the context</strong></p>
+<ul>
+<li>E.g., health data, economic circumstances, family relations</li>
+</ul>
+<blockquote class="blockquote">
+<p>OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, <strong>if it can be assumed</strong> that disclosure of the information would <strong>cause significant harm</strong> to the individual or to someone closely related to them.</p>
+</blockquote>
+</section>
+<section id="chap-24" class="level2">
+<h2 class="anchored" data-anchor-id="chap-24">Chap 24</h2>
+<p>Secrecy for the protection of individuals in research and statistics.</p>
+<ul>
+<li>Special research databases etc</li>
+<li>Some regulations for research ethics boards</li>
+</ul>
+</section>
+<section id="chapter-25" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-25">Chapter 25</h2>
+<p>Secrecy for the protection of individuals in activities relating to <strong>health and medical care</strong> etc.</p>
+<blockquote class="blockquote">
+<p>OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, <strong>unless it is clear</strong> that the information may be disclosed <strong>without causing harm</strong> to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.</p>
+</blockquote>
+<ul>
+<li>Exceptions exists,
+<ul>
+<li>for example to submit medical patient data to quality registers</li>
+<li>to share data between public organisations for research purposes or statistics (OFS 25.11 p.&nbsp;5).</li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-10" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-10">Chapter 10</h2>
+<p>Provisions on disclosure overriding secrecy and provisions on exemptions from secrecy</p>
+<blockquote class="blockquote">
+<p>OFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.</p>
+</blockquote>
+<ul>
+<li>This would apply to data sharing for research purposes when there is a legal basis for that</li>
+</ul>
+</section>
+<section id="patientdatalagen-pdl" class="level2">
+<h2 class="anchored" data-anchor-id="patientdatalagen-pdl">Patientdatalagen (PDL)</h2>
+<p>The Patient Data Act (PDL)</p>
+<ul>
+<li>regulates the processing of personal data within <strong>health and medical care</strong> in Sweden.</li>
+<li>Applies to <strong>healthcare providers</strong> (public and private).</li>
+<li>Main objectives:
+<ul>
+<li>Protect patient privacy</li>
+<li>Ensure safe and effective healthcare</li>
+<li>Enable <strong>secondary use</strong> of health data under strict conditions</li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-7-pdl" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-7-pdl">Chapter 7 PDL</h2>
+<p>National and regionel quality registers</p>
+<p>Opt-out for patients (every one is included by default until they opt out)</p>
+<blockquote class="blockquote">
+<p>PDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.</p>
+</blockquote>
+<p>PDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of</p>
+<ul>
+<li>the production of <strong>statistics</strong>,</li>
+<li>estimating numbers for the planning of clinical research,</li>
+<li><strong>research within health and medical care</strong>,</li>
+<li>disclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and</li>
+<li>…</li>
+</ul>
+</section>
+<section id="lag-om-hälsodataregister-sfs-1998543" class="level2">
+<h2 class="anchored" data-anchor-id="lag-om-hälsodataregister-sfs-1998543">Lag om hälsodataregister (SFS 1998:543)</h2>
+<p>This law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.</p>
+<p>§ 3: Personal data in a health data register may be processed for for the following purposes:</p>
+<ul>
+<li>the production of statistics,</li>
+<li>follow-up, evaluation and quality assurance of health and medical care, and</li>
+<li>research and epidemiological studies</li>
+</ul>
+</section>
+<section id="specific-registers" class="level2">
+<h2 class="anchored" data-anchor-id="specific-registers">Specific registers</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Register (Swedish)</th>
+<th>Register (English)</th>
+<th>Governing act / ordinance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Folkbokföringen</td>
+<td>Population Register</td>
+<td>Population Registration Act (1991:481); Population Registration Ordinance (1991:749)</td>
+</tr>
+<tr class="even">
+<td>Totalbefolkningsregistret (RTB)</td>
+<td>Total Population Register</td>
+<td>Official Statistics Act (2001:99); Official Statistics Ordinance (2001:100)</td>
+</tr>
+<tr class="odd">
+<td>Nationella patientregistret</td>
+<td>National Patient Register</td>
+<td>Health Data Act (1998:543); Ordinance on the National Patient Register (2001:707)</td>
+</tr>
+<tr class="even">
+<td>Cancerregistret</td>
+<td>Swedish Cancer Register</td>
+<td>Health Data Act (1998:543); Cancer Register Ordinance (2001:709)</td>
+</tr>
+<tr class="odd">
+<td>Dödsorsaksregistret</td>
+<td>Cause of Death Register</td>
+<td>Health Data Act (1998:543); Cause of Death Register Ordinance (2001:709)</td>
+</tr>
+<tr class="even">
+<td>Läkemedelsregistret</td>
+<td>Prescribed Drug Register</td>
+<td>Act on the Prescribed Drug Register (2005:258); Ordinance (2005:363)</td>
+</tr>
+<tr class="odd">
+<td>Medicinska födelseregistret</td>
+<td>Medical Birth Register</td>
+<td>Health Data Act (1998:543); Medical Birth Register Ordinance (2001:708)</td>
+</tr>
+<tr class="even">
+<td>Tandhälsoregistret</td>
+<td>Dental Health Register</td>
+<td>Health Data Act (1998:543); Dental Health Register Ordinance (2008:194)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="arkivdatalagen-adl" class="level2">
+<h2 class="anchored" data-anchor-id="arkivdatalagen-adl">Arkivdatalagen (ADL)</h2>
+<ul>
+<li>Regulates the management of public records and archives</li>
+<li>Applies to public authorities and institutions</li>
+<li>Differnt authorities then have different rules for how long data must be kept
+<ul>
+<li>For example healthcare data is often required to be kept for at least 10 years</li>
+</ul></li>
+</ul>
+</section>
+<section id="gdpr" class="level2">
+<h2 class="anchored" data-anchor-id="gdpr">GDPR</h2>
+<ul>
+<li>Regulation (EU) 2016/679 (GDPR)</li>
+<li>Enforced since May 25, 2018</li>
+<li>Applies to all EU member states</li>
+<li>Regulates the processing of personal data</li>
+<li>Aims to protect the privacy and rights of individuals</li>
+<li>Sets out rules for data controllers and processors</li>
+</ul>
+</section>
+<section id="special-categories-of-personal-data" class="level2">
+<h2 class="anchored" data-anchor-id="special-categories-of-personal-data">Special categories of personal data</h2>
+<ol type="1">
+<li>personal data revealing racial or ethnic origin,</li>
+<li>political opinions,</li>
+<li>religious or philosophical beliefs,</li>
+<li>trade union membership,</li>
+<li>genetic data,</li>
+<li>biometric data for the purpose of uniquely identifying a natural person,</li>
+<li><strong>data concerning health</strong>,</li>
+<li>data concerning a natural person’s sex life or sexual orientation.</li>
+</ol>
+</section>
+<section id="legal-grounds-for-processing-personal-data" class="level2">
+<h2 class="anchored" data-anchor-id="legal-grounds-for-processing-personal-data">Legal grounds for processing personal data:</h2>
+<ol type="1">
+<li>the data subject has given <strong>consent</strong> to the processing of his or her personal data for one or more specific purposes;
+<ol start="2" type="1">
+<li>processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;</li>
+<li>processing is necessary for compliance with a legal obligation to which the controller is subject;</li>
+<li>processing is necessary in order to protect the vital interests of the data subject or of another natural person;</li>
+<li>processing is necessary for the performance of a task carried out in the <strong>public interest</strong> or in the exercise of official authority vested in the controller;</li>
+<li>processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.</li>
+<li>processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.</li>
+</ol></li>
+</ol>
+</section>
+<section id="data-controller-pua-under-gdpr" class="level2">
+<h2 class="anchored" data-anchor-id="data-controller-pua-under-gdpr">Data Controller (PUA) under GDPR</h2>
+<ul>
+<li>The entity that <strong>determines the purposes and means</strong> of the processing of personal data</li>
+<li>Bears the <strong>primary legal responsibility</strong></li>
+<li>Responsible for:
+<ul>
+<li>Lawful basis</li>
+<li>Compliance with GDPR principles</li>
+<li>Transparency and information to data subjects</li>
+<li>Appropriate technical and organisational measures</li>
+</ul></li>
+<li>Typical examples:
+<ul>
+<li>Public authorities</li>
+<li>Universities</li>
+<li>Regions and municipalities</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-processor-pub-under-gdpr" class="level2">
+<h2 class="anchored" data-anchor-id="data-processor-pub-under-gdpr">Data Processor (PUB) under GDPR</h2>
+<ul>
+<li>Processes personal data <strong>on behalf of the controller</strong></li>
+<li>Acts <strong>only on documented instructions</strong> from the controller</li>
+<li>May <strong>not</strong> determine purposes of processing</li>
+<li>Has direct responsibilities for:
+<ul>
+<li>Security of processing (Article 32)</li>
+<li>Confidentiality</li>
+</ul></li>
+<li>Must be governed by a <strong>data processing agreement</strong></li>
+</ul>
+</section>
+<section id="controllerprocessor-relationship" class="level2">
+<h2 class="anchored" data-anchor-id="controllerprocessor-relationship">Controller–Processor Relationship</h2>
+<ul>
+<li>A formal <strong>Data Processing Agreement (DPA)</strong> is required</li>
+<li>The agreement must specify:
+<ul>
+<li>Subject matter and duration</li>
+<li>Nature and purpose of processing</li>
+<li>Types of personal data</li>
+<li>Categories of data subjects</li>
+<li>Security measures</li>
+</ul></li>
+<li>The controller remains responsible even when processing is outsourced</li>
+</ul>
+</section>
+<section id="example-sahlgrenska" class="level2">
+<h2 class="anchored" data-anchor-id="example-sahlgrenska">Example: Sahlgrenska</h2>
+<ul>
+<li>If a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)</li>
+<li>If he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)</li>
+</ul>
+</section>
+<section id="technical-safeguards" class="level2">
+<h2 class="anchored" data-anchor-id="technical-safeguards">Technical Safeguards</h2>
+<p>Examples of technical safeguards include:</p>
+<ul>
+<li>Pseudonymisation</li>
+<li>Encryption of personal data</li>
+<li>Access controls and authentication</li>
+<li>Logging and monitoring of access</li>
+<li>Secure storage and transmission</li>
+</ul>
+</section>
+<section id="organisational-safeguards" class="level2">
+<h2 class="anchored" data-anchor-id="organisational-safeguards">Organisational Safeguards</h2>
+<p>Examples of organisational safeguards include:</p>
+<ul>
+<li>Defined roles and responsibilities</li>
+<li>Internal policies and procedures</li>
+<li>Staff training and confidentiality obligations</li>
+<li>Data protection by design and by default</li>
+<li>Incident and breach response procedures</li>
+<li>Documentation and accountability measures</li>
+</ul>
+</section>
+<section id="data-minimisation-and-purpose-limitation" class="level2">
+<h2 class="anchored" data-anchor-id="data-minimisation-and-purpose-limitation">Data Minimisation and Purpose Limitation</h2>
+<ul>
+<li>Only data that are <strong>necessary</strong> are processed</li>
+<li>Data are processed <strong>only for specified purposes</strong></li>
+<li>Access is limited to authorised personnel</li>
+<li>Retention periods are defined and respected</li>
+</ul>
+</section>
+<section id="pseudonymisation-and-anonymisation" class="level2">
+<h2 class="anchored" data-anchor-id="pseudonymisation-and-anonymisation">Pseudonymisation and Anonymisation</h2>
+<ul>
+<li><strong>Pseudonymisation</strong> reduces risks while allowing reuse</li>
+<li>Identifiers are kept separately and protected</li>
+<li>Anonymisation removes data from GDPR scope (if irreversible)</li>
+</ul>
+</section>
+<section id="safeguards-for-special-categories-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="safeguards-for-special-categories-of-data">Safeguards for Special Categories of Data</h2>
+<p>When processing sensitive data (e.g.&nbsp;health data), additional safeguards are required:</p>
+<ul>
+<li>Strict access control</li>
+<li>Enhanced security measures</li>
+<li>Ethical approval where applicable</li>
+<li>Clear separation of identifiers and content data</li>
+</ul>
+</section>
+<section id="gdpr-and-swedish-law" class="level2">
+<h2 class="anchored" data-anchor-id="gdpr-and-swedish-law">GDPR and Swedish law</h2>
+<ul>
+<li>GDPR is directly applicable in Sweden</li>
+<li>There are refereces to GDPR in Swedish laws such as PDL and OSL</li>
+<li>Swedish laws may provide additional regulations and requirements beyond GDPR</li>
+<li>Data protection authorities in Sweden: <a href="https://imy.se/">Integritetsskyddsmyndigheten (IMY)</a></li>
+<li>Should be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries</li>
+</ul>
+</section>
+<section id="etikprövningslagen-epl" class="level2">
+<h2 class="anchored" data-anchor-id="etikprövningslagen-epl">Etikprövningslagen (EPL)</h2>
+<ul>
+<li>Regulates ethical review of research involving humans (including their data!)
+<ul>
+<li>Had received some critisism and might be revised</li>
+</ul></li>
+<li>Applies to research projects conducted in Sweden</li>
+<li>Requires ethical review and approval by an ethics review board</li>
+<li>Aims to protect the rights, safety, and well-being of research participants</li>
+<li>Based on the Declaration of Helsinki and other international ethical guidelines</li>
+<li>One application for each new research project
+<ul>
+<li>Ammendments for changes in already approved projects</li>
+</ul></li>
+<li>Application fees applies</li>
+<li><a href="https://etikprovningsmyndigheten.se/en/">Swedish Ethical Review Authority</a></li>
+</ul>
+</section>
+<section id="international-laws" class="level2">
+<h2 class="anchored" data-anchor-id="international-laws">International laws</h2>
+<ul>
+<li>Note that other countries have different laws and regulations</li>
+<li>In USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)
+<ul>
+<li>Different states have different laws as well</li>
+</ul></li>
+<li>When collaborating internationally, compliance with all relevant laws is required</li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+</section>
+</section>
+<section id="el3-tooling" class="level1">
+<h1>EL3: Tooling</h1>
+<p><a href="https://sta220.github.io/documentation/EL3.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li></li>
+</ul>
+</div>
+</div>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<blockquote class="blockquote">
+<p>It is widely acknowledged that the most fundamental developments in statistics in the past 60 years are driven by information technology (IT). We should not underestimate the importance of pen and paper as a form of IT but it is since people start using computers to do statistical analysis that we really changed the role statistics plays in our research as well as normal life.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Although: “Let’s not kid ourselves: the most widely used piece of software for statistics is Excel.”” /Brian Ripley (2002)</p>
+</blockquote>
+<p><a href="https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com">Short overview</a></p>
+</section>
+<section id="general-purpose-programming-languages" class="level2">
+<h2 class="anchored" data-anchor-id="general-purpose-programming-languages">General-Purpose Programming Languages</h2>
+<p>Early statistical computing relied heavily on:</p>
+<ul>
+<li><strong>FORTRAN</strong>
+<ul>
+<li>Dominant language for numerical and statistical computation</li>
+<li>Statistical methods implemented as libraries and subroutines</li>
+<li>Still used as subroutines in modern statistical software!</li>
+</ul></li>
+<li><strong>ALGOL / ALGOL 60</strong>
+<ul>
+<li>Used mainly in academic environments</li>
+</ul></li>
+<li><strong>PL/I</strong>
+<ul>
+<li>Used in some government and industrial contexts</li>
+</ul></li>
+</ul>
+<p>📌 These languages required substantial programming expertise.</p>
+</section>
+<section id="early-statistical-packages" class="level2">
+<h2 class="anchored" data-anchor-id="early-statistical-packages">Early Statistical Packages</h2>
+<p>Several dedicated statistical systems emerged:</p>
+<ul>
+<li><strong>SPSS</strong> (1968)
+<ul>
+<li>Originally batch-oriented</li>
+<li>Widely used in social sciences</li>
+<li>Originaly “Statistical Package for the Social Sciences”</li>
+</ul></li>
+<li><strong>BMDP</strong> (1960s)
+<ul>
+<li>Developed at UCLA</li>
+<li>Common in medical statistics</li>
+<li>Bio-Medical Data Package</li>
+</ul></li>
+<li><strong>GENSTAT</strong> (1968)
+<ul>
+<li>Focused on agricultural statistics</li>
+</ul></li>
+<li><strong>MINITAB</strong> (1972)
+<ul>
+<li>Designed for teaching and education</li>
+<li>Still popular in quality control</li>
+</ul></li>
+</ul>
+</section>
+<section id="sas-a-transitional-system" class="level2">
+<h2 class="anchored" data-anchor-id="sas-a-transitional-system">SAS: A Transitional System</h2>
+<ul>
+<li><strong>SAS</strong> (early 1970s)</li>
+<li>Developed for agricultural and biostatistical analysis</li>
+<li>Script-based, but largely batch-oriented</li>
+<li>Became a standard in:
+<ul>
+<li>Government agencies</li>
+<li>Large organisations</li>
+</ul></li>
+<li>Known for strong data management capabilities</li>
+<li>Still widely used in pharmaceutical industry and clinical trials</li>
+</ul>
+<p>📌 SAS predates S but influenced later statistical workflows.</p>
+</section>
+<section id="limitations-of-pre-s-systems" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-pre-s-systems">Limitations of Pre-S Systems</h2>
+<p>Common limitations included:</p>
+<ul>
+<li>Batch processing rather than interactivity</li>
+<li>Separation of data management and analysis</li>
+<li>Limited graphics capabilities</li>
+<li>High barriers to exploratory data analysis</li>
+</ul>
+</section>
+<section id="s" class="level2">
+<h2 class="anchored" data-anchor-id="s">S</h2>
+<ul>
+<li>S takes form at Bell Laboratories (interactive statistical computing).</li>
+<li>John Chambers leads the effort.</li>
+<li><strong>1976:</strong> first working version of S runs on GCOS</li>
+<li><strong>1979:</strong> S2 is ported to UNIX; UNIX becomes the primary platform</li>
+<li><strong>1980:</strong> S is first distributed outside Bell Labs</li>
+<li><strong>1981:</strong> source versions are made available</li>
+<li><strong>1984:</strong> key S books published (often called the “Brown Book” era)</li>
+</ul>
+</section>
+<section id="the-new-s-language" class="level2">
+<h2 class="anchored" data-anchor-id="the-new-s-language">The New S Language</h2>
+<ul>
+<li><strong>1988:</strong> “New S” is released (major language redesign)</li>
+<li><strong>1988:</strong> <strong>S-PLUS</strong> is first released as a commercial implementation of S</li>
+<li><strong>1991:</strong> <em>Statistical Models in S</em> (“White Book”) popularizes formula notation (the <code>~</code> operator), data frames, and modeling workflows</li>
+</ul>
+</section>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<ul>
+<li><strong>1993:</strong> first versions of <strong>R</strong> are published (Auckland; Ross Ihaka &amp; Robert Gentleman)</li>
+<li><strong>1995:</strong> R becomes open source (GPL)</li>
+<li><strong>1997:</strong> the R Core group forms; <strong>CRAN</strong> is founded (Kurt Hornik)</li>
+<li><strong>2000:</strong> <strong>R 1.0.0</strong> is released 2000-02-29</li>
+</ul>
+</section>
+<section id="rstudio-brings-an-ide-to-the-r-community" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-brings-an-ide-to-the-r-community">RStudio brings an IDE to the R community</h2>
+<ul>
+<li><strong>2009:</strong> RStudio (the company) is founded</li>
+<li><strong>2011:</strong> RStudio IDE is introduced as an open-source IDE for R (desktop + server)</li>
+</ul>
+</section>
+<section id="microsoft-revolution-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="microsoft-revolution-analytics">Microsoft (Revolution Analytics)</h2>
+<ul>
+<li><strong>Jan 2015:</strong> Microsoft announces it will acquire <strong>Revolution Analytics</strong></li>
+<li>Microsoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)</li>
+<li><strong>2016:</strong> SQL Server 2016 introduces <strong>R Services</strong> (in-database R)</li>
+<li><strong>2017:</strong> Microsoft expands the stack under “Machine Learning Server” branding</li>
+<li><strong>June 2021:</strong> Microsoft announces retirement of <strong>Microsoft Machine Learning Server</strong></li>
+<li><strong>July 1, 2023:</strong> Microsoft era over</li>
+</ul>
+</section>
+<section id="rstudio-becomes-posit" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-becomes-posit">RStudio becomes Posit</h2>
+<ul>
+<li><strong>July 27, 2022:</strong> RStudio rebrands as <strong>Posit</strong></li>
+<li><strong>July 28, 2022:</strong> <strong>Quarto</strong> is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)</li>
+</ul>
+</section>
+<section id="modern-ide" class="level2">
+<h2 class="anchored" data-anchor-id="modern-ide">Modern IDE</h2>
+</section>
+<section id="positron" class="level2">
+<h2 class="anchored" data-anchor-id="positron">Positron</h2>
+<ul>
+<li>New generation IDE for data science</li>
+<li>From Posit PBC</li>
+<li>Free for individual use</li>
+<li>Based on Code OSS (open source version of VS Code from Microsoft)</li>
+<li>For both R and Python (<a href="https://github.com/posit-dev/positron/issues/3679">Julia?</a>)</li>
+</ul>
+</section>
+<section id="quick-tour" class="level2">
+<h2 class="anchored" data-anchor-id="quick-tour">Quick tour</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Ir_HX4riHw?si=wu9-boO8Z4BKDSUZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Positron assistant (mentioned in the video)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.</p>
+<p>It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!</p>
+</div>
+</div>
+</section>
+<section id="version-control" class="level2">
+<h2 class="anchored" data-anchor-id="version-control">Version control</h2>
+</section>
+<section id="before-version-control-systems" class="level2">
+<h2 class="anchored" data-anchor-id="before-version-control-systems">Before Version Control Systems</h2>
+<p>1950s–1970s: Early software development relied on:</p>
+<ul>
+<li>Manual file naming:
+<ul>
+<li><code>analysis_final.f</code></li>
+<li><code>analysis_final_v2.f</code></li>
+</ul></li>
+<li>Physical media:
+<ul>
+<li>Punch cards</li>
+<li>Magnetic tape</li>
+</ul></li>
+<li>Centralised mainframes</li>
+</ul>
+<p>📌 No automated tracking of changes.</p>
+</section>
+<section id="floppy-discs-mail-and-shared-directories" class="level2">
+<h2 class="anchored" data-anchor-id="floppy-discs-mail-and-shared-directories">Floppy discs, Mail, and Shared Directories</h2>
+<p>1970s–1980s: Common practices included:</p>
+<ul>
+<li>Copying files to:
+<ul>
+<li>Floppy disks</li>
+<li>Magnetic tapes</li>
+</ul></li>
+<li>Sending media by <strong>postal mail</strong></li>
+<li>Sharing files via:
+<ul>
+<li>Network drives</li>
+<li>FTP servers</li>
+</ul></li>
+</ul>
+<p>📌 Version control was social, not technical.</p>
+</section>
+<section id="early-version-control-systems" class="level2">
+<h2 class="anchored" data-anchor-id="early-version-control-systems">Early Version Control Systems</h2>
+<p>1980s: First-generation tools focused on single files:</p>
+<ul>
+<li><strong>SCCS</strong> (Source Code Control System, 1972)</li>
+<li><strong>RCS</strong> (Revision Control System, 1982)</li>
+</ul>
+<p>Characteristics:</p>
+<ul>
+<li>Versioning per file</li>
+<li>Linear history</li>
+<li>Central storage</li>
+</ul>
+</section>
+<section id="centralised-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="centralised-version-control">Centralised Version Control</h2>
+<p>1990s: Project-level systems emerge:</p>
+<ul>
+<li><strong>CVS</strong> (Concurrent Versions System)</li>
+<li><strong>Subversion (SVN)</strong></li>
+</ul>
+<p>Key features:</p>
+<ul>
+<li>Central repository</li>
+<li>Multiple users</li>
+<li>Check-in / check-out model</li>
+</ul>
+<p>📌 Still required constant access to the central server.</p>
+</section>
+<section id="limitations-of-centralised-systems" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-centralised-systems">Limitations of Centralised Systems</h2>
+<p>Common problems:</p>
+<ul>
+<li>Single point of failure</li>
+<li>Poor support for branching and merging</li>
+<li>Difficult offline work</li>
+<li>Slow operations on large repositories</li>
+</ul>
+<p>These limitations became critical for large projects.</p>
+</section>
+<section id="git" class="level2">
+<h2 class="anchored" data-anchor-id="git">Git</h2>
+<ul>
+<li><strong>Git</strong> is created by Linus Torvalds in 2005</li>
+<li>Original motivation:
+<ul>
+<li>Support Linux kernel development</li>
+<li>Replace proprietary tools</li>
+</ul></li>
+</ul>
+<p>Design principles:</p>
+<ul>
+<li>Distributed architecture</li>
+<li>Fast local operations</li>
+<li>Strong support for branching and merging</li>
+</ul>
+</section>
+<section id="distributed-version-control-with-git" class="level2">
+<h2 class="anchored" data-anchor-id="distributed-version-control-with-git">Distributed Version Control with Git</h2>
+<p>Key ideas in Git:</p>
+<ul>
+<li>Every clone is a full repository</li>
+<li>Local commits without network access</li>
+<li>Cheap and fast branches</li>
+<li>Cryptographic integrity (hash-based)</li>
+</ul>
+<p>📌 Collaboration becomes more flexible and robust.</p>
+</section>
+<section id="hosting-platforms" class="level2">
+<h2 class="anchored" data-anchor-id="hosting-platforms">Hosting Platforms</h2>
+<p>Platforms built around Git:</p>
+<ul>
+<li><strong>GitHub</strong> (2008)</li>
+<li><strong>Bitbucket</strong> (2008)</li>
+<li><strong>GitLab</strong> (2011)</li>
+<li><a href="https://gitea.com/">Gitea</a> - open source alternative to GitHub (get the same functionallity locally or on a server)</li>
+</ul>
+<p>They add:</p>
+<ul>
+<li>Pull requests / merge requests</li>
+<li>Issue tracking</li>
+<li>Code review</li>
+<li>CI/CD integration</li>
+</ul>
+</section>
+<section id="version-control-today" class="level2">
+<h2 class="anchored" data-anchor-id="version-control-today">Version Control Today</h2>
+<p>Modern usage includes:</p>
+<ul>
+<li>Code</li>
+<li>Documentation</li>
+<li>Data analysis (scripts, notebooks)</li>
+<li>Configuration and infrastructure</li>
+</ul>
+<p>Git is integrated into:</p>
+<ul>
+<li>IDEs (VS Code, Positron)</li>
+<li>CI/CD pipelines</li>
+<li>Cloud platforms</li>
+</ul>
+</section>
+<section id="version-control-beyond-code" class="level2">
+<h2 class="anchored" data-anchor-id="version-control-beyond-code">Version Control Beyond Code</h2>
+<p>Today, version control supports:</p>
+<ul>
+<li>Reproducible research</li>
+<li>Collaborative writing</li>
+<li>Data science workflows</li>
+<li>Teaching and learning</li>
+</ul>
+<p>📌 Version control is now a core professional skill.</p>
+</section>
+<section id="warning" class="level2">
+<h2 class="anchored" data-anchor-id="warning">WARNING!</h2>
+<ul>
+<li>Not everything should be shared!</li>
+<li>Scripts and documentation yes!</li>
+<li>But <strong>Health data is sensitive!</strong>
+<ul>
+<li>Do not share it!</li>
+<li>Avoid unintentional sharing!</li>
+<li>Private repositories are still shared with hosting provider!</li>
+</ul></li>
+<li>Avoid explicit file paths and sensitive info in scripts!</li>
+<li>Can give information about data location and internal structure!</li>
+<li>No hard-coded passwords or API keys!</li>
+</ul>
+</section>
+<section id="git-basics" class="level2">
+<h2 class="anchored" data-anchor-id="git-basics">Git basics</h2>
+<p>(After installing the Git software)</p>
+<ul>
+<li>Collect all files related to a project in a folder</li>
+<li>Initialize a git repository in that folder</li>
+<li>Make changes to files</li>
+<li>Stage changes for commit</li>
+<li>Commit changes with a message</li>
+<li>Possibly push commits to remote repository</li>
+</ul>
+<pre><code>cd path/to/your/project
+git init
+git status
+## make changes to files
+git add filename1 filename2
+git commit -m "Descriptive message about changes"
+git remote add origin</code></pre>
+</section>
+<section id="video-tutorials" class="level2">
+<h2 class="anchored" data-anchor-id="video-tutorials">Video tutorials</h2>
+<p>The video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mJ-qvsxPHpY?si=vL8ERoEp0OnGzotn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+</section>
+<section id="inspirational-video" class="level2">
+<h2 class="anchored" data-anchor-id="inspirational-video">Inspirational video</h2>
+<p>Watch this video even though some parts might be overwhelming. It gives a good overview of the current state (2025), even though many things will be too advanced for this course (it is not specifically aimed for statisticians or R users).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vA5TTz6BXhY?si=ctFccFSel_GLwzuh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>.gitignore
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>.gitignore</code> file is very important in settings with health data! Pay close attention to <a href="https://www.youtube.com/watch?v=vA5TTz6BXhY&amp;t=1545s">this section</a> of the video!</p>
+</div>
+</div>
+</section>
+<section id="git-in-positron" class="level2">
+<h2 class="anchored" data-anchor-id="git-in-positron">Git in Positron</h2>
+<ul>
+<li>Remember that Positron is build on Code OSS (which shares a lot of features with VS Code).</li>
+<li>Branching and merging is possible but we will not cover that here.</li>
+</ul>
+<p>Short official introduction from Microsoft:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i_23KUAEtUM?si=KNUO6Pr8UatA35kh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p>More detailed introductions. Watch both! The first one is based on a Windows version of VS code and the second on Mac but the concepts are the same:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z5jZ9lrSpqk?si=tajG6Mkm84wlJBYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/twsYxYaQikI?si=2QEK70Shtfvz5IA7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Overwhelmed?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This video includes some parts which might be overwhelming if you are new to Git and GitHub. Don’t worry! You don’t need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice.</p>
+</div>
+</div>
+</section>
+<section id="statistics-projects" class="level2">
+<h2 class="anchored" data-anchor-id="statistics-projects">Statistics projects</h2>
+</section>
+<section id="not-a-single-r-script" class="level2">
+<h2 class="anchored" data-anchor-id="not-a-single-r-script">Not a single R script</h2>
+<ul>
+<li>Real projects are more complex than a single R script!</li>
+<li>Multiple scripts</li>
+<li>Data files</li>
+<li>Documentation</li>
+<li>Reports</li>
+<li>Version control</li>
+<li>Reproducible workflows</li>
+</ul>
+</section>
+<section id="project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure">Project structure</h2>
+<p>Common file structures</p>
+<ul>
+<li>Help you organize your thoughts</li>
+<li>Help others to collaborate</li>
+<li>simplifies paths used in your code</li>
+</ul>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+</section>
+<section id="example-structure" class="level2">
+<h2 class="anchored" data-anchor-id="example-structure">Example structure</h2>
+<pre><code>/.../my_project/
+  ├── README.md        - project documentation
+  ├── TODO             - what should be done next?
+  ├── .git             - handled by git (hidden folder)
+  ├── .gitignore       - used by git but your responsibility!
+  ├── data/            - your data files (not under version control!)
+      ├── cancer.csv 
+      └── patients.qs 
+  ├── R/               - your saved R functions
+      ├── function1.R 
+      └── function2.R
+  ├── reports/
+  └── _targets.R       - targets pipeline script</code></pre>
+</section>
+<section id="readme.md" class="level2">
+<h2 class="anchored" data-anchor-id="readme.md"><code>README.md</code></h2>
+<ul>
+<li>Document the purpose of the project</li>
+<li>What is it about?</li>
+<li>What is the aim?</li>
+<li>Who to contact for questions?</li>
+<li>In what circumstances was it created?</li>
+</ul>
+<p>Markdown format (simple text with some possible formatting)</p>
+</section>
+<section id="data-folder" class="level2">
+<h2 class="anchored" data-anchor-id="data-folder"><code>data</code> folder</h2>
+<ul>
+<li>Store your data files here as they are when you get them</li>
+<li>Avoid any modifications to the raw files!</li>
+<li>It is very easy to forget what you do if it can not be traced by code</li>
+<li>Do NOT include this folder in version control!</li>
+<li>Git is not good at handling large files</li>
+<li>Sensitive data should not be shared!</li>
+<li>Add <code>data/*</code> to your <code>.gitignore</code> file</li>
+<li>In realistic projects, data might come in varying formats
+<ul>
+<li>csv, txt, xlsx, sas7bdat, sav, dta, etc</li>
+<li>some files might be very big (gigabytes not uncommon)</li>
+</ul></li>
+</ul>
+</section>
+<section id="r-folder" class="level2">
+<h2 class="anchored" data-anchor-id="r-folder"><code>R</code> folder</h2>
+<ul>
+<li>Store your R functions here</li>
+<li>Document their purpose inline!</li>
+<li>Helps you to reuse code</li>
+<li>Easier to read main scripts</li>
+<li>Easier to test and debug code</li>
+<li>Easier to share code between projects</li>
+</ul>
+</section>
+<section id="reports-folder" class="level2">
+<h2 class="anchored" data-anchor-id="reports-folder"><code>reports</code> folder</h2>
+<ul>
+<li>Store your reports here</li>
+<li>Quarto documents</li>
+<li>Documemnt your analysis</li>
+<li>Include figures and tables</li>
+<li>Share with external collaborators</li>
+</ul>
+</section>
+<section id="targets.r-file" class="level2">
+<h2 class="anchored" data-anchor-id="targets.r-file"><code>_targets.R</code> file</h2>
+<p>Use the <code>targets</code> package to create a reproducible data analysis pipeline</p>
+<div class="video-wrapper">
+<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline">Pipeline</h2>
+<ul>
+<li>Define steps in your analysis as targets</li>
+<li>Define dependencies between targets</li>
+<li>Automatically track changes and rerun only necessary parts</li>
+</ul>
+<hr>
+<p><img src="images/paste-2.png" class="img-fluid"></p>
+</section>
+<section id="why" class="level2">
+<h2 class="anchored" data-anchor-id="why">Why?</h2>
+<ul>
+<li>You do not want to rerun everything all the time!</li>
+<li>You want to keep track of what you have done</li>
+<li>You want to be able to reproduce your results later</li>
+<li>You want to share your workflow with others</li>
+</ul>
+</section>
+<section id="reading" class="level2">
+<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<ul>
+<li>A bit old but still relevant: <a href="">https://happygitwithr.com/</a></li>
+<li><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></li>
+<li><a href="https://books.ropensci.org/targets/">Target manual</a></li>
+</ul>
+</section>
+</section>
+<section id="el4-analysis-pipelines" class="level1">
+<h1>EL4: Analysis pipelines</h1>
+<p><a href="https://sta220.github.io/documentation/EL4.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li></li>
+</ul>
+</div>
+</div>
+<section id="not-a-single-r-script-1" class="level2">
+<h2 class="anchored" data-anchor-id="not-a-single-r-script-1">Not a single R script</h2>
+<ul>
+<li>Real projects are more complex than a single R script!</li>
+<li>Multiple scripts</li>
+<li>Data files</li>
+<li>Documentation</li>
+<li>Reports</li>
+<li>Version control</li>
+<li>Reproducible workflows</li>
+</ul>
+</section>
+<section id="project-structure-1" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure-1">Project structure</h2>
+<p>Common file structures</p>
+<ul>
+<li>Help you organize your thoughts</li>
+<li>Help others to collaborate</li>
+<li>simplifies paths used in your code</li>
+</ul>
+<p><img src="images/paste-1.png" class="img-fluid"></p>
+</section>
+<section id="example-structure-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-structure-1">Example structure</h2>
+<pre><code>/.../my_project/
+  ├── README.md        - project documentation
+  ├── TODO             - what should be done next?
+  ├── .git             - handled by git (hidden folder)
+  ├── .gitignore       - used by git but your responsibility!
+  ├── data/            - your data files (not under version control!)
+      ├── cancer.csv 
+      └── patients.qs 
+  ├── R/               - your saved R functions
+      ├── function1.R 
+      └── function2.R
+  ├── ...
+  ├── ...
+  └── _targets.R       - targets pipeline script (WHAT??? :-))</code></pre>
+</section>
+<section id="readme.md-1" class="level2">
+<h2 class="anchored" data-anchor-id="readme.md-1"><code>README.md</code></h2>
+<ul>
+<li>Document the purpose of the project</li>
+<li>What is it about?</li>
+<li>What is the aim?</li>
+<li>Who to contact for questions?</li>
+<li>In what circumstances was it created?</li>
+</ul>
+<p>Markdown format (simple text with some possible formatting)</p>
+</section>
+<section id="markdown" class="level2">
+<h2 class="anchored" data-anchor-id="markdown">Markdown</h2>
+<p>TODO: intro and give examples + link etc</p>
+</section>
+<section id="data-folder-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-folder-1"><code>data</code> folder</h2>
+<ul>
+<li>Store your data files here as they are when you get them</li>
+<li>Avoid any modifications to the raw files!</li>
+<li>It is very easy to forget what you do if it can not be traced by code</li>
+<li>Do NOT include this folder in version control!</li>
+<li>Git is not good at handling large files</li>
+<li>Sensitive data should not be shared!</li>
+<li>Add <code>data/*</code> to your <code>.gitignore</code> file</li>
+<li>In realistic projects, data might come in varying formats
+<ul>
+<li>csv, txt, xlsx, sas7bdat, sav, dta, etc (we will cover some of these later)</li>
+<li>some files might be very big (gigabytes not uncommon)</li>
+</ul></li>
+</ul>
+</section>
+<section id="gitignore-fiile" class="level2">
+<h2 class="anchored" data-anchor-id="gitignore-fiile"><code>.gitignore</code> fiile</h2>
+<p>TODO</p>
+</section>
+<section id="r-folder-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-folder-1"><code>R</code> folder</h2>
+<ul>
+<li>Store your R functions here</li>
+<li>You have learned about R functions in the earlier R course</li>
+<li>We will cover some more of that later</li>
+<li>Document their purpose inline!</li>
+<li>Helps you to reuse code</li>
+<li>Easier to read main scripts if functions are defined elsewhere</li>
+<li>Easier to test and debug code</li>
+<li>we eill not cover testing but some about debugging later</li>
+<li>Easier to share code between projects</li>
+</ul>
+</section>
+<section id="reports" class="level2">
+<h2 class="anchored" data-anchor-id="reports"><code>reports</code></h2>
+<ul>
+<li>Separate reports from analysis/data management but integrate them with the analysis pipeline</li>
+<li>Quarto documents</li>
+<li>Documemnt your analysis and thoughts/decisions along the way</li>
+<li>Include figures and tables</li>
+<li>To share with external collaborators</li>
+</ul>
+</section>
+<section id="targets.r-file-1" class="level2">
+<h2 class="anchored" data-anchor-id="targets.r-file-1"><code>_targets.R</code> file</h2>
+<p>Use the <code>targets</code> package to create a reproducible data analysis pipeline</p>
+<div class="video-wrapper">
+<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="pipeline-1" class="level2">
+<h2 class="anchored" data-anchor-id="pipeline-1">Pipeline</h2>
+<ul>
+<li>Define steps in your analysis as targets</li>
+<li>Define dependencies between targets</li>
+<li>Automatically track changes and rerun only necessary parts</li>
+</ul>
+<hr>
+<p><img src="images/paste-2.png" class="img-fluid"></p>
+</section>
+<section id="why-1" class="level2">
+<h2 class="anchored" data-anchor-id="why-1">Why?</h2>
+<ul>
+<li>You do not want to rerun everything all the time!</li>
+<li>You want to keep track of what you have done</li>
+<li>You want to be able to reproduce your results later</li>
+<li>You want to share your workflow with others</li>
+</ul>
+</section>
+<section id="reading-1" class="level2">
+<h2 class="anchored" data-anchor-id="reading-1">Reading</h2>
+<ul>
+<li><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></li>
+<li><a href="https://books.ropensci.org/targets/">Target manual</a></li>
+</ul>
+</section>
+</section>
+<section id="el11-repetition" class="level1">
+<h1>EL11: Repetition</h1>
+<p><a href="https://sta220.github.io/documentation/EL11.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li></li>
+</ul>
+</div>
+</div>
+<section id="bla-bla-bla" class="level2">
+
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bla bla bla …</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-laugesen2021" class="csl-entry" role="listitem">
+Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. <span>“Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.”</span> <em>Clinical Epidemiology</em> Volume 13 (July): 533–54. <a href="https://doi.org/10.2147/CLEP.S314959">https://doi.org/10.2147/CLEP.S314959</a>.
+</div>
+<div id="ref-ludvigsson2009" class="csl-entry" role="listitem">
+Ludvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. <span>“The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.”</span> <em>European Journal of Epidemiology</em> 24 (11): 659–67. <a href="https://doi.org/10.1007/s10654-009-9350-y">https://doi.org/10.1007/s10654-009-9350-y</a>.
+</div>
+<div id="ref-nguyen2022a" class="csl-entry" role="listitem">
+Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
+</div>
+<div id="ref-publica2025" class="csl-entry" role="listitem">
+<span>“Public Access and Secrecy | Swedish National Data Service.”</span> 2025. <a href="https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy">https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sta220\.github\.io\/documentation\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/sta220/documentation/blob/main/handouts.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

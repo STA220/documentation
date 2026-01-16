@@ -4,19 +4,41 @@ project:
 website:
   title: "STA220"
   site-url: "https://sta220.github.io/documentation/"
+  repo-url: https://github.com/sta220/documentation
+  repo-actions: [source, issue]
   navbar:
     left:
-      - index.qmd
-      - Lecture1.qmd
-      - ws1.qmd
-      - Lecture2.qmd
-      - seminar_legal.qmd
-      - Lecture3.qmd
+      - text: Home
+        href: index.qmd
+      - text: Lectures
+        menu:
+          - EL1.qmd
+          - EL2.qmd
+          - EL3.qmd
+          - EL4.qmd
+          - EL4.qmd
+          - EL4.qmd
+          - EL5.qmd
+          - EL6.qmd
+          - EL7.qmd
+          - EL8.qmd
+          - EL9.qmd
+          - EL10.qmd
+          - EL11.qmd
+      - text: Handouts
+        href: handouts.qmd
+      - text: Computer exercises
+        menu:
+          - ECS1.qmd
+      - text: Seminars
+        menu:
+          - seminar_legal.qmd
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      - dark
     css: styles.css
     toc: true
+    toc-depth: 3
+

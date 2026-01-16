@@ -5,6 +5,11 @@ reading: ""
 format: html
 ---
 
+::: {.callout-note}
+# Take your time
+You might not finnish all the exercises during the scheduled hours.
+No, worries. Continue later!
+:::
 
 ## Preparations
 
@@ -51,7 +56,7 @@ To share your repo using GitHub (or Git alone or another provider such as GitLab
 
 ## Source code for STA220 website
 
-The course web site is itself a GitHub repo! You can see a small link and icon "View source" in the right hand menu. Explore those links. Clone the repo, play around!
+The course web site is itself a GitHub repo! You can see a small link and icon "View source" in the right hand menu. Explore those links. Clone the repo, play around! File an issue or make some edits if you find anything to improve! Make a pull request if you have concrete suggestions!
 
 
 ## (Try to) contribute to an R package

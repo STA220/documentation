@@ -1,0 +1,180 @@
+---
+title: "Handouts"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+bibliography: references.bib
+params:
+  site_url: "https://sta220.github.io/documentation"
+---
+
+::: {.callout-note}
+# Updated handouts
+- This document is generated automatically and contains all lecture slides. 
+- When modifications are made to any of the lecture slides, this should be reflected here automatically. 
+- If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking `Other formats > Typst` in the right side menu of the page.
+- If you are reading the PDF version of the document, the HTML version is availble [here](https://sta220.github.io/documentation/handouts.html)
+
+Those handouts where last modified: **`r Sys.Date()`**.
+:::
+
+
+```{r}
+#| results: asis
+#| echo: false
+
+# För att testa:
+# params <- list(site_url = "https://sta220.github.io/documentation")
+make_slides_link <- function(stem) {
+  base <- params$site_url
+  url <- sprintf("%s/%s.html", base, stem)
+  cat(sprintf("[Lecture Slides](%s)\n\n", url))
+}
+
+# Funktion för att ersätta inbäddade YouTube-klipp med länkar till videon
+replace_iframes_with_links <- function(lines) {
+  out <- character(0)
+  i <- 1L
+  n <- length(lines)
+
+  extract_src <- function(block) {
+    # försök hitta src="..."
+    m <- regmatches(block, regexpr('src="[^"]+"', block))
+    if (length(m) == 0 || m == "") {
+      return(NA_character_)
+    }
+    sub('^src="|"$', "", m)
+  }
+
+  youtube_watch_url <- function(src) {
+    # ex: https://www.youtube.com/embed/4Ir_HX4riHw?si=...
+    id <- sub("^.*youtube\\.com/embed/([^?&/]+).*$", "\\1", src)
+    if (identical(id, src)) {
+      return(NA_character_)
+    }
+    paste0("https://www.youtube.com/watch?v=", id)
+  }
+
+  while (i <= n) {
+    line <- lines[i]
+
+    if (grepl("<iframe\\b", line, ignore.case = TRUE)) {
+      # samla hela iframe-blocket till </iframe>
+      block_lines <- line
+      i <- i + 1L
+      while (i <= n && !grepl("</iframe>", lines[i], ignore.case = TRUE)) {
+        block_lines <- c(block_lines, lines[i])
+        i <- i + 1L
+      }
+      if (i <= n) {
+        block_lines <- c(block_lines, lines[i]) # inkludera </iframe>-raden
+        i <- i + 1L
+      }
+
+      block <- paste(block_lines, collapse = "\n")
+      src <- extract_src(block)
+
+      if (is.na(src)) {
+        # okänt/trasigt iframe-block: ersätt med en neutral markör
+        out <- c(out, "**Embedded content (not available in PDF)**")
+        next
+      }
+
+      # Bygg en "bästa möjliga" extern länk
+      link <- NA_character_
+      if (grepl("youtube\\.com/embed/", src, ignore.case = TRUE)) {
+        link <- youtube_watch_url(src)
+      } else {
+        link <- src
+      }
+
+      # Skriv ut tydligt i PDF
+      out <- c(out, "**Video:**", link, "")
+      next
+    }
+
+    out <- c(out, line)
+    i <- i + 1L
+  }
+
+  out
+}
+
+files <- list.files(
+  path = ".",
+  pattern = "^EL[0-9]+\\.qmd$",
+  full.names = TRUE
+)
+
+ord <- as.integer(gsub("\\D", "", basename(files)))
+files <- files[order(ord)]
+
+strip_yaml <- function(lines) {
+  # tar bort första YAML-blocket om det finns
+  idx <- which(trimws(lines) == "---")
+  if (length(idx) >= 2 && idx[1] == 1) {
+    return(lines[(idx[2] + 1):length(lines)])
+  }
+  lines
+}
+promote_h1_to_h2 <- function(lines) {
+  sub("^#\\s+", "## ", lines)
+}
+
+# Hitta alla referenser i texten
+extract_citation_blocks <- function(lines, f) {
+  text <- paste(lines, collapse = "\n")
+  if (!is.null(rmarkdown::yaml_front_matter(f)$reading)) {
+    text <- paste(rmarkdown::yaml_front_matter(f)$reading, text, sep = "\n")
+  }
+
+  # 1) Ta bort fenced code blocks för att undvika falska träffar
+  text <- gsub("(?s)```.*?```", "", text, perl = TRUE)
+
+  # 2) Hitta alla bracket-citations som innehåller minst en @key
+  # Ex: [@a], [@a, ch. 1], [see @a; @b], [@a; @b, pp. 3–4]
+  m <- gregexpr("\\[[^\\]]*@[^\\]]*\\]", text, perl = TRUE)
+  blocks <- unlist(regmatches(text, m))
+
+  # 3) Normalisera lite whitespace (valfritt men snyggt)
+  blocks <- gsub("\\s+", " ", blocks)
+  blocks <- trimws(blocks)
+
+  unique(blocks)
+}
+
+
+# Include slides from all lectures ---------------------------------------
+
+for (f in files) {
+  lines <- readLines(f, warn = FALSE) |> promote_h1_to_h2()
+  body <- strip_yaml(lines)
+  if (knitr::pandoc_to("typst")) {
+    body <- replace_iframes_with_links(body)
+  }
+
+  # (valfritt) skriv en rubrik per fil
+  cat("# ", rmarkdown::yaml_front_matter(f)$title, "\n\n", sep = "")
+
+  # Link to slides
+  cat(make_slides_link(gsub("\\./|.qmd", "", f)))
+
+  # Skriv ut reading list
+  cat("::: {.callout-tip}\n")
+  cat("\n\n# Associated litterature (Refernces at the end)\n\n")
+  cat(paste0("- ", extract_citation_blocks(body, f), collapse = "\n"), "\n\n")
+  cat(":::\n\n")
+
+  # skriv ut innehållet som markdown
+  cat(paste(body, collapse = "\n"))
+  cat("\n\n")
+}
+
+```
