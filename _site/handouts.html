@@ -200,11 +200,19 @@ div.csl-indent {
   <li><a href="#el1-intro" id="toc-el1-intro" class="nav-link active" data-scroll-target="#el1-intro">EL1: Intro</a>
   <ul class="collapse">
   <li><a href="#important-aspects" id="toc-important-aspects" class="nav-link" data-scroll-target="#important-aspects">Important aspects</a></li>
-  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#data-what-is-it" id="toc-data-what-is-it" class="nav-link" data-scroll-target="#data-what-is-it">Data – what is it?</a></li>
+  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure">Course structure</a></li>
   <li><a href="#different-types-of-data" id="toc-different-types-of-data" class="nav-link" data-scroll-target="#different-types-of-data">Different types of data</a></li>
   <li><a href="#usages" id="toc-usages" class="nav-link" data-scroll-target="#usages">Usages</a></li>
   <li><a href="#register-data" id="toc-register-data" class="nav-link" data-scroll-target="#register-data">Register data</a></li>
-  <li><a href="#inclusion-criteria" id="toc-inclusion-criteria" class="nav-link" data-scroll-target="#inclusion-criteria">Inclusion criteria</a></li>
+  <li><a href="#administrative-data" id="toc-administrative-data" class="nav-link" data-scroll-target="#administrative-data">💶 Administrative data</a></li>
+  <li><a href="#hospital-background-data" id="toc-hospital-background-data" class="nav-link" data-scroll-target="#hospital-background-data">🏥 Hospital background data</a></li>
+  <li><a href="#clinical-data" id="toc-clinical-data" class="nav-link" data-scroll-target="#clinical-data">🩺 Clinical data</a></li>
+  <li><a href="#individual-background-data" id="toc-individual-background-data" class="nav-link" data-scroll-target="#individual-background-data">🤓 Individual background data</a></li>
+  <li><a href="#aggregated-data" id="toc-aggregated-data" class="nav-link" data-scroll-target="#aggregated-data">🗺️ Aggregated data</a></li>
+  <li><a href="#inclusionexclusion-criteria" id="toc-inclusionexclusion-criteria" class="nav-link" data-scroll-target="#inclusionexclusion-criteria">Inclusion/exclusion criteria</a></li>
+  <li><a href="#simple-example" id="toc-simple-example" class="nav-link" data-scroll-target="#simple-example">🦿Simple example</a></li>
+  <li><a href="#complicated-example" id="toc-complicated-example" class="nav-link" data-scroll-target="#complicated-example">🥴 Complicated example</a></li>
   <li><a href="#coverage-and-completeness" id="toc-coverage-and-completeness" class="nav-link" data-scroll-target="#coverage-and-completeness">Coverage and completeness</a></li>
   <li><a href="#what-is-recorded" id="toc-what-is-recorded" class="nav-link" data-scroll-target="#what-is-recorded">What is recorded?</a></li>
   <li><a href="#data-linking" id="toc-data-linking" class="nav-link" data-scroll-target="#data-linking">Data linking</a></li>
@@ -309,8 +317,9 @@ div.csl-indent {
   </ul></li>
   <li><a href="#el11-repetition" id="toc-el11-repetition" class="nav-link" data-scroll-target="#el11-repetition">EL11: Repetition</a>
   <ul class="collapse">
-  <li><a href="#bla-bla-bla" id="toc-bla-bla-bla" class="nav-link" data-scroll-target="#bla-bla-bla">Bla bla bla …</a></li>
+  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
   </ul></li>
+  <li><a href="#complete-reading-list" id="toc-complete-reading-list" class="nav-link" data-scroll-target="#complete-reading-list">Complete Reading list</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/handouts.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="handouts.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -352,7 +361,7 @@ div.csl-indent {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-01-16</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-01-19</strong>.</p>
 </div>
 </div>
 <section id="el1-intro" class="level1">
@@ -380,67 +389,144 @@ div.csl-indent {
 <ul>
 <li>Data (where does is come from, what does it contain)</li>
 <li>Ethics and legal (how to handle sensitive data, what laws and regulations apply)</li>
-<li>Project management (how to plan and execute a data project, version control, reproducibility)</li>
+<li>Project management (how to plan and execute a data project, version control, reproducibility, R specific packages for efficient data handling)</li>
 </ul>
 </section>
-<section id="structure" class="level2">
-<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<section id="data-what-is-it" class="level2">
+<h2 class="anchored" data-anchor-id="data-what-is-it">Data – what is it?</h2>
+<p><strong>EU Data Act | Article 2, Definitions:</strong></p>
+<blockquote class="blockquote">
+<p>For the purposes of <em>this Regulation</em>, the following definitions apply:</p>
+</blockquote>
+<blockquote class="blockquote">
+<ol type="1">
+<li>‘data’ means any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audio-visual recording;</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<ol start="2" type="1">
+<li>‘metadata’ means a structured description of the contents or the use of data facilitating the discovery or use of that data;</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<ol start="3" type="1">
+<li>‘personal data’ means personal data as defined in Article 4, point (1), of Regulation (EU) 2016/679;</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<ol start="4" type="1">
+<li>‘non-personal data’ means data other than personal data;</li>
+</ol>
+</blockquote>
+</section>
+<section id="course-structure" class="level2">
+<h2 class="anchored" data-anchor-id="course-structure">Course structure</h2>
 <ul>
-<li>Lectures on different data sources</li>
-<li>Exercises on data management and analysis
+<li>Lectures on different data sources/registers</li>
+<li>🧑‍💻 Exercises on data management and analysis
 <ul>
 <li>R with some additional tools (Git, GitHub, targets, data.table)</li>
 </ul></li>
 <li>A data project with written report and presentation</li>
-<li>Final exam</li>
-<li>Instruction web page (in addition to Canvas: https://sta220.github.io/documentation/)</li>
-<li>Litterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)</li>
+<li>Final exam 😱</li>
+<li>Instruction web page <a href="https://sta220.github.io/documentation/">in addition to Canvas</a></li>
+<li>Litterature: accassible through <a href="https://www.ub.gu.se">GU library</a> (<a href="https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c">O’Reilly Learning for Higher Education</a>) or otherwise shared (no need to purchase books)</li>
 </ul>
 </section>
 <section id="different-types-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="different-types-of-data">Different types of data</h2>
 <ul>
-<li>Images</li>
-<li>Lab samples</li>
-<li>Unstructured medical records</li>
-<li>Sensor data</li>
-<li>EHRs (electronic health records)</li>
-<li><strong>Structured medical records (tabular data)</strong></li>
+<li>🩻 Images
+<ul>
+<li>Statistical image analysis</li>
+</ul></li>
+<li>🧪 Lab samples</li>
+<li>📝 Unstructured medical records
+<ul>
+<li>Natural Language Processing</li>
+</ul></li>
+<li>📺 Sensor data
+<ul>
+<li>Time series (“big data”)</li>
+</ul></li>
+<li>💻 EHRs (electronic health records)
+<ul>
+<li>Structured but hierarchical rather than tabular</li>
+</ul></li>
+<li>💻 <strong>Structured medical records</strong>
+<ul>
+<li>tabular data</li>
+</ul></li>
 </ul>
 </section>
 <section id="usages" class="level2">
 <h2 class="anchored" data-anchor-id="usages">Usages</h2>
 <ul>
-<li>Research</li>
-<li>Quality control/improvement</li>
-<li>Administration/reporting</li>
-<li>News coverage</li>
-<li>Building prediction models and tools</li>
+<li>👩🏼‍🔬 Research</li>
+<li>📒 Quality control/improvement</li>
+<li>🔖 Administration/reporting</li>
+<li>📰 News coverage</li>
+<li>🧑‍💻 Building prediction models and tools</li>
 </ul>
 </section>
 <section id="register-data" class="level2">
 <h2 class="anchored" data-anchor-id="register-data">Register data</h2>
+<p>Three types of health care registers:</p>
 <ul>
 <li>Administrative registers</li>
 <li>Health care registers</li>
 <li>Quality registers</li>
-<li>Administrative data
+</ul>
+</section>
+<section id="administrative-data" class="level2">
+<h2 class="anchored" data-anchor-id="administrative-data">💶 Administrative data</h2>
+<p>(As found in all types of registers)</p>
 <ul>
-<li>Billing codes</li>
-<li>Claims data</li>
-<li>Registries</li>
-<li>Demographic data</li>
+<li>Billing codes
+<ul>
+<li>Direct (what something actually cost)</li>
+<li>Estimated (DRG codes for different types of procedures)</li>
 </ul></li>
-<li>Clinical data
+<li>Claims data
 <ul>
-<li>health care registers</li>
+<li>Primary for reimbursment (insurense company or other payer)</li>
+<li>Secondarily for Health economy/epidemiology</li>
+</ul></li>
+<li>How to contact patients, health care providers etc</li>
+<li>Dates and times for visits, procedures etc</li>
+</ul>
+</section>
+<section id="hospital-background-data" class="level2">
+<h2 class="anchored" data-anchor-id="hospital-background-data">🏥 Hospital background data</h2>
+<ul>
+<li>hospital characteristics</li>
+<li>staffing</li>
+<li>resources</li>
+<li>geographical area</li>
+<li>level of specialization</li>
+<li>private, public</li>
+</ul>
+</section>
+<section id="clinical-data" class="level2">
+<h2 class="anchored" data-anchor-id="clinical-data">🩺 Clinical data</h2>
+<ul>
+<li>health care registers
+<ul>
+<li>Mandatory (by law)</li>
+<li>eg: National patient register, cancer register (diagnoses)</li>
+</ul></li>
 <li>quality registers
 <ul>
+<li>Optional for health care providers</li>
+<li>(Mandatory within organisations joining)</li>
 <li>conditions (diabetes, cancer, etc)</li>
 <li>procedures (total hip arthroplasty)</li>
+<li>Diagnoses, treatments, helth status, questionaires (PROM/PREM)</li>
 </ul></li>
-</ul></li>
-<li>Individual background data
+</ul>
+</section>
+<section id="individual-background-data" class="level2">
+<h2 class="anchored" data-anchor-id="individual-background-data">🤓 Individual background data</h2>
 <ul>
 <li>socioeconomic data</li>
 <li>education</li>
@@ -453,62 +539,115 @@ div.csl-indent {
 <li>date of death</li>
 <li>cause of death</li>
 </ul></li>
-<li>Hospital background data
-<ul>
-<li>hospital characteristics</li>
-<li>staffing</li>
-<li>resources</li>
-<li>geographical area</li>
-<li>level of specialization</li>
-<li>private, public</li>
-</ul></li>
-</ul></li>
-<li>aggregated data
+</ul>
+</section>
+<section id="aggregated-data" class="level2">
+<h2 class="anchored" data-anchor-id="aggregated-data">🗺️ Aggregated data</h2>
+<p>“Micro” vs.&nbsp;“macro” data.</p>
 <ul>
 <li>population data</li>
 <li>neighborhood characteristics</li>
 <li>pollution</li>
 <li>crime rates</li>
-</ul></li>
 </ul>
 </section>
-<section id="inclusion-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="inclusion-criteria">Inclusion criteria</h2>
+<section id="inclusionexclusion-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="inclusionexclusion-criteria">Inclusion/exclusion criteria</h2>
 <ul>
-<li><p>Defines the study population</p></li>
-<li><p>Defines the exclusion criteria</p></li>
-<li><p>Simple example: “Everyone who had a total hip arthroplasty in Sweden”</p>
+<li><p>👍 Defines the target study/register population</p></li>
+<li><p>👎 Define exceptions to the general rules</p></li>
+</ul>
+</section>
+<section id="simple-example" class="level2">
+<h2 class="anchored" data-anchor-id="simple-example">🦿Simple example</h2>
+<blockquote class="blockquote">
+<p>“Every Swedish resident who had total hip arthroplasty performed in Sweden”</p>
+</blockquote>
 <ul>
-<li>Includes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis</li>
+<li><strong>Include:</strong> all ages, all hospitals, all reasons for the prothesis, all types of prosthesis</li>
+<li><strong>Exclude:</strong> Swedish residents with surgery performed in other countries. Non-Swedish residents with the procedure performed in Sweden.</li>
+</ul>
+</section>
+<section id="complicated-example" class="level2">
+<h2 class="anchored" data-anchor-id="complicated-example">🥴 Complicated example</h2>
+<p><a href="https://cancercentrum.se/download/18.3de350c219545ea25bd2470a/1741112639724/inklusionskriterier-aggstockscancer-20140819.pdf">The National Quality Register for Ovarian Cancer</a></p>
+<ul>
+<li><strong>Inclusion</strong>
+<ol type="1">
+<li><strong>Epithelial borderline tumours of the ovary</strong>
+<ul>
+<li>Topography code according to ICD-O/2: C56.9.</li>
+<li>Morphology code according to ICD-O/2 ≥80103 and &lt;85900.</li>
+<li>Borderline tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag = 3.</li>
 </ul></li>
-<li><p>Complicated example: <a href="https://cancercentrum.se/download/18.3de350c219545ea25bd2470a/1741112639724/inklusionskriterier-aggstockscancer-20140819.pdf">Ovarian cancer</a></p></li>
+<li><strong>Epithelial ovarian cancer:</strong>
+<ul>
+<li>Topography code according to ICD-O/2: C56.9.</li>
+<li>Morphology code according to ICD-O/2 ≥80103 and &lt;85900.</li>
+<li>Malignant tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag blank.</li>
+</ul></li>
+<li><strong>Non-epithelial ovarian cancer:</strong>
+<ul>
+<li>Topography code according to ICD-O/2: C56.9.</li>
+<li>Morphology code according to ICD-O/2 ≥85903 and &lt;95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and &lt;90600.</li>
+<li>Malignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.</li>
+<li>Exception for granulosa cell tumours, where all cases with morphology codes according to ICD-O/2 in the interval ≥86200 and ≤86223 are included.</li>
+</ul></li>
+<li><strong>Malignant tumours of the fallopian tube:</strong>
+<ul>
+<li>Topography code according to ICD-O/2: C57.0.</li>
+<li>Morphology code according to ICD-O/2 ≥80003 and &lt;95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and &lt;90600.</li>
+<li>Malignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.</li>
+</ul></li>
+</ol></li>
+<li><strong>Exclusion</strong>
+<ul>
+<li><strong>Epithelial ovarian cancer and borderline tumours of the ovary</strong><br>
+Cases with <strong>behaviour codes 0, 1, 2, 6, or 9 as the fifth digit</strong> in the ICD-O/2 morphology code are excluded.<br>
+Morphology codes according to ICD-O/2 <strong>&lt;80103 and ≥85900</strong> are excluded.</li>
+<li><strong>Non-epithelial ovarian cancer</strong><br>
+Cases with <strong>digits 0, 1, 2, 6, or 9 as the fifth digit</strong> in the ICD-O/2 morphology code are excluded, <strong>with the exception of granulosa cell tumours</strong>, for which cases with ICD-O/2 morphology codes in the interval <strong>≥86200 and ≤86223</strong> are included even when the final digit is <strong>0, 1, 2, or 3</strong>.<br>
+Morphology codes according to ICD-O/2 <strong>&lt;85903</strong>, as well as codes in the intervals <strong>≥90500 and &lt;90600</strong> (mesotheliomas) and <strong>≥95900</strong>, are excluded.</li>
+<li><strong>Tumours of the fallopian tube</strong><br>
+Cases with <strong>behaviour codes 0, 1, 2, 6, or 9 as the fifth digit</strong> in the ICD-O/2 morphology code are excluded.<br>
+Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;90600</strong> (mesotheliomas) and <strong>≥95900</strong> are excluded.</li>
+<li><strong>For all diagnoses</strong>, cases are excluded if the diagnosis is based solely on:
+<ul>
+<li>clinical examination (<strong>basis of diagnosis 1</strong>),</li>
+<li>imaging procedures including radiography, scintigraphy, ultrasound, MRI, CT (or equivalent examinations) (<strong>basis of diagnosis 2</strong>),</li>
+<li>autopsy with or without histopathological examination (<strong>basis of diagnosis 4 or 7</strong>),</li>
+<li>surgery without histopathological examination (<strong>basis of diagnosis 6</strong>), or</li>
+<li>other laboratory investigations (<strong>basis of diagnosis 8</strong>).</li>
+<li>cases with <strong>age &lt;18 years</strong> are excluded.</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="coverage-and-completeness" class="level2">
 <h2 class="anchored" data-anchor-id="coverage-and-completeness">Coverage and completeness</h2>
 <ul>
-<li><strong>Institutional coverage</strong>: proportion of all eligible units/clinics that are connected to the registry
+<li>🏥 <strong>Institutional coverage</strong>: proportion of all eligible units/clinics that are connected to the registry
 <ul>
 <li>e.g., 90% of hospitals performing the procedure are connected</li>
 <li>Should be known by the “register holder”</li>
 </ul></li>
-<li><strong>Case coverage</strong>: proportion of patients who should have been reported from connected units that are actually included
+<li>🤒 <strong>Case coverage</strong>: proportion of patients who should have been reported from connected units that are actually included
 <ul>
 <li>e.g., 85% of eligible patients registered</li>
 <li>The aim is to use 100 % but this is not always possible</li>
 </ul></li>
 <li><strong>Data completeness</strong>: proportion of required data fields that are filled in for the registered patients
 <ul>
-<li>e.g., 95% of patients have smoking status recorded<br>
+<li>🚬 e.g., 95% of patients have smoking status recorded<br>
 </li>
-<li>e.g., 80% of patients have blood pressure data available</li>
+<li>🩸 e.g., 80% of patients have blood pressure data available</li>
 </ul></li>
 </ul>
 </section>
 <section id="what-is-recorded" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-recorded">What is recorded?</h2>
 <ul>
-<li>Some registers are mandated by law and regulations</li>
+<li>👩🏻‍⚖️ Some registers are mandated by law and regulations</li>
 <li>Quality registers often have a steering committee and register holder</li>
 <li>Reseasrh initiated databases according to specific protocols</li>
 </ul>
@@ -519,9 +658,10 @@ div.csl-indent {
 <li>Unique personal identifier
 <ul>
 <li>Not in every country!</li>
+<li>Social security number similair purpose but not as widely used</li>
 </ul></li>
 <li>study specific id number</li>
-<li>HSA</li>
+<li>HSA (“Hälso- och sjukvårdens adressregister” for staff and organisations)</li>
 </ul>
 </section>
 <section id="unique-personal-identifier" class="level2">
@@ -565,7 +705,13 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="working-with-health-care-data">Working with health care data</h2>
 <p>A lot to do before the statistical analysis!</p>
 <ul>
-<li>Data management
+<li><strong>Legalities</strong>
+<ul>
+<li>Do I have the right to access this data?</li>
+<li>What am I allowed to do?</li>
+<li>What am I not allaowed to do?</li>
+</ul></li>
+<li><strong>Data management</strong>
 <ul>
 <li>large datasets</li>
 <li>multiple datasets</li>
@@ -578,26 +724,36 @@ div.csl-indent {
 <li>data governance</li>
 <li>data engineering</li>
 </ul></li>
+<li><strong>Planning</strong>
+<ul>
+<li>What is the purpose?</li>
+<li>How can I achieve my goals?</li>
+<li>What if I change my plans later?</li>
+<li>Can I redo my analysis?</li>
+<li>How do I present/communicate my results?</li>
+</ul></li>
 </ul>
 </section>
 <section id="r-as-a-tool-but" class="level2">
 <h2 class="anchored" data-anchor-id="r-as-a-tool-but">R as a tool but …</h2>
 <ul>
-<li>Large files often comes exported from SAS</li>
-<li>csv or text files</li>
-<li>API calls</li>
-<li>SQL databases</li>
+<li>Large files often comes exported from SAS (initially “Statistical Analysis System”)</li>
+<li>Comma-Separated Values (csv) or text files</li>
+<li>Application Programming Interface (API) calls</li>
+<li>Structured Query Language (SQL) databases</li>
+<li>Hierarchical data structures (eXtensible Markup Language, XML; JavaScript Object Notation, JSON, …)</li>
 </ul>
 </section>
 <section id="our-use-of-r" class="level2">
 <h2 class="anchored" data-anchor-id="our-use-of-r">Our use of R</h2>
 <ul>
-<li>data.table to handle large data sets efficiently</li>
-<li>targets to streamline a reproducible pipeline</li>
-<li>Git for version control</li>
-<li>GitHub for colaboration</li>
-<li>Quarto for reporting</li>
+<li><code>{data.table}</code> to handle large data sets efficiently</li>
+<li><code>{targets}</code> to streamline a reproducible pipeline</li>
+<li><code>Git</code> for version control</li>
+<li><code>GitHub</code> for colaboration</li>
+<li><code>Quarto</code> for reporting</li>
 </ul>
+<hr>
 </section>
 </section>
 <section id="el2-legal" class="level1">
@@ -1740,15 +1896,19 @@ git remote add origin</code></pre>
 </ul>
 </div>
 </div>
-<section id="bla-bla-bla" class="level2">
-
+<section id="na" class="level2">
+<h2 class="anchored" data-anchor-id="na">NA</h2>
+</section>
+</section>
+<section id="complete-reading-list" class="level1">
+<h1>Complete Reading list</h1>
+<p>Articles might be obtained through the GU library <a href="https://www.ub.gu.se/sv"> (UB) </a> or as PDF files uploaded to <a href="https://canvas.gu.se/courses/97348/pages/pdf-s-to-read?module_item_id=1578820"> Canvas </a>.</p>
 
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Bla bla bla …</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-laugesen2021" class="csl-entry" role="listitem">
 Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. <span>“Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.”</span> <em>Clinical Epidemiology</em> Volume 13 (July): 533–54. <a href="https://doi.org/10.2147/CLEP.S314959">https://doi.org/10.2147/CLEP.S314959</a>.
 </div>

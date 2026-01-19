@@ -43,7 +43,7 @@ readxl::read_excel("schema.xlsx") |>
     Weekday = factor(Weekday, c("Monday", "Wednesday"), c("Mon", "Wed")),
     # Date = `Begin date`,
     Time = paste(`Begin time`, `End time`, sep = "-"),
-    AGE = if_else(grepl("Anna", Teacher), "X", ""),
+    Shared = if_else(grepl("Anna", Teacher), "⌧", ""),
     Activity,
   ) |>
   group_by(Activity) |>
@@ -55,6 +55,10 @@ readxl::read_excel("schema.xlsx") |>
   group_by(Week) |>
   mutate(Weekday = if_else(duplicated(Weekday), "", Weekday)) |>
   gt() |>
+  tab_footnote(
+    footnote = "Shared sessin for the whole course (AGE and EB).",
+    locations = cells_column_labels(columns = Shared)
+  ) |>
   tab_style(
     style = cell_fill(color = "lightgreen"),
     locations = cells_body(

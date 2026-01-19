@@ -177,4 +177,8 @@ for (f in files) {
   cat("\n\n")
 }
 
+cat(
+  "# Complete Reading list\n\n Articles might be obtained through the GU library <a href='https://www.ub.gu.se/sv'> (UB) </a> or as PDF files uploaded to <a href='https://canvas.gu.se/courses/97348/pages/pdf-s-to-read?module_item_id=1578820'> Canvas </a>."
+)
+
 ```

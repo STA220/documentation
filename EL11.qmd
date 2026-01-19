@@ -12,5 +12,3 @@ format:
     incremental: true
 bibliography: references.bib
 ---
-
-# Bla bla bla ...

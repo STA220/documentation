@@ -4,63 +4,119 @@
     "href": "EL1.html#important-aspects",
     "title": "EL1: Intro",
     "section": "Important aspects",
-    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
+    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility, R specific packages for efficient data handling)"
   },
   {
-    "objectID": "EL1.html#structure",
-    "href": "EL1.html#structure",
+    "objectID": "EL1.html#data-what-is-it",
+    "href": "EL1.html#data-what-is-it",
     "title": "EL1: Intro",
-    "section": "Structure",
-    "text": "Structure\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
+    "section": "Data – what is it?",
+    "text": "Data – what is it?\nEU Data Act | Article 2, Definitions:\n\nFor the purposes of this Regulation, the following definitions apply:\n\n\n‘data’ means any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audio-visual recording;\n\n\n‘metadata’ means a structured description of the contents or the use of data facilitating the discovery or use of that data;\n\n\n‘personal data’ means personal data as defined in Article 4, point (1), of Regulation (EU) 2016/679;\n\n\n‘non-personal data’ means data other than personal data;"
+  },
+  {
+    "objectID": "EL1.html#course-structure",
+    "href": "EL1.html#course-structure",
+    "title": "EL1: Intro",
+    "section": "Course structure",
+    "text": "Course structure\n\nLectures on different data sources/registers\n🧑‍💻 Exercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam 😱\nInstruction web page in addition to Canvas\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
   },
   {
     "objectID": "EL1.html#different-types-of-data",
     "href": "EL1.html#different-types-of-data",
     "title": "EL1: Intro",
     "section": "Different types of data",
-    "text": "Different types of data\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
+    "text": "Different types of data\n\n🩻 Images\n\nStatistical image analysis\n\n🧪 Lab samples\n📝 Unstructured medical records\n\nNatural Language Processing\n\n📺 Sensor data\n\nTime series (“big data”)\n\n💻 EHRs (electronic health records)\n\nStructured but hierarchical rather than tabular\n\n💻 Structured medical records\n\ntabular data"
   },
   {
     "objectID": "EL1.html#usages",
     "href": "EL1.html#usages",
     "title": "EL1: Intro",
     "section": "Usages",
-    "text": "Usages\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
+    "text": "Usages\n\n👩🏼‍🔬 Research\n📒 Quality control/improvement\n🔖 Administration/reporting\n📰 News coverage\n🧑‍💻 Building prediction models and tools"
   },
   {
     "objectID": "EL1.html#register-data",
     "href": "EL1.html#register-data",
     "title": "EL1: Intro",
     "section": "Register data",
-    "text": "Register data\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
+    "text": "Register data\nThree types of health care registers:\n\nAdministrative registers\nHealth care registers\nQuality registers"
   },
   {
-    "objectID": "EL1.html#inclusion-criteria",
-    "href": "EL1.html#inclusion-criteria",
+    "objectID": "EL1.html#administrative-data",
+    "href": "EL1.html#administrative-data",
     "title": "EL1: Intro",
-    "section": "Inclusion criteria",
-    "text": "Inclusion criteria\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
+    "section": "💶 Administrative data",
+    "text": "💶 Administrative data\n(As found in all types of registers)\n\nBilling codes\n\nDirect (what something actually cost)\nEstimated (DRG codes for different types of procedures)\n\nClaims data\n\nPrimary for reimbursment (insurense company or other payer)\nSecondarily for Health economy/epidemiology\n\nHow to contact patients, health care providers etc\nDates and times for visits, procedures etc"
+  },
+  {
+    "objectID": "EL1.html#hospital-background-data",
+    "href": "EL1.html#hospital-background-data",
+    "title": "EL1: Intro",
+    "section": "🏥 Hospital background data",
+    "text": "🏥 Hospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public"
+  },
+  {
+    "objectID": "EL1.html#clinical-data",
+    "href": "EL1.html#clinical-data",
+    "title": "EL1: Intro",
+    "section": "🩺 Clinical data",
+    "text": "🩺 Clinical data\n\nhealth care registers\n\nMandatory (by law)\neg: National patient register, cancer register (diagnoses)\n\nquality registers\n\nOptional for health care providers\n(Mandatory within organisations joining)\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\nDiagnoses, treatments, helth status, questionaires (PROM/PREM)"
+  },
+  {
+    "objectID": "EL1.html#individual-background-data",
+    "href": "EL1.html#individual-background-data",
+    "title": "EL1: Intro",
+    "section": "🤓 Individual background data",
+    "text": "🤓 Individual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death"
+  },
+  {
+    "objectID": "EL1.html#aggregated-data",
+    "href": "EL1.html#aggregated-data",
+    "title": "EL1: Intro",
+    "section": "🗺️ Aggregated data",
+    "text": "🗺️ Aggregated data\n“Micro” vs. “macro” data.\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
+  },
+  {
+    "objectID": "EL1.html#inclusionexclusion-criteria",
+    "href": "EL1.html#inclusionexclusion-criteria",
+    "title": "EL1: Intro",
+    "section": "Inclusion/exclusion criteria",
+    "text": "Inclusion/exclusion criteria\n\n👍 Defines the target study/register population\n👎 Define exceptions to the general rules"
+  },
+  {
+    "objectID": "EL1.html#simple-example",
+    "href": "EL1.html#simple-example",
+    "title": "EL1: Intro",
+    "section": "🦿Simple example",
+    "text": "🦿Simple example\n\n“Every Swedish resident who had total hip arthroplasty performed in Sweden”\n\n\nInclude: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\nExclude: Swedish residents with surgery performed in other countries. Non-Swedish residents with the procedure performed in Sweden."
+  },
+  {
+    "objectID": "EL1.html#complicated-example",
+    "href": "EL1.html#complicated-example",
+    "title": "EL1: Intro",
+    "section": "🥴 Complicated example",
+    "text": "🥴 Complicated example\nThe National Quality Register for Ovarian Cancer\n\nInclusion\n\nEpithelial borderline tumours of the ovary\n\nTopography code according to ICD-O/2: C56.9.\nMorphology code according to ICD-O/2 ≥80103 and &lt;85900.\nBorderline tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag = 3.\n\nEpithelial ovarian cancer:\n\nTopography code according to ICD-O/2: C56.9.\nMorphology code according to ICD-O/2 ≥80103 and &lt;85900.\nMalignant tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag blank.\n\nNon-epithelial ovarian cancer:\n\nTopography code according to ICD-O/2: C56.9.\nMorphology code according to ICD-O/2 ≥85903 and &lt;95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and &lt;90600.\nMalignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.\nException for granulosa cell tumours, where all cases with morphology codes according to ICD-O/2 in the interval ≥86200 and ≤86223 are included.\n\nMalignant tumours of the fallopian tube:\n\nTopography code according to ICD-O/2: C57.0.\nMorphology code according to ICD-O/2 ≥80003 and &lt;95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and &lt;90600.\nMalignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.\n\n\nExclusion\n\nEpithelial ovarian cancer and borderline tumours of the ovary\nCases with behaviour codes 0, 1, 2, 6, or 9 as the fifth digit in the ICD-O/2 morphology code are excluded.\nMorphology codes according to ICD-O/2 &lt;80103 and ≥85900 are excluded.\nNon-epithelial ovarian cancer\nCases with digits 0, 1, 2, 6, or 9 as the fifth digit in the ICD-O/2 morphology code are excluded, with the exception of granulosa cell tumours, for which cases with ICD-O/2 morphology codes in the interval ≥86200 and ≤86223 are included even when the final digit is 0, 1, 2, or 3.\nMorphology codes according to ICD-O/2 &lt;85903, as well as codes in the intervals ≥90500 and &lt;90600 (mesotheliomas) and ≥95900, are excluded.\nTumours of the fallopian tube\nCases with behaviour codes 0, 1, 2, 6, or 9 as the fifth digit in the ICD-O/2 morphology code are excluded.\nMorphology codes according to ICD-O/2 in the intervals ≥90500 and &lt;90600 (mesotheliomas) and ≥95900 are excluded.\nFor all diagnoses, cases are excluded if the diagnosis is based solely on:\n\nclinical examination (basis of diagnosis 1),\nimaging procedures including radiography, scintigraphy, ultrasound, MRI, CT (or equivalent examinations) (basis of diagnosis 2),\nautopsy with or without histopathological examination (basis of diagnosis 4 or 7),\nsurgery without histopathological examination (basis of diagnosis 6), or\nother laboratory investigations (basis of diagnosis 8).\ncases with age &lt;18 years are excluded."
   },
   {
     "objectID": "EL1.html#coverage-and-completeness",
     "href": "EL1.html#coverage-and-completeness",
     "title": "EL1: Intro",
     "section": "Coverage and completeness",
-    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
+    "text": "Coverage and completeness\n\n🏥 Institutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\n🤒 Case coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\n🚬 e.g., 95% of patients have smoking status recorded\n\n🩸 e.g., 80% of patients have blood pressure data available"
   },
   {
     "objectID": "EL1.html#what-is-recorded",
     "href": "EL1.html#what-is-recorded",
     "title": "EL1: Intro",
     "section": "What is recorded?",
-    "text": "What is recorded?\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
+    "text": "What is recorded?\n\n👩🏻‍⚖️ Some registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
   },
   {
     "objectID": "EL1.html#data-linking",
     "href": "EL1.html#data-linking",
     "title": "EL1: Intro",
     "section": "Data linking",
-    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
+    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\nSocial security number similair purpose but not as widely used\n\nstudy specific id number\nHSA (“Hälso- och sjukvårdens adressregister” for staff and organisations)"
   },
   {
     "objectID": "EL1.html#unique-personal-identifier",
@@ -81,21 +137,28 @@
     "href": "EL1.html#working-with-health-care-data",
     "title": "EL1: Intro",
     "section": "Working with health care data",
-    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
+    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nLegalities\n\nDo I have the right to access this data?\nWhat am I allowed to do?\nWhat am I not allaowed to do?\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering\n\nPlanning\n\nWhat is the purpose?\nHow can I achieve my goals?\nWhat if I change my plans later?\nCan I redo my analysis?\nHow do I present/communicate my results?"
   },
   {
     "objectID": "EL1.html#r-as-a-tool-but",
     "href": "EL1.html#r-as-a-tool-but",
     "title": "EL1: Intro",
     "section": "R as a tool but …",
-    "text": "R as a tool but …\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
+    "text": "R as a tool but …\n\nLarge files often comes exported from SAS (initially “Statistical Analysis System”)\nComma-Separated Values (csv) or text files\nApplication Programming Interface (API) calls\nStructured Query Language (SQL) databases\nHierarchical data structures (eXtensible Markup Language, XML; JavaScript Object Notation, JSON, …)"
   },
   {
     "objectID": "EL1.html#our-use-of-r",
     "href": "EL1.html#our-use-of-r",
     "title": "EL1: Intro",
     "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting\n\n\n\n\n\nLaugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. “Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.” Clinical Epidemiology Volume 13 (July): 533–54. https://doi.org/10.2147/CLEP.S314959.\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+    "text": "Our use of R\n\n{data.table} to handle large data sets efficiently\n{targets} to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
+  },
+  {
+    "objectID": "EL1.html#references",
+    "href": "EL1.html#references",
+    "title": "EL1: Intro",
+    "section": "",
+    "text": "Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. “Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.” Clinical Epidemiology Volume 13 (July): 533–54. https://doi.org/10.2147/CLEP.S314959.\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
   },
   {
     "objectID": "EL2.html#swedish-law",
@@ -431,7 +494,7 @@
     "href": "index.html",
     "title": "Health data",
     "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is fuond on the corresponding Canvas page."
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
   },
   {
     "objectID": "index.html#positron-extensions",
@@ -718,70 +781,126 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-16."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-19."
   },
   {
     "objectID": "handouts.html#important-aspects",
     "href": "handouts.html#important-aspects",
     "title": "Handouts",
     "section": "Important aspects",
-    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility)"
+    "text": "Important aspects\n\nData (where does is come from, what does it contain)\nEthics and legal (how to handle sensitive data, what laws and regulations apply)\nProject management (how to plan and execute a data project, version control, reproducibility, R specific packages for efficient data handling)"
   },
   {
-    "objectID": "handouts.html#structure",
-    "href": "handouts.html#structure",
+    "objectID": "handouts.html#data-what-is-it",
+    "href": "handouts.html#data-what-is-it",
     "title": "Handouts",
-    "section": "Structure",
-    "text": "Structure\n\nLectures on different data sources\nExercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam\nInstruction web page (in addition to Canvas: https://sta220.github.io/documentation/)\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
+    "section": "Data – what is it?",
+    "text": "Data – what is it?\nEU Data Act | Article 2, Definitions:\n\nFor the purposes of this Regulation, the following definitions apply:\n\n\n\n‘data’ means any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audio-visual recording;\n\n\n\n\n‘metadata’ means a structured description of the contents or the use of data facilitating the discovery or use of that data;\n\n\n\n\n‘personal data’ means personal data as defined in Article 4, point (1), of Regulation (EU) 2016/679;\n\n\n\n\n‘non-personal data’ means data other than personal data;"
+  },
+  {
+    "objectID": "handouts.html#course-structure",
+    "href": "handouts.html#course-structure",
+    "title": "Handouts",
+    "section": "Course structure",
+    "text": "Course structure\n\nLectures on different data sources/registers\n🧑‍💻 Exercises on data management and analysis\n\nR with some additional tools (Git, GitHub, targets, data.table)\n\nA data project with written report and presentation\nFinal exam 😱\nInstruction web page in addition to Canvas\nLitterature: accassible through GU library (O’Reilly Learning for Higher Education) or otherwise shared (no need to purchase books)"
   },
   {
     "objectID": "handouts.html#different-types-of-data",
     "href": "handouts.html#different-types-of-data",
     "title": "Handouts",
     "section": "Different types of data",
-    "text": "Different types of data\n\nImages\nLab samples\nUnstructured medical records\nSensor data\nEHRs (electronic health records)\nStructured medical records (tabular data)"
+    "text": "Different types of data\n\n🩻 Images\n\nStatistical image analysis\n\n🧪 Lab samples\n📝 Unstructured medical records\n\nNatural Language Processing\n\n📺 Sensor data\n\nTime series (“big data”)\n\n💻 EHRs (electronic health records)\n\nStructured but hierarchical rather than tabular\n\n💻 Structured medical records\n\ntabular data"
   },
   {
     "objectID": "handouts.html#usages",
     "href": "handouts.html#usages",
     "title": "Handouts",
     "section": "Usages",
-    "text": "Usages\n\nResearch\nQuality control/improvement\nAdministration/reporting\nNews coverage\nBuilding prediction models and tools"
+    "text": "Usages\n\n👩🏼‍🔬 Research\n📒 Quality control/improvement\n🔖 Administration/reporting\n📰 News coverage\n🧑‍💻 Building prediction models and tools"
   },
   {
     "objectID": "handouts.html#register-data",
     "href": "handouts.html#register-data",
     "title": "Handouts",
     "section": "Register data",
-    "text": "Register data\n\nAdministrative registers\nHealth care registers\nQuality registers\nAdministrative data\n\nBilling codes\nClaims data\nRegistries\nDemographic data\n\nClinical data\n\nhealth care registers\nquality registers\n\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\n\n\nIndividual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death\n\nHospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public\n\n\naggregated data\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
+    "text": "Register data\nThree types of health care registers:\n\nAdministrative registers\nHealth care registers\nQuality registers"
   },
   {
-    "objectID": "handouts.html#inclusion-criteria",
-    "href": "handouts.html#inclusion-criteria",
+    "objectID": "handouts.html#administrative-data",
+    "href": "handouts.html#administrative-data",
     "title": "Handouts",
-    "section": "Inclusion criteria",
-    "text": "Inclusion criteria\n\nDefines the study population\nDefines the exclusion criteria\nSimple example: “Everyone who had a total hip arthroplasty in Sweden”\n\nIncludes: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\n\nComplicated example: Ovarian cancer"
+    "section": "💶 Administrative data",
+    "text": "💶 Administrative data\n(As found in all types of registers)\n\nBilling codes\n\nDirect (what something actually cost)\nEstimated (DRG codes for different types of procedures)\n\nClaims data\n\nPrimary for reimbursment (insurense company or other payer)\nSecondarily for Health economy/epidemiology\n\nHow to contact patients, health care providers etc\nDates and times for visits, procedures etc"
+  },
+  {
+    "objectID": "handouts.html#hospital-background-data",
+    "href": "handouts.html#hospital-background-data",
+    "title": "Handouts",
+    "section": "🏥 Hospital background data",
+    "text": "🏥 Hospital background data\n\nhospital characteristics\nstaffing\nresources\ngeographical area\nlevel of specialization\nprivate, public"
+  },
+  {
+    "objectID": "handouts.html#clinical-data",
+    "href": "handouts.html#clinical-data",
+    "title": "Handouts",
+    "section": "🩺 Clinical data",
+    "text": "🩺 Clinical data\n\nhealth care registers\n\nMandatory (by law)\neg: National patient register, cancer register (diagnoses)\n\nquality registers\n\nOptional for health care providers\n(Mandatory within organisations joining)\nconditions (diabetes, cancer, etc)\nprocedures (total hip arthroplasty)\nDiagnoses, treatments, helth status, questionaires (PROM/PREM)"
+  },
+  {
+    "objectID": "handouts.html#individual-background-data",
+    "href": "handouts.html#individual-background-data",
+    "title": "Handouts",
+    "section": "🤓 Individual background data",
+    "text": "🤓 Individual background data\n\nsocioeconomic data\neducation\nincome\noccupation\nfamily relations\nmigration status\nMortality data\n\ndate of death\ncause of death"
+  },
+  {
+    "objectID": "handouts.html#aggregated-data",
+    "href": "handouts.html#aggregated-data",
+    "title": "Handouts",
+    "section": "🗺️ Aggregated data",
+    "text": "🗺️ Aggregated data\n“Micro” vs. “macro” data.\n\npopulation data\nneighborhood characteristics\npollution\ncrime rates"
+  },
+  {
+    "objectID": "handouts.html#inclusionexclusion-criteria",
+    "href": "handouts.html#inclusionexclusion-criteria",
+    "title": "Handouts",
+    "section": "Inclusion/exclusion criteria",
+    "text": "Inclusion/exclusion criteria\n\n👍 Defines the target study/register population\n👎 Define exceptions to the general rules"
+  },
+  {
+    "objectID": "handouts.html#simple-example",
+    "href": "handouts.html#simple-example",
+    "title": "Handouts",
+    "section": "🦿Simple example",
+    "text": "🦿Simple example\n\n“Every Swedish resident who had total hip arthroplasty performed in Sweden”\n\n\nInclude: all ages, all hospitals, all reasons for the prothesis, all types of prosthesis\nExclude: Swedish residents with surgery performed in other countries. Non-Swedish residents with the procedure performed in Sweden."
+  },
+  {
+    "objectID": "handouts.html#complicated-example",
+    "href": "handouts.html#complicated-example",
+    "title": "Handouts",
+    "section": "🥴 Complicated example",
+    "text": "🥴 Complicated example\nThe National Quality Register for Ovarian Cancer\n\nInclusion\n\nEpithelial borderline tumours of the ovary\n\nTopography code according to ICD-O/2: C56.9.\nMorphology code according to ICD-O/2 ≥80103 and &lt;85900.\nBorderline tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag = 3.\n\nEpithelial ovarian cancer:\n\nTopography code according to ICD-O/2: C56.9.\nMorphology code according to ICD-O/2 ≥80103 and &lt;85900.\nMalignant tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag blank.\n\nNon-epithelial ovarian cancer:\n\nTopography code according to ICD-O/2: C56.9.\nMorphology code according to ICD-O/2 ≥85903 and &lt;95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and &lt;90600.\nMalignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.\nException for granulosa cell tumours, where all cases with morphology codes according to ICD-O/2 in the interval ≥86200 and ≤86223 are included.\n\nMalignant tumours of the fallopian tube:\n\nTopography code according to ICD-O/2: C57.0.\nMorphology code according to ICD-O/2 ≥80003 and &lt;95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and &lt;90600.\nMalignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.\n\n\nExclusion\n\nEpithelial ovarian cancer and borderline tumours of the ovary\nCases with behaviour codes 0, 1, 2, 6, or 9 as the fifth digit in the ICD-O/2 morphology code are excluded.\nMorphology codes according to ICD-O/2 &lt;80103 and ≥85900 are excluded.\nNon-epithelial ovarian cancer\nCases with digits 0, 1, 2, 6, or 9 as the fifth digit in the ICD-O/2 morphology code are excluded, with the exception of granulosa cell tumours, for which cases with ICD-O/2 morphology codes in the interval ≥86200 and ≤86223 are included even when the final digit is 0, 1, 2, or 3.\nMorphology codes according to ICD-O/2 &lt;85903, as well as codes in the intervals ≥90500 and &lt;90600 (mesotheliomas) and ≥95900, are excluded.\nTumours of the fallopian tube\nCases with behaviour codes 0, 1, 2, 6, or 9 as the fifth digit in the ICD-O/2 morphology code are excluded.\nMorphology codes according to ICD-O/2 in the intervals ≥90500 and &lt;90600 (mesotheliomas) and ≥95900 are excluded.\nFor all diagnoses, cases are excluded if the diagnosis is based solely on:\n\nclinical examination (basis of diagnosis 1),\nimaging procedures including radiography, scintigraphy, ultrasound, MRI, CT (or equivalent examinations) (basis of diagnosis 2),\nautopsy with or without histopathological examination (basis of diagnosis 4 or 7),\nsurgery without histopathological examination (basis of diagnosis 6), or\nother laboratory investigations (basis of diagnosis 8).\ncases with age &lt;18 years are excluded."
   },
   {
     "objectID": "handouts.html#coverage-and-completeness",
     "href": "handouts.html#coverage-and-completeness",
     "title": "Handouts",
     "section": "Coverage and completeness",
-    "text": "Coverage and completeness\n\nInstitutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\nCase coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\ne.g., 95% of patients have smoking status recorded\n\ne.g., 80% of patients have blood pressure data available"
+    "text": "Coverage and completeness\n\n🏥 Institutional coverage: proportion of all eligible units/clinics that are connected to the registry\n\ne.g., 90% of hospitals performing the procedure are connected\nShould be known by the “register holder”\n\n🤒 Case coverage: proportion of patients who should have been reported from connected units that are actually included\n\ne.g., 85% of eligible patients registered\nThe aim is to use 100 % but this is not always possible\n\nData completeness: proportion of required data fields that are filled in for the registered patients\n\n🚬 e.g., 95% of patients have smoking status recorded\n\n🩸 e.g., 80% of patients have blood pressure data available"
   },
   {
     "objectID": "handouts.html#what-is-recorded",
     "href": "handouts.html#what-is-recorded",
     "title": "Handouts",
     "section": "What is recorded?",
-    "text": "What is recorded?\n\nSome registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
+    "text": "What is recorded?\n\n👩🏻‍⚖️ Some registers are mandated by law and regulations\nQuality registers often have a steering committee and register holder\nReseasrh initiated databases according to specific protocols"
   },
   {
     "objectID": "handouts.html#data-linking",
     "href": "handouts.html#data-linking",
     "title": "Handouts",
     "section": "Data linking",
-    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\n\nstudy specific id number\nHSA"
+    "text": "Data linking\n\nUnique personal identifier\n\nNot in every country!\nSocial security number similair purpose but not as widely used\n\nstudy specific id number\nHSA (“Hälso- och sjukvårdens adressregister” for staff and organisations)"
   },
   {
     "objectID": "handouts.html#unique-personal-identifier",
@@ -802,21 +921,21 @@
     "href": "handouts.html#working-with-health-care-data",
     "title": "Handouts",
     "section": "Working with health care data",
-    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering"
+    "text": "Working with health care data\nA lot to do before the statistical analysis!\n\nLegalities\n\nDo I have the right to access this data?\nWhat am I allowed to do?\nWhat am I not allaowed to do?\n\nData management\n\nlarge datasets\nmultiple datasets\ndifferent formats\nmissing data\ndata cleaning\ndata transformation\ndata wrangling\ndata munging\ndata governance\ndata engineering\n\nPlanning\n\nWhat is the purpose?\nHow can I achieve my goals?\nWhat if I change my plans later?\nCan I redo my analysis?\nHow do I present/communicate my results?"
   },
   {
     "objectID": "handouts.html#r-as-a-tool-but",
     "href": "handouts.html#r-as-a-tool-but",
     "title": "Handouts",
     "section": "R as a tool but …",
-    "text": "R as a tool but …\n\nLarge files often comes exported from SAS\ncsv or text files\nAPI calls\nSQL databases"
+    "text": "R as a tool but …\n\nLarge files often comes exported from SAS (initially “Statistical Analysis System”)\nComma-Separated Values (csv) or text files\nApplication Programming Interface (API) calls\nStructured Query Language (SQL) databases\nHierarchical data structures (eXtensible Markup Language, XML; JavaScript Object Notation, JSON, …)"
   },
   {
     "objectID": "handouts.html#our-use-of-r",
     "href": "handouts.html#our-use-of-r",
     "title": "Handouts",
     "section": "Our use of R",
-    "text": "Our use of R\n\ndata.table to handle large data sets efficiently\ntargets to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
+    "text": "Our use of R\n\n{data.table} to handle large data sets efficiently\n{targets} to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   },
   {
     "objectID": "handouts.html#swedish-law",
@@ -1398,5 +1517,12 @@
     "title": "Handouts",
     "section": "Reading",
     "text": "Reading\n\nTargets overview\nTarget manual"
+  },
+  {
+    "objectID": "handouts.html#na",
+    "href": "handouts.html#na",
+    "title": "Handouts",
+    "section": "NA",
+    "text": "NA"
   }
 ]

@@ -4,9 +4,16 @@ bibliography: references.bib
 ---
 
 This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires.
-General information about the course is fuond on the corresponding Canvas page. 
+General information about the course is found on the corresponding [Canvas](https://canvas.gu.se/courses/97348) page. 
 
 # Plan
+
+::: {.callout-note}
+- See Canvas/[TimeEdit for schedule](https://cloud.timeedit.net/gu/web/wr_stud/ri1Y6v2yQ6w901QY75Q2209XZY057ZQ7.html). 
+- Note that this plan only considers the health data part of the course!
+- See details below regarding the litterature
+:::
+
 
 ```{r}
 #| echo: false
@@ -44,10 +51,10 @@ We will use [GitHub Pull Requests](https://open-vsx.org/extension/GitHub/vscode-
 Course books are available for GU students through the "O'Reilly Learning for Higher Education".
 [Instructions for access](https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en)
 
-[Primary course book](https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/)
+[Primary course book](https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/). Not every chapter of the book will be discussed during the course!
 
-[Recommended books](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)
+[Recommended books](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c).
 
 ## Additional mandatory reading
 
-PDF versions of scientific articles are found in Canvas.
+PDF versions of scientific articles are found in [Canvas](https://canvas.gu.se/courses/97348/pages/pdf-s-to-read?module_item_id=1578820).

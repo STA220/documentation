@@ -10,27 +10,9 @@ quarto::quarto_render(".")
 system("quarto publish gh-pages --no-prompt")
 
 
-# Export handouts to Canvas -----------------------------------------
-
-# NOTE: Needs special permission with API-keys etc
-# (not possibke to do this if you are not the teacher :-))
-library(vvcanvas)
-
-# Identify folder
-Eriks_material <- get_course_files(canvas, sta220$id) |>
-  as_tibble() |>
-  filter(grepl("swedish_personal_id", display_name)) |>
-  pluck("folder_id")
-
-# Upload/update handouts
-upload_folder_file(
-  canvas,
-  folder_id = Eriks_material,
-  file_name = "_site/handouts.pdf"
-)
-
-
 # Publicera läslista -----------------------------------------------------
+
+library(vvcanvas)
 
 canvas <- canvas_authenticate()
 sta220 <- get_courses(canvas) |>
