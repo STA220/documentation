@@ -89,6 +89,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -125,25 +154,28 @@ div.csl-indent {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL2.html">
- <span class="dropdown-text">EL2: Legal</span></a>
+ <span class="dropdown-text">EL2: European legislation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL3.html">
- <span class="dropdown-text">EL3: Tooling</span></a>
+ <span class="dropdown-text">EL2: Swedish legislation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL4.html">
- <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+ <span class="dropdown-text">EL4: Tooling</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL4.html">
- <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+ <span class="dropdown-text">EL4: Tooling</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL4.html">
- <span class="dropdown-text">EL4: Analysis pipelines</span></a>
+ <span class="dropdown-text">EL4: Tooling</span></a>
   </li>  
-        <li class="dropdown-header">EL5.qmd</li>
+        <li>
+    <a class="dropdown-item" href="./EL5.html">
+ <span class="dropdown-text">EL5: Analysis pipelines</span></a>
+  </li>  
         <li class="dropdown-header">EL6.qmd</li>
         <li class="dropdown-header">EL7.qmd</li>
         <li class="dropdown-header">EL8.qmd</li>
@@ -176,8 +208,8 @@ div.csl-indent {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-seminars">    
         <li>
-    <a class="dropdown-item" href="./seminar_legal.html">
- <span class="dropdown-text">Seminar ethics and legal</span></a>
+    <a class="dropdown-item" href="./ES1.html">
+ <span class="dropdown-text">ES1: Ethics and legality</span></a>
   </li>  
     </ul>
   </li>
@@ -222,39 +254,59 @@ div.csl-indent {
   <li><a href="#r-as-a-tool-but" id="toc-r-as-a-tool-but" class="nav-link" data-scroll-target="#r-as-a-tool-but">R as a tool but …</a></li>
   <li><a href="#our-use-of-r" id="toc-our-use-of-r" class="nav-link" data-scroll-target="#our-use-of-r">Our use of R</a></li>
   </ul></li>
-  <li><a href="#el2-legal" id="toc-el2-legal" class="nav-link" data-scroll-target="#el2-legal">EL2: Legal</a>
+  <li><a href="#el2-european-legislation" id="toc-el2-european-legislation" class="nav-link" data-scroll-target="#el2-european-legislation">EL2: European legislation</a>
+  <ul class="collapse">
+  <li><a href="#european-legislation" id="toc-european-legislation" class="nav-link" data-scroll-target="#european-legislation">European legislation</a></li>
+  <li><a href="#gdpr" id="toc-gdpr" class="nav-link" data-scroll-target="#gdpr">GDPR</a></li>
+  <li><a href="#european-union-eu" id="toc-european-union-eu" class="nav-link" data-scroll-target="#european-union-eu">European Union (EU)</a></li>
+  <li><a href="#european-economic-area-eea" id="toc-european-economic-area-eea" class="nav-link" data-scroll-target="#european-economic-area-eea">European Economic Area (EEA)</a></li>
+  <li><a href="#united-kingdom-uk" id="toc-united-kingdom-uk" class="nav-link" data-scroll-target="#united-kingdom-uk">United Kingdom (UK)</a></li>
+  <li><a href="#switzerland" id="toc-switzerland" class="nav-link" data-scroll-target="#switzerland">Switzerland</a></li>
+  <li><a href="#international-laws" id="toc-international-laws" class="nav-link" data-scroll-target="#international-laws">International laws</a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
+  <li><a href="#legal-grounds-for-processing-personal-data" id="toc-legal-grounds-for-processing-personal-data" class="nav-link" data-scroll-target="#legal-grounds-for-processing-personal-data">Legal grounds for processing personal data:</a></li>
+  <li><a href="#processing-of-special-categories-of-personal-data" id="toc-processing-of-special-categories-of-personal-data" class="nav-link" data-scroll-target="#processing-of-special-categories-of-personal-data">Processing of special categories of personal data</a></li>
+  <li><a href="#but" id="toc-but" class="nav-link" data-scroll-target="#but">But …</a></li>
+  <li><a href="#safeguards" id="toc-safeguards" class="nav-link" data-scroll-target="#safeguards">Safeguards</a></li>
+  <li><a href="#technical-safeguards" id="toc-technical-safeguards" class="nav-link" data-scroll-target="#technical-safeguards">Technical Safeguards</a></li>
+  <li><a href="#organisational-safeguards" id="toc-organisational-safeguards" class="nav-link" data-scroll-target="#organisational-safeguards">Organisational Safeguards</a></li>
+  <li><a href="#data-minimisation-and-purpose-limitation" id="toc-data-minimisation-and-purpose-limitation" class="nav-link" data-scroll-target="#data-minimisation-and-purpose-limitation">Data Minimisation and Purpose Limitation</a></li>
+  <li><a href="#pseudonymisation-and-anonymisation" id="toc-pseudonymisation-and-anonymisation" class="nav-link" data-scroll-target="#pseudonymisation-and-anonymisation">Pseudonymisation and Anonymisation</a></li>
+  <li><a href="#data-controller" id="toc-data-controller" class="nav-link" data-scroll-target="#data-controller">Data Controller</a></li>
+  <li><a href="#data-processor-pub-under-gdpr" id="toc-data-processor-pub-under-gdpr" class="nav-link" data-scroll-target="#data-processor-pub-under-gdpr">Data Processor (PUB) under GDPR</a></li>
+  <li><a href="#controllerprocessor-relationship" id="toc-controllerprocessor-relationship" class="nav-link" data-scroll-target="#controllerprocessor-relationship">Controller–Processor Relationship</a></li>
+  <li><a href="#example-sahlgrenska" id="toc-example-sahlgrenska" class="nav-link" data-scroll-target="#example-sahlgrenska">Example: Sahlgrenska</a></li>
+  <li><a href="#european-health-data-space-ehds" id="toc-european-health-data-space-ehds" class="nav-link" data-scroll-target="#european-health-data-space-ehds">European Health Data Space (EHDS)</a></li>
+  <li><a href="#what-is-it" id="toc-what-is-it" class="nav-link" data-scroll-target="#what-is-it">What is it?</a></li>
+  <li><a href="#two-main-pillars" id="toc-two-main-pillars" class="nav-link" data-scroll-target="#two-main-pillars">Two Main Pillars</a></li>
+  <li><a href="#implementation-timeline" id="toc-implementation-timeline" class="nav-link" data-scroll-target="#implementation-timeline">Implementation Timeline</a></li>
+  <li><a href="#how-ehds-relates-to-gdpr" id="toc-how-ehds-relates-to-gdpr" class="nav-link" data-scroll-target="#how-ehds-relates-to-gdpr">How EHDS Relates to GDPR</a></li>
+  <li><a href="#why-ehds-matters-for-statisticians" id="toc-why-ehds-matters-for-statisticians" class="nav-link" data-scroll-target="#why-ehds-matters-for-statisticians">Why EHDS Matters for Statisticians</a></li>
+  <li><a href="#ehds-does-not-do-this" id="toc-ehds-does-not-do-this" class="nav-link" data-scroll-target="#ehds-does-not-do-this">EHDS Does <em>Not</em> Do This</a></li>
+  <li><a href="#the-eu-data-act" id="toc-the-eu-data-act" class="nav-link" data-scroll-target="#the-eu-data-act">The EU Data Act</a></li>
+  <li><a href="#what-is-it-1" id="toc-what-is-it-1" class="nav-link" data-scroll-target="#what-is-it-1">What Is It?</a></li>
+  <li><a href="#how-the-data-act-relates-to-health-data" id="toc-how-the-data-act-relates-to-health-data" class="nav-link" data-scroll-target="#how-the-data-act-relates-to-health-data">How the Data Act Relates to Health Data</a></li>
+  </ul></li>
+  <li><a href="#el2-swedish-legislation" id="toc-el2-swedish-legislation" class="nav-link" data-scroll-target="#el2-swedish-legislation">EL2: Swedish legislation</a>
   <ul class="collapse">
   <li><a href="#swedish-law" id="toc-swedish-law" class="nav-link" data-scroll-target="#swedish-law">Swedish law</a></li>
+  <li><a href="#backgrund-of-swedish-law" id="toc-backgrund-of-swedish-law" class="nav-link" data-scroll-target="#backgrund-of-swedish-law">Backgrund of Swedish law</a></li>
   <li><a href="#two-main-branches-of-law" id="toc-two-main-branches-of-law" class="nav-link" data-scroll-target="#two-main-branches-of-law">Two main branches of law</a></li>
   <li><a href="#tryckfrihetsförordningen-tf" id="toc-tryckfrihetsförordningen-tf" class="nav-link" data-scroll-target="#tryckfrihetsförordningen-tf">Tryckfrihetsförordningen (TF)</a></li>
   <li><a href="#offentlighets--och-sekretesslagen-osl" id="toc-offentlighets--och-sekretesslagen-osl" class="nav-link" data-scroll-target="#offentlighets--och-sekretesslagen-osl">Offentlighets- och sekretesslagen (OSL)</a></li>
-  <li><a href="#chap-21" id="toc-chap-21" class="nav-link" data-scroll-target="#chap-21">Chap 21</a></li>
-  <li><a href="#chap-24" id="toc-chap-24" class="nav-link" data-scroll-target="#chap-24">Chap 24</a></li>
-  <li><a href="#chapter-25" id="toc-chapter-25" class="nav-link" data-scroll-target="#chapter-25">Chapter 25</a></li>
-  <li><a href="#chapter-10" id="toc-chapter-10" class="nav-link" data-scroll-target="#chapter-10">Chapter 10</a></li>
+  <li><a href="#osl-chap-21" id="toc-osl-chap-21" class="nav-link" data-scroll-target="#osl-chap-21">OSL Chap 21</a></li>
+  <li><a href="#osl-chap-24" id="toc-osl-chap-24" class="nav-link" data-scroll-target="#osl-chap-24">OSL Chap 24</a></li>
+  <li><a href="#osl-chapter-25" id="toc-osl-chapter-25" class="nav-link" data-scroll-target="#osl-chapter-25">OSL Chapter 25</a></li>
+  <li><a href="#osl-chapter-10" id="toc-osl-chapter-10" class="nav-link" data-scroll-target="#osl-chapter-10">OSL Chapter 10</a></li>
   <li><a href="#patientdatalagen-pdl" id="toc-patientdatalagen-pdl" class="nav-link" data-scroll-target="#patientdatalagen-pdl">Patientdatalagen (PDL)</a></li>
   <li><a href="#chapter-7-pdl" id="toc-chapter-7-pdl" class="nav-link" data-scroll-target="#chapter-7-pdl">Chapter 7 PDL</a></li>
   <li><a href="#lag-om-hälsodataregister-sfs-1998543" id="toc-lag-om-hälsodataregister-sfs-1998543" class="nav-link" data-scroll-target="#lag-om-hälsodataregister-sfs-1998543">Lag om hälsodataregister (SFS 1998:543)</a></li>
   <li><a href="#specific-registers" id="toc-specific-registers" class="nav-link" data-scroll-target="#specific-registers">Specific registers</a></li>
   <li><a href="#arkivdatalagen-adl" id="toc-arkivdatalagen-adl" class="nav-link" data-scroll-target="#arkivdatalagen-adl">Arkivdatalagen (ADL)</a></li>
-  <li><a href="#gdpr" id="toc-gdpr" class="nav-link" data-scroll-target="#gdpr">GDPR</a></li>
-  <li><a href="#special-categories-of-personal-data" id="toc-special-categories-of-personal-data" class="nav-link" data-scroll-target="#special-categories-of-personal-data">Special categories of personal data</a></li>
-  <li><a href="#legal-grounds-for-processing-personal-data" id="toc-legal-grounds-for-processing-personal-data" class="nav-link" data-scroll-target="#legal-grounds-for-processing-personal-data">Legal grounds for processing personal data:</a></li>
-  <li><a href="#data-controller-pua-under-gdpr" id="toc-data-controller-pua-under-gdpr" class="nav-link" data-scroll-target="#data-controller-pua-under-gdpr">Data Controller (PUA) under GDPR</a></li>
-  <li><a href="#data-processor-pub-under-gdpr" id="toc-data-processor-pub-under-gdpr" class="nav-link" data-scroll-target="#data-processor-pub-under-gdpr">Data Processor (PUB) under GDPR</a></li>
-  <li><a href="#controllerprocessor-relationship" id="toc-controllerprocessor-relationship" class="nav-link" data-scroll-target="#controllerprocessor-relationship">Controller–Processor Relationship</a></li>
-  <li><a href="#example-sahlgrenska" id="toc-example-sahlgrenska" class="nav-link" data-scroll-target="#example-sahlgrenska">Example: Sahlgrenska</a></li>
-  <li><a href="#technical-safeguards" id="toc-technical-safeguards" class="nav-link" data-scroll-target="#technical-safeguards">Technical Safeguards</a></li>
-  <li><a href="#organisational-safeguards" id="toc-organisational-safeguards" class="nav-link" data-scroll-target="#organisational-safeguards">Organisational Safeguards</a></li>
-  <li><a href="#data-minimisation-and-purpose-limitation" id="toc-data-minimisation-and-purpose-limitation" class="nav-link" data-scroll-target="#data-minimisation-and-purpose-limitation">Data Minimisation and Purpose Limitation</a></li>
-  <li><a href="#pseudonymisation-and-anonymisation" id="toc-pseudonymisation-and-anonymisation" class="nav-link" data-scroll-target="#pseudonymisation-and-anonymisation">Pseudonymisation and Anonymisation</a></li>
-  <li><a href="#safeguards-for-special-categories-of-data" id="toc-safeguards-for-special-categories-of-data" class="nav-link" data-scroll-target="#safeguards-for-special-categories-of-data">Safeguards for Special Categories of Data</a></li>
   <li><a href="#gdpr-and-swedish-law" id="toc-gdpr-and-swedish-law" class="nav-link" data-scroll-target="#gdpr-and-swedish-law">GDPR and Swedish law</a></li>
   <li><a href="#etikprövningslagen-epl" id="toc-etikprövningslagen-epl" class="nav-link" data-scroll-target="#etikprövningslagen-epl">Etikprövningslagen (EPL)</a></li>
-  <li><a href="#international-laws" id="toc-international-laws" class="nav-link" data-scroll-target="#international-laws">International laws</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
-  <li><a href="#el3-tooling" id="toc-el3-tooling" class="nav-link" data-scroll-target="#el3-tooling">EL3: Tooling</a>
+  <li><a href="#el4-tooling" id="toc-el4-tooling" class="nav-link" data-scroll-target="#el4-tooling">EL4: Tooling</a>
   <ul class="collapse">
   <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
   <li><a href="#general-purpose-programming-languages" id="toc-general-purpose-programming-languages" class="nav-link" data-scroll-target="#general-purpose-programming-languages">General-Purpose Programming Languages</a></li>
@@ -299,7 +351,7 @@ div.csl-indent {
   <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why">Why?</a></li>
   <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">Reading</a></li>
   </ul></li>
-  <li><a href="#el4-analysis-pipelines" id="toc-el4-analysis-pipelines" class="nav-link" data-scroll-target="#el4-analysis-pipelines">EL4: Analysis pipelines</a>
+  <li><a href="#el5-analysis-pipelines" id="toc-el5-analysis-pipelines" class="nav-link" data-scroll-target="#el5-analysis-pipelines">EL5: Analysis pipelines</a>
   <ul class="collapse">
   <li><a href="#not-a-single-r-script-1" id="toc-not-a-single-r-script-1" class="nav-link" data-scroll-target="#not-a-single-r-script-1">Not a single R script</a></li>
   <li><a href="#project-structure-1" id="toc-project-structure-1" class="nav-link" data-scroll-target="#project-structure-1">Project structure</a></li>
@@ -361,7 +413,7 @@ div.csl-indent {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-01-19</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-01-20</strong>.</p>
 </div>
 </div>
 <section id="el1-intro" class="level1">
@@ -373,7 +425,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -756,8 +808,8 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 <hr>
 </section>
 </section>
-<section id="el2-legal" class="level1">
-<h1>EL2: Legal</h1>
+<section id="el2-european-legislation" class="level1">
+<h1>EL2: European legislation</h1>
 <p><a href="https://sta220.github.io/documentation/EL2.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -765,7 +817,469 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="citation" data-cites="vukovic2022">(<a href="#ref-vukovic2022" role="doc-biblioref">Vukovic et al. 2022</a>)</span></li>
+</ul>
+</div>
+</div>
+<section id="european-legislation" class="level2">
+<h2 class="anchored" data-anchor-id="european-legislation">European legislation</h2>
+<ul>
+<li><strong>GDPR</strong>
+<ul>
+<li>Defines the legal conditions for processing personal data</li>
+<li>Focuses on protection, safeguards, and accountability</li>
+</ul></li>
+<li><strong>European Health Data Space (EHDS)</strong>
+<ul>
+<li>Establishes a European framework for access to health data for research, statistics, and policy.</li>
+<li>Focuses on data access, governance, and interoperability</li>
+<li>Increases opportunities for cross-national health statistics, but also risks of misinterpretation without statistical context.</li>
+</ul></li>
+<li><strong>EU Data Act</strong>
+<ul>
+<li>Regulates who may access data and under what conditions, across sectors.</li>
+<li>Indirectly relevant for health statistics through device-generated and digital service data.</li>
+<li>Does not address data quality or statistical validity.</li>
+<li>Highlights the growing need for statistical judgement when working with new and heterogeneous data sources.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Legal and governance frameworks enable access to data, but <strong>statistical expertise remains essential</strong> for ensuring data quality, valid inference, and meaningful interpretation.</p>
+</div>
+</div>
+</section>
+<section id="gdpr" class="level2">
+<h2 class="anchored" data-anchor-id="gdpr">GDPR</h2>
+<ul>
+<li>Regulation (EU) 2016/679 (GDPR)</li>
+<li>Enforced since May 25, 2018</li>
+<li>Regulates the <strong>processing</strong> of <strong>personal data</strong></li>
+<li>Aims to protect the privacy and rights of individuals</li>
+<li>Sets out rules for data <strong>controllers</strong> and <strong>processors</strong></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Source
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The GDPR is available in all official EU languages via <a href="https://eur-lex.europa.eu/eli/reg/2016/679">EUR-Lex</a>. However, it is recommended reading only if you suffer from insomnia — it is not required for fulfilling the course requirements!</p>
+</div>
+</div>
+</section>
+<section id="european-union-eu" class="level2">
+<h2 class="anchored" data-anchor-id="european-union-eu">European Union (EU)</h2>
+<ul>
+<li>GDPR applies <strong>directly and uniformly</strong> as law</li>
+<li>No national implementation required</li>
+<li>Member States may:
+<ul>
+<li>introduce <strong>supplementary legislation</strong></li>
+<li>allow legal exceptions, e.g.&nbsp;for:
+<ul>
+<li>research</li>
+<li>public interest</li>
+<li>health data</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="european-economic-area-eea" class="level2">
+<h2 class="anchored" data-anchor-id="european-economic-area-eea">European Economic Area (EEA)</h2>
+<p><strong>Countries:</strong> Norway, Iceland and Liechtenstein</p>
+<ul>
+<li>GDPR applies via the <strong>EEA Agreement</strong></li>
+<li>Implemented into national law</li>
+<li>In practice:
+<ul>
+<li>very similar application as within the EU</li>
+<li>same core principles, rights, and obligations</li>
+</ul></li>
+</ul>
+</section>
+<section id="united-kingdom-uk" class="level2">
+<h2 class="anchored" data-anchor-id="united-kingdom-uk">United Kingdom (UK)</h2>
+<ul>
+<li>EU GDPR no longer applies directly after Brexit</li>
+<li>Replaced by:
+<ul>
+<li>UK GDPR</li>
+<li>Data Protection Act 2018</li>
+</ul></li>
+</ul>
+</section>
+<section id="switzerland" class="level2">
+<h2 class="anchored" data-anchor-id="switzerland">Switzerland</h2>
+<ul>
+<li>Not part of EU or EEA</li>
+<li>GDPR does <strong>not</strong> apply as law</li>
+<li>Instead: Federal Act on Data Protection (FADP)
+<ul>
+<li>Revised to align closely with GDPR</li>
+</ul></li>
+</ul>
+</section>
+<section id="international-laws" class="level2">
+<h2 class="anchored" data-anchor-id="international-laws">International laws</h2>
+<ul>
+<li>Note that other countries have different laws and regulations</li>
+<li>In USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)
+<ul>
+<li>Different states have different laws as well</li>
+</ul></li>
+<li>When collaborating internationally, compliance with all relevant laws is required</li>
+</ul>
+</section>
+<section id="definitions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<p>GDPR article 4:</p>
+<dl>
+<dt>Personal data</dt>
+<dd>
+means <strong>any information</strong> relating to an <strong>identified or identifiable natural person</strong> (<em>data subject</em>); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.
+</dd>
+<dt>Processing</dt>
+<dd>
+means <strong>any operation</strong> or set of operations which is <strong>performed on personal data</strong> or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;
+</dd>
+<dt>Pseudonymisation</dt>
+<dd>
+means the processing of personal data in such a manner that the personal data can <strong>no longer be attributed to a specific data subject without the use of additional information</strong>, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;
+</dd>
+<dt>Controller</dt>
+<dd>
+means the natural or legal person, public authority, agency or other body which, alone or jointly with others, <strong>determines the purposes and means</strong> of the processing of personal data […]
+</dd>
+<dt>Processor</dt>
+<dd>
+means a natural or legal person, public authority, agency or other body which processes personal data <strong>on behalf of the controller</strong>;
+</dd>
+<dt>Consent of the data subject</dt>
+<dd>
+means any <strong>freely given, specific, informed and unambiguous</strong> indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies <strong>agreement to the processing</strong> of personal data relating to him or her;
+</dd>
+<dt>Personal data breach</dt>
+<dd>
+means a breach of security leading to the accidental or unlawful destruction, loss, alteration, <strong>unauthorised disclosure of, or access to, personal data</strong> transmitted, stored or otherwise processed;
+</dd>
+<dt>Data concerning health</dt>
+<dd>
+means personal data related to the <strong>physical or mental health</strong> of a natural person, including the provision of <strong>health care services</strong>, which reveal information about his or her health status;
+</dd>
+</dl>
+</section>
+<section id="legal-grounds-for-processing-personal-data" class="level2">
+<h2 class="anchored" data-anchor-id="legal-grounds-for-processing-personal-data">Legal grounds for processing personal data:</h2>
+<p>GDPR article 6 (1):</p>
+<blockquote class="blockquote">
+<p>Processing shall be lawful only if and to the extent that at least one of the following applies:</p>
+</blockquote>
+<ol type="a">
+<li>the data subject has given <strong>consent</strong> to the processing of his or her personal data for one or more specific purposes; processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;</li>
+<li><del>processing is necessary for compliance with a legal obligation to which the controller is subject;</del></li>
+<li><del>processing is necessary in order to protect the vital interests of the data subject or of another natural person;</del></li>
+<li>processing is necessary for the performance of a task carried out in the <strong>public interest</strong> or in the exercise of official authority vested in the controller;</li>
+<li>processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.</li>
+<li><del>processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.</del></li>
+</ol>
+</section>
+<section id="processing-of-special-categories-of-personal-data" class="level2">
+<h2 class="anchored" data-anchor-id="processing-of-special-categories-of-personal-data">Processing of special categories of personal data</h2>
+<p>GDPR Article 9 (1):</p>
+<blockquote class="blockquote">
+<p>Processing of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, <strong>data concerning health</strong> or data concerning a natural person’s sex life or sexual orientation shall be <strong>prohibited</strong>. 😱</p>
+</blockquote>
+</section>
+<section id="but" class="level2">
+<h2 class="anchored" data-anchor-id="but">But …</h2>
+<blockquote class="blockquote">
+<p>Paragraph 1 shall not apply if one of the following applies:</p>
+</blockquote>
+<ul>
+<li><ol type="a">
+<li>the data subject has given <strong>explicit consent</strong> to the processing of those personal data for one or more specified purposes […]</li>
+</ol></li>
+<li><ol type="i">
+<li>processing is necessary for reasons of <strong>public interest</strong> in the area of <strong>public health</strong>, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices […]</li>
+</ol></li>
+<li><ol start="10" type="a">
+<li>processing is necessary for archiving purposes in the public interest, <strong>scientific or historical research purposes</strong> or <strong>statistical purposes</strong> (🥳) in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject.</li>
+</ol></li>
+</ul>
+</section>
+<section id="safeguards" class="level2">
+<h2 class="anchored" data-anchor-id="safeguards">Safeguards</h2>
+<p>GDPR article 89:</p>
+<blockquote class="blockquote">
+<p>Safeguards and derogations relating to processing for archiving purposes in the public interest, scientific or historical research purposes or <strong>statistical purposes</strong></p>
+</blockquote>
+<ol type="1">
+<li><p>Processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, shall be subject to <strong>appropriate safeguards</strong>, in accordance with this Regulation, for the rights and freedoms of the data subject. Those safeguards shall ensure that <strong>technical and organisational measures are in place</strong> in particular in order to ensure respect for the principle of <strong>data minimisation</strong>. Those measures may include <strong>pseudonymisation</strong> provided that those purposes can be fulfilled in that manner. Where those purposes can be fulfilled by further processing which does not permit or no longer permits the identification of data subjects, those purposes shall be fulfilled in that manner.</p></li>
+<li><p>Where personal data are processed for scientific or historical research purposes or <strong>statistical purposes</strong>, Union or Member State law may provide for derogations […] so far as such rights are likely to render impossible or seriously impair the achievement of the specific purposes, and such derogations are necessary for the fulfilment of those purposes.</p></li>
+</ol>
+</section>
+<section id="technical-safeguards" class="level2">
+<h2 class="anchored" data-anchor-id="technical-safeguards">Technical Safeguards</h2>
+<p>Examples of technical safeguards include:</p>
+<ul>
+<li>Pseudonymisation</li>
+<li>Encryption of personal data</li>
+<li>Access controls and authentication</li>
+<li>Logging and monitoring of access</li>
+<li>Secure storage and transmission</li>
+</ul>
+</section>
+<section id="organisational-safeguards" class="level2">
+<h2 class="anchored" data-anchor-id="organisational-safeguards">Organisational Safeguards</h2>
+<p>Examples of organisational safeguards include:</p>
+<ul>
+<li>Defined roles and responsibilities</li>
+<li>Internal policies and procedures</li>
+<li>Staff training and confidentiality obligations</li>
+<li>Data protection by design and by default</li>
+<li>Incident and breach response procedures</li>
+<li>Documentation and accountability measures</li>
+</ul>
+</section>
+<section id="data-minimisation-and-purpose-limitation" class="level2">
+<h2 class="anchored" data-anchor-id="data-minimisation-and-purpose-limitation">Data Minimisation and Purpose Limitation</h2>
+<ul>
+<li>Only data that are <strong>necessary</strong> should be processed</li>
+<li>Data are processed <strong>only for specified purposes</strong></li>
+<li>Access is limited to authorised personnel</li>
+<li>Retention periods are defined and respected</li>
+</ul>
+</section>
+<section id="pseudonymisation-and-anonymisation" class="level2">
+<h2 class="anchored" data-anchor-id="pseudonymisation-and-anonymisation">Pseudonymisation and Anonymisation</h2>
+<ul>
+<li><strong>Pseudonymisation</strong> reduces risks while allowing reuse of the data
+<ul>
+<li>Identifiers are kept separately and protected</li>
+</ul></li>
+<li><strong>Anonymisation</strong> removes data from GDPR scope (if irreversible)</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Pseudonymisation <span class="math inline">\(\neq\)</span> Anonymisation</li>
+<li>Removing the Swedish personal identification number (PIN) is not a guarantee for pseudonymisation</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="data-controller" class="level2">
+<h2 class="anchored" data-anchor-id="data-controller">Data Controller</h2>
+<ul>
+<li>The entity that <strong>determines the purposes and means</strong> of the processing of personal data</li>
+<li>Bears the <strong>primary legal responsibility</strong></li>
+<li>Responsible for:
+<ul>
+<li>Lawful basis</li>
+<li>Compliance with GDPR principles</li>
+<li>Transparency and information to data subjects</li>
+<li>Appropriate technical and organisational measures</li>
+</ul></li>
+<li>Typical examples:
+<ul>
+<li>Public authorities</li>
+<li>Universities</li>
+<li>Regions and municipalities</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-processor-pub-under-gdpr" class="level2">
+<h2 class="anchored" data-anchor-id="data-processor-pub-under-gdpr">Data Processor (PUB) under GDPR</h2>
+<ul>
+<li>Processes personal data <strong>on behalf of the controller</strong></li>
+<li>Acts <strong>only on documented instructions</strong> from the controller</li>
+<li>May <strong>not</strong> determine purposes of processing</li>
+<li>Has direct responsibilities for:
+<ul>
+<li>Security of processing (Article 32)</li>
+<li>Confidentiality</li>
+</ul></li>
+<li>Must be governed by a <strong>data processing agreement</strong></li>
+</ul>
+</section>
+<section id="controllerprocessor-relationship" class="level2">
+<h2 class="anchored" data-anchor-id="controllerprocessor-relationship">Controller–Processor Relationship</h2>
+<ul>
+<li>A formal <strong>Data Processing Agreement (DPA)</strong> is required</li>
+<li>The agreement must specify:
+<ul>
+<li>Subject matter and duration</li>
+<li>Nature and purpose of processing</li>
+<li>Types of personal data</li>
+<li>Categories of data subjects (patients, students, citizens, …)</li>
+<li>Security measures</li>
+</ul></li>
+<li>The controller remains responsible even when processing is outsourced</li>
+</ul>
+</section>
+<section id="example-sahlgrenska" class="level2">
+<h2 class="anchored" data-anchor-id="example-sahlgrenska">Example: Sahlgrenska</h2>
+<ul>
+<li>If a researcher work at the Sahlgrenska university hospital, VGR might be the data controller (personuppgiftsansvarig; PUA)</li>
+<li>If he/she asks for statistical consulting from the Sahlgrenska Academy, GU might be the data processor (personuppgiftsbiträde; PUB)</li>
+</ul>
+</section>
+<section id="european-health-data-space-ehds" class="level2">
+<h2 class="anchored" data-anchor-id="european-health-data-space-ehds">European Health Data Space (EHDS)</h2>
+</section>
+<section id="what-is-it" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-it">What is it?</h2>
+<ul>
+<li>EHDS is an EU-wide legal and technical framework for the use and sharing of health data</li>
+<li>It aims to:
+<ul>
+<li>improve access to health data across borders</li>
+<li>support healthcare, research, statistics, and policy-making</li>
+</ul></li>
+<li>Focuses on data access and governance</li>
+</ul>
+<hr>
+</section>
+<section id="two-main-pillars" class="level2">
+<h2 class="anchored" data-anchor-id="two-main-pillars">Two Main Pillars</h2>
+<ul>
+<li>Primary use of health data
+<ul>
+<li>Use of data for individual patient care</li>
+<li>Cross-border access to electronic health records</li>
+</ul></li>
+<li>Secondary use of health data for
+<ul>
+<li>statistics</li>
+<li>scientific research</li>
+<li>public health</li>
+<li>policy evaluation and innovation</li>
+</ul></li>
+</ul>
+</section>
+<section id="implementation-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-timeline">Implementation Timeline</h2>
+<ul>
+<li><strong>2025</strong>: EHDS regulation enters into force</li>
+<li><strong>2025–2027</strong>: Development of implementing and technical acts</li>
+<li><strong>From ~2029 onwards</strong>:
+<ul>
+<li>national infrastructures become operational</li>
+<li>cross-border access for secondary use starts to function in practice</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-ehds-relates-to-gdpr" class="level2">
+<h2 class="anchored" data-anchor-id="how-ehds-relates-to-gdpr">How EHDS Relates to GDPR</h2>
+<ul>
+<li>EHDS does <strong>not replace GDPR</strong></li>
+<li>GDPR continues to govern:
+<ul>
+<li>personal data protection</li>
+<li>lawful bases</li>
+<li>safeguards for health data</li>
+</ul></li>
+<li>EHDS provides <strong>procedures and structures</strong> for lawful data access under GDPR</li>
+</ul>
+<p>➡️ GDPR defines <em>whether</em> data may be processed<br>
+➡️ EHDS defines <em>how</em> data can be made available</p>
+</section>
+<section id="why-ehds-matters-for-statisticians" class="level2">
+<h2 class="anchored" data-anchor-id="why-ehds-matters-for-statisticians">Why EHDS Matters for Statisticians</h2>
+<ul>
+<li>EHDS explicitly recognises <strong>statistics</strong> as a legitimate purpose</li>
+<li>It facilitates access to:
+<ul>
+<li>large-scale health datasets</li>
+<li>cross-national data sources</li>
+</ul></li>
+<li>It increases demand for:
+<ul>
+<li>data quality assessment</li>
+<li>metadata interpretation</li>
+<li>harmonisation and comparability analyses</li>
+</ul></li>
+</ul>
+</section>
+<section id="ehds-does-not-do-this" class="level2">
+<h2 class="anchored" data-anchor-id="ehds-does-not-do-this">EHDS Does <em>Not</em> Do This</h2>
+<ul>
+<li>EHDS does not:
+<ul>
+<li>define statistical methods</li>
+<li>ensure data quality automatically</li>
+<li>guarantee comparability across countries</li>
+</ul></li>
+<li>Legal and technical access ≠ valid statistical inference</li>
+</ul>
+</section>
+<section id="the-eu-data-act" class="level2">
+<h2 class="anchored" data-anchor-id="the-eu-data-act">The EU Data Act</h2>
+</section>
+<section id="what-is-it-1" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-it-1">What Is It?</h2>
+<ul>
+<li>The Data Act is an EU regulation on access to and sharing of data</li>
+<li>Focuses mainly on:
+<ul>
+<li>data generated by connected products and digital services (IoT)</li>
+<li>business-to-business (B2B) and business-to-government (B2G) data sharing</li>
+</ul></li>
+<li>It is <strong>not a data protection regulation</strong></li>
+</ul>
+<p>➡️ The Data Act is about <em>who may access data and under what conditions</em>.</p>
+</section>
+<section id="how-the-data-act-relates-to-health-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-data-act-relates-to-health-data">How the Data Act Relates to Health Data</h2>
+<ul>
+<li>The Data Act does not primarily target health registers</li>
+<li>However, it may affect:
+<ul>
+<li>data generated by medical devices</li>
+<li>digital health services</li>
+<li>health-related IoT data</li>
+</ul></li>
+</ul>
+<p>➡️ Health data may fall under the Data Act depending on how it is generated.</p>
+<hr>
+</section>
+</section>
+<section id="el2-swedish-legislation" class="level1">
+<h1>EL2: Swedish legislation</h1>
+<p><a href="https://sta220.github.io/documentation/EL3.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -776,20 +1290,41 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 </div>
 <section id="swedish-law" class="level2">
 <h2 class="anchored" data-anchor-id="swedish-law">Swedish law</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Swedish law
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Swedish legislation will be discussed as an example. It will be examined through discussions in a later seminar (where you will have access to the information below). You are not required to memorize individual laws or specific legal provisions.</p>
+</div>
+</div>
+</section>
+<section id="backgrund-of-swedish-law" class="level2">
+<h2 class="anchored" data-anchor-id="backgrund-of-swedish-law">Backgrund of Swedish law</h2>
+<p><a href="https://www.lawpub.se/artikel/10.53292/32f26f7c.5b65be00">Optional reading</a></p>
 <ul>
-<li>Fundamental laws (parliament but difficult to change)</li>
-<li>Ordinary laws (parliament)
+<li><strong>Fundamental laws</strong> (“grundlagar”) decided by the parliament but stable over time
+<ul>
+<li>Not a “constitution”</li>
+</ul></li>
+<li><strong>Ordinary laws</strong> (parliament)
 <ul>
 <li>New ones all the time</li>
-<li>New laws to update existing regulations</li>
+<li>New laws to update existing laws</li>
 </ul></li>
 <li>Published in <a href="https://svenskforfattningssamling.se/">Svensk författningsamling, SFS</a>
 <ul>
 <li>The “big blue book” is only a smaller collection of important laws</li>
 </ul></li>
-<li>ordinances (“förordning”) from the goverment to implement laws</li>
-<li>regulations (“föreskrifter”) from authorities to implement laws and ordinances</li>
+<li><strong>ordinances</strong> (“förordning”) from the goverment to implement laws</li>
+<li><strong>regulations</strong> (“föreskrifter”) from authorities to implement laws and ordinances</li>
 </ul>
+<p><img src="images/paste-3.png" class="img-fluid"></p>
 </section>
 <section id="two-main-branches-of-law" class="level2">
 <h2 class="anchored" data-anchor-id="two-main-branches-of-law">Two main branches of law</h2>
@@ -802,7 +1337,7 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 </ul></li>
 <li>Public law: relationship between individuals and the state etc
 <ul>
-<li>state what the public authorities must do (everything else is “illegal”)</li>
+<li>state what the public authorities must and can do (everything else is “illegal”)</li>
 <li>Handled by administrative courts</li>
 <li>What we mostly care of here</li>
 </ul></li>
@@ -833,8 +1368,8 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 <li>Defines what information is considered secret and under what circumstances</li>
 </ul>
 </section>
-<section id="chap-21" class="level2">
-<h2 class="anchored" data-anchor-id="chap-21">Chap 21</h2>
+<section id="osl-chap-21" class="level2">
+<h2 class="anchored" data-anchor-id="osl-chap-21">OSL Chap 21</h2>
 <p>Secrecy for private individuals’ personal circumstances <strong>no mather the context</strong></p>
 <ul>
 <li>E.g., health data, economic circumstances, family relations</li>
@@ -843,16 +1378,16 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 <p>OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, <strong>if it can be assumed</strong> that disclosure of the information would <strong>cause significant harm</strong> to the individual or to someone closely related to them.</p>
 </blockquote>
 </section>
-<section id="chap-24" class="level2">
-<h2 class="anchored" data-anchor-id="chap-24">Chap 24</h2>
+<section id="osl-chap-24" class="level2">
+<h2 class="anchored" data-anchor-id="osl-chap-24">OSL Chap 24</h2>
 <p>Secrecy for the protection of individuals in research and statistics.</p>
 <ul>
 <li>Special research databases etc</li>
 <li>Some regulations for research ethics boards</li>
 </ul>
 </section>
-<section id="chapter-25" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-25">Chapter 25</h2>
+<section id="osl-chapter-25" class="level2">
+<h2 class="anchored" data-anchor-id="osl-chapter-25">OSL Chapter 25</h2>
 <p>Secrecy for the protection of individuals in activities relating to <strong>health and medical care</strong> etc.</p>
 <blockquote class="blockquote">
 <p>OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, <strong>unless it is clear</strong> that the information may be disclosed <strong>without causing harm</strong> to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.</p>
@@ -865,8 +1400,8 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 </ul></li>
 </ul>
 </section>
-<section id="chapter-10" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-10">Chapter 10</h2>
+<section id="osl-chapter-10" class="level2">
+<h2 class="anchored" data-anchor-id="osl-chapter-10">OSL Chapter 10</h2>
 <p>Provisions on disclosure overriding secrecy and provisions on exemptions from secrecy</p>
 <blockquote class="blockquote">
 <p>OFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.</p>
@@ -985,150 +1520,6 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 </ul></li>
 </ul>
 </section>
-<section id="gdpr" class="level2">
-<h2 class="anchored" data-anchor-id="gdpr">GDPR</h2>
-<ul>
-<li>Regulation (EU) 2016/679 (GDPR)</li>
-<li>Enforced since May 25, 2018</li>
-<li>Applies to all EU member states</li>
-<li>Regulates the processing of personal data</li>
-<li>Aims to protect the privacy and rights of individuals</li>
-<li>Sets out rules for data controllers and processors</li>
-</ul>
-</section>
-<section id="special-categories-of-personal-data" class="level2">
-<h2 class="anchored" data-anchor-id="special-categories-of-personal-data">Special categories of personal data</h2>
-<ol type="1">
-<li>personal data revealing racial or ethnic origin,</li>
-<li>political opinions,</li>
-<li>religious or philosophical beliefs,</li>
-<li>trade union membership,</li>
-<li>genetic data,</li>
-<li>biometric data for the purpose of uniquely identifying a natural person,</li>
-<li><strong>data concerning health</strong>,</li>
-<li>data concerning a natural person’s sex life or sexual orientation.</li>
-</ol>
-</section>
-<section id="legal-grounds-for-processing-personal-data" class="level2">
-<h2 class="anchored" data-anchor-id="legal-grounds-for-processing-personal-data">Legal grounds for processing personal data:</h2>
-<ol type="1">
-<li>the data subject has given <strong>consent</strong> to the processing of his or her personal data for one or more specific purposes;
-<ol start="2" type="1">
-<li>processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;</li>
-<li>processing is necessary for compliance with a legal obligation to which the controller is subject;</li>
-<li>processing is necessary in order to protect the vital interests of the data subject or of another natural person;</li>
-<li>processing is necessary for the performance of a task carried out in the <strong>public interest</strong> or in the exercise of official authority vested in the controller;</li>
-<li>processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.</li>
-<li>processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.</li>
-</ol></li>
-</ol>
-</section>
-<section id="data-controller-pua-under-gdpr" class="level2">
-<h2 class="anchored" data-anchor-id="data-controller-pua-under-gdpr">Data Controller (PUA) under GDPR</h2>
-<ul>
-<li>The entity that <strong>determines the purposes and means</strong> of the processing of personal data</li>
-<li>Bears the <strong>primary legal responsibility</strong></li>
-<li>Responsible for:
-<ul>
-<li>Lawful basis</li>
-<li>Compliance with GDPR principles</li>
-<li>Transparency and information to data subjects</li>
-<li>Appropriate technical and organisational measures</li>
-</ul></li>
-<li>Typical examples:
-<ul>
-<li>Public authorities</li>
-<li>Universities</li>
-<li>Regions and municipalities</li>
-</ul></li>
-</ul>
-</section>
-<section id="data-processor-pub-under-gdpr" class="level2">
-<h2 class="anchored" data-anchor-id="data-processor-pub-under-gdpr">Data Processor (PUB) under GDPR</h2>
-<ul>
-<li>Processes personal data <strong>on behalf of the controller</strong></li>
-<li>Acts <strong>only on documented instructions</strong> from the controller</li>
-<li>May <strong>not</strong> determine purposes of processing</li>
-<li>Has direct responsibilities for:
-<ul>
-<li>Security of processing (Article 32)</li>
-<li>Confidentiality</li>
-</ul></li>
-<li>Must be governed by a <strong>data processing agreement</strong></li>
-</ul>
-</section>
-<section id="controllerprocessor-relationship" class="level2">
-<h2 class="anchored" data-anchor-id="controllerprocessor-relationship">Controller–Processor Relationship</h2>
-<ul>
-<li>A formal <strong>Data Processing Agreement (DPA)</strong> is required</li>
-<li>The agreement must specify:
-<ul>
-<li>Subject matter and duration</li>
-<li>Nature and purpose of processing</li>
-<li>Types of personal data</li>
-<li>Categories of data subjects</li>
-<li>Security measures</li>
-</ul></li>
-<li>The controller remains responsible even when processing is outsourced</li>
-</ul>
-</section>
-<section id="example-sahlgrenska" class="level2">
-<h2 class="anchored" data-anchor-id="example-sahlgrenska">Example: Sahlgrenska</h2>
-<ul>
-<li>If a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)</li>
-<li>If he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)</li>
-</ul>
-</section>
-<section id="technical-safeguards" class="level2">
-<h2 class="anchored" data-anchor-id="technical-safeguards">Technical Safeguards</h2>
-<p>Examples of technical safeguards include:</p>
-<ul>
-<li>Pseudonymisation</li>
-<li>Encryption of personal data</li>
-<li>Access controls and authentication</li>
-<li>Logging and monitoring of access</li>
-<li>Secure storage and transmission</li>
-</ul>
-</section>
-<section id="organisational-safeguards" class="level2">
-<h2 class="anchored" data-anchor-id="organisational-safeguards">Organisational Safeguards</h2>
-<p>Examples of organisational safeguards include:</p>
-<ul>
-<li>Defined roles and responsibilities</li>
-<li>Internal policies and procedures</li>
-<li>Staff training and confidentiality obligations</li>
-<li>Data protection by design and by default</li>
-<li>Incident and breach response procedures</li>
-<li>Documentation and accountability measures</li>
-</ul>
-</section>
-<section id="data-minimisation-and-purpose-limitation" class="level2">
-<h2 class="anchored" data-anchor-id="data-minimisation-and-purpose-limitation">Data Minimisation and Purpose Limitation</h2>
-<ul>
-<li>Only data that are <strong>necessary</strong> are processed</li>
-<li>Data are processed <strong>only for specified purposes</strong></li>
-<li>Access is limited to authorised personnel</li>
-<li>Retention periods are defined and respected</li>
-</ul>
-</section>
-<section id="pseudonymisation-and-anonymisation" class="level2">
-<h2 class="anchored" data-anchor-id="pseudonymisation-and-anonymisation">Pseudonymisation and Anonymisation</h2>
-<ul>
-<li><strong>Pseudonymisation</strong> reduces risks while allowing reuse</li>
-<li>Identifiers are kept separately and protected</li>
-<li>Anonymisation removes data from GDPR scope (if irreversible)</li>
-</ul>
-</section>
-<section id="safeguards-for-special-categories-of-data" class="level2">
-<h2 class="anchored" data-anchor-id="safeguards-for-special-categories-of-data">Safeguards for Special Categories of Data</h2>
-<p>When processing sensitive data (e.g.&nbsp;health data), additional safeguards are required:</p>
-<ul>
-<li>Strict access control</li>
-<li>Enhanced security measures</li>
-<li>Ethical approval where applicable</li>
-<li>Clear separation of identifiers and content data</li>
-</ul>
-</section>
 <section id="gdpr-and-swedish-law" class="level2">
 <h2 class="anchored" data-anchor-id="gdpr-and-swedish-law">GDPR and Swedish law</h2>
 <ul>
@@ -1158,31 +1549,17 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 <li><a href="https://etikprovningsmyndigheten.se/en/">Swedish Ethical Review Authority</a></li>
 </ul>
 </section>
-<section id="international-laws" class="level2">
-<h2 class="anchored" data-anchor-id="international-laws">International laws</h2>
-<ul>
-<li>Note that other countries have different laws and regulations</li>
-<li>In USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)
-<ul>
-<li>Different states have different laws as well</li>
-</ul></li>
-<li>When collaborating internationally, compliance with all relevant laws is required</li>
-</ul>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-</section>
-</section>
-<section id="el3-tooling" class="level1">
-<h1>EL3: Tooling</h1>
-<p><a href="https://sta220.github.io/documentation/EL3.html">Lecture Slides</a></p>
+<section id="el4-tooling" class="level1">
+<h1>EL4: Tooling</h1>
+<p><a href="https://sta220.github.io/documentation/EL4.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1726,16 +2103,16 @@ git remote add origin</code></pre>
 </ul>
 </section>
 </section>
-<section id="el4-analysis-pipelines" class="level1">
-<h1>EL4: Analysis pipelines</h1>
-<p><a href="https://sta220.github.io/documentation/EL4.html">Lecture Slides</a></p>
+<section id="el5-analysis-pipelines" class="level1">
+<h1>EL5: Analysis pipelines</h1>
+<p><a href="https://sta220.github.io/documentation/EL5.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1887,7 +2264,7 @@ git remote add origin</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Associated litterature (Refernces at the end)
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1920,6 +2297,9 @@ Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of rea
 </div>
 <div id="ref-publica2025" class="csl-entry" role="listitem">
 <span>“Public Access and Secrecy | Swedish National Data Service.”</span> 2025. <a href="https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy">https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy</a>.
+</div>
+<div id="ref-vukovic2022" class="csl-entry" role="listitem">
+Vukovic, Jakov, Damir Ivankovic, Claudia Habl, and Jelena Dimnjakovic. 2022. <span>“Enablers and Barriers to the Secondary Use of Health Data in Europe: General Data Protection Regulation Perspective.”</span> <em>Archives of Public Health</em> 80 (1): 115. <a href="https://doi.org/10.1186/s13690-022-00866-7">https://doi.org/10.1186/s13690-022-00866-7</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

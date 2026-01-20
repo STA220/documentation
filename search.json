@@ -161,298 +161,494 @@
     "text": "Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. “Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.” Clinical Epidemiology Volume 13 (July): 533–54. https://doi.org/10.2147/CLEP.S314959.\n\n\nLudvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. “The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.” European Journal of Epidemiology 24 (11): 659–67. https://doi.org/10.1007/s10654-009-9350-y.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
   },
   {
-    "objectID": "EL2.html#swedish-law",
-    "href": "EL2.html#swedish-law",
-    "title": "EL2: Legal",
-    "section": "Swedish law",
-    "text": "Swedish law\n\nFundamental laws (parliament but difficult to change)\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing regulations\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
+    "objectID": "EL2.html#european-legislation",
+    "href": "EL2.html#european-legislation",
+    "title": "EL2: European legislation",
+    "section": "European legislation",
+    "text": "European legislation\n\nGDPR\n\nDefines the legal conditions for processing personal data\nFocuses on protection, safeguards, and accountability\n\nEuropean Health Data Space (EHDS)\n\nEstablishes a European framework for access to health data for research, statistics, and policy.\nFocuses on data access, governance, and interoperability\nIncreases opportunities for cross-national health statistics, but also risks of misinterpretation without statistical context.\n\nEU Data Act\n\nRegulates who may access data and under what conditions, across sectors.\nIndirectly relevant for health statistics through device-generated and digital service data.\nDoes not address data quality or statistical validity.\nHighlights the growing need for statistical judgement when working with new and heterogeneous data sources.\n\n\n\n\n\n\n\n\nImportant\n\n\nLegal and governance frameworks enable access to data, but statistical expertise remains essential for ensuring data quality, valid inference, and meaningful interpretation."
   },
   {
-    "objectID": "EL2.html#two-main-branches-of-law",
-    "href": "EL2.html#two-main-branches-of-law",
-    "title": "EL2: Legal",
-    "section": "Two main branches of law",
-    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
+    "objectID": "EL2.html#european-union-eu",
+    "href": "EL2.html#european-union-eu",
+    "title": "EL2: European legislation",
+    "section": "European Union (EU)",
+    "text": "European Union (EU)\n\nGDPR applies directly and uniformly as law\nNo national implementation required\nMember States may:\n\nintroduce supplementary legislation\nallow legal exceptions, e.g. for:\n\nresearch\npublic interest\nhealth data"
   },
   {
-    "objectID": "EL2.html#tryckfrihetsförordningen-tf",
-    "href": "EL2.html#tryckfrihetsförordningen-tf",
-    "title": "EL2: Legal",
-    "section": "Tryckfrihetsförordningen (TF)",
-    "text": "Tryckfrihetsförordningen (TF)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\nEveryone has the right to access official documents (TF 2.1)\nbut there are exceptions (TF 2.2)\n\ne.g., if disclosure would violate privacy or national security\nif so, the goverment has the right to provide ordinary laws that restrict access (which they do …)"
+    "objectID": "EL2.html#european-economic-area-eea",
+    "href": "EL2.html#european-economic-area-eea",
+    "title": "EL2: European legislation",
+    "section": "European Economic Area (EEA)",
+    "text": "European Economic Area (EEA)\nCountries: Norway, Iceland and Liechtenstein\n\nGDPR applies via the EEA Agreement\nImplemented into national law\nIn practice:\n\nvery similar application as within the EU\nsame core principles, rights, and obligations"
   },
   {
-    "objectID": "EL2.html#offentlighets--och-sekretesslagen-osl",
-    "href": "EL2.html#offentlighets--och-sekretesslagen-osl",
-    "title": "EL2: Legal",
-    "section": "Offentlighets- och sekretesslagen (OSL)",
-    "text": "Offentlighets- och sekretesslagen (OSL)\n\nLaw that regulates public access to official documents and secrecy\nApplies to public authorities and institutions\nDefines what information is considered secret and under what circumstances"
+    "objectID": "EL2.html#united-kingdom-uk",
+    "href": "EL2.html#united-kingdom-uk",
+    "title": "EL2: European legislation",
+    "section": "United Kingdom (UK)",
+    "text": "United Kingdom (UK)\n\nEU GDPR no longer applies directly after Brexit\nReplaced by:\n\nUK GDPR\nData Protection Act 2018"
   },
   {
-    "objectID": "EL2.html#chap-21",
-    "href": "EL2.html#chap-21",
-    "title": "EL2: Legal",
-    "section": "Chap 21",
-    "text": "Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
+    "objectID": "EL2.html#switzerland",
+    "href": "EL2.html#switzerland",
+    "title": "EL2: European legislation",
+    "section": "Switzerland",
+    "text": "Switzerland\n\nNot part of EU or EEA\nGDPR does not apply as law\nInstead: Federal Act on Data Protection (FADP)\n\nRevised to align closely with GDPR"
   },
   {
-    "objectID": "EL2.html#chap-24",
-    "href": "EL2.html#chap-24",
-    "title": "EL2: Legal",
-    "section": "Chap 24",
-    "text": "Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
+    "objectID": "EL2.html#international-laws",
+    "href": "EL2.html#international-laws",
+    "title": "EL2: European legislation",
+    "section": "International laws",
+    "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
   },
   {
-    "objectID": "EL2.html#chapter-25",
-    "href": "EL2.html#chapter-25",
-    "title": "EL2: Legal",
-    "section": "Chapter 25",
-    "text": "Chapter 25\nSecrecy for the protection of individuals in activities relating to health and medical care etc.\n\nOFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, unless it is clear that the information may be disclosed without causing harm to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.\n\n\nExceptions exists,\n\nfor example to submit medical patient data to quality registers\nto share data between public organisations for research purposes or statistics (OFS 25.11 p. 5)."
-  },
-  {
-    "objectID": "EL2.html#chapter-10",
-    "href": "EL2.html#chapter-10",
-    "title": "EL2: Legal",
-    "section": "Chapter 10",
-    "text": "Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
-  },
-  {
-    "objectID": "EL2.html#patientdatalagen-pdl",
-    "href": "EL2.html#patientdatalagen-pdl",
-    "title": "EL2: Legal",
-    "section": "Patientdatalagen (PDL)",
-    "text": "Patientdatalagen (PDL)\nThe Patient Data Act (PDL)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
-  },
-  {
-    "objectID": "EL2.html#chapter-7-pdl",
-    "href": "EL2.html#chapter-7-pdl",
-    "title": "EL2: Legal",
-    "section": "Chapter 7 PDL",
-    "text": "Chapter 7 PDL\nNational and regionel quality registers\nOpt-out for patients (every one is included by default until they opt out)\n\nPDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.\n\nPDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of\n\nthe production of statistics,\nestimating numbers for the planning of clinical research,\nresearch within health and medical care,\ndisclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and\n…"
-  },
-  {
-    "objectID": "EL2.html#lag-om-hälsodataregister-sfs-1998543",
-    "href": "EL2.html#lag-om-hälsodataregister-sfs-1998543",
-    "title": "EL2: Legal",
-    "section": "Lag om hälsodataregister (SFS 1998:543)",
-    "text": "Lag om hälsodataregister (SFS 1998:543)\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
-  },
-  {
-    "objectID": "EL2.html#specific-registers",
-    "href": "EL2.html#specific-registers",
-    "title": "EL2: Legal",
-    "section": "Specific registers",
-    "text": "Specific registers\n\n\n\n\n\n\n\n\nRegister (Swedish)\nRegister (English)\nGoverning act / ordinance\n\n\n\n\nFolkbokföringen\nPopulation Register\nPopulation Registration Act (1991:481); Population Registration Ordinance (1991:749)\n\n\nTotalbefolkningsregistret (RTB)\nTotal Population Register\nOfficial Statistics Act (2001:99); Official Statistics Ordinance (2001:100)\n\n\nNationella patientregistret\nNational Patient Register\nHealth Data Act (1998:543); Ordinance on the National Patient Register (2001:707)\n\n\nCancerregistret\nSwedish Cancer Register\nHealth Data Act (1998:543); Cancer Register Ordinance (2001:709)\n\n\nDödsorsaksregistret\nCause of Death Register\nHealth Data Act (1998:543); Cause of Death Register Ordinance (2001:709)\n\n\nLäkemedelsregistret\nPrescribed Drug Register\nAct on the Prescribed Drug Register (2005:258); Ordinance (2005:363)\n\n\nMedicinska födelseregistret\nMedical Birth Register\nHealth Data Act (1998:543); Medical Birth Register Ordinance (2001:708)\n\n\nTandhälsoregistret\nDental Health Register\nHealth Data Act (1998:543); Dental Health Register Ordinance (2008:194)"
-  },
-  {
-    "objectID": "EL2.html#arkivdatalagen-adl",
-    "href": "EL2.html#arkivdatalagen-adl",
-    "title": "EL2: Legal",
-    "section": "Arkivdatalagen (ADL)",
-    "text": "Arkivdatalagen (ADL)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example healthcare data is often required to be kept for at least 10 years"
-  },
-  {
-    "objectID": "EL2.html#gdpr",
-    "href": "EL2.html#gdpr",
-    "title": "EL2: Legal",
-    "section": "GDPR",
-    "text": "GDPR\n\nRegulation (EU) 2016/679 (GDPR)\nEnforced since May 25, 2018\nApplies to all EU member states\nRegulates the processing of personal data\nAims to protect the privacy and rights of individuals\nSets out rules for data controllers and processors"
-  },
-  {
-    "objectID": "EL2.html#special-categories-of-personal-data",
-    "href": "EL2.html#special-categories-of-personal-data",
-    "title": "EL2: Legal",
-    "section": "Special categories of personal data",
-    "text": "Special categories of personal data\n\npersonal data revealing racial or ethnic origin,\npolitical opinions,\nreligious or philosophical beliefs,\ntrade union membership,\ngenetic data,\nbiometric data for the purpose of uniquely identifying a natural person,\ndata concerning health,\ndata concerning a natural person’s sex life or sexual orientation."
+    "objectID": "EL2.html#definitions",
+    "href": "EL2.html#definitions",
+    "title": "EL2: European legislation",
+    "section": "Definitions",
+    "text": "Definitions\nGDPR article 4:\n\nPersonal data\n\nmeans any information relating to an identified or identifiable natural person (data subject); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.\n\nProcessing\n\nmeans any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;\n\nPseudonymisation\n\nmeans the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;\n\nController\n\nmeans the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data […]\n\nProcessor\n\nmeans a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;\n\nConsent of the data subject\n\nmeans any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nPersonal data breach\n\nmeans a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed;\n\nData concerning health\n\nmeans personal data related to the physical or mental health of a natural person, including the provision of health care services, which reveal information about his or her health status;"
   },
   {
     "objectID": "EL2.html#legal-grounds-for-processing-personal-data",
     "href": "EL2.html#legal-grounds-for-processing-personal-data",
-    "title": "EL2: Legal",
+    "title": "EL2: European legislation",
     "section": "Legal grounds for processing personal data:",
-    "text": "Legal grounds for processing personal data:\n\nthe data subject has given consent to the processing of his or her personal data for one or more specific purposes;\n\nprocessing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;\nprocessing is necessary for compliance with a legal obligation to which the controller is subject;\nprocessing is necessary in order to protect the vital interests of the data subject or of another natural person;\nprocessing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;\nprocessing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.\nprocessing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose."
+    "text": "Legal grounds for processing personal data:\nGDPR article 6 (1):\n\nProcessing shall be lawful only if and to the extent that at least one of the following applies:\n\n\nthe data subject has given consent to the processing of his or her personal data for one or more specific purposes; processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;\nprocessing is necessary for compliance with a legal obligation to which the controller is subject;\nprocessing is necessary in order to protect the vital interests of the data subject or of another natural person;\nprocessing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;\nprocessing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.\nprocessing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose."
   },
   {
-    "objectID": "EL2.html#data-controller-pua-under-gdpr",
-    "href": "EL2.html#data-controller-pua-under-gdpr",
-    "title": "EL2: Legal",
-    "section": "Data Controller (PUA) under GDPR",
-    "text": "Data Controller (PUA) under GDPR\n\nThe entity that determines the purposes and means of the processing of personal data\nBears the primary legal responsibility\nResponsible for:\n\nLawful basis\nCompliance with GDPR principles\nTransparency and information to data subjects\nAppropriate technical and organisational measures\n\nTypical examples:\n\nPublic authorities\nUniversities\nRegions and municipalities"
+    "objectID": "EL2.html#processing-of-special-categories-of-personal-data",
+    "href": "EL2.html#processing-of-special-categories-of-personal-data",
+    "title": "EL2: European legislation",
+    "section": "Processing of special categories of personal data",
+    "text": "Processing of special categories of personal data\nGDPR Article 9 (1):\n\nProcessing of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person’s sex life or sexual orientation shall be prohibited. 😱"
   },
   {
-    "objectID": "EL2.html#data-processor-pub-under-gdpr",
-    "href": "EL2.html#data-processor-pub-under-gdpr",
-    "title": "EL2: Legal",
-    "section": "Data Processor (PUB) under GDPR",
-    "text": "Data Processor (PUB) under GDPR\n\nProcesses personal data on behalf of the controller\nActs only on documented instructions from the controller\nMay not determine purposes of processing\nHas direct responsibilities for:\n\nSecurity of processing (Article 32)\nConfidentiality\n\nMust be governed by a data processing agreement"
+    "objectID": "EL2.html#but",
+    "href": "EL2.html#but",
+    "title": "EL2: European legislation",
+    "section": "But …",
+    "text": "But …\n\nParagraph 1 shall not apply if one of the following applies:\n\n\n\nthe data subject has given explicit consent to the processing of those personal data for one or more specified purposes […]\n\n\nprocessing is necessary for reasons of public interest in the area of public health, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices […]\n\n\nprocessing is necessary for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes (🥳) in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject."
   },
   {
-    "objectID": "EL2.html#controllerprocessor-relationship",
-    "href": "EL2.html#controllerprocessor-relationship",
-    "title": "EL2: Legal",
-    "section": "Controller–Processor Relationship",
-    "text": "Controller–Processor Relationship\n\nA formal Data Processing Agreement (DPA) is required\nThe agreement must specify:\n\nSubject matter and duration\nNature and purpose of processing\nTypes of personal data\nCategories of data subjects\nSecurity measures\n\nThe controller remains responsible even when processing is outsourced"
-  },
-  {
-    "objectID": "EL2.html#example-sahlgrenska",
-    "href": "EL2.html#example-sahlgrenska",
-    "title": "EL2: Legal",
-    "section": "Example: Sahlgrenska",
-    "text": "Example: Sahlgrenska\n\nIf a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)\nIf he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)"
+    "objectID": "EL2.html#safeguards",
+    "href": "EL2.html#safeguards",
+    "title": "EL2: European legislation",
+    "section": "Safeguards",
+    "text": "Safeguards\nGDPR article 89:\n\nSafeguards and derogations relating to processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes\n\n\nProcessing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, shall be subject to appropriate safeguards, in accordance with this Regulation, for the rights and freedoms of the data subject. Those safeguards shall ensure that technical and organisational measures are in place in particular in order to ensure respect for the principle of data minimisation. Those measures may include pseudonymisation provided that those purposes can be fulfilled in that manner. Where those purposes can be fulfilled by further processing which does not permit or no longer permits the identification of data subjects, those purposes shall be fulfilled in that manner.\nWhere personal data are processed for scientific or historical research purposes or statistical purposes, Union or Member State law may provide for derogations […] so far as such rights are likely to render impossible or seriously impair the achievement of the specific purposes, and such derogations are necessary for the fulfilment of those purposes."
   },
   {
     "objectID": "EL2.html#technical-safeguards",
     "href": "EL2.html#technical-safeguards",
-    "title": "EL2: Legal",
+    "title": "EL2: European legislation",
     "section": "Technical Safeguards",
     "text": "Technical Safeguards\nExamples of technical safeguards include:\n\nPseudonymisation\nEncryption of personal data\nAccess controls and authentication\nLogging and monitoring of access\nSecure storage and transmission"
   },
   {
     "objectID": "EL2.html#organisational-safeguards",
     "href": "EL2.html#organisational-safeguards",
-    "title": "EL2: Legal",
+    "title": "EL2: European legislation",
     "section": "Organisational Safeguards",
     "text": "Organisational Safeguards\nExamples of organisational safeguards include:\n\nDefined roles and responsibilities\nInternal policies and procedures\nStaff training and confidentiality obligations\nData protection by design and by default\nIncident and breach response procedures\nDocumentation and accountability measures"
   },
   {
     "objectID": "EL2.html#data-minimisation-and-purpose-limitation",
     "href": "EL2.html#data-minimisation-and-purpose-limitation",
-    "title": "EL2: Legal",
+    "title": "EL2: European legislation",
     "section": "Data Minimisation and Purpose Limitation",
-    "text": "Data Minimisation and Purpose Limitation\n\nOnly data that are necessary are processed\nData are processed only for specified purposes\nAccess is limited to authorised personnel\nRetention periods are defined and respected"
+    "text": "Data Minimisation and Purpose Limitation\n\nOnly data that are necessary should be processed\nData are processed only for specified purposes\nAccess is limited to authorised personnel\nRetention periods are defined and respected"
   },
   {
     "objectID": "EL2.html#pseudonymisation-and-anonymisation",
     "href": "EL2.html#pseudonymisation-and-anonymisation",
-    "title": "EL2: Legal",
+    "title": "EL2: European legislation",
     "section": "Pseudonymisation and Anonymisation",
-    "text": "Pseudonymisation and Anonymisation\n\nPseudonymisation reduces risks while allowing reuse\nIdentifiers are kept separately and protected\nAnonymisation removes data from GDPR scope (if irreversible)"
+    "text": "Pseudonymisation and Anonymisation\n\nPseudonymisation reduces risks while allowing reuse of the data\n\nIdentifiers are kept separately and protected\n\nAnonymisation removes data from GDPR scope (if irreversible)\n\n\n\n\n\n\n\nImportant\n\n\n\nPseudonymisation \\(\\neq\\) Anonymisation\nRemoving the Swedish personal identification number (PIN) is not a guarantee for pseudonymisation"
   },
   {
-    "objectID": "EL2.html#safeguards-for-special-categories-of-data",
-    "href": "EL2.html#safeguards-for-special-categories-of-data",
-    "title": "EL2: Legal",
-    "section": "Safeguards for Special Categories of Data",
-    "text": "Safeguards for Special Categories of Data\nWhen processing sensitive data (e.g. health data), additional safeguards are required:\n\nStrict access control\nEnhanced security measures\nEthical approval where applicable\nClear separation of identifiers and content data"
+    "objectID": "EL2.html#data-controller",
+    "href": "EL2.html#data-controller",
+    "title": "EL2: European legislation",
+    "section": "Data Controller",
+    "text": "Data Controller\n\nThe entity that determines the purposes and means of the processing of personal data\nBears the primary legal responsibility\nResponsible for:\n\nLawful basis\nCompliance with GDPR principles\nTransparency and information to data subjects\nAppropriate technical and organisational measures\n\nTypical examples:\n\nPublic authorities\nUniversities\nRegions and municipalities"
   },
   {
-    "objectID": "EL2.html#gdpr-and-swedish-law",
-    "href": "EL2.html#gdpr-and-swedish-law",
-    "title": "EL2: Legal",
-    "section": "GDPR and Swedish law",
-    "text": "GDPR and Swedish law\n\nGDPR is directly applicable in Sweden\nThere are refereces to GDPR in Swedish laws such as PDL and OSL\nSwedish laws may provide additional regulations and requirements beyond GDPR\nData protection authorities in Sweden: Integritetsskyddsmyndigheten (IMY)\nShould be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries"
+    "objectID": "EL2.html#data-processor-pub-under-gdpr",
+    "href": "EL2.html#data-processor-pub-under-gdpr",
+    "title": "EL2: European legislation",
+    "section": "Data Processor (PUB) under GDPR",
+    "text": "Data Processor (PUB) under GDPR\n\nProcesses personal data on behalf of the controller\nActs only on documented instructions from the controller\nMay not determine purposes of processing\nHas direct responsibilities for:\n\nSecurity of processing (Article 32)\nConfidentiality\n\nMust be governed by a data processing agreement"
   },
   {
-    "objectID": "EL2.html#etikprövningslagen-epl",
-    "href": "EL2.html#etikprövningslagen-epl",
-    "title": "EL2: Legal",
-    "section": "Etikprövningslagen (EPL)",
-    "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority"
+    "objectID": "EL2.html#controllerprocessor-relationship",
+    "href": "EL2.html#controllerprocessor-relationship",
+    "title": "EL2: European legislation",
+    "section": "Controller–Processor Relationship",
+    "text": "Controller–Processor Relationship\n\nA formal Data Processing Agreement (DPA) is required\nThe agreement must specify:\n\nSubject matter and duration\nNature and purpose of processing\nTypes of personal data\nCategories of data subjects (patients, students, citizens, …)\nSecurity measures\n\nThe controller remains responsible even when processing is outsourced"
   },
   {
-    "objectID": "EL2.html#international-laws",
-    "href": "EL2.html#international-laws",
-    "title": "EL2: Legal",
-    "section": "International laws",
-    "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
+    "objectID": "EL2.html#example-sahlgrenska",
+    "href": "EL2.html#example-sahlgrenska",
+    "title": "EL2: European legislation",
+    "section": "Example: Sahlgrenska",
+    "text": "Example: Sahlgrenska\n\nIf a researcher work at the Sahlgrenska university hospital, VGR might be the data controller (personuppgiftsansvarig; PUA)\nIf he/she asks for statistical consulting from the Sahlgrenska Academy, GU might be the data processor (personuppgiftsbiträde; PUB)"
   },
   {
-    "objectID": "EL2.html#section",
-    "href": "EL2.html#section",
-    "title": "EL2: Legal",
+    "objectID": "EL2.html#what-is-it",
+    "href": "EL2.html#what-is-it",
+    "title": "EL2: European legislation",
+    "section": "What is it?",
+    "text": "What is it?\n\nEHDS is an EU-wide legal and technical framework for the use and sharing of health data\nIt aims to:\n\nimprove access to health data across borders\nsupport healthcare, research, statistics, and policy-making\n\nFocuses on data access and governance"
+  },
+  {
+    "objectID": "EL2.html#two-main-pillars",
+    "href": "EL2.html#two-main-pillars",
+    "title": "EL2: European legislation",
+    "section": "Two Main Pillars",
+    "text": "Two Main Pillars\n\nPrimary use of health data\n\nUse of data for individual patient care\nCross-border access to electronic health records\n\nSecondary use of health data for\n\nstatistics\nscientific research\npublic health\npolicy evaluation and innovation"
+  },
+  {
+    "objectID": "EL2.html#implementation-timeline",
+    "href": "EL2.html#implementation-timeline",
+    "title": "EL2: European legislation",
+    "section": "Implementation Timeline",
+    "text": "Implementation Timeline\n\n2025: EHDS regulation enters into force\n2025–2027: Development of implementing and technical acts\nFrom ~2029 onwards:\n\nnational infrastructures become operational\ncross-border access for secondary use starts to function in practice"
+  },
+  {
+    "objectID": "EL2.html#how-ehds-relates-to-gdpr",
+    "href": "EL2.html#how-ehds-relates-to-gdpr",
+    "title": "EL2: European legislation",
+    "section": "How EHDS Relates to GDPR",
+    "text": "How EHDS Relates to GDPR\n\nEHDS does not replace GDPR\nGDPR continues to govern:\n\npersonal data protection\nlawful bases\nsafeguards for health data\n\nEHDS provides procedures and structures for lawful data access under GDPR\n\n➡️ GDPR defines whether data may be processed\n➡️ EHDS defines how data can be made available"
+  },
+  {
+    "objectID": "EL2.html#why-ehds-matters-for-statisticians",
+    "href": "EL2.html#why-ehds-matters-for-statisticians",
+    "title": "EL2: European legislation",
+    "section": "Why EHDS Matters for Statisticians",
+    "text": "Why EHDS Matters for Statisticians\n\nEHDS explicitly recognises statistics as a legitimate purpose\nIt facilitates access to:\n\nlarge-scale health datasets\ncross-national data sources\n\nIt increases demand for:\n\ndata quality assessment\nmetadata interpretation\nharmonisation and comparability analyses"
+  },
+  {
+    "objectID": "EL2.html#ehds-does-not-do-this",
+    "href": "EL2.html#ehds-does-not-do-this",
+    "title": "EL2: European legislation",
+    "section": "EHDS Does Not Do This",
+    "text": "EHDS Does Not Do This\n\nEHDS does not:\n\ndefine statistical methods\nensure data quality automatically\nguarantee comparability across countries\n\nLegal and technical access ≠ valid statistical inference"
+  },
+  {
+    "objectID": "EL2.html#what-is-it-1",
+    "href": "EL2.html#what-is-it-1",
+    "title": "EL2: European legislation",
+    "section": "What Is It?",
+    "text": "What Is It?\n\nThe Data Act is an EU regulation on access to and sharing of data\nFocuses mainly on:\n\ndata generated by connected products and digital services (IoT)\nbusiness-to-business (B2B) and business-to-government (B2G) data sharing\n\nIt is not a data protection regulation\n\n➡️ The Data Act is about who may access data and under what conditions."
+  },
+  {
+    "objectID": "EL2.html#how-the-data-act-relates-to-health-data",
+    "href": "EL2.html#how-the-data-act-relates-to-health-data",
+    "title": "EL2: European legislation",
+    "section": "How the Data Act Relates to Health Data",
+    "text": "How the Data Act Relates to Health Data\n\nThe Data Act does not primarily target health registers\nHowever, it may affect:\n\ndata generated by medical devices\ndigital health services\nhealth-related IoT data\n\n\n➡️ Health data may fall under the Data Act depending on how it is generated."
+  },
+  {
+    "objectID": "EL2.html#references",
+    "href": "EL2.html#references",
+    "title": "EL2: European legislation",
     "section": "",
-    "text": "“Public Access and Secrecy | Swedish National Data Service.” 2025. https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy."
+    "text": "Vukovic, Jakov, Damir Ivankovic, Claudia Habl, and Jelena Dimnjakovic. 2022. “Enablers and Barriers to the Secondary Use of Health Data in Europe: General Data Protection Regulation Perspective.” Archives of Public Health 80 (1): 115. https://doi.org/10.1186/s13690-022-00866-7."
+  },
+  {
+    "objectID": "EL4.html#general-purpose-programming-languages",
+    "href": "EL4.html#general-purpose-programming-languages",
+    "title": "EL4: Tooling",
+    "section": "General-Purpose Programming Languages",
+    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as subroutines in modern statistical software!\n\nALGOL / ALGOL 60\n\nUsed mainly in academic environments\n\nPL/I\n\nUsed in some government and industrial contexts\n\n\n📌 These languages required substantial programming expertise."
+  },
+  {
+    "objectID": "EL4.html#early-statistical-packages",
+    "href": "EL4.html#early-statistical-packages",
+    "title": "EL4: Tooling",
+    "section": "Early Statistical Packages",
+    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nDeveloped at UCLA\nCommon in medical statistics\nBio-Medical Data Package\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
+  },
+  {
+    "objectID": "EL4.html#sas-a-transitional-system",
+    "href": "EL4.html#sas-a-transitional-system",
+    "title": "EL4: Tooling",
+    "section": "SAS: A Transitional System",
+    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry and clinical trials\n\n📌 SAS predates S but influenced later statistical workflows."
+  },
+  {
+    "objectID": "EL4.html#limitations-of-pre-s-systems",
+    "href": "EL4.html#limitations-of-pre-s-systems",
+    "title": "EL4: Tooling",
+    "section": "Limitations of Pre-S Systems",
+    "text": "Limitations of Pre-S Systems\nCommon limitations included:\n\nBatch processing rather than interactivity\nSeparation of data management and analysis\nLimited graphics capabilities\nHigh barriers to exploratory data analysis"
+  },
+  {
+    "objectID": "EL4.html#s",
+    "href": "EL4.html#s",
+    "title": "EL4: Tooling",
+    "section": "S",
+    "text": "S\n\nS takes form at Bell Laboratories (interactive statistical computing).\nJohn Chambers leads the effort.\n1976: first working version of S runs on GCOS\n1979: S2 is ported to UNIX; UNIX becomes the primary platform\n1980: S is first distributed outside Bell Labs\n1981: source versions are made available\n1984: key S books published (often called the “Brown Book” era)"
+  },
+  {
+    "objectID": "EL4.html#the-new-s-language",
+    "href": "EL4.html#the-new-s-language",
+    "title": "EL4: Tooling",
+    "section": "The New S Language",
+    "text": "The New S Language\n\n1988: “New S” is released (major language redesign)\n1988: S-PLUS is first released as a commercial implementation of S\n1991: Statistical Models in S (“White Book”) popularizes formula notation (the ~ operator), data frames, and modeling workflows"
+  },
+  {
+    "objectID": "EL4.html#r",
+    "href": "EL4.html#r",
+    "title": "EL4: Tooling",
+    "section": "R",
+    "text": "R\n\n1993: first versions of R are published (Auckland; Ross Ihaka & Robert Gentleman)\n1995: R becomes open source (GPL)\n1997: the R Core group forms; CRAN is founded (Kurt Hornik)\n2000: R 1.0.0 is released 2000-02-29"
+  },
+  {
+    "objectID": "EL4.html#rstudio-brings-an-ide-to-the-r-community",
+    "href": "EL4.html#rstudio-brings-an-ide-to-the-r-community",
+    "title": "EL4: Tooling",
+    "section": "RStudio brings an IDE to the R community",
+    "text": "RStudio brings an IDE to the R community\n\n2009: RStudio (the company) is founded\n2011: RStudio IDE is introduced as an open-source IDE for R (desktop + server)"
+  },
+  {
+    "objectID": "EL4.html#microsoft-revolution-analytics",
+    "href": "EL4.html#microsoft-revolution-analytics",
+    "title": "EL4: Tooling",
+    "section": "Microsoft (Revolution Analytics)",
+    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server\nJuly 1, 2023: Microsoft era over"
+  },
+  {
+    "objectID": "EL4.html#rstudio-becomes-posit",
+    "href": "EL4.html#rstudio-becomes-posit",
+    "title": "EL4: Tooling",
+    "section": "RStudio becomes Posit",
+    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)"
+  },
+  {
+    "objectID": "EL4.html#positron",
+    "href": "EL4.html#positron",
+    "title": "EL4: Tooling",
+    "section": "Positron",
+    "text": "Positron\n\nNew generation IDE for data science\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
+  },
+  {
+    "objectID": "EL4.html#quick-tour",
+    "href": "EL4.html#quick-tour",
+    "title": "EL4: Tooling",
+    "section": "Quick tour",
+    "text": "Quick tour\n\n\n\n\n\n\n\n\nPositron assistant (mentioned in the video)\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!"
+  },
+  {
+    "objectID": "EL4.html#before-version-control-systems",
+    "href": "EL4.html#before-version-control-systems",
+    "title": "EL4: Tooling",
+    "section": "Before Version Control Systems",
+    "text": "Before Version Control Systems\n1950s–1970s: Early software development relied on:\n\nManual file naming:\n\nanalysis_final.f\nanalysis_final_v2.f\n\nPhysical media:\n\nPunch cards\nMagnetic tape\n\nCentralised mainframes\n\n📌 No automated tracking of changes."
+  },
+  {
+    "objectID": "EL4.html#floppy-discs-mail-and-shared-directories",
+    "href": "EL4.html#floppy-discs-mail-and-shared-directories",
+    "title": "EL4: Tooling",
+    "section": "Floppy discs, Mail, and Shared Directories",
+    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
+  },
+  {
+    "objectID": "EL4.html#early-version-control-systems",
+    "href": "EL4.html#early-version-control-systems",
+    "title": "EL4: Tooling",
+    "section": "Early Version Control Systems",
+    "text": "Early Version Control Systems\n1980s: First-generation tools focused on single files:\n\nSCCS (Source Code Control System, 1972)\nRCS (Revision Control System, 1982)\n\nCharacteristics:\n\nVersioning per file\nLinear history\nCentral storage"
+  },
+  {
+    "objectID": "EL4.html#centralised-version-control",
+    "href": "EL4.html#centralised-version-control",
+    "title": "EL4: Tooling",
+    "section": "Centralised Version Control",
+    "text": "Centralised Version Control\n1990s: Project-level systems emerge:\n\nCVS (Concurrent Versions System)\nSubversion (SVN)\n\nKey features:\n\nCentral repository\nMultiple users\nCheck-in / check-out model\n\n📌 Still required constant access to the central server."
+  },
+  {
+    "objectID": "EL4.html#limitations-of-centralised-systems",
+    "href": "EL4.html#limitations-of-centralised-systems",
+    "title": "EL4: Tooling",
+    "section": "Limitations of Centralised Systems",
+    "text": "Limitations of Centralised Systems\nCommon problems:\n\nSingle point of failure\nPoor support for branching and merging\nDifficult offline work\nSlow operations on large repositories\n\nThese limitations became critical for large projects."
+  },
+  {
+    "objectID": "EL4.html#git",
+    "href": "EL4.html#git",
+    "title": "EL4: Tooling",
+    "section": "Git",
+    "text": "Git\n\nGit is created by Linus Torvalds in 2005\nOriginal motivation:\n\nSupport Linux kernel development\nReplace proprietary tools\n\n\nDesign principles:\n\nDistributed architecture\nFast local operations\nStrong support for branching and merging"
+  },
+  {
+    "objectID": "EL4.html#distributed-version-control-with-git",
+    "href": "EL4.html#distributed-version-control-with-git",
+    "title": "EL4: Tooling",
+    "section": "Distributed Version Control with Git",
+    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
+  },
+  {
+    "objectID": "EL4.html#hosting-platforms",
+    "href": "EL4.html#hosting-platforms",
+    "title": "EL4: Tooling",
+    "section": "Hosting Platforms",
+    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests\nIssue tracking\nCode review\nCI/CD integration"
+  },
+  {
+    "objectID": "EL4.html#version-control-today",
+    "href": "EL4.html#version-control-today",
+    "title": "EL4: Tooling",
+    "section": "Version Control Today",
+    "text": "Version Control Today\nModern usage includes:\n\nCode\nDocumentation\nData analysis (scripts, notebooks)\nConfiguration and infrastructure\n\nGit is integrated into:\n\nIDEs (VS Code, Positron)\nCI/CD pipelines\nCloud platforms"
+  },
+  {
+    "objectID": "EL4.html#version-control-beyond-code",
+    "href": "EL4.html#version-control-beyond-code",
+    "title": "EL4: Tooling",
+    "section": "Version Control Beyond Code",
+    "text": "Version Control Beyond Code\nToday, version control supports:\n\nReproducible research\nCollaborative writing\nData science workflows\nTeaching and learning\n\n📌 Version control is now a core professional skill."
+  },
+  {
+    "objectID": "EL4.html#warning",
+    "href": "EL4.html#warning",
+    "title": "EL4: Tooling",
+    "section": "WARNING!",
+    "text": "WARNING!\n\nNot everything should be shared!\nScripts and documentation yes!\nBut Health data is sensitive!\n\nDo not share it!\nAvoid unintentional sharing!\nPrivate repositories are still shared with hosting provider!\n\nAvoid explicit file paths and sensitive info in scripts!\nCan give information about data location and internal structure!\nNo hard-coded passwords or API keys!"
+  },
+  {
+    "objectID": "EL4.html#git-basics",
+    "href": "EL4.html#git-basics",
+    "title": "EL4: Tooling",
+    "section": "Git basics",
+    "text": "Git basics\n(After installing the Git software)\n\nCollect all files related to a project in a folder\nInitialize a git repository in that folder\nMake changes to files\nStage changes for commit\nCommit changes with a message\nPossibly push commits to remote repository\n\ncd path/to/your/project\ngit init\ngit status\n# make changes to files\ngit add filename1 filename2\ngit commit -m \"Descriptive message about changes\"\ngit remote add origin"
+  },
+  {
+    "objectID": "EL4.html#video-tutorials",
+    "href": "EL4.html#video-tutorials",
+    "title": "EL4: Tooling",
+    "section": "Video tutorials",
+    "text": "Video tutorials\nThe video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here."
+  },
+  {
+    "objectID": "EL4.html#inspirational-video",
+    "href": "EL4.html#inspirational-video",
+    "title": "EL4: Tooling",
+    "section": "Inspirational video",
+    "text": "Inspirational video\nWatch this video even though some parts might be overwhelming. It gives a good overview of the current state (2025), even though many things will be too advanced for this course (it is not specifically aimed for statisticians or R users).\n\n\n\n\n\n\n\n\n.gitignore\n\n\nThe .gitignore file is very important in settings with health data! Pay close attention to this section of the video!"
+  },
+  {
+    "objectID": "EL4.html#git-in-positron",
+    "href": "EL4.html#git-in-positron",
+    "title": "EL4: Tooling",
+    "section": "Git in Positron",
+    "text": "Git in Positron\n\nRemember that Positron is build on Code OSS (which shares a lot of features with VS Code).\nBranching and merging is possible but we will not cover that here.\n\nShort official introduction from Microsoft:\n\n\nMore detailed introductions. Watch both! The first one is based on a Windows version of VS code and the second on Mac but the concepts are the same:\n\n\n\n\n\n\n\n\n\n\nOverwhelmed?\n\n\nThis video includes some parts which might be overwhelming if you are new to Git and GitHub. Don’t worry! You don’t need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice."
   },
   {
     "objectID": "EL4.html#not-a-single-r-script",
     "href": "EL4.html#not-a-single-r-script",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "Not a single R script",
     "text": "Not a single R script\n\nReal projects are more complex than a single R script!\nMultiple scripts\nData files\nDocumentation\nReports\nVersion control\nReproducible workflows"
   },
   {
     "objectID": "EL4.html#project-structure",
     "href": "EL4.html#project-structure",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "Project structure",
     "text": "Project structure\nCommon file structures\n\nHelp you organize your thoughts\nHelp others to collaborate\nsimplifies paths used in your code"
   },
   {
     "objectID": "EL4.html#example-structure",
     "href": "EL4.html#example-structure",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "Example structure",
-    "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── ...\n  ├── ...\n  └── _targets.R       - targets pipeline script (WHAT??? :-))"
+    "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── reports/\n  └── _targets.R       - targets pipeline script"
   },
   {
     "objectID": "EL4.html#readme.md",
     "href": "EL4.html#readme.md",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "README.md",
     "text": "README.md\n\nDocument the purpose of the project\nWhat is it about?\nWhat is the aim?\nWho to contact for questions?\nIn what circumstances was it created?\n\nMarkdown format (simple text with some possible formatting)"
   },
   {
-    "objectID": "EL4.html#markdown",
-    "href": "EL4.html#markdown",
-    "title": "EL4: Analysis pipelines",
-    "section": "Markdown",
-    "text": "Markdown\nTODO: intro and give examples + link etc"
-  },
-  {
     "objectID": "EL4.html#data-folder",
     "href": "EL4.html#data-folder",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "data folder",
-    "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc (we will cover some of these later)\nsome files might be very big (gigabytes not uncommon)"
-  },
-  {
-    "objectID": "EL4.html#gitignore-fiile",
-    "href": "EL4.html#gitignore-fiile",
-    "title": "EL4: Analysis pipelines",
-    "section": ".gitignore fiile",
-    "text": ".gitignore fiile\nTODO"
+    "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc\nsome files might be very big (gigabytes not uncommon)"
   },
   {
     "objectID": "EL4.html#r-folder",
     "href": "EL4.html#r-folder",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "R folder",
-    "text": "R folder\n\nStore your R functions here\nYou have learned about R functions in the earlier R course\nWe will cover some more of that later\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts if functions are defined elsewhere\nEasier to test and debug code\nwe eill not cover testing but some about debugging later\nEasier to share code between projects"
+    "text": "R folder\n\nStore your R functions here\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts\nEasier to test and debug code\nEasier to share code between projects"
   },
   {
-    "objectID": "EL4.html#reports",
-    "href": "EL4.html#reports",
-    "title": "EL4: Analysis pipelines",
-    "section": "reports",
-    "text": "reports\n\nSeparate reports from analysis/data management but integrate them with the analysis pipeline\nQuarto documents\nDocumemnt your analysis and thoughts/decisions along the way\nInclude figures and tables\nTo share with external collaborators"
+    "objectID": "EL4.html#reports-folder",
+    "href": "EL4.html#reports-folder",
+    "title": "EL4: Tooling",
+    "section": "reports folder",
+    "text": "reports folder\n\nStore your reports here\nQuarto documents\nDocumemnt your analysis\nInclude figures and tables\nShare with external collaborators"
   },
   {
     "objectID": "EL4.html#targets.r-file",
     "href": "EL4.html#targets.r-file",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "_targets.R file",
     "text": "_targets.R file\nUse the targets package to create a reproducible data analysis pipeline"
   },
   {
     "objectID": "EL4.html#pipeline",
     "href": "EL4.html#pipeline",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "Pipeline",
     "text": "Pipeline\n\nDefine steps in your analysis as targets\nDefine dependencies between targets\nAutomatically track changes and rerun only necessary parts"
   },
   {
     "objectID": "EL4.html#why",
     "href": "EL4.html#why",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "Why?",
     "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
   },
   {
     "objectID": "EL4.html#reading",
     "href": "EL4.html#reading",
-    "title": "EL4: Analysis pipelines",
+    "title": "EL4: Tooling",
     "section": "Reading",
-    "text": "Reading\n\nTargets overview\nTarget manual"
+    "text": "Reading\n\nA bit old but still relevant: https://happygitwithr.com/\nTargets overview\nTarget manual"
+  },
+  {
+    "objectID": "ES1.html",
+    "href": "ES1.html",
+    "title": "ES1: Ethics and legality",
+    "section": "",
+    "text": "Data receiver\nImagine that you are participating in consultancy work through Akademistatistik. At the meeting, a client is present who is employed at the Sahlgrenska Academy at the University of Gothenburg, but who is currently working on a research project in which the Västra Götaland Region is the research principal (”forskningshuvudman”). After an initial start-up meeting, the client gets in touch and asks for help with analyses of the collected data material. In the email, there is an attached non-encrypted Excel file, and the first column contains the personal identity numbers of all individuals.\n\nDescribe and discuss your initial thoughts on this situation.\n\nSuppose the client used his xxx@gu.se-adress to provide the data.\n\nWhat does this mean in practice? Identify the three organizations which now have acces to the data.\nAcording to GDPR, which organisation is the data controller and which roles do the other organizations have?\n\nYou search for some help and find this text on the GU intranet (as published 2026-01-19):\n\nA personal data breach is a security incident that can involve risks to human rights and freedoms. Everyone at the University of Gothenburg has an obligation to report incidents that they discover to the Data Protection Group. A personal data breach has occurred if, for example, data concerning, one or several registered persons have been destroyed, got lost in any other way or made available for unauthorised persons. The risks of a personal data breach can include loss of control over data or the restriction of people’s rights. A personal data breach is therefore a security incident that has affected the confidentiality, accuracy or availability of data. A personal data breach may consist of: An unauthorised party has gained access to the personal data, for example by sending personal data to recipients who should not have the data. […] The University of Gothenburg is responsible for the incidents that occur within the university’s activities. The head of the part of the organization where the incident occur must ensure that the incident is reported, managed and assessed. When you discover a suspected personal data breach at the University of Gothenburg, you must report it within the organisation as soon as you become aware of it. You do this by emailing dataskydd@gu.se with a copy to the closest superior college. The Data Protection Group will then initiate documentation and assessment of the breach. It is very important that any incident is reported swiftly, as serious breaches must be reported to the Swedish Authority for Privacy Protection (IMY) within 72 hours of the incident being discovered. The 72 hours is the time that the Data Protection Group and the Data Protection Officer have to make their assessment of the incident.\n\n\nSo what do you do now?\n\nInstead, imagine that the researcher used his other e-mailadress xxx@vgregion.se.\n\nWould that make a difference? If so, how?\n\nLet’s say you do not take any action in this case. At a later dinner with some friends at a restaurant, you talk about the project and mention the Excel file you received. Someone at a nearby table hear what happened and ask you if you would like to shere the data with him.\n\nWhat is your response?\n\nIf you decline, he might insist that since you received the data as a “representative” for the University (a govermental institution), the freedom of the press act (TF) does give him the right to “demand” that you give him the data as soon as possible.\n\nWhat do you do now?\n\n\n\nWorking with data\nImagine you just got hired as a statistician working remotely for a company in Moldova. You have not yet recieved any computer from your employer. You don’t want to sit home alone all the time so sometimes you work from a library or a café. The company has a Swedish client wich is the data controller. You can download their data from a secure server and that connection is encrypted.\n\nWhat are the first practical things to consider before you start working with their data? What is your reasoning?\n\nSuddenly, the clients realise they had not established any formal Data Processing Agreement between them and your employer. You ask your boss for advice, but she doesn’t care. “Not my problem, GDPR does not apply to me!”\n\nWhat do you do?\n\n\n\nSecure environment\nAt your work you are forced to work with your data only on a remote server. R is installed but you can only install packages from CRAN and you can not copy any text or files between the server and your computer. You need to finish a report for the next morning (the client can access the report himself on the server). The only possible solution you can think of is to use a newly developed R package available on GitHub. Although you can not install such packages through the restricted R environment, you have found a clever way using some undocumented procedures using the command line one the server.\n\nWhat do you do?\n\nAfter some additional experimentation you find out that you can even activate AI tools to help you with your work. In fact, you haven’t slept for three days, your boss doesn’t pay you enough and the report must really be finninshed tomorrow.\n\nWhat do you do?\n\n\n\nThe accident\nYou are working for the national quality register of joint replacements. One day you receive a call from the hospital. “We have a seriously injured person here. His face is unrecognisable and we don’t know who he is. But his hip prothesis is sticking out of the body and we have a serial number. We might be able to save his life if you can identify him and we can look into his medical history”.\n\nWhat do you do?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
+    "section": "",
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
+  },
+  {
+    "objectID": "index.html#positron-extensions",
+    "href": "index.html#positron-extensions",
+    "title": "Health data",
+    "section": "Positron extensions",
+    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
+  },
+  {
+    "objectID": "index.html#additional-mandatory-reading",
+    "href": "index.html#additional-mandatory-reading",
+    "title": "Health data",
+    "section": "Additional mandatory reading",
+    "text": "Additional mandatory reading\nPDF versions of scientific articles are found in Canvas."
   },
   {
     "objectID": "ECS1.html",
@@ -490,298 +686,207 @@
     "text": "(Try to) contribute to an R package\nROpenSci is an open community of R developers. Help them according to their instructions here: https://contributing.ropensci.org/resources.html#issues\n\nRead the instructions above.\nLook for an open issue (start with the “good first issue” or “documentation” issue lists)\nRead everything that is written/discussed in your issue of choice and try to understand the problem/task.\nWhen you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.\nTry to fix the issue! Note that this can be (VERY!) difficult and you don’t have to actually fix it if it seems impossible. But don’t give up to easy!\nSubmit your changes locally with an informative message and a reference to “#N” (where N is the issue number). Do this regardless if you fixed the issue or not.\nIf you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).\nIf you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (for example click on the smiley at the end of a comment you agree with and chose a relevant emoji)."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
-    "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
-  },
-  {
-    "objectID": "index.html#positron-extensions",
-    "href": "index.html#positron-extensions",
-    "title": "Health data",
-    "section": "Positron extensions",
-    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
-  },
-  {
-    "objectID": "index.html#additional-mandatory-reading",
-    "href": "index.html#additional-mandatory-reading",
-    "title": "Health data",
-    "section": "Additional mandatory reading",
-    "text": "Additional mandatory reading\nPDF versions of scientific articles are found in Canvas."
-  },
-  {
-    "objectID": "EL3.html#general-purpose-programming-languages",
-    "href": "EL3.html#general-purpose-programming-languages",
-    "title": "EL3: Tooling",
-    "section": "General-Purpose Programming Languages",
-    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as subroutines in modern statistical software!\n\nALGOL / ALGOL 60\n\nUsed mainly in academic environments\n\nPL/I\n\nUsed in some government and industrial contexts\n\n\n📌 These languages required substantial programming expertise."
-  },
-  {
-    "objectID": "EL3.html#early-statistical-packages",
-    "href": "EL3.html#early-statistical-packages",
-    "title": "EL3: Tooling",
-    "section": "Early Statistical Packages",
-    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nDeveloped at UCLA\nCommon in medical statistics\nBio-Medical Data Package\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
-  },
-  {
-    "objectID": "EL3.html#sas-a-transitional-system",
-    "href": "EL3.html#sas-a-transitional-system",
-    "title": "EL3: Tooling",
-    "section": "SAS: A Transitional System",
-    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry and clinical trials\n\n📌 SAS predates S but influenced later statistical workflows."
-  },
-  {
-    "objectID": "EL3.html#limitations-of-pre-s-systems",
-    "href": "EL3.html#limitations-of-pre-s-systems",
-    "title": "EL3: Tooling",
-    "section": "Limitations of Pre-S Systems",
-    "text": "Limitations of Pre-S Systems\nCommon limitations included:\n\nBatch processing rather than interactivity\nSeparation of data management and analysis\nLimited graphics capabilities\nHigh barriers to exploratory data analysis"
-  },
-  {
-    "objectID": "EL3.html#s",
-    "href": "EL3.html#s",
-    "title": "EL3: Tooling",
-    "section": "S",
-    "text": "S\n\nS takes form at Bell Laboratories (interactive statistical computing).\nJohn Chambers leads the effort.\n1976: first working version of S runs on GCOS\n1979: S2 is ported to UNIX; UNIX becomes the primary platform\n1980: S is first distributed outside Bell Labs\n1981: source versions are made available\n1984: key S books published (often called the “Brown Book” era)"
-  },
-  {
-    "objectID": "EL3.html#the-new-s-language",
-    "href": "EL3.html#the-new-s-language",
-    "title": "EL3: Tooling",
-    "section": "The New S Language",
-    "text": "The New S Language\n\n1988: “New S” is released (major language redesign)\n1988: S-PLUS is first released as a commercial implementation of S\n1991: Statistical Models in S (“White Book”) popularizes formula notation (the ~ operator), data frames, and modeling workflows"
-  },
-  {
-    "objectID": "EL3.html#r",
-    "href": "EL3.html#r",
-    "title": "EL3: Tooling",
-    "section": "R",
-    "text": "R\n\n1993: first versions of R are published (Auckland; Ross Ihaka & Robert Gentleman)\n1995: R becomes open source (GPL)\n1997: the R Core group forms; CRAN is founded (Kurt Hornik)\n2000: R 1.0.0 is released 2000-02-29"
-  },
-  {
-    "objectID": "EL3.html#rstudio-brings-an-ide-to-the-r-community",
-    "href": "EL3.html#rstudio-brings-an-ide-to-the-r-community",
-    "title": "EL3: Tooling",
-    "section": "RStudio brings an IDE to the R community",
-    "text": "RStudio brings an IDE to the R community\n\n2009: RStudio (the company) is founded\n2011: RStudio IDE is introduced as an open-source IDE for R (desktop + server)"
-  },
-  {
-    "objectID": "EL3.html#microsoft-revolution-analytics",
-    "href": "EL3.html#microsoft-revolution-analytics",
-    "title": "EL3: Tooling",
-    "section": "Microsoft (Revolution Analytics)",
-    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server\nJuly 1, 2023: Microsoft era over"
-  },
-  {
-    "objectID": "EL3.html#rstudio-becomes-posit",
-    "href": "EL3.html#rstudio-becomes-posit",
-    "title": "EL3: Tooling",
-    "section": "RStudio becomes Posit",
-    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)"
-  },
-  {
-    "objectID": "EL3.html#positron",
-    "href": "EL3.html#positron",
-    "title": "EL3: Tooling",
-    "section": "Positron",
-    "text": "Positron\n\nNew generation IDE for data science\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
-  },
-  {
-    "objectID": "EL3.html#quick-tour",
-    "href": "EL3.html#quick-tour",
-    "title": "EL3: Tooling",
-    "section": "Quick tour",
-    "text": "Quick tour\n\n\n\n\n\n\n\n\nPositron assistant (mentioned in the video)\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!"
-  },
-  {
-    "objectID": "EL3.html#before-version-control-systems",
-    "href": "EL3.html#before-version-control-systems",
-    "title": "EL3: Tooling",
-    "section": "Before Version Control Systems",
-    "text": "Before Version Control Systems\n1950s–1970s: Early software development relied on:\n\nManual file naming:\n\nanalysis_final.f\nanalysis_final_v2.f\n\nPhysical media:\n\nPunch cards\nMagnetic tape\n\nCentralised mainframes\n\n📌 No automated tracking of changes."
-  },
-  {
-    "objectID": "EL3.html#floppy-discs-mail-and-shared-directories",
-    "href": "EL3.html#floppy-discs-mail-and-shared-directories",
-    "title": "EL3: Tooling",
-    "section": "Floppy discs, Mail, and Shared Directories",
-    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
-  },
-  {
-    "objectID": "EL3.html#early-version-control-systems",
-    "href": "EL3.html#early-version-control-systems",
-    "title": "EL3: Tooling",
-    "section": "Early Version Control Systems",
-    "text": "Early Version Control Systems\n1980s: First-generation tools focused on single files:\n\nSCCS (Source Code Control System, 1972)\nRCS (Revision Control System, 1982)\n\nCharacteristics:\n\nVersioning per file\nLinear history\nCentral storage"
-  },
-  {
-    "objectID": "EL3.html#centralised-version-control",
-    "href": "EL3.html#centralised-version-control",
-    "title": "EL3: Tooling",
-    "section": "Centralised Version Control",
-    "text": "Centralised Version Control\n1990s: Project-level systems emerge:\n\nCVS (Concurrent Versions System)\nSubversion (SVN)\n\nKey features:\n\nCentral repository\nMultiple users\nCheck-in / check-out model\n\n📌 Still required constant access to the central server."
-  },
-  {
-    "objectID": "EL3.html#limitations-of-centralised-systems",
-    "href": "EL3.html#limitations-of-centralised-systems",
-    "title": "EL3: Tooling",
-    "section": "Limitations of Centralised Systems",
-    "text": "Limitations of Centralised Systems\nCommon problems:\n\nSingle point of failure\nPoor support for branching and merging\nDifficult offline work\nSlow operations on large repositories\n\nThese limitations became critical for large projects."
-  },
-  {
-    "objectID": "EL3.html#git",
-    "href": "EL3.html#git",
-    "title": "EL3: Tooling",
-    "section": "Git",
-    "text": "Git\n\nGit is created by Linus Torvalds in 2005\nOriginal motivation:\n\nSupport Linux kernel development\nReplace proprietary tools\n\n\nDesign principles:\n\nDistributed architecture\nFast local operations\nStrong support for branching and merging"
-  },
-  {
-    "objectID": "EL3.html#distributed-version-control-with-git",
-    "href": "EL3.html#distributed-version-control-with-git",
-    "title": "EL3: Tooling",
-    "section": "Distributed Version Control with Git",
-    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
-  },
-  {
-    "objectID": "EL3.html#hosting-platforms",
-    "href": "EL3.html#hosting-platforms",
-    "title": "EL3: Tooling",
-    "section": "Hosting Platforms",
-    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests\nIssue tracking\nCode review\nCI/CD integration"
-  },
-  {
-    "objectID": "EL3.html#version-control-today",
-    "href": "EL3.html#version-control-today",
-    "title": "EL3: Tooling",
-    "section": "Version Control Today",
-    "text": "Version Control Today\nModern usage includes:\n\nCode\nDocumentation\nData analysis (scripts, notebooks)\nConfiguration and infrastructure\n\nGit is integrated into:\n\nIDEs (VS Code, Positron)\nCI/CD pipelines\nCloud platforms"
-  },
-  {
-    "objectID": "EL3.html#version-control-beyond-code",
-    "href": "EL3.html#version-control-beyond-code",
-    "title": "EL3: Tooling",
-    "section": "Version Control Beyond Code",
-    "text": "Version Control Beyond Code\nToday, version control supports:\n\nReproducible research\nCollaborative writing\nData science workflows\nTeaching and learning\n\n📌 Version control is now a core professional skill."
-  },
-  {
-    "objectID": "EL3.html#warning",
-    "href": "EL3.html#warning",
-    "title": "EL3: Tooling",
-    "section": "WARNING!",
-    "text": "WARNING!\n\nNot everything should be shared!\nScripts and documentation yes!\nBut Health data is sensitive!\n\nDo not share it!\nAvoid unintentional sharing!\nPrivate repositories are still shared with hosting provider!\n\nAvoid explicit file paths and sensitive info in scripts!\nCan give information about data location and internal structure!\nNo hard-coded passwords or API keys!"
-  },
-  {
-    "objectID": "EL3.html#git-basics",
-    "href": "EL3.html#git-basics",
-    "title": "EL3: Tooling",
-    "section": "Git basics",
-    "text": "Git basics\n(After installing the Git software)\n\nCollect all files related to a project in a folder\nInitialize a git repository in that folder\nMake changes to files\nStage changes for commit\nCommit changes with a message\nPossibly push commits to remote repository\n\ncd path/to/your/project\ngit init\ngit status\n# make changes to files\ngit add filename1 filename2\ngit commit -m \"Descriptive message about changes\"\ngit remote add origin"
-  },
-  {
-    "objectID": "EL3.html#video-tutorials",
-    "href": "EL3.html#video-tutorials",
-    "title": "EL3: Tooling",
-    "section": "Video tutorials",
-    "text": "Video tutorials\nThe video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here."
-  },
-  {
-    "objectID": "EL3.html#inspirational-video",
-    "href": "EL3.html#inspirational-video",
-    "title": "EL3: Tooling",
-    "section": "Inspirational video",
-    "text": "Inspirational video\nWatch this video even though some parts might be overwhelming. It gives a good overview of the current state (2025), even though many things will be too advanced for this course (it is not specifically aimed for statisticians or R users).\n\n\n\n\n\n\n\n\n.gitignore\n\n\nThe .gitignore file is very important in settings with health data! Pay close attention to this section of the video!"
-  },
-  {
-    "objectID": "EL3.html#git-in-positron",
-    "href": "EL3.html#git-in-positron",
-    "title": "EL3: Tooling",
-    "section": "Git in Positron",
-    "text": "Git in Positron\n\nRemember that Positron is build on Code OSS (which shares a lot of features with VS Code).\nBranching and merging is possible but we will not cover that here.\n\nShort official introduction from Microsoft:\n\n\nMore detailed introductions. Watch both! The first one is based on a Windows version of VS code and the second on Mac but the concepts are the same:\n\n\n\n\n\n\n\n\n\n\nOverwhelmed?\n\n\nThis video includes some parts which might be overwhelming if you are new to Git and GitHub. Don’t worry! You don’t need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice."
-  },
-  {
-    "objectID": "EL3.html#not-a-single-r-script",
-    "href": "EL3.html#not-a-single-r-script",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#not-a-single-r-script",
+    "href": "EL5.html#not-a-single-r-script",
+    "title": "EL5: Analysis pipelines",
     "section": "Not a single R script",
     "text": "Not a single R script\n\nReal projects are more complex than a single R script!\nMultiple scripts\nData files\nDocumentation\nReports\nVersion control\nReproducible workflows"
   },
   {
-    "objectID": "EL3.html#project-structure",
-    "href": "EL3.html#project-structure",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#project-structure",
+    "href": "EL5.html#project-structure",
+    "title": "EL5: Analysis pipelines",
     "section": "Project structure",
     "text": "Project structure\nCommon file structures\n\nHelp you organize your thoughts\nHelp others to collaborate\nsimplifies paths used in your code"
   },
   {
-    "objectID": "EL3.html#example-structure",
-    "href": "EL3.html#example-structure",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#example-structure",
+    "href": "EL5.html#example-structure",
+    "title": "EL5: Analysis pipelines",
     "section": "Example structure",
-    "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── reports/\n  └── _targets.R       - targets pipeline script"
+    "text": "Example structure\n/.../my_project/\n  ├── README.md        - project documentation\n  ├── TODO             - what should be done next?\n  ├── .git             - handled by git (hidden folder)\n  ├── .gitignore       - used by git but your responsibility!\n  ├── data/            - your data files (not under version control!)\n      ├── cancer.csv \n      └── patients.qs \n  ├── R/               - your saved R functions\n      ├── function1.R \n      └── function2.R\n  ├── ...\n  ├── ...\n  └── _targets.R       - targets pipeline script (WHAT??? :-))"
   },
   {
-    "objectID": "EL3.html#readme.md",
-    "href": "EL3.html#readme.md",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#readme.md",
+    "href": "EL5.html#readme.md",
+    "title": "EL5: Analysis pipelines",
     "section": "README.md",
     "text": "README.md\n\nDocument the purpose of the project\nWhat is it about?\nWhat is the aim?\nWho to contact for questions?\nIn what circumstances was it created?\n\nMarkdown format (simple text with some possible formatting)"
   },
   {
-    "objectID": "EL3.html#data-folder",
-    "href": "EL3.html#data-folder",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#markdown",
+    "href": "EL5.html#markdown",
+    "title": "EL5: Analysis pipelines",
+    "section": "Markdown",
+    "text": "Markdown\nTODO: intro and give examples + link etc"
+  },
+  {
+    "objectID": "EL5.html#data-folder",
+    "href": "EL5.html#data-folder",
+    "title": "EL5: Analysis pipelines",
     "section": "data folder",
-    "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc\nsome files might be very big (gigabytes not uncommon)"
+    "text": "data folder\n\nStore your data files here as they are when you get them\nAvoid any modifications to the raw files!\nIt is very easy to forget what you do if it can not be traced by code\nDo NOT include this folder in version control!\nGit is not good at handling large files\nSensitive data should not be shared!\nAdd data/* to your .gitignore file\nIn realistic projects, data might come in varying formats\n\ncsv, txt, xlsx, sas7bdat, sav, dta, etc (we will cover some of these later)\nsome files might be very big (gigabytes not uncommon)"
   },
   {
-    "objectID": "EL3.html#r-folder",
-    "href": "EL3.html#r-folder",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#gitignore-fiile",
+    "href": "EL5.html#gitignore-fiile",
+    "title": "EL5: Analysis pipelines",
+    "section": ".gitignore fiile",
+    "text": ".gitignore fiile\nTODO"
+  },
+  {
+    "objectID": "EL5.html#r-folder",
+    "href": "EL5.html#r-folder",
+    "title": "EL5: Analysis pipelines",
     "section": "R folder",
-    "text": "R folder\n\nStore your R functions here\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts\nEasier to test and debug code\nEasier to share code between projects"
+    "text": "R folder\n\nStore your R functions here\nYou have learned about R functions in the earlier R course\nWe will cover some more of that later\nDocument their purpose inline!\nHelps you to reuse code\nEasier to read main scripts if functions are defined elsewhere\nEasier to test and debug code\nwe eill not cover testing but some about debugging later\nEasier to share code between projects"
   },
   {
-    "objectID": "EL3.html#reports-folder",
-    "href": "EL3.html#reports-folder",
-    "title": "EL3: Tooling",
-    "section": "reports folder",
-    "text": "reports folder\n\nStore your reports here\nQuarto documents\nDocumemnt your analysis\nInclude figures and tables\nShare with external collaborators"
+    "objectID": "EL5.html#reports",
+    "href": "EL5.html#reports",
+    "title": "EL5: Analysis pipelines",
+    "section": "reports",
+    "text": "reports\n\nSeparate reports from analysis/data management but integrate them with the analysis pipeline\nQuarto documents\nDocumemnt your analysis and thoughts/decisions along the way\nInclude figures and tables\nTo share with external collaborators"
   },
   {
-    "objectID": "EL3.html#targets.r-file",
-    "href": "EL3.html#targets.r-file",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#targets.r-file",
+    "href": "EL5.html#targets.r-file",
+    "title": "EL5: Analysis pipelines",
     "section": "_targets.R file",
     "text": "_targets.R file\nUse the targets package to create a reproducible data analysis pipeline"
   },
   {
-    "objectID": "EL3.html#pipeline",
-    "href": "EL3.html#pipeline",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#pipeline",
+    "href": "EL5.html#pipeline",
+    "title": "EL5: Analysis pipelines",
     "section": "Pipeline",
     "text": "Pipeline\n\nDefine steps in your analysis as targets\nDefine dependencies between targets\nAutomatically track changes and rerun only necessary parts"
   },
   {
-    "objectID": "EL3.html#why",
-    "href": "EL3.html#why",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#why",
+    "href": "EL5.html#why",
+    "title": "EL5: Analysis pipelines",
     "section": "Why?",
     "text": "Why?\n\nYou do not want to rerun everything all the time!\nYou want to keep track of what you have done\nYou want to be able to reproduce your results later\nYou want to share your workflow with others"
   },
   {
-    "objectID": "EL3.html#reading",
-    "href": "EL3.html#reading",
-    "title": "EL3: Tooling",
+    "objectID": "EL5.html#reading",
+    "href": "EL5.html#reading",
+    "title": "EL5: Analysis pipelines",
     "section": "Reading",
-    "text": "Reading\n\nA bit old but still relevant: https://happygitwithr.com/\nTargets overview\nTarget manual"
+    "text": "Reading\n\nTargets overview\nTarget manual"
+  },
+  {
+    "objectID": "EL3.html#backgrund-of-swedish-law",
+    "href": "EL3.html#backgrund-of-swedish-law",
+    "title": "EL2: Swedish legislation",
+    "section": "Backgrund of Swedish law",
+    "text": "Backgrund of Swedish law\nOptional reading\n\nFundamental laws (“grundlagar”) decided by the parliament but stable over time\n\nNot a “constitution”\n\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing laws\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
+  },
+  {
+    "objectID": "EL3.html#two-main-branches-of-law",
+    "href": "EL3.html#two-main-branches-of-law",
+    "title": "EL2: Swedish legislation",
+    "section": "Two main branches of law",
+    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must and can do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
+  },
+  {
+    "objectID": "EL3.html#tryckfrihetsförordningen-tf",
+    "href": "EL3.html#tryckfrihetsförordningen-tf",
+    "title": "EL2: Swedish legislation",
+    "section": "Tryckfrihetsförordningen (TF)",
+    "text": "Tryckfrihetsförordningen (TF)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\nEveryone has the right to access official documents (TF 2.1)\nbut there are exceptions (TF 2.2)\n\ne.g., if disclosure would violate privacy or national security\nif so, the goverment has the right to provide ordinary laws that restrict access (which they do …)"
+  },
+  {
+    "objectID": "EL3.html#offentlighets--och-sekretesslagen-osl",
+    "href": "EL3.html#offentlighets--och-sekretesslagen-osl",
+    "title": "EL2: Swedish legislation",
+    "section": "Offentlighets- och sekretesslagen (OSL)",
+    "text": "Offentlighets- och sekretesslagen (OSL)\n\nLaw that regulates public access to official documents and secrecy\nApplies to public authorities and institutions\nDefines what information is considered secret and under what circumstances"
+  },
+  {
+    "objectID": "EL3.html#osl-chap-21",
+    "href": "EL3.html#osl-chap-21",
+    "title": "EL2: Swedish legislation",
+    "section": "OSL Chap 21",
+    "text": "OSL Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
+  },
+  {
+    "objectID": "EL3.html#osl-chap-24",
+    "href": "EL3.html#osl-chap-24",
+    "title": "EL2: Swedish legislation",
+    "section": "OSL Chap 24",
+    "text": "OSL Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
+  },
+  {
+    "objectID": "EL3.html#osl-chapter-25",
+    "href": "EL3.html#osl-chapter-25",
+    "title": "EL2: Swedish legislation",
+    "section": "OSL Chapter 25",
+    "text": "OSL Chapter 25\nSecrecy for the protection of individuals in activities relating to health and medical care etc.\n\nOFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, unless it is clear that the information may be disclosed without causing harm to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.\n\n\nExceptions exists,\n\nfor example to submit medical patient data to quality registers\nto share data between public organisations for research purposes or statistics (OFS 25.11 p. 5)."
+  },
+  {
+    "objectID": "EL3.html#osl-chapter-10",
+    "href": "EL3.html#osl-chapter-10",
+    "title": "EL2: Swedish legislation",
+    "section": "OSL Chapter 10",
+    "text": "OSL Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
+  },
+  {
+    "objectID": "EL3.html#patientdatalagen-pdl",
+    "href": "EL3.html#patientdatalagen-pdl",
+    "title": "EL2: Swedish legislation",
+    "section": "Patientdatalagen (PDL)",
+    "text": "Patientdatalagen (PDL)\nThe Patient Data Act (PDL)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
+  },
+  {
+    "objectID": "EL3.html#chapter-7-pdl",
+    "href": "EL3.html#chapter-7-pdl",
+    "title": "EL2: Swedish legislation",
+    "section": "Chapter 7 PDL",
+    "text": "Chapter 7 PDL\nNational and regionel quality registers\nOpt-out for patients (every one is included by default until they opt out)\n\nPDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.\n\nPDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of\n\nthe production of statistics,\nestimating numbers for the planning of clinical research,\nresearch within health and medical care,\ndisclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and\n…"
+  },
+  {
+    "objectID": "EL3.html#lag-om-hälsodataregister-sfs-1998543",
+    "href": "EL3.html#lag-om-hälsodataregister-sfs-1998543",
+    "title": "EL2: Swedish legislation",
+    "section": "Lag om hälsodataregister (SFS 1998:543)",
+    "text": "Lag om hälsodataregister (SFS 1998:543)\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
+  },
+  {
+    "objectID": "EL3.html#specific-registers",
+    "href": "EL3.html#specific-registers",
+    "title": "EL2: Swedish legislation",
+    "section": "Specific registers",
+    "text": "Specific registers\n\n\n\n\n\n\n\n\nRegister (Swedish)\nRegister (English)\nGoverning act / ordinance\n\n\n\n\nFolkbokföringen\nPopulation Register\nPopulation Registration Act (1991:481); Population Registration Ordinance (1991:749)\n\n\nTotalbefolkningsregistret (RTB)\nTotal Population Register\nOfficial Statistics Act (2001:99); Official Statistics Ordinance (2001:100)\n\n\nNationella patientregistret\nNational Patient Register\nHealth Data Act (1998:543); Ordinance on the National Patient Register (2001:707)\n\n\nCancerregistret\nSwedish Cancer Register\nHealth Data Act (1998:543); Cancer Register Ordinance (2001:709)\n\n\nDödsorsaksregistret\nCause of Death Register\nHealth Data Act (1998:543); Cause of Death Register Ordinance (2001:709)\n\n\nLäkemedelsregistret\nPrescribed Drug Register\nAct on the Prescribed Drug Register (2005:258); Ordinance (2005:363)\n\n\nMedicinska födelseregistret\nMedical Birth Register\nHealth Data Act (1998:543); Medical Birth Register Ordinance (2001:708)\n\n\nTandhälsoregistret\nDental Health Register\nHealth Data Act (1998:543); Dental Health Register Ordinance (2008:194)"
+  },
+  {
+    "objectID": "EL3.html#arkivdatalagen-adl",
+    "href": "EL3.html#arkivdatalagen-adl",
+    "title": "EL2: Swedish legislation",
+    "section": "Arkivdatalagen (ADL)",
+    "text": "Arkivdatalagen (ADL)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example healthcare data is often required to be kept for at least 10 years"
+  },
+  {
+    "objectID": "EL3.html#gdpr-and-swedish-law",
+    "href": "EL3.html#gdpr-and-swedish-law",
+    "title": "EL2: Swedish legislation",
+    "section": "GDPR and Swedish law",
+    "text": "GDPR and Swedish law\n\nGDPR is directly applicable in Sweden\nThere are refereces to GDPR in Swedish laws such as PDL and OSL\nSwedish laws may provide additional regulations and requirements beyond GDPR\nData protection authorities in Sweden: Integritetsskyddsmyndigheten (IMY)\nShould be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries"
+  },
+  {
+    "objectID": "EL3.html#etikprövningslagen-epl",
+    "href": "EL3.html#etikprövningslagen-epl",
+    "title": "EL2: Swedish legislation",
+    "section": "Etikprövningslagen (EPL)",
+    "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority\n\n\n\n\n\n“Public Access and Secrecy | Swedish National Data Service.” 2025. https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy."
   },
   {
     "objectID": "handouts.html",
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-19."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-20."
   },
   {
     "objectID": "handouts.html#important-aspects",
@@ -938,18 +1043,235 @@
     "text": "Our use of R\n\n{data.table} to handle large data sets efficiently\n{targets} to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   },
   {
+    "objectID": "handouts.html#european-legislation",
+    "href": "handouts.html#european-legislation",
+    "title": "Handouts",
+    "section": "European legislation",
+    "text": "European legislation\n\nGDPR\n\nDefines the legal conditions for processing personal data\nFocuses on protection, safeguards, and accountability\n\nEuropean Health Data Space (EHDS)\n\nEstablishes a European framework for access to health data for research, statistics, and policy.\nFocuses on data access, governance, and interoperability\nIncreases opportunities for cross-national health statistics, but also risks of misinterpretation without statistical context.\n\nEU Data Act\n\nRegulates who may access data and under what conditions, across sectors.\nIndirectly relevant for health statistics through device-generated and digital service data.\nDoes not address data quality or statistical validity.\nHighlights the growing need for statistical judgement when working with new and heterogeneous data sources.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nLegal and governance frameworks enable access to data, but statistical expertise remains essential for ensuring data quality, valid inference, and meaningful interpretation."
+  },
+  {
+    "objectID": "handouts.html#gdpr",
+    "href": "handouts.html#gdpr",
+    "title": "Handouts",
+    "section": "GDPR",
+    "text": "GDPR\n\nRegulation (EU) 2016/679 (GDPR)\nEnforced since May 25, 2018\nRegulates the processing of personal data\nAims to protect the privacy and rights of individuals\nSets out rules for data controllers and processors\n\n\n\n\n\n\n\nNoteSource\n\n\n\nThe GDPR is available in all official EU languages via EUR-Lex. However, it is recommended reading only if you suffer from insomnia — it is not required for fulfilling the course requirements!"
+  },
+  {
+    "objectID": "handouts.html#european-union-eu",
+    "href": "handouts.html#european-union-eu",
+    "title": "Handouts",
+    "section": "European Union (EU)",
+    "text": "European Union (EU)\n\nGDPR applies directly and uniformly as law\nNo national implementation required\nMember States may:\n\nintroduce supplementary legislation\nallow legal exceptions, e.g. for:\n\nresearch\npublic interest\nhealth data"
+  },
+  {
+    "objectID": "handouts.html#european-economic-area-eea",
+    "href": "handouts.html#european-economic-area-eea",
+    "title": "Handouts",
+    "section": "European Economic Area (EEA)",
+    "text": "European Economic Area (EEA)\nCountries: Norway, Iceland and Liechtenstein\n\nGDPR applies via the EEA Agreement\nImplemented into national law\nIn practice:\n\nvery similar application as within the EU\nsame core principles, rights, and obligations"
+  },
+  {
+    "objectID": "handouts.html#united-kingdom-uk",
+    "href": "handouts.html#united-kingdom-uk",
+    "title": "Handouts",
+    "section": "United Kingdom (UK)",
+    "text": "United Kingdom (UK)\n\nEU GDPR no longer applies directly after Brexit\nReplaced by:\n\nUK GDPR\nData Protection Act 2018"
+  },
+  {
+    "objectID": "handouts.html#switzerland",
+    "href": "handouts.html#switzerland",
+    "title": "Handouts",
+    "section": "Switzerland",
+    "text": "Switzerland\n\nNot part of EU or EEA\nGDPR does not apply as law\nInstead: Federal Act on Data Protection (FADP)\n\nRevised to align closely with GDPR"
+  },
+  {
+    "objectID": "handouts.html#international-laws",
+    "href": "handouts.html#international-laws",
+    "title": "Handouts",
+    "section": "International laws",
+    "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
+  },
+  {
+    "objectID": "handouts.html#definitions",
+    "href": "handouts.html#definitions",
+    "title": "Handouts",
+    "section": "Definitions",
+    "text": "Definitions\nGDPR article 4:\n\nPersonal data\n\nmeans any information relating to an identified or identifiable natural person (data subject); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.\n\nProcessing\n\nmeans any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;\n\nPseudonymisation\n\nmeans the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;\n\nController\n\nmeans the natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data […]\n\nProcessor\n\nmeans a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller;\n\nConsent of the data subject\n\nmeans any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nPersonal data breach\n\nmeans a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data transmitted, stored or otherwise processed;\n\nData concerning health\n\nmeans personal data related to the physical or mental health of a natural person, including the provision of health care services, which reveal information about his or her health status;"
+  },
+  {
+    "objectID": "handouts.html#legal-grounds-for-processing-personal-data",
+    "href": "handouts.html#legal-grounds-for-processing-personal-data",
+    "title": "Handouts",
+    "section": "Legal grounds for processing personal data:",
+    "text": "Legal grounds for processing personal data:\nGDPR article 6 (1):\n\nProcessing shall be lawful only if and to the extent that at least one of the following applies:\n\n\nthe data subject has given consent to the processing of his or her personal data for one or more specific purposes; processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;\nprocessing is necessary for compliance with a legal obligation to which the controller is subject;\nprocessing is necessary in order to protect the vital interests of the data subject or of another natural person;\nprocessing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;\nprocessing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.\nprocessing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose."
+  },
+  {
+    "objectID": "handouts.html#processing-of-special-categories-of-personal-data",
+    "href": "handouts.html#processing-of-special-categories-of-personal-data",
+    "title": "Handouts",
+    "section": "Processing of special categories of personal data",
+    "text": "Processing of special categories of personal data\nGDPR Article 9 (1):\n\nProcessing of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, data concerning health or data concerning a natural person’s sex life or sexual orientation shall be prohibited. 😱"
+  },
+  {
+    "objectID": "handouts.html#but",
+    "href": "handouts.html#but",
+    "title": "Handouts",
+    "section": "But …",
+    "text": "But …\n\nParagraph 1 shall not apply if one of the following applies:\n\n\n\nthe data subject has given explicit consent to the processing of those personal data for one or more specified purposes […]\n\n\nprocessing is necessary for reasons of public interest in the area of public health, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices […]\n\n\nprocessing is necessary for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes (🥳) in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject."
+  },
+  {
+    "objectID": "handouts.html#safeguards",
+    "href": "handouts.html#safeguards",
+    "title": "Handouts",
+    "section": "Safeguards",
+    "text": "Safeguards\nGDPR article 89:\n\nSafeguards and derogations relating to processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes\n\n\nProcessing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, shall be subject to appropriate safeguards, in accordance with this Regulation, for the rights and freedoms of the data subject. Those safeguards shall ensure that technical and organisational measures are in place in particular in order to ensure respect for the principle of data minimisation. Those measures may include pseudonymisation provided that those purposes can be fulfilled in that manner. Where those purposes can be fulfilled by further processing which does not permit or no longer permits the identification of data subjects, those purposes shall be fulfilled in that manner.\nWhere personal data are processed for scientific or historical research purposes or statistical purposes, Union or Member State law may provide for derogations […] so far as such rights are likely to render impossible or seriously impair the achievement of the specific purposes, and such derogations are necessary for the fulfilment of those purposes."
+  },
+  {
+    "objectID": "handouts.html#technical-safeguards",
+    "href": "handouts.html#technical-safeguards",
+    "title": "Handouts",
+    "section": "Technical Safeguards",
+    "text": "Technical Safeguards\nExamples of technical safeguards include:\n\nPseudonymisation\nEncryption of personal data\nAccess controls and authentication\nLogging and monitoring of access\nSecure storage and transmission"
+  },
+  {
+    "objectID": "handouts.html#organisational-safeguards",
+    "href": "handouts.html#organisational-safeguards",
+    "title": "Handouts",
+    "section": "Organisational Safeguards",
+    "text": "Organisational Safeguards\nExamples of organisational safeguards include:\n\nDefined roles and responsibilities\nInternal policies and procedures\nStaff training and confidentiality obligations\nData protection by design and by default\nIncident and breach response procedures\nDocumentation and accountability measures"
+  },
+  {
+    "objectID": "handouts.html#data-minimisation-and-purpose-limitation",
+    "href": "handouts.html#data-minimisation-and-purpose-limitation",
+    "title": "Handouts",
+    "section": "Data Minimisation and Purpose Limitation",
+    "text": "Data Minimisation and Purpose Limitation\n\nOnly data that are necessary should be processed\nData are processed only for specified purposes\nAccess is limited to authorised personnel\nRetention periods are defined and respected"
+  },
+  {
+    "objectID": "handouts.html#pseudonymisation-and-anonymisation",
+    "href": "handouts.html#pseudonymisation-and-anonymisation",
+    "title": "Handouts",
+    "section": "Pseudonymisation and Anonymisation",
+    "text": "Pseudonymisation and Anonymisation\n\nPseudonymisation reduces risks while allowing reuse of the data\n\nIdentifiers are kept separately and protected\n\nAnonymisation removes data from GDPR scope (if irreversible)\n\n\n\n\n\n\n\nImportant\n\n\n\n\nPseudonymisation \\(\\neq\\) Anonymisation\nRemoving the Swedish personal identification number (PIN) is not a guarantee for pseudonymisation"
+  },
+  {
+    "objectID": "handouts.html#data-controller",
+    "href": "handouts.html#data-controller",
+    "title": "Handouts",
+    "section": "Data Controller",
+    "text": "Data Controller\n\nThe entity that determines the purposes and means of the processing of personal data\nBears the primary legal responsibility\nResponsible for:\n\nLawful basis\nCompliance with GDPR principles\nTransparency and information to data subjects\nAppropriate technical and organisational measures\n\nTypical examples:\n\nPublic authorities\nUniversities\nRegions and municipalities"
+  },
+  {
+    "objectID": "handouts.html#data-processor-pub-under-gdpr",
+    "href": "handouts.html#data-processor-pub-under-gdpr",
+    "title": "Handouts",
+    "section": "Data Processor (PUB) under GDPR",
+    "text": "Data Processor (PUB) under GDPR\n\nProcesses personal data on behalf of the controller\nActs only on documented instructions from the controller\nMay not determine purposes of processing\nHas direct responsibilities for:\n\nSecurity of processing (Article 32)\nConfidentiality\n\nMust be governed by a data processing agreement"
+  },
+  {
+    "objectID": "handouts.html#controllerprocessor-relationship",
+    "href": "handouts.html#controllerprocessor-relationship",
+    "title": "Handouts",
+    "section": "Controller–Processor Relationship",
+    "text": "Controller–Processor Relationship\n\nA formal Data Processing Agreement (DPA) is required\nThe agreement must specify:\n\nSubject matter and duration\nNature and purpose of processing\nTypes of personal data\nCategories of data subjects (patients, students, citizens, …)\nSecurity measures\n\nThe controller remains responsible even when processing is outsourced"
+  },
+  {
+    "objectID": "handouts.html#example-sahlgrenska",
+    "href": "handouts.html#example-sahlgrenska",
+    "title": "Handouts",
+    "section": "Example: Sahlgrenska",
+    "text": "Example: Sahlgrenska\n\nIf a researcher work at the Sahlgrenska university hospital, VGR might be the data controller (personuppgiftsansvarig; PUA)\nIf he/she asks for statistical consulting from the Sahlgrenska Academy, GU might be the data processor (personuppgiftsbiträde; PUB)"
+  },
+  {
+    "objectID": "handouts.html#european-health-data-space-ehds",
+    "href": "handouts.html#european-health-data-space-ehds",
+    "title": "Handouts",
+    "section": "European Health Data Space (EHDS)",
+    "text": "European Health Data Space (EHDS)"
+  },
+  {
+    "objectID": "handouts.html#what-is-it",
+    "href": "handouts.html#what-is-it",
+    "title": "Handouts",
+    "section": "What is it?",
+    "text": "What is it?\n\nEHDS is an EU-wide legal and technical framework for the use and sharing of health data\nIt aims to:\n\nimprove access to health data across borders\nsupport healthcare, research, statistics, and policy-making\n\nFocuses on data access and governance"
+  },
+  {
+    "objectID": "handouts.html#two-main-pillars",
+    "href": "handouts.html#two-main-pillars",
+    "title": "Handouts",
+    "section": "Two Main Pillars",
+    "text": "Two Main Pillars\n\nPrimary use of health data\n\nUse of data for individual patient care\nCross-border access to electronic health records\n\nSecondary use of health data for\n\nstatistics\nscientific research\npublic health\npolicy evaluation and innovation"
+  },
+  {
+    "objectID": "handouts.html#implementation-timeline",
+    "href": "handouts.html#implementation-timeline",
+    "title": "Handouts",
+    "section": "Implementation Timeline",
+    "text": "Implementation Timeline\n\n2025: EHDS regulation enters into force\n2025–2027: Development of implementing and technical acts\nFrom ~2029 onwards:\n\nnational infrastructures become operational\ncross-border access for secondary use starts to function in practice"
+  },
+  {
+    "objectID": "handouts.html#how-ehds-relates-to-gdpr",
+    "href": "handouts.html#how-ehds-relates-to-gdpr",
+    "title": "Handouts",
+    "section": "How EHDS Relates to GDPR",
+    "text": "How EHDS Relates to GDPR\n\nEHDS does not replace GDPR\nGDPR continues to govern:\n\npersonal data protection\nlawful bases\nsafeguards for health data\n\nEHDS provides procedures and structures for lawful data access under GDPR\n\n➡️ GDPR defines whether data may be processed\n➡️ EHDS defines how data can be made available"
+  },
+  {
+    "objectID": "handouts.html#why-ehds-matters-for-statisticians",
+    "href": "handouts.html#why-ehds-matters-for-statisticians",
+    "title": "Handouts",
+    "section": "Why EHDS Matters for Statisticians",
+    "text": "Why EHDS Matters for Statisticians\n\nEHDS explicitly recognises statistics as a legitimate purpose\nIt facilitates access to:\n\nlarge-scale health datasets\ncross-national data sources\n\nIt increases demand for:\n\ndata quality assessment\nmetadata interpretation\nharmonisation and comparability analyses"
+  },
+  {
+    "objectID": "handouts.html#ehds-does-not-do-this",
+    "href": "handouts.html#ehds-does-not-do-this",
+    "title": "Handouts",
+    "section": "EHDS Does Not Do This",
+    "text": "EHDS Does Not Do This\n\nEHDS does not:\n\ndefine statistical methods\nensure data quality automatically\nguarantee comparability across countries\n\nLegal and technical access ≠ valid statistical inference"
+  },
+  {
+    "objectID": "handouts.html#the-eu-data-act",
+    "href": "handouts.html#the-eu-data-act",
+    "title": "Handouts",
+    "section": "The EU Data Act",
+    "text": "The EU Data Act"
+  },
+  {
+    "objectID": "handouts.html#what-is-it-1",
+    "href": "handouts.html#what-is-it-1",
+    "title": "Handouts",
+    "section": "What Is It?",
+    "text": "What Is It?\n\nThe Data Act is an EU regulation on access to and sharing of data\nFocuses mainly on:\n\ndata generated by connected products and digital services (IoT)\nbusiness-to-business (B2B) and business-to-government (B2G) data sharing\n\nIt is not a data protection regulation\n\n➡️ The Data Act is about who may access data and under what conditions."
+  },
+  {
+    "objectID": "handouts.html#how-the-data-act-relates-to-health-data",
+    "href": "handouts.html#how-the-data-act-relates-to-health-data",
+    "title": "Handouts",
+    "section": "How the Data Act Relates to Health Data",
+    "text": "How the Data Act Relates to Health Data\n\nThe Data Act does not primarily target health registers\nHowever, it may affect:\n\ndata generated by medical devices\ndigital health services\nhealth-related IoT data\n\n\n➡️ Health data may fall under the Data Act depending on how it is generated."
+  },
+  {
     "objectID": "handouts.html#swedish-law",
     "href": "handouts.html#swedish-law",
     "title": "Handouts",
     "section": "Swedish law",
-    "text": "Swedish law\n\nFundamental laws (parliament but difficult to change)\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing regulations\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
+    "text": "Swedish law\n\n\n\n\n\n\nNoteSwedish law\n\n\n\nThe Swedish legislation will be discussed as an example. It will be examined through discussions in a later seminar (where you will have access to the information below). You are not required to memorize individual laws or specific legal provisions."
+  },
+  {
+    "objectID": "handouts.html#backgrund-of-swedish-law",
+    "href": "handouts.html#backgrund-of-swedish-law",
+    "title": "Handouts",
+    "section": "Backgrund of Swedish law",
+    "text": "Backgrund of Swedish law\nOptional reading\n\nFundamental laws (“grundlagar”) decided by the parliament but stable over time\n\nNot a “constitution”\n\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing laws\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
   },
   {
     "objectID": "handouts.html#two-main-branches-of-law",
     "href": "handouts.html#two-main-branches-of-law",
     "title": "Handouts",
     "section": "Two main branches of law",
-    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
+    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must and can do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
   },
   {
     "objectID": "handouts.html#tryckfrihetsförordningen-tf",
@@ -966,32 +1288,32 @@
     "text": "Offentlighets- och sekretesslagen (OSL)\n\nLaw that regulates public access to official documents and secrecy\nApplies to public authorities and institutions\nDefines what information is considered secret and under what circumstances"
   },
   {
-    "objectID": "handouts.html#chap-21",
-    "href": "handouts.html#chap-21",
+    "objectID": "handouts.html#osl-chap-21",
+    "href": "handouts.html#osl-chap-21",
     "title": "Handouts",
-    "section": "Chap 21",
-    "text": "Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
+    "section": "OSL Chap 21",
+    "text": "OSL Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
   },
   {
-    "objectID": "handouts.html#chap-24",
-    "href": "handouts.html#chap-24",
+    "objectID": "handouts.html#osl-chap-24",
+    "href": "handouts.html#osl-chap-24",
     "title": "Handouts",
-    "section": "Chap 24",
-    "text": "Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
+    "section": "OSL Chap 24",
+    "text": "OSL Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
   },
   {
-    "objectID": "handouts.html#chapter-25",
-    "href": "handouts.html#chapter-25",
+    "objectID": "handouts.html#osl-chapter-25",
+    "href": "handouts.html#osl-chapter-25",
     "title": "Handouts",
-    "section": "Chapter 25",
-    "text": "Chapter 25\nSecrecy for the protection of individuals in activities relating to health and medical care etc.\n\nOFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, unless it is clear that the information may be disclosed without causing harm to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.\n\n\nExceptions exists,\n\nfor example to submit medical patient data to quality registers\nto share data between public organisations for research purposes or statistics (OFS 25.11 p. 5)."
+    "section": "OSL Chapter 25",
+    "text": "OSL Chapter 25\nSecrecy for the protection of individuals in activities relating to health and medical care etc.\n\nOFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, unless it is clear that the information may be disclosed without causing harm to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.\n\n\nExceptions exists,\n\nfor example to submit medical patient data to quality registers\nto share data between public organisations for research purposes or statistics (OFS 25.11 p. 5)."
   },
   {
-    "objectID": "handouts.html#chapter-10",
-    "href": "handouts.html#chapter-10",
+    "objectID": "handouts.html#osl-chapter-10",
+    "href": "handouts.html#osl-chapter-10",
     "title": "Handouts",
-    "section": "Chapter 10",
-    "text": "Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
+    "section": "OSL Chapter 10",
+    "text": "OSL Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
   },
   {
     "objectID": "handouts.html#patientdatalagen-pdl",
@@ -1029,90 +1351,6 @@
     "text": "Arkivdatalagen (ADL)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example healthcare data is often required to be kept for at least 10 years"
   },
   {
-    "objectID": "handouts.html#gdpr",
-    "href": "handouts.html#gdpr",
-    "title": "Handouts",
-    "section": "GDPR",
-    "text": "GDPR\n\nRegulation (EU) 2016/679 (GDPR)\nEnforced since May 25, 2018\nApplies to all EU member states\nRegulates the processing of personal data\nAims to protect the privacy and rights of individuals\nSets out rules for data controllers and processors"
-  },
-  {
-    "objectID": "handouts.html#special-categories-of-personal-data",
-    "href": "handouts.html#special-categories-of-personal-data",
-    "title": "Handouts",
-    "section": "Special categories of personal data",
-    "text": "Special categories of personal data\n\npersonal data revealing racial or ethnic origin,\npolitical opinions,\nreligious or philosophical beliefs,\ntrade union membership,\ngenetic data,\nbiometric data for the purpose of uniquely identifying a natural person,\ndata concerning health,\ndata concerning a natural person’s sex life or sexual orientation."
-  },
-  {
-    "objectID": "handouts.html#legal-grounds-for-processing-personal-data",
-    "href": "handouts.html#legal-grounds-for-processing-personal-data",
-    "title": "Handouts",
-    "section": "Legal grounds for processing personal data:",
-    "text": "Legal grounds for processing personal data:\n\nthe data subject has given consent to the processing of his or her personal data for one or more specific purposes;\n\nprocessing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;\nprocessing is necessary for compliance with a legal obligation to which the controller is subject;\nprocessing is necessary in order to protect the vital interests of the data subject or of another natural person;\nprocessing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller;\nprocessing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.\nprocessing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose."
-  },
-  {
-    "objectID": "handouts.html#data-controller-pua-under-gdpr",
-    "href": "handouts.html#data-controller-pua-under-gdpr",
-    "title": "Handouts",
-    "section": "Data Controller (PUA) under GDPR",
-    "text": "Data Controller (PUA) under GDPR\n\nThe entity that determines the purposes and means of the processing of personal data\nBears the primary legal responsibility\nResponsible for:\n\nLawful basis\nCompliance with GDPR principles\nTransparency and information to data subjects\nAppropriate technical and organisational measures\n\nTypical examples:\n\nPublic authorities\nUniversities\nRegions and municipalities"
-  },
-  {
-    "objectID": "handouts.html#data-processor-pub-under-gdpr",
-    "href": "handouts.html#data-processor-pub-under-gdpr",
-    "title": "Handouts",
-    "section": "Data Processor (PUB) under GDPR",
-    "text": "Data Processor (PUB) under GDPR\n\nProcesses personal data on behalf of the controller\nActs only on documented instructions from the controller\nMay not determine purposes of processing\nHas direct responsibilities for:\n\nSecurity of processing (Article 32)\nConfidentiality\n\nMust be governed by a data processing agreement"
-  },
-  {
-    "objectID": "handouts.html#controllerprocessor-relationship",
-    "href": "handouts.html#controllerprocessor-relationship",
-    "title": "Handouts",
-    "section": "Controller–Processor Relationship",
-    "text": "Controller–Processor Relationship\n\nA formal Data Processing Agreement (DPA) is required\nThe agreement must specify:\n\nSubject matter and duration\nNature and purpose of processing\nTypes of personal data\nCategories of data subjects\nSecurity measures\n\nThe controller remains responsible even when processing is outsourced"
-  },
-  {
-    "objectID": "handouts.html#example-sahlgrenska",
-    "href": "handouts.html#example-sahlgrenska",
-    "title": "Handouts",
-    "section": "Example: Sahlgrenska",
-    "text": "Example: Sahlgrenska\n\nIf a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)\nIf he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)"
-  },
-  {
-    "objectID": "handouts.html#technical-safeguards",
-    "href": "handouts.html#technical-safeguards",
-    "title": "Handouts",
-    "section": "Technical Safeguards",
-    "text": "Technical Safeguards\nExamples of technical safeguards include:\n\nPseudonymisation\nEncryption of personal data\nAccess controls and authentication\nLogging and monitoring of access\nSecure storage and transmission"
-  },
-  {
-    "objectID": "handouts.html#organisational-safeguards",
-    "href": "handouts.html#organisational-safeguards",
-    "title": "Handouts",
-    "section": "Organisational Safeguards",
-    "text": "Organisational Safeguards\nExamples of organisational safeguards include:\n\nDefined roles and responsibilities\nInternal policies and procedures\nStaff training and confidentiality obligations\nData protection by design and by default\nIncident and breach response procedures\nDocumentation and accountability measures"
-  },
-  {
-    "objectID": "handouts.html#data-minimisation-and-purpose-limitation",
-    "href": "handouts.html#data-minimisation-and-purpose-limitation",
-    "title": "Handouts",
-    "section": "Data Minimisation and Purpose Limitation",
-    "text": "Data Minimisation and Purpose Limitation\n\nOnly data that are necessary are processed\nData are processed only for specified purposes\nAccess is limited to authorised personnel\nRetention periods are defined and respected"
-  },
-  {
-    "objectID": "handouts.html#pseudonymisation-and-anonymisation",
-    "href": "handouts.html#pseudonymisation-and-anonymisation",
-    "title": "Handouts",
-    "section": "Pseudonymisation and Anonymisation",
-    "text": "Pseudonymisation and Anonymisation\n\nPseudonymisation reduces risks while allowing reuse\nIdentifiers are kept separately and protected\nAnonymisation removes data from GDPR scope (if irreversible)"
-  },
-  {
-    "objectID": "handouts.html#safeguards-for-special-categories-of-data",
-    "href": "handouts.html#safeguards-for-special-categories-of-data",
-    "title": "Handouts",
-    "section": "Safeguards for Special Categories of Data",
-    "text": "Safeguards for Special Categories of Data\nWhen processing sensitive data (e.g. health data), additional safeguards are required:\n\nStrict access control\nEnhanced security measures\nEthical approval where applicable\nClear separation of identifiers and content data"
-  },
-  {
     "objectID": "handouts.html#gdpr-and-swedish-law",
     "href": "handouts.html#gdpr-and-swedish-law",
     "title": "Handouts",
@@ -1125,13 +1363,6 @@
     "title": "Handouts",
     "section": "Etikprövningslagen (EPL)",
     "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority"
-  },
-  {
-    "objectID": "handouts.html#international-laws",
-    "href": "handouts.html#international-laws",
-    "title": "Handouts",
-    "section": "International laws",
-    "text": "International laws\n\nNote that other countries have different laws and regulations\nIn USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)\n\nDifferent states have different laws as well\n\nWhen collaborating internationally, compliance with all relevant laws is required"
   },
   {
     "objectID": "handouts.html#history",
