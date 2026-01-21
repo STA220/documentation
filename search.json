@@ -165,7 +165,14 @@
     "href": "EL2.html#european-legislation",
     "title": "EL2: European legislation",
     "section": "European legislation",
-    "text": "European legislation\n\nGDPR\n\nDefines the legal conditions for processing personal data\nFocuses on protection, safeguards, and accountability\n\nEuropean Health Data Space (EHDS)\n\nEstablishes a European framework for access to health data for research, statistics, and policy.\nFocuses on data access, governance, and interoperability\nIncreases opportunities for cross-national health statistics, but also risks of misinterpretation without statistical context.\n\nEU Data Act\n\nRegulates who may access data and under what conditions, across sectors.\nIndirectly relevant for health statistics through device-generated and digital service data.\nDoes not address data quality or statistical validity.\nHighlights the growing need for statistical judgement when working with new and heterogeneous data sources.\n\n\n\n\n\n\n\n\nImportant\n\n\nLegal and governance frameworks enable access to data, but statistical expertise remains essential for ensuring data quality, valid inference, and meaningful interpretation."
+    "text": "European legislation\n\nGDPR (our focus)\n\nDefines the legal conditions for processing personal data\nFocuses on protection, safeguards, and accountability\n\nEuropean Health Data Space (EHDS)\n\nEstablishes a European framework for access to health data for research, statistics, and policy.\nFocuses on data access, governance, and interoperability\nIncreases opportunities for cross-national health statistics\n\nEU Data Act\n\nRegulates who may access data and under what conditions, across sectors.\nIndirectly relevant for health statistics through device-generated and digital service data.\n\n\n\n\n\n\n\n\nImportant\n\n\nLegal and governance frameworks enable access to data, but statistical expertise remains essential for ensuring data quality, valid inference, and meaningful interpretation."
+  },
+  {
+    "objectID": "EL2.html#eu-law-vs-swedish-law",
+    "href": "EL2.html#eu-law-vs-swedish-law",
+    "title": "EL2: European legislation",
+    "section": "EU law vs Swedish law",
+    "text": "EU law vs Swedish law\n\nEU legislation tends to be more detailed in the legal text itself\nThis is because EU law must be:\n\napplied uniformly across many different legal systems\ninterpreted without relying on national preparatory works\n\nInterpretation of EU law relies mainly on:\n\nthe wording of the legislation\nrecitals (non-binding explanaitions before the articles describing the purpose and context).\n\nSwedish legislation is often:\n\nshorter and less detailed in the statutory text\nsupplemented by extensive preparatory works (förarbeten)\n\nIn Sweden, preparatory works are a central interpretative source for courts and authorities\n\n➡️ The difference reflects different legislative techniques, not necessarily a difference in regulatory ambition.\n\n\n\n\n\n\nSource\n\n\nThe GDPR is available in all official EU languages via EUR-Lex. Take a quick look to get a very brief overview. However, it is recommended reading only if you suffer from insomnia — it is not required for fulfilling the course requirements!"
   },
   {
     "objectID": "EL2.html#european-union-eu",
@@ -354,7 +361,7 @@
     "href": "EL2.html#references",
     "title": "EL2: European legislation",
     "section": "",
-    "text": "Vukovic, Jakov, Damir Ivankovic, Claudia Habl, and Jelena Dimnjakovic. 2022. “Enablers and Barriers to the Secondary Use of Health Data in Europe: General Data Protection Regulation Perspective.” Archives of Public Health 80 (1): 115. https://doi.org/10.1186/s13690-022-00866-7."
+    "text": "Nguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nVukovic, Jakov, Damir Ivankovic, Claudia Habl, and Jelena Dimnjakovic. 2022. “Enablers and Barriers to the Secondary Use of Health Data in Europe: General Data Protection Regulation Perspective.” Archives of Public Health 80 (1): 115. https://doi.org/10.1186/s13690-022-00866-7."
   },
   {
     "objectID": "EL4.html#general-purpose-programming-languages",
@@ -886,7 +893,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-20."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-21."
   },
   {
     "objectID": "handouts.html#important-aspects",
@@ -1043,18 +1050,32 @@
     "text": "Our use of R\n\n{data.table} to handle large data sets efficiently\n{targets} to streamline a reproducible pipeline\nGit for version control\nGitHub for colaboration\nQuarto for reporting"
   },
   {
+    "objectID": "handouts.html#legal-part",
+    "href": "handouts.html#legal-part",
+    "title": "Handouts",
+    "section": "Legal part",
+    "text": "Legal part\n\nToday: European legislation (mainly GDPR!)\n\nLecture handouts main sourse for examination (seminair ES1 and possibly DISA exam).\nArticle (Vukovic et al. 2022). Focus on the introduction, the section “GDPR‐related enablers and barriers to cross‐country health data exchange in Europe” (in the results section incl. figures and tables), discussion and conclusions. Examined as part of seminair ES1 (not the DISA exam).\n\nNext lecture: Swedish legislation (including associated reading). Examined as part of seminair ES1 (not the DISA exam).\nConsequence: (Nguyen 2022, ch. 4). Read the beginning. Skip “Medical Information Mart for Intensive Care”. Read the “Synthea” section. The “Synthea” section does not have a legal focus but the legal parts explains why we use this data. Read for your own understanding (not examied)."
+  },
+  {
     "objectID": "handouts.html#european-legislation",
     "href": "handouts.html#european-legislation",
     "title": "Handouts",
     "section": "European legislation",
-    "text": "European legislation\n\nGDPR\n\nDefines the legal conditions for processing personal data\nFocuses on protection, safeguards, and accountability\n\nEuropean Health Data Space (EHDS)\n\nEstablishes a European framework for access to health data for research, statistics, and policy.\nFocuses on data access, governance, and interoperability\nIncreases opportunities for cross-national health statistics, but also risks of misinterpretation without statistical context.\n\nEU Data Act\n\nRegulates who may access data and under what conditions, across sectors.\nIndirectly relevant for health statistics through device-generated and digital service data.\nDoes not address data quality or statistical validity.\nHighlights the growing need for statistical judgement when working with new and heterogeneous data sources.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nLegal and governance frameworks enable access to data, but statistical expertise remains essential for ensuring data quality, valid inference, and meaningful interpretation."
+    "text": "European legislation\n\nGDPR (our focus)\n\nDefines the legal conditions for processing personal data\nFocuses on protection, safeguards, and accountability\n\nEuropean Health Data Space (EHDS)\n\nEstablishes a European framework for access to health data for research, statistics, and policy.\nFocuses on data access, governance, and interoperability\nIncreases opportunities for cross-national health statistics\n\nEU Data Act\n\nRegulates who may access data and under what conditions, across sectors.\nIndirectly relevant for health statistics through device-generated and digital service data.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nLegal and governance frameworks enable access to data, but statistical expertise remains essential for ensuring data quality, valid inference, and meaningful interpretation."
+  },
+  {
+    "objectID": "handouts.html#eu-law-vs-swedish-law",
+    "href": "handouts.html#eu-law-vs-swedish-law",
+    "title": "Handouts",
+    "section": "EU law vs Swedish law",
+    "text": "EU law vs Swedish law\n\nEU legislation tends to be more detailed in the legal text itself\nThis is because EU law must be:\n\napplied uniformly across many different legal systems\ninterpreted without relying on national preparatory works\n\nInterpretation of EU law relies mainly on:\n\nthe wording of the legislation\nrecitals (non-binding explanaitions before the articles describing the purpose and context).\n\nSwedish legislation is often:\n\nshorter and less detailed in the statutory text\nsupplemented by extensive preparatory works (förarbeten)\n\nIn Sweden, preparatory works are a central interpretative source for courts and authorities\n\n➡️ The difference reflects different legislative techniques, not necessarily a difference in regulatory ambition.\n\n\n\n\n\n\nNoteSource\n\n\n\nThe GDPR is available in all official EU languages via EUR-Lex. Take a quick look to get a very brief overview. However, it is recommended reading only if you suffer from insomnia — it is not required for fulfilling the course requirements!"
   },
   {
     "objectID": "handouts.html#gdpr",
     "href": "handouts.html#gdpr",
     "title": "Handouts",
     "section": "GDPR",
-    "text": "GDPR\n\nRegulation (EU) 2016/679 (GDPR)\nEnforced since May 25, 2018\nRegulates the processing of personal data\nAims to protect the privacy and rights of individuals\nSets out rules for data controllers and processors\n\n\n\n\n\n\n\nNoteSource\n\n\n\nThe GDPR is available in all official EU languages via EUR-Lex. However, it is recommended reading only if you suffer from insomnia — it is not required for fulfilling the course requirements!"
+    "text": "GDPR\n\nRegulation (EU) 2016/679 (GDPR)\nEnforced since May 25, 2018\nRegulates the processing of personal data\nAims to protect the privacy and rights of individuals\nSets out rules for data controllers and processors"
   },
   {
     "objectID": "handouts.html#european-union-eu",
