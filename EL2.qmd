@@ -154,13 +154,14 @@ GDPR article 6 (1):
 > Processing shall be lawful only if and to the extent that at least one of the following applies:
 
 a.  the data subject has given **consent** to the processing of his or her personal data for one or more specific purposes;
-  processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;
+  ~~processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;~~
 b.  ~~processing is necessary for compliance with a legal obligation to which the controller is subject;~~
 c.  ~~processing is necessary in order to protect the vital interests of the data subject or of another natural person;~~
 d.  processing is necessary for the performance of a task carried out in the **public interest** or in the exercise of official authority vested in the controller;
 e.  processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.
 f.  ~~processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.~~
 
+(d) is the most relevant if you work iwith secondary data in the public sector (research and reporting etc). (a) is relevant to collect primary data for research etc. (e) is a delicate one ...
 
 ## Processing of special categories of personal data
 
@@ -176,7 +177,7 @@ GDPR Article 9 (1):
 
 - (i) processing is necessary for reasons of **public interest** in the area of **public health**, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices [...]
 
-- (j) processing is necessary for archiving purposes in the public interest, **scientific or historical research purposes** or **statistical purposes** (🥳) in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject.
+- (j) processing is necessary for archiving purposes in the public interest, **scientific** or historical research purposes or **statistical purposes** (🥳) in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject.
 
 
 ## Safeguards
@@ -185,7 +186,7 @@ GDPR article 89:
 
 > Safeguards and derogations relating to processing for archiving purposes in the public interest, scientific or historical research purposes or **statistical purposes**
 
-1.   Processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, shall be subject to **appropriate safeguards**, in accordance with this Regulation, for the rights and freedoms of the data subject. Those safeguards shall ensure that **technical and organisational measures are in place** in particular in order to ensure respect for the principle of **data minimisation**. Those measures may include **pseudonymisation** provided that those purposes can be fulfilled in that manner. Where those purposes can be fulfilled by further processing which does not permit or no longer permits the identification of data subjects, those purposes shall be fulfilled in that manner.
+1.   Processing for archiving purposes in the public interest, scientific or historical research purposes or **statistical purposes**, shall be subject to **appropriate safeguards**, in accordance with this Regulation, for the rights and freedoms of the data subject. Those safeguards shall ensure that **technical and organisational measures are in place** in particular in order to ensure respect for the principle of **data minimisation**. Those measures may include **pseudonymisation** provided that those purposes can be fulfilled in that manner. Where those purposes can be fulfilled by further processing which does not permit or no longer permits the identification of data subjects, those purposes shall be fulfilled in that manner.
 
 2.   Where personal data are processed for scientific or historical research purposes or **statistical purposes**, Union or Member State law may provide for derogations [...] so far as such rights are likely to render impossible or seriously impair the achievement of the specific purposes, and such derogations are necessary for the fulfilment of those purposes.
 
@@ -199,6 +200,7 @@ Examples of technical safeguards include:
 -   Access controls and authentication
 -   Logging and monitoring of access
 -   Secure storage and transmission
+-   Use of secure software environments often enforced by organizational standards
 
 ## Organisational Safeguards
 
@@ -210,6 +212,7 @@ Examples of organisational safeguards include:
 -   Data protection by design and by default
 -   Incident and breach response procedures
 -   Documentation and accountability measures
+- Working for a health care organization might require an agreement of secrecy
 
 ## Data Minimisation and Purpose Limitation
 
@@ -280,10 +283,10 @@ Examples of organisational safeguards include:
 - EHDS is an EU-wide legal and technical framework for the use and sharing of health data
 - It aims to:
   - improve access to health data across borders
-  - support healthcare, research, statistics, and policy-making
+  - support healthcare, research, **statistics**, and policy-making
 - Focuses on data access and governance
 
----
+
 
 ## Two Main Pillars
 
