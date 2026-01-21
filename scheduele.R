@@ -11,7 +11,7 @@ actshort <- c(
 
 # Find lecture titles based on lecture slides
 lectures <-
-  tibble(files = dir(".", "E(L|CS)[0-9]*.qmd")) |>
+  tibble(files = dir(".", "E(L|CS|S)[0-9]*.qmd")) |>
   mutate(
     Session = gsub("\\.qmd", "", files),
     title = map_chr(files, \(x) rmarkdown::yaml_front_matter(x)$title),

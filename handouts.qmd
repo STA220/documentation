@@ -168,7 +168,7 @@ for (f in files) {
 
   # Skriv ut reading list
   cat("::: {.callout-tip}\n")
-  cat("\n\n# Associated litterature (Refernces at the end)\n\n")
+  cat("\n\n# Associated litterature (References at the end)\n\n")
   cat(paste0("- ", extract_citation_blocks(body, f), collapse = "\n"), "\n\n")
   cat(":::\n\n")
 

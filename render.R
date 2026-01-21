@@ -20,7 +20,8 @@ sta220 <- get_courses(canvas) |>
   filter(startsWith(course_code, "STA220"))
 
 # Befintliga filer
-canvas_pdfs <- get_course_files(canvas, sta220$id) |>
+canvas_pdfs <-
+  get_course_files(canvas, sta220$id) |>
   as_tibble() |>
   select(filename, url)
 
@@ -44,7 +45,7 @@ pdfs <-
 pdfs_to_upload <-
   pdfs |>
   filter(is.na(url)) |>
-  pluck("filename")
+  pluck("upload_from")
 if (length(pdfs_to_upload) > 0) {
   walk(pdfs_to_upload, \(x) {
     upload_folder_file(

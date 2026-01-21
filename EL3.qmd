@@ -1,477 +1,177 @@
 ---
-title: "EL3: Tooling"
-subtitle: "Positron and version control"
-reading: ""
+title: "EL2: Swedish legislation"
+subtitle: "Laws and regulation"
+reading: "[@publica2025]"
 format:
   revealjs:
-    theme: dark
+    theme: blood
     transition: fade
     slide-number: true
     css: styles.css
     smaller: true
     scrollable: true
     incremental: true
+bibliography: references.bib
 ---
 
-# History
-
-> It is widely acknowledged that the most fundamental developments in statistics in the past 60 years are driven by information technology (IT). We should not underestimate the importance of pen and paper as a form of IT but it is since people start using computers to do statistical analysis that we really changed the role statistics plays in our research as well as normal life.
-
-> Although: "Let’s not kid ourselves: the most widely used piece of software for statistics is Excel."" /Brian Ripley (2002)
-
-[Short overview](https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com)
-
-## General-Purpose Programming Languages
-
-Early statistical computing relied heavily on:
-
--   **FORTRAN**
-    -   Dominant language for numerical and statistical computation
-    -   Statistical methods implemented as libraries and subroutines
-    -   Still used as subroutines in modern statistical software!
--   **ALGOL / ALGOL 60**
-    -   Used mainly in academic environments
--   **PL/I**
-    -   Used in some government and industrial contexts
-
-📌 These languages required substantial programming expertise.
-
-## Early Statistical Packages
-
-Several dedicated statistical systems emerged:
-
--   **SPSS** (1968)
-    -   Originally batch-oriented
-    -   Widely used in social sciences
-    -   Originaly "Statistical Package for the Social Sciences"
--   **BMDP** (1960s)
-    -   Developed at UCLA
-    -   Common in medical statistics
-    -   Bio-Medical Data Package
--   **GENSTAT** (1968)
-    -   Focused on agricultural statistics
--   **MINITAB** (1972)
-    -   Designed for teaching and education
-    -   Still popular in quality control
-
-## SAS: A Transitional System
-
--   **SAS** (early 1970s)
--   Developed for agricultural and biostatistical analysis
--   Script-based, but largely batch-oriented
--   Became a standard in:
-    -   Government agencies
-    -   Large organisations
--   Known for strong data management capabilities
--   Still widely used in pharmaceutical industry and clinical trials
-
-📌 SAS predates S but influenced later statistical workflows.
-
-## Limitations of Pre-S Systems
-
-Common limitations included:
-
--   Batch processing rather than interactivity
--   Separation of data management and analysis
--   Limited graphics capabilities
--   High barriers to exploratory data analysis
-
-## S
-
--   S takes form at Bell Laboratories (interactive statistical computing).
--   John Chambers leads the effort.
--   **1976:** first working version of S runs on GCOS
--   **1979:** S2 is ported to UNIX; UNIX becomes the primary platform
--   **1980:** S is first distributed outside Bell Labs
--   **1981:** source versions are made available
--   **1984:** key S books published (often called the “Brown Book” era)
-
-## The New S Language
-
--   **1988:** “New S” is released (major language redesign)
--   **1988:** **S-PLUS** is first released as a commercial implementation of S
--   **1991:** *Statistical Models in S* (“White Book”) popularizes formula notation (the `~` operator), data frames, and modeling workflows
-
-## R
-
--   **1993:** first versions of **R** are published (Auckland; Ross Ihaka & Robert Gentleman)
--   **1995:** R becomes open source (GPL)
--   **1997:** the R Core group forms; **CRAN** is founded (Kurt Hornik)
--   **2000:** **R 1.0.0** is released 2000-02-29
-
-## RStudio brings an IDE to the R community
-
--   **2009:** RStudio (the company) is founded
--   **2011:** RStudio IDE is introduced as an open-source IDE for R (desktop + server)
-
-## Microsoft (Revolution Analytics)
-
--   **Jan 2015:** Microsoft announces it will acquire **Revolution Analytics**
--   Microsoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)
--   **2016:** SQL Server 2016 introduces **R Services** (in-database R)
--   **2017:** Microsoft expands the stack under “Machine Learning Server” branding
--   **June 2021:** Microsoft announces retirement of **Microsoft Machine Learning Server**
--   **July 1, 2023:** Microsoft era over
-
-## RStudio becomes Posit
-
--   **July 27, 2022:** RStudio rebrands as **Posit**
--   **July 28, 2022:** **Quarto** is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)
-
-# Modern IDE
-
-## Positron
-
--   New generation IDE for data science
--   From Posit PBC
--   Free for individual use
--   Based on Code OSS (open source version of VS Code from Microsoft)
--   For both R and Python ([Julia?](https://github.com/posit-dev/positron/issues/3679))
-
-## Quick tour
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4Ir_HX4riHw?si=wu9-boO8Z4BKDSUZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-</iframe>
-
-::: callout-important
-# Positron assistant (mentioned in the video)
-
-This feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant's functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.
-
-It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for "brott mot tystnadsplikten" which is not only public, but actually civil law ("Brottsbalken") with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!
-:::
-
-# Version control
-
-## Before Version Control Systems
-
-1950s–1970s: Early software development relied on:
-
--   Manual file naming:
-    -   `analysis_final.f`
-    -   `analysis_final_v2.f`
--   Physical media:
-    -   Punch cards
-    -   Magnetic tape
--   Centralised mainframes
-
-📌 No automated tracking of changes.
-
-## Floppy discs, Mail, and Shared Directories
-
-1970s–1980s: Common practices included:
-
--   Copying files to:
-    -   Floppy disks
-    -   Magnetic tapes
--   Sending media by **postal mail**
--   Sharing files via:
-    -   Network drives
-    -   FTP servers
-
-📌 Version control was social, not technical.
-
-## Early Version Control Systems
-
-1980s: First-generation tools focused on single files:
-
--   **SCCS** (Source Code Control System, 1972)
--   **RCS** (Revision Control System, 1982)
-
-Characteristics:
-
--   Versioning per file
--   Linear history
--   Central storage
-
-## Centralised Version Control
-
-1990s: Project-level systems emerge:
-
--   **CVS** (Concurrent Versions System)
--   **Subversion (SVN)**
-
-Key features:
-
--   Central repository
--   Multiple users
--   Check-in / check-out model
-
-📌 Still required constant access to the central server.
-
-## Limitations of Centralised Systems
-
-Common problems:
-
--   Single point of failure
--   Poor support for branching and merging
--   Difficult offline work
--   Slow operations on large repositories
-
-These limitations became critical for large projects.
-
-## Git
-
--   **Git** is created by Linus Torvalds in 2005
--   Original motivation:
-    -   Support Linux kernel development
-    -   Replace proprietary tools
-
-Design principles:
-
--   Distributed architecture
--   Fast local operations
--   Strong support for branching and merging
-
-## Distributed Version Control with Git
-
-Key ideas in Git:
-
--   Every clone is a full repository
--   Local commits without network access
--   Cheap and fast branches
--   Cryptographic integrity (hash-based)
-
-📌 Collaboration becomes more flexible and robust.
-
-## Hosting Platforms
-
-Platforms built around Git:
-
--   **GitHub** (2008)
--   **Bitbucket** (2008)
--   **GitLab** (2011)
--   [Gitea](https://gitea.com/) - open source alternative to GitHub (get the same functionallity locally or on a server)
-
-They add:
-
--   Pull requests / merge requests
--   Issue tracking
--   Code review
--   CI/CD integration
-
-## Version Control Today
-
-Modern usage includes:
-
--   Code
--   Documentation
--   Data analysis (scripts, notebooks)
--   Configuration and infrastructure
-
-Git is integrated into:
-
--   IDEs (VS Code, Positron)
--   CI/CD pipelines
--   Cloud platforms
-
-## Version Control Beyond Code
-
-Today, version control supports:
-
--   Reproducible research
--   Collaborative writing
--   Data science workflows
--   Teaching and learning
-
-📌 Version control is now a core professional skill.
-
-## WARNING!
-
--   Not everything should be shared!
--   Scripts and documentation yes!
--   But **Health data is sensitive!**
-    -   Do not share it!
-    -   Avoid unintentional sharing!
-    -   Private repositories are still shared with hosting provider!
--   Avoid explicit file paths and sensitive info in scripts!
--   Can give information about data location and internal structure!
--   No hard-coded passwords or API keys!
-
-## Git basics
-
-(After installing the Git software)
-
--   Collect all files related to a project in a folder
--   Initialize a git repository in that folder
--   Make changes to files
--   Stage changes for commit
--   Commit changes with a message
--   Possibly push commits to remote repository
-
-```         
-cd path/to/your/project
-git init
-git status
-# make changes to files
-git add filename1 filename2
-git commit -m "Descriptive message about changes"
-git remote add origin
-```
-
-## Video tutorials
-
-The video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mJ-qvsxPHpY?si=vL8ERoEp0OnGzotn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-</iframe>
-
-## Inspirational video
-
-Watch this video even though some parts might be overwhelming. It gives a good overview of the current state (2025), even though many things will be too advanced for this course (it is not specifically aimed for statisticians or R users).
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vA5TTz6BXhY?si=ctFccFSel_GLwzuh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-</iframe>
-
-::: callout-important
-# .gitignore
-
-The `.gitignore` file is very important in settings with health data! Pay close attention to [this section](https://www.youtube.com/watch?v=vA5TTz6BXhY&t=1545s) of the video!
-:::
-
-## Git in Positron
-
--   Remember that Positron is build on Code OSS (which shares a lot of features with VS Code).
--   Branching and merging is possible but we will not cover that here.
-
-Short official introduction from Microsoft:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i_23KUAEtUM?si=KNUO6Pr8UatA35kh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-</iframe>
-
-More detailed introductions. Watch both! The first one is based on a Windows version of VS code and the second on Mac but the concepts are the same:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z5jZ9lrSpqk?si=tajG6Mkm84wlJBYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-</iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/twsYxYaQikI?si=2QEK70Shtfvz5IA7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-</iframe>
+# Swedish law
 
 ::: callout-note
-# Overwhelmed?
-
-This video includes some parts which might be overwhelming if you are new to Git and GitHub. Don't worry! You don't need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice.
+# Swedish law
+The Swedish legislation will be discussed as an example. It will be examined through discussions in a later seminar (where you will have access to the information below). You are not required to memorize individual laws or specific legal provisions.
 :::
 
+## Backgrund of Swedish law
 
+[Optional reading](<https://www.lawpub.se/artikel/10.53292/32f26f7c.5b65be00>)
 
-# Statistics projects
+-   **Fundamental laws** ("grundlagar") decided by the parliament but stable over time
+    -   Not a "constitution"
+-   **Ordinary laws** (parliament)
+    -   New ones all the time
+    -   New laws to update existing laws
+-   Published in [Svensk författningsamling, SFS](https://svenskforfattningssamling.se/)
+    -   The "big blue book" is only a smaller collection of important laws
+-   **ordinances** ("förordning") from the goverment to implement laws
+-   **regulations** ("föreskrifter") from authorities to implement laws and ordinances
 
-## Not a single R script
+![](images/paste-3.png)
 
--   Real projects are more complex than a single R script!
--   Multiple scripts
--   Data files
--   Documentation
--   Reports
--   Version control
--   Reproducible workflows
+## Two main branches of law
 
-## Project structure
+-   Civil and criminal law:
+    -   state what you can not do (everything else is "legal")
+    -   Handled by ordinary courts
+    -   Ex: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)
+-   Public law: relationship between individuals and the state etc
+    -   state what the public authorities must and can do (everything else is "illegal")
+    -   Handled by administrative courts
+    -   What we mostly care of here
 
-Common file structures
+## Tryckfrihetsförordningen (TF)
 
--   Help you organize your thoughts
--   Help others to collaborate
--   simplifies paths used in your code
+-   World's oldest freedom of the press law (since 1766)
+-   Chapter 2: Public access to official documents
+-   Applies to public authorities and institutions
+    -   Including health care registers and medical records held by public authorities
+-   Everyone has the right to access official documents (TF 2.1)
+-   but there are exceptions (TF 2.2)
+    -   e.g., if disclosure would violate privacy or national security
+    -   if so, the goverment has the right to provide ordinary laws that restrict access (which they do ...)
 
-![](images/paste-1.png)
+## Offentlighets- och sekretesslagen (OSL)
 
-## Example structure
+-   Law that regulates public access to official documents and secrecy
+-   Applies to public authorities and institutions
+-   Defines what information is considered secret and under what circumstances
 
-```         
-/.../my_project/
-  ├── README.md        - project documentation
-  ├── TODO             - what should be done next?
-  ├── .git             - handled by git (hidden folder)
-  ├── .gitignore       - used by git but your responsibility!
-  ├── data/            - your data files (not under version control!)
-      ├── cancer.csv 
-      └── patients.qs 
-  ├── R/               - your saved R functions
-      ├── function1.R 
-      └── function2.R
-  ├── reports/
-  └── _targets.R       - targets pipeline script
-```
+## OSL Chap 21
 
-## `README.md`
+Secrecy for private individuals' personal circumstances **no mather the context**
 
--   Document the purpose of the project
--   What is it about?
--   What is the aim?
--   Who to contact for questions?
--   In what circumstances was it created?
+-   E.g., health data, economic circumstances, family relations
 
-Markdown format (simple text with some possible formatting)
+> OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, **if it can be assumed** that disclosure of the information would **cause significant harm** to the individual or to someone closely related to them.
 
-## `data` folder
+## OSL Chap 24
 
--   Store your data files here as they are when you get them
--   Avoid any modifications to the raw files!
--   It is very easy to forget what you do if it can not be traced by code
--   Do NOT include this folder in version control!
--   Git is not good at handling large files
--   Sensitive data should not be shared!
--   Add `data/*` to your `.gitignore` file
--   In realistic projects, data might come in varying formats
-    -   csv, txt, xlsx, sas7bdat, sav, dta, etc
-    -   some files might be very big (gigabytes not uncommon)
+Secrecy for the protection of individuals in research and statistics.
 
-## `R` folder
+-   Special research databases etc
+-   Some regulations for research ethics boards
 
--   Store your R functions here
--   Document their purpose inline!
--   Helps you to reuse code
--   Easier to read main scripts
--   Easier to test and debug code
--   Easier to share code between projects
+## OSL Chapter 25
 
-## `reports` folder
+Secrecy for the protection of individuals in activities relating to **health and medical care** etc.
 
--   Store your reports here
--   Quarto documents
--   Documemnt your analysis
--   Include figures and tables
--   Share with external collaborators
+> OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, **unless it is clear** that the information may be disclosed **without causing harm** to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.
 
-## `_targets.R` file
+-   Exceptions exists,
+    -   for example to submit medical patient data to quality registers
+    -   to share data between public organisations for research purposes or statistics (OFS 25.11 p. 5).
 
-Use the `targets` package to create a reproducible data analysis pipeline
+## OSL Chapter 10
 
-::: video-wrapper
-<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+Provisions on disclosure overriding secrecy and provisions on exemptions from secrecy
 
-</iframe>
-:::
+> OFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.
 
-## Pipeline
+-   This would apply to data sharing for research purposes when there is a legal basis for that
 
--   Define steps in your analysis as targets
--   Define dependencies between targets
--   Automatically track changes and rerun only necessary parts
+## Patientdatalagen (PDL)
 
----------
+The Patient Data Act (PDL)
 
-![](images/paste-2.png)
+-   regulates the processing of personal data within **health and medical care** in Sweden.
+-   Applies to **healthcare providers** (public and private).
+-   Main objectives:
+    -   Protect patient privacy
+    -   Ensure safe and effective healthcare
+    -   Enable **secondary use** of health data under strict conditions
 
-## Why?
+## Chapter 7 PDL
 
--   You do not want to rerun everything all the time!
--   You want to keep track of what you have done
--   You want to be able to reproduce your results later
--   You want to share your workflow with others
+National and regionel quality registers
 
+Opt-out for patients (every one is included by default until they opt out)
 
+> PDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.
 
-## Reading
+PDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of
 
-- A bit old but still relevant: [https://happygitwithr.com/]()
-- [Targets overview](https://docs.ropensci.org/targets/articles/overview.html)
-- [Target manual](https://books.ropensci.org/targets/)
+-   the production of **statistics**,
+-   estimating numbers for the planning of clinical research,
+-   **research within health and medical care**,
+-   disclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and
+-   ...
+
+## Lag om hälsodataregister (SFS 1998:543)
+
+This law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.
+
+§ 3: Personal data in a health data register may be processed for for the following purposes:
+
+-   the production of statistics,
+-   follow-up, evaluation and quality assurance of health and medical care, and
+-   research and epidemiological studies
+
+## Specific registers
+
+| Register (Swedish) | Register (English) | Governing act / ordinance |
+|---------------------|----------------------|-----------------------------|
+| Folkbokföringen | Population Register | Population Registration Act (1991:481); Population Registration Ordinance (1991:749) |
+| Totalbefolkningsregistret (RTB) | Total Population Register | Official Statistics Act (2001:99); Official Statistics Ordinance (2001:100) |
+| Nationella patientregistret | National Patient Register | Health Data Act (1998:543); Ordinance on the National Patient Register (2001:707) |
+| Cancerregistret | Swedish Cancer Register | Health Data Act (1998:543); Cancer Register Ordinance (2001:709) |
+| Dödsorsaksregistret | Cause of Death Register | Health Data Act (1998:543); Cause of Death Register Ordinance (2001:709) |
+| Läkemedelsregistret | Prescribed Drug Register | Act on the Prescribed Drug Register (2005:258); Ordinance (2005:363) |
+| Medicinska födelseregistret | Medical Birth Register | Health Data Act (1998:543); Medical Birth Register Ordinance (2001:708) |
+| Tandhälsoregistret | Dental Health Register | Health Data Act (1998:543); Dental Health Register Ordinance (2008:194) |
+
+## Arkivdatalagen (ADL)
+
+-   Regulates the management of public records and archives
+-   Applies to public authorities and institutions
+-   Differnt authorities then have different rules for how long data must be kept
+    -   For example healthcare data is often required to be kept for at least 10 years
+
+## GDPR and Swedish law
+
+-   GDPR is directly applicable in Sweden
+-   There are refereces to GDPR in Swedish laws such as PDL and OSL
+-   Swedish laws may provide additional regulations and requirements beyond GDPR
+-   Data protection authorities in Sweden: [Integritetsskyddsmyndigheten (IMY)](https://imy.se/)
+-   Should be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries
+
+## Etikprövningslagen (EPL)
+
+-   Regulates ethical review of research involving humans (including their data!)
+    -   Had received some critisism and might be revised
+-   Applies to research projects conducted in Sweden
+-   Requires ethical review and approval by an ethics review board
+-   Aims to protect the rights, safety, and well-being of research participants
+-   Based on the Declaration of Helsinki and other international ethical guidelines
+-   One application for each new research project
+    -   Ammendments for changes in already approved projects
+-   Application fees applies
+-   [Swedish Ethical Review Authority](https://etikprovningsmyndigheten.se/en/)

@@ -4,7 +4,7 @@ subtitle: "Repetition before DISA exam"
 reading: ""
 format: 
   revealjs:
-    theme: dark
+    theme: blood
     slide-number: true
     css: styles.css
     smaller: true

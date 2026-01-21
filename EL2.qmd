@@ -1,179 +1,237 @@
 ---
-title: "EL2: Legal"
-subtitle: "Swedish and European legislation considering personal data"
-reading: "[@publica2025]"
+title: "EL2: European legislation"
+subtitle: "GDPR, EHDS and DA"
+reading: "[@vukovic2022], [@nguyen2022a, ch. 4]"
 format:
   revealjs:
-    theme: dark
+    theme: blood
     transition: fade
     slide-number: true
     css: styles.css
     smaller: true
     scrollable: true
-    incremental: true
+    incremental: false
 bibliography: references.bib
 ---
 
-## Swedish law
+# Legal part
 
--   Fundamental laws (parliament but difficult to change)
--   Ordinary laws (parliament)
-    -   New ones all the time
-    -   New laws to update existing regulations
--   Published in [Svensk författningsamling, SFS](https://svenskforfattningssamling.se/)
-    -   The "big blue book" is only a smaller collection of important laws
--   ordinances ("förordning") from the goverment to implement laws
--   regulations ("föreskrifter") from authorities to implement laws and ordinances
+- Today: European legislation (mainly GDPR!)
+    - Lecture handouts main sourse for examination (seminair [ES1](ES1.qmd) and possibly DISA exam).
+    - Article [@vukovic2022]. Focus on the introduction, the section "GDPR‐related enablers and barriers to cross‐country health data exchange in Europe" (in the results section incl. figures and tables), discussion and conclusions. Examined as part of seminair [ES1](ES1.qmd) (not the DISA exam).
+- Next lecture: Swedish legislation (including associated reading). Examined as part of seminair [ES1](ES1.qmd) (not the DISA exam).
+- Consequence: [@nguyen2022a, ch. 4]. Read the beginning. Skip "Medical Information Mart for Intensive Care". Read the "Synthea" section. The "Synthea" section does not have a legal focus but the legal parts explains why we use this data. Read for your own understanding (not examied). 
 
-## Two main branches of law
+## European legislation
 
--   Civil and criminal law:
-    -   state what you can not do (everything else is "legal")
-    -   Handled by ordinary courts
-    -   Ex: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)
--   Public law: relationship between individuals and the state etc
-    -   state what the public authorities must do (everything else is "illegal")
-    -   Handled by administrative courts
-    -   What we mostly care of here
+- **GDPR** (our focus)
+    - Defines the legal conditions for **processing personal data**
+    - Focuses on protection, safeguards, and accountability
+- **European Health Data Space (EHDS)**
+    - Establishes a European framework for access to health data for research, statistics, and policy.
+    - Focuses on data access, governance, and interoperability
+    - Increases opportunities for cross-national health statistics
+- **EU Data Act**
+    - Regulates who may access data and under what conditions, across sectors.
+    - Indirectly relevant for health statistics through device-generated and digital service data.
+    
+::: {.callout-important}
+Legal and governance frameworks enable access to data, but **statistical expertise remains essential** for ensuring data quality, valid inference, and meaningful interpretation.
+:::
 
-## Tryckfrihetsförordningen (TF)
+## EU law vs Swedish law
 
--   World's oldest freedom of the press law (since 1766)
--   Chapter 2: Public access to official documents
--   Applies to public authorities and institutions
-    -   Including health care registers and medical records held by public authorities
--   Everyone has the right to access official documents (TF 2.1)
--   but there are exceptions (TF 2.2)
-    -   e.g., if disclosure would violate privacy or national security
-    -   if so, the goverment has the right to provide ordinary laws that restrict access (which they do ...)
+- EU legislation tends to be more detailed in the legal text itself
+- This is because EU law must be:
+    - applied uniformly across many different legal systems
+    - interpreted without relying on national preparatory works
+- Interpretation of EU law relies mainly on:
+    - the wording of the legislation
+    - recitals (non-binding explanaitions before the articles describing the purpose and context).
 
-## Offentlighets- och sekretesslagen (OSL)
+- Swedish legislation is often:
+    - shorter and less detailed in the statutory text
+    - supplemented by extensive **preparatory works (förarbeten)**
+- In Sweden, preparatory works are a central interpretative source for courts and authorities
 
--   Law that regulates public access to official documents and secrecy
--   Applies to public authorities and institutions
--   Defines what information is considered secret and under what circumstances
+➡️ The difference reflects **different legislative techniques**, not necessarily a difference in regulatory ambition.
 
-## Chap 21
+::: {.callout-note}
+# Source
+The GDPR is available in all official EU languages via [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679). 
+Take a quick look to get a very brief overview. However, it is recommended reading only if you suffer from insomnia — it is not required for fulfilling the course requirements!
+:::
 
-Secrecy for private individuals' personal circumstances **no mather the context**
 
--   E.g., health data, economic circumstances, family relations
-
-> OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, **if it can be assumed** that disclosure of the information would **cause significant harm** to the individual or to someone closely related to them.
-
-## Chap 24
-
-Secrecy for the protection of individuals in research and statistics.
-
--   Special research databases etc
--   Some regulations for research ethics boards
-
-## Chapter 25
-
-Secrecy for the protection of individuals in activities relating to **health and medical care** etc.
-
-> OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, **unless it is clear** that the information may be disclosed **without causing harm** to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.
-
--   Exceptions exists,
-    -   for example to submit medical patient data to quality registers
-    -   to share data between public organisations for research purposes or statistics (OFS 25.11 p. 5).
-
-## Chapter 10
-
-Provisions on disclosure overriding secrecy and provisions on exemptions from secrecy
-
-> OFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.
-
--   This would apply to data sharing for research purposes when there is a legal basis for that
-
-## Patientdatalagen (PDL)
-
-The Patient Data Act (PDL)
-
--   regulates the processing of personal data within **health and medical care** in Sweden.
--   Applies to **healthcare providers** (public and private).
--   Main objectives:
-    -   Protect patient privacy
-    -   Ensure safe and effective healthcare
-    -   Enable **secondary use** of health data under strict conditions
-
-## Chapter 7 PDL
-
-National and regionel quality registers
-
-Opt-out for patients (every one is included by default until they opt out)
-
-> PDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.
-
-PDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of
-
--   the production of **statistics**,
--   estimating numbers for the planning of clinical research,
--   **research within health and medical care**,
--   disclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and
--   ...
-
-## Lag om hälsodataregister (SFS 1998:543)
-
-This law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.
-
-§ 3: Personal data in a health data register may be processed for for the following purposes:
-
--   the production of statistics,
--   follow-up, evaluation and quality assurance of health and medical care, and
--   research and epidemiological studies
-
-## Specific registers
-
-| Register (Swedish) | Register (English) | Governing act / ordinance |
-|---------------------|----------------------|-----------------------------|
-| Folkbokföringen | Population Register | Population Registration Act (1991:481); Population Registration Ordinance (1991:749) |
-| Totalbefolkningsregistret (RTB) | Total Population Register | Official Statistics Act (2001:99); Official Statistics Ordinance (2001:100) |
-| Nationella patientregistret | National Patient Register | Health Data Act (1998:543); Ordinance on the National Patient Register (2001:707) |
-| Cancerregistret | Swedish Cancer Register | Health Data Act (1998:543); Cancer Register Ordinance (2001:709) |
-| Dödsorsaksregistret | Cause of Death Register | Health Data Act (1998:543); Cause of Death Register Ordinance (2001:709) |
-| Läkemedelsregistret | Prescribed Drug Register | Act on the Prescribed Drug Register (2005:258); Ordinance (2005:363) |
-| Medicinska födelseregistret | Medical Birth Register | Health Data Act (1998:543); Medical Birth Register Ordinance (2001:708) |
-| Tandhälsoregistret | Dental Health Register | Health Data Act (1998:543); Dental Health Register Ordinance (2008:194) |
-
-## Arkivdatalagen (ADL)
-
--   Regulates the management of public records and archives
--   Applies to public authorities and institutions
--   Differnt authorities then have different rules for how long data must be kept
-    -   For example healthcare data is often required to be kept for at least 10 years
-
-## GDPR
+# GDPR
 
 -   Regulation (EU) 2016/679 (GDPR)
 -   Enforced since May 25, 2018
--   Applies to all EU member states
--   Regulates the processing of personal data
+-   Regulates the **processing** of **personal data**
 -   Aims to protect the privacy and rights of individuals
--   Sets out rules for data controllers and processors
+-   Sets out rules for data **controllers** and **processors**
 
-## Special categories of personal data
 
-1.  personal data revealing racial or ethnic origin,
-2.  political opinions,
-3.  religious or philosophical beliefs,
-4.  trade union membership,
-5.  genetic data,
-6.  biometric data for the purpose of uniquely identifying a natural person,
-7.  **data concerning health**,
-8.  data concerning a natural person’s sex life or sexual orientation.
+
+## European Union (EU)
+
+- GDPR applies **directly and uniformly** as law
+- No national implementation required
+- Member States may:
+    - introduce **supplementary legislation**
+    - allow legal exceptions, e.g. for:
+        - research
+        - public interest
+        - health data
+
+## European Economic Area (EEA)
+
+**Countries:** Norway, Iceland and Liechtenstein
+
+- GDPR applies via the **EEA Agreement**
+- Implemented into national law
+- In practice:
+    - very similar application as within the EU
+    - same core principles, rights, and obligations
+
+
+## United Kingdom (UK)
+
+- EU GDPR no longer applies directly after Brexit
+- Replaced by:
+    - UK GDPR
+    - Data Protection Act 2018
+
+
+## Switzerland
+
+- Not part of EU or EEA
+- GDPR does **not** apply as law
+- Instead: Federal Act on Data Protection (FADP)
+    - Revised to align closely with GDPR
+
+## International laws
+
+-   Note that other countries have different laws and regulations
+-   In USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)
+    -   Different states have different laws as well
+-   When collaborating internationally, compliance with all relevant laws is required
+
+
+## Definitions
+
+GDPR article 4:
+
+Personal data
+: means **any information** relating to an **identified or identifiable natural person** (*data subject*); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.
+
+Processing
+: means **any operation** or set of operations which is **performed on personal data** or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;
+
+Pseudonymisation
+: means the processing of personal data in such a manner that the personal data can **no longer be attributed to a specific data subject without the use of additional information**, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;
+
+Controller
+: means the natural or legal person, public authority, agency or other body which, alone or jointly with others, **determines the purposes and means** of the processing of personal data [...]
+
+Processor
+: means a natural or legal person, public authority, agency or other body which processes personal data **on behalf of the controller**;
+
+Consent of the data subject 
+: means any **freely given, specific, informed and unambiguous** indication of the data subject's wishes by which he or she, by a statement or by a clear affirmative action, signifies **agreement to the processing** of personal data relating to him or her;
+
+Personal data breach
+: means a breach of security leading to the accidental or unlawful destruction, loss, alteration, **unauthorised disclosure of, or access to, personal data** transmitted, stored or otherwise processed;
+
+Data concerning health
+: means personal data related to the **physical or mental health** of a natural person, including the provision of **health care services**, which reveal information about his or her health status;
+
 
 ## Legal grounds for processing personal data:
 
-1.  the data subject has given **consent** to the processing of his or her personal data for one or more specific purposes;
-    2.  processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;
-    3.  processing is necessary for compliance with a legal obligation to which the controller is subject;
-    4.  processing is necessary in order to protect the vital interests of the data subject or of another natural person;
-    5.  processing is necessary for the performance of a task carried out in the **public interest** or in the exercise of official authority vested in the controller;
-    6.  processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.
-    7.  processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.
+GDPR article 6 (1):
 
-## Data Controller (PUA) under GDPR
+> Processing shall be lawful only if and to the extent that at least one of the following applies:
+
+a.  the data subject has given **consent** to the processing of his or her personal data for one or more specific purposes;
+  processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;
+b.  ~~processing is necessary for compliance with a legal obligation to which the controller is subject;~~
+c.  ~~processing is necessary in order to protect the vital interests of the data subject or of another natural person;~~
+d.  processing is necessary for the performance of a task carried out in the **public interest** or in the exercise of official authority vested in the controller;
+e.  processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.
+f.  ~~processing is necessary for compliance with a legal obligation to which the controller is subject under Union or Member State law requiring the processing of personal data for a specific purpose.~~
+
+
+## Processing of special categories of personal data
+
+GDPR Article 9 (1):
+
+> Processing of personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, or trade union membership, and the processing of genetic data, biometric data for the purpose of uniquely identifying a natural person, **data concerning health** or data concerning a natural person's sex life or sexual orientation shall be **prohibited**. 😱
+
+## But ...
+
+> Paragraph 1 shall not apply if one of the following applies:
+
+- (a) the data subject has given **explicit consent** to the processing of those personal data for one or more specified purposes [...]
+
+- (i) processing is necessary for reasons of **public interest** in the area of **public health**, such as protecting against serious cross-border threats to health or ensuring high standards of quality and safety of health care and of medicinal products or medical devices [...]
+
+- (j) processing is necessary for archiving purposes in the public interest, **scientific or historical research purposes** or **statistical purposes** (🥳) in accordance with Article 89(1) based on Union or Member State law which shall be proportionate to the aim pursued, respect the essence of the right to data protection and provide for suitable and specific measures to safeguard the fundamental rights and the interests of the data subject.
+
+
+## Safeguards
+
+GDPR article 89:
+
+> Safeguards and derogations relating to processing for archiving purposes in the public interest, scientific or historical research purposes or **statistical purposes**
+
+1.   Processing for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes, shall be subject to **appropriate safeguards**, in accordance with this Regulation, for the rights and freedoms of the data subject. Those safeguards shall ensure that **technical and organisational measures are in place** in particular in order to ensure respect for the principle of **data minimisation**. Those measures may include **pseudonymisation** provided that those purposes can be fulfilled in that manner. Where those purposes can be fulfilled by further processing which does not permit or no longer permits the identification of data subjects, those purposes shall be fulfilled in that manner.
+
+2.   Where personal data are processed for scientific or historical research purposes or **statistical purposes**, Union or Member State law may provide for derogations [...] so far as such rights are likely to render impossible or seriously impair the achievement of the specific purposes, and such derogations are necessary for the fulfilment of those purposes.
+
+
+## Technical Safeguards
+
+Examples of technical safeguards include:
+
+-   Pseudonymisation
+-   Encryption of personal data
+-   Access controls and authentication
+-   Logging and monitoring of access
+-   Secure storage and transmission
+
+## Organisational Safeguards
+
+Examples of organisational safeguards include:
+
+-   Defined roles and responsibilities
+-   Internal policies and procedures
+-   Staff training and confidentiality obligations
+-   Data protection by design and by default
+-   Incident and breach response procedures
+-   Documentation and accountability measures
+
+## Data Minimisation and Purpose Limitation
+
+-   Only data that are **necessary** should be processed
+-   Data are processed **only for specified purposes**
+-   Access is limited to authorised personnel
+-   Retention periods are defined and respected
+
+## Pseudonymisation and Anonymisation
+
+-   **Pseudonymisation** reduces risks while allowing reuse of the data
+    -   Identifiers are kept separately and protected
+-   **Anonymisation** removes data from GDPR scope (if irreversible)
+
+::: {.callout-important}
+- Pseudonymisation $\neq$ Anonymisation
+- Removing the Swedish personal identification number (PIN) is not a guarantee for pseudonymisation
+:::
+
+
+
+## Data Controller
 
 -   The entity that **determines the purposes and means** of the processing of personal data
 -   Bears the **primary legal responsibility**
@@ -204,84 +262,108 @@ This law regulates health data registers outside the health and medical care sys
     -   Subject matter and duration
     -   Nature and purpose of processing
     -   Types of personal data
-    -   Categories of data subjects
+    -   Categories of data subjects (patients, students, citizens, ...)
     -   Security measures
 -   The controller remains responsible even when processing is outsourced
 
 ## Example: Sahlgrenska
 
--   If a researcher work at the Sahlgrenska hospital, VGR might be the data controller (PUA)
--   If he/she asks for statistical consulting from Sahlgrenska Academy, GU might be the data processor (PUB)
+-   If a researcher work at the Sahlgrenska university hospital, VGR might be the data controller (personuppgiftsansvarig; PUA)
+-   If he/she asks for statistical consulting from the Sahlgrenska Academy, GU might be the data processor (personuppgiftsbiträde; PUB)
 
-## Technical Safeguards
 
-Examples of technical safeguards include:
 
--   Pseudonymisation
--   Encryption of personal data
--   Access controls and authentication
--   Logging and monitoring of access
--   Secure storage and transmission
+# European Health Data Space (EHDS)
 
-## Organisational Safeguards
+## What is it?
 
-Examples of organisational safeguards include:
+- EHDS is an EU-wide legal and technical framework for the use and sharing of health data
+- It aims to:
+  - improve access to health data across borders
+  - support healthcare, research, statistics, and policy-making
+- Focuses on data access and governance
 
--   Defined roles and responsibilities
--   Internal policies and procedures
--   Staff training and confidentiality obligations
--   Data protection by design and by default
--   Incident and breach response procedures
--   Documentation and accountability measures
+---
 
-## Data Minimisation and Purpose Limitation
+## Two Main Pillars
 
--   Only data that are **necessary** are processed
--   Data are processed **only for specified purposes**
--   Access is limited to authorised personnel
--   Retention periods are defined and respected
+- Primary use of health data
+  - Use of data for individual patient care
+  - Cross-border access to electronic health records
 
-## Pseudonymisation and Anonymisation
+- Secondary use of health data for
+    - statistics
+    - scientific research
+    - public health
+    - policy evaluation and innovation
 
--   **Pseudonymisation** reduces risks while allowing reuse
--   Identifiers are kept separately and protected
--   Anonymisation removes data from GDPR scope (if irreversible)
 
-## Safeguards for Special Categories of Data
 
-When processing sensitive data (e.g. health data), additional safeguards are required:
+## Implementation Timeline
 
--   Strict access control
--   Enhanced security measures
--   Ethical approval where applicable
--   Clear separation of identifiers and content data
+- **2025**: EHDS regulation enters into force
+- **2025–2027**: Development of implementing and technical acts
+- **From ~2029 onwards**:
+  - national infrastructures become operational
+  - cross-border access for secondary use starts to function in practice
 
-## GDPR and Swedish law
 
--   GDPR is directly applicable in Sweden
--   There are refereces to GDPR in Swedish laws such as PDL and OSL
--   Swedish laws may provide additional regulations and requirements beyond GDPR
--   Data protection authorities in Sweden: [Integritetsskyddsmyndigheten (IMY)](https://imy.se/)
--   Should be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries
+## How EHDS Relates to GDPR
 
-## Etikprövningslagen (EPL)
+- EHDS does **not replace GDPR**
+- GDPR continues to govern:
+  - personal data protection
+  - lawful bases
+  - safeguards for health data
+- EHDS provides **procedures and structures** for lawful data access under GDPR
 
--   Regulates ethical review of research involving humans (including their data!)
-    -   Had received some critisism and might be revised
--   Applies to research projects conducted in Sweden
--   Requires ethical review and approval by an ethics review board
--   Aims to protect the rights, safety, and well-being of research participants
--   Based on the Declaration of Helsinki and other international ethical guidelines
--   One application for each new research project
-    -   Ammendments for changes in already approved projects
--   Application fees applies
--   [Swedish Ethical Review Authority](https://etikprovningsmyndigheten.se/en/)
+➡️ GDPR defines *whether* data may be processed  
+➡️ EHDS defines *how* data can be made available
 
-## International laws
 
--   Note that other countries have different laws and regulations
--   In USA, for example, HIPAA regulates the use and disclosure of protected health information (PHI)
-    -   Different states have different laws as well
--   When collaborating internationally, compliance with all relevant laws is required
+## Why EHDS Matters for Statisticians
 
-##
+- EHDS explicitly recognises **statistics** as a legitimate purpose
+- It facilitates access to:
+  - large-scale health datasets
+  - cross-national data sources
+- It increases demand for:
+  - data quality assessment
+  - metadata interpretation
+  - harmonisation and comparability analyses
+
+
+## EHDS Does *Not* Do This
+
+- EHDS does not:
+  - define statistical methods
+  - ensure data quality automatically
+  - guarantee comparability across countries
+- Legal and technical access ≠ valid statistical inference
+
+
+# The EU Data Act 
+
+## What Is It?
+
+- The Data Act is an EU regulation on access to and sharing of data
+- Focuses mainly on:
+  - data generated by connected products and digital services (IoT)
+  - business-to-business (B2B) and business-to-government (B2G) data sharing
+- It is **not a data protection regulation**
+
+➡️ The Data Act is about *who may access data and under what conditions*.
+
+
+## How the Data Act Relates to Health Data
+
+- The Data Act does not primarily target health registers
+- However, it may affect:
+  - data generated by medical devices
+  - digital health services
+  - health-related IoT data
+
+➡️ Health data may fall under the Data Act depending on how it is generated.
+
+
+--------

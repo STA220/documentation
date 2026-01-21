@@ -12,8 +12,14 @@ General information about the course is found on the corresponding [Canvas](http
 - See Canvas/[TimeEdit for schedule](https://cloud.timeedit.net/gu/web/wr_stud/ri1Y6v2yQ6w901QY75Q2209XZY057ZQ7.html). 
 - Note that this plan only considers the health data part of the course!
 - See details below regarding the litterature
+- Sme literature is only used partially (as described in the [handouts](handouts.qmd))
+- The literature is associated with each lecture/session but is not required reading before the sessin (unless otherwise stated).
 :::
 
+::: {.callout-warning}
+- The plan, as well as the content of each session, is preliminary and may change before the respective session is scheduled.
+- Modifications to lecture slides (and thus indirectly to the lecture handouts) may be made even after the session has taken place. Such changes are only intended to clarify points discussed during the session or to correct mistakes.
+:::
 
 ```{r}
 #| echo: false
@@ -51,7 +57,7 @@ We will use [GitHub Pull Requests](https://open-vsx.org/extension/GitHub/vscode-
 Course books are available for GU students through the "O'Reilly Learning for Higher Education".
 [Instructions for access](https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en)
 
-[Primary course book](https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/). Not every chapter of the book will be discussed during the course!
+[Primary course book](https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/). Not every chapter of the book will be discussed during the course, and some programming examples in the book are written in languages that we will not use, as our programming focus is mainly on R.
 
 [Recommended books](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c).
 

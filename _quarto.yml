@@ -31,7 +31,7 @@ website:
           - ECS1.qmd
       - text: Seminars
         menu:
-          - seminar_legal.qmd
+          - ES1.qmd
 
 format:
   html:
@@ -40,4 +40,3 @@ format:
     css: styles.css
     toc: true
     toc-depth: 3
-
