@@ -784,46 +784,53 @@
     "text": "Reading\n\nTargets overview\nTarget manual"
   },
   {
-    "objectID": "EL3.html#backgrund-of-swedish-law",
-    "href": "EL3.html#backgrund-of-swedish-law",
+    "objectID": "EL3.html#literature",
+    "href": "EL3.html#literature",
     "title": "EL2: Swedish legislation",
-    "section": "Backgrund of Swedish law",
-    "text": "Backgrund of Swedish law\nOptional reading\n\nFundamental laws (“grundlagar”) decided by the parliament but stable over time\n\nNot a “constitution”\n\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing laws\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
+    "section": "Literature",
+    "text": "Literature\n\n\n\n\n\n\nExamination\n\n\nThe Swedish legal system will only be examined during the seminair ES1 (not in the DISA exam). You are allowed to use the sources during the seminair (no need to memorize individual laws and paragraphs by names and numbers). Nevertheless, read the literature before the seminair!\n\n\n\n\nLecture handouts\nWeb link (“Public Access and Secrecy | Swedish National Data Service” 2025)\nReport (Görman 2024). Most important: p. 26-32, 42-45, 49 and 75-90.\nSwedish reading students might enjoy lagen.nu for source material (however, this is not required for the course).\n\nA translation using Google translate might be used for non Swedish reading students. However, please note that legal texts are formally valid only in their original language."
+  },
+  {
+    "objectID": "EL3.html#backgrund-to-swedish-law",
+    "href": "EL3.html#backgrund-to-swedish-law",
+    "title": "EL2: Swedish legislation",
+    "section": "Backgrund to Swedish law",
+    "text": "Backgrund to Swedish law\n\nFundamental laws (“grundlagar”) decided by the parliament but stable over time\n\nAsort of codified constitution distributed in four parts\nThe Freedom of the Press Act (Tryckfrihetsförordningen) of relevance\n\nOrdinary laws (parliament)\n\nNew ones all the time (previously twice a year)\nNew laws to update existing laws\n\nPublished in Svensk författningsamling, SFS\n\nDigitally since 2018-04-01 (previously printed)\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
   },
   {
     "objectID": "EL3.html#two-main-branches-of-law",
     "href": "EL3.html#two-main-branches-of-law",
     "title": "EL2: Swedish legislation",
     "section": "Two main branches of law",
-    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must and can do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
+    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must and can do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here\n\n\n\n\n\n\n\n\nThe principle of freedom vs. the principle of legality\n\n\nPrivate actors are generally free unless restricted by law, while public authorities require explicit legal authority to act."
   },
   {
-    "objectID": "EL3.html#tryckfrihetsförordningen-tf",
-    "href": "EL3.html#tryckfrihetsförordningen-tf",
+    "objectID": "EL3.html#the-freedom-of-the-press-act-tf",
+    "href": "EL3.html#the-freedom-of-the-press-act-tf",
     "title": "EL2: Swedish legislation",
-    "section": "Tryckfrihetsförordningen (TF)",
-    "text": "Tryckfrihetsförordningen (TF)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\nEveryone has the right to access official documents (TF 2.1)\nbut there are exceptions (TF 2.2)\n\ne.g., if disclosure would violate privacy or national security\nif so, the goverment has the right to provide ordinary laws that restrict access (which they do …)"
+    "section": "The Freedom of the Press Act (TF)",
+    "text": "The Freedom of the Press Act (TF)\n(🇸🇪: Tryckfrihetsförordningen)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\n\n\nIn order to promote a free exchange of opinion, comprehensive and pluralistic information, and free artistic creation, everyone shall have the right of access to official documents. [TF 2.1]\n\nBut there are exceptions (TF 2.2): - e.g., if disclosure would violate privacy or national security - if so, the goverment has the right to provide ordinary laws that restrict access (which they do!)"
   },
   {
-    "objectID": "EL3.html#offentlighets--och-sekretesslagen-osl",
-    "href": "EL3.html#offentlighets--och-sekretesslagen-osl",
+    "objectID": "EL3.html#the-public-access-to-information-and-secrecy-act-osl",
+    "href": "EL3.html#the-public-access-to-information-and-secrecy-act-osl",
     "title": "EL2: Swedish legislation",
-    "section": "Offentlighets- och sekretesslagen (OSL)",
-    "text": "Offentlighets- och sekretesslagen (OSL)\n\nLaw that regulates public access to official documents and secrecy\nApplies to public authorities and institutions\nDefines what information is considered secret and under what circumstances"
+    "section": "The Public Access to Information and Secrecy Act (OSL)",
+    "text": "The Public Access to Information and Secrecy Act (OSL)\n(🇸🇪: Offentlighets- och sekretesslagen)\n\nLaw that regulates public access to official documents and confidentiality\nApplies to public authorities and institutions\nDefines what information is considered confidential and under what circumstances"
   },
   {
     "objectID": "EL3.html#osl-chap-21",
     "href": "EL3.html#osl-chap-21",
     "title": "EL2: Swedish legislation",
     "section": "OSL Chap 21",
-    "text": "OSL Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
+    "text": "OSL Chap 21\nConfidentiality for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
   },
   {
     "objectID": "EL3.html#osl-chap-24",
     "href": "EL3.html#osl-chap-24",
     "title": "EL2: Swedish legislation",
     "section": "OSL Chap 24",
-    "text": "OSL Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
+    "text": "OSL Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nA few special research databases etc\nSome regulations for research ethics boards"
   },
   {
     "objectID": "EL3.html#osl-chapter-25",
@@ -840,11 +847,11 @@
     "text": "OSL Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
   },
   {
-    "objectID": "EL3.html#patientdatalagen-pdl",
-    "href": "EL3.html#patientdatalagen-pdl",
+    "objectID": "EL3.html#the-patient-data-act-pdl",
+    "href": "EL3.html#the-patient-data-act-pdl",
     "title": "EL2: Swedish legislation",
-    "section": "Patientdatalagen (PDL)",
-    "text": "Patientdatalagen (PDL)\nThe Patient Data Act (PDL)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
+    "section": "The Patient Data Act (PDL)",
+    "text": "The Patient Data Act (PDL)\n(🇸🇪: Patientdatalagen)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
   },
   {
     "objectID": "EL3.html#chapter-7-pdl",
@@ -854,11 +861,11 @@
     "text": "Chapter 7 PDL\nNational and regionel quality registers\nOpt-out for patients (every one is included by default until they opt out)\n\nPDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.\n\nPDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of\n\nthe production of statistics,\nestimating numbers for the planning of clinical research,\nresearch within health and medical care,\ndisclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and\n…"
   },
   {
-    "objectID": "EL3.html#lag-om-hälsodataregister-sfs-1998543",
-    "href": "EL3.html#lag-om-hälsodataregister-sfs-1998543",
+    "objectID": "EL3.html#the-health-data-registers-act",
+    "href": "EL3.html#the-health-data-registers-act",
     "title": "EL2: Swedish legislation",
-    "section": "Lag om hälsodataregister (SFS 1998:543)",
-    "text": "Lag om hälsodataregister (SFS 1998:543)\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
+    "section": "The Health Data Registers Act",
+    "text": "The Health Data Registers Act\n(🇸🇪: Lag om hälsodataregister [SFS 1998:543])\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n\n§ 1: A central administrative authority within the health care sector may carry out automated processing of personal data in health data registers. The central administrative authority that carries out the processing of personal data is the controller.\n\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
   },
   {
     "objectID": "EL3.html#specific-registers",
@@ -868,11 +875,11 @@
     "text": "Specific registers\n\n\n\n\n\n\n\n\nRegister (Swedish)\nRegister (English)\nGoverning act / ordinance\n\n\n\n\nFolkbokföringen\nPopulation Register\nPopulation Registration Act (1991:481); Population Registration Ordinance (1991:749)\n\n\nTotalbefolkningsregistret (RTB)\nTotal Population Register\nOfficial Statistics Act (2001:99); Official Statistics Ordinance (2001:100)\n\n\nNationella patientregistret\nNational Patient Register\nHealth Data Act (1998:543); Ordinance on the National Patient Register (2001:707)\n\n\nCancerregistret\nSwedish Cancer Register\nHealth Data Act (1998:543); Cancer Register Ordinance (2001:709)\n\n\nDödsorsaksregistret\nCause of Death Register\nHealth Data Act (1998:543); Cause of Death Register Ordinance (2001:709)\n\n\nLäkemedelsregistret\nPrescribed Drug Register\nAct on the Prescribed Drug Register (2005:258); Ordinance (2005:363)\n\n\nMedicinska födelseregistret\nMedical Birth Register\nHealth Data Act (1998:543); Medical Birth Register Ordinance (2001:708)\n\n\nTandhälsoregistret\nDental Health Register\nHealth Data Act (1998:543); Dental Health Register Ordinance (2008:194)"
   },
   {
-    "objectID": "EL3.html#arkivdatalagen-adl",
-    "href": "EL3.html#arkivdatalagen-adl",
+    "objectID": "EL3.html#the-archives-data-act-adl",
+    "href": "EL3.html#the-archives-data-act-adl",
     "title": "EL2: Swedish legislation",
-    "section": "Arkivdatalagen (ADL)",
-    "text": "Arkivdatalagen (ADL)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example healthcare data is often required to be kept for at least 10 years"
+    "section": "The Archives Data Act (ADL)",
+    "text": "The Archives Data Act (ADL)\n(🇸🇪 Arkivdatalagen)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example research data is often required to be kept for at least 10 (or 25) years"
   },
   {
     "objectID": "EL3.html#gdpr-and-swedish-law",
@@ -882,18 +889,67 @@
     "text": "GDPR and Swedish law\n\nGDPR is directly applicable in Sweden\nThere are refereces to GDPR in Swedish laws such as PDL and OSL\nSwedish laws may provide additional regulations and requirements beyond GDPR\nData protection authorities in Sweden: Integritetsskyddsmyndigheten (IMY)\nShould be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries"
   },
   {
-    "objectID": "EL3.html#etikprövningslagen-epl",
-    "href": "EL3.html#etikprövningslagen-epl",
+    "objectID": "EL3.html#statistics-and-research",
+    "href": "EL3.html#statistics-and-research",
     "title": "EL2: Swedish legislation",
-    "section": "Etikprövningslagen (EPL)",
-    "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority\n\n\n\n\n\n“Public Access and Secrecy | Swedish National Data Service.” 2025. https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy."
+    "section": "Statistics and research?",
+    "text": "Statistics and research?\n\nA statistical purpose refers to the production of aggregated information describing groups or populations (e.g. summary tables or prevalence estimates), and does not include analyses or decisions concerning identifiable individuals (e.g. individual predictions or case assessments).\n\nDoes not require particular statistical methods etc\n\nResearch refers to systematic activities aimed at generating new, generalisable knowledge, and excludes activities focused on individual decisions, control, or routine administration."
+  },
+  {
+    "objectID": "EL3.html#the-ethical-review-act-epl",
+    "href": "EL3.html#the-ethical-review-act-epl",
+    "title": "EL2: Swedish legislation",
+    "section": "The Ethical Review Act (EPL)",
+    "text": "The Ethical Review Act (EPL)\n(🇸🇪: Etikprövningslagen)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research conducted in Sweden\nRequires ethical review and approval by the Swedish Ethical Review Authority\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies"
+  },
+  {
+    "objectID": "EL3.html#ublic-non-sensitive-individual-information",
+    "href": "EL3.html#ublic-non-sensitive-individual-information",
+    "title": "EL2: Swedish legislation",
+    "section": "ublic, non-sensitive individual information",
+    "text": "ublic, non-sensitive individual information\n\nCertain individual data are public by default (e.g. declared income, address).\nSuch information may be accessed upon request from authorities like the Swedish Tax Agency, unless specific secrecy provisions apply.\nMight still not be used for research without ethical review"
+  },
+  {
+    "objectID": "EL3.html#aggregated-data-including-health-data",
+    "href": "EL3.html#aggregated-data-including-health-data",
+    "title": "EL2: Swedish legislation",
+    "section": "Aggregated data (including health data)",
+    "text": "Aggregated data (including health data)\n\nAggregated information that cannot be linked to identifiable individuals may often be disclosed.\nAggregated health statistics produced through “automated processes” might be disclosed upon request."
+  },
+  {
+    "objectID": "EL3.html#individual-level-health-data-for-statistical-purposes",
+    "href": "EL3.html#individual-level-health-data-for-statistical-purposes",
+    "title": "EL2: Swedish legislation",
+    "section": "Individual-level health data for statistical purposes",
+    "text": "Individual-level health data for statistical purposes\n\nAccess to identifiable health data is possible within authorities conducting statistical activities.\nThis typically requires that the data are used solely for statistical purposes,"
+  },
+  {
+    "objectID": "EL3.html#individual-level-data-via-register-holding-authorities",
+    "href": "EL3.html#individual-level-data-via-register-holding-authorities",
+    "title": "EL2: Swedish legislation",
+    "section": "Individual-level data via register-holding authorities",
+    "text": "Individual-level data via register-holding authorities\n\nIdentifiable data may be accessed by staff or contractors working on behalf of the authority responsible for the register."
+  },
+  {
+    "objectID": "EL3.html#individual-level-data-for-research",
+    "href": "EL3.html#individual-level-data-for-research",
+    "title": "EL2: Swedish legislation",
+    "section": "Individual-level data for research",
+    "text": "Individual-level data for research\n\nAccess to identifiable personal or health data for research purposes generally requires:\n\napproval under the Ethical Review Act,\na lawful basis under GDPR,\nand a disclosure decision under OSL by the data-holding authority.\n\nData are typically provided under strict conditions (e.g. pseudonymisation, secure environments)."
+  },
+  {
+    "objectID": "EL3.html#references",
+    "href": "EL3.html#references",
+    "title": "EL2: Swedish legislation",
+    "section": "",
+    "text": "Görman, Ulf. 2024. “Guide to the Ethical Review of Research on Humans.” Uppsala. https://etikprovningsmyndigheten.se/wp-content/uploads/2024/05/Guide-to-the-ethical-review_webb.pdf.\n\n\n“Public Access and Secrecy | Swedish National Data Service.” 2025. https://snd.se/en/research-data-support/introduction-legal-aspects-research/public-access-and-secrecy."
   },
   {
     "objectID": "handouts.html",
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-21."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-01-24."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -1281,53 +1337,74 @@
     "text": "How the Data Act Relates to Health Data\n\nThe Data Act does not primarily target health registers\nHowever, it may affect:\n\ndata generated by medical devices\ndigital health services\nhealth-related IoT data\n\n\n➡️ Health data may fall under the Data Act depending on how it is generated."
   },
   {
-    "objectID": "handouts.html#swedish-law",
-    "href": "handouts.html#swedish-law",
+    "objectID": "handouts.html#literature",
+    "href": "handouts.html#literature",
     "title": "Handouts",
-    "section": "Swedish law",
-    "text": "Swedish law\n\n\n\n\n\n\nNoteSwedish law\n\n\n\nThe Swedish legislation will be discussed as an example. It will be examined through discussions in a later seminar (where you will have access to the information below). You are not required to memorize individual laws or specific legal provisions."
+    "section": "Literature",
+    "text": "Literature\n\n\n\n\n\n\nNoteExamination\n\n\n\nThe Swedish legal system will only be examined during the seminair ES1 (not in the DISA exam). You are allowed to use the sources during the seminair (no need to memorize individual laws and paragraphs by names and numbers). Nevertheless, read the literature before the seminair!\n\n\n\nLecture handouts\nWeb link (“Public Access and Secrecy | Swedish National Data Service” 2025)\nReport (Görman 2024). Most important: p. 26-32, 42-45, 49 and 75-90.\nSwedish reading students might enjoy lagen.nu for source material (however, this is not required for the course).\n\nA translation using Google translate might be used for non Swedish reading students. However, please note that legal texts are formally valid only in their original language."
   },
   {
-    "objectID": "handouts.html#backgrund-of-swedish-law",
-    "href": "handouts.html#backgrund-of-swedish-law",
+    "objectID": "handouts.html#swedish-legal-system",
+    "href": "handouts.html#swedish-legal-system",
     "title": "Handouts",
-    "section": "Backgrund of Swedish law",
-    "text": "Backgrund of Swedish law\nOptional reading\n\nFundamental laws (“grundlagar”) decided by the parliament but stable over time\n\nNot a “constitution”\n\nOrdinary laws (parliament)\n\nNew ones all the time\nNew laws to update existing laws\n\nPublished in Svensk författningsamling, SFS\n\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
+    "section": "Swedish legal system",
+    "text": "Swedish legal system"
+  },
+  {
+    "objectID": "handouts.html#backgrund-to-swedish-law",
+    "href": "handouts.html#backgrund-to-swedish-law",
+    "title": "Handouts",
+    "section": "Backgrund to Swedish law",
+    "text": "Backgrund to Swedish law\n\nFundamental laws (“grundlagar”) decided by the parliament but stable over time\n\nAsort of codified constitution distributed in four parts\nThe Freedom of the Press Act (Tryckfrihetsförordningen) of relevance\n\nOrdinary laws (parliament)\n\nNew ones all the time (previously twice a year)\nNew laws to update existing laws\n\nPublished in Svensk författningsamling, SFS\n\nDigitally since 2018-04-01 (previously printed)\nThe “big blue book” is only a smaller collection of important laws\n\nordinances (“förordning”) from the goverment to implement laws\nregulations (“föreskrifter”) from authorities to implement laws and ordinances"
   },
   {
     "objectID": "handouts.html#two-main-branches-of-law",
     "href": "handouts.html#two-main-branches-of-law",
     "title": "Handouts",
     "section": "Two main branches of law",
-    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must and can do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here"
+    "text": "Two main branches of law\n\nCivil and criminal law:\n\nstate what you can not do (everything else is “legal”)\nHandled by ordinary courts\nEx: Brottsbalken kap 20 om tjänstefel m.m. (The Swedish Penal Code (Brottsbalken), Chapter 20 — Offences Relating to Public Office.)\n\nPublic law: relationship between individuals and the state etc\n\nstate what the public authorities must and can do (everything else is “illegal”)\nHandled by administrative courts\nWhat we mostly care of here\n\n\n\n\n\n\n\n\nNoteThe principle of freedom vs. the principle of legality\n\n\n\nPrivate actors are generally free unless restricted by law, while public authorities require explicit legal authority to act."
   },
   {
-    "objectID": "handouts.html#tryckfrihetsförordningen-tf",
-    "href": "handouts.html#tryckfrihetsförordningen-tf",
+    "objectID": "handouts.html#fundamental-law",
+    "href": "handouts.html#fundamental-law",
     "title": "Handouts",
-    "section": "Tryckfrihetsförordningen (TF)",
-    "text": "Tryckfrihetsförordningen (TF)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\nEveryone has the right to access official documents (TF 2.1)\nbut there are exceptions (TF 2.2)\n\ne.g., if disclosure would violate privacy or national security\nif so, the goverment has the right to provide ordinary laws that restrict access (which they do …)"
+    "section": "Fundamental law",
+    "text": "Fundamental law"
   },
   {
-    "objectID": "handouts.html#offentlighets--och-sekretesslagen-osl",
-    "href": "handouts.html#offentlighets--och-sekretesslagen-osl",
+    "objectID": "handouts.html#the-freedom-of-the-press-act-tf",
+    "href": "handouts.html#the-freedom-of-the-press-act-tf",
     "title": "Handouts",
-    "section": "Offentlighets- och sekretesslagen (OSL)",
-    "text": "Offentlighets- och sekretesslagen (OSL)\n\nLaw that regulates public access to official documents and secrecy\nApplies to public authorities and institutions\nDefines what information is considered secret and under what circumstances"
+    "section": "The Freedom of the Press Act (TF)",
+    "text": "The Freedom of the Press Act (TF)\n(🇸🇪: Tryckfrihetsförordningen)\n\nWorld’s oldest freedom of the press law (since 1766)\nChapter 2: Public access to official documents\nApplies to public authorities and institutions\n\nIncluding health care registers and medical records held by public authorities\n\n\n\nIn order to promote a free exchange of opinion, comprehensive and pluralistic information, and free artistic creation, everyone shall have the right of access to official documents. [TF 2.1]\n\nBut there are exceptions (TF 2.2): - e.g., if disclosure would violate privacy or national security - if so, the goverment has the right to provide ordinary laws that restrict access (which they do!)"
+  },
+  {
+    "objectID": "handouts.html#confidentiality",
+    "href": "handouts.html#confidentiality",
+    "title": "Handouts",
+    "section": "Confidentiality",
+    "text": "Confidentiality"
+  },
+  {
+    "objectID": "handouts.html#the-public-access-to-information-and-secrecy-act-osl",
+    "href": "handouts.html#the-public-access-to-information-and-secrecy-act-osl",
+    "title": "Handouts",
+    "section": "The Public Access to Information and Secrecy Act (OSL)",
+    "text": "The Public Access to Information and Secrecy Act (OSL)\n(🇸🇪: Offentlighets- och sekretesslagen)\n\nLaw that regulates public access to official documents and confidentiality\nApplies to public authorities and institutions\nDefines what information is considered confidential and under what circumstances"
   },
   {
     "objectID": "handouts.html#osl-chap-21",
     "href": "handouts.html#osl-chap-21",
     "title": "Handouts",
     "section": "OSL Chap 21",
-    "text": "OSL Chap 21\nSecrecy for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
+    "text": "OSL Chap 21\nConfidentiality for private individuals’ personal circumstances no mather the context\n\nE.g., health data, economic circumstances, family relations\n\n\nOFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, if it can be assumed that disclosure of the information would cause significant harm to the individual or to someone closely related to them."
   },
   {
     "objectID": "handouts.html#osl-chap-24",
     "href": "handouts.html#osl-chap-24",
     "title": "Handouts",
     "section": "OSL Chap 24",
-    "text": "OSL Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nSpecial research databases etc\nSome regulations for research ethics boards"
+    "text": "OSL Chap 24\nSecrecy for the protection of individuals in research and statistics.\n\nA few special research databases etc\nSome regulations for research ethics boards"
   },
   {
     "objectID": "handouts.html#osl-chapter-25",
@@ -1344,11 +1421,18 @@
     "text": "OSL Chapter 10\nProvisions on disclosure overriding secrecy and provisions on exemptions from secrecy\n\nOFS 10.28: Secrecy does not prevent information from being disclosed to another authority where a duty to provide information follows from an act or an ordinance.\n\n\nThis would apply to data sharing for research purposes when there is a legal basis for that"
   },
   {
-    "objectID": "handouts.html#patientdatalagen-pdl",
-    "href": "handouts.html#patientdatalagen-pdl",
+    "objectID": "handouts.html#health-care-data",
+    "href": "handouts.html#health-care-data",
     "title": "Handouts",
-    "section": "Patientdatalagen (PDL)",
-    "text": "Patientdatalagen (PDL)\nThe Patient Data Act (PDL)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
+    "section": "Health care data",
+    "text": "Health care data"
+  },
+  {
+    "objectID": "handouts.html#the-patient-data-act-pdl",
+    "href": "handouts.html#the-patient-data-act-pdl",
+    "title": "Handouts",
+    "section": "The Patient Data Act (PDL)",
+    "text": "The Patient Data Act (PDL)\n(🇸🇪: Patientdatalagen)\n\nregulates the processing of personal data within health and medical care in Sweden.\nApplies to healthcare providers (public and private).\nMain objectives:\n\nProtect patient privacy\nEnsure safe and effective healthcare\nEnable secondary use of health data under strict conditions"
   },
   {
     "objectID": "handouts.html#chapter-7-pdl",
@@ -1358,11 +1442,11 @@
     "text": "Chapter 7 PDL\nNational and regionel quality registers\nOpt-out for patients (every one is included by default until they opt out)\n\nPDL 7.4: Personal data in national and regional quality registers may be processed for the purpose of systematically and continuously developing and ensuring the quality of healthcare.\n\nPDL 7.5: Personal data processed for the purposes set out in Section 4 may also be processed for the purposes of\n\nthe production of statistics,\nestimating numbers for the planning of clinical research,\nresearch within health and medical care,\ndisclosure to a party that will use the data for purposes referred to in Sections 1 and 3 or in Section 4, and\n…"
   },
   {
-    "objectID": "handouts.html#lag-om-hälsodataregister-sfs-1998543",
-    "href": "handouts.html#lag-om-hälsodataregister-sfs-1998543",
+    "objectID": "handouts.html#the-health-data-registers-act",
+    "href": "handouts.html#the-health-data-registers-act",
     "title": "Handouts",
-    "section": "Lag om hälsodataregister (SFS 1998:543)",
-    "text": "Lag om hälsodataregister (SFS 1998:543)\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
+    "section": "The Health Data Registers Act",
+    "text": "The Health Data Registers Act\n(🇸🇪: Lag om hälsodataregister [SFS 1998:543])\nThis law regulates health data registers outside the health and medical care system. A new law is being proposed to replace this one.\n\n§ 1: A central administrative authority within the health care sector may carry out automated processing of personal data in health data registers. The central administrative authority that carries out the processing of personal data is the controller.\n\n§ 3: Personal data in a health data register may be processed for for the following purposes:\n\nthe production of statistics,\nfollow-up, evaluation and quality assurance of health and medical care, and\nresearch and epidemiological studies"
   },
   {
     "objectID": "handouts.html#specific-registers",
@@ -1372,11 +1456,18 @@
     "text": "Specific registers\n\n\n\n\n\n\n\n\nRegister (Swedish)\nRegister (English)\nGoverning act / ordinance\n\n\n\n\nFolkbokföringen\nPopulation Register\nPopulation Registration Act (1991:481); Population Registration Ordinance (1991:749)\n\n\nTotalbefolkningsregistret (RTB)\nTotal Population Register\nOfficial Statistics Act (2001:99); Official Statistics Ordinance (2001:100)\n\n\nNationella patientregistret\nNational Patient Register\nHealth Data Act (1998:543); Ordinance on the National Patient Register (2001:707)\n\n\nCancerregistret\nSwedish Cancer Register\nHealth Data Act (1998:543); Cancer Register Ordinance (2001:709)\n\n\nDödsorsaksregistret\nCause of Death Register\nHealth Data Act (1998:543); Cause of Death Register Ordinance (2001:709)\n\n\nLäkemedelsregistret\nPrescribed Drug Register\nAct on the Prescribed Drug Register (2005:258); Ordinance (2005:363)\n\n\nMedicinska födelseregistret\nMedical Birth Register\nHealth Data Act (1998:543); Medical Birth Register Ordinance (2001:708)\n\n\nTandhälsoregistret\nDental Health Register\nHealth Data Act (1998:543); Dental Health Register Ordinance (2008:194)"
   },
   {
-    "objectID": "handouts.html#arkivdatalagen-adl",
-    "href": "handouts.html#arkivdatalagen-adl",
+    "objectID": "handouts.html#other-legislation",
+    "href": "handouts.html#other-legislation",
     "title": "Handouts",
-    "section": "Arkivdatalagen (ADL)",
-    "text": "Arkivdatalagen (ADL)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example healthcare data is often required to be kept for at least 10 years"
+    "section": "Other legislation",
+    "text": "Other legislation"
+  },
+  {
+    "objectID": "handouts.html#the-archives-data-act-adl",
+    "href": "handouts.html#the-archives-data-act-adl",
+    "title": "Handouts",
+    "section": "The Archives Data Act (ADL)",
+    "text": "The Archives Data Act (ADL)\n(🇸🇪 Arkivdatalagen)\n\nRegulates the management of public records and archives\nApplies to public authorities and institutions\nDiffernt authorities then have different rules for how long data must be kept\n\nFor example research data is often required to be kept for at least 10 (or 25) years"
   },
   {
     "objectID": "handouts.html#gdpr-and-swedish-law",
@@ -1386,11 +1477,60 @@
     "text": "GDPR and Swedish law\n\nGDPR is directly applicable in Sweden\nThere are refereces to GDPR in Swedish laws such as PDL and OSL\nSwedish laws may provide additional regulations and requirements beyond GDPR\nData protection authorities in Sweden: Integritetsskyddsmyndigheten (IMY)\nShould be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries"
   },
   {
-    "objectID": "handouts.html#etikprövningslagen-epl",
-    "href": "handouts.html#etikprövningslagen-epl",
+    "objectID": "handouts.html#statistics-and-research",
+    "href": "handouts.html#statistics-and-research",
     "title": "Handouts",
-    "section": "Etikprövningslagen (EPL)",
-    "text": "Etikprövningslagen (EPL)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research projects conducted in Sweden\nRequires ethical review and approval by an ethics review board\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies\nSwedish Ethical Review Authority"
+    "section": "Statistics and research?",
+    "text": "Statistics and research?\n\nA statistical purpose refers to the production of aggregated information describing groups or populations (e.g. summary tables or prevalence estimates), and does not include analyses or decisions concerning identifiable individuals (e.g. individual predictions or case assessments).\n\nDoes not require particular statistical methods etc\n\nResearch refers to systematic activities aimed at generating new, generalisable knowledge, and excludes activities focused on individual decisions, control, or routine administration."
+  },
+  {
+    "objectID": "handouts.html#the-ethical-review-act-epl",
+    "href": "handouts.html#the-ethical-review-act-epl",
+    "title": "Handouts",
+    "section": "The Ethical Review Act (EPL)",
+    "text": "The Ethical Review Act (EPL)\n(🇸🇪: Etikprövningslagen)\n\nRegulates ethical review of research involving humans (including their data!)\n\nHad received some critisism and might be revised\n\nApplies to research conducted in Sweden\nRequires ethical review and approval by the Swedish Ethical Review Authority\nAims to protect the rights, safety, and well-being of research participants\nBased on the Declaration of Helsinki and other international ethical guidelines\nOne application for each new research project\n\nAmmendments for changes in already approved projects\n\nApplication fees applies"
+  },
+  {
+    "objectID": "handouts.html#access-to-data",
+    "href": "handouts.html#access-to-data",
+    "title": "Handouts",
+    "section": "Access to data",
+    "text": "Access to data"
+  },
+  {
+    "objectID": "handouts.html#ublic-non-sensitive-individual-information",
+    "href": "handouts.html#ublic-non-sensitive-individual-information",
+    "title": "Handouts",
+    "section": "ublic, non-sensitive individual information",
+    "text": "ublic, non-sensitive individual information\n\nCertain individual data are public by default (e.g. declared income, address).\nSuch information may be accessed upon request from authorities like the Swedish Tax Agency, unless specific secrecy provisions apply.\nMight still not be used for research without ethical review"
+  },
+  {
+    "objectID": "handouts.html#aggregated-data-including-health-data",
+    "href": "handouts.html#aggregated-data-including-health-data",
+    "title": "Handouts",
+    "section": "Aggregated data (including health data)",
+    "text": "Aggregated data (including health data)\n\nAggregated information that cannot be linked to identifiable individuals may often be disclosed.\nAggregated health statistics produced through “automated processes” might be disclosed upon request."
+  },
+  {
+    "objectID": "handouts.html#individual-level-health-data-for-statistical-purposes",
+    "href": "handouts.html#individual-level-health-data-for-statistical-purposes",
+    "title": "Handouts",
+    "section": "Individual-level health data for statistical purposes",
+    "text": "Individual-level health data for statistical purposes\n\nAccess to identifiable health data is possible within authorities conducting statistical activities.\nThis typically requires that the data are used solely for statistical purposes,"
+  },
+  {
+    "objectID": "handouts.html#individual-level-data-via-register-holding-authorities",
+    "href": "handouts.html#individual-level-data-via-register-holding-authorities",
+    "title": "Handouts",
+    "section": "Individual-level data via register-holding authorities",
+    "text": "Individual-level data via register-holding authorities\n\nIdentifiable data may be accessed by staff or contractors working on behalf of the authority responsible for the register."
+  },
+  {
+    "objectID": "handouts.html#individual-level-data-for-research",
+    "href": "handouts.html#individual-level-data-for-research",
+    "title": "Handouts",
+    "section": "Individual-level data for research",
+    "text": "Individual-level data for research\n\nAccess to identifiable personal or health data for research purposes generally requires:\n\napproval under the Ethical Review Act,\na lawful basis under GDPR,\nand a disclosure decision under OSL by the data-holding authority.\n\nData are typically provided under strict conditions (e.g. pseudonymisation, secure environments)."
   },
   {
     "objectID": "handouts.html#history",
