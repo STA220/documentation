@@ -1,0 +1,32 @@
+---
+title: "EL8: Data sources"
+subtitle: "Data bases (SQL), SAS, XML, JSON, parquett, API calls"
+reading: "[@nguyen2022a, ch. 2]"
+format:
+  revealjs:
+    theme: blood
+    transition: fade
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
+    incremental: false
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+  docx: default
+bibliography: references.bib
+---
+
+## Reading
+
+- [@nguyen2022a, ch. 2]
+    - Docker: You should be aware of the concept. Docker is used also for statistical analysis. However, we will not  use it for the course. 
+    - Databases: it is important to understand some basic concepts. You might, however, ignore sections about "(Hyper)graph databases". Try to understand the SQL code even though you might not need to write such code on your own.
+
+**Recommended references:**
+
+-   This might be interesting (but not mandatory) to read: [An Introduction to Rocker: Docker Containers for R](https://journal.r-project.org/articles/RJ-2017-065/index.html) read.

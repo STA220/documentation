@@ -11,6 +11,13 @@ format:
     smaller: true
     scrollable: true
     incremental: false
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+  docx: default
 bibliography: references.bib
 ---
 

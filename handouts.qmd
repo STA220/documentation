@@ -25,6 +25,27 @@ params:
 Those handouts where last modified: **`r Sys.Date()`**.
 :::
 
+## Separate handouts for each lecture
+
+```{r}
+#| results: asis
+#| echo: false
+downloads <-
+  dplyr::tibble(file = dir(".", "EL.*\\.qmd")) |>
+  dplyr::mutate(
+    session = gsub("_site/|\\.qmd", "", file),
+    PDF = sprintf("[PDF](%s.pdf)", session),
+    Word = sprintf("[DOCX](%s.docx)", session)
+  ) |>
+  dplyr::arrange(readr::parse_number(session)) |>
+  dplyr::select(-file)
+
+if (!knitr::pandoc_to("typst")) {
+  downloads |>
+    gt::gt() |>
+    gt::fmt_markdown(columns = c(PDF, Word))
+}
+```
 
 ```{r}
 #| results: asis

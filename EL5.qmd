@@ -1,7 +1,7 @@
 ---
-title: "EL5: Analysis pipelines"
-subtitle: "{targets} and reproducible analysis"
-reading: ""
+title: "EL5: Reproducibility"
+subtitle: "Reproducible analysis and {targets}"
+reading: "[@nguyen2022a, ch. 2], [@baker2016], [@deoliveiraandrade2025], [@peng2021]"
 format:
   revealjs:
     theme: blood
@@ -10,30 +10,88 @@ format:
     css: styles.css
     smaller: true
     scrollable: true
-    incremental: true
+    incremental: false
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+  docx: default
+bibliography: references.bib
+execute:
+  echo: true
 ---
 
-## Not a single R script
+## Reading
 
--   Real projects are more complex than a single R script!
--   Multiple scripts
--   Data files
--   Documentation
--   Reports
--   Version control
--   Reproducible workflows
+-   @baker2016 and @deoliveiraandrade2025 motivates why reproducible analysis is important!
+-   @peng2021 introduce and elaborate more on the subject.
+-   @nguyen2022a only read section "Basic Introduction to Docker and Containers" in chapter 2 (but you do not need to install Docker for this course)
 
-## Project structure
+------------------------------------------------------------------------
 
-Common file structures
+::: callout-tip
+## Consider
 
--   Help you organize your thoughts
--   Help others to collaborate
--   simplifies paths used in your code
+-   After reading papers like these, one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.
 
-![](images/paste-1.png)
+-   Reproducibility might sound like a good thing but how much does the technical details matter if we are not allowed to freely share the underlying health care data anyway?
+:::
 
-## Example structure
+**For reference:**
+
+-   [Targets overview](https://docs.ropensci.org/targets/articles/overview.html)
+
+-   [Target manual](https://books.ropensci.org/targets/)
+
+## Practice
+
+A workshop with 7 parts was given at the R Medicine conference 2025. Practice according to part 1-3 (part 4-7 are slightly outside the scope of the course and only recommended if you have additional time and interest).
+
+Clone [this GitHub repo](https://github.com/rsangole/2025-R-Medicine_targets-workshop). Exercies are found in the `code` folder.
+
+Follow the recording from the workshop while you are practicing: [The power of {targets} package for reproducible data science](https://r-consortium.org/posts/the-power-of-targets-package-for-reproducible-data-science/)
+
+::: callout-note
+# Notes on the recording
+
+-   The full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).
+-   RStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.
+-   You may recognise some of the material from Part 3, as presented during the lecture
+:::
+
+This practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!
+
+------------------------------------------------------------------------
+
+> An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. / Buckheit & Donoho
+
+> \[...\] importance of having a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al. 2021
+
+# Reproducible analysis
+
+**The definition** of reproducible research generally consists of the following elements.
+
+> A published data analysis is reproducible if the analytic data sets and the computer code used to create the data analysis are made available to others for independent study and analysis
+
+This is rather vague ...
+
+## Why is this a problem?
+
+-   Many, even simple, results depend on a precise record of procedures and processing and the order in which they occur.
+
+-   Many statistical algorithms have many tuning parameters that can dramatically change the results if they are not inputted exactly the same way as was done by the original investigators.
+
+-   If any of these myriad details are not properly recorded in the code, then there is a significant possibility that the results produced by others will differ from the original investigators’ results.
+
+![](images/paste-7.png)
+
+------------------------------------------------------------------------
+
+![](images/paste-8.png)
+
+## Recap folder structure
 
 ```         
 /.../my_project/
@@ -47,71 +105,156 @@ Common file structures
   ├── R/               - your saved R functions
       ├── function1.R 
       └── function2.R
-  ├── ...
-  ├── ...
-  └── _targets.R       - targets pipeline script (WHAT??? :-))
+  ├── reports/
+  └── _targets.R       - targets pipeline script
 ```
 
-## `README.md`
+## Pipeline
 
--   Document the purpose of the project
--   What is it about?
--   What is the aim?
--   Who to contact for questions?
--   In what circumstances was it created?
+-   A pipeline is a computational workflow that does statistics, analytics, or data science.
 
-Markdown format (simple text with some possible formatting)
+-   A pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.
 
-## Markdown
+-   Pipeline tools coordinate the pieces of computationally demanding analysis projects.
 
-TODO: intro and give examples + link etc
+## Long running processes
 
-## `data` folder
+-   Imaigine you have nice R-scripts to take care of every step in your project
+-   You have either one very very ... very long file or a bunch of files which you execute in order
+-   It takes two weeks to run all the scripts (not unrealistic for a big project!)
+-   You report the result to your collaborators
+-   They ask you to update a tiny detail somewhere in the middle of your workflow
+-   You need to rerun everything (while you're screaming in frustration)!
+-   This will repeat again and again until you finally
+    a)  Lose your mind and quit your job
+    b)  Adapt a more reproducible workflow
 
--   Store your data files here as they are when you get them
--   Avoid any modifications to the raw files!
--   It is very easy to forget what you do if it can not be traced by code
--   Do NOT include this folder in version control!
--   Git is not good at handling large files
--   Sensitive data should not be shared!
--   Add `data/*` to your `.gitignore` file
--   In realistic projects, data might come in varying formats
-    -   csv, txt, xlsx, sas7bdat, sav, dta, etc (we will cover some of these later)
-    -   some files might be very big (gigabytes not uncommon)
+## Steps-wise procedure
 
-## `.gitignore` fiile
+-   The default setting in R is to save the workspace to disk when you end the sesion
+-   This is usually not recommended and therefore often disabled in for example RStudio
+    -   (If you re-start your sessin at a later point you might have no idea how the restored objects relates to each other.)
+-   You may still want to execute things in a more step-wise fasion
+    1.  Convert big data files to something R-friendly
+    2.  Perform some data management (select relevant columns ond rows), cleaning, add calculated variables etc
+    3.  Perform some exploratory data analysis (EDA) to get a better understanding of the data
+    4.  Perform some statistical analysis
+    5.  Report and visualize the results
 
-TODO
+## Caching
 
-## `R` folder
+-   If you perform each step in different script files, you might start each file with some input and end it with some output
+-   The output from the previous script is used as input in the next script
+-   `save()` and `load()` are standard but can be very slow for large objects
+-   `saveRDS()` and `loadRDS()` use serialization and are now adays much more efficient
+-   `qs2::qs_save()` and `qs2::qs_read()` (or `qs2::qd_save()` and `qs2::qd_read()`) from the [qs2 package](https://github.com/qsbase/qs2) are currently "state-of-the-art" (but things tend to change quickly)
 
--   Store your R functions here
-  - You have learned about R functions in the earlier R course
-  - We will cover some more of that later
--   Document their purpose inline!
--   Helps you to reuse code
--   Easier to read main scripts if functions are defined elsewhere
--   Easier to test and debug code
-  - we eill not cover testing but some about debugging later
--   Easier to share code between projects
+## Benchmarking
 
-## `reports`
+#### Single-threaded
 
--   Separate reports from analysis/data management but integrate them with the analysis pipeline
--   Quarto documents
--   Documemnt your analysis and thoughts/decisions along the way
--   Include figures and tables
--   To share with external collaborators
+| Algorithm       | Compression | Save Time (s) | Read Time (s) |
+|-----------------|-------------|---------------|---------------|
+| qs2             | 7.96        | 13.4          | 50.4          |
+| qdata           | 8.45        | 10.5          | 34.8          |
+| base::serialize | 1.1         | 8.87          | 51.4          |
+| saveRDS         | 8.68        | 107           | 63.7          |
+| fst             | 2.59        | 5.09          | 46.3          |
+| parquet         | 8.29        | 20.3          | 38.4          |
+| qs (legacy)     | 7.97        | 9.13          | 48.1          |
 
-## `_targets.R` file
+#### Multi-threaded (8 threads)
 
-Use the `targets` package to create a reproducible data analysis pipeline
+| Algorithm   | Compression | Save Time (s) | Read Time (s) |
+|-------------|-------------|---------------|---------------|
+| qs2         | 7.96        | 3.79          | 48.1          |
+| qdata       | 8.45        | 1.98          | 33.1          |
+| fst         | 2.59        | 5.05          | 46.6          |
+| parquet     | 8.29        | 20.2          | 37.0          |
+| qs (legacy) | 7.97        | 3.21          | 52.0          |
 
-::: video-wrapper
-<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+-   `qs2`, `qdata` and `qs` with `compress_level = 3`
+-   `parquet` via the `arrow` package using zstd `compression_level = 3`
+-   `base::serialize` with `ascii = FALSE` and `xdr = FALSE`
 
-</iframe>
-:::
+**Datasets used**
+
+-   `1000 genomes non-coding VCF` 1000 genomes non-coding variants (2743 MB)
+-   `B-cell data` B-cell mouse data, Greiff 2017 (1057 MB)
+-   `IP location` IPV4 range data with location information (198 MB)
+-   `Netflix movie ratings` Netflix ML prediction dataset (571 MB)
+
+These datasets are openly licensed and represent a combination of numeric and text data across multiple domains. See `inst/analysis/datasets.R` on Github.
+
+## Who cares?
+
+-   Imagine you work with data for the whole population (\> 10 M people)
+-   You have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =\> 10 \* 20 = 200 M rows of data
+-   You are working in a secure environment were data is stored on a network server (no HDD drive)
+-   The same environment is shared by 20 other researchers and you are all competing for the same band-width
+-   It will get increasonly frusrating just to load and save the big files
+-   You might need to wait for half an hour before you can start working
+
+## Automated process
+
+-   Instead of relying on individual R scripts, use a reproducible pipeline.
+-   This is common practice in software development
+    -   For example GNU Make is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.
+-   Iteration during project development (which is equally relevant for a health data project), will be much faster and reliable.
+-   Caching as described abowe is automated and you only need to read/write files to disk/network storage when actually needed.
+
+## targets package
+
+-   The `{targets}` package is a Make-like pipeline tool for statistics and data science in R.
+
+-   The package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects.
+
+-   If all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.
+
+-   The tasks themselves are called “targets”, and they run the functions and return R objects.
+
+-   The `targets` package orchestrates the targets and stores the output objects to make your pipeline efficient, painless, and reproducible.
+
+## Example
+
+**Data:** survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960's. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey. The health examination is conducted in a mobile examination centre (MEC).
+
+**Question:** Is there any association between gender and BMI?
+
+```{r}
+# pak::pkg_install("NHANES")
+str(NHANES::NHANES)
+```
+
+## R script
+
+A normal R script might look like:
+
+```{r}
+# pak::pkg_install("NHANES")
+library(tidyverse)
+
+df <- as_tibble(NHANES::NHANES)
+tbl <- count(df, Gender)
+tst <- t.test(BMI ~ Gender, df)
+gg <- ggplot(df, aes(BMI, color = Gender)) + geom_density()
+```
+
+-   You must run the script in order (but might not always do that) ... if so, confusion will arise!
+
+-   objects df, tbl and tst only lives in the active session
+
+    -   No problem in this example
+
+    -   but working with big and complex data might introduce long-running processes =\> time consuming!
+
+## Results
+
+```{r}
+#| echo: false
+gg
+tst
+```
 
 ## Pipeline
 
@@ -119,9 +262,7 @@ Use the `targets` package to create a reproducible data analysis pipeline
 -   Define dependencies between targets
 -   Automatically track changes and rerun only necessary parts
 
----------
-
-![](images/paste-2.png)
+------------------------------------------------------------------------
 
 ## Why?
 
@@ -130,9 +271,136 @@ Use the `targets` package to create a reproducible data analysis pipeline
 -   You want to be able to reproduce your results later
 -   You want to share your workflow with others
 
+## target
 
+Reformulate from ordinary object assignment:
 
-## Reading
+```{r}
+df <- as_tibble(NHANES::NHANES)
+```
 
-- [Targets overview](https://docs.ropensci.org/targets/articles/overview.html)
-- [Target manual](https://books.ropensci.org/targets/)
+to a target
+
+```{r}
+library(targets)
+tar_target(df, as_tibble(NHANES::NHANES))
+```
+
+## Put all targets in a list
+
+```{r}
+#| results: "hide"
+list(
+  tar_target(df, as_tibble(NHANES::NHANES)),
+  tar_target(tbl, count(df, Species)),
+  tar_target(tst, t.test(BMI ~ Gender, df)),
+  tar_target(gg, {
+    ggplot(df, aes(BMI, color = Gender)) + geom_density()
+  })
+)
+```
+
+## `_targets.R` file
+
+Put that list into a file `_targets.R` together with some additional code:
+
+```{r}
+#| results: "hide"
+library(targets)
+tar_source() # Source all scripts with function stored in R folder
+tar_option_set(
+  # Specify all needed packages here
+  packages = c("tidyverse"),
+  # Format used for caching (qs or actually qs2 is best for big data)
+  format = "qs",
+  # Additional settings ...
+  seed = 123
+)
+
+list(
+  tar_target(df, as_tibble(NHANES::NHANES)),
+  tar_target(tbl, count(df, Species)),
+  tar_target(tst, t.test(BMI ~ Gender, df)),
+  tar_target(gg, {
+    ggplot(df, aes(BMI, color = Gender)) + geom_density()
+  })
+)
+```
+
+## Benefits
+
+-   execute the whole project by `tar_make()`
+-   intermediate steps are cached and cached objects retreived by `tar_load()` or `tar_read()`
+-   dependency among individual steps can be visualized: `tar_visnetwork()`
+
+## Dependency graph
+
+![](images/paste-2.png)
+
+## Live show
+
+```{bash}
+#| eval: false
+cd
+git clone https://github.com/STA220/targets.git
+cd targets
+positron .
+```
+
+Or perform those steps from within Positron.
+
+------------------------------------------------------------------------
+
+# Different R-versions
+
+-   Imagine you finish your research project and you submit a manuscript to a journal
+-   The journal comes back one year later (they didn't have time until know) and one reviewer ask you to double check some steps of the analysis
+-   You make some modifications and rerun your pipelines.
+-   But it doesn't work!
+-   Half a year ago you updated your R installation and a week ago all of your installed packages.
+    -   One package was retired from CRAN (could happen even though there was nothing wrong with the package when you used it)
+    -   One package has deprecated one of the functions you previously used
+    -   On package has redesigned the output format from a specific function you used
+-   😱
+
+![](images/paste-9.png)
+
+## Pros and cons
+
+-   It is always a good idea to be able to reproduce exactly what you did!
+
+-   But if you never update you might miss essential bug fixes.
+
+-   If your results change, how can you know which version was the most accurate?
+
+Best practice to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages ... because you have all the time in the world and nothing more important to do right ... 😂
+
+## Different operating systems
+
+-   R should behave similar on different operating systems.
+
+-   Exceptions nevertheless exist!
+
+    -   `parallel::mclapply()` behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.
+
+    -   `sort(c("ä", "a", "z"))` might differ due to locale settings
+
+![](images/paste-10.png)
+
+## Combining all?
+
+-   you could very well use both targets + renv + git + GitHub etc
+
+-   At some point you might start to wonder whether you are a medical statistician or a software developer ... and the more complex/esoteric tools you use, the more difficult it might be to collaborate with others
+
+-   Try to find some middle ground ... but always be open to new ideas!
+
+------------------------------------------------------------------------
+
+![](images/paste-11.png)
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+![](images/paste-13.png)

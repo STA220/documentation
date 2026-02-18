@@ -15,8 +15,6 @@ website:
           - EL2.qmd
           - EL3.qmd
           - EL4.qmd
-          - EL4.qmd
-          - EL4.qmd
           - EL5.qmd
           - EL6.qmd
           - EL7.qmd
@@ -24,14 +22,15 @@ website:
           - EL9.qmd
           - EL10.qmd
           - EL11.qmd
-      - text: Handouts
-        href: handouts.qmd
       - text: Computer exercises
         menu:
           - ECS1.qmd
       - text: Seminars
         menu:
           - ES1.qmd
+      - text: Handouts
+        href: handouts.qmd
+
 
 format:
   html:

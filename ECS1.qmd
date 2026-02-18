@@ -38,7 +38,7 @@ You will now re-use your data and R-scripts from the first computer exercise in 
 4.  Open the already existing .`gitignore` file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).
 5.  You should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in the "data" subfolder. Simply type "data/\*" on a new line in the `.gitignore` file and save the file.
 6.  Copy your old data files used in `CSQ` (SPSS-files, Excel, or whatever format they are in) to the data folder. 
-7.  Check that the the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git).
+7.  Check that the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git).
 8.  Open the `README.md` file and make some changes to that file. Briefly describe what this repo is used for; the purpose of `CSQ` etc. Make some spelling misstakes on purpose :-)
 9.  Commit your changes (as you did for the previous `crap` repo).
 10. Press "Publish to GitHub" (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!
@@ -49,12 +49,12 @@ You will now re-use your data and R-scripts from the first computer exercise in 
 15. The changes you made online should now be visable locally as well.
 16. Go back to the repo website. Click "Issues" \> "New issues" and give yourself a task to complete: "Include all R scripts from CSQ in the R folder".
 17. In Positron: Perform the task you previosly gave yourself through the issue tracker.
-18. Commit changes and in the commit message, write "Fix #N" where N is the number of the issue you were working on (probably no 1, hence "Fix #1"). Sync the local repo with GitHub.
+18. Commit your changes and in the commit message, write `Fix #N` where `N` is the number of the issue you were working on (probably no 1, hence `Fix #1`). Sync the local repo with GitHub.
 19. Have a new look at the issue and check if it was updated/closed automatically by your commit.
 
 To share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now.
 
-## Source code for STA220 website
+## Source code for the STA220 website
 
 The course web site is itself a GitHub repo! You can see a small link and icon "View source" in the right hand menu. Explore those links. Clone the repo, play around! File an issue or make some edits if you find anything to improve! Make a pull request if you have concrete suggestions!
 
@@ -68,7 +68,10 @@ ROpenSci is an open community of R developers. Help them according to their inst
 3.  Read everything that is written/discussed in your issue of choice and try to understand the problem/task.
 4.  When you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.
 5.  Try to fix the issue! Note that this can be (VERY!) difficult and you don't have to actually fix it if it seems impossible. But don't give up to easy!
-6.  Submit your changes locally with an informative message and a reference to "#N" (where N is the issue number). Do this regardless if you fixed the issue or not.
+6.  Submit your changes locally with an informative message and a reference to `#N` (where `N` is the issue number). Do this regardless if you fixed the issue or not.
 7.  If you were able to fix the issue, submit your suggested changes back to GitHub (don't do this if you were not able to fix it).
 8.  If you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (for example click on the smiley at the end of a comment you agree with and chose a relevant emoji).
 
+## Additional practice
+
+Please note the "Reading and practicing" section in the beginning of [EL4](EL4.qmd) (homework). 

@@ -1,0 +1,31 @@
+---
+title: "EL7: Health care registers"
+subtitle: "LISA, RTB, dödsorsak, kvalreg, cancerreg, ..."
+reading: "[@nguyen2022a, ch. 4 (5)]"
+format:
+  revealjs:
+    theme: blood
+    transition: fade
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
+    incremental: false
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+  docx: default
+bibliography: references.bib
+---
+
+## Reading
+
+- [@nguyen2022a, ch. 4]
+- [@nguyen2022a, ch. 5] Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.
+
+**Recommended references:**
+
+-   

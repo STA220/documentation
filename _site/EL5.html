@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – EL5: Analysis pipelines</title>
+  <title>STA220 – EL5: Reproducibility</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,7 +27,93 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6ae29d241dba1d02babb97ce1fbe8bdd.css">
   <link rel="stylesheet" href="styles.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -128,37 +214,102 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EL5: Analysis pipelines</h1>
-  <p class="subtitle">{targets} and reproducible analysis</p>
+  <h1 class="title">EL5: Reproducibility</h1>
+  <p class="subtitle">Reproducible analysis and {targets}</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="not-a-single-r-script" class="slide level2">
-<h2>Not a single R script</h2>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
 <ul>
-<li class="fragment">Real projects are more complex than a single R script!</li>
-<li class="fragment">Multiple scripts</li>
-<li class="fragment">Data files</li>
-<li class="fragment">Documentation</li>
-<li class="fragment">Reports</li>
-<li class="fragment">Version control</li>
-<li class="fragment">Reproducible workflows</li>
+<li><span class="citation" data-cites="baker2016">Baker (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> and <span class="citation" data-cites="deoliveiraandrade2025">Oliveira Andrade (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span> motivates why reproducible analysis is important!</li>
+<li><span class="citation" data-cites="peng2021">Peng and Hicks (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> introduce and elaborate more on the subject.</li>
+<li><span class="citation" data-cites="nguyen2022a">Nguyen (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span> only read section “Basic Introduction to Docker and Containers” in chapter 2 (but you do not need to install Docker for this course)</li>
 </ul>
 </section>
-<section id="project-structure" class="slide level2">
-<h2>Project structure</h2>
-<p>Common file structures</p>
+<section class="slide level2">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Consider</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li class="fragment">Help you organize your thoughts</li>
-<li class="fragment">Help others to collaborate</li>
-<li class="fragment">simplifies paths used in your code</li>
+<li><p>After reading papers like these, one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.</p></li>
+<li><p>Reproducibility might sound like a good thing but how much does the technical details matter if we are not allowed to freely share the underlying health care data anyway?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>For reference:</strong></p>
+<ul>
+<li><p><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></p></li>
+<li><p><a href="https://books.ropensci.org/targets/">Target manual</a></p></li>
+</ul>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<p>A workshop with 7 parts was given at the R Medicine conference 2025. Practice according to part 1-3 (part 4-7 are slightly outside the scope of the course and only recommended if you have additional time and interest).</p>
+<p>Clone <a href="https://github.com/rsangole/2025-R-Medicine_targets-workshop">this GitHub repo</a>. Exercies are found in the <code>code</code> folder.</p>
+<p>Follow the recording from the workshop while you are practicing: <a href="https://r-consortium.org/posts/the-power-of-targets-package-for-reproducible-data-science/">The power of {targets} package for reproducible data science</a></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Notes on the recording</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).</li>
+<li>RStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.</li>
+<li>You may recognise some of the material from Part 3, as presented during the lecture</li>
+</ul>
+</div>
+</div>
+</div>
+<p>This practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!</p>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. / Buckheit &amp; Donoho</p>
+</blockquote>
+<blockquote>
+<p>[…] importance of having a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al.&nbsp;2021</p>
+</blockquote>
+</section>
+<section>
+<section id="reproducible-analysis" class="title-slide slide level1 center">
+<h1>Reproducible analysis</h1>
+<p><strong>The definition</strong> of reproducible research generally consists of the following elements.</p>
+<blockquote>
+<p>A published data analysis is reproducible if the analytic data sets and the computer code used to create the data analysis are made available to others for independent study and analysis</p>
+</blockquote>
+<p>This is rather vague …</p>
+</section>
+<section id="why-is-this-a-problem" class="slide level2">
+<h2>Why is this a problem?</h2>
+<ul>
+<li><p>Many, even simple, results depend on a precise record of procedures and processing and the order in which they occur.</p></li>
+<li><p>Many statistical algorithms have many tuning parameters that can dramatically change the results if they are not inputted exactly the same way as was done by the original investigators.</p></li>
+<li><p>If any of these myriad details are not properly recorded in the code, then there is a significant possibility that the results produced by others will differ from the original investigators’ results.</p></li>
 </ul>
 
-<img data-src="images/paste-1.png" class="r-stretch"></section>
-<section id="example-structure" class="slide level2">
-<h2>Example structure</h2>
+<img data-src="images/paste-7.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-8.png" class="r-stretch"></section>
+<section id="recap-folder-structure" class="slide level2">
+<h2>Recap folder structure</h2>
 <pre><code>/.../my_project/
   ├── README.md        - project documentation
   ├── TODO             - what should be done next?
@@ -170,108 +321,550 @@
   ├── R/               - your saved R functions
       ├── function1.R 
       └── function2.R
-  ├── ...
-  ├── ...
-  └── _targets.R       - targets pipeline script (WHAT??? :-))</code></pre>
-</section>
-<section id="readme.md" class="slide level2">
-<h2><code>README.md</code></h2>
-<ul>
-<li class="fragment">Document the purpose of the project</li>
-<li class="fragment">What is it about?</li>
-<li class="fragment">What is the aim?</li>
-<li class="fragment">Who to contact for questions?</li>
-<li class="fragment">In what circumstances was it created?</li>
-</ul>
-<p>Markdown format (simple text with some possible formatting)</p>
-</section>
-<section id="markdown" class="slide level2">
-<h2>Markdown</h2>
-<p>TODO: intro and give examples + link etc</p>
-</section>
-<section id="data-folder" class="slide level2">
-<h2><code>data</code> folder</h2>
-<ul>
-<li class="fragment">Store your data files here as they are when you get them</li>
-<li class="fragment">Avoid any modifications to the raw files!</li>
-<li class="fragment">It is very easy to forget what you do if it can not be traced by code</li>
-<li class="fragment">Do NOT include this folder in version control!</li>
-<li class="fragment">Git is not good at handling large files</li>
-<li class="fragment">Sensitive data should not be shared!</li>
-<li class="fragment">Add <code>data/*</code> to your <code>.gitignore</code> file</li>
-<li class="fragment">In realistic projects, data might come in varying formats
-<ul>
-<li class="fragment">csv, txt, xlsx, sas7bdat, sav, dta, etc (we will cover some of these later)</li>
-<li class="fragment">some files might be very big (gigabytes not uncommon)</li>
-</ul></li>
-</ul>
-</section>
-<section id="gitignore-fiile" class="slide level2">
-<h2><code>.gitignore</code> fiile</h2>
-<p>TODO</p>
-</section>
-<section id="r-folder" class="slide level2">
-<h2><code>R</code> folder</h2>
-<ul>
-<li class="fragment">Store your R functions here</li>
-<li class="fragment">You have learned about R functions in the earlier R course</li>
-<li class="fragment">We will cover some more of that later</li>
-<li class="fragment">Document their purpose inline!</li>
-<li class="fragment">Helps you to reuse code</li>
-<li class="fragment">Easier to read main scripts if functions are defined elsewhere</li>
-<li class="fragment">Easier to test and debug code</li>
-<li class="fragment">we eill not cover testing but some about debugging later</li>
-<li class="fragment">Easier to share code between projects</li>
-</ul>
-</section>
-<section id="reports" class="slide level2">
-<h2><code>reports</code></h2>
-<ul>
-<li class="fragment">Separate reports from analysis/data management but integrate them with the analysis pipeline</li>
-<li class="fragment">Quarto documents</li>
-<li class="fragment">Documemnt your analysis and thoughts/decisions along the way</li>
-<li class="fragment">Include figures and tables</li>
-<li class="fragment">To share with external collaborators</li>
-</ul>
-</section>
-<section id="targets.r-file" class="slide level2">
-<h2><code>_targets.R</code> file</h2>
-<p>Use the <code>targets</code> package to create a reproducible data analysis pipeline</p>
-<div class="video-wrapper">
-<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="">
-</iframe>
-</div>
+  ├── reports/
+  └── _targets.R       - targets pipeline script</code></pre>
 </section>
 <section id="pipeline" class="slide level2">
 <h2>Pipeline</h2>
 <ul>
-<li class="fragment">Define steps in your analysis as targets</li>
-<li class="fragment">Define dependencies between targets</li>
-<li class="fragment">Automatically track changes and rerun only necessary parts</li>
+<li><p>A pipeline is a computational workflow that does statistics, analytics, or data science.</p></li>
+<li><p>A pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.</p></li>
+<li><p>Pipeline tools coordinate the pieces of computationally demanding analysis projects.</p></li>
+</ul>
+</section>
+<section id="long-running-processes" class="slide level2 scrollable">
+<h2>Long running processes</h2>
+<ul>
+<li>Imaigine you have nice R-scripts to take care of every step in your project</li>
+<li>You have either one very very … very long file or a bunch of files which you execute in order</li>
+<li>It takes two weeks to run all the scripts (not unrealistic for a big project!)</li>
+<li>You report the result to your collaborators</li>
+<li>They ask you to update a tiny detail somewhere in the middle of your workflow</li>
+<li>You need to rerun everything (while you’re screaming in frustration)!</li>
+<li>This will repeat again and again until you finally
+<ol type="a">
+<li>Lose your mind and quit your job</li>
+<li>Adapt a more reproducible workflow</li>
+</ol></li>
+</ul>
+</section>
+<section id="steps-wise-procedure" class="slide level2 scrollable">
+<h2>Steps-wise procedure</h2>
+<ul>
+<li>The default setting in R is to save the workspace to disk when you end the sesion</li>
+<li>This is usually not recommended and therefore often disabled in for example RStudio
+<ul>
+<li>(If you re-start your sessin at a later point you might have no idea how the restored objects relates to each other.)</li>
+</ul></li>
+<li>You may still want to execute things in a more step-wise fasion
+<ol type="1">
+<li>Convert big data files to something R-friendly</li>
+<li>Perform some data management (select relevant columns ond rows), cleaning, add calculated variables etc</li>
+<li>Perform some exploratory data analysis (EDA) to get a better understanding of the data</li>
+<li>Perform some statistical analysis</li>
+<li>Report and visualize the results</li>
+</ol></li>
+</ul>
+</section>
+<section id="caching" class="slide level2">
+<h2>Caching</h2>
+<ul>
+<li>If you perform each step in different script files, you might start each file with some input and end it with some output</li>
+<li>The output from the previous script is used as input in the next script</li>
+<li><code>save()</code> and <code>load()</code> are standard but can be very slow for large objects</li>
+<li><code>saveRDS()</code> and <code>loadRDS()</code> use serialization and are now adays much more efficient</li>
+<li><code>qs2::qs_save()</code> and <code>qs2::qs_read()</code> (or <code>qs2::qd_save()</code> and <code>qs2::qd_read()</code>) from the <a href="https://github.com/qsbase/qs2">qs2 package</a> are currently “state-of-the-art” (but things tend to change quickly)</li>
+</ul>
+</section>
+<section id="benchmarking" class="slide level2">
+<h2>Benchmarking</h2>
+<h4 id="single-threaded">Single-threaded</h4>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Compression</th>
+<th>Save Time (s)</th>
+<th>Read Time (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>qs2</td>
+<td>7.96</td>
+<td>13.4</td>
+<td>50.4</td>
+</tr>
+<tr class="even">
+<td>qdata</td>
+<td>8.45</td>
+<td>10.5</td>
+<td>34.8</td>
+</tr>
+<tr class="odd">
+<td>base::serialize</td>
+<td>1.1</td>
+<td>8.87</td>
+<td>51.4</td>
+</tr>
+<tr class="even">
+<td>saveRDS</td>
+<td>8.68</td>
+<td>107</td>
+<td>63.7</td>
+</tr>
+<tr class="odd">
+<td>fst</td>
+<td>2.59</td>
+<td>5.09</td>
+<td>46.3</td>
+</tr>
+<tr class="even">
+<td>parquet</td>
+<td>8.29</td>
+<td>20.3</td>
+<td>38.4</td>
+</tr>
+<tr class="odd">
+<td>qs (legacy)</td>
+<td>7.97</td>
+<td>9.13</td>
+<td>48.1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="multi-threaded-8-threads">Multi-threaded (8 threads)</h4>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Compression</th>
+<th>Save Time (s)</th>
+<th>Read Time (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>qs2</td>
+<td>7.96</td>
+<td>3.79</td>
+<td>48.1</td>
+</tr>
+<tr class="even">
+<td>qdata</td>
+<td>8.45</td>
+<td>1.98</td>
+<td>33.1</td>
+</tr>
+<tr class="odd">
+<td>fst</td>
+<td>2.59</td>
+<td>5.05</td>
+<td>46.6</td>
+</tr>
+<tr class="even">
+<td>parquet</td>
+<td>8.29</td>
+<td>20.2</td>
+<td>37.0</td>
+</tr>
+<tr class="odd">
+<td>qs (legacy)</td>
+<td>7.97</td>
+<td>3.21</td>
+<td>52.0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>qs2</code>, <code>qdata</code> and <code>qs</code> with <code>compress_level = 3</code></li>
+<li><code>parquet</code> via the <code>arrow</code> package using zstd <code>compression_level = 3</code></li>
+<li><code>base::serialize</code> with <code>ascii = FALSE</code> and <code>xdr = FALSE</code></li>
+</ul>
+<p><strong>Datasets used</strong></p>
+<ul>
+<li><code>1000 genomes non-coding VCF</code> 1000 genomes non-coding variants (2743 MB)</li>
+<li><code>B-cell data</code> B-cell mouse data, Greiff 2017 (1057 MB)</li>
+<li><code>IP location</code> IPV4 range data with location information (198 MB)</li>
+<li><code>Netflix movie ratings</code> Netflix ML prediction dataset (571 MB)</li>
+</ul>
+<p>These datasets are openly licensed and represent a combination of numeric and text data across multiple domains. See <code>inst/analysis/datasets.R</code> on Github.</p>
+</section>
+<section id="who-cares" class="slide level2">
+<h2>Who cares?</h2>
+<ul>
+<li>Imagine you work with data for the whole population (&gt; 10 M people)</li>
+<li>You have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data</li>
+<li>You are working in a secure environment were data is stored on a network server (no HDD drive)</li>
+<li>The same environment is shared by 20 other researchers and you are all competing for the same band-width</li>
+<li>It will get increasonly frusrating just to load and save the big files</li>
+<li>You might need to wait for half an hour before you can start working</li>
+</ul>
+</section>
+<section id="automated-process" class="slide level2">
+<h2>Automated process</h2>
+<ul>
+<li>Instead of relying on individual R scripts, use a reproducible pipeline.</li>
+<li>This is common practice in software development
+<ul>
+<li>For example GNU Make is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.</li>
+</ul></li>
+<li>Iteration during project development (which is equally relevant for a health data project), will be much faster and reliable.</li>
+<li>Caching as described abowe is automated and you only need to read/write files to disk/network storage when actually needed.</li>
+</ul>
+</section>
+<section id="targets-package" class="slide level2">
+<h2>targets package</h2>
+<ul>
+<li><p>The <code>{targets}</code> package is a Make-like pipeline tool for statistics and data science in R.</p></li>
+<li><p>The package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects.</p></li>
+<li><p>If all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.</p></li>
+<li><p>The tasks themselves are called “targets”, and they run the functions and return R objects.</p></li>
+<li><p>The <code>targets</code> package orchestrates the targets and stores the output objects to make your pipeline efficient, painless, and reproducible.</p></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><strong>Data:</strong> survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960’s. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey. The health examination is conducted in a mobile examination centre (MEC).</p>
+<p><strong>Question:</strong> Is there any association between gender and BMI?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># pak::pkg_install("NHANES")</span></span>
+<span id="cb2-2"><a></a><span class="fu">str</span>(NHANES<span class="sc">::</span>NHANES)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes 'tbl_df', 'tbl' and 'data.frame':   10000 obs. of  76 variables:
+ $ ID              : int  51624 51624 51624 51625 51630 51638 51646 51647 51647 51647 ...
+ $ SurveyYr        : Factor w/ 2 levels "2009_10","2011_12": 1 1 1 1 1 1 1 1 1 1 ...
+ $ Gender          : Factor w/ 2 levels "female","male": 2 2 2 2 1 2 2 1 1 1 ...
+ $ Age             : int  34 34 34 4 49 9 8 45 45 45 ...
+ $ AgeDecade       : Factor w/ 8 levels " 0-9"," 10-19",..: 4 4 4 1 5 1 1 5 5 5 ...
+ $ AgeMonths       : int  409 409 409 49 596 115 101 541 541 541 ...
+ $ Race1           : Factor w/ 5 levels "Black","Hispanic",..: 4 4 4 5 4 4 4 4 4 4 ...
+ $ Race3           : Factor w/ 6 levels "Asian","Black",..: NA NA NA NA NA NA NA NA NA NA ...
+ $ Education       : Factor w/ 5 levels "8th Grade","9 - 11th Grade",..: 3 3 3 NA 4 NA NA 5 5 5 ...
+ $ MaritalStatus   : Factor w/ 6 levels "Divorced","LivePartner",..: 3 3 3 NA 2 NA NA 3 3 3 ...
+ $ HHIncome        : Factor w/ 12 levels " 0-4999"," 5000-9999",..: 6 6 6 5 7 11 9 11 11 11 ...
+ $ HHIncomeMid     : int  30000 30000 30000 22500 40000 87500 60000 87500 87500 87500 ...
+ $ Poverty         : num  1.36 1.36 1.36 1.07 1.91 1.84 2.33 5 5 5 ...
+ $ HomeRooms       : int  6 6 6 9 5 6 7 6 6 6 ...
+ $ HomeOwn         : Factor w/ 3 levels "Own","Rent","Other": 1 1 1 1 2 2 1 1 1 1 ...
+ $ Work            : Factor w/ 3 levels "Looking","NotWorking",..: 2 2 2 NA 2 NA NA 3 3 3 ...
+ $ Weight          : num  87.4 87.4 87.4 17 86.7 29.8 35.2 75.7 75.7 75.7 ...
+ $ Length          : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ HeadCirc        : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ Height          : num  165 165 165 105 168 ...
+ $ BMI             : num  32.2 32.2 32.2 15.3 30.6 ...
+ $ BMICatUnder20yrs: Factor w/ 4 levels "UnderWeight",..: NA NA NA NA NA NA NA NA NA NA ...
+ $ BMI_WHO         : Factor w/ 4 levels "12.0_18.5","18.5_to_24.9",..: 4 4 4 1 4 1 2 3 3 3 ...
+ $ Pulse           : int  70 70 70 NA 86 82 72 62 62 62 ...
+ $ BPSysAve        : int  113 113 113 NA 112 86 107 118 118 118 ...
+ $ BPDiaAve        : int  85 85 85 NA 75 47 37 64 64 64 ...
+ $ BPSys1          : int  114 114 114 NA 118 84 114 106 106 106 ...
+ $ BPDia1          : int  88 88 88 NA 82 50 46 62 62 62 ...
+ $ BPSys2          : int  114 114 114 NA 108 84 108 118 118 118 ...
+ $ BPDia2          : int  88 88 88 NA 74 50 36 68 68 68 ...
+ $ BPSys3          : int  112 112 112 NA 116 88 106 118 118 118 ...
+ $ BPDia3          : int  82 82 82 NA 76 44 38 60 60 60 ...
+ $ Testosterone    : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ DirectChol      : num  1.29 1.29 1.29 NA 1.16 1.34 1.55 2.12 2.12 2.12 ...
+ $ TotChol         : num  3.49 3.49 3.49 NA 6.7 4.86 4.09 5.82 5.82 5.82 ...
+ $ UrineVol1       : int  352 352 352 NA 77 123 238 106 106 106 ...
+ $ UrineFlow1      : num  NA NA NA NA 0.094 ...
+ $ UrineVol2       : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ UrineFlow2      : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ Diabetes        : Factor w/ 2 levels "No","Yes": 1 1 1 1 1 1 1 1 1 1 ...
+ $ DiabetesAge     : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ HealthGen       : Factor w/ 5 levels "Excellent","Vgood",..: 3 3 3 NA 3 NA NA 2 2 2 ...
+ $ DaysPhysHlthBad : int  0 0 0 NA 0 NA NA 0 0 0 ...
+ $ DaysMentHlthBad : int  15 15 15 NA 10 NA NA 3 3 3 ...
+ $ LittleInterest  : Factor w/ 3 levels "None","Several",..: 3 3 3 NA 2 NA NA 1 1 1 ...
+ $ Depressed       : Factor w/ 3 levels "None","Several",..: 2 2 2 NA 2 NA NA 1 1 1 ...
+ $ nPregnancies    : int  NA NA NA NA 2 NA NA 1 1 1 ...
+ $ nBabies         : int  NA NA NA NA 2 NA NA NA NA NA ...
+ $ Age1stBaby      : int  NA NA NA NA 27 NA NA NA NA NA ...
+ $ SleepHrsNight   : int  4 4 4 NA 8 NA NA 8 8 8 ...
+ $ SleepTrouble    : Factor w/ 2 levels "No","Yes": 2 2 2 NA 2 NA NA 1 1 1 ...
+ $ PhysActive      : Factor w/ 2 levels "No","Yes": 1 1 1 NA 1 NA NA 2 2 2 ...
+ $ PhysActiveDays  : int  NA NA NA NA NA NA NA 5 5 5 ...
+ $ TVHrsDay        : Factor w/ 7 levels "0_hrs","0_to_1_hr",..: NA NA NA NA NA NA NA NA NA NA ...
+ $ CompHrsDay      : Factor w/ 7 levels "0_hrs","0_to_1_hr",..: NA NA NA NA NA NA NA NA NA NA ...
+ $ TVHrsDayChild   : int  NA NA NA 4 NA 5 1 NA NA NA ...
+ $ CompHrsDayChild : int  NA NA NA 1 NA 0 6 NA NA NA ...
+ $ Alcohol12PlusYr : Factor w/ 2 levels "No","Yes": 2 2 2 NA 2 NA NA 2 2 2 ...
+ $ AlcoholDay      : int  NA NA NA NA 2 NA NA 3 3 3 ...
+ $ AlcoholYear     : int  0 0 0 NA 20 NA NA 52 52 52 ...
+ $ SmokeNow        : Factor w/ 2 levels "No","Yes": 1 1 1 NA 2 NA NA NA NA NA ...
+ $ Smoke100        : Factor w/ 2 levels "No","Yes": 2 2 2 NA 2 NA NA 1 1 1 ...
+ $ Smoke100n       : Factor w/ 2 levels "Non-Smoker","Smoker": 2 2 2 NA 2 NA NA 1 1 1 ...
+ $ SmokeAge        : int  18 18 18 NA 38 NA NA NA NA NA ...
+ $ Marijuana       : Factor w/ 2 levels "No","Yes": 2 2 2 NA 2 NA NA 2 2 2 ...
+ $ AgeFirstMarij   : int  17 17 17 NA 18 NA NA 13 13 13 ...
+ $ RegularMarij    : Factor w/ 2 levels "No","Yes": 1 1 1 NA 1 NA NA 1 1 1 ...
+ $ AgeRegMarij     : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ HardDrugs       : Factor w/ 2 levels "No","Yes": 2 2 2 NA 2 NA NA 1 1 1 ...
+ $ SexEver         : Factor w/ 2 levels "No","Yes": 2 2 2 NA 2 NA NA 2 2 2 ...
+ $ SexAge          : int  16 16 16 NA 12 NA NA 13 13 13 ...
+ $ SexNumPartnLife : int  8 8 8 NA 10 NA NA 20 20 20 ...
+ $ SexNumPartYear  : int  1 1 1 NA 1 NA NA 0 0 0 ...
+ $ SameSex         : Factor w/ 2 levels "No","Yes": 1 1 1 NA 2 NA NA 2 2 2 ...
+ $ SexOrientation  : Factor w/ 3 levels "Bisexual","Heterosexual",..: 2 2 2 NA 2 NA NA 1 1 1 ...
+ $ PregnantNow     : Factor w/ 3 levels "Yes","No","Unknown": NA NA NA NA NA NA NA NA NA NA ...</code></pre>
+</div>
+</div>
+</section>
+<section id="r-script" class="slide level2">
+<h2>R script</h2>
+<p>A normal R script might look like:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># pak::pkg_install("NHANES")</span></span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a>df <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(NHANES<span class="sc">::</span>NHANES)</span>
+<span id="cb4-5"><a></a>tbl <span class="ot">&lt;-</span> <span class="fu">count</span>(df, Gender)</span>
+<span id="cb4-6"><a></a>tst <span class="ot">&lt;-</span> <span class="fu">t.test</span>(BMI <span class="sc">~</span> Gender, df)</span>
+<span id="cb4-7"><a></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(BMI, <span class="at">color =</span> Gender)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><p>You must run the script in order (but might not always do that) … if so, confusion will arise!</p></li>
+<li><p>objects df, tbl and tst only lives in the active session</p>
+<ul>
+<li><p>No problem in this example</p></li>
+<li><p>but working with big and complex data might introduce long-running processes =&gt; time consuming!</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="results" class="slide level2">
+<h2>Results</h2>
+<div class="cell">
+
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  BMI by Gender
+t = 1.4981, df = 9452.6, p-value = 0.1341
+alternative hypothesis: true difference in means between group female and group male is not equal to 0
+95 percent confidence interval:
+ -0.06939849  0.51940903
+sample estimates:
+mean in group female   mean in group male 
+            26.77208             26.54707 </code></pre>
+</div>
+</div>
+<img data-src="EL5_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="pipeline-1" class="slide level2">
+<h2>Pipeline</h2>
+<ul>
+<li>Define steps in your analysis as targets</li>
+<li>Define dependencies between targets</li>
+<li>Automatically track changes and rerun only necessary parts</li>
+</ul>
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<ul>
+<li>You do not want to rerun everything all the time!</li>
+<li>You want to keep track of what you have done</li>
+<li>You want to be able to reproduce your results later</li>
+<li>You want to share your workflow with others</li>
+</ul>
+</section>
+<section id="target" class="slide level2">
+<h2>target</h2>
+<p>Reformulate from ordinary object assignment:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(NHANES<span class="sc">::</span>NHANES)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>to a target</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(targets)</span>
+<span id="cb7-2"><a></a><span class="fu">tar_target</span>(df, <span class="fu">as_tibble</span>(NHANES<span class="sc">::</span>NHANES))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;tar_stem&gt; 
+  name: df 
+  description:  
+  command:
+    as_tibble(NHANES::NHANES) 
+  format: rds 
+  repository: local 
+  iteration method: vector 
+  error mode: stop 
+  memory mode: auto 
+  storage mode: worker 
+  retrieval mode: auto 
+  deployment mode: worker 
+  priority: 0 
+  resources:
+    list() 
+  cue:
+    seed: TRUE
+    file: TRUE
+    iteration: TRUE
+    repository: TRUE
+    format: TRUE
+    depend: TRUE
+    command: TRUE
+    mode: thorough 
+  packages:
+    targets
+    lubridate
+    forcats
+    stringr
+    dplyr
+    purrr
+    readr
+    tidyr
+    tibble
+    ggplot2
+    tidyverse
+    stats
+    graphics
+    grDevices
+    utils
+    datasets
+    methods
+    base 
+  library:
+    NULL</code></pre>
+</div>
+</div>
+</section>
+<section id="put-all-targets-in-a-list" class="slide level2">
+<h2>Put all targets in a list</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">list</span>(</span>
+<span id="cb9-2"><a></a>  <span class="fu">tar_target</span>(df, <span class="fu">as_tibble</span>(NHANES<span class="sc">::</span>NHANES)),</span>
+<span id="cb9-3"><a></a>  <span class="fu">tar_target</span>(tbl, <span class="fu">count</span>(df, Species)),</span>
+<span id="cb9-4"><a></a>  <span class="fu">tar_target</span>(tst, <span class="fu">t.test</span>(BMI <span class="sc">~</span> Gender, df)),</span>
+<span id="cb9-5"><a></a>  <span class="fu">tar_target</span>(gg, {</span>
+<span id="cb9-6"><a></a>    <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(BMI, <span class="at">color =</span> Gender)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span>
+<span id="cb9-7"><a></a>  })</span>
+<span id="cb9-8"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="targets.r-file" class="slide level2">
+<h2><code>_targets.R</code> file</h2>
+<p>Put that list into a file <code>_targets.R</code> together with some additional code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(targets)</span>
+<span id="cb10-2"><a></a><span class="fu">tar_source</span>() <span class="co"># Source all scripts with function stored in R folder</span></span>
+<span id="cb10-3"><a></a><span class="fu">tar_option_set</span>(</span>
+<span id="cb10-4"><a></a>  <span class="co"># Specify all needed packages here</span></span>
+<span id="cb10-5"><a></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>),</span>
+<span id="cb10-6"><a></a>  <span class="co"># Format used for caching (qs or actually qs2 is best for big data)</span></span>
+<span id="cb10-7"><a></a>  <span class="at">format =</span> <span class="st">"qs"</span>,</span>
+<span id="cb10-8"><a></a>  <span class="co"># Additional settings ...</span></span>
+<span id="cb10-9"><a></a>  <span class="at">seed =</span> <span class="dv">123</span></span>
+<span id="cb10-10"><a></a>)</span>
+<span id="cb10-11"><a></a></span>
+<span id="cb10-12"><a></a><span class="fu">list</span>(</span>
+<span id="cb10-13"><a></a>  <span class="fu">tar_target</span>(df, <span class="fu">as_tibble</span>(NHANES<span class="sc">::</span>NHANES)),</span>
+<span id="cb10-14"><a></a>  <span class="fu">tar_target</span>(tbl, <span class="fu">count</span>(df, Species)),</span>
+<span id="cb10-15"><a></a>  <span class="fu">tar_target</span>(tst, <span class="fu">t.test</span>(BMI <span class="sc">~</span> Gender, df)),</span>
+<span id="cb10-16"><a></a>  <span class="fu">tar_target</span>(gg, {</span>
+<span id="cb10-17"><a></a>    <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(BMI, <span class="at">color =</span> Gender)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span>
+<span id="cb10-18"><a></a>  })</span>
+<span id="cb10-19"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="benefits" class="slide level2">
+<h2>Benefits</h2>
+<ul>
+<li>execute the whole project by <code>tar_make()</code></li>
+<li>intermediate steps are cached and cached objects retreived by <code>tar_load()</code> or <code>tar_read()</code></li>
+<li>dependency among individual steps can be visualized: <code>tar_visnetwork()</code></li>
+</ul>
+</section>
+<section id="dependency-graph" class="slide level2">
+<h2>Dependency graph</h2>
+
+<img data-src="images/paste-2.png" class="r-stretch"></section>
+<section id="live-show" class="slide level2">
+<h2>Live show</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="bu">cd</span></span>
+<span id="cb11-2"><a></a><span class="fu">git</span> clone https://github.com/STA220/targets.git</span>
+<span id="cb11-3"><a></a><span class="bu">cd</span> targets</span>
+<span id="cb11-4"><a></a><span class="ex">positron</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Or perform those steps from within Positron.</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="different-r-versions" class="title-slide slide level1 center">
+<h1>Different R-versions</h1>
+<ul>
+<li>Imagine you finish your research project and you submit a manuscript to a journal</li>
+<li>The journal comes back one year later (they didn’t have time until know) and one reviewer ask you to double check some steps of the analysis</li>
+<li>You make some modifications and rerun your pipelines.</li>
+<li>But it doesn’t work!</li>
+<li>Half a year ago you updated your R installation and a week ago all of your installed packages.
+<ul>
+<li>One package was retired from CRAN (could happen even though there was nothing wrong with the package when you used it)</li>
+<li>One package has deprecated one of the functions you previously used</li>
+<li>On package has redesigned the output format from a specific function you used</li>
+</ul></li>
+<li>😱</li>
+</ul>
+
+<img data-src="images/paste-9.png" class="r-stretch"></section>
+<section id="pros-and-cons" class="slide level2">
+<h2>Pros and cons</h2>
+<ul>
+<li><p>It is always a good idea to be able to reproduce exactly what you did!</p></li>
+<li><p>But if you never update you might miss essential bug fixes.</p></li>
+<li><p>If your results change, how can you know which version was the most accurate?</p></li>
+</ul>
+<p>Best practice to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do right … 😂</p>
+</section>
+<section id="different-operating-systems" class="slide level2">
+<h2>Different operating systems</h2>
+<ul>
+<li><p>R should behave similar on different operating systems.</p></li>
+<li><p>Exceptions nevertheless exist!</p>
+<ul>
+<li><p><code>parallel::mclapply()</code> behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.</p></li>
+<li><p><code>sort(c("ä", "a", "z"))</code> might differ due to locale settings</p></li>
+</ul></li>
+</ul>
+
+<img data-src="images/paste-10.png" class="r-stretch"></section>
+<section id="combining-all" class="slide level2">
+<h2>Combining all?</h2>
+<ul>
+<li><p>you could very well use both targets + renv + git + GitHub etc</p></li>
+<li><p>At some point you might start to wonder whether you are a medical statistician or a software developer … and the more complex/esoteric tools you use, the more difficult it might be to collaborate with others</p></li>
+<li><p>Try to find some middle ground … but always be open to new ideas!</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/paste-2.png" class="r-stretch"></section>
-<section id="why" class="slide level2">
-<h2>Why?</h2>
-<ul>
-<li class="fragment">You do not want to rerun everything all the time!</li>
-<li class="fragment">You want to keep track of what you have done</li>
-<li class="fragment">You want to be able to reproduce your results later</li>
-<li class="fragment">You want to share your workflow with others</li>
-</ul>
-</section>
-<section id="reading" class="slide level2">
-<h2>Reading</h2>
-<ul>
-<li class="fragment"><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></li>
-<li class="fragment"><a href="https://books.ropensci.org/targets/">Target manual</a></li>
-</ul>
-
+<img data-src="images/paste-11.png" class="r-stretch"></section>
+<section class="slide level2">
 
 </section>
+<section class="slide level2 smaller scrollable" id="references">
+
+
+
+
+<img data-src="images/paste-13.png" class="r-stretch"><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-baker2016" class="csl-entry" role="listitem">
+Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533 (7604): 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
+</div>
+<div id="ref-nguyen2022a" class="csl-entry" role="listitem">
+Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
+</div>
+<div id="ref-deoliveiraandrade2025" class="csl-entry" role="listitem">
+Oliveira Andrade, Rodrigo de. 2025. <span>“Huge Reproducibility Project Fails to Validate Dozens of Biomedical Studies.”</span> <em>Nature</em> 641 (8062): 293–94. <a href="https://doi.org/10.1038/d41586-025-01266-x">https://doi.org/10.1038/d41586-025-01266-x</a>.
+</div>
+<div id="ref-peng2021" class="csl-entry" role="listitem">
+Peng, Roger D., and Stephanie C. Hicks. 2021. <span>“Reproducible Research: A Retrospective.”</span> <em>Annual Review of Public Health</em> 42 (Volume 42, 2021): 79–93. <a href="https://doi.org/10.1146/annurev-publhealth-012420-105110">https://doi.org/10.1146/annurev-publhealth-012420-105110</a>.
+</div>
+</div>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -487,6 +1080,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

@@ -12,7 +12,7 @@ General information about the course is found on the corresponding [Canvas](http
 - See Canvas/[TimeEdit for schedule](https://cloud.timeedit.net/gu/web/wr_stud/ri1Y6v2yQ6w901QY75Q2209XZY057ZQ7.html). 
 - Note that this plan only considers the health data part of the course!
 - See details below regarding the litterature
-- Sme literature is only used partially (as described in the [handouts](handouts.qmd))
+- Some literature is only used partially (as described in the [handouts](handouts.qmd))
 - The literature is associated with each lecture/session but is not required reading before the sessin (unless otherwise stated).
 :::
 

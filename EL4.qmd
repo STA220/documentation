@@ -1,7 +1,7 @@
 ---
 title: "EL4: Tooling"
 subtitle: "Positron and version control"
-reading: ""
+reading: "[@theunix2026], [@rodrigues2023, ch. 4]"
 format:
   revealjs:
     theme: blood
@@ -10,16 +10,46 @@ format:
     css: styles.css
     smaller: true
     scrollable: true
-    incremental: true
+    incremental: false
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+  docx: default
+bibliography: references.bib
 ---
 
-# History
+## Reading and practicing
 
-> It is widely acknowledged that the most fundamental developments in statistics in the past 60 years are driven by information technology (IT). We should not underestimate the importance of pen and paper as a form of IT but it is since people start using computers to do statistical analysis that we really changed the role statistics plays in our research as well as normal life.
+-   [@theunix2026] introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the [Terminal tab in RStudio](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)). Only the first sections are required:
+    -   [Introducing the shell](https://swcarpentry.github.io/shell-novice/01-intro.html)
+    -   [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir.html)
+    -   [Working With Files and Directories](https://swcarpentry.github.io/shell-novice/03-create.html)
+-   [@rodrigues2023, ch. 4] introduces the basics of Git for R users and applies to all common operating systems. Read and practice by following the instructions.
+
+**Recommended references:**
+
+-   A bit old but still relevant: [Happy Git with R](https://happygitwithr.com/)
+-   @staples2023 illustrates the constant evolution in technology. As a professional, you should not expect that what you learn in this course will stay relevant for ever. This article is a good illustration of how the linguistic use of R has changed in less than a decade. It is also a practical example of how you can use GitHub in a slightly different way and it touches briefly on `{data.table}`, which we will introduce later. It also illustrates that a lot of R code is not written for statistical analysis (the last and final step) but for data management. The article also mentions some statistical techniques which you will meet in later courses (ignore the details for now).
+
+## Motivation
+
+> It is widely acknowledged that the **most fundamental developments in statistics** in the past 60 years are **driven by information technology (IT)**. We should not underestimate the importance of pen and paper as a form of IT but it is since people start using **computers to do statistical analysis** that we really changed the role statistics plays in our research as well as normal life.
 
 > Although: "Let’s not kid ourselves: the most widely used piece of software for statistics is Excel."" /Brian Ripley (2002)
 
 [Short overview](https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com)
+
+## Terminal
+
+- Don't rely too heavily on your computers graphical user interface (GUI)
+- You know how to use the R console!
+- To use a terminal/Unix shell/Bash... is similair
+- To navigate the file system is basic practice
+- A Unix Terminal is included if you are using Mac (and Linux)
+- Emulators are common for Windows (one is included in Git)
 
 ## General-Purpose Programming Languages
 
@@ -28,13 +58,29 @@ Early statistical computing relied heavily on:
 -   **FORTRAN**
     -   Dominant language for numerical and statistical computation
     -   Statistical methods implemented as libraries and subroutines
-    -   Still used as subroutines in modern statistical software!
+    -   Still used as numerical back-end (e.g., BLAS/LAPACK) in modern statistical software
+-   **C**
+    -   Emerged in the 1970s as a systems programming language
+    -   Widely used for implementing statistical software infrastructure
+    -   Core language of many modern statistical environments (e.g., R, parts of SAS, Stata)
+    -   Often used to interface with high-performance numerical libraries
 -   **ALGOL / ALGOL 60**
-    -   Used mainly in academic environments
+    -   Influential in academic computing
+    -   Introduced structured programming concepts that shaped later languages
 -   **PL/I**
     -   Used in some government and industrial contexts
+    -   Combined scientific and business computing features
 
 📌 These languages required substantial programming expertise.
+
+::: callout-note
+# FORTAN and C
+
+FORTAN is still used in R for subroutines such as [least squares](https://github.com/wch/r-source/blob/trunk/src/appl/dqrls.f). Even in modern packages!
+
+Same for C, such as for [lm](https://github.com/wch/r-source/blob/trunk/src/library/stats/src/lm.c)
+:::
+
 
 ## Early Statistical Packages
 
@@ -63,15 +109,23 @@ Several dedicated statistical systems emerged:
     -   Government agencies
     -   Large organisations
 -   Known for strong data management capabilities
--   Still widely used in pharmaceutical industry and clinical trials
+-   Still widely used in pharmaceutical industry
 
-📌 SAS predates S but influenced later statistical workflows.
+📌 SAS predates S and influenced later statistical workflows.
+
+::: callout-note
+# SAS data
+
+Still common to receive data in SAS-format from register holdders!
+:::
 
 ## Limitations of Pre-S Systems
 
 Common limitations included:
 
 -   Batch processing rather than interactivity
+    -   But we still sometimes need batch processing for large scale projects!
+    -   `Rscript script.R`
 -   Separation of data management and analysis
 -   Limited graphics capabilities
 -   High barriers to exploratory data analysis
@@ -90,11 +144,12 @@ Common limitations included:
 
 -   **1988:** “New S” is released (major language redesign)
 -   **1988:** **S-PLUS** is first released as a commercial implementation of S
+    -   Last seen in Tibco Spotfire 2012
 -   **1991:** *Statistical Models in S* (“White Book”) popularizes formula notation (the `~` operator), data frames, and modeling workflows
 
 ## R
 
--   **1993:** first versions of **R** are published (Auckland; Ross Ihaka & Robert Gentleman)
+-   **1993:** first versions of **R** is published (Auckland; Ross Ihaka & Robert Gentleman)
 -   **1995:** R becomes open source (GPL)
 -   **1997:** the R Core group forms; **CRAN** is founded (Kurt Hornik)
 -   **2000:** **R 1.0.0** is released 2000-02-29
@@ -111,7 +166,7 @@ Common limitations included:
 -   **2016:** SQL Server 2016 introduces **R Services** (in-database R)
 -   **2017:** Microsoft expands the stack under “Machine Learning Server” branding
 -   **June 2021:** Microsoft announces retirement of **Microsoft Machine Learning Server**
--   **July 1, 2023:** Microsoft era over
+
 
 ## RStudio becomes Posit
 
@@ -142,7 +197,18 @@ This feature will most likely be disabled in any secure working environment. Suc
 It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for "brott mot tystnadsplikten" which is not only public, but actually civil law ("Brottsbalken") with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!
 :::
 
+## RStudio or Positron
+
+- We will use Positron in this course
+- This is for you to learn and see an alternative IDE
+- RStudio, however, is still a great tool
+- You may use both in the future
+
 # Version control
+
+------------------------------------------------------------------------
+
+![](images/paste-6.png)
 
 ## Before Version Control Systems
 
@@ -213,7 +279,7 @@ These limitations became critical for large projects.
 
 ## Git
 
--   **Git** is created by Linus Torvalds in 2005
+-   **Git** was created by Linus Torvalds in 2005
 -   Original motivation:
     -   Support Linux kernel development
     -   Replace proprietary tools
@@ -223,6 +289,29 @@ Design principles:
 -   Distributed architecture
 -   Fast local operations
 -   Strong support for branching and merging
+
+## Terminal
+
+-   Windows: the Git installer comes with a terminal
+-   Linux/Unix (incl. Mac): use your terminal/Warp
+-  Terminal pane in RStudio/Positron
+
+-----------------
+
+![](images/paste-4.png)
+
+## The basics
+
+[Four short videos to watch](https://git-scm.com/video/what-is-version-control.html)
+
+[Cheat-sheet](https://git-scm.com/cheat-sheet.pdf)
+
+Some interactive learning tools:
+
+-   [Git practice](https://git-practice.com/)
+-   [Git Master](https://my-git-playground.vercel.app)
+-   [learn git branching](https://learngitbranching.js.org/)
+-   [git simulator online](https://webutility.io/git-simulator-online)
 
 ## Distributed Version Control with Git
 
@@ -239,9 +328,9 @@ Key ideas in Git:
 
 Platforms built around Git:
 
--   **GitHub** (2008)
--   **Bitbucket** (2008)
--   **GitLab** (2011)
+-   [GitHub](github.com)**GitHub** (2008)
+-   [Bitbucket](bitbucket.org) (2008)
+-   [GitLab](gitlab.com) (2011)
 -   [Gitea](https://gitea.com/) - open source alternative to GitHub (get the same functionallity locally or on a server)
 
 They add:
@@ -250,6 +339,10 @@ They add:
 -   Issue tracking
 -   Code review
 -   CI/CD integration
+
+--------------------
+
+![](images/paste-5.png) 
 
 ## Version Control Today
 
@@ -262,7 +355,7 @@ Modern usage includes:
 
 Git is integrated into:
 
--   IDEs (VS Code, Positron)
+-   IDEs (RStudio, VS Code, Positron)
 -   CI/CD pipelines
 -   Cloud platforms
 
@@ -286,7 +379,7 @@ Today, version control supports:
     -   Avoid unintentional sharing!
     -   Private repositories are still shared with hosting provider!
 -   Avoid explicit file paths and sensitive info in scripts!
--   Can give information about data location and internal structure!
+    -   Can give information about data location and internal structure!
 -   No hard-coded passwords or API keys!
 
 ## Git basics
@@ -312,7 +405,7 @@ git remote add origin
 
 ## Video tutorials
 
-The video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube). Note that there are a lot of videos on Git combined with Rstudio. They might still be relevant even though we are using Positron here.
+The video below is a good start to understand the basic concepts of Git and GitHub (and there are others to be found on YouTube).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mJ-qvsxPHpY?si=vL8ERoEp0OnGzotn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
@@ -359,15 +452,13 @@ More detailed introductions. Watch both! The first one is based on a Windows ver
 This video includes some parts which might be overwhelming if you are new to Git and GitHub. Don't worry! You don't need to understand everything right away. Just try to follow along with the basic concepts and steps. You will get more comfortable with practice.
 :::
 
-
-
 # Statistics projects
 
 ## Not a single R script
 
 -   Real projects are more complex than a single R script!
 -   Multiple scripts
--   Data files
+-   Multiple data files
 -   Documentation
 -   Reports
 -   Version control
@@ -409,7 +500,7 @@ Common file structures
 -   Who to contact for questions?
 -   In what circumstances was it created?
 
-Markdown format (simple text with some possible formatting)
+[Markdown format](https://www.markdownguide.org/cheat-sheet/) (simple text with some possible formatting)
 
 ## `data` folder
 
@@ -441,37 +532,10 @@ Markdown format (simple text with some possible formatting)
 -   Include figures and tables
 -   Share with external collaborators
 
-## `_targets.R` file
+## Computer practice
 
-Use the `targets` package to create a reproducible data analysis pipeline
+In [ECS1](ECS1.qmd) we will use Positron and git in action!
 
-::: video-wrapper
-<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+Also see the "Reading and practicing" section above for a more in-depth introduction (homework).
 
-</iframe>
-:::
-
-## Pipeline
-
--   Define steps in your analysis as targets
--   Define dependencies between targets
--   Automatically track changes and rerun only necessary parts
-
----------
-
-![](images/paste-2.png)
-
-## Why?
-
--   You do not want to rerun everything all the time!
--   You want to keep track of what you have done
--   You want to be able to reproduce your results later
--   You want to share your workflow with others
-
-
-
-## Reading
-
-- A bit old but still relevant: [https://happygitwithr.com/]()
-- [Targets overview](https://docs.ropensci.org/targets/articles/overview.html)
-- [Target manual](https://books.ropensci.org/targets/)
+---------------------

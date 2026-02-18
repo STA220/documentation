@@ -1,0 +1,30 @@
+---
+title: "EL6: Standardized vocabularies"
+subtitle: "ICD, ATC, SNOMED, regex"
+reading: "[@nguyen2022a, ch. 3]"
+format:
+  revealjs:
+    theme: blood
+    transition: fade
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
+    incremental: false
+  typst:
+    include-before-body:
+      - text: |
+          // Gör alla länkar tydliga i PDF: blå + understrukna
+          #show link: set text(fill: rgb("1a5fb4"))
+          #show link: underline
+  docx: default
+bibliography: references.bib
+---
+
+## Reading
+
+- [@nguyen2022a, ch. 3]
+
+**Recommended references:**
+
+-   

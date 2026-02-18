@@ -40,6 +40,11 @@ pdfs <-
   ) |>
   left_join(canvas_pdfs)
 
+# folder id för Eriks_material
+Eriks_material <-
+  vvcanvas::get_course_folders(canvas, sta220$id) |>
+  filter(name == "Eriks_material") |>
+  pluck("id")
 
 # Upload PDF:s which are not already in Canvas
 pdfs_to_upload <-
