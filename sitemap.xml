@@ -2,42 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sta220.github.io/documentation/EL1.html</loc>
-    <lastmod>2026-01-21T15:16:05.593Z</lastmod>
+    <lastmod>2026-02-17T10:13:43.726Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/EL2.html</loc>
     <lastmod>2026-01-24T19:37:02.394Z</lastmod>
   </url>
   <url>
+    <loc>https://sta220.github.io/documentation/EL7.html</loc>
+    <lastmod>2026-02-17T10:33:54.544Z</lastmod>
+  </url>
+  <url>
     <loc>https://sta220.github.io/documentation/EL4.html</loc>
-    <lastmod>2026-01-21T15:16:24.502Z</lastmod>
+    <lastmod>2026-02-18T09:16:23.460Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/ES1.html</loc>
-    <lastmod>2026-01-19T16:00:19.653Z</lastmod>
+    <lastmod>2026-02-18T14:44:46.356Z</lastmod>
   </url>
   <url>
-    <loc>https://sta220.github.io/documentation/index.html</loc>
-    <lastmod>2026-01-21T06:47:35.851Z</lastmod>
+    <loc>https://sta220.github.io/documentation/EL10.html</loc>
+    <lastmod>2026-02-17T10:33:40.129Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/EL8.html</loc>
+    <lastmod>2026-02-17T10:41:29.511Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/ECS1.html</loc>
-    <lastmod>2026-01-16T15:55:12.464Z</lastmod>
+    <lastmod>2026-02-17T14:02:46.756Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/EL9.html</loc>
+    <lastmod>2026-02-17T10:43:01.888Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/index.html</loc>
+    <lastmod>2026-02-17T10:43:53.575Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/EL11.html</loc>
-    <lastmod>2026-01-21T15:16:40.493Z</lastmod>
+    <lastmod>2026-02-17T10:14:52.718Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/EL5.html</loc>
-    <lastmod>2026-01-21T15:16:31.981Z</lastmod>
+    <lastmod>2026-02-18T12:56:00.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sta220.github.io/documentation/EL6.html</loc>
+    <lastmod>2026-02-17T10:18:43.175Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/EL3.html</loc>
-    <lastmod>2026-01-24T20:18:58.840Z</lastmod>
+    <lastmod>2026-02-17T10:34:18.723Z</lastmod>
   </url>
   <url>
     <loc>https://sta220.github.io/documentation/handouts.html</loc>
-    <lastmod>2026-01-21T11:53:45.814Z</lastmod>
+    <lastmod>2026-02-17T10:24:55.091Z</lastmod>
   </url>
 </urlset>
