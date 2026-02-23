@@ -17,7 +17,7 @@ If you have not already done so, please install the following software on your c
 
 1.  Install Positron: [https://posit.co/download/](https://posit.co/download/)
 
-2.  Install Git: [https://git-scm.com/downloads](https://git-scm.com/downloads)
+2.  Install Git: [https://positron.posit.co/download.html) 
   - Windows: Download and install binary version
   - MacOS: A bit more complicated. Perhaps easist with the `$ xcode-select --install` but more recent version with `$ brew install git` (where `$` indicates that this is a command to be run from a terminal, but which itself is not part of the command).
 
@@ -25,7 +25,9 @@ If you have not already done so, please install the following software on your c
 
     -   Creating a GitHub account requires an e-mail address. GitHub is owned by Microsoft, and the University of Gothenburg also uses Microsoft as its e-mail provider. You may use your university e-mail address if you wish. Alternatively, you are free to register a separate e-mail account for GitHub.
 
-4.  Open Positron
+4.  Open Positron. 
+Set your username: git config --global user.name "FIRST_NAME LAST_NAME"
+Set your email address: git config --global user.email "MY_NAME@example.com"
 
 5.  In the upper right corner press the folder button and choose "New folder from Git ..." with the URL: `https://github.com/sta220/crap` and place the folder somewhere you can find it, tick the box "Open in a new window" and press OK. ![](images/paste-20.png)
 
