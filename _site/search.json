@@ -375,7 +375,7 @@
     "href": "EL4.html#reading-and-practicing",
     "title": "EL4: Tooling",
     "section": "Reading and practicing",
-    "text": "Reading and practicing\n\n(“The Unix Shell: Summary and Setup” 2026) introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the Terminal tab in RStudio). Only the first sections are required:\n\nIntroducing the shell\nNavigating Files and Directories\nWorking With Files and Directories\n\n(Rodrigues 2023, ch. 4) introduces the basics of Git for R users and applies to all common operating systems. Read and practice by following the instructions.\n\nRecommended references:\n\nA bit old but still relevant: Happy Git with R\nStaples (2023) illustrates the constant evolution in technology. As a professional, you should not expect that what you learn in this course will stay relevant for ever. This article is a good illustration of how the linguistic use of R has changed in less than a decade. It is also a practical example of how you can use GitHub in a slightly different way and it touches briefly on {data.table}, which we will introduce later. It also illustrates that a lot of R code is not written for statistical analysis (the last and final step) but for data management. The article also mentions some statistical techniques which you will meet in later courses (ignore the details for now)."
+    "text": "Reading and practicing\n\n(“The Unix Shell: Summary and Setup” 2026) introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the Terminal tab in RStudio or similarly in Posotron). Only the first sections are required:\n\nIntroducing the shell\nNavigating Files and Directories\nWorking With Files and Directories\n\n(Rodrigues 2023, ch. 4) introduces the basics of Git for R users and applies to all common operating systems. Read and practice by following the instructions.\n\nRecommended references:\n\nA bit old but still relevant: Happy Git with R\nStaples (2023) illustrates the constant evolution in technology. As a professional, you should not expect that what you learn in this course will stay relevant for ever. This article is a good illustration of how the linguistic use of R has changed in less than a decade. It is also a practical example of how you can use GitHub in a slightly different way and it touches briefly on {data.table}, which we will introduce later. It also illustrates that a lot of R code is not written for statistical analysis (the last and final step) but for data management. The article also mentions some statistical techniques which you will meet in later courses (ignore the details for now)."
   },
   {
     "objectID": "EL4.html#motivation",
@@ -385,32 +385,46 @@
     "text": "Motivation\n\nIt is widely acknowledged that the most fundamental developments in statistics in the past 60 years are driven by information technology (IT). We should not underestimate the importance of pen and paper as a form of IT but it is since people start using computers to do statistical analysis that we really changed the role statistics plays in our research as well as normal life.\n\n\nAlthough: “Let’s not kid ourselves: the most widely used piece of software for statistics is Excel.”” /Brian Ripley (2002)\n\nShort overview"
   },
   {
+    "objectID": "EL4.html#panta-rei",
+    "href": "EL4.html#panta-rei",
+    "title": "EL4: Tooling",
+    "section": "Panta rei!",
+    "text": "Panta rei!\n\nWe teach you the present\nBut your work is in the future\nWe might use history to predict the future?\nAt least we should learn that things changes constantly!"
+  },
+  {
     "objectID": "EL4.html#terminal",
     "href": "EL4.html#terminal",
     "title": "EL4: Tooling",
     "section": "Terminal",
-    "text": "Terminal\n\nDon’t rely too heavily on your computers graphical user interface (GUI)\nYou know how to use the R console!\nTo use a terminal/Unix shell/Bash… is similair\nTo navigate the file system is basic practice\nA Unix Terminal is included if you are using Mac (and Linux)\nEmulators are common for Windows (one is included in Git)"
+    "text": "Terminal\n\nDon’t rely too heavily on your computers graphical user interface (GUI)\nYou know how to use the R console!\nTo use a terminal/Unix shell/Bash… is similair\nTo navigate the file system is basic practice\nA Unix Terminal is included if you are using Mac (and Linux)\nEmulators are common for Windows (one is included in Git, use that one after installation)"
+  },
+  {
+    "objectID": "EL4.html#early-computer-languages",
+    "href": "EL4.html#early-computer-languages",
+    "title": "EL4: Tooling",
+    "section": "Early computer languages",
+    "text": "Early computer languages\n\nALGOL / ALGOL 60\n\nAlgorithmic Language\nInfluential in academic/scientific computing\nIntroduced structured programming concepts that shaped later languages\n\nPL/I\n\nUsed in some government and industrial contexts\nCombined scientific and business computing features (Fortran + Cobol)"
   },
   {
     "objectID": "EL4.html#general-purpose-programming-languages",
     "href": "EL4.html#general-purpose-programming-languages",
     "title": "EL4: Tooling",
     "section": "General-Purpose Programming Languages",
-    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as numerical back-end (e.g., BLAS/LAPACK) in modern statistical software\n\nC\n\nEmerged in the 1970s as a systems programming language\nWidely used for implementing statistical software infrastructure\nCore language of many modern statistical environments (e.g., R, parts of SAS, Stata)\nOften used to interface with high-performance numerical libraries\n\nALGOL / ALGOL 60\n\nInfluential in academic computing\nIntroduced structured programming concepts that shaped later languages\n\nPL/I\n\nUsed in some government and industrial contexts\nCombined scientific and business computing features\n\n\n📌 These languages required substantial programming expertise.\n\n\n\n\n\n\nFORTAN and C\n\n\nFORTAN is still used in R for subroutines such as least squares. Even in modern packages!\nSame for C, such as for lm"
+    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as numerical back-end (e.g., BLAS/LAPACK) in modern statistical software\n\nC\n\nEmerged in the 1970s as a systems programming language\nWidely used for implementing statistical software infrastructure\nCore language of many modern statistical environments (e.g., R, parts of SAS, Stata)\nOften used to interface with high-performance numerical libraries\n\n\n📌 These languages required substantial programming expertise.\n\n\n\n\n\n\nFORTAN and C\n\n\nFORTAN is still used in R for subroutines such as least squares. Even in modern packages!\nSame for C, such as for lm, which is popular for high performance computing (fast execution time)."
   },
   {
     "objectID": "EL4.html#early-statistical-packages",
     "href": "EL4.html#early-statistical-packages",
     "title": "EL4: Tooling",
     "section": "Early Statistical Packages",
-    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nDeveloped at UCLA\nCommon in medical statistics\nBio-Medical Data Package\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
+    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nBio-Medical Data Package\nDeveloped at UCLA\nCommon in medical statistics\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
   },
   {
     "objectID": "EL4.html#sas-a-transitional-system",
     "href": "EL4.html#sas-a-transitional-system",
     "title": "EL4: Tooling",
     "section": "SAS: A Transitional System",
-    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry\n\n📌 SAS predates S and influenced later statistical workflows.\n\n\n\n\n\n\nSAS data\n\n\nStill common to receive data in SAS-format from register holdders!"
+    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry\n\n📌 SAS predates S and influenced later statistical workflows.\n\n\n\n\n\n\nSAS data\n\n\n\nStill common to receive data in SAS-format (data_file.sas7bdat) from register holders!\nSometimes necessary to use SAS to export the data (genAI might be a good aid in those cases)"
   },
   {
     "objectID": "EL4.html#limitations-of-pre-s-systems",
@@ -452,35 +466,42 @@
     "href": "EL4.html#microsoft-revolution-analytics",
     "title": "EL4: Tooling",
     "section": "Microsoft (Revolution Analytics)",
-    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server"
+    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server\n2023: Microsoft in still a relevant player\n\nplatinum member of The R consorsium\nOwner of GitHub\nVS Code"
   },
   {
     "objectID": "EL4.html#rstudio-becomes-posit",
     "href": "EL4.html#rstudio-becomes-posit",
     "title": "EL4: Tooling",
     "section": "RStudio becomes Posit",
-    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)"
+    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)\nA public benefit company (not only releant for its shareholders)\nAlso a platinum member of The R consortium # Modern IDE"
   },
   {
     "objectID": "EL4.html#positron",
     "href": "EL4.html#positron",
     "title": "EL4: Tooling",
     "section": "Positron",
-    "text": "Positron\n\nNew generation IDE for data science\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
+    "text": "Positron\n\nNew generation IDE for data science (and of course statistics!)\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
   },
   {
     "objectID": "EL4.html#quick-tour",
     "href": "EL4.html#quick-tour",
     "title": "EL4: Tooling",
     "section": "Quick tour",
-    "text": "Quick tour\n\n\n\n\n\n\n\n\nPositron assistant (mentioned in the video)\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!"
+    "text": "Quick tour\n\n\n\n\n\n\n\n\nPositron assistant (mentioned in the video)\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!\nRead more"
   },
   {
     "objectID": "EL4.html#rstudio-or-positron",
     "href": "EL4.html#rstudio-or-positron",
     "title": "EL4: Tooling",
     "section": "RStudio or Positron",
-    "text": "RStudio or Positron\n\nWe will use Positron in this course\nThis is for you to learn and see an alternative IDE\nRStudio, however, is still a great tool\nYou may use both in the future"
+    "text": "RStudio or Positron\n\nWe will use Positron in this course\nThis is for you to learn and see an alternative IDE …\n… and to get used to the fact that you should never stop learning!\nRStudio, however, is still a great tool and it is still developed and maintained.\nYou may use both in the future (maybe Positron on your computer but RStudio in a secure server, which tend to be more slowly updated)"
+  },
+  {
+    "objectID": "EL4.html#some-differences",
+    "href": "EL4.html#some-differences",
+    "title": "EL4: Tooling",
+    "section": "Some differences",
+    "text": "Some differences\n\nNo package installer (yet). You need to use pak::pkg_install() or install.packages() etc.\nNo inline rendering of results in Quarto documents (yet)\nYou can use multiple active R sessions at once\nGreat integrated tools from VS Code and extensions, such as GitHub integration"
   },
   {
     "objectID": "EL4.html#before-version-control-systems",
@@ -494,7 +515,7 @@
     "href": "EL4.html#floppy-discs-mail-and-shared-directories",
     "title": "EL4: Tooling",
     "section": "Floppy discs, Mail, and Shared Directories",
-    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
+    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes (actually still used for backups)\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
   },
   {
     "objectID": "EL4.html#early-version-control-systems",
@@ -532,6 +553,13 @@
     "text": "Terminal\n\nWindows: the Git installer comes with a terminal\nLinux/Unix (incl. Mac): use your terminal/Warp\nTerminal pane in RStudio/Positron"
   },
   {
+    "objectID": "EL4.html#gui",
+    "href": "EL4.html#gui",
+    "title": "EL4: Tooling",
+    "section": "GUI",
+    "text": "GUI"
+  },
+  {
     "objectID": "EL4.html#the-basics",
     "href": "EL4.html#the-basics",
     "title": "EL4: Tooling",
@@ -539,18 +567,39 @@
     "text": "The basics\nFour short videos to watch\nCheat-sheet\nSome interactive learning tools:\n\nGit practice\nGit Master\nlearn git branching\ngit simulator online"
   },
   {
+    "objectID": "EL4.html#some-basics",
+    "href": "EL4.html#some-basics",
+    "title": "EL4: Tooling",
+    "section": "Some basics",
+    "text": "Some basics\n\nYou initiate a folder as a git project\nGit will track all changes made in that folder\n\nNew files\nModified files (especially text, such as programming scripts/functions etc)\nDeleted files"
+  },
+  {
+    "objectID": "EL4.html#branching",
+    "href": "EL4.html#branching",
+    "title": "EL4: Tooling",
+    "section": "Branching",
+    "text": "Branching"
+  },
+  {
     "objectID": "EL4.html#distributed-version-control-with-git",
     "href": "EL4.html#distributed-version-control-with-git",
     "title": "EL4: Tooling",
     "section": "Distributed Version Control with Git",
-    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
+    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository (“folder”)\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
   },
   {
     "objectID": "EL4.html#hosting-platforms",
     "href": "EL4.html#hosting-platforms",
     "title": "EL4: Tooling",
     "section": "Hosting Platforms",
-    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHubGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests\nIssue tracking\nCode review\nCI/CD integration"
+    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests (collaboration tools)\nIssue tracking (discussions and bug reports etc)\nCode review\nCI/CD integration (advanced)"
+  },
+  {
+    "objectID": "EL4.html#issue-tracking",
+    "href": "EL4.html#issue-tracking",
+    "title": "EL4: Tooling",
+    "section": "Issue tracking",
+    "text": "Issue tracking\n\nIssue tracking is not part of Git but is implemented in most (if not all) hosting platforms.\nUsed for bug reports and discussions between developers and users\nIssues can be closed when fixed/adressed but are still found in the history\nEach issue gets a number (in order) and those can be referenced in commit messages etc (ex: Fix #37, which will automatically close the issue)"
   },
   {
     "objectID": "EL4.html#version-control-today",
@@ -655,7 +704,14 @@
     "href": "EL4.html#computer-practice",
     "title": "EL4: Tooling",
     "section": "Computer practice",
-    "text": "Computer practice\nIn ECS1 we will use Positron and git in action!\nAlso see the “Reading and practicing” section above for a more in-depth introduction (homework)."
+    "text": "Computer practice\nIn ECS1 we will use Positron and git/GitHub in action!\nAlso see the “Reading and practicing” section above for a more in-depth introduction (homework)."
+  },
+  {
+    "objectID": "EL4.html#what-you-should-know",
+    "href": "EL4.html#what-you-should-know",
+    "title": "EL4: Tooling",
+    "section": "What you should know",
+    "text": "What you should know\n\nReflect on the use of different software and how the rapid development in this field interplay with other important aspects of our field\nBe able to describe the principles of basic git commands (init, add, stage, commit, push, pull) and what they are used for (may be theoretical questions in the written exam)\nUse Git and GitHub in practice (but you can choose to do it either by commands or the GUI), this will be assessed in computer exercises and a later project.\nSimilarily, you need to organize your projects according to best practice (but we will be the focus of EL5)."
   },
   {
     "objectID": "EL4.html#references",
@@ -672,53 +728,18 @@
     "text": "ImportantExamination\n\n\n\nThis seminair is mandatory and active participation is requred to pass the course!"
   },
   {
-    "objectID": "ES1.html#discussion-order-for-each-group",
-    "href": "ES1.html#discussion-order-for-each-group",
+    "objectID": "ES1.html#discussion-order",
+    "href": "ES1.html#discussion-order",
     "title": "ES1: Ethics and Legality",
-    "section": "Discussion order for each group:",
-    "text": "Discussion order for each group:\n\nGrupp 1: 1, 2, 3, 4, 5, 6\nGrupp 2: 2, 3, 4, 5, 6, 1\nGrupp 3: 3, 4, 5, 6, 1, 2\nGrupp 4: 4, 5, 6, 1, 2, 3\nGrupp 5: 5, 6, 1, 2, 3, 4"
+    "section": "Discussion order",
+    "text": "Discussion order\nThere are 7 scenarios described below. Each group take them in the order described here:\n\nGrupp 1: 1, 2, 3, 4, 5, 6, 7\nGrupp 2: 2, 3, 4, 5, 6, 7, 1\nGrupp 3: 3, 4, 5, 6, 7, 1, 2\nGrupp 4: 4, 5, 6, 7, 1, 2, 3\nGrupp 5: 5, 6, 7, 1, 2, 3, 4\n\n\n\n\n\n\n\nImportantTime planning\n\n\n\nThe difference scenaris varies in length! Don’t get stressed if you start with a time-consuming scenario. If you have a lot to discuss, it might be enough to discuss that one only. If it is a short one, you may have time to cover many more. Put quality before quantity!"
   },
   {
-    "objectID": "ES1.html#discussion",
-    "href": "ES1.html#discussion",
+    "objectID": "ES1.html#scenarios",
+    "href": "ES1.html#scenarios",
     "title": "ES1: Ethics and Legality",
-    "section": "Discussion",
-    "text": "Discussion\n\nWhat are your immediate reactions — legally, ethically, and practically?\nDoes the transfer itself constitute a personal data breach under GDPR?\nWhat risks are involved (for individuals and institutions)?\n\nSuppose the client used his xxx@gu.se address to send the file.\n\nWhat does this mean in practice? Identify which organisations may now be involved in the incident.\nUnder GDPR, who is likely the data controller? Could there be joint controllership? What role does Akademistatistik have?\nWhat obligations arise immediately (documentation, reporting, internal notification)?\n\nYou find the following text on the GU intranet:\n\nA personal data breach is a security incident that can involve risks to human rights and freedoms. Everyone at the University of Gothenburg has an obligation to report incidents that they discover to the Data Protection Group. A personal data breach has occurred if, for example, data concerning, one or several registered persons have been destroyed, got lost in any other way or made available for unauthorised persons. The risks of a personal data breach can include loss of control over data or the restriction of people’s rights. A personal data breach is therefore a security incident that has affected the confidentiality, accuracy or availability of data. A personal data breach may consist of: An unauthorised party has gained access to the personal data, for example by sending personal data to recipients who should not have the data. […] The University of Gothenburg is responsible for the incidents that occur within the university’s activities. The head of the part of the organization where the incident occur must ensure that the incident is reported, managed and assessed. When you discover a suspected personal data breach at the University of Gothenburg, you must report it within the organisation as soon as you become aware of it. You do this by emailing dataskydd@gu.se with a copy to the closest superior college. The Data Protection Group will then initiate documentation and assessment of the breach. It is very important that any incident is reported swiftly, as serious breaches must be reported to the Swedish Authority for Privacy Protection (IMY) within 72 hours of the incident being discovered. The 72 hours is the time that the Data Protection Group and the Data Protection Officer have to make their assessment of the incident.\n\n\nWhat do you do now — concretely and immediately?\n\nInstead, imagine that the researcher used xxx@vgregion.se.\n\nWould that change anything? Consider controller responsibility, breach notification, and organisational accountability.\n\nLater, at a restaurant, you mention receiving the file. A person nearby asks you to share the data. You refuse. He claims that since you work for a public authority, the Freedom of the Press Act (TF) gives him the right to access the document immediately.\n\nWhat is your response?\n\nIs the Excel file a public document?\n\nDoes secrecy under OSL apply?\n\nWho decides on disclosure?"
-  },
-  {
-    "objectID": "ES1.html#discussion-1",
-    "href": "ES1.html#discussion-1",
-    "title": "ES1: Ethics and Legality",
-    "section": "Discussion",
-    "text": "Discussion\n\nBefore starting work, what technical and organisational safeguards must be in place?\n\nSuddenly, the client realises that no Data Processing Agreement (DPA) exists between them and your employer.\nYour boss says: “Not my problem. GDPR does not apply to me.”\n\nIs that correct?\n\nWhat is your professional responsibility?\n\nDo you continue working?"
-  },
-  {
-    "objectID": "ES1.html#discussion-2",
-    "href": "ES1.html#discussion-2",
-    "title": "ES1: Ethics and Legality",
-    "section": "Discussion",
-    "text": "Discussion\n\nAre you legally allowed to disclose identifying information?\nWhat is the original purpose of the register, and does this situation fall within that purpose?\nIf not, is it still possible to provide the information?\nWhen, if ever, should privacy yield to immediate medical necessity?\nWould you make the same decision at 10 a.m. on a weekday as at 2 a.m. when you are alone?\n\n\nVariation\nImagine that: - The patient survives regardless of your decision. - Later, relatives question how the hospital obtained identifying information. - Media becomes aware of the incident.\nDoes this change your reasoning in retrospect?"
-  },
-  {
-    "objectID": "ES1.html#discussion-3",
-    "href": "ES1.html#discussion-3",
-    "title": "ES1: Ethics and Legality",
-    "section": "Discussion",
-    "text": "Discussion\n\nWhat are your immediate reactions?\nDoes this appear to constitute:\n\nUnlawful processing under GDPR (lack of legal basis, purpose limitation)?\nA personal data breach?\nPossible misconduct or even a criminal offence (e.g. breach of confidentiality)?\n\nDoes it matter whether the data was merely accessed, or also exported and used?\nWhat risks arise for:\n\nThe affected individuals?\nThe organisation?\nYou?"
-  },
-  {
-    "objectID": "ES1.html#further-considerations",
-    "href": "ES1.html#further-considerations",
-    "title": "ES1: Ethics and Legality",
-    "section": "Further Considerations",
-    "text": "Further Considerations\n\nDo you confront your colleague?\nDo you report the incident internally? If so, to whom?\nAre you yourself at risk if you ignore what you have seen?\nHow does the power imbalance (junior vs senior) affect your responsibility?"
-  },
-  {
-    "objectID": "ES1.html#discussion-4",
-    "href": "ES1.html#discussion-4",
-    "title": "ES1: Ethics and Legality",
-    "section": "Discussion",
-    "text": "Discussion\n\nDoes the purpose of the quality register allow this type of secondary use?\nDoes an approved ethical review automatically mean that the data may be disclosed?\nDoes the age of the children matter (minor vs adult at time of contact)?\nWhat are the ethical implications of contacting families about a condition that may carry psychological or social sensitivity?\nDoes secrecy under the Public Access to Information and Secrecy Act (OSL) apply?\nAre there any personal risks for you if you accept to give the researcher the data?\nWill you accept or decline the request?\n\n\nVariation\nImagine that: - The researcher is well-known and highly respected. - The project has strong potential to improve long-term care. - The researcher argues that obtaining consent indirectly will drastically reduce participation rates.\nDoes this change your decision?"
+    "section": "Scenarios",
+    "text": "Scenarios\n\nScenario 1: The Data ReceiverScenario 2: Working with Data Across BordersScenario 3: Secure EnvironmentScenario 4: The AccidentScenario 5: The Role ModelScenario 6: Contacting Children from a Quality RegisterScenario 7: Unreasonable Promises?\n\n\nYou are participating in consultancy work through Akademistatistik.\nA client from the Sahlgrenska Academy (University of Gothenburg) is conducting research where the Västra Götaland Region is the research principal (forskningshuvudman).\nAfter an initial meeting, the client emails you a non-encrypted Excel file. The first column contains Swedish personal identity numbers (personnummer).\n\nDiscussion\n\nWhat are your immediate reactions — legally, ethically, and practically?\nDoes the transfer itself constitute a personal data breach under GDPR?\nWhat risks are involved (for individuals and institutions)?\n\nSuppose the client used his xxx@gu.se address to send the file.\n\nWhat does this mean in practice? Identify which organisations may now be involved in the incident.\nUnder GDPR, who is likely the data controller? Could there be joint controllership? What role does Akademistatistik have?\nWhat obligations arise immediately (documentation, reporting, internal notification)?\n\nYou find the following text on the GU intranet:\n\nA personal data breach is a security incident that can involve risks to human rights and freedoms. Everyone at the University of Gothenburg has an obligation to report incidents that they discover to the Data Protection Group. A personal data breach has occurred if, for example, data concerning, one or several registered persons have been destroyed, got lost in any other way or made available for unauthorised persons. The risks of a personal data breach can include loss of control over data or the restriction of people’s rights. A personal data breach is therefore a security incident that has affected the confidentiality, accuracy or availability of data. A personal data breach may consist of: An unauthorised party has gained access to the personal data, for example by sending personal data to recipients who should not have the data. […] The University of Gothenburg is responsible for the incidents that occur within the university’s activities. The head of the part of the organization where the incident occur must ensure that the incident is reported, managed and assessed. When you discover a suspected personal data breach at the University of Gothenburg, you must report it within the organisation as soon as you become aware of it. You do this by emailing dataskydd@gu.se with a copy to the closest superior college. The Data Protection Group will then initiate documentation and assessment of the breach. It is very important that any incident is reported swiftly, as serious breaches must be reported to the Swedish Authority for Privacy Protection (IMY) within 72 hours of the incident being discovered. The 72 hours is the time that the Data Protection Group and the Data Protection Officer have to make their assessment of the incident.\n\n\nWhat do you do now — concretely and immediately?\n\nInstead, imagine that the researcher used xxx@vgregion.se.\n\nWould that change anything? Consider controller responsibility, breach notification, and organisational accountability.\n\nLater, at a restaurant, you mention receiving the file. A person nearby asks you to share the data. You refuse. He claims that since you work for a public authority, the Freedom of the Press Act (TF) gives him the right to access the document immediately.\n\nWhat is your response?\n\nIs the Excel file a public document?\n\nDoes secrecy under OSL apply?\n\nWho decides on disclosure?\n\n\n\n\n\nYou are hired remotely by a company in Moldova. You have not yet received a work computer. Sometimes you work from cafés or libraries.\nThe company has a Swedish client who is the data controller. You download their data from an encrypted server connection.\n\nDiscussion\n\nBefore starting work, what technical and organisational safeguards must be in place?\n\nSuddenly, the client realises that no Data Processing Agreement (DPA) exists between them and your employer.\nYour boss says: “Not my problem. GDPR does not apply to me.”\n\nIs that correct?\n\nWhat is your professional responsibility?\n\nDo you continue working?\n\n\n\n\nYou must work in a restricted remote server environment.\nYou cannot install packages outside CRAN.\nYou cannot copy text or files.\nThe client can access the report directly on the server.\nYou urgently need a GitHub package not available on CRAN. You discover a technical workaround to install it despite restrictions.\n\nDiscussion\n\nDo you use the workaround? Why or why not?\nIs bypassing IT restrictions merely a policy violation — or potentially a legal issue?\n\nLater, you discover you can activate AI tools externally to assist your analysis. You are severely sleep deprived and under pressure.\n\nDo you use AI tools?\n\nCould this involve unlawful data transfer outside the EU?\n\nHow do exhaustion and working conditions affect ethical responsibility?\n\n\n\n\nYou work for a national quality register of joint replacements. Late one evening, a hospital calls you:\n\n“We have a severely injured patient. His face is unrecognisable, and he is unconscious. We cannot identify him. However, his hip prosthesis is exposed and we have located the serial number. If we can identify him and access his medical history, we may be able to save his life.”\n\nThe hospital asks whether you can use the register to identify the patient based on the prosthesis serial number and provide identifying information.\n\nDiscussion\n\nAre you legally allowed to disclose identifying information?\nWhat is the original purpose of the register, and does this situation fall within that purpose?\nIf not, is it still possible to provide the information?\nWhen, if ever, should privacy yield to immediate medical necessity?\nWould you make the same decision at 10 a.m. on a weekday as at 2 a.m. when you are alone?\n\n\n\nVariation\nImagine that: - The patient survives regardless of your decision. - Later, relatives question how the hospital obtained identifying information. - Media becomes aware of the incident.\nDoes this change your reasoning in retrospect?\n\n\n\nYou are relatively new at your workplace. A senior colleague has taken you under his wing, helped you understand internal systems, and supported you in difficult projects. This colleague is widely respected, seen as highly competent, and something of a role model in the organisation.\nOne evening, you are working late. While navigating a shared network folder for a project, you come across several script files. Out of curiosity — and because the file names seem related to a database you recognise — you open them.\nThe scripts clearly show that your colleague has performed a data extraction containing names, personal identity numbers, and addresses for all individuals living on the same street as him.\nThere is no obvious documentation justifying the query.\n\nDiscussion\n\nWhat are your immediate reactions?\nDoes this appear to constitute:\n\nUnlawful processing under GDPR (lack of legal basis, purpose limitation)?\nA personal data breach?\nPossible misconduct or even a criminal offence (e.g. breach of confidentiality)?\n\nDoes it matter whether the data was merely accessed, or also exported and used?\nWhat risks arise for:\n\nThe affected individuals?\nThe organisation?\nYou?\n\n\n\n\nFurther Considerations\n\nDo you confront your colleague?\nDo you report the incident internally? If so, to whom?\nAre you yourself at risk if you ignore what you have seen?\nHow does the power imbalance (junior vs senior) affect your responsibility?\n\n\n\n\nYou are the head of a unit responsible for a national quality register for children born with cleft lip and/or palate.\nYou receive a formal data access request. The researcher has an approved ethical review decision from the Swedish Ethical Review Authority (Etikprövningsmyndigheten).\nThe researcher requests access to identifiable personal data (names, personal identity numbers, and contact information) for children living in Western Sweden. The stated purpose is to contact the children and their guardians directly to invite them to participate in a new research project involving follow-up questionnaires and interviews.\n\nDiscussion\n\nDoes the purpose of the quality register allow this type of secondary use?\nDoes an approved ethical review automatically mean that the data may be disclosed?\nDoes the age of the children matter (minor vs adult at time of contact)?\nWhat are the ethical implications of contacting families about a condition that may carry psychological or social sensitivity?\nDoes secrecy under the Public Access to Information and Secrecy Act (OSL) apply?\nAre there any personal risks for you if you accept to give the researcher the data?\nWill you accept or decline the request?\n\n\n\nVariation\nImagine that: - The researcher is well-known and highly respected. - The project has strong potential to improve long-term care. - The researcher argues that obtaining consent indirectly will drastically reduce participation rates.\nDoes this change your decision?\n\n\n\nRead about the Gothenburg Study of Children with DAMP (the abbreviation was used at the time but has since become outdated). Focus on the section “Allegations and destruction.”\n\n\n\n\n\n\nTip\n\n\n\nYou are also recommended (although it is not mandatory) to read this BMJ Feature. However, please do so after the seminar (or beforehand if you happen to come across this text in advance, since we will not have the time during the seminair). It is an interesting case and may provide some additional insights in the grey-area between legality, ethics and research practive.\nAs a side note, the Church of Scientology’s involvement in relation to Sweden’s Freedom of the Press Act and public access to official documents is also an interesting topic in its own right, although most discussions of it are available only in Swedish.\n\n\n\nBackground (Summary)\nIn brief:\n\nResearchers collected highly sensitive data from children and their families.\nParticipants were given strong assurances that their privacy would be protected and that the data would not be shared outside the research group.\nThe scientific validity of parts of the research was later questioned.\nExternal researchers requested access to the original source material in order to replicate or scrutinise the findings.\nThe University of Gothenburg refused to disclose the material.\nThe external researchers appealed to the Administrative Court of Appeal (“Kammarrätten”), which ruled in their favour but accepted ten conditions set by the university for access.\nThe researchers in possession of the data appealed to the Supreme Administrative Court (“Regeringsrätten”, now “Högsta förvaltningsdomstolen”), which did not overturn the decision.\nThe requesting researchers also appealed, objecting to some of the conditions; a later ruling further strengthened their right of access.\nThe researchers holding the material destroyed the data rather than disclose it.\nThe destruction of the data was ruled illegal.\nThe responsible researcher was fined and received a suspended sentence.\nThe university rector and additional researchers (including the wife of the responsible researcher) were also convicted and fined.\nThe responsible researcher filed an application with the European Court of Human Rights in Strasbourg, arguing:\n\n\nIn my view, it is unreasonable that I am first obliged to give strict promises of confidentiality by the State in order to conduct medical research, then… I am ordered by the State to break hundreds of promises of confidentiality…then am sentenced as a criminal by the State because I had not broken those promises of confidentiality. “Something is clearly wrong in this chain of events, but it is difficult to see how the error can be mine.”\n\n\nThe European Court of Human Rights rejected this argument.\nThe researcher remains active and successful within his academic field.\n\n\n\n\n\n\n\nNoteLegal Context\n\n\n\nThese events took place approximately 20 years ago, before the GDPR entered into force (although the Swedish Personal Data Act, PUL, was in effect at the time). The current Public Access to Information and Secrecy Act (Offentlighets- och sekretesslagen, OSL) was enacted later.\nFor the purposes of this discussion, base your reasoning on current Swedish and EU legal frameworks.\n\n\n\n\nDiscussion\nFeel free to choose among those questions if you don’t have time to discuss them all:\n\nCan researchers promise absolute confidentiality in a country with strong public access to official documents (offentlighetsprincipen)?\nIf a public university is the data controller, who ultimately decides whether data must be disclosed — the researcher, the university, or the court?\nDoes an ethical approval and informed consent override obligations under freedom-of-information legislation?\nUnder current GDPR and OSL:\n\nWould disclosure of identifiable research data be possible?\nUnder what conditions?\nWould pseudonymisation change the legal assessment?\n\nWas the destruction of data ethically defensible, even if illegal?\n\nIs it ever justifiable to break the law to protect research participants?\nDoes intent matter?\n\nHow should conflicts between:\n\nResearch integrity (replicability and transparency)\nProtection of vulnerable participants\nPublic access to documents\nLegal compliance be balanced?\n\nCould the promises made to participants have been formulated differently?\n\nShould researchers in public institutions avoid absolute guarantees?\nIs “maximum protection within the limits of the law” a more appropriate formulation?\n\nWho carries the ultimate responsibility in such cases?\n\nIndividual researchers?\nUniversity leadership?\nThe legal department?\n\nConsider a modern parallel:\n\nSuppose a similar dataset existed today under GDPR.\nWould the legal outcome likely differ?\nWould reputational consequences differ?\n\nIs the European Court’s rejection of Gillberg’s argument legally unsurprising?\n\nOr does it reveal a structural tension between research ethics and public law?"
   },
   {
     "objectID": "EL8.html#reading",
@@ -732,28 +753,28 @@
     "href": "ECS1.html",
     "title": "ECS1: IDE and version control",
     "section": "",
-    "text": "NoteTake your time\n\n\n\nYou might not finnish all the exercises during the scheduled hours. No, worries. Continue later!"
+    "text": "NoteTake your time\n\n\n\nYou might not finnish all the exercises during the scheduled hours. No, worries. Continue later! Please do the exercises yourself (on your computer). However, you are allowed to help each other!"
   },
   {
     "objectID": "ECS1.html#preparations",
     "href": "ECS1.html#preparations",
     "title": "ECS1: IDE and version control",
     "section": "Preparations",
-    "text": "Preparations\nIf you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\nCreate a GitHub account (if you do not already have one): https://github.com\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/sta220/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK\nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
+    "text": "Preparations\nIf you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\n\n\nWindows: Download and install binary version\nMacOS: A bit more complicated. Perhaps easist with the $ xcode-select --install but more recent version with $ brew install git (where $ indicates that this is acommand to be run from a terminal, but which itself is not part of the command).\n\n\nCreate a GitHub account (if you do not already have one): https://github.com\n\nCreating a GitHub account requires an e-mail address. GitHub is owned by Microsoft, and the University of Gothenburg also uses Microsoft as its e-mail provider. You may use your university e-mail address if you wish. Alternatively, you are free to register a separate e-mail account for GitHub.\n\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/sta220/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK. \nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
   },
   {
     "objectID": "ECS1.html#new-project",
     "href": "ECS1.html#new-project",
     "title": "ECS1: IDE and version control",
     "section": "New project",
-    "text": "New project\nLet’s make a new project from scratch!\nYou will now re-use your data and R-scripts from the first computer exercise in the course (with questionaire data led by AGE). This will be refferd to as CSQ below.\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv” (it’s a good tool but that can wait to some other time). Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and most healthcare related data is considered sensitive) so lets add that we do not want to commit anything which is later found in the “data” subfolder. Simply type “data/*” on a new line in the .gitignore file and save the file.\nCopy your old data files used in CSQ (SPSS-files, Excel, or whatever format they are in) to the data folder.\nCheck that the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git).\nOpen the README.md file and make some changes to that file. Briefly describe what this repo is used for; the purpose of CSQ etc. Make some spelling misstakes on purpose :-)\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes (correct your intential spelling mistakees!) to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\nGo back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete: “Include all R scripts from CSQ in the R folder”.\nIn Positron: Perform the task you previosly gave yourself through the issue tracker.\nCommit your changes and in the commit message, write Fix #N where N is the number of the issue you were working on (probably no 1, hence Fix #1). Sync the local repo with GitHub.\nHave a new look at the issue and check if it was updated/closed automatically by your commit.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLabs or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive research data, however, is often more difficult. But for this course we will only use synthetic data and can therefore be less careful for now."
+    "text": "New project\nLet’s make a new project from scratch!\nYou will now re-use your data and R-scripts from the first computer exercise in the course (with questionaire data led by AGE). This will be refferd to as CSQ below.\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv” (it’s a good tool but that can wait to some other time). Open the new project.\nCreate a “data” subfolder (use the “Explorer” pane from the left side bar to navigate through your files or use the terminal if you feel confident (mkdir data) … or perhaps the fs package fs::dir_create(\"data)). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and healthcare data is sensitive) so let’s add that we do not want to commit anything which is later found in the “data” subfolder. Simply type data/** on a new line in the .gitignore file and save the file.\nCopy your old data files used in CSQ (SPSS-files, Excel, or whatever format they are in) to the data folder. (If you don’t have acces to this data, just type write.csv(iris, \"data/iris.csv\") or something to store at least some data in the folder).\nCheck that the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git using the .gitignore file).\nOpen the README.md file and make some changes to that file. Briefly describe what this repo is used for; the purpose of CSQ etc. Make some spelling misstakes on purpose :-)\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes (correct your intential spelling mistakees!) to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visable locally as well.\nGo back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete: “Include all R scripts from CSQ in the R folder”.\nIn Positron: Perform the task you previosly gave yourself through the issue tracker.\nCommit your changes and in the commit message, write Fix #N where N is the number of the issue you were working on (probably no 1, hence Fix #1). Sync the local repo with GitHub.\nHave a new look at the issue and check if it was updated/closed automatically by your commit.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLab or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packges. To collaborate within projects including sensitive health data, however, is often a bit more difficult. For this course we will only use synthetic data and can therefore be less careful for now. It is otherwise common to only share selected parts (such as the finalized R code) through GitHub and to use bare Git for callaboration on a secure server. To share R code for a research paper, it is also recommended to use a fixed version of the GitHub repo. This can be achieved by linking the GitHub repo to Zenodo or other services."
   },
   {
     "objectID": "ECS1.html#source-code-for-the-sta220-website",
     "href": "ECS1.html#source-code-for-the-sta220-website",
     "title": "ECS1: IDE and version control",
     "section": "Source code for the STA220 website",
-    "text": "Source code for the STA220 website\nThe course web site is itself a GitHub repo! You can see a small link and icon “View source” in the right hand menu. Explore those links. Clone the repo, play around! File an issue or make some edits if you find anything to improve! Make a pull request if you have concrete suggestions!"
+    "text": "Source code for the STA220 website\nThe course web site is itself a GitHub repo! You can see a small link and icon “View source” in the right hand menu. Clone the repo locally, “fork it”, play around! File an issue or make some edits if you find anything to improve! Make a “pull request” if you have concrete suggestions!\nNote, it is technically easy to reuse code from GitHub. Some repositories might nevertheless have assoicated licenses, which you should of course respect. Take a look at the LICENSE file for the popular dplyr package. R packages which are also distributed through CRAN have permissive licenses but their exact content may vary. There is no license file attached to the course web site yet, you might suggest one in a pull request or file an issue :-)"
   },
   {
     "objectID": "ECS1.html#try-to-contribute-to-an-r-package",
@@ -816,7 +837,7 @@
     "href": "EL9.html#havenread_sas",
     "title": "EL9: Big data",
     "section": "haven::read_sas()",
-    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x117679f90&gt;\n&lt;environment: namespace:haven&gt;"
+    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x12a774790&gt;\n&lt;environment: namespace:haven&gt;"
   },
   {
     "objectID": "EL9.html#export-from-sas-to-csv",
@@ -900,7 +921,7 @@
     "href": "EL9.html#example",
     "title": "EL9: Big data",
     "section": "Example",
-    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-19\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-19\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-19\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-19\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-19\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-21\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-21\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-21\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-21\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-21\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-19\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-19\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-19\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-19\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-19\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-21\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-21\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-21\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-21\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-21"
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-24\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-24\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-24\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-24\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-24\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-26\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-26\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-26\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-26\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-26\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-24\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-24\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-24\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-24\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-24\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-26\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-26\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-26\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-26\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-26"
   },
   {
     "objectID": "EL9.html#if-it-doesnt-fit",
@@ -1215,7 +1236,7 @@
     "href": "EL6.html#reading",
     "title": "EL6: Standardized vocabularies",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:\n\n\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
   },
   {
     "objectID": "EL3.html#literature",
@@ -1383,7 +1404,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-18."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-23."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -1971,7 +1992,7 @@
     "href": "handouts.html#reading-and-practicing",
     "title": "Handouts",
     "section": "Reading and practicing",
-    "text": "Reading and practicing\n\n(“The Unix Shell: Summary and Setup” 2026) introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the Terminal tab in RStudio). Only the first sections are required:\n\nIntroducing the shell\nNavigating Files and Directories\nWorking With Files and Directories\n\n(Rodrigues 2023, ch. 4) introduces the basics of Git for R users and applies to all common operating systems. Read and practice by following the instructions.\n\nRecommended references:\n\nA bit old but still relevant: Happy Git with R\nStaples (2023) illustrates the constant evolution in technology. As a professional, you should not expect that what you learn in this course will stay relevant for ever. This article is a good illustration of how the linguistic use of R has changed in less than a decade. It is also a practical example of how you can use GitHub in a slightly different way and it touches briefly on {data.table}, which we will introduce later. It also illustrates that a lot of R code is not written for statistical analysis (the last and final step) but for data management. The article also mentions some statistical techniques which you will meet in later courses (ignore the details for now)."
+    "text": "Reading and practicing\n\n(“The Unix Shell: Summary and Setup” 2026) introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the Terminal tab in RStudio or similarly in Posotron). Only the first sections are required:\n\nIntroducing the shell\nNavigating Files and Directories\nWorking With Files and Directories\n\n(Rodrigues 2023, ch. 4) introduces the basics of Git for R users and applies to all common operating systems. Read and practice by following the instructions.\n\nRecommended references:\n\nA bit old but still relevant: Happy Git with R\nStaples (2023) illustrates the constant evolution in technology. As a professional, you should not expect that what you learn in this course will stay relevant for ever. This article is a good illustration of how the linguistic use of R has changed in less than a decade. It is also a practical example of how you can use GitHub in a slightly different way and it touches briefly on {data.table}, which we will introduce later. It also illustrates that a lot of R code is not written for statistical analysis (the last and final step) but for data management. The article also mentions some statistical techniques which you will meet in later courses (ignore the details for now)."
   },
   {
     "objectID": "handouts.html#motivation",
@@ -1981,32 +2002,46 @@
     "text": "Motivation\n\nIt is widely acknowledged that the most fundamental developments in statistics in the past 60 years are driven by information technology (IT). We should not underestimate the importance of pen and paper as a form of IT but it is since people start using computers to do statistical analysis that we really changed the role statistics plays in our research as well as normal life.\n\n\nAlthough: “Let’s not kid ourselves: the most widely used piece of software for statistics is Excel.”” /Brian Ripley (2002)\n\nShort overview"
   },
   {
+    "objectID": "handouts.html#panta-rei",
+    "href": "handouts.html#panta-rei",
+    "title": "Handouts",
+    "section": "Panta rei!",
+    "text": "Panta rei!\n\nWe teach you the present\nBut your work is in the future\nWe might use history to predict the future?\nAt least we should learn that things changes constantly!"
+  },
+  {
     "objectID": "handouts.html#terminal",
     "href": "handouts.html#terminal",
     "title": "Handouts",
     "section": "Terminal",
-    "text": "Terminal\n\nDon’t rely too heavily on your computers graphical user interface (GUI)\nYou know how to use the R console!\nTo use a terminal/Unix shell/Bash… is similair\nTo navigate the file system is basic practice\nA Unix Terminal is included if you are using Mac (and Linux)\nEmulators are common for Windows (one is included in Git)"
+    "text": "Terminal\n\nDon’t rely too heavily on your computers graphical user interface (GUI)\nYou know how to use the R console!\nTo use a terminal/Unix shell/Bash… is similair\nTo navigate the file system is basic practice\nA Unix Terminal is included if you are using Mac (and Linux)\nEmulators are common for Windows (one is included in Git, use that one after installation)"
+  },
+  {
+    "objectID": "handouts.html#early-computer-languages",
+    "href": "handouts.html#early-computer-languages",
+    "title": "Handouts",
+    "section": "Early computer languages",
+    "text": "Early computer languages\n\nALGOL / ALGOL 60\n\nAlgorithmic Language\nInfluential in academic/scientific computing\nIntroduced structured programming concepts that shaped later languages\n\nPL/I\n\nUsed in some government and industrial contexts\nCombined scientific and business computing features (Fortran + Cobol)"
   },
   {
     "objectID": "handouts.html#general-purpose-programming-languages",
     "href": "handouts.html#general-purpose-programming-languages",
     "title": "Handouts",
     "section": "General-Purpose Programming Languages",
-    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as numerical back-end (e.g., BLAS/LAPACK) in modern statistical software\n\nC\n\nEmerged in the 1970s as a systems programming language\nWidely used for implementing statistical software infrastructure\nCore language of many modern statistical environments (e.g., R, parts of SAS, Stata)\nOften used to interface with high-performance numerical libraries\n\nALGOL / ALGOL 60\n\nInfluential in academic computing\nIntroduced structured programming concepts that shaped later languages\n\nPL/I\n\nUsed in some government and industrial contexts\nCombined scientific and business computing features\n\n\n📌 These languages required substantial programming expertise.\n\n\n\n\n\n\nNoteFORTAN and C\n\n\n\nFORTAN is still used in R for subroutines such as least squares. Even in modern packages!\nSame for C, such as for lm"
+    "text": "General-Purpose Programming Languages\nEarly statistical computing relied heavily on:\n\nFORTRAN\n\nDominant language for numerical and statistical computation\nStatistical methods implemented as libraries and subroutines\nStill used as numerical back-end (e.g., BLAS/LAPACK) in modern statistical software\n\nC\n\nEmerged in the 1970s as a systems programming language\nWidely used for implementing statistical software infrastructure\nCore language of many modern statistical environments (e.g., R, parts of SAS, Stata)\nOften used to interface with high-performance numerical libraries\n\n\n📌 These languages required substantial programming expertise.\n\n\n\n\n\n\nNoteFORTAN and C\n\n\n\nFORTAN is still used in R for subroutines such as least squares. Even in modern packages!\nSame for C, such as for lm, which is popular for high performance computing (fast execution time)."
   },
   {
     "objectID": "handouts.html#early-statistical-packages",
     "href": "handouts.html#early-statistical-packages",
     "title": "Handouts",
     "section": "Early Statistical Packages",
-    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nDeveloped at UCLA\nCommon in medical statistics\nBio-Medical Data Package\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
+    "text": "Early Statistical Packages\nSeveral dedicated statistical systems emerged:\n\nSPSS (1968)\n\nOriginally batch-oriented\nWidely used in social sciences\nOriginaly “Statistical Package for the Social Sciences”\n\nBMDP (1960s)\n\nBio-Medical Data Package\nDeveloped at UCLA\nCommon in medical statistics\n\nGENSTAT (1968)\n\nFocused on agricultural statistics\n\nMINITAB (1972)\n\nDesigned for teaching and education\nStill popular in quality control"
   },
   {
     "objectID": "handouts.html#sas-a-transitional-system",
     "href": "handouts.html#sas-a-transitional-system",
     "title": "Handouts",
     "section": "SAS: A Transitional System",
-    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry\n\n📌 SAS predates S and influenced later statistical workflows.\n\n\n\n\n\n\nNoteSAS data\n\n\n\nStill common to receive data in SAS-format from register holdders!"
+    "text": "SAS: A Transitional System\n\nSAS (early 1970s)\nDeveloped for agricultural and biostatistical analysis\nScript-based, but largely batch-oriented\nBecame a standard in:\n\nGovernment agencies\nLarge organisations\n\nKnown for strong data management capabilities\nStill widely used in pharmaceutical industry\n\n📌 SAS predates S and influenced later statistical workflows.\n\n\n\n\n\n\nNoteSAS data\n\n\n\n\nStill common to receive data in SAS-format (data_file.sas7bdat) from register holders!\nSometimes necessary to use SAS to export the data (genAI might be a good aid in those cases)"
   },
   {
     "objectID": "handouts.html#limitations-of-pre-s-systems",
@@ -2048,42 +2083,42 @@
     "href": "handouts.html#microsoft-revolution-analytics",
     "title": "Handouts",
     "section": "Microsoft (Revolution Analytics)",
-    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server"
+    "text": "Microsoft (Revolution Analytics)\n\nJan 2015: Microsoft announces it will acquire Revolution Analytics\nMicrosoft promotes enterprise R offerings (e.g., Microsoft R Open / R Server)\n2016: SQL Server 2016 introduces R Services (in-database R)\n2017: Microsoft expands the stack under “Machine Learning Server” branding\nJune 2021: Microsoft announces retirement of Microsoft Machine Learning Server\n2023: Microsoft in still a relevant player\n\nplatinum member of The R consorsium\nOwner of GitHub\nVS Code"
   },
   {
     "objectID": "handouts.html#rstudio-becomes-posit",
     "href": "handouts.html#rstudio-becomes-posit",
     "title": "Handouts",
     "section": "RStudio becomes Posit",
-    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)"
-  },
-  {
-    "objectID": "handouts.html#modern-ide",
-    "href": "handouts.html#modern-ide",
-    "title": "Handouts",
-    "section": "Modern IDE",
-    "text": "Modern IDE"
+    "text": "RStudio becomes Posit\n\nJuly 27, 2022: RStudio rebrands as Posit\nJuly 28, 2022: Quarto is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)\nA public benefit company (not only releant for its shareholders)\nAlso a platinum member of The R consortium # Modern IDE"
   },
   {
     "objectID": "handouts.html#positron",
     "href": "handouts.html#positron",
     "title": "Handouts",
     "section": "Positron",
-    "text": "Positron\n\nNew generation IDE for data science\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
+    "text": "Positron\n\nNew generation IDE for data science (and of course statistics!)\nFrom Posit PBC\nFree for individual use\nBased on Code OSS (open source version of VS Code from Microsoft)\nFor both R and Python (Julia?)"
   },
   {
     "objectID": "handouts.html#quick-tour",
     "href": "handouts.html#quick-tour",
     "title": "Handouts",
     "section": "Quick tour",
-    "text": "Quick tour\n\n\n\n\n\n\n\n\nImportantPositron assistant (mentioned in the video)\n\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!"
+    "text": "Quick tour\n\n\n\n\n\n\n\n\nImportantPositron assistant (mentioned in the video)\n\n\n\nThis feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.\nIt is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!\nRead more"
   },
   {
     "objectID": "handouts.html#rstudio-or-positron",
     "href": "handouts.html#rstudio-or-positron",
     "title": "Handouts",
     "section": "RStudio or Positron",
-    "text": "RStudio or Positron\n\nWe will use Positron in this course\nThis is for you to learn and see an alternative IDE\nRStudio, however, is still a great tool\nYou may use both in the future"
+    "text": "RStudio or Positron\n\nWe will use Positron in this course\nThis is for you to learn and see an alternative IDE …\n… and to get used to the fact that you should never stop learning!\nRStudio, however, is still a great tool and it is still developed and maintained.\nYou may use both in the future (maybe Positron on your computer but RStudio in a secure server, which tend to be more slowly updated)"
+  },
+  {
+    "objectID": "handouts.html#some-differences",
+    "href": "handouts.html#some-differences",
+    "title": "Handouts",
+    "section": "Some differences",
+    "text": "Some differences\n\nNo package installer (yet). You need to use pak::pkg_install() or install.packages() etc.\nNo inline rendering of results in Quarto documents (yet)\nYou can use multiple active R sessions at once\nGreat integrated tools from VS Code and extensions, such as GitHub integration"
   },
   {
     "objectID": "handouts.html#version-control",
@@ -2104,7 +2139,7 @@
     "href": "handouts.html#floppy-discs-mail-and-shared-directories",
     "title": "Handouts",
     "section": "Floppy discs, Mail, and Shared Directories",
-    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
+    "text": "Floppy discs, Mail, and Shared Directories\n1970s–1980s: Common practices included:\n\nCopying files to:\n\nFloppy disks\nMagnetic tapes (actually still used for backups)\n\nSending media by postal mail\nSharing files via:\n\nNetwork drives\nFTP servers\n\n\n📌 Version control was social, not technical."
   },
   {
     "objectID": "handouts.html#early-version-control-systems",
@@ -2142,6 +2177,13 @@
     "text": "Terminal\n\nWindows: the Git installer comes with a terminal\nLinux/Unix (incl. Mac): use your terminal/Warp\nTerminal pane in RStudio/Positron"
   },
   {
+    "objectID": "handouts.html#gui",
+    "href": "handouts.html#gui",
+    "title": "Handouts",
+    "section": "GUI",
+    "text": "GUI"
+  },
+  {
     "objectID": "handouts.html#the-basics",
     "href": "handouts.html#the-basics",
     "title": "Handouts",
@@ -2149,18 +2191,39 @@
     "text": "The basics\nFour short videos to watch\nCheat-sheet\nSome interactive learning tools:\n\nGit practice\nGit Master\nlearn git branching\ngit simulator online"
   },
   {
+    "objectID": "handouts.html#some-basics",
+    "href": "handouts.html#some-basics",
+    "title": "Handouts",
+    "section": "Some basics",
+    "text": "Some basics\n\nYou initiate a folder as a git project\nGit will track all changes made in that folder\n\nNew files\nModified files (especially text, such as programming scripts/functions etc)\nDeleted files"
+  },
+  {
+    "objectID": "handouts.html#branching",
+    "href": "handouts.html#branching",
+    "title": "Handouts",
+    "section": "Branching",
+    "text": "Branching"
+  },
+  {
     "objectID": "handouts.html#distributed-version-control-with-git",
     "href": "handouts.html#distributed-version-control-with-git",
     "title": "Handouts",
     "section": "Distributed Version Control with Git",
-    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
+    "text": "Distributed Version Control with Git\nKey ideas in Git:\n\nEvery clone is a full repository (“folder”)\nLocal commits without network access\nCheap and fast branches\nCryptographic integrity (hash-based)\n\n📌 Collaboration becomes more flexible and robust."
   },
   {
     "objectID": "handouts.html#hosting-platforms",
     "href": "handouts.html#hosting-platforms",
     "title": "Handouts",
     "section": "Hosting Platforms",
-    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHubGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests\nIssue tracking\nCode review\nCI/CD integration"
+    "text": "Hosting Platforms\nPlatforms built around Git:\n\nGitHub (2008)\nBitbucket (2008)\nGitLab (2011)\nGitea - open source alternative to GitHub (get the same functionallity locally or on a server)\n\nThey add:\n\nPull requests / merge requests (collaboration tools)\nIssue tracking (discussions and bug reports etc)\nCode review\nCI/CD integration (advanced)"
+  },
+  {
+    "objectID": "handouts.html#issue-tracking",
+    "href": "handouts.html#issue-tracking",
+    "title": "Handouts",
+    "section": "Issue tracking",
+    "text": "Issue tracking\n\nIssue tracking is not part of Git but is implemented in most (if not all) hosting platforms.\nUsed for bug reports and discussions between developers and users\nIssues can be closed when fixed/adressed but are still found in the history\nEach issue gets a number (in order) and those can be referenced in commit messages etc (ex: Fix #37, which will automatically close the issue)"
   },
   {
     "objectID": "handouts.html#version-control-today",
@@ -2272,7 +2335,14 @@
     "href": "handouts.html#computer-practice",
     "title": "Handouts",
     "section": "Computer practice",
-    "text": "Computer practice\nIn ECS1 we will use Positron and git in action!\nAlso see the “Reading and practicing” section above for a more in-depth introduction (homework)."
+    "text": "Computer practice\nIn ECS1 we will use Positron and git/GitHub in action!\nAlso see the “Reading and practicing” section above for a more in-depth introduction (homework)."
+  },
+  {
+    "objectID": "handouts.html#what-you-should-know",
+    "href": "handouts.html#what-you-should-know",
+    "title": "Handouts",
+    "section": "What you should know",
+    "text": "What you should know\n\nReflect on the use of different software and how the rapid development in this field interplay with other important aspects of our field\nBe able to describe the principles of basic git commands (init, add, stage, commit, push, pull) and what they are used for (may be theoretical questions in the written exam)\nUse Git and GitHub in practice (but you can choose to do it either by commands or the GUI), this will be assessed in computer exercises and a later project.\nSimilarily, you need to organize your projects according to best practice (but we will be the focus of EL5)."
   },
   {
     "objectID": "handouts.html#reading",

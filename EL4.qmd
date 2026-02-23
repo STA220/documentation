@@ -23,7 +23,7 @@ bibliography: references.bib
 
 ## Reading and practicing
 
--   [@theunix2026] introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the [Terminal tab in RStudio](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE)). Only the first sections are required:
+-   [@theunix2026] introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the [Terminal tab in RStudio](https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) or similarly in Posotron). Only the first sections are required:
     -   [Introducing the shell](https://swcarpentry.github.io/shell-novice/01-intro.html)
     -   [Navigating Files and Directories](https://swcarpentry.github.io/shell-novice/02-filedir.html)
     -   [Working With Files and Directories](https://swcarpentry.github.io/shell-novice/03-create.html)
@@ -42,14 +42,35 @@ bibliography: references.bib
 
 [Short overview](https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com)
 
+------------------------------------------------------------------------
+
+![](images/paste-17.png)
+
+## Panta rei!
+
+-   We teach you the present
+-   But your work is in the future
+-   We might use history to predict the future?
+-   At least we should learn that things changes constantly!
+
 ## Terminal
 
-- Don't rely too heavily on your computers graphical user interface (GUI)
-- You know how to use the R console!
-- To use a terminal/Unix shell/Bash... is similair
-- To navigate the file system is basic practice
-- A Unix Terminal is included if you are using Mac (and Linux)
-- Emulators are common for Windows (one is included in Git)
+-   Don't rely too heavily on your computers graphical user interface (GUI)
+-   You know how to use the R console!
+-   To use a terminal/Unix shell/Bash... is similair
+-   To navigate the file system is basic practice
+-   A Unix Terminal is included if you are using Mac (and Linux)
+-   Emulators are common for Windows (one is included in Git, use that one after installation)
+
+## Early computer languages
+
+-   **ALGOL / ALGOL 60**
+    -   Algorithmic Language
+    -   Influential in academic/scientific computing
+    -   Introduced structured programming concepts that shaped later languages
+-   **PL/I**
+    -   Used in some government and industrial contexts
+    -   Combined scientific and business computing features (Fortran + Cobol)
 
 ## General-Purpose Programming Languages
 
@@ -64,12 +85,6 @@ Early statistical computing relied heavily on:
     -   Widely used for implementing statistical software infrastructure
     -   Core language of many modern statistical environments (e.g., R, parts of SAS, Stata)
     -   Often used to interface with high-performance numerical libraries
--   **ALGOL / ALGOL 60**
-    -   Influential in academic computing
-    -   Introduced structured programming concepts that shaped later languages
--   **PL/I**
-    -   Used in some government and industrial contexts
-    -   Combined scientific and business computing features
 
 📌 These languages required substantial programming expertise.
 
@@ -78,9 +93,8 @@ Early statistical computing relied heavily on:
 
 FORTAN is still used in R for subroutines such as [least squares](https://github.com/wch/r-source/blob/trunk/src/appl/dqrls.f). Even in modern packages!
 
-Same for C, such as for [lm](https://github.com/wch/r-source/blob/trunk/src/library/stats/src/lm.c)
+Same for C, such as for [lm](https://github.com/wch/r-source/blob/trunk/src/library/stats/src/lm.c), which is popular for high performance computing (fast execution time).
 :::
-
 
 ## Early Statistical Packages
 
@@ -91,9 +105,9 @@ Several dedicated statistical systems emerged:
     -   Widely used in social sciences
     -   Originaly "Statistical Package for the Social Sciences"
 -   **BMDP** (1960s)
+    -   Bio-Medical Data Package
     -   Developed at UCLA
     -   Common in medical statistics
-    -   Bio-Medical Data Package
 -   **GENSTAT** (1968)
     -   Focused on agricultural statistics
 -   **MINITAB** (1972)
@@ -116,7 +130,8 @@ Several dedicated statistical systems emerged:
 ::: callout-note
 # SAS data
 
-Still common to receive data in SAS-format from register holdders!
+-   Still common to receive data in SAS-format (`data_file.sas7bdat`) from register holders!
+-   Sometimes necessary to use SAS to export the data (genAI might be a good aid in those cases)
 :::
 
 ## Limitations of Pre-S Systems
@@ -154,6 +169,10 @@ Common limitations included:
 -   **1997:** the R Core group forms; **CRAN** is founded (Kurt Hornik)
 -   **2000:** **R 1.0.0** is released 2000-02-29
 
+------------------------------------------------------------------------
+
+![](images/paste-18.png)
+
 ## RStudio brings an IDE to the R community
 
 -   **2009:** RStudio (the company) is founded
@@ -166,22 +185,29 @@ Common limitations included:
 -   **2016:** SQL Server 2016 introduces **R Services** (in-database R)
 -   **2017:** Microsoft expands the stack under “Machine Learning Server” branding
 -   **June 2021:** Microsoft announces retirement of **Microsoft Machine Learning Server**
-
+-   **2023:** Microsoft in still a relevant player
+    -   platinum member of [The R consorsium](https://r-consortium.org)
+    -   Owner of GitHub
+    -   VS Code
 
 ## RStudio becomes Posit
 
 -   **July 27, 2022:** RStudio rebrands as **Posit**
 -   **July 28, 2022:** **Quarto** is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)
-
-# Modern IDE
+-   A public benefit company (not only releant for its shareholders)
+-   Also a platinum member of The R consortium \# Modern IDE
 
 ## Positron
 
--   New generation IDE for data science
+-   New generation IDE for data science (and of course statistics!)
 -   From Posit PBC
 -   Free for individual use
 -   Based on Code OSS (open source version of VS Code from Microsoft)
 -   For both R and Python ([Julia?](https://github.com/posit-dev/positron/issues/3679))
+
+------------------------------------------------------------------------
+
+![](images/paste-14.png)
 
 ## Quick tour
 
@@ -195,14 +221,27 @@ Common limitations included:
 This feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant's functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.
 
 It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for "brott mot tystnadsplikten" which is not only public, but actually civil law ("Brottsbalken") with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!
+
+[Read more](https://posit.co/blog/trust-llm-tools/)
 :::
 
 ## RStudio or Positron
 
-- We will use Positron in this course
-- This is for you to learn and see an alternative IDE
-- RStudio, however, is still a great tool
-- You may use both in the future
+-   We will use Positron in this course
+-   This is for you to learn and see an alternative IDE ...
+-   ... and to get used to the fact that you should never stop learning!
+-   RStudio, however, is still a great tool and it is still developed and maintained.
+-   You may use both in the future (maybe Positron on your computer but RStudio in a secure server, which tend to be more slowly updated)
+
+## Some differences
+
+-   No package installer (yet). You need to use `pak::pkg_install()` or `install.packages()` etc.
+
+-   No inline rendering of results in Quarto documents (yet)
+
+-   You can use multiple active R sessions at once
+
+-   Great integrated tools from VS Code and extensions, such as GitHub integration
 
 # Version control
 
@@ -218,7 +257,7 @@ It is recommended to not rely on such tools during the course (even if all our d
     -   `analysis_final.f`
     -   `analysis_final_v2.f`
 -   Physical media:
-    -   Punch cards
+    -   [Punch cards](https://storage.googleapis.com/dstlceqcawpgve/how-do-punch-card-computers-work.html)
     -   Magnetic tape
 -   Centralised mainframes
 
@@ -230,7 +269,7 @@ It is recommended to not rely on such tools during the course (even if all our d
 
 -   Copying files to:
     -   Floppy disks
-    -   Magnetic tapes
+    -   Magnetic tapes (actually still used for backups)
 -   Sending media by **postal mail**
 -   Sharing files via:
     -   Network drives
@@ -294,9 +333,17 @@ Design principles:
 
 -   Windows: the Git installer comes with a terminal
 -   Linux/Unix (incl. Mac): use your terminal/Warp
--  Terminal pane in RStudio/Positron
+-   Terminal pane in RStudio/Positron
 
------------------
+------------------------------------------------------------------------
+
+![](images/paste-15.png)
+
+## GUI
+
+![](images/paste-16.png)
+
+------------------------------------------------------------------------
 
 ![](images/paste-4.png)
 
@@ -313,11 +360,27 @@ Some interactive learning tools:
 -   [learn git branching](https://learngitbranching.js.org/)
 -   [git simulator online](https://webutility.io/git-simulator-online)
 
+## Some basics
+
+-   You initiate a folder as a git project
+
+-   Git will track all changes made in that folder
+
+    -   New files
+
+    -   Modified files (especially text, such as programming scripts/functions etc)
+
+    -   Deleted files
+
+## Branching
+
+![](images/paste-19.png)
+
 ## Distributed Version Control with Git
 
 Key ideas in Git:
 
--   Every clone is a full repository
+-   Every clone is a full repository ("folder")
 -   Local commits without network access
 -   Cheap and fast branches
 -   Cryptographic integrity (hash-based)
@@ -328,21 +391,38 @@ Key ideas in Git:
 
 Platforms built around Git:
 
--   [GitHub](github.com)**GitHub** (2008)
+-   [GitHub](github.com) (2008)
 -   [Bitbucket](bitbucket.org) (2008)
 -   [GitLab](gitlab.com) (2011)
 -   [Gitea](https://gitea.com/) - open source alternative to GitHub (get the same functionallity locally or on a server)
 
 They add:
 
--   Pull requests / merge requests
--   Issue tracking
+-   Pull requests / merge requests (collaboration tools)
+-   Issue tracking (discussions and bug reports etc)
 -   Code review
--   CI/CD integration
+-   CI/CD integration (advanced)
 
---------------------
+## Issue tracking
 
-![](images/paste-5.png) 
+-   Issue tracking is not part of Git but is implemented in most (if not all) hosting platforms.
+
+-   Used for bug reports and discussions between developers and users
+- Issues can be closed when fixed/adressed but are still found in the history
+- Each issue gets a number (in order) and those can be referenced in commit messages etc (ex: `Fix #37`, which will automatically close the issue)
+
+
+------------------------------------------------------------------------
+
+![](images/paste-21.png)
+
+------------------------------------------------------------------------
+
+![](images/paste-22.png)
+
+------------------------------------------------------------------------
+
+![](images/paste-5.png)
 
 ## Version Control Today
 
@@ -534,8 +614,18 @@ Common file structures
 
 ## Computer practice
 
-In [ECS1](ECS1.qmd) we will use Positron and git in action!
+In [ECS1](ECS1.qmd) we will use Positron and git/GitHub in action!
 
 Also see the "Reading and practicing" section above for a more in-depth introduction (homework).
 
----------------------
+## What you should know
+
+-   Reflect on the use of different software and how the rapid development in this field interplay with other important aspects of our field
+
+-   Be able to describe the principles of basic git commands (init, add, stage, commit, push, pull) and what they are used for (may be theoretical questions in the written exam)
+
+-   Use Git and GitHub in practice (but you can choose to do it either by commands or the GUI), this will be assessed in computer exercises and a later project.
+
+-   Similarily, you need to organize your projects according to best practice (but we will be the focus of [EL5](EL5.qmd)).
+
+------------------------------------------------------------------------

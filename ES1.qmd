@@ -16,25 +16,37 @@ This seminair is mandatory and active participation is requred to pass the cours
 
 Approximately 5 groups with approximately 4 students each.
 
-Part 1 (45 min)
+Part 1 (2 * 45 min)
 : Group discussions. Each group discuss the scenarios in different orders. Don't rush through all but spend as much time as you think is relevant on each of them.
 
 Part 2 (45 min)
 : Classroom discussion. Each group present their discussion, interpretation and conslusions. 
 
-## Discussion order for each group:
+## Discussion order
 
-- **Grupp 1:** 1, 2, 3, 4, 5, 6
-- **Grupp 2:** 2, 3, 4, 5, 6, 1
-- **Grupp 3:** 3, 4, 5, 6, 1, 2
-- **Grupp 4:** 4, 5, 6, 1, 2, 3
-- **Grupp 5:** 5, 6, 1, 2, 3, 4
+There are 7 scenarios described below. Each group take them in the order described here:
+
+- **Grupp 1:** 1, 2, 3, 4, 5, 6, 7
+- **Grupp 2:** 2, 3, 4, 5, 6, 7, 1
+- **Grupp 3:** 3, 4, 5, 6, 7, 1, 2
+- **Grupp 4:** 4, 5, 6, 7, 1, 2, 3
+- **Grupp 5:** 5, 6, 7, 1, 2, 3, 4
+
+::: {.callout-important}
+# Time planning
+The difference scenaris varies in length! Don't get stressed if you start with a time-consuming scenario. If you have a lot to discuss, it might be enough to discuss that one only. If it is a short one, you may have time to cover many more. Put quality before quantity!
+:::
 
 # Instructions
 
 This is not a mathematics exercise. There is no single correct answer to the questions you will discuss.  
 
 The purpose of this seminar is to explore tensions between legality, ethics, professional responsibility, organisational constraints, and personal circumstances. Something may be legal yet ethically questionable. Something may be ethically appealing yet unlawful. Your task is to explore these grey areas.
+
+::: {.callout-note}
+# GenAI?
+You are allowed to use generative AI during discussions but if so, also reflect on this short 2 page paper (4 pages incl references): [Bias Legal Data for generative AI](https://blog.genlaw.org/pdfs/genlaw_icml2024/9.pdf). The paper focus on criminal/civil law. It is possible that administrative law is not affected the same way. What do you think?
+:::
 
 - Work in groups of four.
 - For each scenario, each of you must argue from the perspective of one assigned role.
@@ -66,9 +78,12 @@ The Idealistic Reformer
 The Budget Guardian
 : Public resources are limited. Every action has financial consequences. Legal violations can result in heavy fines, reputational damage, and loss of funding. You focus on long-term sustainability, cost-effectiveness, and institutional risk.
 
----
 
-# Scenario 1: The Data Receiver
+## Scenarios
+
+::: {.panel-tabset}
+
+### Scenario 1: The Data Receiver
 
 You are participating in consultancy work through Akademistatistik.  
 
@@ -76,7 +91,7 @@ A client from the Sahlgrenska Academy (University of Gothenburg) is conducting r
 
 After an initial meeting, the client emails you a non-encrypted Excel file. The first column contains Swedish personal identity numbers (personnummer).
 
-## Discussion
+#### Discussion
 
 1. What are your immediate reactions — legally, ethically, and practically?
 2. Does the transfer itself constitute a personal data breach under GDPR?
@@ -107,13 +122,13 @@ Later, at a restaurant, you mention receiving the file. A person nearby asks you
 
 
 
-# Scenario 2: Working with Data Across Borders
+### Scenario 2: Working with Data Across Borders
 
 You are hired remotely by a company in Moldova. You have not yet received a work computer. Sometimes you work from cafés or libraries.  
 
 The company has a Swedish client who is the data controller. You download their data from an encrypted server connection.
 
-## Discussion
+#### Discussion
 
 1. Before starting work, what technical and organisational safeguards must be in place?
 
@@ -126,7 +141,7 @@ Your boss says: “Not my problem. GDPR does not apply to me.”
 4. Do you continue working?
 
 
-# Scenario 3: Secure Environment
+### Scenario 3: Secure Environment
 
 You must work in a restricted remote server environment.  
 You cannot install packages outside CRAN.  
@@ -134,6 +149,8 @@ You cannot copy text or files.
 The client can access the report directly on the server.
 
 You urgently need a GitHub package not available on CRAN. You discover a technical workaround to install it despite restrictions.
+
+#### Discussion
 
 1. Do you use the workaround? Why or why not?
 2. Is bypassing IT restrictions merely a policy violation — or potentially a legal issue?
@@ -145,7 +162,7 @@ Later, you discover you can activate AI tools externally to assist your analysis
 5. How do exhaustion and working conditions affect ethical responsibility?
 
 
-# Scenario 4: The Accident
+### Scenario 4: The Accident
 
 You work for a national quality register of joint replacements.
 Late one evening, a hospital calls you:
@@ -154,7 +171,7 @@ Late one evening, a hospital calls you:
 
 The hospital asks whether you can use the register to identify the patient based on the prosthesis serial number and provide identifying information.
 
-## Discussion
+#### Discussion
 
 1. Are you legally allowed to disclose identifying information?
 2. What is the original purpose of the register, and does this situation fall within that purpose?
@@ -162,7 +179,7 @@ The hospital asks whether you can use the register to identify the patient based
 4. When, if ever, should privacy yield to immediate medical necessity?
 4. Would you make the same decision at 10 a.m. on a weekday as at 2 a.m. when you are alone?
 
-### Variation
+#### Variation
 
 Imagine that:
 - The patient survives regardless of your decision.
@@ -173,7 +190,7 @@ Does this change your reasoning in retrospect?
 
 
 
-# Scenario 5: The Role Model
+### Scenario 5: The Role Model
 
 You are relatively new at your workplace. A senior colleague has taken you under his wing, helped you understand internal systems, and supported you in difficult projects. This colleague is widely respected, seen as highly competent, and something of a role model in the organisation.
 
@@ -183,7 +200,7 @@ The scripts clearly show that your colleague has performed a data extraction con
 
 There is no obvious documentation justifying the query.
 
-## Discussion
+#### Discussion
 
 1. What are your immediate reactions?
 2. Does this appear to constitute:
@@ -196,7 +213,7 @@ There is no obvious documentation justifying the query.
    - The organisation?
    - You?
 
-## Further Considerations
+#### Further Considerations
 
 5. Do you confront your colleague?
 6. Do you report the incident internally? If so, to whom?
@@ -204,7 +221,7 @@ There is no obvious documentation justifying the query.
 8. How does the power imbalance (junior vs senior) affect your responsibility?
 
 
-# Scenario 6: Contacting Children from a Quality Register
+### Scenario 6: Contacting Children from a Quality Register
 
 You are the head of a unit responsible for a national quality register for children born with cleft lip and/or palate.
 
@@ -213,7 +230,7 @@ You receive a formal data access request. The researcher has an approved ethical
 The researcher requests access to identifiable personal data (names, personal identity numbers, and contact information) for children living in Western Sweden. The stated purpose is to contact the children and their guardians directly to invite them to participate in a new research project involving follow-up questionnaires and interviews.
 
 
-## Discussion
+#### Discussion
 
 1. Does the purpose of the quality register allow this type of secondary use?
 2. Does an approved ethical review automatically mean that the data may be disclosed?
@@ -223,7 +240,7 @@ The researcher requests access to identifiable personal data (names, personal id
 6. Are there any personal risks for you if you accept to give the researcher the data?
 7. Will you accept or decline the request?
 
-### Variation
+#### Variation
 
 Imagine that:
 - The researcher is well-known and highly respected.
@@ -233,10 +250,88 @@ Imagine that:
 Does this change your decision?
 
 
+### Scenario 7: Unreasonable Promises?
 
-# Final Plenary Reflection
+Read about the [Gothenburg Study of Children with DAMP](https://en.wikipedia.org/wiki/Gothenburg_Study_of_Children_with_DAMP) (the abbreviation was used at the time but has since become outdated). Focus on the section “Allegations and destruction.”
 
-- When did legality and ethics diverge most clearly?
-- Which role was hardest to argue from?
-- Did your personal opinion change during discussion?
+::: {.callout-tip}
+You are also recommended (although it is not mandatory) to read this [BMJ Feature](https://www.bmj.com/content/335/7616/370). However, please do so after the seminar (or beforehand if you happen to come across this text in advance, since we will not have the time during the seminair). It is an interesting case and may provide some additional insights in the grey-area between legality, ethics and research practive.
 
+As a side note, the Church of Scientology’s involvement in relation to Sweden’s Freedom of the Press Act and public access to official documents is also an interesting topic in its own right, although most discussions of it are available only in Swedish.
+:::
+
+#### Background (Summary)
+
+In brief:
+
+- Researchers collected highly sensitive data from children and their families.
+- Participants were given strong assurances that their privacy would be protected and that the data would not be shared outside the research group.
+- The scientific validity of parts of the research was later questioned.
+- External researchers requested access to the original source material in order to replicate or scrutinise the findings.
+- The University of Gothenburg refused to disclose the material.
+- The external researchers appealed to the Administrative Court of Appeal (“Kammarrätten”), which ruled in their favour but accepted ten conditions set by the university for access.
+- The researchers in possession of the data appealed to the Supreme Administrative Court (“Regeringsrätten”, now “Högsta förvaltningsdomstolen”), which did not overturn the decision.
+- The requesting researchers also appealed, objecting to some of the conditions; a later ruling further strengthened their right of access.
+- The researchers holding the material destroyed the data rather than disclose it.
+- The destruction of the data was ruled illegal.
+- The responsible researcher was fined and received a suspended sentence.
+- The university rector and additional researchers (including the wife of the responsible researcher) were also convicted and fined.
+- The responsible researcher filed an application with the European Court of Human Rights in Strasbourg, arguing:
+
+> In my view, it is unreasonable that I am first obliged to give strict promises of confidentiality by the State in order to conduct medical research, then... I am ordered by the State to break hundreds of promises of confidentiality...then am sentenced as a criminal by the State because I had not broken those promises of confidentiality. “Something is clearly wrong in this chain of events, but it is difficult to see how the error can be mine.”
+
+- The European Court of Human Rights rejected this argument.
+- The researcher remains active and successful within his academic field.
+
+::: {.callout-note}
+# Legal Context
+These events took place approximately 20 years ago, before the GDPR entered into force (although the Swedish Personal Data Act, PUL, was in effect at the time). The current Public Access to Information and Secrecy Act (Offentlighets- och sekretesslagen, OSL) was enacted later.
+
+For the purposes of this discussion, base your reasoning on **current Swedish and EU legal frameworks**.
+:::
+
+
+#### Discussion
+
+*Feel free to choose among those questions if you don't have time to discuss them all:*
+
+1. Can researchers promise absolute confidentiality in a country with strong public access to official documents (offentlighetsprincipen)?
+
+2. If a public university is the data controller, who ultimately decides whether data must be disclosed — the researcher, the university, or the court?
+
+3. Does an ethical approval and informed consent override obligations under freedom-of-information legislation?
+
+4. Under current GDPR and OSL:
+   - Would disclosure of identifiable research data be possible?
+   - Under what conditions?
+   - Would pseudonymisation change the legal assessment?
+
+5. Was the destruction of data ethically defensible, even if illegal?
+   - Is it ever justifiable to break the law to protect research participants?
+   - Does intent matter?
+
+6. How should conflicts between:
+   - Research integrity (replicability and transparency)
+   - Protection of vulnerable participants
+   - Public access to documents
+   - Legal compliance
+   be balanced?
+
+7. Could the promises made to participants have been formulated differently?
+   - Should researchers in public institutions avoid absolute guarantees?
+   - Is “maximum protection within the limits of the law” a more appropriate formulation?
+
+8. Who carries the ultimate responsibility in such cases?
+   - Individual researchers?
+   - University leadership?
+   - The legal department?
+
+9. Consider a modern parallel:
+   - Suppose a similar dataset existed today under GDPR.
+   - Would the legal outcome likely differ?
+   - Would reputational consequences differ?
+
+10. Is the European Court’s rejection of Gillberg’s argument legally unsurprising?
+    - Or does it reveal a structural tension between research ethics and public law?
+
+:::

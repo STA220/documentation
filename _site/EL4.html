@@ -158,7 +158,7 @@
 <section id="reading-and-practicing" class="slide level2">
 <h2>Reading and practicing</h2>
 <ul>
-<li><span class="citation" data-cites="theunix2026">(<a href="#/references" role="doc-biblioref" onclick=""><span>“The Unix Shell: Summary and Setup”</span> 2026</a>)</span> introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the <a href="https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE">Terminal tab in RStudio</a>). Only the first sections are required:
+<li><span class="citation" data-cites="theunix2026">(<a href="#/references" role="doc-biblioref" onclick=""><span>“The Unix Shell: Summary and Setup”</span> 2026</a>)</span> introduces the Unix shell and the file system, which are essential parts for using git. Read and practice according to the instructions. (You may use the <a href="https://support.posit.co/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE">Terminal tab in RStudio</a> or similarly in Posotron). Only the first sections are required:
 <ul>
 <li><a href="https://swcarpentry.github.io/shell-novice/01-intro.html">Introducing the shell</a></li>
 <li><a href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Navigating Files and Directories</a></li>
@@ -182,6 +182,19 @@
 </blockquote>
 <p><a href="https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com">Short overview</a></p>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-17.png" class="r-stretch"></section>
+<section id="panta-rei" class="slide level2">
+<h2>Panta rei!</h2>
+<ul>
+<li>We teach you the present</li>
+<li>But your work is in the future</li>
+<li>We might use history to predict the future?</li>
+<li>At least we should learn that things changes constantly!</li>
+</ul>
+</section>
 <section id="terminal" class="slide level2">
 <h2>Terminal</h2>
 <ul>
@@ -190,7 +203,23 @@
 <li>To use a terminal/Unix shell/Bash… is similair</li>
 <li>To navigate the file system is basic practice</li>
 <li>A Unix Terminal is included if you are using Mac (and Linux)</li>
-<li>Emulators are common for Windows (one is included in Git)</li>
+<li>Emulators are common for Windows (one is included in Git, use that one after installation)</li>
+</ul>
+</section>
+<section id="early-computer-languages" class="slide level2">
+<h2>Early computer languages</h2>
+<ul>
+<li><strong>ALGOL / ALGOL 60</strong>
+<ul>
+<li>Algorithmic Language</li>
+<li>Influential in academic/scientific computing</li>
+<li>Introduced structured programming concepts that shaped later languages</li>
+</ul></li>
+<li><strong>PL/I</strong>
+<ul>
+<li>Used in some government and industrial contexts</li>
+<li>Combined scientific and business computing features (Fortran + Cobol)</li>
+</ul></li>
 </ul>
 </section>
 <section id="general-purpose-programming-languages" class="slide level2">
@@ -210,16 +239,6 @@
 <li>Core language of many modern statistical environments (e.g., R, parts of SAS, Stata)</li>
 <li>Often used to interface with high-performance numerical libraries</li>
 </ul></li>
-<li><strong>ALGOL / ALGOL 60</strong>
-<ul>
-<li>Influential in academic computing</li>
-<li>Introduced structured programming concepts that shaped later languages</li>
-</ul></li>
-<li><strong>PL/I</strong>
-<ul>
-<li>Used in some government and industrial contexts</li>
-<li>Combined scientific and business computing features</li>
-</ul></li>
 </ul>
 <p>📌 These languages required substantial programming expertise.</p>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -232,7 +251,7 @@
 </div>
 <div class="callout-content">
 <p>FORTAN is still used in R for subroutines such as <a href="https://github.com/wch/r-source/blob/trunk/src/appl/dqrls.f">least squares</a>. Even in modern packages!</p>
-<p>Same for C, such as for <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/src/lm.c">lm</a></p>
+<p>Same for C, such as for <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/src/lm.c">lm</a>, which is popular for high performance computing (fast execution time).</p>
 </div>
 </div>
 </div>
@@ -249,9 +268,9 @@
 </ul></li>
 <li><strong>BMDP</strong> (1960s)
 <ul>
+<li>Bio-Medical Data Package</li>
 <li>Developed at UCLA</li>
 <li>Common in medical statistics</li>
-<li>Bio-Medical Data Package</li>
 </ul></li>
 <li><strong>GENSTAT</strong> (1968)
 <ul>
@@ -288,7 +307,10 @@
 <p><strong>SAS data</strong></p>
 </div>
 <div class="callout-content">
-<p>Still common to receive data in SAS-format from register holdders!</p>
+<ul>
+<li>Still common to receive data in SAS-format (<code>data_file.sas7bdat</code>) from register holders!</li>
+<li>Sometimes necessary to use SAS to export the data (genAI might be a good aid in those cases)</li>
+</ul>
 </div>
 </div>
 </div>
@@ -339,6 +361,10 @@
 <li><strong>2000:</strong> <strong>R 1.0.0</strong> is released 2000-02-29</li>
 </ul>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-18.png" class="r-stretch"></section>
 <section id="rstudio-brings-an-ide-to-the-r-community" class="slide level2">
 <h2>RStudio brings an IDE to the R community</h2>
 <ul>
@@ -354,6 +380,12 @@
 <li><strong>2016:</strong> SQL Server 2016 introduces <strong>R Services</strong> (in-database R)</li>
 <li><strong>2017:</strong> Microsoft expands the stack under “Machine Learning Server” branding</li>
 <li><strong>June 2021:</strong> Microsoft announces retirement of <strong>Microsoft Machine Learning Server</strong></li>
+<li><strong>2023:</strong> Microsoft in still a relevant player
+<ul>
+<li>platinum member of <a href="https://r-consortium.org">The R consorsium</a></li>
+<li>Owner of GitHub</li>
+<li>VS Code</li>
+</ul></li>
 </ul>
 </section>
 <section id="rstudio-becomes-posit" class="slide level2">
@@ -361,23 +393,24 @@
 <ul>
 <li><strong>July 27, 2022:</strong> RStudio rebrands as <strong>Posit</strong></li>
 <li><strong>July 28, 2022:</strong> <strong>Quarto</strong> is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)</li>
+<li>A public benefit company (not only releant for its shareholders)</li>
+<li>Also a platinum member of The R consortium # Modern IDE</li>
 </ul>
-</section>
-<section>
-<section id="modern-ide" class="title-slide slide level1 center">
-<h1>Modern IDE</h1>
-
 </section>
 <section id="positron" class="slide level2">
 <h2>Positron</h2>
 <ul>
-<li>New generation IDE for data science</li>
+<li>New generation IDE for data science (and of course statistics!)</li>
 <li>From Posit PBC</li>
 <li>Free for individual use</li>
 <li>Based on Code OSS (open source version of VS Code from Microsoft)</li>
 <li>For both R and Python (<a href="https://github.com/posit-dev/positron/issues/3679">Julia?</a>)</li>
 </ul>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-14.png" class="r-stretch"></section>
 <section id="quick-tour" class="slide level2">
 <h2>Quick tour</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4Ir_HX4riHw?si=wu9-boO8Z4BKDSUZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
@@ -393,6 +426,7 @@
 <div class="callout-content">
 <p>This feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant’s functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.</p>
 <p>It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for “brott mot tystnadsplikten” which is not only public, but actually civil law (“Brottsbalken”) with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!</p>
+<p><a href="https://posit.co/blog/trust-llm-tools/">Read more</a></p>
 </div>
 </div>
 </div>
@@ -401,11 +435,21 @@
 <h2>RStudio or Positron</h2>
 <ul>
 <li>We will use Positron in this course</li>
-<li>This is for you to learn and see an alternative IDE</li>
-<li>RStudio, however, is still a great tool</li>
-<li>You may use both in the future</li>
+<li>This is for you to learn and see an alternative IDE …</li>
+<li>… and to get used to the fact that you should never stop learning!</li>
+<li>RStudio, however, is still a great tool and it is still developed and maintained.</li>
+<li>You may use both in the future (maybe Positron on your computer but RStudio in a secure server, which tend to be more slowly updated)</li>
 </ul>
-</section></section>
+</section>
+<section id="some-differences" class="slide level2">
+<h2>Some differences</h2>
+<ul>
+<li><p>No package installer (yet). You need to use <code>pak::pkg_install()</code> or <code>install.packages()</code> etc.</p></li>
+<li><p>No inline rendering of results in Quarto documents (yet)</p></li>
+<li><p>You can use multiple active R sessions at once</p></li>
+<li><p>Great integrated tools from VS Code and extensions, such as GitHub integration</p></li>
+</ul>
+</section>
 <section>
 <section id="version-control" class="title-slide slide level1 center">
 <h1>Version control</h1>
@@ -426,7 +470,7 @@
 </ul></li>
 <li>Physical media:
 <ul>
-<li>Punch cards</li>
+<li><a href="https://storage.googleapis.com/dstlceqcawpgve/how-do-punch-card-computers-work.html">Punch cards</a></li>
 <li>Magnetic tape</li>
 </ul></li>
 <li>Centralised mainframes</li>
@@ -440,7 +484,7 @@
 <li>Copying files to:
 <ul>
 <li>Floppy disks</li>
-<li>Magnetic tapes</li>
+<li>Magnetic tapes (actually still used for backups)</li>
 </ul></li>
 <li>Sending media by <strong>postal mail</strong></li>
 <li>Sharing files via:
@@ -519,6 +563,14 @@
 <section class="slide level2">
 
 
+<img data-src="images/paste-15.png" class="r-stretch"></section>
+<section id="gui" class="slide level2">
+<h2>GUI</h2>
+
+<img data-src="images/paste-16.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
 <img data-src="images/paste-4.png" class="r-stretch"></section>
 <section id="the-basics" class="slide level2">
 <h2>The basics</h2>
@@ -532,11 +584,27 @@
 <li><a href="https://webutility.io/git-simulator-online">git simulator online</a></li>
 </ul>
 </section>
+<section id="some-basics" class="slide level2">
+<h2>Some basics</h2>
+<ul>
+<li><p>You initiate a folder as a git project</p></li>
+<li><p>Git will track all changes made in that folder</p>
+<ul>
+<li><p>New files</p></li>
+<li><p>Modified files (especially text, such as programming scripts/functions etc)</p></li>
+<li><p>Deleted files</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="branching" class="slide level2">
+<h2>Branching</h2>
+
+<img data-src="images/paste-19.png" class="r-stretch"></section>
 <section id="distributed-version-control-with-git" class="slide level2">
 <h2>Distributed Version Control with Git</h2>
 <p>Key ideas in Git:</p>
 <ul>
-<li>Every clone is a full repository</li>
+<li>Every clone is a full repository (“folder”)</li>
 <li>Local commits without network access</li>
 <li>Cheap and fast branches</li>
 <li>Cryptographic integrity (hash-based)</li>
@@ -547,19 +615,36 @@
 <h2>Hosting Platforms</h2>
 <p>Platforms built around Git:</p>
 <ul>
-<li><a href="github.com">GitHub</a><strong>GitHub</strong> (2008)</li>
+<li><a href="github.com">GitHub</a> (2008)</li>
 <li><a href="bitbucket.org">Bitbucket</a> (2008)</li>
 <li><a href="gitlab.com">GitLab</a> (2011)</li>
 <li><a href="https://gitea.com/">Gitea</a> - open source alternative to GitHub (get the same functionallity locally or on a server)</li>
 </ul>
 <p>They add:</p>
 <ul>
-<li>Pull requests / merge requests</li>
-<li>Issue tracking</li>
+<li>Pull requests / merge requests (collaboration tools)</li>
+<li>Issue tracking (discussions and bug reports etc)</li>
 <li>Code review</li>
-<li>CI/CD integration</li>
+<li>CI/CD integration (advanced)</li>
 </ul>
 </section>
+<section id="issue-tracking" class="slide level2">
+<h2>Issue tracking</h2>
+<ul>
+<li><p>Issue tracking is not part of Git but is implemented in most (if not all) hosting platforms.</p></li>
+<li><p>Used for bug reports and discussions between developers and users</p></li>
+<li><p>Issues can be closed when fixed/adressed but are still found in the history</p></li>
+<li><p>Each issue gets a number (in order) and those can be referenced in commit messages etc (ex: <code>Fix #37</code>, which will automatically close the issue)</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-21.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-22.png" class="r-stretch"></section>
 <section class="slide level2">
 
 
@@ -775,8 +860,17 @@ git remote add origin</code></pre>
 </section>
 <section id="computer-practice" class="slide level2">
 <h2>Computer practice</h2>
-<p>In <a href="./ECS1.html">ECS1</a> we will use Positron and git in action!</p>
+<p>In <a href="./ECS1.html">ECS1</a> we will use Positron and git/GitHub in action!</p>
 <p>Also see the “Reading and practicing” section above for a more in-depth introduction (homework).</p>
+</section>
+<section id="what-you-should-know" class="slide level2">
+<h2>What you should know</h2>
+<ul>
+<li><p>Reflect on the use of different software and how the rapid development in this field interplay with other important aspects of our field</p></li>
+<li><p>Be able to describe the principles of basic git commands (init, add, stage, commit, push, pull) and what they are used for (may be theoretical questions in the written exam)</p></li>
+<li><p>Use Git and GitHub in practice (but you can choose to do it either by commands or the GUI), this will be assessed in computer exercises and a later project.</p></li>
+<li><p>Similarily, you need to organize your projects according to best practice (but we will be the focus of <a href="./EL5.html">EL5</a>).</p></li>
+</ul>
 </section>
 <section class="slide level2 smaller scrollable" id="references">
 

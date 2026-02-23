@@ -36,7 +36,7 @@ To complete the exercises and assignments for this course you need to install th
 - [Positron](https://posit.co/download/)
 - [Git](https://git-scm.com/downloads)
 
-Some additional recommended software (also free but not not mandatory for the course):
+Some additional recommended software (also free but not mandatory for the course):
 
 - [GitHub Desktop](https://desktop.github.com/)
 - [GitHub CLI](https://cli.github.com/)

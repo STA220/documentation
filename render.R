@@ -19,6 +19,23 @@ sta220 <- get_courses(canvas) |>
   as_tibble() |>
   filter(startsWith(course_code, "STA220"))
 
+# Närvarolista studenter
+get_course_students(canvas, sta220$id) |>
+  as_tibble() |>
+  arrange(sortable_name) |>
+  select(sortable_name) |>
+  filter(!grepl("student, Test", sortable_name)) |>
+  mutate(i = row_number(), sign = "", X = "") |>
+  relocate(i) |>
+  flextable::flextable() |>
+  flextable::width(width = c(1, 7, 7, 2), unit = "cm") |>
+  flextable::vline(border = officer::fp_border(color = "black", width = 1)) |>
+  flextable::hline(
+    part = "body",
+    border = officer::fp_border(color = "black", width = 1)
+  ) |>
+  flextable::save_as_docx(path = "cache/students.docx")
+
 # Befintliga filer
 canvas_pdfs <-
   get_course_files(canvas, sta220$id) |>
