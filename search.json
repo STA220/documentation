@@ -366,9 +366,9 @@
   {
     "objectID": "EL7.html#reading",
     "href": "EL7.html#reading",
-    "title": "EL7: Health care registers",
+    "title": "EL7: Standardized vocabularies",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:\n\n\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
   },
   {
     "objectID": "EL4.html#reading-and-practicing",
@@ -744,9 +744,9 @@
   {
     "objectID": "EL8.html#reading",
     "href": "EL8.html#reading",
-    "title": "EL8: Data sources",
+    "title": "EL8: Health care registers",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 2)\n\nDocker: You should be aware of the concept. Docker is used also for statistical analysis. However, we will not use it for the course.\nDatabases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.\n\n\nRecommended references:\n\nThis might be interesting (but not mandatory) to read: An Introduction to Rocker: Docker Containers for R read.\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:\n\n\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
   },
   {
     "objectID": "ECS1.html",
@@ -760,7 +760,7 @@
     "href": "ECS1.html#preparations",
     "title": "ECS1: IDE and version control",
     "section": "Preparations",
-    "text": "Preparations\nIf you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://posit.co/download/\nInstall Git: https://git-scm.com/downloads\n\n\nWindows: Download and install binary version\nMacOS: A bit more complicated. Perhaps easist with the $ xcode-select --install but more recent version with $ brew install git (where $ indicates that this is acommand to be run from a terminal, but which itself is not part of the command).\n\n\nCreate a GitHub account (if you do not already have one): https://github.com\n\nCreating a GitHub account requires an e-mail address. GitHub is owned by Microsoft, and the University of Gothenburg also uses Microsoft as its e-mail provider. You may use your university e-mail address if you wish. Alternatively, you are free to register a separate e-mail account for GitHub.\n\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/sta220/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK. \nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
+    "text": "Preparations\nIf you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://positron.posit.co/download.html\nInstall Git: https://git-scm.com/downloads\n\n\nWindows: Download and install binary version\nMacOS: Git may already be installed. Type $ git and see what happens! Otherwise $ xcode-select --install but more recent version with $ brew install git (where $ indicates that this is a command to be run from a terminal, but which itself is not part of the command).\n\n\nCreate a GitHub account (if you do not already have one): https://github.com\n\nCreating a GitHub account requires an e-mail address. GitHub is owned by Microsoft, and the University of Gothenburg also uses Microsoft as its e-mail provider. You may use your university e-mail address if you wish. Alternatively, you are free to register a separate e-mail account for GitHub.\n\nOpen Positron\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/sta220/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK. \nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have commited and viewed the history of that repo."
   },
   {
     "objectID": "ECS1.html#new-project",
@@ -837,7 +837,7 @@
     "href": "EL9.html#havenread_sas",
     "title": "EL9: Big data",
     "section": "haven::read_sas()",
-    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x12a774790&gt;\n&lt;environment: namespace:haven&gt;"
+    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x111e0cc00&gt;\n&lt;environment: namespace:haven&gt;"
   },
   {
     "objectID": "EL9.html#export-from-sas-to-csv",
@@ -921,7 +921,7 @@
     "href": "EL9.html#example",
     "title": "EL9: Big data",
     "section": "Example",
-    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-24\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-24\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-24\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-24\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-24\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-26\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-26\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-26\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-26\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-26\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-24\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-24\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-24\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-24\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-24\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-26\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-26\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-26\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-26\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-26"
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-28\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-28\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-28\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-28\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-28\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-28\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-28\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-28\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-28\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-28"
   },
   {
     "objectID": "EL9.html#if-it-doesnt-fit",
@@ -1047,7 +1047,7 @@
     "href": "EL5.html#reading",
     "title": "EL5: Reproducibility",
     "section": "Reading",
-    "text": "Reading\n\nBaker (2016) and Oliveira Andrade (2025) motivates why reproducible analysis is important!\nPeng and Hicks (2021) introduce and elaborate more on the subject.\nNguyen (2022) only read section “Basic Introduction to Docker and Containers” in chapter 2 (but you do not need to install Docker for this course)"
+    "text": "Reading\n\nBaker (2016) and Oliveira Andrade (2025) motivates why reproducible analysis is important!\nPeng and Hicks (2021) introduce and elaborate more on the subject.\nNguyen (2022) only read section “Basic Introduction to Docker and Containers” in chapter 2 (you do not need to install Docker for this course, just be aware of the concept)\nKavianpour et al. (2022) introduces Trusted Research Environment as well as some perceived challenges with those (we will not use such environments in the course but this is likely the reality you need to cope with later on in your career, so you should get familiar with the concept).\n\n\n\n\n\n\n\nConsider\n\n\n\nAfter reading papers like Baker (2016) and Oliveira Andrade (2025) , one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.\nReproducibility might sound like a good thing but how much does the technical details matter if we are not allowed to freely share the underlying health care data anyway?\n\n\n\n\nFor reference:\n\nTargets overview\nTarget manual\nYou read briefly about Docker in the mandatory reading. If this seems interesting, you might read: An Introduction to Rocker: Docker Containers for R (not mandatory)."
   },
   {
     "objectID": "EL5.html#practice",
@@ -1055,6 +1055,13 @@
     "title": "EL5: Reproducibility",
     "section": "Practice",
     "text": "Practice\nA workshop with 7 parts was given at the R Medicine conference 2025. Practice according to part 1-3 (part 4-7 are slightly outside the scope of the course and only recommended if you have additional time and interest).\nClone this GitHub repo. Exercies are found in the code folder.\nFollow the recording from the workshop while you are practicing: The power of {targets} package for reproducible data science\n\n\n\n\n\n\nNotes on the recording\n\n\n\nThe full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).\nRStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.\nYou may recognise some of the material from Part 3, as presented during the lecture\n\n\n\n\nThis practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!"
+  },
+  {
+    "objectID": "EL5.html#motivational-quotes",
+    "href": "EL5.html#motivational-quotes",
+    "title": "EL5: Reproducibility",
+    "section": "Motivational quotes",
+    "text": "Motivational quotes\n\nAn article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. / Buckheit & Donoho\n\n\n[It is important to have] a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al. 2021"
   },
   {
     "objectID": "EL5.html#why-is-this-a-problem",
@@ -1075,28 +1082,28 @@
     "href": "EL5.html#pipeline",
     "title": "EL5: Reproducibility",
     "section": "Pipeline",
-    "text": "Pipeline\n\nA pipeline is a computational workflow that does statistics, analytics, or data science.\nA pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.\nPipeline tools coordinate the pieces of computationally demanding analysis projects."
+    "text": "Pipeline\n\nA pipeline is a computational workflow that does statistics, analytics, or data science.\nA pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.\nPipeline tools coordinate the pieces of computationally demanding analysis projects.\n\n\n\n\n\n\n\nPipe operator\n\n\nThe simplest example of pipelines might be when you combine R code by the pipe operator (|&gt; or %&gt;%), which in turn is inspired by the pipe operator in Unix (|)."
   },
   {
     "objectID": "EL5.html#long-running-processes",
     "href": "EL5.html#long-running-processes",
     "title": "EL5: Reproducibility",
     "section": "Long running processes",
-    "text": "Long running processes\n\nImaigine you have nice R-scripts to take care of every step in your project\nYou have either one very very … very long file or a bunch of files which you execute in order\nIt takes two weeks to run all the scripts (not unrealistic for a big project!)\nYou report the result to your collaborators\nThey ask you to update a tiny detail somewhere in the middle of your workflow\nYou need to rerun everything (while you’re screaming in frustration)!\nThis will repeat again and again until you finally\n\nLose your mind and quit your job\nAdapt a more reproducible workflow"
+    "text": "Long running processes\n\nImaigine you have nice R-scripts to take care of every step in your project\nYou have either one very very … very … long file or a bunch of files which you execute in order\nIt takes two weeks to run all scripts (not unrealistic for a big project!)\nYou report the result to your collaborators\nThey ask you to update a tiny detail somewhere in the middle of your workflow\nYou need to rerun everything (while screaming in frustration)!\nThis will repeat again and again until you finally\n\nLose your mind and quit your job\nAdapt a more reproducible workflow"
   },
   {
     "objectID": "EL5.html#steps-wise-procedure",
     "href": "EL5.html#steps-wise-procedure",
     "title": "EL5: Reproducibility",
     "section": "Steps-wise procedure",
-    "text": "Steps-wise procedure\n\nThe default setting in R is to save the workspace to disk when you end the sesion\nThis is usually not recommended and therefore often disabled in for example RStudio\n\n(If you re-start your sessin at a later point you might have no idea how the restored objects relates to each other.)\n\nYou may still want to execute things in a more step-wise fasion\n\nConvert big data files to something R-friendly\nPerform some data management (select relevant columns ond rows), cleaning, add calculated variables etc\nPerform some exploratory data analysis (EDA) to get a better understanding of the data\nPerform some statistical analysis\nReport and visualize the results"
+    "text": "Steps-wise procedure\n\nThe default setting in R is to save the workspace to disk when you end the session\nThis is usually not recommended and therefore often disabled in for example RStudio\n\n(If you re-start your session at a later point you might have no idea how the restored objects relates to each other.)\n\nYou may still want to execute things in a more step-wise fashion\n\nConvert big data files (.sas7bdat from SAS etc) to something more R-friendly\nPerform some data management (select relevant columns and rows), cleaning, add calculated variables etc\nPerform some exploratory data analysis (EDA) to get a better understanding of the data\nPerform some statistical analysis\nReport and visualize the results"
   },
   {
     "objectID": "EL5.html#caching",
     "href": "EL5.html#caching",
     "title": "EL5: Reproducibility",
     "section": "Caching",
-    "text": "Caching\n\nIf you perform each step in different script files, you might start each file with some input and end it with some output\nThe output from the previous script is used as input in the next script\nsave() and load() are standard but can be very slow for large objects\nsaveRDS() and loadRDS() use serialization and are now adays much more efficient\nqs2::qs_save() and qs2::qs_read() (or qs2::qd_save() and qs2::qd_read()) from the qs2 package are currently “state-of-the-art” (but things tend to change quickly)"
+    "text": "Caching\n\nIf you perform each step in different script files, you might start each file with some input and end it with some output\nThe output from the previous script is used as input in the next script\nsave() and load() are standard but can be very slow for large objects\nsaveRDS() and loadRDS() use serialization and are nowadays much more efficient\nqs2::qs_save() and qs2::qs_read() (or qs2::qd_save() and qs2::qd_read()) from the qs2 package are currently “state-of-the-art” (but things tend to change quickly)"
   },
   {
     "objectID": "EL5.html#benchmarking",
@@ -1110,7 +1117,7 @@
     "href": "EL5.html#who-cares",
     "title": "EL5: Reproducibility",
     "section": "Who cares?",
-    "text": "Who cares?\n\nImagine you work with data for the whole population (&gt; 10 M people)\nYou have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data\nYou are working in a secure environment were data is stored on a network server (no HDD drive)\nThe same environment is shared by 20 other researchers and you are all competing for the same band-width\nIt will get increasonly frusrating just to load and save the big files\nYou might need to wait for half an hour before you can start working"
+    "text": "Who cares?\n\nImagine you work with data for the whole Swedish population (&gt; 10 M people)\nYou have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data\nYou are working in a secure environment were data is stored on a network server (no SSD drive)\nThe same environment is shared by 20 other researchers and you are all competing for the same bandwidth\nIt will get increasonly frusrating just to load and save the big files\nYou might need to wait for half an hour before you can start working 😩"
   },
   {
     "objectID": "EL5.html#automated-process",
@@ -1120,32 +1127,32 @@
     "text": "Automated process\n\nInstead of relying on individual R scripts, use a reproducible pipeline.\nThis is common practice in software development\n\nFor example GNU Make is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.\n\nIteration during project development (which is equally relevant for a health data project), will be much faster and reliable.\nCaching as described abowe is automated and you only need to read/write files to disk/network storage when actually needed."
   },
   {
-    "objectID": "EL5.html#targets-package",
-    "href": "EL5.html#targets-package",
+    "objectID": "EL5.html#alternative-solutions",
+    "href": "EL5.html#alternative-solutions",
     "title": "EL5: Reproducibility",
-    "section": "targets package",
-    "text": "targets package\n\nThe {targets} package is a Make-like pipeline tool for statistics and data science in R.\nThe package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects.\nIf all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.\nThe tasks themselves are called “targets”, and they run the functions and return R objects.\nThe targets package orchestrates the targets and stores the output objects to make your pipeline efficient, painless, and reproducible."
+    "section": "Alternative solutions",
+    "text": "Alternative solutions\n\nGNU Make with R\nrmake creates and maintains a build process for complex analytic tasks. The package allows easy generation of a Makefile for the (GNU) ‘make’ tool\ndrake was the first more established R-oriented alternative\ntargets is the currently most developed and used alternative\nrixpress might be a rising star (at least if you are combining R and Python; polyglot)?\n\nWe will use targets in this course!"
   },
   {
     "objectID": "EL5.html#example",
     "href": "EL5.html#example",
     "title": "EL5: Reproducibility",
     "section": "Example",
-    "text": "Example\nData: survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960’s. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey. The health examination is conducted in a mobile examination centre (MEC).\nQuestion: Is there any association between gender and BMI?\n\n# pak::pkg_install(\"NHANES\")\nstr(NHANES::NHANES)\n\nClasses 'tbl_df', 'tbl' and 'data.frame':   10000 obs. of  76 variables:\n $ ID              : int  51624 51624 51624 51625 51630 51638 51646 51647 51647 51647 ...\n $ SurveyYr        : Factor w/ 2 levels \"2009_10\",\"2011_12\": 1 1 1 1 1 1 1 1 1 1 ...\n $ Gender          : Factor w/ 2 levels \"female\",\"male\": 2 2 2 2 1 2 2 1 1 1 ...\n $ Age             : int  34 34 34 4 49 9 8 45 45 45 ...\n $ AgeDecade       : Factor w/ 8 levels \" 0-9\",\" 10-19\",..: 4 4 4 1 5 1 1 5 5 5 ...\n $ AgeMonths       : int  409 409 409 49 596 115 101 541 541 541 ...\n $ Race1           : Factor w/ 5 levels \"Black\",\"Hispanic\",..: 4 4 4 5 4 4 4 4 4 4 ...\n $ Race3           : Factor w/ 6 levels \"Asian\",\"Black\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ Education       : Factor w/ 5 levels \"8th Grade\",\"9 - 11th Grade\",..: 3 3 3 NA 4 NA NA 5 5 5 ...\n $ MaritalStatus   : Factor w/ 6 levels \"Divorced\",\"LivePartner\",..: 3 3 3 NA 2 NA NA 3 3 3 ...\n $ HHIncome        : Factor w/ 12 levels \" 0-4999\",\" 5000-9999\",..: 6 6 6 5 7 11 9 11 11 11 ...\n $ HHIncomeMid     : int  30000 30000 30000 22500 40000 87500 60000 87500 87500 87500 ...\n $ Poverty         : num  1.36 1.36 1.36 1.07 1.91 1.84 2.33 5 5 5 ...\n $ HomeRooms       : int  6 6 6 9 5 6 7 6 6 6 ...\n $ HomeOwn         : Factor w/ 3 levels \"Own\",\"Rent\",\"Other\": 1 1 1 1 2 2 1 1 1 1 ...\n $ Work            : Factor w/ 3 levels \"Looking\",\"NotWorking\",..: 2 2 2 NA 2 NA NA 3 3 3 ...\n $ Weight          : num  87.4 87.4 87.4 17 86.7 29.8 35.2 75.7 75.7 75.7 ...\n $ Length          : num  NA NA NA NA NA NA NA NA NA NA ...\n $ HeadCirc        : num  NA NA NA NA NA NA NA NA NA NA ...\n $ Height          : num  165 165 165 105 168 ...\n $ BMI             : num  32.2 32.2 32.2 15.3 30.6 ...\n $ BMICatUnder20yrs: Factor w/ 4 levels \"UnderWeight\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ BMI_WHO         : Factor w/ 4 levels \"12.0_18.5\",\"18.5_to_24.9\",..: 4 4 4 1 4 1 2 3 3 3 ...\n $ Pulse           : int  70 70 70 NA 86 82 72 62 62 62 ...\n $ BPSysAve        : int  113 113 113 NA 112 86 107 118 118 118 ...\n $ BPDiaAve        : int  85 85 85 NA 75 47 37 64 64 64 ...\n $ BPSys1          : int  114 114 114 NA 118 84 114 106 106 106 ...\n $ BPDia1          : int  88 88 88 NA 82 50 46 62 62 62 ...\n $ BPSys2          : int  114 114 114 NA 108 84 108 118 118 118 ...\n $ BPDia2          : int  88 88 88 NA 74 50 36 68 68 68 ...\n $ BPSys3          : int  112 112 112 NA 116 88 106 118 118 118 ...\n $ BPDia3          : int  82 82 82 NA 76 44 38 60 60 60 ...\n $ Testosterone    : num  NA NA NA NA NA NA NA NA NA NA ...\n $ DirectChol      : num  1.29 1.29 1.29 NA 1.16 1.34 1.55 2.12 2.12 2.12 ...\n $ TotChol         : num  3.49 3.49 3.49 NA 6.7 4.86 4.09 5.82 5.82 5.82 ...\n $ UrineVol1       : int  352 352 352 NA 77 123 238 106 106 106 ...\n $ UrineFlow1      : num  NA NA NA NA 0.094 ...\n $ UrineVol2       : int  NA NA NA NA NA NA NA NA NA NA ...\n $ UrineFlow2      : num  NA NA NA NA NA NA NA NA NA NA ...\n $ Diabetes        : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 1 1 1 1 1 1 1 ...\n $ DiabetesAge     : int  NA NA NA NA NA NA NA NA NA NA ...\n $ HealthGen       : Factor w/ 5 levels \"Excellent\",\"Vgood\",..: 3 3 3 NA 3 NA NA 2 2 2 ...\n $ DaysPhysHlthBad : int  0 0 0 NA 0 NA NA 0 0 0 ...\n $ DaysMentHlthBad : int  15 15 15 NA 10 NA NA 3 3 3 ...\n $ LittleInterest  : Factor w/ 3 levels \"None\",\"Several\",..: 3 3 3 NA 2 NA NA 1 1 1 ...\n $ Depressed       : Factor w/ 3 levels \"None\",\"Several\",..: 2 2 2 NA 2 NA NA 1 1 1 ...\n $ nPregnancies    : int  NA NA NA NA 2 NA NA 1 1 1 ...\n $ nBabies         : int  NA NA NA NA 2 NA NA NA NA NA ...\n $ Age1stBaby      : int  NA NA NA NA 27 NA NA NA NA NA ...\n $ SleepHrsNight   : int  4 4 4 NA 8 NA NA 8 8 8 ...\n $ SleepTrouble    : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ PhysActive      : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 1 NA NA 2 2 2 ...\n $ PhysActiveDays  : int  NA NA NA NA NA NA NA 5 5 5 ...\n $ TVHrsDay        : Factor w/ 7 levels \"0_hrs\",\"0_to_1_hr\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ CompHrsDay      : Factor w/ 7 levels \"0_hrs\",\"0_to_1_hr\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ TVHrsDayChild   : int  NA NA NA 4 NA 5 1 NA NA NA ...\n $ CompHrsDayChild : int  NA NA NA 1 NA 0 6 NA NA NA ...\n $ Alcohol12PlusYr : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 2 2 2 ...\n $ AlcoholDay      : int  NA NA NA NA 2 NA NA 3 3 3 ...\n $ AlcoholYear     : int  0 0 0 NA 20 NA NA 52 52 52 ...\n $ SmokeNow        : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 2 NA NA NA NA NA ...\n $ Smoke100        : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ Smoke100n       : Factor w/ 2 levels \"Non-Smoker\",\"Smoker\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ SmokeAge        : int  18 18 18 NA 38 NA NA NA NA NA ...\n $ Marijuana       : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 2 2 2 ...\n $ AgeFirstMarij   : int  17 17 17 NA 18 NA NA 13 13 13 ...\n $ RegularMarij    : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 1 NA NA 1 1 1 ...\n $ AgeRegMarij     : int  NA NA NA NA NA NA NA NA NA NA ...\n $ HardDrugs       : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ SexEver         : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 2 2 2 ...\n $ SexAge          : int  16 16 16 NA 12 NA NA 13 13 13 ...\n $ SexNumPartnLife : int  8 8 8 NA 10 NA NA 20 20 20 ...\n $ SexNumPartYear  : int  1 1 1 NA 1 NA NA 0 0 0 ...\n $ SameSex         : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 2 NA NA 2 2 2 ...\n $ SexOrientation  : Factor w/ 3 levels \"Bisexual\",\"Heterosexual\",..: 2 2 2 NA 2 NA NA 1 1 1 ...\n $ PregnantNow     : Factor w/ 3 levels \"Yes\",\"No\",\"Unknown\": NA NA NA NA NA NA NA NA NA NA ..."
+    "text": "Example\nData: survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960’s. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey.\nQuestion: Is there any association between Gender and BMI?\n\n# pak::pkg_install(\"NHANES\")\nstr(NHANES::NHANES)\n\nClasses 'tbl_df', 'tbl' and 'data.frame':   10000 obs. of  76 variables:\n $ ID              : int  51624 51624 51624 51625 51630 51638 51646 51647 51647 51647 ...\n $ SurveyYr        : Factor w/ 2 levels \"2009_10\",\"2011_12\": 1 1 1 1 1 1 1 1 1 1 ...\n $ Gender          : Factor w/ 2 levels \"female\",\"male\": 2 2 2 2 1 2 2 1 1 1 ...\n $ Age             : int  34 34 34 4 49 9 8 45 45 45 ...\n $ AgeDecade       : Factor w/ 8 levels \" 0-9\",\" 10-19\",..: 4 4 4 1 5 1 1 5 5 5 ...\n $ AgeMonths       : int  409 409 409 49 596 115 101 541 541 541 ...\n $ Race1           : Factor w/ 5 levels \"Black\",\"Hispanic\",..: 4 4 4 5 4 4 4 4 4 4 ...\n $ Race3           : Factor w/ 6 levels \"Asian\",\"Black\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ Education       : Factor w/ 5 levels \"8th Grade\",\"9 - 11th Grade\",..: 3 3 3 NA 4 NA NA 5 5 5 ...\n $ MaritalStatus   : Factor w/ 6 levels \"Divorced\",\"LivePartner\",..: 3 3 3 NA 2 NA NA 3 3 3 ...\n $ HHIncome        : Factor w/ 12 levels \" 0-4999\",\" 5000-9999\",..: 6 6 6 5 7 11 9 11 11 11 ...\n $ HHIncomeMid     : int  30000 30000 30000 22500 40000 87500 60000 87500 87500 87500 ...\n $ Poverty         : num  1.36 1.36 1.36 1.07 1.91 1.84 2.33 5 5 5 ...\n $ HomeRooms       : int  6 6 6 9 5 6 7 6 6 6 ...\n $ HomeOwn         : Factor w/ 3 levels \"Own\",\"Rent\",\"Other\": 1 1 1 1 2 2 1 1 1 1 ...\n $ Work            : Factor w/ 3 levels \"Looking\",\"NotWorking\",..: 2 2 2 NA 2 NA NA 3 3 3 ...\n $ Weight          : num  87.4 87.4 87.4 17 86.7 29.8 35.2 75.7 75.7 75.7 ...\n $ Length          : num  NA NA NA NA NA NA NA NA NA NA ...\n $ HeadCirc        : num  NA NA NA NA NA NA NA NA NA NA ...\n $ Height          : num  165 165 165 105 168 ...\n $ BMI             : num  32.2 32.2 32.2 15.3 30.6 ...\n $ BMICatUnder20yrs: Factor w/ 4 levels \"UnderWeight\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ BMI_WHO         : Factor w/ 4 levels \"12.0_18.5\",\"18.5_to_24.9\",..: 4 4 4 1 4 1 2 3 3 3 ...\n $ Pulse           : int  70 70 70 NA 86 82 72 62 62 62 ...\n $ BPSysAve        : int  113 113 113 NA 112 86 107 118 118 118 ...\n $ BPDiaAve        : int  85 85 85 NA 75 47 37 64 64 64 ...\n $ BPSys1          : int  114 114 114 NA 118 84 114 106 106 106 ...\n $ BPDia1          : int  88 88 88 NA 82 50 46 62 62 62 ...\n $ BPSys2          : int  114 114 114 NA 108 84 108 118 118 118 ...\n $ BPDia2          : int  88 88 88 NA 74 50 36 68 68 68 ...\n $ BPSys3          : int  112 112 112 NA 116 88 106 118 118 118 ...\n $ BPDia3          : int  82 82 82 NA 76 44 38 60 60 60 ...\n $ Testosterone    : num  NA NA NA NA NA NA NA NA NA NA ...\n $ DirectChol      : num  1.29 1.29 1.29 NA 1.16 1.34 1.55 2.12 2.12 2.12 ...\n $ TotChol         : num  3.49 3.49 3.49 NA 6.7 4.86 4.09 5.82 5.82 5.82 ...\n $ UrineVol1       : int  352 352 352 NA 77 123 238 106 106 106 ...\n $ UrineFlow1      : num  NA NA NA NA 0.094 ...\n $ UrineVol2       : int  NA NA NA NA NA NA NA NA NA NA ...\n $ UrineFlow2      : num  NA NA NA NA NA NA NA NA NA NA ...\n $ Diabetes        : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 1 1 1 1 1 1 1 ...\n $ DiabetesAge     : int  NA NA NA NA NA NA NA NA NA NA ...\n $ HealthGen       : Factor w/ 5 levels \"Excellent\",\"Vgood\",..: 3 3 3 NA 3 NA NA 2 2 2 ...\n $ DaysPhysHlthBad : int  0 0 0 NA 0 NA NA 0 0 0 ...\n $ DaysMentHlthBad : int  15 15 15 NA 10 NA NA 3 3 3 ...\n $ LittleInterest  : Factor w/ 3 levels \"None\",\"Several\",..: 3 3 3 NA 2 NA NA 1 1 1 ...\n $ Depressed       : Factor w/ 3 levels \"None\",\"Several\",..: 2 2 2 NA 2 NA NA 1 1 1 ...\n $ nPregnancies    : int  NA NA NA NA 2 NA NA 1 1 1 ...\n $ nBabies         : int  NA NA NA NA 2 NA NA NA NA NA ...\n $ Age1stBaby      : int  NA NA NA NA 27 NA NA NA NA NA ...\n $ SleepHrsNight   : int  4 4 4 NA 8 NA NA 8 8 8 ...\n $ SleepTrouble    : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ PhysActive      : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 1 NA NA 2 2 2 ...\n $ PhysActiveDays  : int  NA NA NA NA NA NA NA 5 5 5 ...\n $ TVHrsDay        : Factor w/ 7 levels \"0_hrs\",\"0_to_1_hr\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ CompHrsDay      : Factor w/ 7 levels \"0_hrs\",\"0_to_1_hr\",..: NA NA NA NA NA NA NA NA NA NA ...\n $ TVHrsDayChild   : int  NA NA NA 4 NA 5 1 NA NA NA ...\n $ CompHrsDayChild : int  NA NA NA 1 NA 0 6 NA NA NA ...\n $ Alcohol12PlusYr : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 2 2 2 ...\n $ AlcoholDay      : int  NA NA NA NA 2 NA NA 3 3 3 ...\n $ AlcoholYear     : int  0 0 0 NA 20 NA NA 52 52 52 ...\n $ SmokeNow        : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 2 NA NA NA NA NA ...\n $ Smoke100        : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ Smoke100n       : Factor w/ 2 levels \"Non-Smoker\",\"Smoker\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ SmokeAge        : int  18 18 18 NA 38 NA NA NA NA NA ...\n $ Marijuana       : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 2 2 2 ...\n $ AgeFirstMarij   : int  17 17 17 NA 18 NA NA 13 13 13 ...\n $ RegularMarij    : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 1 NA NA 1 1 1 ...\n $ AgeRegMarij     : int  NA NA NA NA NA NA NA NA NA NA ...\n $ HardDrugs       : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 1 1 1 ...\n $ SexEver         : Factor w/ 2 levels \"No\",\"Yes\": 2 2 2 NA 2 NA NA 2 2 2 ...\n $ SexAge          : int  16 16 16 NA 12 NA NA 13 13 13 ...\n $ SexNumPartnLife : int  8 8 8 NA 10 NA NA 20 20 20 ...\n $ SexNumPartYear  : int  1 1 1 NA 1 NA NA 0 0 0 ...\n $ SameSex         : Factor w/ 2 levels \"No\",\"Yes\": 1 1 1 NA 2 NA NA 2 2 2 ...\n $ SexOrientation  : Factor w/ 3 levels \"Bisexual\",\"Heterosexual\",..: 2 2 2 NA 2 NA NA 1 1 1 ...\n $ PregnantNow     : Factor w/ 3 levels \"Yes\",\"No\",\"Unknown\": NA NA NA NA NA NA NA NA NA NA ..."
   },
   {
     "objectID": "EL5.html#r-script",
     "href": "EL5.html#r-script",
     "title": "EL5: Reproducibility",
     "section": "R script",
-    "text": "R script\nA normal R script might look like:\n\n# pak::pkg_install(\"NHANES\")\nlibrary(tidyverse)\n\ndf &lt;- as_tibble(NHANES::NHANES)\ntbl &lt;- count(df, Gender)\ntst &lt;- t.test(BMI ~ Gender, df)\ngg &lt;- ggplot(df, aes(BMI, color = Gender)) + geom_density()\n\n\nYou must run the script in order (but might not always do that) … if so, confusion will arise!\nobjects df, tbl and tst only lives in the active session\n\nNo problem in this example\nbut working with big and complex data might introduce long-running processes =&gt; time consuming!"
+    "text": "R script\nA normal R script might look like:\n\n# pak::pkg_install(\"NHANES\")\nlibrary(tidyverse)\n\ndf &lt;- as_tibble(NHANES::NHANES)\ntbl &lt;- count(df, Gender)\ntst &lt;- t.test(BMI ~ Gender, df)\ngg &lt;- ggplot(df, aes(BMI, color = Gender)) + geom_density()\n\n\nYou must run the script in order (but might not always do that during the initial “trial and error” process … if so, confusion will later arise)!\nobjects df, tbl and tst only lives in the active session\n\nNo problem in this example\nbut working with big and complex data might introduce long-running processes =&gt; time consuming!"
   },
   {
     "objectID": "EL5.html#results",
     "href": "EL5.html#results",
     "title": "EL5: Reproducibility",
     "section": "Results",
-    "text": "Results\n\n\n\n\n    Welch Two Sample t-test\n\ndata:  BMI by Gender\nt = 1.4981, df = 9452.6, p-value = 0.1341\nalternative hypothesis: true difference in means between group female and group male is not equal to 0\n95 percent confidence interval:\n -0.06939849  0.51940903\nsample estimates:\nmean in group female   mean in group male \n            26.77208             26.54707"
+    "text": "Results\n\n\n\n\n    Welch Two Sample t-test\n\ndata:  BMI by Gender\nt = 1.4981, df = 9452.6, p-value = 0.1341\nalternative hypothesis: true difference in means between group female and group male is not equal to 0\n95 percent confidence interval:\n -0.06939849  0.51940903\nsample estimates:\nmean in group female   mean in group male \n            26.77208             26.54707 \n\n\n\n\n\n\n\n\nFigure and R output\n\n\nYou should see a figure and some R output on this slide. I just notice it doesn’t show on my phone when viewing the slides, so if you don’t see it, you might try another browser etc (it seems to render correct in the handouts however)."
   },
   {
     "objectID": "EL5.html#pipeline-1",
@@ -1180,7 +1187,7 @@
     "href": "EL5.html#targets.r-file",
     "title": "EL5: Reproducibility",
     "section": "_targets.R file",
-    "text": "_targets.R file\nPut that list into a file _targets.R together with some additional code:\n\nlibrary(targets)\ntar_source() # Source all scripts with function stored in R folder\ntar_option_set(\n  # Specify all needed packages here\n  packages = c(\"tidyverse\"),\n  # Format used for caching (qs or actually qs2 is best for big data)\n  format = \"qs\",\n  # Additional settings ...\n  seed = 123\n)\n\nlist(\n  tar_target(df, as_tibble(NHANES::NHANES)),\n  tar_target(tbl, count(df, Species)),\n  tar_target(tst, t.test(BMI ~ Gender, df)),\n  tar_target(gg, {\n    ggplot(df, aes(BMI, color = Gender)) + geom_density()\n  })\n)"
+    "text": "_targets.R file\nPut that list into a file _targets.R together with some additional code:\n\nlibrary(targets)\ntar_source() # Source all scripts with functions stored in R folder\ntar_option_set(\n  # Specify all needed packages here\n  # NOTE! They will not be available in the interactive R-session\n  # so you might load them above as well to avoid confusion\n  packages = c(\"tidyverse\"),\n  # Format used for caching (qs which is actually qs2 is best for big data)\n  format = \"qs\",\n  # Additional settings ...\n  seed = 123\n)\n\nlist(\n  tar_target(df, as_tibble(NHANES::NHANES)),\n  tar_target(tbl, count(df, Species)),\n  tar_target(tst, t.test(BMI ~ Gender, df)),\n  tar_target(gg, {\n    ggplot(df, aes(BMI, color = Gender)) + geom_density()\n  })\n)"
   },
   {
     "objectID": "EL5.html#benefits",
@@ -1208,14 +1215,14 @@
     "href": "EL5.html#pros-and-cons",
     "title": "EL5: Reproducibility",
     "section": "Pros and cons",
-    "text": "Pros and cons\n\nIt is always a good idea to be able to reproduce exactly what you did!\nBut if you never update you might miss essential bug fixes.\nIf your results change, how can you know which version was the most accurate?\n\nBest practice to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do right … 😂"
+    "text": "Pros and cons\n\nIt is always a good idea to be able to reproduce exactly what you did!\nBut if you never update you might miss essential bug fixes!\nIf your results change, how can you know which version was the most accurate?\n\nBest practice (I guess) is to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do … right … 😂"
   },
   {
     "objectID": "EL5.html#different-operating-systems",
     "href": "EL5.html#different-operating-systems",
     "title": "EL5: Reproducibility",
     "section": "Different operating systems",
-    "text": "Different operating systems\n\nR should behave similar on different operating systems.\nExceptions nevertheless exist!\n\nparallel::mclapply() behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.\nsort(c(\"ä\", \"a\", \"z\")) might differ due to locale settings"
+    "text": "Different operating systems\n\nR should behave similar on different operating systems.\nExceptions nevertheless exist!\n\nparallel::mclapply() behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.\nsort(c(\"ä\", \"a\", \"z\")) might differ due to locale settings\nEarlier versions of R relied on system-specific native encodings (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms."
   },
   {
     "objectID": "EL5.html#combining-all",
@@ -1225,18 +1232,179 @@
     "text": "Combining all?\n\nyou could very well use both targets + renv + git + GitHub etc\nAt some point you might start to wonder whether you are a medical statistician or a software developer … and the more complex/esoteric tools you use, the more difficult it might be to collaborate with others\nTry to find some middle ground … but always be open to new ideas!"
   },
   {
+    "objectID": "EL5.html#in-practice",
+    "href": "EL5.html#in-practice",
+    "title": "EL5: Reproducibility",
+    "section": "In practice",
+    "text": "In practice\n\nConnect through VPN\n2-factor authentication (BankID common in Sweden)\nOften by Remote Desktop (to access a Windows virtual desktop)\nSometimes a containerized Linux setup for R/RStudio etc accessed through a web browser (from within the virtual Windows machine)\nLimited internet access from within the environment (maybe possible to install CRAN-packages tied to a certain historical snapshot but not the latest released/developed versions).\nData import and exports goes through administrator\nPros: Secure, centralized backups, possibility to scale/share large computing resources (CPU, RAM, GPU etc), less dependent on individual computer (laptop), might aid collaboration\nCons: needs internet connection, restrictions on what software (packages) to use, difficult to export results and/or import script files etc, mentally exhausting to use for example a Mac Keyboard when working in Windows, can be expensive (pay per clock-cycle of CPU usage etc instead of simply purchasing a computer once)."
+  },
+  {
     "objectID": "EL5.html#references",
     "href": "EL5.html#references",
     "title": "EL5: Reproducibility",
     "section": "",
-    "text": "Baker, Monya. 2016. “1,500 Scientists Lift the Lid on Reproducibility.” Nature 533 (7604): 452–54. https://doi.org/10.1038/533452a.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nOliveira Andrade, Rodrigo de. 2025. “Huge Reproducibility Project Fails to Validate Dozens of Biomedical Studies.” Nature 641 (8062): 293–94. https://doi.org/10.1038/d41586-025-01266-x.\n\n\nPeng, Roger D., and Stephanie C. Hicks. 2021. “Reproducible Research: A Retrospective.” Annual Review of Public Health 42 (Volume 42, 2021): 79–93. https://doi.org/10.1146/annurev-publhealth-012420-105110."
+    "text": "Baker, Monya. 2016. “1,500 Scientists Lift the Lid on Reproducibility.” Nature 533 (7604): 452–54. https://doi.org/10.1038/533452a.\n\n\nKavianpour, Sanaz, James Sutherland, Esma Mansouri-Benssassi, Natalie Coull, and Emily Jefferson. 2022. “Next-Generation Capabilities in Trusted Research Environments: Interview Study.” Journal of Medical Internet Research 24 (9): e33720. https://doi.org/10.2196/33720.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nOliveira Andrade, Rodrigo de. 2025. “Huge Reproducibility Project Fails to Validate Dozens of Biomedical Studies.” Nature 641 (8062): 293–94. https://doi.org/10.1038/d41586-025-01266-x.\n\n\nPeng, Roger D., and Stephanie C. Hicks. 2021. “Reproducible Research: A Retrospective.” Annual Review of Public Health 42 (Volume 42, 2021): 79–93. https://doi.org/10.1146/annurev-publhealth-012420-105110."
   },
   {
     "objectID": "EL6.html#reading",
     "href": "EL6.html#reading",
-    "title": "EL6: Standardized vocabularies",
+    "title": "EL6: Data sources",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
+    "text": "Reading\n\n(Nguyen 2022, ch. 2) on Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.\nWickham, Çetinkaya-Rundel, and Grolemund (n.d.) chap 21 describes how to connect to a database from R.\nFenk, Furu, and Bakken (n.d.) describe why the current common practice with register data delivery in SAS format should be replaced by parquet files. Until this has happened, we often need to use SAS for data extraction.\nData Analysis Using Data.table (n.d.) introduces the data.table syntax, its general form, how to subset rows, select and compute on columns, and perform aggregations by group.\n\nRecommended references:\n\nArel-Bundock (2025) provides a good comparison between base R, dplyr and data.table."
+  },
+  {
+    "objectID": "EL6.html#optional-practice",
+    "href": "EL6.html#optional-practice",
+    "title": "EL6: Data sources",
+    "section": "Optional practice",
+    "text": "Optional practice\n\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: SQLzoo\nThe SQL Tutorial for Data Analysis is another option"
+  },
+  {
+    "objectID": "EL6.html#sas7bdat",
+    "href": "EL6.html#sas7bdat",
+    "title": "EL6: Data sources",
+    "section": ".sas7bdat",
+    "text": ".sas7bdat\n\nIt is common to receive large data files in SAS format (.sas7bdat)\nMany govermental agencies are using SAS internally\nSAS is great for handling big data sets (no need to read everything into memory)\nBut I don’t know how to use SAS 😩\nPossible to read medium-sized SAS files to R by haven::read_sas()\nBut may not work for larger files\nBest practice for current SAS version (9.4) is to export only nececary data to csv\n\nSAS Viya (next version) will be more flexible\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask ChatGPT etc to generate such code for you\n\nThe exported csv file can later be read into R"
+  },
+  {
+    "objectID": "EL6.html#databases",
+    "href": "EL6.html#databases",
+    "title": "EL6: Data sources",
+    "section": "Databases",
+    "text": "Databases\n\na database as a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
+  },
+  {
+    "objectID": "EL6.html#row-vs-column-oriented",
+    "href": "EL6.html#row-vs-column-oriented",
+    "title": "EL6: Data sources",
+    "section": "Row vs column oriented",
+    "text": "Row vs column oriented\n\nMost classical databases are optimized for rapidly collecting data, not analyzing existing data.\nThese databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.\nMore recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster."
+  },
+  {
+    "objectID": "EL6.html#dbms",
+    "href": "EL6.html#dbms",
+    "title": "EL6: Data sources",
+    "section": "DBMS",
+    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!"
+  },
+  {
+    "objectID": "EL6.html#sql",
+    "href": "EL6.html#sql",
+    "title": "EL6: Data sources",
+    "section": "SQL",
+    "text": "SQL\n\nDifferent database systems may use different query languages.\nThe Structured Query Language (SQL) is the most widely used for relational databases.\nDefined by international standards (ANSI/ISO)."
+  },
+  {
+    "objectID": "EL6.html#what-is-sql-used-for",
+    "href": "EL6.html#what-is-sql-used-for",
+    "title": "EL6: Data sources",
+    "section": "What is SQL used for?",
+    "text": "What is SQL used for?\nSQL is used to:\n\nRetrieve data (SELECT)\nFilter data (WHERE)\nAggregate data (GROUP BY)\nCombine tables (JOIN)\nModify data (INSERT, UPDATE, DELETE)"
+  },
+  {
+    "objectID": "EL6.html#sql-dialects",
+    "href": "EL6.html#sql-dialects",
+    "title": "EL6: Data sources",
+    "section": "SQL Dialects",
+    "text": "SQL Dialects\n\nSQL is a standard, but implementations differ slightly.\nThese variations are called dialects.\n\nT-SQL (Microsoft SQL Server)\nPL/SQL (Oracle)\nPostgreSQL SQL dialect\nMySQL SQL dialect\n\n\nMost core functionality is similar across systems."
+  },
+  {
+    "objectID": "EL6.html#a-simple-example",
+    "href": "EL6.html#a-simple-example",
+    "title": "EL6: Data sources",
+    "section": "A Simple Example",
+    "text": "A Simple Example\nSELECT name, age\nFROM students\nWHERE age &gt;= 18\nORDER BY age;\nThis query:\n\nSelects two columns\nFilters rows\nSorts the result"
+  },
+  {
+    "objectID": "EL6.html#duckdb",
+    "href": "EL6.html#duckdb",
+    "title": "EL6: Data sources",
+    "section": "DuckDB",
+    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option but not a requirement\n\nIntegration with tidyverse in R (dbplyr or duckplyr)\n\nCan be used both with disk data and data in RAM"
+  },
+  {
+    "objectID": "EL6.html#example",
+    "href": "EL6.html#example",
+    "title": "EL6: Data sources",
+    "section": "Example",
+    "text": "Example\n\n# pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n# Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n# Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\ntibble(urls)\n\n# A tibble: 3 × 1\n  urls                                                                     \n  &lt;chr&gt;                                                                    \n1 https://blobs.duckdb.org/flight-data-partitioned/Year=2022/data_0.parquet\n2 https://blobs.duckdb.org/flight-data-partitioned/Year=2023/data_0.parquet\n3 https://blobs.duckdb.org/flight-data-partitioned/Year=2024/data_0.parquet\n\n# Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n# nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n# A duckplyr data frame: 2 variables\n   Year       n\n  &lt;dbl&gt;   &lt;int&gt;\n1  2022 6729125\n2  2023 6847899\n3  2024 3461319\n\n# Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()\n\n┌───────────────────────────┐\n│       HASH_GROUP_BY       │\n│    ────────────────────   │\n│          Groups:          │\n│             #0            │\n│             #1            │\n│                           │\n│        Aggregates:        │\n│          mean(#2)         │\n│         median(#3)        │\n│                           │\n│      ~13,458,249 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│            Year           │\n│           Month           │\n│       InFlightDelay       │\n│       InFlightDelay       │\n│                           │\n│      ~13,458,250 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│            Year           │\n│           Month           │\n│       InFlightDelay       │\n│                           │\n│      ~13,458,250 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│       READ_PARQUET        │\n│    ────────────────────   │\n│         Function:         │\n│        READ_PARQUET       │\n│                           │\n│        Projections:       │\n│            Year           │\n│           Month           │\n│          DepDelay         │\n│          ArrDelay         │\n│                           │\n│       File Filters:       │\n│  (CAST(Year AS DOUBLE) &lt;  │\n│           2024.0)         │\n│                           │\n│    Scanning Files: 2/3    │\n│                           │\n│      ~13,458,250 rows     │\n└───────────────────────────┘"
+  },
+  {
+    "objectID": "EL6.html#duckdb-1",
+    "href": "EL6.html#duckdb-1",
+    "title": "EL6: Data sources",
+    "section": "DuckDB",
+    "text": "DuckDB\n\nDuckDB is an embedded analytical SQL database.\nIt supports standard SQL\nNo server installation is required.\nDesigned for analytical workloads"
+  },
+  {
+    "objectID": "EL6.html#duckdb-and-data-files",
+    "href": "EL6.html#duckdb-and-data-files",
+    "title": "EL6: Data sources",
+    "section": "DuckDB and Data Files",
+    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import is required."
+  },
+  {
+    "objectID": "EL6.html#example-1",
+    "href": "EL6.html#example-1",
+    "title": "EL6: Data sources",
+    "section": "Example",
+    "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n\n\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)\n\n# A duckplyr data frame: 2 variables\n  Gender BMI_mean\n  &lt;chr&gt;     &lt;dbl&gt;\n1 male       28.7\n2 female     28.7"
+  },
+  {
+    "objectID": "EL6.html#parquet",
+    "href": "EL6.html#parquet",
+    "title": "EL6: Data sources",
+    "section": "Parquet",
+    "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read"
+  },
+  {
+    "objectID": "EL6.html#example-2",
+    "href": "EL6.html#example-2",
+    "title": "EL6: Data sources",
+    "section": "Example",
+    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads all CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n\n# install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n# Now\nread_parquet_duckdb(parquet_file)\n\n# A duckplyr data frame: 77 variables\n      C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  \n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      \n 1     1 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 2     2 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 3     3 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 4     4 51625 2009_10  male       4 \" 0-9\"           49 Other &lt;NA&gt;  &lt;NA&gt;       \n 5     5 51630 2009_10  female    49 \" 40-49\"        596 White &lt;NA&gt;  Some Colle…\n 6     6 51638 2009_10  male       9 \" 0-9\"          115 White &lt;NA&gt;  &lt;NA&gt;       \n 7     7 51646 2009_10  male       8 \" 0-9\"          101 White &lt;NA&gt;  &lt;NA&gt;       \n 8     8 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n 9     9 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n10    10 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n# ℹ more rows\n# ℹ 67 more variables: MaritalStatus &lt;chr&gt;, HHIncome &lt;chr&gt;, HHIncomeMid &lt;int&gt;,\n#   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,\n#   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   BMICatUnder20yrs &lt;chr&gt;, BMI_WHO &lt;chr&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;,\n#   BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;,\n#   BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;, Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "EL6.html#tidy-data",
+    "href": "EL6.html#tidy-data",
+    "title": "EL6: Data sources",
+    "section": "tidy data",
+    "text": "tidy data\n\nduckplyr let’s you use the familiar dplyr/tidyverse syntax\nIf certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless\nAfter filteringen/aggregation etc you can always choose to collect() the data and use your ordinary workflow from there"
+  },
+  {
+    "objectID": "EL6.html#fater-in-memory",
+    "href": "EL6.html#fater-in-memory",
+    "title": "EL6: Data sources",
+    "section": "Fater in memory?",
+    "text": "Fater in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nWhat if data would fit?\n\nYou can use tibbles and dplyr etc of course …\n\n… but it might be terribly slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvementsfrom time to time)\n\n\n{data.table} is much more efficient!"
+  },
+  {
+    "objectID": "EL6.html#data.table",
+    "href": "EL6.html#data.table",
+    "title": "EL6: Data sources",
+    "section": "data.table",
+    "text": "data.table\n\nShare basic properties with data frames (dt[i, j]; merge())\nHas been around since 2006 (stable and well used, even older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare to data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
+  },
+  {
+    "objectID": "EL6.html#example-3",
+    "href": "EL6.html#example-3",
+    "title": "EL6: Data sources",
+    "section": "Example",
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- NHANES::NHANES\nsetDT(dt)\nsetkey(dt, ID) # Use the ID column as index\n# How many adults by gender do we have\ndt[Age &gt;= 18, .N, Gender]\n\n   Gender     N\n   &lt;fctr&gt; &lt;int&gt;\n1:   male  3686\n2: female  3795\n\n# Mean BMI by gender\ndt[Age &gt;= 18, mean(BMI, na.rm = TRUE), Gender]\n\n   Gender       V1\n   &lt;fctr&gt;    &lt;num&gt;\n1:   male 28.67528\n2: female 28.66978\n\n# Convert all factors to characters\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]"
+  },
+  {
+    "objectID": "EL6.html#joins",
+    "href": "EL6.html#joins",
+    "title": "EL6: Data sources",
+    "section": "joins",
+    "text": "joins\nx[i, on, nomatch]\n| |  |   |\n| |  |   \\__ If NULL only returns rows linked in x and i tables\n| |  \\____ a character vector or list defining match logic\n| \\_____ primary data.table, list or data.frame\n\\____ secondary data.table\n\n\n\n\n\n\n\n\n\nJoin type\ndata.table\nSQL\ndplyr\n\n\n\n\nRight join\nDT1[DT2]\nRIGHT JOIN\nright_join(DT2, DT1)\n\n\nLeft join\nDT2[DT1]\nLEFT JOIN\nleft_join(DT1, DT2)\n\n\nInner join\nDT1[DT2, nomatch = 0]\nINNER JOIN\ninner_join(DT1, DT2)\n\n\nFull join\nmerge(DT1, DT2, all = TRUE)\nFULL OUTER JOIN\nfull_join(DT1, DT2)\n\n\nAnti join\nDT1[!DT2]\nNOT EXISTS\nanti_join(DT1, DT2)\n\n\nSemi join\nDT1[DT2, nomatch = 0][, unique(.SD)]\nEXISTS\nsemi_join(DT1, DT2)\n\n\nRolling join\nDT1[DT2, on = \"date\", roll = TRUE]\n—\njoin_by() + rolling\n\n\nNon-equi join\nDT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]\n—\njoin_by(x &gt;= lower, x &lt;= upper)\n\n\nUpdate join\nDT1[DT2, value := i.value]\nUPDATE … JOIN\nDT1 %&gt;% left_join(DT2) %&gt;% mutate(...)"
+  },
+  {
+    "objectID": "EL6.html#references",
+    "href": "EL6.html#references",
+    "title": "EL6: Data sources",
+    "section": "",
+    "text": "Arel-Bundock, Vincent. 2025. “Data.table Vs. Base Vs. Dplyr  Vincent Arel-Bundock.” https://arelbundock.com/posts/dt_tb_df/index.html.\n\n\nData Analysis Using Data.table. n.d. 2026. https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html.\n\n\nFenk, Simone Rahel, Kari Furu, and Inger Johanne Bakken. n.d. “Improve Data Management in Register-Based Research: Transition from CSV to Parquet.” https://doi.org/10.1101/2025.10.15.25337992.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. “R for Data Science (2e).” https://r4ds.hadley.nz/."
   },
   {
     "objectID": "EL3.html#literature",
@@ -1404,7 +1572,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-23."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-25."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -2349,14 +2517,21 @@
     "href": "handouts.html#reading",
     "title": "Handouts",
     "section": "Reading",
-    "text": "Reading\n\nBaker (2016) and Oliveira Andrade (2025) motivates why reproducible analysis is important!\nPeng and Hicks (2021) introduce and elaborate more on the subject.\nNguyen (2022) only read section “Basic Introduction to Docker and Containers” in chapter 2 (but you do not need to install Docker for this course)\n\n\n\n\n\n\n\n\nTipConsider\n\n\n\n\nAfter reading papers like these, one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.\nReproducibility might sound like a good thing but how much does the technical details matter if we are not allowed to freely share the underlying health care data anyway?\n\n\n\nFor reference:\n\nTargets overview\nTarget manual"
+    "text": "Reading\n\nBaker (2016) and Oliveira Andrade (2025) motivates why reproducible analysis is important!\nPeng and Hicks (2021) introduce and elaborate more on the subject.\nNguyen (2022) only read section “Basic Introduction to Docker and Containers” in chapter 2 (you do not need to install Docker for this course, just be aware of the concept)\nKavianpour et al. (2022) introduces Trusted Research Environment as well as some perceived challenges with those (we will not use such environments in the course but this is likely the reality you need to cope with later on in your career, so you should get familiar with the concept).\n\n\n\n\n\n\n\nTipConsider\n\n\n\n\nAfter reading papers like Baker (2016) and Oliveira Andrade (2025) , one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.\nReproducibility might sound like a good thing but how much does the technical details matter if we are not allowed to freely share the underlying health care data anyway?\n\n\n\nFor reference:\n\nTargets overview\nTarget manual\nYou read briefly about Docker in the mandatory reading. If this seems interesting, you might read: An Introduction to Rocker: Docker Containers for R (not mandatory)."
   },
   {
     "objectID": "handouts.html#practice",
     "href": "handouts.html#practice",
     "title": "Handouts",
     "section": "Practice",
-    "text": "Practice\nA workshop with 7 parts was given at the R Medicine conference 2025. Practice according to part 1-3 (part 4-7 are slightly outside the scope of the course and only recommended if you have additional time and interest).\nClone this GitHub repo. Exercies are found in the code folder.\nFollow the recording from the workshop while you are practicing: The power of {targets} package for reproducible data science\n\n\n\n\n\n\nNoteNotes on the recording\n\n\n\n\nThe full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).\nRStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.\nYou may recognise some of the material from Part 3, as presented during the lecture\n\n\n\nThis practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!\n\n\nAn article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. / Buckheit & Donoho\n\n\n[…] importance of having a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al. 2021"
+    "text": "Practice\nA workshop with 7 parts was given at the R Medicine conference 2025. Practice according to part 1-3 (part 4-7 are slightly outside the scope of the course and only recommended if you have additional time and interest).\nClone this GitHub repo. Exercies are found in the code folder.\nFollow the recording from the workshop while you are practicing: The power of {targets} package for reproducible data science\n\n\n\n\n\n\nNoteNotes on the recording\n\n\n\n\nThe full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).\nRStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.\nYou may recognise some of the material from Part 3, as presented during the lecture\n\n\n\nThis practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!"
+  },
+  {
+    "objectID": "handouts.html#motivational-quotes",
+    "href": "handouts.html#motivational-quotes",
+    "title": "Handouts",
+    "section": "Motivational quotes",
+    "text": "Motivational quotes\n\nAn article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. / Buckheit & Donoho\n\n\n[It is important to have] a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al. 2021"
   },
   {
     "objectID": "handouts.html#reproducible-analysis",
@@ -2384,28 +2559,28 @@
     "href": "handouts.html#pipeline",
     "title": "Handouts",
     "section": "Pipeline",
-    "text": "Pipeline\n\nA pipeline is a computational workflow that does statistics, analytics, or data science.\nA pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.\nPipeline tools coordinate the pieces of computationally demanding analysis projects."
+    "text": "Pipeline\n\nA pipeline is a computational workflow that does statistics, analytics, or data science.\nA pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.\nPipeline tools coordinate the pieces of computationally demanding analysis projects.\n\n\n\n\n\n\n\nNotePipe operator\n\n\n\nThe simplest example of pipelines might be when you combine R code by the pipe operator (|&gt; or %&gt;%), which in turn is inspired by the pipe operator in Unix (|)."
   },
   {
     "objectID": "handouts.html#long-running-processes",
     "href": "handouts.html#long-running-processes",
     "title": "Handouts",
     "section": "Long running processes",
-    "text": "Long running processes\n\nImaigine you have nice R-scripts to take care of every step in your project\nYou have either one very very … very long file or a bunch of files which you execute in order\nIt takes two weeks to run all the scripts (not unrealistic for a big project!)\nYou report the result to your collaborators\nThey ask you to update a tiny detail somewhere in the middle of your workflow\nYou need to rerun everything (while you’re screaming in frustration)!\nThis will repeat again and again until you finally\n\nLose your mind and quit your job\nAdapt a more reproducible workflow"
+    "text": "Long running processes\n\nImaigine you have nice R-scripts to take care of every step in your project\nYou have either one very very … very … long file or a bunch of files which you execute in order\nIt takes two weeks to run all scripts (not unrealistic for a big project!)\nYou report the result to your collaborators\nThey ask you to update a tiny detail somewhere in the middle of your workflow\nYou need to rerun everything (while screaming in frustration)!\nThis will repeat again and again until you finally\n\nLose your mind and quit your job\nAdapt a more reproducible workflow"
   },
   {
     "objectID": "handouts.html#steps-wise-procedure",
     "href": "handouts.html#steps-wise-procedure",
     "title": "Handouts",
     "section": "Steps-wise procedure",
-    "text": "Steps-wise procedure\n\nThe default setting in R is to save the workspace to disk when you end the sesion\nThis is usually not recommended and therefore often disabled in for example RStudio\n\n(If you re-start your sessin at a later point you might have no idea how the restored objects relates to each other.)\n\nYou may still want to execute things in a more step-wise fasion\n\nConvert big data files to something R-friendly\nPerform some data management (select relevant columns ond rows), cleaning, add calculated variables etc\nPerform some exploratory data analysis (EDA) to get a better understanding of the data\nPerform some statistical analysis\nReport and visualize the results"
+    "text": "Steps-wise procedure\n\nThe default setting in R is to save the workspace to disk when you end the session\nThis is usually not recommended and therefore often disabled in for example RStudio\n\n(If you re-start your session at a later point you might have no idea how the restored objects relates to each other.)\n\nYou may still want to execute things in a more step-wise fashion\n\nConvert big data files (.sas7bdat from SAS etc) to something more R-friendly\nPerform some data management (select relevant columns and rows), cleaning, add calculated variables etc\nPerform some exploratory data analysis (EDA) to get a better understanding of the data\nPerform some statistical analysis\nReport and visualize the results"
   },
   {
     "objectID": "handouts.html#caching",
     "href": "handouts.html#caching",
     "title": "Handouts",
     "section": "Caching",
-    "text": "Caching\n\nIf you perform each step in different script files, you might start each file with some input and end it with some output\nThe output from the previous script is used as input in the next script\nsave() and load() are standard but can be very slow for large objects\nsaveRDS() and loadRDS() use serialization and are now adays much more efficient\nqs2::qs_save() and qs2::qs_read() (or qs2::qd_save() and qs2::qd_read()) from the qs2 package are currently “state-of-the-art” (but things tend to change quickly)"
+    "text": "Caching\n\nIf you perform each step in different script files, you might start each file with some input and end it with some output\nThe output from the previous script is used as input in the next script\nsave() and load() are standard but can be very slow for large objects\nsaveRDS() and loadRDS() use serialization and are nowadays much more efficient\nqs2::qs_save() and qs2::qs_read() (or qs2::qd_save() and qs2::qd_read()) from the qs2 package are currently “state-of-the-art” (but things tend to change quickly)"
   },
   {
     "objectID": "handouts.html#benchmarking",
@@ -2419,7 +2594,7 @@
     "href": "handouts.html#who-cares",
     "title": "Handouts",
     "section": "Who cares?",
-    "text": "Who cares?\n\nImagine you work with data for the whole population (&gt; 10 M people)\nYou have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data\nYou are working in a secure environment were data is stored on a network server (no HDD drive)\nThe same environment is shared by 20 other researchers and you are all competing for the same band-width\nIt will get increasonly frusrating just to load and save the big files\nYou might need to wait for half an hour before you can start working"
+    "text": "Who cares?\n\nImagine you work with data for the whole Swedish population (&gt; 10 M people)\nYou have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data\nYou are working in a secure environment were data is stored on a network server (no SSD drive)\nThe same environment is shared by 20 other researchers and you are all competing for the same bandwidth\nIt will get increasonly frusrating just to load and save the big files\nYou might need to wait for half an hour before you can start working 😩"
   },
   {
     "objectID": "handouts.html#automated-process",
@@ -2429,32 +2604,39 @@
     "text": "Automated process\n\nInstead of relying on individual R scripts, use a reproducible pipeline.\nThis is common practice in software development\n\nFor example GNU Make is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.\n\nIteration during project development (which is equally relevant for a health data project), will be much faster and reliable.\nCaching as described abowe is automated and you only need to read/write files to disk/network storage when actually needed."
   },
   {
-    "objectID": "handouts.html#targets-package",
-    "href": "handouts.html#targets-package",
+    "objectID": "handouts.html#alternative-solutions",
+    "href": "handouts.html#alternative-solutions",
     "title": "Handouts",
-    "section": "targets package",
-    "text": "targets package\n\nThe {targets} package is a Make-like pipeline tool for statistics and data science in R.\nThe package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects.\nIf all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.\nThe tasks themselves are called “targets”, and they run the functions and return R objects.\nThe targets package orchestrates the targets and stores the output objects to make your pipeline efficient, painless, and reproducible."
+    "section": "Alternative solutions",
+    "text": "Alternative solutions\n\nGNU Make with R\nrmake creates and maintains a build process for complex analytic tasks. The package allows easy generation of a Makefile for the (GNU) ‘make’ tool\ndrake was the first more established R-oriented alternative\ntargets is the currently most developed and used alternative\nrixpress might be a rising star (at least if you are combining R and Python; polyglot)?\n\nWe will use targets in this course!"
+  },
+  {
+    "objectID": "handouts.html#targets",
+    "href": "handouts.html#targets",
+    "title": "Handouts",
+    "section": "targets",
+    "text": "targets\n\nThe {targets} package is a Make-like pipeline tool for statistics and data science in R.\nThe package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects.\nIf all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.\nThe tasks themselves are called “targets”, and they run the functions and return R objects.\nThe targets package orchestrates the targets and stores the output objects to make your pipeline efficient, painless (well … hopefully relatively so …), and reproducible."
   },
   {
     "objectID": "handouts.html#example",
     "href": "handouts.html#example",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\nData: survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960’s. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey. The health examination is conducted in a mobile examination centre (MEC).\nQuestion: Is there any association between gender and BMI?\n## pak::pkg_install(\"NHANES\")\nstr(NHANES::NHANES)"
+    "text": "Example\nData: survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960’s. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey.\nQuestion: Is there any association between Gender and BMI?\n## pak::pkg_install(\"NHANES\")\nstr(NHANES::NHANES)"
   },
   {
     "objectID": "handouts.html#r-script",
     "href": "handouts.html#r-script",
     "title": "Handouts",
     "section": "R script",
-    "text": "R script\nA normal R script might look like:\n## pak::pkg_install(\"NHANES\")\nlibrary(tidyverse)\n\ndf &lt;- as_tibble(NHANES::NHANES)\ntbl &lt;- count(df, Gender)\ntst &lt;- t.test(BMI ~ Gender, df)\ngg &lt;- ggplot(df, aes(BMI, color = Gender)) + geom_density()\n\nYou must run the script in order (but might not always do that) … if so, confusion will arise!\nobjects df, tbl and tst only lives in the active session\n\nNo problem in this example\nbut working with big and complex data might introduce long-running processes =&gt; time consuming!"
+    "text": "R script\nA normal R script might look like:\n## pak::pkg_install(\"NHANES\")\nlibrary(tidyverse)\n\ndf &lt;- as_tibble(NHANES::NHANES)\ntbl &lt;- count(df, Gender)\ntst &lt;- t.test(BMI ~ Gender, df)\ngg &lt;- ggplot(df, aes(BMI, color = Gender)) + geom_density()\n\nYou must run the script in order (but might not always do that during the initial “trial and error” process … if so, confusion will later arise)!\nobjects df, tbl and tst only lives in the active session\n\nNo problem in this example\nbut working with big and complex data might introduce long-running processes =&gt; time consuming!"
   },
   {
     "objectID": "handouts.html#results",
     "href": "handouts.html#results",
     "title": "Handouts",
     "section": "Results",
-    "text": "Results\n#| echo: false\ngg\ntst"
+    "text": "Results\n#| echo: false\ngg\ntst\n\n\n\n\n\n\nNoteFigure and R output\n\n\n\nYou should see a figure and some R output on this slide. I just notice it doesn’t show on my phone when viewing the slides, so if you don’t see it, you might try another browser etc (it seems to render correct in the handouts however)."
   },
   {
     "objectID": "handouts.html#pipeline-1",
@@ -2489,7 +2671,7 @@
     "href": "handouts.html#targets.r-file",
     "title": "Handouts",
     "section": "_targets.R file",
-    "text": "_targets.R file\nPut that list into a file _targets.R together with some additional code:\n#| results: \"hide\"\nlibrary(targets)\ntar_source() # Source all scripts with function stored in R folder\ntar_option_set(\n  # Specify all needed packages here\n  packages = c(\"tidyverse\"),\n  # Format used for caching (qs or actually qs2 is best for big data)\n  format = \"qs\",\n  # Additional settings ...\n  seed = 123\n)\n\nlist(\n  tar_target(df, as_tibble(NHANES::NHANES)),\n  tar_target(tbl, count(df, Species)),\n  tar_target(tst, t.test(BMI ~ Gender, df)),\n  tar_target(gg, {\n    ggplot(df, aes(BMI, color = Gender)) + geom_density()\n  })\n)"
+    "text": "_targets.R file\nPut that list into a file _targets.R together with some additional code:\n#| results: \"hide\"\nlibrary(targets)\ntar_source() # Source all scripts with functions stored in R folder\ntar_option_set(\n  # Specify all needed packages here\n  # NOTE! They will not be available in the interactive R-session\n  # so you might load them above as well to avoid confusion\n  packages = c(\"tidyverse\"),\n  # Format used for caching (qs which is actually qs2 is best for big data)\n  format = \"qs\",\n  # Additional settings ...\n  seed = 123\n)\n\nlist(\n  tar_target(df, as_tibble(NHANES::NHANES)),\n  tar_target(tbl, count(df, Species)),\n  tar_target(tst, t.test(BMI ~ Gender, df)),\n  tar_target(gg, {\n    ggplot(df, aes(BMI, color = Gender)) + geom_density()\n  })\n)"
   },
   {
     "objectID": "handouts.html#benefits",
@@ -2513,25 +2695,25 @@
     "text": "Live show\n#| eval: false\ncd\ngit clone https://github.com/STA220/targets.git\ncd targets\npositron .\nOr perform those steps from within Positron."
   },
   {
-    "objectID": "handouts.html#different-r-versions",
-    "href": "handouts.html#different-r-versions",
+    "objectID": "handouts.html#r-versions",
+    "href": "handouts.html#r-versions",
     "title": "Handouts",
-    "section": "Different R-versions",
-    "text": "Different R-versions\n\nImagine you finish your research project and you submit a manuscript to a journal\nThe journal comes back one year later (they didn’t have time until know) and one reviewer ask you to double check some steps of the analysis\nYou make some modifications and rerun your pipelines.\nBut it doesn’t work!\nHalf a year ago you updated your R installation and a week ago all of your installed packages.\n\nOne package was retired from CRAN (could happen even though there was nothing wrong with the package when you used it)\nOne package has deprecated one of the functions you previously used\nOn package has redesigned the output format from a specific function you used\n\n😱"
+    "section": "R-versions",
+    "text": "R-versions\n\nImagine you finish your research project and you submit a manuscript to a journal\nThe journal comes back one year later (they didn’t have time until know) and one reviewer ask you to double check some steps of the analysis\nYou make some modifications and rerun your pipelines.\nBut it doesn’t work!\nHalf a year ago you updated your R installation and a week ago all of your installed packages.\n\nOne package was retired from CRAN (could happen even though there was nothing wrong with the package when you used it … maybe the maintainer just didn’t have time or energy to keep maintaining it)\nOne package has deprecated one of the functions you previously used\nOn package has redesigned the output format from a specific function you used\n\n😱"
   },
   {
     "objectID": "handouts.html#pros-and-cons",
     "href": "handouts.html#pros-and-cons",
     "title": "Handouts",
     "section": "Pros and cons",
-    "text": "Pros and cons\n\nIt is always a good idea to be able to reproduce exactly what you did!\nBut if you never update you might miss essential bug fixes.\nIf your results change, how can you know which version was the most accurate?\n\nBest practice to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do right … 😂"
+    "text": "Pros and cons\n\nIt is always a good idea to be able to reproduce exactly what you did!\nBut if you never update you might miss essential bug fixes!\nIf your results change, how can you know which version was the most accurate?\n\nBest practice (I guess) is to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do … right … 😂"
   },
   {
     "objectID": "handouts.html#different-operating-systems",
     "href": "handouts.html#different-operating-systems",
     "title": "Handouts",
     "section": "Different operating systems",
-    "text": "Different operating systems\n\nR should behave similar on different operating systems.\nExceptions nevertheless exist!\n\nparallel::mclapply() behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.\nsort(c(\"ä\", \"a\", \"z\")) might differ due to locale settings"
+    "text": "Different operating systems\n\nR should behave similar on different operating systems.\nExceptions nevertheless exist!\n\nparallel::mclapply() behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.\nsort(c(\"ä\", \"a\", \"z\")) might differ due to locale settings\nEarlier versions of R relied on system-specific native encodings (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms."
   },
   {
     "objectID": "handouts.html#combining-all",
@@ -2541,25 +2723,186 @@
     "text": "Combining all?\n\nyou could very well use both targets + renv + git + GitHub etc\nAt some point you might start to wonder whether you are a medical statistician or a software developer … and the more complex/esoteric tools you use, the more difficult it might be to collaborate with others\nTry to find some middle ground … but always be open to new ideas!"
   },
   {
+    "objectID": "handouts.html#tre",
+    "href": "handouts.html#tre",
+    "title": "Handouts",
+    "section": "TRE",
+    "text": "TRE\n\nHistorically: centralized data on mainframe computer\nMore recently: working with data locally (desktop/laptop)\n\nFull volume encryption (BitLocker on Windows, FileVault on Mac etc)\nPossible to work off-line (trains, flights etc)\nBackups! Backups!!! BACKUPS!!!\nUsually only password protected and no logging of of activities\nSometimes admin user (sometimes not)\n\nNowadays: (Different names, same concept) Secure Research Envoronemnt (SRE), Trusted Research Envoronment (TRE), Secure Data Environment (SDE), Data Clean Room, Data Safe Havens, …"
+  },
+  {
+    "objectID": "handouts.html#in-practice",
+    "href": "handouts.html#in-practice",
+    "title": "Handouts",
+    "section": "In practice",
+    "text": "In practice\n\nConnect through VPN\n2-factor authentication (BankID common in Sweden)\nOften by Remote Desktop (to access a Windows virtual desktop)\nSometimes a containerized Linux setup for R/RStudio etc accessed through a web browser (from within the virtual Windows machine)\nLimited internet access from within the environment (maybe possible to install CRAN-packages tied to a certain historical snapshot but not the latest released/developed versions).\nData import and exports goes through administrator\nPros: Secure, centralized backups, possibility to scale/share large computing resources (CPU, RAM, GPU etc), less dependent on individual computer (laptop), might aid collaboration\nCons: needs internet connection, restrictions on what software (packages) to use, difficult to export results and/or import script files etc, mentally exhausting to use for example a Mac Keyboard when working in Windows, can be expensive (pay per clock-cycle of CPU usage etc instead of simply purchasing a computer once)."
+  },
+  {
     "objectID": "handouts.html#reading-1",
     "href": "handouts.html#reading-1",
     "title": "Handouts",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
+    "text": "Reading\n\n(Nguyen 2022, ch. 2) on Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.\nWickham, Çetinkaya-Rundel, and Grolemund (n.d.) chap 21 describes how to connect to a database from R.\nFenk, Furu, and Bakken (n.d.) describe why the current common practice with register data delivery in SAS format should be replaced by parquet files. Until this has happened, we often need to use SAS for data extraction.\nData Analysis Using Data.table (n.d.) introduces the data.table syntax, its general form, how to subset rows, select and compute on columns, and perform aggregations by group.\n\nRecommended references:\n\nArel-Bundock (2025) provides a good comparison between base R, dplyr and data.table."
+  },
+  {
+    "objectID": "handouts.html#optional-practice",
+    "href": "handouts.html#optional-practice",
+    "title": "Handouts",
+    "section": "Optional practice",
+    "text": "Optional practice\n\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: SQLzoo\nThe SQL Tutorial for Data Analysis is another option"
+  },
+  {
+    "objectID": "handouts.html#sas7bdat",
+    "href": "handouts.html#sas7bdat",
+    "title": "Handouts",
+    "section": ".sas7bdat",
+    "text": ".sas7bdat\n\nIt is common to receive large data files in SAS format (.sas7bdat)\nMany govermental agencies are using SAS internally\nSAS is great for handling big data sets (no need to read everything into memory)\nBut I don’t know how to use SAS 😩\nPossible to read medium-sized SAS files to R by haven::read_sas()\nBut may not work for larger files\nBest practice for current SAS version (9.4) is to export only nececary data to csv\n\nSAS Viya (next version) will be more flexible\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask ChatGPT etc to generate such code for you\n\nThe exported csv file can later be read into R"
+  },
+  {
+    "objectID": "handouts.html#databases",
+    "href": "handouts.html#databases",
+    "title": "Handouts",
+    "section": "Databases",
+    "text": "Databases\n\na database as a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
+  },
+  {
+    "objectID": "handouts.html#row-vs-column-oriented",
+    "href": "handouts.html#row-vs-column-oriented",
+    "title": "Handouts",
+    "section": "Row vs column oriented",
+    "text": "Row vs column oriented\n\nMost classical databases are optimized for rapidly collecting data, not analyzing existing data.\nThese databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.\nMore recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster."
+  },
+  {
+    "objectID": "handouts.html#dbms",
+    "href": "handouts.html#dbms",
+    "title": "Handouts",
+    "section": "DBMS",
+    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!"
+  },
+  {
+    "objectID": "handouts.html#sql",
+    "href": "handouts.html#sql",
+    "title": "Handouts",
+    "section": "SQL",
+    "text": "SQL\n\nDifferent database systems may use different query languages.\nThe Structured Query Language (SQL) is the most widely used for relational databases.\nDefined by international standards (ANSI/ISO)."
+  },
+  {
+    "objectID": "handouts.html#what-is-sql-used-for",
+    "href": "handouts.html#what-is-sql-used-for",
+    "title": "Handouts",
+    "section": "What is SQL used for?",
+    "text": "What is SQL used for?\nSQL is used to:\n\nRetrieve data (SELECT)\nFilter data (WHERE)\nAggregate data (GROUP BY)\nCombine tables (JOIN)\nModify data (INSERT, UPDATE, DELETE)"
+  },
+  {
+    "objectID": "handouts.html#sql-dialects",
+    "href": "handouts.html#sql-dialects",
+    "title": "Handouts",
+    "section": "SQL Dialects",
+    "text": "SQL Dialects\n\nSQL is a standard, but implementations differ slightly.\nThese variations are called dialects.\n\nT-SQL (Microsoft SQL Server)\nPL/SQL (Oracle)\nPostgreSQL SQL dialect\nMySQL SQL dialect\n\n\nMost core functionality is similar across systems."
+  },
+  {
+    "objectID": "handouts.html#a-simple-example",
+    "href": "handouts.html#a-simple-example",
+    "title": "Handouts",
+    "section": "A Simple Example",
+    "text": "A Simple Example\nSELECT name, age\nFROM students\nWHERE age &gt;= 18\nORDER BY age;\nThis query:\n\nSelects two columns\nFilters rows\nSorts the result"
+  },
+  {
+    "objectID": "handouts.html#duckdb",
+    "href": "handouts.html#duckdb",
+    "title": "Handouts",
+    "section": "DuckDB",
+    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option but not a requirement\n\nIntegration with tidyverse in R (dbplyr or duckplyr)\n\nCan be used both with disk data and data in RAM"
+  },
+  {
+    "objectID": "handouts.html#example-1",
+    "href": "handouts.html#example-1",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n## pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n## Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n## Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\ntibble(urls)\n\n## Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n## nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n## Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()"
+  },
+  {
+    "objectID": "handouts.html#duckdb-1",
+    "href": "handouts.html#duckdb-1",
+    "title": "Handouts",
+    "section": "DuckDB",
+    "text": "DuckDB\n\nDuckDB is an embedded analytical SQL database.\nIt supports standard SQL\nNo server installation is required.\nDesigned for analytical workloads"
+  },
+  {
+    "objectID": "handouts.html#duckdb-and-data-files",
+    "href": "handouts.html#duckdb-and-data-files",
+    "title": "Handouts",
+    "section": "DuckDB and Data Files",
+    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import is required."
+  },
+  {
+    "objectID": "handouts.html#example-2",
+    "href": "handouts.html#example-2",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)"
+  },
+  {
+    "objectID": "handouts.html#parquet",
+    "href": "handouts.html#parquet",
+    "title": "Handouts",
+    "section": "Parquet",
+    "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read"
+  },
+  {
+    "objectID": "handouts.html#example-3",
+    "href": "handouts.html#example-3",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads all CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n#| cache: true\n## install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n## Now\nread_parquet_duckdb(parquet_file)"
+  },
+  {
+    "objectID": "handouts.html#tidy-data",
+    "href": "handouts.html#tidy-data",
+    "title": "Handouts",
+    "section": "tidy data",
+    "text": "tidy data\n\nduckplyr let’s you use the familiar dplyr/tidyverse syntax\nIf certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless\nAfter filteringen/aggregation etc you can always choose to collect() the data and use your ordinary workflow from there"
+  },
+  {
+    "objectID": "handouts.html#fater-in-memory",
+    "href": "handouts.html#fater-in-memory",
+    "title": "Handouts",
+    "section": "Fater in memory?",
+    "text": "Fater in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nWhat if data would fit?\n\nYou can use tibbles and dplyr etc of course …\n\n… but it might be terribly slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvementsfrom time to time)\n\n\n{data.table} is much more efficient!"
+  },
+  {
+    "objectID": "handouts.html#data.table",
+    "href": "handouts.html#data.table",
+    "title": "Handouts",
+    "section": "data.table",
+    "text": "data.table\n\nShare basic properties with data frames (dt[i, j]; merge())\nHas been around since 2006 (stable and well used, even older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare to data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
+  },
+  {
+    "objectID": "handouts.html#example-4",
+    "href": "handouts.html#example-4",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n#| echo: true\nlibrary(data.table)\ndt &lt;- NHANES::NHANES\nsetDT(dt)\nsetkey(dt, ID) # Use the ID column as index\n## How many adults by gender do we have\ndt[Age &gt;= 18, .N, Gender]\n## Mean BMI by gender\ndt[Age &gt;= 18, mean(BMI, na.rm = TRUE), Gender]\n## Convert all factors to characters\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]"
+  },
+  {
+    "objectID": "handouts.html#joins",
+    "href": "handouts.html#joins",
+    "title": "Handouts",
+    "section": "joins",
+    "text": "joins\nx[i, on, nomatch]\n| |  |   |\n| |  |   \\__ If NULL only returns rows linked in x and i tables\n| |  \\____ a character vector or list defining match logic\n| \\_____ primary data.table, list or data.frame\n\\____ secondary data.table\n\n\n\n\n\n\n\n\n\nJoin type\ndata.table\nSQL\ndplyr\n\n\n\n\nRight join\nDT1[DT2]\nRIGHT JOIN\nright_join(DT2, DT1)\n\n\nLeft join\nDT2[DT1]\nLEFT JOIN\nleft_join(DT1, DT2)\n\n\nInner join\nDT1[DT2, nomatch = 0]\nINNER JOIN\ninner_join(DT1, DT2)\n\n\nFull join\nmerge(DT1, DT2, all = TRUE)\nFULL OUTER JOIN\nfull_join(DT1, DT2)\n\n\nAnti join\nDT1[!DT2]\nNOT EXISTS\nanti_join(DT1, DT2)\n\n\nSemi join\nDT1[DT2, nomatch = 0][, unique(.SD)]\nEXISTS\nsemi_join(DT1, DT2)\n\n\nRolling join\nDT1[DT2, on = \"date\", roll = TRUE]\n—\njoin_by() + rolling\n\n\nNon-equi join\nDT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]\n—\njoin_by(x &gt;= lower, x &lt;= upper)\n\n\nUpdate join\nDT1[DT2, value := i.value]\nUPDATE … JOIN\nDT1 %&gt;% left_join(DT2) %&gt;% mutate(...)"
   },
   {
     "objectID": "handouts.html#reading-2",
     "href": "handouts.html#reading-2",
     "title": "Handouts",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:"
+    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
   },
   {
     "objectID": "handouts.html#reading-3",
     "href": "handouts.html#reading-3",
     "title": "Handouts",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 2)\n\nDocker: You should be aware of the concept. Docker is used also for statistical analysis. However, we will not use it for the course.\nDatabases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.\n\n\nRecommended references:\n\nThis might be interesting (but not mandatory) to read: An Introduction to Rocker: Docker Containers for R read."
+    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:"
   },
   {
     "objectID": "handouts.html#big-data",
@@ -2667,8 +3010,8 @@
     "text": "Database?\n\nI don’t want to administer Microsoft SQL Server myself!\n\n(They had R support for a couple of years but not any more)\n\nSQLight is easy to use …\nbut (as SQL server) it is row based 🙁\nSome complicated ones are column based 😀 (Snowflake, Google Big Query)\n\n… but I don’t want to administer those either …\n\nDuckDB comes for rescue!\n\n\n\n\n\n\n\nImportantIndices\n\n\n\nNever forget to set proper indices if needed!"
   },
   {
-    "objectID": "handouts.html#duckdb",
-    "href": "handouts.html#duckdb",
+    "objectID": "handouts.html#duckdb-2",
+    "href": "handouts.html#duckdb-2",
     "title": "Handouts",
     "section": "DuckDB",
     "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nIntegration with tidyverse in R\nCan be used both with disk data and data in RAM\n… but I had some bad experience and now I am scared 😢"
@@ -2681,8 +3024,8 @@
     "text": "From CSV to Parquet\n\nCSV is not very nice 🙁\n\nNo meta data\nSensitive to errors (missing values, decimal point, numbers with leading 0 etc, although fread can take care of this)\nEncoding, BOM, whatever …\n\nWrite to Parquet files\nI don’t think it is possible to convert csv to parquett on disk (first read csv, then write parquette)\n\nBut it can be done in chunks (read portion of csv and write to individual parquet file which are later “combined”)"
   },
   {
-    "objectID": "handouts.html#parquet",
-    "href": "handouts.html#parquet",
+    "objectID": "handouts.html#parquet-1",
+    "href": "handouts.html#parquet-1",
     "title": "Handouts",
     "section": "Parquet",
     "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nIntegrates with DuckDB (which integrates with R/tidyverse)\nSee example later!"
@@ -2702,15 +3045,15 @@
     "text": "Data management\n\n\n\nLet’s say data fits into RAM\nbase R and tidyverse works … but might be terribly slow …\n{data.table}! 😀"
   },
   {
-    "objectID": "handouts.html#data.table",
-    "href": "handouts.html#data.table",
+    "objectID": "handouts.html#data.table-1",
+    "href": "handouts.html#data.table-1",
     "title": "Handouts",
     "section": "{data.table}",
     "text": "{data.table}\n\nShare basic properties with data frames (dt[i, j]; merge())\nPrint method inspired by {tibble}\nSome old friends from {reshape2}: melt(), dcast()\nHas been around since 2006 (stable and well used, older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
   },
   {
-    "objectID": "handouts.html#example-1",
-    "href": "handouts.html#example-1",
+    "objectID": "handouts.html#example-5",
+    "href": "handouts.html#example-5",
     "title": "Handouts",
     "section": "Example",
     "text": "Example\n#| echo: true\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\ndt[, .N, Species]\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]"
@@ -2723,8 +3066,8 @@
     "text": "If it doesn’t fit?\n\nConnect to parquet file.\nUse DuckDB to process the data (while still on disk)\nUse {dplyr} to translate its syntax into SQL code\nProcess data on disk\nOnly read the results into memory"
   },
   {
-    "objectID": "handouts.html#example-2",
-    "href": "handouts.html#example-2",
+    "objectID": "handouts.html#example-6",
+    "href": "handouts.html#example-6",
     "title": "Handouts",
     "section": "Example",
     "text": "Example\n#| echo: true\n#| eval: false\nlibrary(tidyverse)\ndb1 &lt;-\n  arrow::open_dataset(\"file1.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  select(col1:col3) |&gt;\n  filter(...) |&gt;\n  pivot_wider(..) \n\ndb2 &lt;-\n  arrow::open_dataset(\"file2.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  count(x, y) |&gt;\n  filter(...)\n\ndf &lt;- \n  db1 |&gt;  \n  left_join(db2) |&gt;\n  collect() # Only the resulting part should be collected!\n  \n\n\nPros 👍\n\nLazy: nothing evaluated until it is actually needed (collected)\nMany basic functions are translated from R to SQL\nDuckDB is parallelized ({data.table} is mostly sequential)\nFamiliar syntax from tidyverse\n\n\n\nCons 👎\n\ntidyverse -&gt; SQL translation not perfect (non optimized)\nmight be relatively slow if intermediate steps are not cached and needs to be performed repeatedly"

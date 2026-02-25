@@ -395,7 +395,7 @@
 <span id="cb2-32"><a></a>        <span class="at">cols_skip =</span> cols_skip, <span class="at">n_max =</span> n_max, <span class="at">rows_skip =</span> skip, </span>
 <span id="cb2-33"><a></a>        <span class="at">name_repair =</span> .name_repair), <span class="fu">cli_abort</span>(<span class="st">"This kind of input is not handled."</span>))</span>
 <span id="cb2-34"><a></a>}</span>
-<span id="cb2-35"><a></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x12a774790</span><span class="sc">&gt;</span></span>
+<span id="cb2-35"><a></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x111e0cc00</span><span class="sc">&gt;</span></span>
 <span id="cb2-36"><a></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>haven<span class="sc">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
@@ -690,33 +690,33 @@
 <div class="cell-output cell-output-stdout">
 <pre><code>     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date
             &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;
-  1:          4.3         3.0          1.1         0.1    setosa 2026-02-24
-  2:          4.4         2.9          1.4         0.2    setosa 2026-02-24
-  3:          4.4         3.0          1.3         0.2    setosa 2026-02-24
-  4:          4.4         3.2          1.3         0.2    setosa 2026-02-24
-  5:          4.5         2.3          1.3         0.3    setosa 2026-02-24
+  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26
+  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26
+  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26
+  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26
+  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26
  ---                                                                       
-146:          7.7         2.6          6.9         2.3 virginica 2026-02-26
-147:          7.7         2.8          6.7         2.0 virginica 2026-02-26
-148:          7.7         3.0          6.1         2.3 virginica 2026-02-26
-149:          7.7         3.8          6.7         2.2 virginica 2026-02-26
-150:          7.9         3.8          6.4         2.0 virginica 2026-02-26</code></pre>
+146:          7.7         2.6          6.9         2.3 virginica 2026-02-28
+147:          7.7         2.8          6.7         2.0 virginica 2026-02-28
+148:          7.7         3.0          6.1         2.3 virginica 2026-02-28
+149:          7.7         3.8          6.7         2.2 virginica 2026-02-28
+150:          7.9         3.8          6.4         2.0 virginica 2026-02-28</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>dt[, <span class="fu">names</span>(.SD) <span class="sc">:</span><span class="er">=</span> <span class="fu">lapply</span>(.SD, as.character), .SDcols <span class="ot">=</span> is.factor][]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date
             &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;
-  1:          4.3         3.0          1.1         0.1    setosa 2026-02-24
-  2:          4.4         2.9          1.4         0.2    setosa 2026-02-24
-  3:          4.4         3.0          1.3         0.2    setosa 2026-02-24
-  4:          4.4         3.2          1.3         0.2    setosa 2026-02-24
-  5:          4.5         2.3          1.3         0.3    setosa 2026-02-24
+  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26
+  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26
+  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26
+  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26
+  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26
  ---                                                                       
-146:          7.7         2.6          6.9         2.3 virginica 2026-02-26
-147:          7.7         2.8          6.7         2.0 virginica 2026-02-26
-148:          7.7         3.0          6.1         2.3 virginica 2026-02-26
-149:          7.7         3.8          6.7         2.2 virginica 2026-02-26
-150:          7.9         3.8          6.4         2.0 virginica 2026-02-26</code></pre>
+146:          7.7         2.6          6.9         2.3 virginica 2026-02-28
+147:          7.7         2.8          6.7         2.0 virginica 2026-02-28
+148:          7.7         3.0          6.1         2.3 virginica 2026-02-28
+149:          7.7         3.8          6.7         2.2 virginica 2026-02-28
+150:          7.9         3.8          6.4         2.0 virginica 2026-02-28</code></pre>
 </div>
 </div>
 </section>

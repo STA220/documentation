@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -170,15 +205,15 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL6.html">
- <span class="dropdown-text">EL6: Standardized vocabularies</span></a>
+ <span class="dropdown-text">EL6: Data sources</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL7.html">
- <span class="dropdown-text">EL7: Health care registers</span></a>
+ <span class="dropdown-text">EL7: Standardized vocabularies</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL8.html">
- <span class="dropdown-text">EL8: Data sources</span></a>
+ <span class="dropdown-text">EL8: Health care registers</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL9.html">
@@ -386,6 +421,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">Reading</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#motivational-quotes" id="toc-motivational-quotes" class="nav-link" data-scroll-target="#motivational-quotes">Motivational quotes</a></li>
   <li><a href="#reproducible-analysis" id="toc-reproducible-analysis" class="nav-link" data-scroll-target="#reproducible-analysis">Reproducible analysis</a></li>
   <li><a href="#why-is-this-a-problem" id="toc-why-is-this-a-problem" class="nav-link" data-scroll-target="#why-is-this-a-problem">Why is this a problem?</a></li>
   <li><a href="#recap-folder-structure" id="toc-recap-folder-structure" class="nav-link" data-scroll-target="#recap-folder-structure">Recap folder structure</a></li>
@@ -396,7 +432,8 @@ window.Quarto = {
   <li><a href="#benchmarking" id="toc-benchmarking" class="nav-link" data-scroll-target="#benchmarking">Benchmarking</a></li>
   <li><a href="#who-cares" id="toc-who-cares" class="nav-link" data-scroll-target="#who-cares">Who cares?</a></li>
   <li><a href="#automated-process" id="toc-automated-process" class="nav-link" data-scroll-target="#automated-process">Automated process</a></li>
-  <li><a href="#targets-package" id="toc-targets-package" class="nav-link" data-scroll-target="#targets-package">targets package</a></li>
+  <li><a href="#alternative-solutions" id="toc-alternative-solutions" class="nav-link" data-scroll-target="#alternative-solutions">Alternative solutions</a></li>
+  <li><a href="#targets" id="toc-targets" class="nav-link" data-scroll-target="#targets">targets</a></li>
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   <li><a href="#r-script" id="toc-r-script" class="nav-link" data-scroll-target="#r-script">R script</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
@@ -408,21 +445,44 @@ window.Quarto = {
   <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits">Benefits</a></li>
   <li><a href="#dependency-graph" id="toc-dependency-graph" class="nav-link" data-scroll-target="#dependency-graph">Dependency graph</a></li>
   <li><a href="#live-show" id="toc-live-show" class="nav-link" data-scroll-target="#live-show">Live show</a></li>
-  <li><a href="#different-r-versions" id="toc-different-r-versions" class="nav-link" data-scroll-target="#different-r-versions">Different R-versions</a></li>
+  <li><a href="#r-versions" id="toc-r-versions" class="nav-link" data-scroll-target="#r-versions">R-versions</a></li>
   <li><a href="#pros-and-cons" id="toc-pros-and-cons" class="nav-link" data-scroll-target="#pros-and-cons">Pros and cons</a></li>
   <li><a href="#different-operating-systems" id="toc-different-operating-systems" class="nav-link" data-scroll-target="#different-operating-systems">Different operating systems</a></li>
   <li><a href="#combining-all" id="toc-combining-all" class="nav-link" data-scroll-target="#combining-all">Combining all?</a></li>
+  <li><a href="#tre" id="toc-tre" class="nav-link" data-scroll-target="#tre">TRE</a></li>
+  <li><a href="#in-practice" id="toc-in-practice" class="nav-link" data-scroll-target="#in-practice">In practice</a></li>
   </ul></li>
-  <li><a href="#el6-standardized-vocabularies" id="toc-el6-standardized-vocabularies" class="nav-link" data-scroll-target="#el6-standardized-vocabularies">EL6: Standardized vocabularies</a>
+  <li><a href="#el6-data-sources" id="toc-el6-data-sources" class="nav-link" data-scroll-target="#el6-data-sources">EL6: Data sources</a>
   <ul class="collapse">
   <li><a href="#reading-1" id="toc-reading-1" class="nav-link" data-scroll-target="#reading-1">Reading</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#optional-practice" id="toc-optional-practice" class="nav-link" data-scroll-target="#optional-practice">Optional practice</a></li>
+  <li><a href="#sas7bdat" id="toc-sas7bdat" class="nav-link" data-scroll-target="#sas7bdat">.sas7bdat</a></li>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">Databases</a></li>
+  <li><a href="#row-vs-column-oriented" id="toc-row-vs-column-oriented" class="nav-link" data-scroll-target="#row-vs-column-oriented">Row vs column oriented</a></li>
+  <li><a href="#dbms" id="toc-dbms" class="nav-link" data-scroll-target="#dbms">DBMS</a></li>
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
+  <li><a href="#what-is-sql-used-for" id="toc-what-is-sql-used-for" class="nav-link" data-scroll-target="#what-is-sql-used-for">What is SQL used for?</a></li>
+  <li><a href="#sql-dialects" id="toc-sql-dialects" class="nav-link" data-scroll-target="#sql-dialects">SQL Dialects</a></li>
+  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example">A Simple Example</a></li>
+  <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb">DuckDB</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  <li><a href="#duckdb-1" id="toc-duckdb-1" class="nav-link" data-scroll-target="#duckdb-1">DuckDB</a></li>
+  <li><a href="#duckdb-and-data-files" id="toc-duckdb-and-data-files" class="nav-link" data-scroll-target="#duckdb-and-data-files">DuckDB and Data Files</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  <li><a href="#parquet" id="toc-parquet" class="nav-link" data-scroll-target="#parquet">Parquet</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data">tidy data</a></li>
+  <li><a href="#fater-in-memory" id="toc-fater-in-memory" class="nav-link" data-scroll-target="#fater-in-memory">Fater in memory?</a></li>
+  <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">data.table</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">joins</a></li>
   </ul></li>
-  <li><a href="#el7-health-care-registers" id="toc-el7-health-care-registers" class="nav-link" data-scroll-target="#el7-health-care-registers">EL7: Health care registers</a>
+  <li><a href="#el7-standardized-vocabularies" id="toc-el7-standardized-vocabularies" class="nav-link" data-scroll-target="#el7-standardized-vocabularies">EL7: Standardized vocabularies</a>
   <ul class="collapse">
   <li><a href="#reading-2" id="toc-reading-2" class="nav-link" data-scroll-target="#reading-2">Reading</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
-  <li><a href="#el8-data-sources" id="toc-el8-data-sources" class="nav-link" data-scroll-target="#el8-data-sources">EL8: Data sources</a>
+  <li><a href="#el8-health-care-registers" id="toc-el8-health-care-registers" class="nav-link" data-scroll-target="#el8-health-care-registers">EL8: Health care registers</a>
   <ul class="collapse">
   <li><a href="#reading-3" id="toc-reading-3" class="nav-link" data-scroll-target="#reading-3">Reading</a></li>
   </ul></li>
@@ -443,15 +503,15 @@ window.Quarto = {
   <li><a href="#altrep" id="toc-altrep" class="nav-link" data-scroll-target="#altrep"><code>ALTREP</code>?</a></li>
   <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database">Database?</a></li>
   <li><a href="#database-1" id="toc-database-1" class="nav-link" data-scroll-target="#database-1">Database?</a></li>
-  <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb">DuckDB</a></li>
+  <li><a href="#duckdb-2" id="toc-duckdb-2" class="nav-link" data-scroll-target="#duckdb-2">DuckDB</a></li>
   <li><a href="#from-csv-to-parquet" id="toc-from-csv-to-parquet" class="nav-link" data-scroll-target="#from-csv-to-parquet">From CSV to Parquet</a></li>
-  <li><a href="#parquet" id="toc-parquet" class="nav-link" data-scroll-target="#parquet">Parquet</a></li>
+  <li><a href="#parquet-1" id="toc-parquet-1" class="nav-link" data-scroll-target="#parquet-1">Parquet</a></li>
   <li><a href="#r-specific-data-files" id="toc-r-specific-data-files" class="nav-link" data-scroll-target="#r-specific-data-files">R specific data files?</a></li>
   <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data management</a></li>
-  <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">{data.table}</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  <li><a href="#data.table-1" id="toc-data.table-1" class="nav-link" data-scroll-target="#data.table-1">{data.table}</a></li>
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
   <li><a href="#if-it-doesnt-fit" id="toc-if-it-doesnt-fit" class="nav-link" data-scroll-target="#if-it-doesnt-fit">If it doesn’t fit?</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a>
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a>
   <ul class="collapse">
   <li><a href="#pros" id="toc-pros" class="nav-link" data-scroll-target="#pros">Pros 👍</a></li>
   <li><a href="#cons" id="toc-cons" class="nav-link" data-scroll-target="#cons">Cons 👎</a></li>
@@ -521,28 +581,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-02-23</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-02-25</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="trjuobswvm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#trjuobswvm table {
+<div id="zszlijllys" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zszlijllys table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#trjuobswvm thead, #trjuobswvm tbody, #trjuobswvm tfoot, #trjuobswvm tr, #trjuobswvm td, #trjuobswvm th {
+#zszlijllys thead, #zszlijllys tbody, #zszlijllys tfoot, #zszlijllys tr, #zszlijllys td, #zszlijllys th {
   border-style: none;
 }
 
-#trjuobswvm p {
+#zszlijllys p {
   margin: 0;
   padding: 0;
 }
 
-#trjuobswvm .gt_table {
+#zszlijllys .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -568,12 +628,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_caption {
+#zszlijllys .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#trjuobswvm .gt_title {
+#zszlijllys .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -585,7 +645,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#trjuobswvm .gt_subtitle {
+#zszlijllys .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -597,7 +657,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#trjuobswvm .gt_heading {
+#zszlijllys .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -609,13 +669,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_bottom_border {
+#zszlijllys .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_col_headings {
+#zszlijllys .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -630,7 +690,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_col_heading {
+#zszlijllys .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -650,7 +710,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#trjuobswvm .gt_column_spanner_outer {
+#zszlijllys .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -662,15 +722,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#trjuobswvm .gt_column_spanner_outer:first-child {
+#zszlijllys .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#trjuobswvm .gt_column_spanner_outer:last-child {
+#zszlijllys .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#trjuobswvm .gt_column_spanner {
+#zszlijllys .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -682,11 +742,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#trjuobswvm .gt_spanner_row {
+#zszlijllys .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#trjuobswvm .gt_group_heading {
+#zszlijllys .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -712,7 +772,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#trjuobswvm .gt_empty_group_heading {
+#zszlijllys .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -727,15 +787,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#trjuobswvm .gt_from_md > :first-child {
+#zszlijllys .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#trjuobswvm .gt_from_md > :last-child {
+#zszlijllys .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#trjuobswvm .gt_row {
+#zszlijllys .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -754,7 +814,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#trjuobswvm .gt_stub {
+#zszlijllys .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -767,7 +827,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#trjuobswvm .gt_stub_row_group {
+#zszlijllys .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -781,15 +841,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#trjuobswvm .gt_row_group_first td {
+#zszlijllys .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#trjuobswvm .gt_row_group_first th {
+#zszlijllys .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#trjuobswvm .gt_summary_row {
+#zszlijllys .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -799,16 +859,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#trjuobswvm .gt_first_summary_row {
+#zszlijllys .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_first_summary_row.thick {
+#zszlijllys .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#trjuobswvm .gt_last_summary_row {
+#zszlijllys .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -818,7 +878,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_grand_summary_row {
+#zszlijllys .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -828,7 +888,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#trjuobswvm .gt_first_grand_summary_row {
+#zszlijllys .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -838,7 +898,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_last_grand_summary_row_top {
+#zszlijllys .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -848,11 +908,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_striped {
+#zszlijllys .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#trjuobswvm .gt_table_body {
+#zszlijllys .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -861,7 +921,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_footnotes {
+#zszlijllys .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -875,7 +935,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_footnote {
+#zszlijllys .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -884,7 +944,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#trjuobswvm .gt_sourcenotes {
+#zszlijllys .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -898,7 +958,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#trjuobswvm .gt_sourcenote {
+#zszlijllys .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -906,72 +966,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#trjuobswvm .gt_left {
+#zszlijllys .gt_left {
   text-align: left;
 }
 
-#trjuobswvm .gt_center {
+#zszlijllys .gt_center {
   text-align: center;
 }
 
-#trjuobswvm .gt_right {
+#zszlijllys .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#trjuobswvm .gt_font_normal {
+#zszlijllys .gt_font_normal {
   font-weight: normal;
 }
 
-#trjuobswvm .gt_font_bold {
+#zszlijllys .gt_font_bold {
   font-weight: bold;
 }
 
-#trjuobswvm .gt_font_italic {
+#zszlijllys .gt_font_italic {
   font-style: italic;
 }
 
-#trjuobswvm .gt_super {
+#zszlijllys .gt_super {
   font-size: 65%;
 }
 
-#trjuobswvm .gt_footnote_marks {
+#zszlijllys .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#trjuobswvm .gt_asterisk {
+#zszlijllys .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#trjuobswvm .gt_indent_1 {
+#zszlijllys .gt_indent_1 {
   text-indent: 5px;
 }
 
-#trjuobswvm .gt_indent_2 {
+#zszlijllys .gt_indent_2 {
   text-indent: 10px;
 }
 
-#trjuobswvm .gt_indent_3 {
+#zszlijllys .gt_indent_3 {
   text-indent: 15px;
 }
 
-#trjuobswvm .gt_indent_4 {
+#zszlijllys .gt_indent_4 {
   text-indent: 20px;
 }
 
-#trjuobswvm .gt_indent_5 {
+#zszlijllys .gt_indent_5 {
   text-indent: 25px;
 }
 
-#trjuobswvm .katex-display {
+#zszlijllys .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#trjuobswvm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zszlijllys div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3047,6 +3107,7 @@ git remote add origin</code></pre>
 <li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;2)</span></li>
 <li><span class="citation" data-cites="baker2016">(<a href="#ref-baker2016" role="doc-biblioref">Baker 2016</a>)</span></li>
 <li><span class="citation" data-cites="deoliveiraandrade2025">(<a href="#ref-deoliveiraandrade2025" role="doc-biblioref">Oliveira Andrade 2025</a>)</span></li>
+<li><span class="citation" data-cites="kavianpour2022">(<a href="#ref-kavianpour2022" role="doc-biblioref">Kavianpour et al. 2022</a>)</span></li>
 <li><span class="citation" data-cites="peng2021">(<a href="#ref-peng2021" role="doc-biblioref">Peng and Hicks 2021</a>)</span></li>
 </ul>
 </div>
@@ -3056,9 +3117,9 @@ git remote add origin</code></pre>
 <ul>
 <li><span class="citation" data-cites="baker2016">Baker (<a href="#ref-baker2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="deoliveiraandrade2025">Oliveira Andrade (<a href="#ref-deoliveiraandrade2025" role="doc-biblioref">2025</a>)</span> motivates why reproducible analysis is important!</li>
 <li><span class="citation" data-cites="peng2021">Peng and Hicks (<a href="#ref-peng2021" role="doc-biblioref">2021</a>)</span> introduce and elaborate more on the subject.</li>
-<li><span class="citation" data-cites="nguyen2022a">Nguyen (<a href="#ref-nguyen2022a" role="doc-biblioref">2022</a>)</span> only read section “Basic Introduction to Docker and Containers” in chapter 2 (but you do not need to install Docker for this course)</li>
+<li><span class="citation" data-cites="nguyen2022a">Nguyen (<a href="#ref-nguyen2022a" role="doc-biblioref">2022</a>)</span> only read section “Basic Introduction to Docker and Containers” in chapter 2 (you do not need to install Docker for this course, just be aware of the concept)</li>
+<li><span class="citation" data-cites="kavianpour2022">Kavianpour et al. (<a href="#ref-kavianpour2022" role="doc-biblioref">2022</a>)</span> introduces Trusted Research Environment as well as some perceived challenges with those (we will not use such environments in the course but this is likely the reality you need to cope with later on in your career, so you should get familiar with the concept).</li>
 </ul>
-<hr>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3070,7 +3131,7 @@ git remote add origin</code></pre>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>After reading papers like these, one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.</p></li>
+<li><p>After reading papers like <span class="citation" data-cites="baker2016">Baker (<a href="#ref-baker2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="deoliveiraandrade2025">Oliveira Andrade (<a href="#ref-deoliveiraandrade2025" role="doc-biblioref">2025</a>)</span> , one might be tempted to conclude that nothing is trustworthy — not even our own analyses. If every result comes with assumptions, uncertainty, and potential bias, what does trust really mean? Statisticians live in a world of probabilities, but most people prefer certainty.</p></li>
 <li><p>Reproducibility might sound like a good thing but how much does the technical details matter if we are not allowed to freely share the underlying health care data anyway?</p></li>
 </ul>
 </div>
@@ -3079,6 +3140,7 @@ git remote add origin</code></pre>
 <ul>
 <li><p><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></p></li>
 <li><p><a href="https://books.ropensci.org/targets/">Target manual</a></p></li>
+<li><p>You read briefly about Docker in the mandatory reading. If this seems interesting, you might read: <a href="https://journal.r-project.org/articles/RJ-2017-065/index.html">An Introduction to Rocker: Docker Containers for R</a> (not mandatory).</p></li>
 </ul>
 </section>
 <section id="practice" class="level2">
@@ -3105,11 +3167,14 @@ git remote add origin</code></pre>
 </div>
 <p>This practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!</p>
 <hr>
+</section>
+<section id="motivational-quotes" class="level2">
+<h2 class="anchored" data-anchor-id="motivational-quotes">Motivational quotes</h2>
 <blockquote class="blockquote">
-<p>An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures. / Buckheit &amp; Donoho</p>
+<p>An <strong>article</strong> about computational science in a scientific publication is not the scholarship itself, it is <strong>merely advertising of the scholarship</strong>. The <strong>actual scholarship</strong> is the <strong>complete software development environment and the complete set of instructions</strong> which generated the figures. / Buckheit &amp; Donoho</p>
 </blockquote>
 <blockquote class="blockquote">
-<p>[…] importance of having a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al.&nbsp;2021</p>
+<p>[It is important to have] a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al.&nbsp;2021</p>
 </blockquote>
 </section>
 <section id="reproducible-analysis" class="level2">
@@ -3127,6 +3192,7 @@ git remote add origin</code></pre>
 <li><p>Many statistical algorithms have many tuning parameters that can dramatically change the results if they are not inputted exactly the same way as was done by the original investigators.</p></li>
 <li><p>If any of these myriad details are not properly recorded in the code, then there is a significant possibility that the results produced by others will differ from the original investigators’ results.</p></li>
 </ul>
+<hr>
 <p><img src="images/paste-7.png" class="img-fluid"></p>
 <hr>
 <p><img src="images/paste-8.png" class="img-fluid"></p>
@@ -3154,16 +3220,29 @@ git remote add origin</code></pre>
 <li><p>A pipeline contains tasks to prepare datasets, run models, and summarize results for a business deliverable or research paper.</p></li>
 <li><p>Pipeline tools coordinate the pieces of computationally demanding analysis projects.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pipe operator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The simplest example of pipelines might be when you combine R code by the pipe operator (<code>|&gt;</code> or <code>%&gt;%</code>), which in turn is inspired by the pipe operator in Unix (<code>|</code>).</p>
+</div>
+</div>
 </section>
 <section id="long-running-processes" class="level2">
 <h2 class="anchored" data-anchor-id="long-running-processes">Long running processes</h2>
 <ul>
 <li>Imaigine you have nice R-scripts to take care of every step in your project</li>
-<li>You have either one very very … very long file or a bunch of files which you execute in order</li>
-<li>It takes two weeks to run all the scripts (not unrealistic for a big project!)</li>
+<li>You have either one very very … very … long file or a bunch of files which you execute in order</li>
+<li>It takes two weeks to run all scripts (not unrealistic for a big project!)</li>
 <li>You report the result to your collaborators</li>
 <li>They ask you to update a tiny detail somewhere in the middle of your workflow</li>
-<li>You need to rerun everything (while you’re screaming in frustration)!</li>
+<li>You need to rerun everything (while screaming in frustration)!</li>
 <li>This will repeat again and again until you finally
 <ol type="a">
 <li>Lose your mind and quit your job</li>
@@ -3174,16 +3253,16 @@ git remote add origin</code></pre>
 <section id="steps-wise-procedure" class="level2">
 <h2 class="anchored" data-anchor-id="steps-wise-procedure">Steps-wise procedure</h2>
 <ul>
-<li>The default setting in R is to save the workspace to disk when you end the sesion</li>
-<li>This is usually not recommended and therefore often disabled in for example RStudio
+<li>The default setting in R is to save the workspace to disk when you end the session</li>
+<li>This is <a href="https://r4ds.hadley.nz/workflow-scripts.html#what-is-the-source-of-truth">usually not recommended</a> and therefore often disabled in for example RStudio
 <ul>
-<li>(If you re-start your sessin at a later point you might have no idea how the restored objects relates to each other.)</li>
+<li>(If you re-start your session at a later point you might have no idea how the restored objects relates to each other.)</li>
 </ul></li>
-<li>You may still want to execute things in a more step-wise fasion
+<li>You may still want to execute things in a more step-wise fashion
 <ol type="1">
-<li>Convert big data files to something R-friendly</li>
-<li>Perform some data management (select relevant columns ond rows), cleaning, add calculated variables etc</li>
-<li>Perform some exploratory data analysis (EDA) to get a better understanding of the data</li>
+<li>Convert big data files (<code>.sas7bdat</code> from SAS etc) to something more R-friendly</li>
+<li>Perform some data management (select relevant columns and rows), cleaning, add calculated variables etc</li>
+<li>Perform some <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis">exploratory data analysis (EDA)</a> to get a better understanding of the data</li>
 <li>Perform some statistical analysis</li>
 <li>Report and visualize the results</li>
 </ol></li>
@@ -3195,7 +3274,7 @@ git remote add origin</code></pre>
 <li>If you perform each step in different script files, you might start each file with some input and end it with some output</li>
 <li>The output from the previous script is used as input in the next script</li>
 <li><code>save()</code> and <code>load()</code> are standard but can be very slow for large objects</li>
-<li><code>saveRDS()</code> and <code>loadRDS()</code> use serialization and are now adays much more efficient</li>
+<li><code>saveRDS()</code> and <code>loadRDS()</code> use <a href="https://www.geeksforgeeks.org/r-language/data-serialization-rds-using-r/">serialization</a> and are nowadays much more efficient</li>
 <li><code>qs2::qs_save()</code> and <code>qs2::qs_read()</code> (or <code>qs2::qd_save()</code> and <code>qs2::qd_read()</code>) from the <a href="https://github.com/qsbase/qs2">qs2 package</a> are currently “state-of-the-art” (but things tend to change quickly)</li>
 </ul>
 </section>
@@ -3222,18 +3301,18 @@ git remote add origin</code></pre>
 <tr class="even">
 <td>qdata</td>
 <td>8.45</td>
-<td>10.5</td>
-<td>34.8</td>
+<td><strong>10.5</strong></td>
+<td><strong>34.8</strong></td>
 </tr>
 <tr class="odd">
 <td>base::serialize</td>
 <td>1.1</td>
-<td>8.87</td>
+<td><strong>8.87</strong></td>
 <td>51.4</td>
 </tr>
 <tr class="even">
 <td>saveRDS</td>
-<td>8.68</td>
+<td><strong>8.68</strong></td>
 <td>107</td>
 <td>63.7</td>
 </tr>
@@ -3277,10 +3356,10 @@ git remote add origin</code></pre>
 <td>48.1</td>
 </tr>
 <tr class="even">
-<td>qdata</td>
-<td>8.45</td>
-<td>1.98</td>
-<td>33.1</td>
+<td><strong>qdata</strong></td>
+<td><strong>8.45</strong></td>
+<td><strong>1.98</strong></td>
+<td><strong>33.1</strong></td>
 </tr>
 <tr class="odd">
 <td>fst</td>
@@ -3320,13 +3399,15 @@ git remote add origin</code></pre>
 <section id="who-cares" class="level2">
 <h2 class="anchored" data-anchor-id="who-cares">Who cares?</h2>
 <ul>
-<li>Imagine you work with data for the whole population (&gt; 10 M people)</li>
+<li>Imagine you work with data for the whole Swedish population (&gt; 10 M people)</li>
 <li>You have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data</li>
-<li>You are working in a secure environment were data is stored on a network server (no HDD drive)</li>
-<li>The same environment is shared by 20 other researchers and you are all competing for the same band-width</li>
+<li>You are working in a <a href="https://en.wikipedia.org/wiki/Secure_environment">secure environment</a> were data is stored on a network server (no <a href="https://en.wikipedia.org/wiki/Solid-state_drive">SSD drive</a>)</li>
+<li>The same environment is shared by 20 other researchers and you are all competing for the same <a href="https://en.wikipedia.org/wiki/Bandwidth_(computing)">bandwidth</a></li>
 <li>It will get increasonly frusrating just to load and save the big files</li>
-<li>You might need to wait for half an hour before you can start working</li>
+<li>You might need to wait for half an hour before you can start working 😩</li>
 </ul>
+<hr>
+<p><img src="images/paste-23.png" class="img-fluid"></p>
 </section>
 <section id="automated-process" class="level2">
 <h2 class="anchored" data-anchor-id="automated-process">Automated process</h2>
@@ -3334,26 +3415,37 @@ git remote add origin</code></pre>
 <li>Instead of relying on individual R scripts, use a reproducible pipeline.</li>
 <li>This is common practice in software development
 <ul>
-<li>For example GNU Make is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.</li>
+<li>For example GNU <a href="https://en.wikipedia.org/wiki/Make_(software)">Make</a> is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.</li>
 </ul></li>
-<li>Iteration during project development (which is equally relevant for a health data project), will be much faster and reliable.</li>
-<li>Caching as described abowe is automated and you only need to read/write files to disk/network storage when actually needed.</li>
+<li><strong>Iteration</strong> during project development (which is equally relevant for a health data project), will be much <strong>faster and reliable</strong>.</li>
+<li><strong>Caching</strong> as described abowe is <strong>automated</strong> and you only need to read/write files to disk/network storage when actually needed.</li>
 </ul>
 </section>
-<section id="targets-package" class="level2">
-<h2 class="anchored" data-anchor-id="targets-package">targets package</h2>
+<section id="alternative-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-solutions">Alternative solutions</h2>
+<ul>
+<li><a href="https://www.evan-soil.io/blog/ode-to-gnu-make/">GNU Make with R</a></li>
+<li><code>rmake</code> creates and maintains a build process for complex analytic tasks. <a href="https://beerda.github.io/rmake/">The package</a> allows easy generation of a Makefile for the (GNU) ‘make’ tool</li>
+<li><a href="https://docs.ropensci.org/drake/">drake</a> was the first more established R-oriented alternative</li>
+<li><a href="https://docs.ropensci.org/targets/">targets</a> is the currently most developed and used alternative</li>
+<li><a href="https://docs.ropensci.org/rixpress/">rixpress</a> might be a rising star (at least if you are combining R and Python; polyglot)?</li>
+</ul>
+<p>We will use <code>targets</code> in this course!</p>
+</section>
+<section id="targets" class="level2">
+<h2 class="anchored" data-anchor-id="targets">targets</h2>
 <ul>
 <li><p>The <code>{targets}</code> package is a Make-like pipeline tool for statistics and data science in R.</p></li>
 <li><p>The package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects.</p></li>
 <li><p>If all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.</p></li>
 <li><p>The tasks themselves are called “targets”, and they run the functions and return R objects.</p></li>
-<li><p>The <code>targets</code> package orchestrates the targets and stores the output objects to make your pipeline efficient, painless, and reproducible.</p></li>
+<li><p>The <code>targets</code> package orchestrates the targets and stores the output objects to make your pipeline efficient, painless (well … hopefully relatively so …), and reproducible.</p></li>
 </ul>
 </section>
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">Example</h2>
-<p><strong>Data:</strong> survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of health and nutrition surveys since the early 1960’s. Since 1999 approximately 5,000 individuals of all ages are interviewed in their homes every year and complete the health examination component of the survey. The health examination is conducted in a mobile examination centre (MEC).</p>
-<p><strong>Question:</strong> Is there any association between gender and BMI?</p>
+<p><strong>Data:</strong> survey data collected by the US National Center for Health Statistics (NCHS) which has conducted a series of <strong>health and nutrition surveys</strong> since the early 1960’s. Since 1999 approximately <strong>5,000 individuals of all ages</strong> are <strong>interviewed</strong> in their homes every year and complete the h<strong>ealth examination</strong> component of the survey.</p>
+<p><strong>Question:</strong> Is there any association between <code>Gender</code> and <code>BMI</code>?</p>
 <pre class="{r}"><code>## pak::pkg_install("NHANES")
 str(NHANES::NHANES)</code></pre>
 </section>
@@ -3368,8 +3460,8 @@ tbl &lt;- count(df, Gender)
 tst &lt;- t.test(BMI ~ Gender, df)
 gg &lt;- ggplot(df, aes(BMI, color = Gender)) + geom_density()</code></pre>
 <ul>
-<li><p>You must run the script in order (but might not always do that) … if so, confusion will arise!</p></li>
-<li><p>objects df, tbl and tst only lives in the active session</p>
+<li><p>You must run the script in order (but might not always do that during the initial “trial and error” process … if so, confusion will later arise)!</p></li>
+<li><p>objects <code>df</code>, <code>tbl</code> and <code>tst</code> only lives in the active session</p>
 <ul>
 <li><p>No problem in this example</p></li>
 <li><p>but working with big and complex data might introduce long-running processes =&gt; time consuming!</p></li>
@@ -3381,6 +3473,19 @@ gg &lt;- ggplot(df, aes(BMI, color = Gender)) + geom_density()</code></pre>
 <pre class="{r}"><code>#| echo: false
 gg
 tst</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Figure and R output
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should see a figure and some R output on this slide. I just notice it doesn’t show on my phone when viewing the slides, so if you don’t see it, you might try another browser etc (it seems to render correct in the handouts however).</p>
+</div>
+</div>
 </section>
 <section id="pipeline-1" class="level2">
 <h2 class="anchored" data-anchor-id="pipeline-1">Pipeline</h2>
@@ -3425,11 +3530,13 @@ list(
 <p>Put that list into a file <code>_targets.R</code> together with some additional code:</p>
 <pre class="{r}"><code>#| results: "hide"
 library(targets)
-tar_source() # Source all scripts with function stored in R folder
+tar_source() # Source all scripts with functions stored in R folder
 tar_option_set(
   # Specify all needed packages here
+  # NOTE! They will not be available in the interactive R-session
+  # so you might load them above as well to avoid confusion
   packages = c("tidyverse"),
-  # Format used for caching (qs or actually qs2 is best for big data)
+  # Format used for caching (qs which is actually qs2 is best for big data)
   format = "qs",
   # Additional settings ...
   seed = 123
@@ -3466,31 +3573,32 @@ positron .</code></pre>
 <p>Or perform those steps from within Positron.</p>
 <hr>
 </section>
-<section id="different-r-versions" class="level2">
-<h2 class="anchored" data-anchor-id="different-r-versions">Different R-versions</h2>
+<section id="r-versions" class="level2">
+<h2 class="anchored" data-anchor-id="r-versions">R-versions</h2>
 <ul>
-<li>Imagine you finish your research project and you submit a manuscript to a journal</li>
-<li>The journal comes back one year later (they didn’t have time until know) and one reviewer ask you to double check some steps of the analysis</li>
+<li>Imagine you <strong>finish</strong> your research project and you submit a manuscript to a journal</li>
+<li>The journal comes back <strong>one year later</strong> (they didn’t have time until know) and one reviewer ask you to double check some steps of the analysis</li>
 <li>You make some modifications and rerun your pipelines.</li>
 <li>But it doesn’t work!</li>
-<li>Half a year ago you updated your R installation and a week ago all of your installed packages.
+<li><strong>Half a year ago</strong> you updated your R installation and a <strong>week ago</strong> all of your installed packages.
 <ul>
-<li>One package was retired from CRAN (could happen even though there was nothing wrong with the package when you used it)</li>
+<li>One package was retired from CRAN (could happen even though there was nothing wrong with the package when you used it … maybe the maintainer just didn’t have time or energy to keep maintaining it)</li>
 <li>One package has deprecated one of the functions you previously used</li>
 <li>On package has redesigned the output format from a specific function you used</li>
 </ul></li>
 <li>😱</li>
 </ul>
+<hr>
 <p><img src="images/paste-9.png" class="img-fluid"></p>
 </section>
 <section id="pros-and-cons" class="level2">
 <h2 class="anchored" data-anchor-id="pros-and-cons">Pros and cons</h2>
 <ul>
 <li><p>It is always a good idea to be able to reproduce exactly what you did!</p></li>
-<li><p>But if you never update you might miss essential bug fixes.</p></li>
+<li><p>But if you never update you might miss essential bug fixes!</p></li>
 <li><p>If your results change, how can you know which version was the most accurate?</p></li>
 </ul>
-<p>Best practice to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do right … 😂</p>
+<p>Best practice (I guess) is to rerun the analysis both with the frozen versions and with the most up-to-date versions of the packages … because you have all the time in the world and nothing more important to do … right … 😂</p>
 </section>
 <section id="different-operating-systems" class="level2">
 <h2 class="anchored" data-anchor-id="different-operating-systems">Different operating systems</h2>
@@ -3500,8 +3608,10 @@ positron .</code></pre>
 <ul>
 <li><p><code>parallel::mclapply()</code> behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.</p></li>
 <li><p><code>sort(c("ä", "a", "z"))</code> might differ due to locale settings</p></li>
+<li><p>Earlier versions of R relied on system-specific native encodings (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms.</p></li>
 </ul></li>
 </ul>
+<hr>
 <p><img src="images/paste-10.png" class="img-fluid"></p>
 </section>
 <section id="combining-all" class="level2">
@@ -3513,14 +3623,440 @@ positron .</code></pre>
 </ul>
 <hr>
 <p><img src="images/paste-11.png" class="img-fluid"></p>
+</section>
+<section id="tre" class="level2">
+<h2 class="anchored" data-anchor-id="tre">TRE</h2>
+<ul>
+<li><p><strong>Historically</strong>: centralized data on <a href="https://en.wikipedia.org/wiki/Mainframe_computer">mainframe computer</a></p></li>
+<li><p><strong>More recently:</strong> working with data locally (desktop/laptop)</p>
+<ul>
+<li><p>Full volume encryption (<a href="https://en.wikipedia.org/wiki/BitLocker">BitLocker</a> on Windows, <a href="https://en.wikipedia.org/wiki/FileVault">FileVault</a> on Mac etc)</p></li>
+<li><p>Possible to work off-line (trains, flights etc)</p></li>
+<li><p>Backups! Backups!!! BACKUPS!!!</p></li>
+<li><p>Usually only password protected and no logging of of activities</p></li>
+<li><p>Sometimes admin user (sometimes not)</p></li>
+</ul></li>
+<li><p><strong>Nowadays</strong>: (Different names, same concept) Secure Research Envoronemnt (SRE), Trusted Research Envoronment (TRE), Secure Data Environment (SDE), Data Clean Room, Data Safe Havens, …</p></li>
+</ul>
+</section>
+<section id="in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="in-practice">In practice</h2>
+<ul>
+<li><p>Connect through VPN</p></li>
+<li><p>2-factor authentication (BankID common in Sweden)</p></li>
+<li><p>Often by Remote Desktop (to access a Windows virtual desktop)</p></li>
+<li><p>Sometimes a containerized Linux setup for R/RStudio etc accessed through a web browser (from within the virtual Windows machine)</p></li>
+<li><p>Limited internet access from within the environment (maybe possible to install CRAN-packages tied to a certain historical snapshot but not the latest released/developed versions).</p></li>
+<li><p>Data import and exports goes through administrator</p></li>
+<li><p><strong>Pros</strong>: Secure, centralized backups, possibility to scale/share large computing resources (CPU, RAM, GPU etc), less dependent on individual computer (laptop), might aid collaboration</p></li>
+<li><p><strong>Cons</strong>: needs internet connection, restrictions on what software (packages) to use, difficult to export results and/or import script files etc, mentally exhausting to use for example a Mac Keyboard when working in Windows, can be expensive (pay per clock-cycle of CPU usage etc instead of simply purchasing a computer once).</p></li>
+</ul>
 <hr>
+<p><img src="images/paste-24.png" class="img-fluid"></p>
 <hr>
 <p><img src="images/paste-13.png" class="img-fluid"></p>
+<hr>
 </section>
 </section>
-<section id="el6-standardized-vocabularies" class="level1">
-<h1>EL6: Standardized vocabularies</h1>
+<section id="el6-data-sources" class="level1">
+<h1>EL6: Data sources</h1>
 <p><a href="https://sta220.github.io/documentation/EL6.html">Lecture Slides</a></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;2)</span></li>
+<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch 21)</span></li>
+<li><span class="citation" data-cites="fenk">(<a href="#ref-fenk" role="doc-biblioref">Fenk, Furu, and Bakken, n.d.</a>)</span></li>
+<li><span class="citation" data-cites="dataana">(<a href="#ref-dataana" role="doc-biblioref"><em>Data Analysis Using Data.table</em>, n.d.</a>)</span></li>
+</ul>
+</div>
+</div>
+<section id="reading-1" class="level2">
+<h2 class="anchored" data-anchor-id="reading-1">Reading</h2>
+<ul>
+<li><p><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;2)</span> on Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.</p></li>
+<li><p><span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#ref-wickham" role="doc-biblioref">n.d.</a>)</span> <a href="https://r4ds.hadley.nz/databases.html">chap 21</a> describes how to connect to a database from R.</p></li>
+<li><p><span class="citation" data-cites="fenk">Fenk, Furu, and Bakken (<a href="#ref-fenk" role="doc-biblioref">n.d.</a>)</span> describe why the current common practice with register data delivery in SAS format should be replaced by parquet files. Until this has happened, we often need to use SAS for data extraction.</p></li>
+<li><p><span class="citation" data-cites="dataana"><em>Data Analysis Using Data.table</em> (<a href="#ref-dataana" role="doc-biblioref">n.d.</a>)</span> introduces the <code>data.table</code> syntax, its general form, how to <em>subset</em> rows, <em>select and compute</em> on columns, and perform aggregations <em>by group</em>.</p></li>
+</ul>
+<p><strong>Recommended references:</strong></p>
+<ul>
+<li><span class="citation" data-cites="arel-bundock2025">Arel-Bundock (<a href="#ref-arel-bundock2025" role="doc-biblioref">2025</a>)</span> provides a good comparison between base R, dplyr and data.table.</li>
+</ul>
+</section>
+<section id="optional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="optional-practice">Optional practice</h2>
+<ul>
+<li>We won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
+<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a> is another option</li>
+</ul>
+</section>
+<section id="sas7bdat" class="level2">
+<h2 class="anchored" data-anchor-id="sas7bdat">.sas7bdat</h2>
+<ul>
+<li>It is common to receive large data files in SAS format (<code>.sas7bdat</code>)</li>
+<li>Many govermental agencies are using SAS internally</li>
+<li>SAS is great for handling big data sets (no need to read everything into memory)</li>
+<li>But I don’t know how to use SAS 😩</li>
+<li>Possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
+<li>But may not work for larger files</li>
+<li>Best practice for current SAS version (9.4) is to export only nececary data to csv
+<ul>
+<li>SAS Viya (next version) will be more flexible</li>
+</ul></li>
+<li>You need a SAS license (expensive) as well as some SAS syntax for this
+<ul>
+<li>But you might ask ChatGPT etc to generate such code for you</li>
+</ul></li>
+<li>The exported csv file can later be read into R</li>
+</ul>
+</section>
+<section id="databases" class="level2">
+<h2 class="anchored" data-anchor-id="databases">Databases</h2>
+<ul>
+<li><p>a database as a collection of “tables” (tabular data frames)</p></li>
+<li><p>Differences between data frames and database tables:</p>
+<ul>
+<li>Database tables are stored on disk and can be arbitrarily large.</li>
+<li>Data frames are stored in memory</li>
+<li>Database tables almost always have indexes; makes it possible to quickly find rows of interest
+<ul>
+<li>Data frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.</li>
+</ul></li>
+<li>No fixed row order in a table</li>
+</ul></li>
+</ul>
+</section>
+<section id="row-vs-column-oriented" class="level2">
+<h2 class="anchored" data-anchor-id="row-vs-column-oriented">Row vs column oriented</h2>
+<ul>
+<li><p>Most classical databases are optimized for rapidly <strong>collecting</strong> data, <strong>not analyzing existing data</strong>.</p></li>
+<li><p>These databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.</p></li>
+<li><p>More recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster.</p></li>
+</ul>
+</section>
+<section id="dbms" class="level2">
+<h2 class="anchored" data-anchor-id="dbms">DBMS</h2>
+<p>Databases are run by database management systems (DBMS’s for short), which come in three basic forms</p>
+<dl>
+<dt>Client-server</dt>
+<dd>
+<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.</p>
+</dd>
+<dt>Cloud</dt>
+<dd>
+<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).</p>
+</dd>
+<dt>In-process</dt>
+<dd>
+<p>like SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!</p>
+</dd>
+</dl>
+</section>
+<section id="sql" class="level2">
+<h2 class="anchored" data-anchor-id="sql">SQL</h2>
+<ul>
+<li>Different database systems may use different query languages.</li>
+<li>The <strong>Structured Query Language (SQL)</strong> is the most widely used for relational databases.</li>
+<li>Defined by international standards (ANSI/ISO).</li>
+</ul>
+</section>
+<section id="what-is-sql-used-for" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-sql-used-for">What is SQL used for?</h2>
+<p>SQL is used to:</p>
+<ul>
+<li>Retrieve data (<code>SELECT</code>)</li>
+<li>Filter data (<code>WHERE</code>)</li>
+<li>Aggregate data (<code>GROUP BY</code>)</li>
+<li>Combine tables (<code>JOIN</code>)</li>
+<li>Modify data (<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>)</li>
+</ul>
+</section>
+<section id="sql-dialects" class="level2">
+<h2 class="anchored" data-anchor-id="sql-dialects">SQL Dialects</h2>
+<ul>
+<li>SQL is a standard, but implementations differ slightly.</li>
+<li>These variations are called <strong>dialects</strong>.
+<ul>
+<li><strong>T-SQL</strong> (Microsoft SQL Server)</li>
+<li><strong>PL/SQL</strong> (Oracle)</li>
+<li>PostgreSQL SQL dialect</li>
+<li>MySQL SQL dialect</li>
+</ul></li>
+</ul>
+<p>Most core functionality is similar across systems.</p>
+</section>
+<section id="a-simple-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-example">A Simple Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name, age</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> age <span class="op">&gt;=</span> <span class="dv">18</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> age;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This query:</p>
+<ul>
+<li>Selects two columns</li>
+<li>Filters rows</li>
+<li>Sorts the result</li>
+</ul>
+<hr>
+<p><img src="images/paste-25.png" class="img-fluid"></p>
+</section>
+<section id="duckdb" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb">DuckDB</h2>
+<ul>
+<li>Free and open source (backed by foundation)</li>
+<li>Column based</li>
+<li>Very easy to set up</li>
+<li>Very efficient!</li>
+<li>SQL is an option but not a requirement
+<ul>
+<li>Integration with tidyverse in R (<a href="https://dbplyr.tidyverse.org">dbplyr</a> or <a href="https://duckplyr.tidyverse.org">duckplyr</a>)</li>
+</ul></li>
+<li>Can be used both with disk data and data in RAM</li>
+</ul>
+</section>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example</h2>
+<pre class="{r}"><code>## pak::pak("tidyverse/duckplyr")
+library(duckplyr)
+conflicted::conflicts_prefer(dplyr::filter)
+## Extra tools to connect to internet data
+db_exec("INSTALL httpfs")
+db_exec("LOAD httpfs")
+
+## Use some online data which is to big to keep in memory
+year &lt;- 2022:2024
+base_url &lt;- "https://blobs.duckdb.org/flight-data-partitioned/"
+files &lt;- paste0("Year=", year, "/data_0.parquet")
+urls &lt;- paste0(base_url, files)
+tibble(urls)
+
+## Connect to the data (without downloading)
+flights &lt;- read_parquet_duckdb(urls)
+## nrow(flights) # It's not in memory!
+count(flights, Year) # processing outside memory
+
+## Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.
+out &lt;-
+  flights |&gt;
+  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;
+  summarize(
+    .by = c(Year, Month),
+    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),
+    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),
+  ) |&gt;
+  filter(Year &lt; 2024)
+
+out |&gt;
+  explain()</code></pre>
+</section>
+<section id="duckdb-1" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-1">DuckDB</h2>
+<ul>
+<li>DuckDB is an <strong>embedded analytical SQL database</strong>.</li>
+<li>It supports standard SQL</li>
+<li>No server installation is required.</li>
+<li>Designed for analytical workloads</li>
+</ul>
+</section>
+<section id="duckdb-and-data-files" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-and-data-files">DuckDB and Data Files</h2>
+<p>DuckDB can query files directly:</p>
+<ul>
+<li>Parquet</li>
+<li>CSV</li>
+<li>Arrow</li>
+<li>JSON</li>
+</ul>
+<p>No data import is required.</p>
+</section>
+<section id="example-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2">Example</h2>
+<ul>
+<li>Let’s say you used SAS to export your data to a csv file</li>
+<li>DuckDB can query the relevant data from that file directly and collect only the data you actually need!</li>
+</ul>
+<pre class="{r}"><code>csv_file &lt;- tempfile(fileext = ".csv")
+write.csv(NHANES::NHANES, csv_file)
+
+read_csv_duckdb(csv_file) |&gt;
+  filter(Age &gt;= 18) |&gt;
+  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)</code></pre>
+</section>
+<section id="parquet" class="level2">
+<h2 class="anchored" data-anchor-id="parquet">Parquet</h2>
+<ul>
+<li>From Apache Arrow</li>
+<li>Open format</li>
+<li>flat files with possible hierarchical structure by transparent structure of folders and filenames</li>
+<li>very fast to read</li>
+</ul>
+<hr>
+<p><img src="images/paste-26.png" class="img-fluid"></p>
+</section>
+<section id="example-3" class="level2">
+<h2 class="anchored" data-anchor-id="example-3">Example</h2>
+<ul>
+<li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file</li>
+<li>The solution below reads all CSV data and then export it to a new parquet file</li>
+<li>This means that all data must still fit into memory
+<ul>
+<li>If it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)</li>
+</ul></li>
+</ul>
+<pre class="{r}"><code>#| cache: true
+## install.packages("arrow")
+library(arrow)
+parquet_file &lt;- tempfile(fileext = ".parquet")
+read_csv_arrow(csv_file) |&gt;
+  write_parquet(parquet_file)
+
+## Now
+read_parquet_duckdb(parquet_file)</code></pre>
+</section>
+<section id="tidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data">tidy data</h2>
+<ul>
+<li><code>duckplyr</code> let’s you use the familiar dplyr/tidyverse syntax</li>
+<li>If certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless</li>
+<li>After filteringen/aggregation etc you can always choose to <code>collect()</code> the data and use your ordinary workflow from there</li>
+</ul>
+</section>
+<section id="fater-in-memory" class="level2">
+<h2 class="anchored" data-anchor-id="fater-in-memory">Fater in memory?</h2>
+<ul>
+<li>DuckDB and <code>{duckplyr}</code> makes it possible to work with data which does not fit into memory</li>
+<li>What if data would fit?
+<ul>
+<li>You can use tibbles and dplyr etc of course …
+<ul>
+<li>… but it might be terribly slooooooooooooow … for big enough data</li>
+<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a>from time to time)</li>
+</ul></li>
+</ul></li>
+<li><code>{data.table}</code> is much more efficient!</li>
+</ul>
+</section>
+<section id="data.table" class="level2">
+<h2 class="anchored" data-anchor-id="data.table">data.table</h2>
+<ul>
+<li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
+<li>Has been around since 2006 (stable and well used, even older than tidyverse)</li>
+<li>faster alternatives to base: <code>fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%</code></li>
+<li>C and GForce (some difficulties on Mac …)</li>
+<li>integer based keys and indices (compare to data bases)</li>
+<li>Reference semantics (no need to copy on modification)</li>
+<li>Very flexible and compact (but perhaps unusual) syntax</li>
+</ul>
+</section>
+<section id="example-4" class="level2">
+<h2 class="anchored" data-anchor-id="example-4">Example</h2>
+<pre class="{r}"><code>#| echo: true
+library(data.table)
+dt &lt;- NHANES::NHANES
+setDT(dt)
+setkey(dt, ID) # Use the ID column as index
+## How many adults by gender do we have
+dt[Age &gt;= 18, .N, Gender]
+## Mean BMI by gender
+dt[Age &gt;= 18, mean(BMI, na.rm = TRUE), Gender]
+## Convert all factors to characters
+dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]</code></pre>
+</section>
+<section id="joins" class="level2">
+<h2 class="anchored" data-anchor-id="joins">joins</h2>
+<pre><code>x[i, on, nomatch]
+| |  |   |
+| |  |   \__ If NULL only returns rows linked in x and i tables
+| |  \____ a character vector or list defining match logic
+| \_____ primary data.table, list or data.frame
+\____ secondary data.table</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 34%">
+<col style="width: 17%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Join type</th>
+<th>data.table</th>
+<th>SQL</th>
+<th>dplyr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Right join</td>
+<td><code>DT1[DT2]</code></td>
+<td>RIGHT JOIN</td>
+<td><code>right_join(DT2, DT1)</code></td>
+</tr>
+<tr class="even">
+<td>Left join</td>
+<td><code>DT2[DT1]</code></td>
+<td>LEFT JOIN</td>
+<td><code>left_join(DT1, DT2)</code></td>
+</tr>
+<tr class="odd">
+<td>Inner join</td>
+<td><code>DT1[DT2, nomatch = 0]</code></td>
+<td>INNER JOIN</td>
+<td><code>inner_join(DT1, DT2)</code></td>
+</tr>
+<tr class="even">
+<td>Full join</td>
+<td><code>merge(DT1, DT2, all = TRUE)</code></td>
+<td>FULL OUTER JOIN</td>
+<td><code>full_join(DT1, DT2)</code></td>
+</tr>
+<tr class="odd">
+<td>Anti join</td>
+<td><code>DT1[!DT2]</code></td>
+<td>NOT EXISTS</td>
+<td><code>anti_join(DT1, DT2)</code></td>
+</tr>
+<tr class="even">
+<td>Semi join</td>
+<td><code>DT1[DT2, nomatch = 0][, unique(.SD)]</code></td>
+<td>EXISTS</td>
+<td><code>semi_join(DT1, DT2)</code></td>
+</tr>
+<tr class="odd">
+<td>Rolling join</td>
+<td><code>DT1[DT2, on = "date", roll = TRUE]</code></td>
+<td>—</td>
+<td><code>join_by()</code> + <code>rolling</code></td>
+</tr>
+<tr class="even">
+<td>Non-equi join</td>
+<td><code>DT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]</code></td>
+<td>—</td>
+<td><code>join_by(x &gt;= lower, x &lt;= upper)</code></td>
+</tr>
+<tr class="odd">
+<td>Update join</td>
+<td><code>DT1[DT2, value := i.value]</code></td>
+<td>UPDATE … JOIN</td>
+<td><code>DT1 %&gt;% left_join(DT2) %&gt;% mutate(...)</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="el7-standardized-vocabularies" class="level1">
+<h1>EL7: Standardized vocabularies</h1>
+<p><a href="https://sta220.github.io/documentation/EL7.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3536,8 +4072,8 @@ positron .</code></pre>
 </ul>
 </div>
 </div>
-<section id="reading-1" class="level2">
-<h2 class="anchored" data-anchor-id="reading-1">Reading</h2>
+<section id="reading-2" class="level2">
+<h2 class="anchored" data-anchor-id="reading-2">Reading</h2>
 <ul>
 <li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;3)</span></li>
 </ul>
@@ -3550,9 +4086,9 @@ positron .</code></pre>
 <h2 class="anchored" data-anchor-id="section"></h2>
 </section>
 </section>
-<section id="el7-health-care-registers" class="level1">
-<h1>EL7: Health care registers</h1>
-<p><a href="https://sta220.github.io/documentation/EL7.html">Lecture Slides</a></p>
+<section id="el8-health-care-registers" class="level1">
+<h1>EL8: Health care registers</h1>
+<p><a href="https://sta220.github.io/documentation/EL8.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3570,8 +4106,8 @@ positron .</code></pre>
 </ul>
 </div>
 </div>
-<section id="reading-2" class="level2">
-<h2 class="anchored" data-anchor-id="reading-2">Reading</h2>
+<section id="reading-3" class="level2">
+<h2 class="anchored" data-anchor-id="reading-3">Reading</h2>
 <ul>
 <li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;4)</span></li>
 <li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;5)</span> Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.</li>
@@ -3579,39 +4115,6 @@ positron .</code></pre>
 <p><strong>Recommended references:</strong></p>
 <ul>
 <li></li>
-</ul>
-</section>
-</section>
-<section id="el8-data-sources" class="level1">
-<h1>EL8: Data sources</h1>
-<p><a href="https://sta220.github.io/documentation/EL8.html">Lecture Slides</a></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Associated litterature (References at the end)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;2)</span></li>
-</ul>
-</div>
-</div>
-<section id="reading-3" class="level2">
-<h2 class="anchored" data-anchor-id="reading-3">Reading</h2>
-<ul>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;2)</span>
-<ul>
-<li>Docker: You should be aware of the concept. Docker is used also for statistical analysis. However, we will not use it for the course.</li>
-<li>Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.</li>
-</ul></li>
-</ul>
-<p><strong>Recommended references:</strong></p>
-<ul>
-<li>This might be interesting (but not mandatory) to read: <a href="https://journal.r-project.org/articles/RJ-2017-065/index.html">An Introduction to Rocker: Docker Containers for R</a> read.</li>
 </ul>
 </section>
 </section>
@@ -3936,8 +4439,8 @@ tabellerna. */</code></pre>
 <hr>
 <p><img src="images/bigdata/paste-12.png" class="img-fluid"></p>
 </section>
-<section id="duckdb" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb">DuckDB</h2>
+<section id="duckdb-2" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-2">DuckDB</h2>
 <ul>
 <li>Free and open source (backed by foundation)</li>
 <li>Column based</li>
@@ -3966,8 +4469,8 @@ tabellerna. */</code></pre>
 <hr>
 <p><img src="images/bigdata/paste-13.png" class="img-fluid"></p>
 </section>
-<section id="parquet" class="level2">
-<h2 class="anchored" data-anchor-id="parquet">Parquet</h2>
+<section id="parquet-1" class="level2">
+<h2 class="anchored" data-anchor-id="parquet-1">Parquet</h2>
 <ul>
 <li>From Apache Arrow</li>
 <li>Open format</li>
@@ -4004,8 +4507,8 @@ tabellerna. */</code></pre>
 <hr>
 <p><img src="images/bigdata/paste-15.png" class="img-fluid"></p>
 </section>
-<section id="data.table" class="level2">
-<h2 class="anchored" data-anchor-id="data.table">{data.table}</h2>
+<section id="data.table-1" class="level2">
+<h2 class="anchored" data-anchor-id="data.table-1">{data.table}</h2>
 <ul>
 <li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
 <li>Print method inspired by <code>{tibble}</code></li>
@@ -4018,8 +4521,8 @@ tabellerna. */</code></pre>
 <li>Very flexible and compact (but perhaps unusual) syntax</li>
 </ul>
 </section>
-<section id="example-1" class="level2">
-<h2 class="anchored" data-anchor-id="example-1">Example</h2>
+<section id="example-5" class="level2">
+<h2 class="anchored" data-anchor-id="example-5">Example</h2>
 <pre class="{r}"><code>#| echo: true
 library(data.table)
 dt &lt;- iris
@@ -4042,8 +4545,8 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]</code></pre
 <li>Only read the results into memory</li>
 </ul>
 </section>
-<section id="example-2" class="level2">
-<h2 class="anchored" data-anchor-id="example-2">Example</h2>
+<section id="example-6" class="level2">
+<h2 class="anchored" data-anchor-id="example-6">Example</h2>
 <pre class="{r}"><code>#| echo: true
 #| eval: false
 library(tidyverse)
@@ -4456,11 +4959,23 @@ cache_wrapper &lt;- function(dt_part, name, ...) {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-arel-bundock2025" class="csl-entry" role="listitem">
+Arel-Bundock, Vincent. 2025. <span>“Data.table Vs. Base Vs. Dplyr <span></span> Vincent Arel-Bundock.”</span> <a href="https://arelbundock.com/posts/dt_tb_df/index.html">https://arelbundock.com/posts/dt_tb_df/index.html</a>.
+</div>
 <div id="ref-baker2016" class="csl-entry" role="listitem">
 Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533 (7604): 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
 </div>
+<div id="ref-dataana" class="csl-entry" role="listitem">
+<em>Data Analysis Using Data.table</em>. n.d. 2026. <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html</a>.
+</div>
+<div id="ref-fenk" class="csl-entry" role="listitem">
+Fenk, Simone Rahel, Kari Furu, and Inger Johanne Bakken. n.d. <span>“Improve Data Management in Register-Based Research: Transition from CSV to Parquet.”</span> <a href="https://doi.org/10.1101/2025.10.15.25337992">https://doi.org/10.1101/2025.10.15.25337992</a>.
+</div>
 <div id="ref-görman2024" class="csl-entry" role="listitem">
 Görman, Ulf. 2024. <span>“Guide to the Ethical Review of Research on Humans.”</span> Uppsala. <a href="https://etikprovningsmyndigheten.se/wp-content/uploads/2024/05/Guide-to-the-ethical-review_webb.pdf">https://etikprovningsmyndigheten.se/wp-content/uploads/2024/05/Guide-to-the-ethical-review_webb.pdf</a>.
+</div>
+<div id="ref-kavianpour2022" class="csl-entry" role="listitem">
+Kavianpour, Sanaz, James Sutherland, Esma Mansouri-Benssassi, Natalie Coull, and Emily Jefferson. 2022. <span>“Next-Generation Capabilities in Trusted Research Environments: Interview Study.”</span> <em>Journal of Medical Internet Research</em> 24 (9): e33720. <a href="https://doi.org/10.2196/33720">https://doi.org/10.2196/33720</a>.
 </div>
 <div id="ref-laugesen2021" class="csl-entry" role="listitem">
 Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna Valdimarsdottir, Astrid Lunde, and Henrik Toft Sørensen. 2021. <span>“Nordic Health Registry-Based Research: A Review of Health Care Systems and Key Registries.”</span> <em>Clinical Epidemiology</em> Volume 13 (July): 533–54. <a href="https://doi.org/10.2147/CLEP.S314959">https://doi.org/10.2147/CLEP.S314959</a>.
@@ -4491,6 +5006,9 @@ Staples, Timothy L. 2023. <span>“Expansion and Evolution of the R Programming 
 </div>
 <div id="ref-vukovic2022" class="csl-entry" role="listitem">
 Vukovic, Jakov, Damir Ivankovic, Claudia Habl, and Jelena Dimnjakovic. 2022. <span>“Enablers and Barriers to the Secondary Use of Health Data in Europe: General Data Protection Regulation Perspective.”</span> <em>Archives of Public Health</em> 80 (1): 115. <a href="https://doi.org/10.1186/s13690-022-00866-7">https://doi.org/10.1186/s13690-022-00866-7</a>.
+</div>
+<div id="ref-wickham" class="csl-entry" role="listitem">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. <span>“R for Data Science (2e).”</span> <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
