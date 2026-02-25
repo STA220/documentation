@@ -48,8 +48,7 @@ bibliography: references.bib
 -   A data project with written report and presentation
 -   Final exam 😱
 -   Instruction web page [in addition to Canvas](https://sta220.github.io/documentation/)
--   Litterature: accassible through [GU library](https://www.ub.gu.se) ([O'Reilly Learning for Higher Education](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)) or otherwise shared (no need to purchase books)
-
+-   Litterature: accessible through [GU library](https://www.ub.gu.se) ([O'Reilly Learning for Higher Education](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)) or otherwise shared (no need to purchase books)
 
 ## Different types of data
 
@@ -89,7 +88,7 @@ Three types of health care registers:
     -   Direct (what something actually cost)
     -   Estimated (DRG codes for different types of procedures)
 -   Claims data
-    -   Primary for reimbursment (insurense company or other payer)
+    -   Primary for reimbursement (insurance company or other payer)
     -   Secondarily for Health economy/epidemiology
 -   How to contact patients, health care providers etc
 -   Dates and times for visits, procedures etc
@@ -110,10 +109,10 @@ Three types of health care registers:
     -   eg: National patient register, cancer register (diagnoses)
 -   quality registers
     -   Optional for health care providers
-    -   (Mandatory within organisations joining)
+    -   (Mandatory within organizations joining)
     -   conditions (diabetes, cancer, etc)
     -   procedures (total hip arthroplasty)
-    -   Diagnoses, treatments, helth status, questionaires (PROM/PREM)
+    -   Diagnoses, treatments, health status, questionnaires (PROM/PREM)
 
 ## 🤓 Individual background data
 
@@ -136,59 +135,58 @@ Three types of health care registers:
 -   pollution
 -   crime rates
 
-##  Inclusion/exclusion criteria
+## Inclusion/exclusion criteria
 
 -   👍 Defines the target study/register population
 
 -   👎 Define exceptions to the general rules
 
-## 🦿Simple example 
+## 🦿Simple example
 
 > "Every Swedish resident who had total hip arthroplasty performed in Sweden"
 
--   **Include:** all ages, all hospitals, all reasons for the prothesis, all types of prosthesis
--   **Exclude:** Swedish residents with surgery performed in other countries. Non-Swedish residents with the procedure performed in Sweden. 
+-   **Include:** all ages, all hospitals, all reasons for the prosthesis, all types of prosthesis
+-   **Exclude:** Swedish residents with surgery performed in other countries. Non-Swedish residents with the procedure performed in Sweden.
 
 ## 🥴 Complicated example
 
 [The National Quality Register for Ovarian Cancer](https://cancercentrum.se/download/18.3de350c219545ea25bd2470a/1741112639724/inklusionskriterier-aggstockscancer-20140819.pdf)
 
-- **Inclusion**
-    1.	**Epithelial borderline tumours of the ovary**
-        - Topography code according to ICD-O/2: C56.9.
-        - Morphology code according to ICD-O/2 ≥80103 and <85900.
-        - Borderline tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag = 3.
-	2.	**Epithelial ovarian cancer:**
-        - Topography code according to ICD-O/2: C56.9.
-        - Morphology code according to ICD-O/2 ≥80103 and <85900.
-        - Malignant tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag blank.
-	3.	**Non-epithelial ovarian cancer:**
-        - Topography code according to ICD-O/2: C56.9.
-        - Morphology code according to ICD-O/2 ≥85903 and <95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and <90600.
-        - Malignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.
-        - Exception for granulosa cell tumours, where all cases with morphology codes according to ICD-O/2 in the interval ≥86200 and ≤86223 are included.
-	4.	**Malignant tumours of the fallopian tube:**
-        - Topography code according to ICD-O/2: C57.0.
-        - Morphology code according to ICD-O/2 ≥80003 and <95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and <90600.
-        - Malignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.
-
-- **Exclusion**
-    - **Epithelial ovarian cancer and borderline tumours of the ovary**  
-Cases with **behaviour codes 0, 1, 2, 6, or 9 as the fifth digit** in the ICD-O/2 morphology code are excluded.  
-Morphology codes according to ICD-O/2 **<80103 and ≥85900** are excluded.
-    - **Non-epithelial ovarian cancer**  
-Cases with **digits 0, 1, 2, 6, or 9 as the fifth digit** in the ICD-O/2 morphology code are excluded, **with the exception of granulosa cell tumours**, for which cases with ICD-O/2 morphology codes in the interval **≥86200 and ≤86223** are included even when the final digit is **0, 1, 2, or 3**.  
-Morphology codes according to ICD-O/2 **<85903**, as well as codes in the intervals **≥90500 and <90600** (mesotheliomas) and **≥95900**, are excluded.
-    - **Tumours of the fallopian tube**  
-Cases with **behaviour codes 0, 1, 2, 6, or 9 as the fifth digit** in the ICD-O/2 morphology code are excluded.  
-Morphology codes according to ICD-O/2 in the intervals **≥90500 and <90600** (mesotheliomas) and **≥95900** are excluded.
-    - **For all diagnoses**, cases are excluded if the diagnosis is based solely on:
-        - clinical examination (**basis of diagnosis 1**),
-        - imaging procedures including radiography, scintigraphy, ultrasound, MRI, CT (or equivalent examinations) (**basis of diagnosis 2**),
-        - autopsy with or without histopathological examination (**basis of diagnosis 4 or 7**),
-        - surgery without histopathological examination (**basis of diagnosis 6**), or
-        - other laboratory investigations (**basis of diagnosis 8**).
-        - cases with **age <18 years** are excluded.
+-   **Inclusion**
+    1.  **Epithelial borderline tumours of the ovary**
+        -   Topography code according to ICD-O/2: C56.9.
+        -   Morphology code according to ICD-O/2 ≥80103 and \<85900.
+        -   Borderline tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag = 3.
+    2.  **Epithelial ovarian cancer:**
+        -   Topography code according to ICD-O/2: C56.9.
+        -   Morphology code according to ICD-O/2 ≥80103 and \<85900.
+        -   Malignant tumours with 5th digit 3 in the morphology code according to ICD-O/2 and benign behaviour flag blank.
+    3.  **Non-epithelial ovarian cancer:**
+        -   Topography code according to ICD-O/2: C56.9.
+        -   Morphology code according to ICD-O/2 ≥85903 and \<95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and \<90600.
+        -   Malignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.
+        -   Exception for granulosa cell tumours, where all cases with morphology codes according to ICD-O/2 in the interval ≥86200 and ≤86223 are included.
+    4.  **Malignant tumours of the fallopian tube:**
+        -   Topography code according to ICD-O/2: C57.0.
+        -   Morphology code according to ICD-O/2 ≥80003 and \<95900, with the exception of mesotheliomas with ICD-O/2 codes in the interval ≥90500 and \<90600.
+        -   Malignant tumours with digit 3 as the fifth digit in the morphology code according to ICD-O/2.
+-   **Exclusion**
+    -   **Epithelial ovarian cancer and borderline tumours of the ovary**\
+        Cases with behavior **codes 0, 1, 2, 6, or 9 as the fifth digit** in the ICD-O/2 morphology code are excluded.\
+        Morphology codes according to ICD-O/2 **\<80103 and ≥85900** are excluded.
+    -   **Non-epithelial ovarian cancer**\
+        Cases with **digits 0, 1, 2, 6, or 9 as the fifth digit** in the ICD-O/2 morphology code are excluded, **with the exception of granulosa cell tumours**, for which cases with ICD-O/2 morphology codes in the interval **≥86200 and ≤86223** are included even when the final digit is **0, 1, 2, or 3**.\
+        Morphology codes according to ICD-O/2 **\<85903**, as well as codes in the intervals **≥90500 and \<90600** (mesotheliomas) and **≥95900**, are excluded.
+    -   **Tumours of the fallopian tube**\
+        Cases with **behaviour codes 0, 1, 2, 6, or 9 as the fifth digit** in the ICD-O/2 morphology code are excluded.\
+        Morphology codes according to ICD-O/2 in the intervals **≥90500 and \<90600** (mesotheliomas) and **≥95900** are excluded.
+    -   **For all diagnoses**, cases are excluded if the diagnosis is based solely on:
+        -   clinical examination (**basis of diagnosis 1**),
+        -   imaging procedures including radiography, scintigraphy, ultrasound, MRI, CT (or equivalent examinations) (**basis of diagnosis 2**),
+        -   autopsy with or without histopathological examination (**basis of diagnosis 4 or 7**),
+        -   surgery without histopathological examination (**basis of diagnosis 6**), or
+        -   other laboratory investigations (**basis of diagnosis 8**).
+        -   cases with **age \<18 years** are excluded.
 
 ## Coverage and completeness
 
@@ -212,9 +210,9 @@ Morphology codes according to ICD-O/2 in the intervals **≥90500 and <90600** (
 
 -   Unique personal identifier
     -   Not in every country!
-    -  Social security number similair purpose but not as widely used
+    -   Social security number similar purpose but not as widely used
 -   study specific id number
--   HSA ("Hälso- och sjukvårdens adressregister" for staff and organisations)
+-   HSA ("Hälso- och sjukvårdens adressregister" for staff and organizations)
 
 ## Unique personal identifier
 
@@ -230,7 +228,7 @@ Morphology codes according to ICD-O/2 in the intervals **≥90500 and <90600** (
 -   sometimes reused after death
 -   sometimes changed (uncommon)
 -   sometimes inclusion criteria for register
--   similair in the Nordic countries
+-   similar in the Nordic countries
     -   Denmark: CPR number
     -   Norway: Fødselsnummer
     -   Finland: Henkilötunnus
@@ -249,10 +247,10 @@ Morphology codes according to ICD-O/2 in the intervals **≥90500 and <90600** (
 
 A lot to do before the statistical analysis!
 
-- **Legalities**
-    - Do I have the right to access this data?
-    - What am I allowed to do?
-    - What am I not allaowed to do?
+-   **Legalities**
+    -   Do I have the right to access this data?
+    -   What am I allowed to do?
+    -   What am I not allowed to do?
 -   **Data management**
     -   large datasets
     -   multiple datasets
@@ -264,12 +262,12 @@ A lot to do before the statistical analysis!
     -   data munging
     -   data governance
     -   data engineering
-- **Planning**
-    - What is the purpose?
-    - How can I achieve my goals?
-    - What if I change my plans later?
-    - Can I redo my analysis?
-    - How do I present/communicate my results?
+-   **Planning**
+    -   What is the purpose?
+    -   How can I achieve my goals?
+    -   What if I change my plans later?
+    -   Can I redo my analysis?
+    -   How do I present/communicate my results?
 
 ## R as a tool but ...
 
@@ -284,7 +282,7 @@ A lot to do before the statistical analysis!
 -   `{data.table}` to handle large data sets efficiently
 -   `{targets}` to streamline a reproducible pipeline
 -   `Git` for version control
--   `GitHub` for colaboration
+-   `GitHub` for collaboration
 -   `Quarto` for reporting
 
--------------
+------------------------------------------------------------------------

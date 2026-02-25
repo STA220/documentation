@@ -249,6 +249,7 @@
 <ul>
 <li><p><a href="https://docs.ropensci.org/targets/articles/overview.html">Targets overview</a></p></li>
 <li><p><a href="https://books.ropensci.org/targets/">Target manual</a></p></li>
+<li><p>You read briefly about Docker in the mandatory reading. If this seems interesting, you might read: <a href="https://journal.r-project.org/articles/RJ-2017-065/index.html">An Introduction to Rocker: Docker Containers for R</a> (not mandatory).</p></li>
 </ul>
 </section>
 <section id="practice" class="slide level2">
@@ -268,7 +269,7 @@
 <ul>
 <li>The full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).</li>
 <li>RStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.</li>
-<li>You may recognise some of the material from Part 3, as presented during the lecture</li>
+<li>You may recognize some of the material from Part 3, as presented during the lecture</li>
 </ul>
 </div>
 </div>
@@ -511,7 +512,7 @@
 <li>You have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =&gt; 10 * 20 = 200 M rows of data</li>
 <li>You are working in a <a href="https://en.wikipedia.org/wiki/Secure_environment">secure environment</a> were data is stored on a network server (no <a href="https://en.wikipedia.org/wiki/Solid-state_drive">SSD drive</a>)</li>
 <li>The same environment is shared by 20 other researchers and you are all competing for the same <a href="https://en.wikipedia.org/wiki/Bandwidth_(computing)">bandwidth</a></li>
-<li>It will get increasonly frusrating just to load and save the big files</li>
+<li>It will get increasingly frustrating just to load and save the big files</li>
 <li>You might need to wait for half an hour before you can start working 😩</li>
 </ul>
 </section>
@@ -528,7 +529,7 @@
 <li>For example GNU <a href="https://en.wikipedia.org/wiki/Make_(software)">Make</a> is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.</li>
 </ul></li>
 <li><strong>Iteration</strong> during project development (which is equally relevant for a health data project), will be much <strong>faster and reliable</strong>.</li>
-<li><strong>Caching</strong> as described abowe is <strong>automated</strong> and you only need to read/write files to disk/network storage when actually needed.</li>
+<li><strong>Caching</strong> as described above is <strong>automated</strong> and you only need to read/write files to disk/network storage when actually needed.</li>
 </ul>
 </section>
 <section id="alternative-solutions" class="slide level2">
@@ -815,7 +816,7 @@ mean in group female   mean in group male
 <h2>Benefits</h2>
 <ul>
 <li>execute the whole project by <code>tar_make()</code></li>
-<li>intermediate steps are cached and cached objects retreived by <code>tar_load()</code> or <code>tar_read()</code></li>
+<li>intermediate steps are cached and cached objects retrieved by <code>tar_load()</code> or <code>tar_read()</code></li>
 <li>dependency among individual steps can be visualized: <code>tar_visnetwork()</code></li>
 </ul>
 </section>
@@ -874,7 +875,7 @@ mean in group female   mean in group male
 <ul>
 <li><p><code>parallel::mclapply()</code> behaves differently on Windows compared to Unix-like systems because Windows does not support forked processes.</p></li>
 <li><p><code>sort(c("ä", "a", "z"))</code> might differ due to locale settings</p></li>
-<li><p>Earlier versions of R relied on system-specific native encodings (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms.</p></li>
+<li><p>Earlier versions of R relied on system-specific native encoding (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms.</p></li>
 </ul></li>
 </ul>
 </section>

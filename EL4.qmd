@@ -57,7 +57,7 @@ bibliography: references.bib
 
 -   Don't rely too heavily on your computers graphical user interface (GUI)
 -   You know how to use the R console!
--   To use a terminal/Unix shell/Bash... is similair
+-   To use a terminal/Unix shell/Bash... is similar
 -   To navigate the file system is basic practice
 -   A Unix Terminal is included if you are using Mac (and Linux)
 -   Emulators are common for Windows (one is included in Git, use that one after installation)
@@ -121,7 +121,7 @@ Several dedicated statistical systems emerged:
 -   Script-based, but largely batch-oriented
 -   Became a standard in:
     -   Government agencies
-    -   Large organisations
+    -   Large organizations
 -   Known for strong data management capabilities
 -   Still widely used in pharmaceutical industry
 
@@ -194,7 +194,7 @@ Common limitations included:
 
 -   **July 27, 2022:** RStudio rebrands as **Posit**
 -   **July 28, 2022:** **Quarto** is announced as a next-generation scientific and technical publishing system (multi-language, multi-engine)
--   A public benefit company (not only releant for its shareholders)
+-   A public benefit company (not only relevant for its shareholders)
 -   Also a platinum member of The R consortium \# Modern IDE
 
 ## Positron
@@ -220,7 +220,7 @@ Common limitations included:
 
 This feature will most likely be disabled in any secure working environment. Such environments often have strict rules about data privacy and security, which may conflict with the assistant's functionality. Health data in SENSITIVE and SECURE environments must not be shared with external services, including AI assistants, to comply with data protection regulations and institutional policies.
 
-It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for "brott mot tystnadsplikten" which is not only public, but actually civil law ("Brottsbalken") with prision sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!
+It is recommended to not rely on such tools during the course (even if all our data is synthetic). If you start to rely on such tools, you might get difficulties the day you work with real data (might lead to prosecution for "brott mot tystnadsplikten" which is not only public, but actually civil law ("Brottsbalken") with prison sentence as a possibility). Society put an extreme emphasis on protecting health data, and rightfully so!
 
 [Read more](https://posit.co/blog/trust-llm-tools/)
 :::
@@ -408,9 +408,10 @@ They add:
 -   Issue tracking is not part of Git but is implemented in most (if not all) hosting platforms.
 
 -   Used for bug reports and discussions between developers and users
-- Issues can be closed when fixed/adressed but are still found in the history
-- Each issue gets a number (in order) and those can be referenced in commit messages etc (ex: `Fix #37`, which will automatically close the issue)
 
+-   Issues can be closed when fixed/adressed but are still found in the history
+
+-   Each issue gets a number (in order) and those can be referenced in commit messages etc (ex: `Fix #37`, which will automatically close the issue)
 
 ------------------------------------------------------------------------
 

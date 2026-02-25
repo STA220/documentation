@@ -1,16 +1,8 @@
-# Detta skript används för att rendera och uppdatera hela sitden
-
+# Detta skript används för att rendera och uppdatera hela siten
 library(tidyverse)
-library(vvcanvas)
-
-# Rendera siten lokalt
-quarto::quarto_render(".")
-
-# publicera till GitHub Pages (gh-pages branch)
-system("quarto publish gh-pages --no-prompt")
 
 
-# Publicera läslista -----------------------------------------------------
+# Canvas-integration -----------------------------------------------------
 
 library(vvcanvas)
 
@@ -19,7 +11,9 @@ sta220 <- get_courses(canvas) |>
   as_tibble() |>
   filter(startsWith(course_code, "STA220"))
 
-# Närvarolista studenter
+
+# Närvarolista studenter -------------------------------------------------
+
 get_course_students(canvas, sta220$id) |>
   as_tibble() |>
   arrange(sortable_name) |>
@@ -35,6 +29,9 @@ get_course_students(canvas, sta220$id) |>
     border = officer::fp_border(color = "black", width = 1)
   ) |>
   flextable::save_as_docx(path = "cache/students.docx")
+
+
+# PDFs to read -----------------------------------------------------------
 
 # Befintliga filer
 canvas_pdfs <-
@@ -68,7 +65,11 @@ pdfs_to_upload <-
   pdfs |>
   filter(is.na(url)) |>
   pluck("upload_from")
-if (length(pdfs_to_upload) > 0) {
+
+# Om det finns nya filer så uppdateras Canvas med dessa
+if (length(pdfs_to_upload) == 0) {
+  message("All PDFs found in articles/ are already on canvas!")
+} else {
   walk(pdfs_to_upload, \(x) {
     upload_folder_file(
       canvas,
@@ -76,23 +77,23 @@ if (length(pdfs_to_upload) > 0) {
       file_name = x
     )
   })
-}
 
-# tabell att presentera
-html_table <-
-  pdfs |>
-  mutate(
-    url = sub("\\?.*$", "", url),
-    Session,
-    download = glue::glue("<a href='{url}'>{literature}</a>")
-  ) |>
-  mutate(Session = if_else(duplicated(Session), "", Session)) |>
-  select(Session, download) |>
-  knitr::kable(format = "html", escape = FALSE)
+  # tabell att presentera
+  html_table <-
+    pdfs |>
+    mutate(
+      url = sub("\\?.*$", "", url),
+      Session,
+      download = glue::glue("<a href='{url}'>{literature}</a>")
+    ) |>
+    arrange(Session) |>
+    mutate(Session = if_else(duplicated(Session), "", Session)) |>
+    select(Session, download) |>
+    knitr::kable(format = "html", escape = FALSE)
 
-# HTML body att lägga in
+  # HTML body att lägga in
 
-body <- '
+  body <- '
 Note that some required reading consints of web pages. 
 Check the full reading list in the
 <a href="https://sta220.github.io/documentation/">course plan</a>
@@ -100,15 +101,25 @@ Check the full reading list in the
 You may also acces the referenced articles by links provided in the reference list.
 If you are not able to do that, static PDF:s are found below.
 ' |>
-  paste(html_table, sep = "\n\n")
+    paste(html_table, sep = "\n\n")
 
-# Uppdatera sidan
-update_page(
-  canvas,
-  sta220$id,
-  "851450",
-  page_params = list(
-    title = "PDF:s to read",
-    body = body
+  # Uppdatera sidan
+  update_page(
+    canvas,
+    sta220$id,
+    "851450",
+    page_params = list(
+      title = "PDF:s to read",
+      body = body
+    )
   )
-)
+}
+
+
+# Rendera och publicera --------------------------------------------------
+
+# Rendera siten lokalt
+quarto::quarto_render(".")
+
+# publicera till GitHub Pages (gh-pages branch)
+system("quarto publish gh-pages --no-prompt")

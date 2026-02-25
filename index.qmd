@@ -3,22 +3,21 @@ title: "Health data"
 bibliography: references.bib
 ---
 
-This website includes documentation for lectures and exercises concerning the health data part of the couurse STA220 Health data and questionnaires.
-General information about the course is found on the corresponding [Canvas](https://canvas.gu.se/courses/97348) page. 
+This website includes documentation for lectures and exercises concerning the health data part of the course STA220 Health data and questionnaires. General information about the course is found on the corresponding [Canvas](https://canvas.gu.se/courses/97348) page.
 
 # Plan
 
-::: {.callout-note}
-- See Canvas/[TimeEdit for schedule](https://cloud.timeedit.net/gu/web/wr_stud/ri1Y6v2yQ6w901QY75Q2209XZY057ZQ7.html). 
-- Note that this plan only considers the health data part of the course!
-- See details below regarding the litterature
-- Some literature is only used partially (as described in the [handouts](handouts.qmd))
-- The literature is associated with each lecture/session but is not required reading before the sessin (unless otherwise stated).
+::: callout-note
+-   See Canvas/[TimeEdit for schedule](https://cloud.timeedit.net/gu/web/wr_stud/ri1Y6v2yQ6w901QY75Q2209XZY057ZQ7.html).
+-   Note that this plan only considers the health data part of the course!
+-   See details below regarding the literature
+-   Some literature is only used partially (as described in the [handouts](handouts.qmd))
+-   The literature is associated with each lecture/session but is not required reading before the session (unless otherwise stated).
 :::
 
-::: {.callout-warning}
-- The plan, as well as the content of each session, is preliminary and may change before the respective session is scheduled.
-- Modifications to lecture slides (and thus indirectly to the lecture handouts) may be made even after the session has taken place. Such changes are only intended to clarify points discussed during the session or to correct mistakes.
+::: callout-warning
+-   The plan, as well as the content of each session, is preliminary and may change before the respective session is scheduled.
+-   Modifications to lecture slides (and thus indirectly to the lecture handouts) may be made even after the session has taken place. Such changes are only intended to clarify points discussed during the session or to correct mistakes.
 :::
 
 ```{r}
@@ -32,30 +31,28 @@ qs2::qs_read("cache/gt_schedule.qs2")
 
 To complete the exercises and assignments for this course you need to install the following software (which are free and available for all major operating systems):
 
-- [R](https://cran.r-project.org/)
-- [Positron](https://posit.co/download/)
-- [Git](https://git-scm.com/downloads)
+-   [R](https://cran.r-project.org/)
+-   [Positron](https://posit.co/download/)
+-   [Git](https://git-scm.com/downloads)
 
 Some additional recommended software (also free but not mandatory for the course):
 
-- [GitHub Desktop](https://desktop.github.com/)
-- [GitHub CLI](https://cli.github.com/)
+-   [GitHub Desktop](https://desktop.github.com/)
+-   [GitHub CLI](https://cli.github.com/)
 
 ## Positron extensions
 
 Positron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.
 
-Positron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of [extensions](https://open-vsx.org/) and customization options. 
+Positron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of [extensions](https://open-vsx.org/) and customization options.
 
 We will use [GitHub Pull Requests](https://open-vsx.org/extension/GitHub/vscode-pull-request-github). Search for it in the Extensions pane in Positron and install it.
 
 [Instructions for Git in Positron](https://code.visualstudio.com/docs/sourcecontrol/quickstart#_set-up-git-in-vs-code)
 
-
 # Litterature
 
-Course books are available for GU students through the "O'Reilly Learning for Higher Education".
-[Instructions for access](https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en)
+Course books are available for GU students through the "O'Reilly Learning for Higher Education". [Instructions for access](https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en)
 
 [Primary course book](https://www.oreilly.com/library/view/hands-on-healthcare-data/9781098112912/). Not every chapter of the book will be discussed during the course, and some programming examples in the book are written in languages that we will not use, as our programming focus is mainly on R.
 

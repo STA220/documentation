@@ -59,7 +59,7 @@ Follow the recording from the workshop while you are practicing: [The power of {
 
 -   The full video is close to three hours long, but this includes breaks as well as the more advanced topics that are not mandatory (only the first 92 minutes, which includes several 10 min breaks is mandatory). Nevertheless, it is recommended to watch the full video (just watching part 4-7 for inspirational purposes without doing the exercises and without any expectation to fully grasp all the details).
 -   RStudio is used in the recording. Please try to use Positron; however, feel free to revert to RStudio this time if following the instructions in one application while working in another feels overwhelming.
--   You may recognise some of the material from Part 3, as presented during the lecture
+-   You may recognize some of the material from Part 3, as presented during the lecture
 :::
 
 This practice is homework (no dedicated computer session is targeting targets but you should use at least some components of it in a later project, so you should practice the basics now)!
@@ -203,7 +203,7 @@ These datasets are openly licensed and represent a combination of numeric and te
 -   You have medical prescription data for everyone and lets say on average 20 prescriptions (since 2015) per person =\> 10 \* 20 = 200 M rows of data
 -   You are working in a [secure environment](https://en.wikipedia.org/wiki/Secure_environment) were data is stored on a network server (no [SSD drive](https://en.wikipedia.org/wiki/Solid-state_drive))
 -   The same environment is shared by 20 other researchers and you are all competing for the same [bandwidth](https://en.wikipedia.org/wiki/Bandwidth_(computing))
--   It will get increasonly frusrating just to load and save the big files
+-   It will get increasingly frustrating just to load and save the big files
 -   You might need to wait for half an hour before you can start working 😩
 
 ------------------------------------------------------------------------
@@ -216,7 +216,7 @@ These datasets are openly licensed and represent a combination of numeric and te
 -   This is common practice in software development
     -   For example GNU [Make](https://en.wikipedia.org/wiki/Make_(software)) is a build automation tool that automatically determines which parts of a program need to be rebuilt and executes the necessary commands based on rules defined in a Makefile.
 -   **Iteration** during project development (which is equally relevant for a health data project), will be much **faster and reliable**.
--   **Caching** as described abowe is **automated** and you only need to read/write files to disk/network storage when actually needed.
+-   **Caching** as described above is **automated** and you only need to read/write files to disk/network storage when actually needed.
 
 ## Alternative solutions
 
@@ -363,7 +363,7 @@ list(
 ## Benefits
 
 -   execute the whole project by `tar_make()`
--   intermediate steps are cached and cached objects retreived by `tar_load()` or `tar_read()`
+-   intermediate steps are cached and cached objects retrieved by `tar_load()` or `tar_read()`
 -   dependency among individual steps can be visualized: `tar_visnetwork()`
 
 ## Dependency graph
@@ -420,7 +420,7 @@ Best practice (I guess) is to rerun the analysis both with the frozen versions a
 
     -   `sort(c("ä", "a", "z"))` might differ due to locale settings
 
-    -   Earlier versions of R relied on system-specific native encodings (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms.
+    -   Earlier versions of R relied on system-specific native encoding (notably on Windows), whereas modern versions (R ≥ 4.2) use UTF-8 as the default across platforms.
 
 ------------------------------------------------------------------------
 

@@ -26,7 +26,7 @@ bibliography: references.bib
 ::: callout-note
 # Examination
 
-The Swedish legal system will only be examined during the seminair [ES1](ES1.qmd) (not in the DISA exam). You are allowed to use the sources during the seminair (no need to memorize individual laws and paragraphs by names and numbers). Nevertheless, read the literature before the seminair!
+The Swedish legal system will only be examined during the seminar [ES1](ES1.qmd) (not in the DISA exam). You are allowed to use the sources during the seminar (no need to memorize individual laws and paragraphs by names and numbers). Nevertheless, read the literature before the seminar!
 :::
 
 -   Lecture handouts
@@ -52,7 +52,7 @@ The Swedish legal system will only be examined during the seminair [ES1](ES1.qmd
 -   Published in [Svensk författningsamling, SFS](https://svenskforfattningssamling.se/)
     -   Digitally since 2018-04-01 (previously printed)
     -   The "big blue book" is only a smaller collection of important laws
--   **ordinances** ("förordning") from the goverment to implement laws
+-   **ordinances** ("förordning") from the government to implement laws
 -   **regulations** ("föreskrifter") from authorities to implement laws and ordinances
 
 ![](images/paste-3.png)
@@ -87,7 +87,7 @@ Private actors are generally free unless restricted by law, while public authori
 
 > In order to promote a free exchange of opinion, comprehensive and pluralistic information, and free artistic creation, everyone shall have the right of access to official documents. \[TF 2.1\]
 
-But there are exceptions (TF 2.2): - e.g., if disclosure would **violate privacy** or national security - if so, the goverment has the right to provide ordinary laws that restrict access (which they do!)
+But there are exceptions (TF 2.2): - e.g., if disclosure would **violate privacy** or national security - if so, the government has the right to provide ordinary laws that restrict access (which they do!)
 
 # Confidentiality
 
@@ -101,11 +101,11 @@ But there are exceptions (TF 2.2): - e.g., if disclosure would **violate privacy
 
 ## OSL Chap 21
 
-Confidentiality for private individuals' personal circumstances **no mather the context**
+Confidentiality for private individuals' personal circumstances **no mater the context**
 
 -   E.g., health data, economic circumstances, family relations
 
-> OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offences, or other similar information, **if it can be assumed** that disclosure of the information would **cause significant harm** to the individual or to someone closely related to them.
+> OFS 21.1: Secrecy applies to information concerning an individual’s health or sexual life, such as information about illnesses, substance abuse, sexual orientation, gender reassignment, sexual offenses, or other similar information, **if it can be assumed** that disclosure of the information would **cause significant harm** to the individual or to someone closely related to them.
 
 ## OSL Chap 24
 
@@ -118,11 +118,11 @@ Secrecy for the protection of individuals in research and statistics.
 
 Secrecy for the protection of individuals in activities relating to **health and medical care** etc.
 
-> OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, **unless it is clear** that the information may be disclosed **without causing harm** to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilisation, abortion, sterilisation, circumcision, and measures to prevent communicable diseases.
+> OFS 25.1: Within the health and medical care services, secrecy applies to information concerning an individual’s state of health or other personal circumstances, **unless it is clear** that the information may be disclosed **without causing harm** to the individual or to someone closely related to them. The same applies to other medical activities, such as forensic medical and forensic psychiatric examinations, insemination, in vitro fertilization, abortion, sterilization, circumcision, and measures to prevent communicable diseases.
 
 -   Exceptions exists,
     -   for example to submit medical patient data to quality registers
-    -   to share data between public organisations for research purposes or statistics (OFS 25.11 p. 5).
+    -   to share data between public organizations for research purposes or statistics (OFS 25.11 p. 5).
 
 ## OSL Chapter 10
 
@@ -147,7 +147,7 @@ Provisions on disclosure overriding secrecy and provisions on exemptions from se
 
 ## Chapter 7 PDL
 
-National and regionel quality registers
+National and regional quality registers
 
 Opt-out for patients (every one is included by default until they opt out)
 
@@ -202,7 +202,7 @@ This law regulates health data registers outside the health and medical care sys
 ## GDPR and Swedish law
 
 -   GDPR is directly applicable in Sweden
--   There are refereces to GDPR in Swedish laws such as PDL and OSL
+-   There are references to GDPR in Swedish laws such as PDL and OSL
 -   Swedish laws may provide additional regulations and requirements beyond GDPR
 -   Data protection authorities in Sweden: [Integritetsskyddsmyndigheten (IMY)](https://imy.se/)
 -   Should be easy to collaborate across EU borders due to GDPR, but more difficult with non-EU countries
@@ -220,7 +220,7 @@ This law regulates health data registers outside the health and medical care sys
 (🇸🇪: Etikprövningslagen)
 
 -   Regulates ethical review of research involving humans (including their data!)
-    -   Had received some critisism and might be revised
+    -   Had received some criticism and might be revised
 -   Applies to research conducted in Sweden
 -   Requires ethical review and approval by the Swedish Ethical Review Authority
 -   Aims to protect the rights, safety, and well-being of research participants
@@ -229,35 +229,34 @@ This law regulates health data registers outside the health and medical care sys
     -   Ammendments for changes in already approved projects
 -   Application fees applies
 
-
 # Access to data
 
-## ublic, non-sensitive individual information
+## Public, non-sensitive individual information
 
-- Certain individual data are public by default (e.g. declared income, address).
-- Such information may be accessed upon request from authorities like the Swedish Tax Agency, unless specific secrecy provisions apply.
-- Might still not be used for research without ethical review
+-   Certain individual data are public by default (e.g. declared income, address).
+-   Such information may be accessed upon request from authorities like the Swedish Tax Agency, unless specific secrecy provisions apply.
+-   Might still not be used for research without ethical review
 
 ## Aggregated data (including health data)
 
-- Aggregated information that cannot be linked to identifiable individuals may often be disclosed.
-- Aggregated health statistics produced through "automated processes" might be disclosed upon request.
+-   Aggregated information that cannot be linked to identifiable individuals may often be disclosed.
+-   Aggregated health statistics produced through "automated processes" might be disclosed upon request.
 
 ## Individual-level health data for statistical purposes
 
-- Access to identifiable health data is possible within authorities conducting statistical activities.
-- This typically requires that the data are used solely for statistical purposes,
+-   Access to identifiable health data is possible within authorities conducting statistical activities.
+-   This typically requires that the data are used solely for statistical purposes,
 
 ## Individual-level data via register-holding authorities
 
-- Identifiable data may be accessed by staff or contractors working on behalf of the authority responsible for the register.
+-   Identifiable data may be accessed by staff or contractors working on behalf of the authority responsible for the register.
 
 ## Individual-level data for research
 
-- Access to identifiable personal or health data for research purposes generally requires:
-  - approval under the **Ethical Review Act**,
-  - a lawful basis under **GDPR**,
-  - and a disclosure decision under **OSL** by the data-holding authority.
-- Data are typically provided under strict conditions (e.g. pseudonymisation, secure environments).
+-   Access to identifiable personal or health data for research purposes generally requires:
+    -   approval under the **Ethical Review Act**,
+    -   a lawful basis under **GDPR**,
+    -   and a disclosure decision under **OSL** by the data-holding authority.
+-   Data are typically provided under strict conditions (e.g. pseudonymisation, secure environments).
 
-------------
+------------------------------------------------------------------------
