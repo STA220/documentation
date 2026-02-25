@@ -1,7 +1,7 @@
 ---
-title: "EL8: Data sources"
-subtitle: "Data bases (SQL), SAS, XML, JSON, parquett, API calls"
-reading: "[@nguyen2022a, ch. 2]"
+title: "EL8: Health care registers"
+subtitle: "LISA, RTB, dödsorsak, kvalreg, cancerreg, ..."
+reading: "[@nguyen2022a, ch. 4 (5)]"
 format:
   revealjs:
     theme: blood
@@ -23,10 +23,9 @@ bibliography: references.bib
 
 ## Reading
 
-- [@nguyen2022a, ch. 2]
-    - Docker: You should be aware of the concept. Docker is used also for statistical analysis. However, we will not  use it for the course. 
-    - Databases: it is important to understand some basic concepts. You might, however, ignore sections about "(Hyper)graph databases". Try to understand the SQL code even though you might not need to write such code on your own.
+- [@nguyen2022a, ch. 4]
+- [@nguyen2022a, ch. 5] Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.
 
 **Recommended references:**
 
--   This might be interesting (but not mandatory) to read: [An Introduction to Rocker: Docker Containers for R](https://journal.r-project.org/articles/RJ-2017-065/index.html) read.
+-   

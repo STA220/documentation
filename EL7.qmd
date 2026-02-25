@@ -1,7 +1,7 @@
 ---
-title: "EL7: Health care registers"
-subtitle: "LISA, RTB, dödsorsak, kvalreg, cancerreg, ..."
-reading: "[@nguyen2022a, ch. 4 (5)]"
+title: "EL7: Standardized vocabularies"
+subtitle: "ICD, ATC, SNOMED, regex"
+reading: "[@nguyen2022a, ch. 3]"
 format:
   revealjs:
     theme: blood
@@ -23,9 +23,10 @@ bibliography: references.bib
 
 ## Reading
 
-- [@nguyen2022a, ch. 4]
-- [@nguyen2022a, ch. 5] Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.
+- [@nguyen2022a, ch. 3]
 
 **Recommended references:**
 
 -   
+
+# 

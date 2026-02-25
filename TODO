@@ -1,17 +1,16 @@
-Lectures
-4: version control, Positron
-  - första övning
-5: targets, data.table, duckDB, arrow
-6: Standardized volabularies (ICD, ATC, SNOMED) regex?
-7: Registers (what they contain etc), LISA, RTB, dödsorsak, kvalreg, cancerreg
-8: SQL, data bases, XML, JSON
-    Kursboken chap 2
+
+6: Data formats: data.table, SQL, duckDB, arrow/parquett, JSON, API calls
+Kursboken chap 2
     https://r4ds.hadley.nz/databases.html
     https://sqlzoo.net/wiki/SQL_Tutorial
-9: Working with big data (från internt seminarium)
+
+7: Standardized volabularies (ICD, ATC, SNOMED) regex?
+8: Registers (what they contain etc), LISA, RTB, dödsorsak, kvalreg, cancerreg
+    9: Working with big data (från internt seminarium)
 10: missing data, reporting, presentation
 11: rep
 
 
 
 - case study SCIFI-PEARL/HI-SPEED
+

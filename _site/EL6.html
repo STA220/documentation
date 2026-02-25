@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – EL6: Standardized vocabularies</title>
+  <title>STA220 – EL6: Data sources</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +27,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -148,8 +214,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EL6: Standardized vocabularies</h1>
-  <p class="subtitle">ICD, ATC, SNOMED, regex</p>
+  <h1 class="title">EL6: Data sources</h1>
+  <p class="subtitle">data.table, SQL, DuckDB, parquett, SAS, JSON, API</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -158,20 +224,514 @@
 <section id="reading" class="slide level2">
 <h2>Reading</h2>
 <ul>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#/section" role="doc-biblioref" onclick="">Nguyen 2022</a>, ch.&nbsp;3)</span></li>
+<li><p><span class="citation" data-cites="nguyen2022a">(<a href="#/references" role="doc-biblioref" onclick="">Nguyen 2022</a>, ch.&nbsp;2)</span> on Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.</p></li>
+<li><p><span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span> <a href="https://r4ds.hadley.nz/databases.html">chap 21</a> describes how to connect to a database from R.</p></li>
+<li><p><span class="citation" data-cites="fenk">Fenk, Furu, and Bakken (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span> describe why the current common practice with register data delivery in SAS format should be replaced by parquet files. Until this has happened, we often need to use SAS for data extraction.</p></li>
+<li><p><span class="citation" data-cites="dataana"><em>Data Analysis Using Data.table</em> (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span> introduces the <code>data.table</code> syntax, its general form, how to <em>subset</em> rows, <em>select and compute</em> on columns, and perform aggregations <em>by group</em>.</p></li>
 </ul>
 <p><strong>Recommended references:</strong></p>
 <ul>
-<li></li>
+<li><span class="citation" data-cites="arel-bundock2025">Arel-Bundock (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span> provides a good comparison between base R, dplyr and data.table.</li>
 </ul>
 </section>
-<section id="section" class="title-slide slide level1 smaller scrollable">
-<h1></h1>
+<section id="optional-practice" class="slide level2">
+<h2>Optional practice</h2>
+<ul>
+<li>We won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
+<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a> is another option</li>
+</ul>
+</section>
+<section id="sas7bdat" class="slide level2">
+<h2>.sas7bdat</h2>
+<ul>
+<li>It is common to receive large data files in SAS format (<code>.sas7bdat</code>)</li>
+<li>Many govermental agencies are using SAS internally</li>
+<li>SAS is great for handling big data sets (no need to read everything into memory)</li>
+<li>But I don’t know how to use SAS 😩</li>
+<li>Possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
+<li>But may not work for larger files</li>
+<li>Best practice for current SAS version (9.4) is to export only nececary data to csv
+<ul>
+<li>SAS Viya (next version) will be more flexible</li>
+</ul></li>
+<li>You need a SAS license (expensive) as well as some SAS syntax for this
+<ul>
+<li>But you might ask ChatGPT etc to generate such code for you</li>
+</ul></li>
+<li>The exported csv file can later be read into R</li>
+</ul>
+</section>
+<section id="databases" class="slide level2">
+<h2>Databases</h2>
+<ul>
+<li><p>a database as a collection of “tables” (tabular data frames)</p></li>
+<li><p>Differences between data frames and database tables:</p>
+<ul>
+<li>Database tables are stored on disk and can be arbitrarily large.</li>
+<li>Data frames are stored in memory</li>
+<li>Database tables almost always have indexes; makes it possible to quickly find rows of interest
+<ul>
+<li>Data frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.</li>
+</ul></li>
+<li>No fixed row order in a table</li>
+</ul></li>
+</ul>
+</section>
+<section id="row-vs-column-oriented" class="slide level2">
+<h2>Row vs column oriented</h2>
+<ul>
+<li><p>Most classical databases are optimized for rapidly <strong>collecting</strong> data, <strong>not analyzing existing data</strong>.</p></li>
+<li><p>These databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.</p></li>
+<li><p>More recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster.</p></li>
+</ul>
+</section>
+<section id="dbms" class="slide level2">
+<h2>DBMS</h2>
+<p>Databases are run by database management systems (DBMS’s for short), which come in three basic forms</p>
+<dl>
+<dt>Client-server</dt>
+<dd>
+<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.</p>
+</dd>
+<dt>Cloud</dt>
+<dd>
+<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).</p>
+</dd>
+<dt>In-process</dt>
+<dd>
+<p>like SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!</p>
+</dd>
+</dl>
+</section>
+<section id="sql" class="slide level2">
+<h2>SQL</h2>
+<ul>
+<li>Different database systems may use different query languages.</li>
+<li>The <strong>Structured Query Language (SQL)</strong> is the most widely used for relational databases.</li>
+<li>Defined by international standards (ANSI/ISO).</li>
+</ul>
+</section>
+<section id="what-is-sql-used-for" class="slide level2">
+<h2>What is SQL used for?</h2>
+<p>SQL is used to:</p>
+<ul>
+<li>Retrieve data (<code>SELECT</code>)</li>
+<li>Filter data (<code>WHERE</code>)</li>
+<li>Aggregate data (<code>GROUP BY</code>)</li>
+<li>Combine tables (<code>JOIN</code>)</li>
+<li>Modify data (<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>)</li>
+</ul>
+</section>
+<section id="sql-dialects" class="slide level2">
+<h2>SQL Dialects</h2>
+<ul>
+<li>SQL is a standard, but implementations differ slightly.</li>
+<li>These variations are called <strong>dialects</strong>.
+<ul>
+<li><strong>T-SQL</strong> (Microsoft SQL Server)</li>
+<li><strong>PL/SQL</strong> (Oracle)</li>
+<li>PostgreSQL SQL dialect</li>
+<li>MySQL SQL dialect</li>
+</ul></li>
+</ul>
+<p>Most core functionality is similar across systems.</p>
+</section>
+<section id="a-simple-example" class="slide level2">
+<h2>A Simple Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">SELECT</span> name, age</span>
+<span id="cb1-2"><a></a><span class="kw">FROM</span> students</span>
+<span id="cb1-3"><a></a><span class="kw">WHERE</span> age <span class="op">&gt;=</span> <span class="dv">18</span></span>
+<span id="cb1-4"><a></a><span class="kw">ORDER</span> <span class="kw">BY</span> age;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This query:</p>
+<ul>
+<li>Selects two columns</li>
+<li>Filters rows</li>
+<li>Sorts the result</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-25.png" class="r-stretch"></section>
+<section id="duckdb" class="slide level2">
+<h2>DuckDB</h2>
+<ul>
+<li>Free and open source (backed by foundation)</li>
+<li>Column based</li>
+<li>Very easy to set up</li>
+<li>Very efficient!</li>
+<li>SQL is an option but not a requirement
+<ul>
+<li>Integration with tidyverse in R (<a href="https://dbplyr.tidyverse.org">dbplyr</a> or <a href="https://duckplyr.tidyverse.org">duckplyr</a>)</li>
+</ul></li>
+<li>Can be used both with disk data and data in RAM</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># pak::pak("tidyverse/duckplyr")</span></span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(duckplyr)</span>
+<span id="cb2-3"><a></a>conflicted<span class="sc">::</span><span class="fu">conflicts_prefer</span>(dplyr<span class="sc">::</span>filter)</span>
+<span id="cb2-4"><a></a><span class="co"># Extra tools to connect to internet data</span></span>
+<span id="cb2-5"><a></a><span class="fu">db_exec</span>(<span class="st">"INSTALL httpfs"</span>)</span>
+<span id="cb2-6"><a></a><span class="fu">db_exec</span>(<span class="st">"LOAD httpfs"</span>)</span>
+<span id="cb2-7"><a></a></span>
+<span id="cb2-8"><a></a><span class="co"># Use some online data which is to big to keep in memory</span></span>
+<span id="cb2-9"><a></a>year <span class="ot">&lt;-</span> <span class="dv">2022</span><span class="sc">:</span><span class="dv">2024</span></span>
+<span id="cb2-10"><a></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://blobs.duckdb.org/flight-data-partitioned/"</span></span>
+<span id="cb2-11"><a></a>files <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Year="</span>, year, <span class="st">"/data_0.parquet"</span>)</span>
+<span id="cb2-12"><a></a>urls <span class="ot">&lt;-</span> <span class="fu">paste0</span>(base_url, files)</span>
+<span id="cb2-13"><a></a><span class="fu">tibble</span>(urls)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 1
+  urls                                                                     
+  &lt;chr&gt;                                                                    
+1 https://blobs.duckdb.org/flight-data-partitioned/Year=2022/data_0.parquet
+2 https://blobs.duckdb.org/flight-data-partitioned/Year=2023/data_0.parquet
+3 https://blobs.duckdb.org/flight-data-partitioned/Year=2024/data_0.parquet</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Connect to the data (without downloading)</span></span>
+<span id="cb4-2"><a></a>flights <span class="ot">&lt;-</span> <span class="fu">read_parquet_duckdb</span>(urls)</span>
+<span id="cb4-3"><a></a><span class="co"># nrow(flights) # It's not in memory!</span></span>
+<span id="cb4-4"><a></a><span class="fu">count</span>(flights, Year) <span class="co"># processing outside memory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A duckplyr data frame: 2 variables
+   Year       n
+  &lt;dbl&gt;   &lt;int&gt;
+1  2022 6729125
+2  2023 6847899
+3  2024 3461319</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.</span></span>
+<span id="cb6-2"><a></a>out <span class="ot">&lt;-</span></span>
+<span id="cb6-3"><a></a>  flights <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">mutate</span>(<span class="at">InFlightDelay =</span> ArrDelay <span class="sc">-</span> DepDelay) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb6-6"><a></a>    <span class="at">.by =</span> <span class="fu">c</span>(Year, Month),</span>
+<span id="cb6-7"><a></a>    <span class="at">MeanInFlightDelay =</span> <span class="fu">mean</span>(InFlightDelay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-8"><a></a>    <span class="at">MedianInFlightDelay =</span> <span class="fu">median</span>(InFlightDelay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-9"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">filter</span>(Year <span class="sc">&lt;</span> <span class="dv">2024</span>)</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a>out <span class="sc">|&gt;</span></span>
+<span id="cb6-13"><a></a>  <span class="fu">explain</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>┌───────────────────────────┐
+│       HASH_GROUP_BY       │
+│    ────────────────────   │
+│          Groups:          │
+│             #0            │
+│             #1            │
+│                           │
+│        Aggregates:        │
+│          mean(#2)         │
+│         median(#3)        │
+│                           │
+│      ~13,458,249 rows     │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│            Year           │
+│           Month           │
+│       InFlightDelay       │
+│       InFlightDelay       │
+│                           │
+│      ~13,458,250 rows     │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│            Year           │
+│           Month           │
+│       InFlightDelay       │
+│                           │
+│      ~13,458,250 rows     │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│       READ_PARQUET        │
+│    ────────────────────   │
+│         Function:         │
+│        READ_PARQUET       │
+│                           │
+│        Projections:       │
+│            Year           │
+│           Month           │
+│          DepDelay         │
+│          ArrDelay         │
+│                           │
+│       File Filters:       │
+│  (CAST(Year AS DOUBLE) &lt;  │
+│           2024.0)         │
+│                           │
+│    Scanning Files: 2/3    │
+│                           │
+│      ~13,458,250 rows     │
+└───────────────────────────┘</code></pre>
+</div>
+</div>
+</section>
+<section id="duckdb-1" class="slide level2">
+<h2>DuckDB</h2>
+<ul>
+<li>DuckDB is an <strong>embedded analytical SQL database</strong>.</li>
+<li>It supports standard SQL</li>
+<li>No server installation is required.</li>
+<li>Designed for analytical workloads</li>
+</ul>
+</section>
+<section id="duckdb-and-data-files" class="slide level2">
+<h2>DuckDB and Data Files</h2>
+<p>DuckDB can query files directly:</p>
+<ul>
+<li>Parquet</li>
+<li>CSV</li>
+<li>Arrow</li>
+<li>JSON</li>
+</ul>
+<p>No data import is required.</p>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Let’s say you used SAS to export your data to a csv file</li>
+<li>DuckDB can query the relevant data from that file directly and collect only the data you actually need!</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>csv_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".csv"</span>)</span>
+<span id="cb8-2"><a></a><span class="fu">write.csv</span>(NHANES<span class="sc">::</span>NHANES, csv_file)</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="fu">read_csv_duckdb</span>(csv_file) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a></a>  <span class="fu">filter</span>(Age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a></a>  <span class="fu">summarise</span>(<span class="at">BMI_mean =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(BMI), <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.by =</span> Gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A duckplyr data frame: 2 variables
+  Gender BMI_mean
+  &lt;chr&gt;     &lt;dbl&gt;
+1 male       28.7
+2 female     28.7</code></pre>
+</div>
+</div>
+</section>
+<section id="parquet" class="slide level2">
+<h2>Parquet</h2>
+<ul>
+<li>From Apache Arrow</li>
+<li>Open format</li>
+<li>flat files with possible hierarchical structure by transparent structure of folders and filenames</li>
+<li>very fast to read</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-26.png" class="r-stretch"></section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file</li>
+<li>The solution below reads all CSV data and then export it to a new parquet file</li>
+<li>This means that all data must still fit into memory
+<ul>
+<li>If it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># install.packages("arrow")</span></span>
+<span id="cb10-2"><a></a><span class="fu">library</span>(arrow)</span>
+<span id="cb10-3"><a></a>parquet_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".parquet"</span>)</span>
+<span id="cb10-4"><a></a><span class="fu">read_csv_arrow</span>(csv_file) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a></a>  <span class="fu">write_parquet</span>(parquet_file)</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a><span class="co"># Now</span></span>
+<span id="cb10-8"><a></a><span class="fu">read_parquet_duckdb</span>(parquet_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A duckplyr data frame: 77 variables
+      C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      
+ 1     1 51624 2009_10  male      34 " 30-39"        409 White &lt;NA&gt;  High School
+ 2     2 51624 2009_10  male      34 " 30-39"        409 White &lt;NA&gt;  High School
+ 3     3 51624 2009_10  male      34 " 30-39"        409 White &lt;NA&gt;  High School
+ 4     4 51625 2009_10  male       4 " 0-9"           49 Other &lt;NA&gt;  &lt;NA&gt;       
+ 5     5 51630 2009_10  female    49 " 40-49"        596 White &lt;NA&gt;  Some Colle…
+ 6     6 51638 2009_10  male       9 " 0-9"          115 White &lt;NA&gt;  &lt;NA&gt;       
+ 7     7 51646 2009_10  male       8 " 0-9"          101 White &lt;NA&gt;  &lt;NA&gt;       
+ 8     8 51647 2009_10  female    45 " 40-49"        541 White &lt;NA&gt;  College Gr…
+ 9     9 51647 2009_10  female    45 " 40-49"        541 White &lt;NA&gt;  College Gr…
+10    10 51647 2009_10  female    45 " 40-49"        541 White &lt;NA&gt;  College Gr…
+# ℹ more rows
+# ℹ 67 more variables: MaritalStatus &lt;chr&gt;, HHIncome &lt;chr&gt;, HHIncomeMid &lt;int&gt;,
+#   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,
+#   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,
+#   BMICatUnder20yrs &lt;chr&gt;, BMI_WHO &lt;chr&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;,
+#   BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;,
+#   BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;, Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-data" class="slide level2">
+<h2>tidy data</h2>
+<ul>
+<li><code>duckplyr</code> let’s you use the familiar dplyr/tidyverse syntax</li>
+<li>If certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless</li>
+<li>After filteringen/aggregation etc you can always choose to <code>collect()</code> the data and use your ordinary workflow from there</li>
+</ul>
+</section>
+<section id="fater-in-memory" class="slide level2">
+<h2>Fater in memory?</h2>
+<ul>
+<li>DuckDB and <code>{duckplyr}</code> makes it possible to work with data which does not fit into memory</li>
+<li>What if data would fit?
+<ul>
+<li>You can use tibbles and dplyr etc of course …
+<ul>
+<li>… but it might be terribly slooooooooooooow … for big enough data</li>
+<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a>from time to time)</li>
+</ul></li>
+</ul></li>
+<li><code>{data.table}</code> is much more efficient!</li>
+</ul>
+</section>
+<section id="data.table" class="slide level2">
+<h2>data.table</h2>
+<ul>
+<li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
+<li>Has been around since 2006 (stable and well used, even older than tidyverse)</li>
+<li>faster alternatives to base: <code>fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%</code></li>
+<li>C and GForce (some difficulties on Mac …)</li>
+<li>integer based keys and indices (compare to data bases)</li>
+<li>Reference semantics (no need to copy on modification)</li>
+<li>Very flexible and compact (but perhaps unusual) syntax</li>
+</ul>
+</section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(data.table)</span>
+<span id="cb12-2"><a></a>dt <span class="ot">&lt;-</span> NHANES<span class="sc">::</span>NHANES</span>
+<span id="cb12-3"><a></a><span class="fu">setDT</span>(dt)</span>
+<span id="cb12-4"><a></a><span class="fu">setkey</span>(dt, ID) <span class="co"># Use the ID column as index</span></span>
+<span id="cb12-5"><a></a><span class="co"># How many adults by gender do we have</span></span>
+<span id="cb12-6"><a></a>dt[Age <span class="sc">&gt;=</span> <span class="dv">18</span>, .N, Gender]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Gender     N
+   &lt;fctr&gt; &lt;int&gt;
+1:   male  3686
+2: female  3795</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Mean BMI by gender</span></span>
+<span id="cb14-2"><a></a>dt[Age <span class="sc">&gt;=</span> <span class="dv">18</span>, <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Gender]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Gender       V1
+   &lt;fctr&gt;    &lt;num&gt;
+1:   male 28.67528
+2: female 28.66978</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Convert all factors to characters</span></span>
+<span id="cb16-2"><a></a>dt[, <span class="fu">names</span>(.SD) <span class="sc">:</span><span class="er">=</span> <span class="fu">lapply</span>(.SD, as.character), .SDcols <span class="ot">=</span> is.factor]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="joins" class="slide level2">
+<h2>joins</h2>
+<pre><code>x[i, on, nomatch]
+| |  |   |
+| |  |   \__ If NULL only returns rows linked in x and i tables
+| |  \____ a character vector or list defining match logic
+| \_____ primary data.table, list or data.frame
+\____ secondary data.table</code></pre>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 34%">
+<col style="width: 17%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Join type</th>
+<th>data.table</th>
+<th>SQL</th>
+<th>dplyr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Right join</td>
+<td><code>DT1[DT2]</code></td>
+<td>RIGHT JOIN</td>
+<td><code>right_join(DT2, DT1)</code></td>
+</tr>
+<tr class="even">
+<td>Left join</td>
+<td><code>DT2[DT1]</code></td>
+<td>LEFT JOIN</td>
+<td><code>left_join(DT1, DT2)</code></td>
+</tr>
+<tr class="odd">
+<td>Inner join</td>
+<td><code>DT1[DT2, nomatch = 0]</code></td>
+<td>INNER JOIN</td>
+<td><code>inner_join(DT1, DT2)</code></td>
+</tr>
+<tr class="even">
+<td>Full join</td>
+<td><code>merge(DT1, DT2, all = TRUE)</code></td>
+<td>FULL OUTER JOIN</td>
+<td><code>full_join(DT1, DT2)</code></td>
+</tr>
+<tr class="odd">
+<td>Anti join</td>
+<td><code>DT1[!DT2]</code></td>
+<td>NOT EXISTS</td>
+<td><code>anti_join(DT1, DT2)</code></td>
+</tr>
+<tr class="even">
+<td>Semi join</td>
+<td><code>DT1[DT2, nomatch = 0][, unique(.SD)]</code></td>
+<td>EXISTS</td>
+<td><code>semi_join(DT1, DT2)</code></td>
+</tr>
+<tr class="odd">
+<td>Rolling join</td>
+<td><code>DT1[DT2, on = "date", roll = TRUE]</code></td>
+<td>—</td>
+<td><code>join_by()</code> + <code>rolling</code></td>
+</tr>
+<tr class="even">
+<td>Non-equi join</td>
+<td><code>DT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]</code></td>
+<td>—</td>
+<td><code>join_by(x &gt;= lower, x &lt;= upper)</code></td>
+</tr>
+<tr class="odd">
+<td>Update join</td>
+<td><code>DT1[DT2, value := i.value]</code></td>
+<td>UPDATE … JOIN</td>
+<td><code>DT1 %&gt;% left_join(DT2) %&gt;% mutate(...)</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-arel-bundock2025" class="csl-entry" role="listitem">
+Arel-Bundock, Vincent. 2025. <span>“Data.table Vs. Base Vs. Dplyr <span></span> Vincent Arel-Bundock.”</span> <a href="https://arelbundock.com/posts/dt_tb_df/index.html">https://arelbundock.com/posts/dt_tb_df/index.html</a>.
+</div>
+<div id="ref-dataana" class="csl-entry" role="listitem">
+<em>Data Analysis Using Data.table</em>. n.d. 2026. <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html</a>.
+</div>
+<div id="ref-fenk" class="csl-entry" role="listitem">
+Fenk, Simone Rahel, Kari Furu, and Inger Johanne Bakken. n.d. <span>“Improve Data Management in Register-Based Research: Transition from CSV to Parquet.”</span> <a href="https://doi.org/10.1101/2025.10.15.25337992">https://doi.org/10.1101/2025.10.15.25337992</a>.
+</div>
 <div id="ref-nguyen2022a" class="csl-entry" role="listitem">
 Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
+</div>
+<div id="ref-wickham" class="csl-entry" role="listitem">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. <span>“R for Data Science (2e).”</span> <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div>
 </section>
@@ -390,6 +950,44 @@ Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of rea
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

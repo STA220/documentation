@@ -15,11 +15,11 @@ Please do the exercises yourself (on your computer). However, you are allowed to
 
 If you have not already done so, please install the following software on your computer:
 
-1.  Install Positron: [https://posit.co/download/](https://posit.co/download/)
+1.  Install Positron: [https://positron.posit.co/download.html](https://positron.posit.co/download.html)
 
 2.  Install Git: [https://git-scm.com/downloads](https://git-scm.com/downloads)
   - Windows: Download and install binary version
-  - MacOS: A bit more complicated. Perhaps easist with the `$ xcode-select --install` but more recent version with `$ brew install git` (where `$` indicates that this is a command to be run from a terminal, but which itself is not part of the command).
+  - MacOS: Git may already be installed. Type `$ git` and see what happens! Otherwise `$ xcode-select --install` but more recent version with `$ brew install git` (where `$` indicates that this is a command to be run from a terminal, but which itself is not part of the command).
 
 3.  Create a GitHub account (if you do not already have one): [https://github.com]()
 
