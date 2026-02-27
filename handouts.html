@@ -204,7 +204,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL6.html">
- <span class="dropdown-text">EL6: Data sources</span></a>
+ <span class="dropdown-text">EL6: Data formats</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL7.html">
@@ -451,30 +451,40 @@ window.Quarto = {
   <li><a href="#tre" id="toc-tre" class="nav-link" data-scroll-target="#tre">TRE</a></li>
   <li><a href="#in-practice" id="toc-in-practice" class="nav-link" data-scroll-target="#in-practice">In practice</a></li>
   </ul></li>
-  <li><a href="#el6-data-sources" id="toc-el6-data-sources" class="nav-link" data-scroll-target="#el6-data-sources">EL6: Data sources</a>
+  <li><a href="#el6-data-formats" id="toc-el6-data-formats" class="nav-link" data-scroll-target="#el6-data-formats">EL6: Data formats</a>
   <ul class="collapse">
   <li><a href="#reading-1" id="toc-reading-1" class="nav-link" data-scroll-target="#reading-1">Reading</a></li>
   <li><a href="#optional-practice" id="toc-optional-practice" class="nav-link" data-scroll-target="#optional-practice">Optional practice</a></li>
+  <li><a href="#imaginaed-scenario" id="toc-imaginaed-scenario" class="nav-link" data-scroll-target="#imaginaed-scenario">Imaginaed scenario</a></li>
   <li><a href="#sas7bdat" id="toc-sas7bdat" class="nav-link" data-scroll-target="#sas7bdat">.sas7bdat</a></li>
+  <li><a href="#first-try" id="toc-first-try" class="nav-link" data-scroll-target="#first-try">First try</a></li>
+  <li><a href="#large-sas-files" id="toc-large-sas-files" class="nav-link" data-scroll-target="#large-sas-files">Large SAS files</a></li>
   <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">Databases</a></li>
   <li><a href="#row-vs-column-oriented" id="toc-row-vs-column-oriented" class="nav-link" data-scroll-target="#row-vs-column-oriented">Row vs column oriented</a></li>
   <li><a href="#dbms" id="toc-dbms" class="nav-link" data-scroll-target="#dbms">DBMS</a></li>
+  <li><a href="#relevance" id="toc-relevance" class="nav-link" data-scroll-target="#relevance">Relevance</a></li>
   <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
   <li><a href="#what-is-sql-used-for" id="toc-what-is-sql-used-for" class="nav-link" data-scroll-target="#what-is-sql-used-for">What is SQL used for?</a></li>
   <li><a href="#sql-dialects" id="toc-sql-dialects" class="nav-link" data-scroll-target="#sql-dialects">SQL Dialects</a></li>
   <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example">A Simple Example</a></li>
+  <li><a href="#relevance-1" id="toc-relevance-1" class="nav-link" data-scroll-target="#relevance-1">Relevance?</a></li>
   <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb">DuckDB</a></li>
   <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
-  <li><a href="#duckdb-1" id="toc-duckdb-1" class="nav-link" data-scroll-target="#duckdb-1">DuckDB</a></li>
   <li><a href="#duckdb-and-data-files" id="toc-duckdb-and-data-files" class="nav-link" data-scroll-target="#duckdb-and-data-files">DuckDB and Data Files</a></li>
   <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
   <li><a href="#parquet" id="toc-parquet" class="nav-link" data-scroll-target="#parquet">Parquet</a></li>
   <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
   <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data">tidy data</a></li>
-  <li><a href="#fater-in-memory" id="toc-fater-in-memory" class="nav-link" data-scroll-target="#fater-in-memory">Fater in memory?</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
+  <li><a href="#faster-in-memory" id="toc-faster-in-memory" class="nav-link" data-scroll-target="#faster-in-memory">Faster in memory?</a></li>
   <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">data.table</a></li>
+  <li><a href="#copy-on-modify" id="toc-copy-on-modify" class="nav-link" data-scroll-target="#copy-on-modify">Copy-on-modify</a></li>
+  <li><a href="#reference-semantics" id="toc-reference-semantics" class="nav-link" data-scroll-target="#reference-semantics">Reference semantics</a></li>
   <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
   <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">joins</a></li>
+  <li><a href="#external-api" id="toc-external-api" class="nav-link" data-scroll-target="#external-api">External API</a></li>
+  <li><a href="#available-resources" id="toc-available-resources" class="nav-link" data-scroll-target="#available-resources">Available resources</a></li>
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
   </ul></li>
   <li><a href="#el7-standardized-vocabularies" id="toc-el7-standardized-vocabularies" class="nav-link" data-scroll-target="#el7-standardized-vocabularies">EL7: Standardized vocabularies</a>
   <ul class="collapse">
@@ -502,15 +512,15 @@ window.Quarto = {
   <li><a href="#altrep" id="toc-altrep" class="nav-link" data-scroll-target="#altrep"><code>ALTREP</code>?</a></li>
   <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database">Database?</a></li>
   <li><a href="#database-1" id="toc-database-1" class="nav-link" data-scroll-target="#database-1">Database?</a></li>
-  <li><a href="#duckdb-2" id="toc-duckdb-2" class="nav-link" data-scroll-target="#duckdb-2">DuckDB</a></li>
+  <li><a href="#duckdb-1" id="toc-duckdb-1" class="nav-link" data-scroll-target="#duckdb-1">DuckDB</a></li>
   <li><a href="#from-csv-to-parquet" id="toc-from-csv-to-parquet" class="nav-link" data-scroll-target="#from-csv-to-parquet">From CSV to Parquet</a></li>
   <li><a href="#parquet-1" id="toc-parquet-1" class="nav-link" data-scroll-target="#parquet-1">Parquet</a></li>
   <li><a href="#r-specific-data-files" id="toc-r-specific-data-files" class="nav-link" data-scroll-target="#r-specific-data-files">R specific data files?</a></li>
   <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data management</a></li>
   <li><a href="#data.table-1" id="toc-data.table-1" class="nav-link" data-scroll-target="#data.table-1">{data.table}</a></li>
-  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a></li>
   <li><a href="#if-it-doesnt-fit" id="toc-if-it-doesnt-fit" class="nav-link" data-scroll-target="#if-it-doesnt-fit">If it doesn’t fit?</a></li>
-  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a>
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a>
   <ul class="collapse">
   <li><a href="#pros" id="toc-pros" class="nav-link" data-scroll-target="#pros">Pros 👍</a></li>
   <li><a href="#cons" id="toc-cons" class="nav-link" data-scroll-target="#cons">Cons 👎</a></li>
@@ -580,28 +590,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-02-25</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-02-27</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="fxwolrjksy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fxwolrjksy table {
+<div id="kwbgumgmag" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kwbgumgmag table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fxwolrjksy thead, #fxwolrjksy tbody, #fxwolrjksy tfoot, #fxwolrjksy tr, #fxwolrjksy td, #fxwolrjksy th {
+#kwbgumgmag thead, #kwbgumgmag tbody, #kwbgumgmag tfoot, #kwbgumgmag tr, #kwbgumgmag td, #kwbgumgmag th {
   border-style: none;
 }
 
-#fxwolrjksy p {
+#kwbgumgmag p {
   margin: 0;
   padding: 0;
 }
 
-#fxwolrjksy .gt_table {
+#kwbgumgmag .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -627,12 +637,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_caption {
+#kwbgumgmag .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fxwolrjksy .gt_title {
+#kwbgumgmag .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -644,7 +654,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#fxwolrjksy .gt_subtitle {
+#kwbgumgmag .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -656,7 +666,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#fxwolrjksy .gt_heading {
+#kwbgumgmag .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -668,13 +678,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_bottom_border {
+#kwbgumgmag .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_col_headings {
+#kwbgumgmag .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -689,7 +699,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_col_heading {
+#kwbgumgmag .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -709,7 +719,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#fxwolrjksy .gt_column_spanner_outer {
+#kwbgumgmag .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -721,15 +731,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#fxwolrjksy .gt_column_spanner_outer:first-child {
+#kwbgumgmag .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fxwolrjksy .gt_column_spanner_outer:last-child {
+#kwbgumgmag .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fxwolrjksy .gt_column_spanner {
+#kwbgumgmag .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -741,11 +751,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#fxwolrjksy .gt_spanner_row {
+#kwbgumgmag .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fxwolrjksy .gt_group_heading {
+#kwbgumgmag .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -771,7 +781,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#fxwolrjksy .gt_empty_group_heading {
+#kwbgumgmag .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -786,15 +796,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#fxwolrjksy .gt_from_md > :first-child {
+#kwbgumgmag .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fxwolrjksy .gt_from_md > :last-child {
+#kwbgumgmag .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fxwolrjksy .gt_row {
+#kwbgumgmag .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -813,7 +823,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#fxwolrjksy .gt_stub {
+#kwbgumgmag .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -826,7 +836,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#fxwolrjksy .gt_stub_row_group {
+#kwbgumgmag .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -840,15 +850,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#fxwolrjksy .gt_row_group_first td {
+#kwbgumgmag .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fxwolrjksy .gt_row_group_first th {
+#kwbgumgmag .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fxwolrjksy .gt_summary_row {
+#kwbgumgmag .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -858,16 +868,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#fxwolrjksy .gt_first_summary_row {
+#kwbgumgmag .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_first_summary_row.thick {
+#kwbgumgmag .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fxwolrjksy .gt_last_summary_row {
+#kwbgumgmag .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -877,7 +887,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_grand_summary_row {
+#kwbgumgmag .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -887,7 +897,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#fxwolrjksy .gt_first_grand_summary_row {
+#kwbgumgmag .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -897,7 +907,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_last_grand_summary_row_top {
+#kwbgumgmag .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -907,11 +917,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_striped {
+#kwbgumgmag .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fxwolrjksy .gt_table_body {
+#kwbgumgmag .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -920,7 +930,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_footnotes {
+#kwbgumgmag .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -934,7 +944,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_footnote {
+#kwbgumgmag .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -943,7 +953,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#fxwolrjksy .gt_sourcenotes {
+#kwbgumgmag .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -957,7 +967,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#fxwolrjksy .gt_sourcenote {
+#kwbgumgmag .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -965,72 +975,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#fxwolrjksy .gt_left {
+#kwbgumgmag .gt_left {
   text-align: left;
 }
 
-#fxwolrjksy .gt_center {
+#kwbgumgmag .gt_center {
   text-align: center;
 }
 
-#fxwolrjksy .gt_right {
+#kwbgumgmag .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fxwolrjksy .gt_font_normal {
+#kwbgumgmag .gt_font_normal {
   font-weight: normal;
 }
 
-#fxwolrjksy .gt_font_bold {
+#kwbgumgmag .gt_font_bold {
   font-weight: bold;
 }
 
-#fxwolrjksy .gt_font_italic {
+#kwbgumgmag .gt_font_italic {
   font-style: italic;
 }
 
-#fxwolrjksy .gt_super {
+#kwbgumgmag .gt_super {
   font-size: 65%;
 }
 
-#fxwolrjksy .gt_footnote_marks {
+#kwbgumgmag .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fxwolrjksy .gt_asterisk {
+#kwbgumgmag .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fxwolrjksy .gt_indent_1 {
+#kwbgumgmag .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fxwolrjksy .gt_indent_2 {
+#kwbgumgmag .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fxwolrjksy .gt_indent_3 {
+#kwbgumgmag .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fxwolrjksy .gt_indent_4 {
+#kwbgumgmag .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fxwolrjksy .gt_indent_5 {
+#kwbgumgmag .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fxwolrjksy .katex-display {
+#kwbgumgmag .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fxwolrjksy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kwbgumgmag div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3657,8 +3667,8 @@ positron .</code></pre>
 <hr>
 </section>
 </section>
-<section id="el6-data-sources" class="level1">
-<h1>EL6: Data sources</h1>
+<section id="el6-data-formats" class="level1">
+<h1>EL6: Data formats</h1>
 <p><a href="https://sta220.github.io/documentation/EL6.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -3693,46 +3703,86 @@ positron .</code></pre>
 </section>
 <section id="optional-practice" class="level2">
 <h2 class="anchored" data-anchor-id="optional-practice">Optional practice</h2>
+<p>We won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like): - <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a> - <a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a></p>
+</section>
+<section id="imaginaed-scenario" class="level2">
+<h2 class="anchored" data-anchor-id="imaginaed-scenario">Imaginaed scenario</h2>
 <ul>
-<li>We won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
-<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a> is another option</li>
+<li>You have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)</li>
+<li>Aftar a couple of months (it previously took a year), you receive some huge files with file ending <code>.sas7bdat</code></li>
+<li>What do you do now?</li>
 </ul>
 </section>
 <section id="sas7bdat" class="level2">
 <h2 class="anchored" data-anchor-id="sas7bdat">.sas7bdat</h2>
 <ul>
-<li>It is common to receive large data files in SAS format (<code>.sas7bdat</code>)</li>
-<li>Many govermental agencies are using SAS internally</li>
+<li>Many govermental agencies are using SAS</li>
+<li>Their standard format when delivering big data sets</li>
 <li>SAS is great for handling big data sets (no need to read everything into memory)</li>
-<li>But I don’t know how to use SAS 😩</li>
-<li>Possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
-<li>But may not work for larger files</li>
-<li>Best practice for current SAS version (9.4) is to export only nececary data to csv
+<li>But you don’t know how to use SAS 😩</li>
+</ul>
+</section>
+<section id="first-try" class="level2">
+<h2 class="anchored" data-anchor-id="first-try">First try</h2>
 <ul>
-<li>SAS Viya (next version) will be more flexible</li>
+<li>It is often possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
+<li>Based on the <a href="https://github.com/WizardMac/ReadStat">ReadStat C library</a></li>
+<li>Based on <a href="https://github.com/FredHutch/sas7bdat-specification/blob/master/sas7bdat.rst">reverse-engineering of binary files</a>!</li>
+<li>You need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)</li>
+<li>But similar trust always applies when you use open source software, which depend on other peoples software, which depends on …</li>
+<li>But, yes, it is legal according to EU legislation :-)</li>
+</ul>
+<blockquote class="blockquote">
+<p><a href="https://eur-lex.europa.eu/eli/dir/2009/24/oj/eng">Directive 2009/24/EC art 6</a> The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]</p>
+</blockquote>
+<p>But let’s say this did not work for your data! 😩</p>
+</section>
+<section id="large-sas-files" class="level2">
+<h2 class="anchored" data-anchor-id="large-sas-files">Large SAS files</h2>
+<ul>
+<li>Best practice for current SAS version (9.4) is to export only nessecary data to csv
+<ul>
+<li>SAS Viya (another solution not likely replacing SAS 9.4) can export parquet files</li>
 </ul></li>
 <li>You need a SAS license (expensive) as well as some SAS syntax for this
 <ul>
-<li>But you might ask ChatGPT etc to generate such code for you</li>
+<li>But you might ask GenAI to generate such code for you</li>
 </ul></li>
 <li>The exported csv file can later be read into R</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>SAS in the course?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are not using SAS in the course (and it is <a href="https://studentportal.gu.se/en/digital-tools/other-digital-tools-and-software">no longer available for students to download</a> … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost).</p>
+</div>
+</div>
+<hr>
+<p><img src="images/paste-18.png" class="img-fluid"></p>
 </section>
 <section id="databases" class="level2">
 <h2 class="anchored" data-anchor-id="databases">Databases</h2>
 <ul>
-<li><p>a database as a collection of “tables” (tabular data frames)</p></li>
+<li><p>a database is a collection of “tables” (tabular data frames)</p></li>
 <li><p>Differences between data frames and database tables:</p>
 <ul>
 <li>Database tables are stored on disk and can be arbitrarily large.</li>
 <li>Data frames are stored in memory</li>
 <li>Database tables almost always have indexes; makes it possible to quickly find rows of interest
 <ul>
-<li>Data frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.</li>
+<li>Data frames and tibbles don’t have indexes, but <code>data.table</code>s do, which is one of the reasons that they’re so fast.</li>
 </ul></li>
 <li>No fixed row order in a table</li>
 </ul></li>
 </ul>
+<hr>
+<p><img src="images/paste-28.png" class="img-fluid"></p>
 </section>
 <section id="row-vs-column-oriented" class="level2">
 <h2 class="anchored" data-anchor-id="row-vs-column-oriented">Row vs column oriented</h2>
@@ -3748,15 +3798,32 @@ positron .</code></pre>
 <dl>
 <dt>Client-server</dt>
 <dd>
-<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.</p>
+<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.</p>
 </dd>
 <dt>Cloud</dt>
 <dd>
-<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).</p>
+<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.</p>
 </dd>
 <dt>In-process</dt>
 <dd>
-<p>like SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!</p>
+<p>like SQLite or duckdb, run entirely on your computer.</p>
+</dd>
+</dl>
+</section>
+<section id="relevance" class="level2">
+<h2 class="anchored" data-anchor-id="relevance">Relevance</h2>
+<dl>
+<dt>Client-server</dt>
+<dd>
+<p>Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and <a href="https://positron.posit.co/connections-pane">Positron</a> (as well as <a href="https://support.posit.co/hc/en-us/articles/115010915687-Using-RStudio-Connections-in-the-RStudio-IDE">RStudio</a>). If thi is relevant, you can most likely use tools such as <a href="https://dbplyr.tidyverse.org">dbplyr</a> to query the data without to much use of SQL itself.</p>
+</dd>
+<dt>Cloud</dt>
+<dd>
+<p>Commercial cloud products are less likely to be used for sensitive health data within our field.</p>
+</dd>
+<dt>In-process</dt>
+<dd>
+<p>They’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!</p>
 </dd>
 </dl>
 </section>
@@ -3805,6 +3872,15 @@ positron .</code></pre>
 <li>Filters rows</li>
 <li>Sorts the result</li>
 </ul>
+</section>
+<section id="relevance-1" class="level2">
+<h2 class="anchored" data-anchor-id="relevance-1">Relevance?</h2>
+<ul>
+<li>I don’t think SQL is a necessary skill to master for most statisticians</li>
+<li>You should nevertheless be aware of its existence and understand simple code examples as above</li>
+<li>If an employer requires SQL skills, you can probably teach yourself enough if/when needed</li>
+<li>Nevertheless, the more languages/tools etc you know, the more competitive you becoma (but don’t sacrifice statistical knowledge for technical. As a statistician, I think it is more important to study statistical theory and methods compared to specific tools).</li>
+</ul>
 <hr>
 <p><img src="images/paste-25.png" class="img-fluid"></p>
 </section>
@@ -3815,9 +3891,11 @@ positron .</code></pre>
 <li>Column based</li>
 <li>Very easy to set up</li>
 <li>Very efficient!</li>
-<li>SQL is an option but not a requirement
+<li>SQL is an option as API language but not a requirement</li>
+<li>Integration by DBMS and “hidden” SQL under the hood: <a href="https://dbplyr.tidyverse.org">dbplyr</a></li>
+<li>A more “native” implementation by <a href="https://duckplyr.tidyverse.org">duckplyr</a>
 <ul>
-<li>Integration with tidyverse in R (<a href="https://dbplyr.tidyverse.org">dbplyr</a> or <a href="https://duckplyr.tidyverse.org">duckplyr</a>)</li>
+<li>Better (but perhaps not as widely used yet and therefore a bit les mature/stable)</li>
 </ul></li>
 <li>Can be used both with disk data and data in RAM</li>
 </ul>
@@ -3836,14 +3914,15 @@ year &lt;- 2022:2024
 base_url &lt;- "https://blobs.duckdb.org/flight-data-partitioned/"
 files &lt;- paste0("Year=", year, "/data_0.parquet")
 urls &lt;- paste0(base_url, files)
-tibble(urls)
+
 
 ## Connect to the data (without downloading)
 flights &lt;- read_parquet_duckdb(urls)
 ## nrow(flights) # It's not in memory!
-count(flights, Year) # processing outside memory
-
-## Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.
+count(flights, Year) # processing outside memory</code></pre>
+<hr>
+<p>Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.</p>
+<pre class="{r}"><code>#| cache: true
 out &lt;-
   flights |&gt;
   mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;
@@ -3857,15 +3936,6 @@ out &lt;-
 out |&gt;
   explain()</code></pre>
 </section>
-<section id="duckdb-1" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-1">DuckDB</h2>
-<ul>
-<li>DuckDB is an <strong>embedded analytical SQL database</strong>.</li>
-<li>It supports standard SQL</li>
-<li>No server installation is required.</li>
-<li>Designed for analytical workloads</li>
-</ul>
-</section>
 <section id="duckdb-and-data-files" class="level2">
 <h2 class="anchored" data-anchor-id="duckdb-and-data-files">DuckDB and Data Files</h2>
 <p>DuckDB can query files directly:</p>
@@ -3875,7 +3945,7 @@ out |&gt;
 <li>Arrow</li>
 <li>JSON</li>
 </ul>
-<p>No data import is required.</p>
+<p>No data import (to your computers Random Access Memory [RAM]) is required!</p>
 </section>
 <section id="example-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-2">Example</h2>
@@ -3905,7 +3975,7 @@ read_csv_duckdb(csv_file) |&gt;
 <h2 class="anchored" data-anchor-id="example-3">Example</h2>
 <ul>
 <li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file</li>
-<li>The solution below reads all CSV data and then export it to a new parquet file</li>
+<li>The solution below reads the CSV data and then export it to a new parquet file</li>
 <li>This means that all data must still fit into memory
 <ul>
 <li>If it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)</li>
@@ -3929,16 +3999,43 @@ read_parquet_duckdb(parquet_file)</code></pre>
 <li>After filteringen/aggregation etc you can always choose to <code>collect()</code> the data and use your ordinary workflow from there</li>
 </ul>
 </section>
-<section id="fater-in-memory" class="level2">
-<h2 class="anchored" data-anchor-id="fater-in-memory">Fater in memory?</h2>
+<section id="data-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-files">Data files</h2>
+<dl>
+<dt><code>.qs2</code></dt>
+<dd>
+A fast, compressed R-specific binary format used for caching by the <code>{targets}</code> package.<br>
+Data must be fully read from disk into memory (RAM), typically via <code>targets::tar_read()</code>.
+</dd>
+<dt><code>.sas7bdat</code></dt>
+<dd>
+A proprietary binary format used by SAS and commonly encountered in register data deliveries.<br>
+It can be imported into R (e.g.&nbsp;with <code>haven::read_sas()</code>), and some tools allow selection of specific columns at import.<br>
+The dataset is generally read into memory.
+</dd>
+<dt><code>.csv</code> (Comma-Separated Values)</dt>
+<dd>
+A plain-text format following a loosely defined standard.<br>
+It is human-readable but inefficient for large datasets.<br>
+Tools such as DuckDB (via <code>{duckplyr}</code>) can read only the required columns and rows and perform filtering and aggregation during import.
+</dd>
+<dt><code>.parquet</code> (Apache Parquet)</dt>
+<dd>
+A columnar, compressed, and standardized binary format designed for efficient analytics.<br>
+It supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow.
+</dd>
+</dl>
+</section>
+<section id="faster-in-memory" class="level2">
+<h2 class="anchored" data-anchor-id="faster-in-memory">Faster in memory?</h2>
 <ul>
 <li>DuckDB and <code>{duckplyr}</code> makes it possible to work with data which does not fit into memory</li>
-<li>What if data would fit?
+<li>But what if data would fit (which is more common)?
 <ul>
-<li>You can use tibbles and dplyr etc of course …
+<li>You can use tibbles and dplyr etc as usual …
 <ul>
-<li>… but it might be terribly slooooooooooooow … for big enough data</li>
-<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a>from time to time)</li>
+<li>… but it might be slooooooooooooow … for big enough data</li>
+<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a> from time to time)</li>
 </ul></li>
 </ul></li>
 <li><code>{data.table}</code> is much more efficient!</li>
@@ -3947,13 +4044,53 @@ read_parquet_duckdb(parquet_file)</code></pre>
 <section id="data.table" class="level2">
 <h2 class="anchored" data-anchor-id="data.table">data.table</h2>
 <ul>
-<li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
-<li>Has been around since 2006 (stable and well used, even older than tidyverse)</li>
-<li>faster alternatives to base: <code>fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%</code></li>
-<li>C and GForce (some difficulties on Mac …)</li>
-<li>integer based keys and indices (compare to data bases)</li>
-<li>Reference semantics (no need to copy on modification)</li>
-<li>Very flexible and compact (but perhaps unusual) syntax</li>
+<li>An R package (not a data storage format or a database system)</li>
+<li>Comparable to working with <code>data.frame</code> in base R or <code>tibble</code> in the tidyverse</li>
+<li>Sometimes described as a Domain Specific Language (DSL) within R</li>
+<li>Introduced in 2006 (mature, stable, and widely used — older than the tidyverse)</li>
+<li>Provides faster alternatives to several base R functions: <code>fifelse()</code>, <code>fcase()</code>, <code>forder()</code>, <code>fread()</code>, <code>fcoalesce()</code>,<br>
+<code>as.IDate()</code>, <code>%chin%</code></li>
+<li>Core components implemented in C for performance</li>
+<li>Uses concepts similar to databases:
+<ul>
+<li>Integer-based keys and indices<br>
+</li>
+<li>Efficient joins and grouping</li>
+</ul></li>
+<li>Reference semantics<br>
+(modifications by reference — avoids unnecessary copying)</li>
+<li>Very flexible and compact syntax<br>
+(powerful, but sometimes perceived as unusual at first)</li>
+<li>Strongly appreciated by many statisticians —<br>
+unknown to some — and slightly intimidating to others 🙂</li>
+</ul>
+</section>
+<section id="copy-on-modify" class="level2">
+<h2 class="anchored" data-anchor-id="copy-on-modify">Copy-on-modify</h2>
+<ul>
+<li>Assume <code>df</code> is a large <code>data.frame</code>/<code>tibble</code> with many rows and columns, one of them called <code>old</code>.<br>
+Let <code>f()</code> be some function.</li>
+<li>What happens when you add a new column using<br>
+<code>df$new &lt;- f(df$old)</code> or <code>df &lt;- mutate(df, new = f(old))</code>?</li>
+<li>Even though you reuse the name <code>df</code>, R typically creates a modified copy of the object.</li>
+<li>In R, objects use <em>copy-on-modify</em> semantics:
+<ul>
+<li>When an object is changed, a new copy is created (if needed).</li>
+<li>The name <code>df</code> is just a reference to an object in memory.</li>
+<li>After reassignment, <code>df</code> refers to the new object.</li>
+</ul></li>
+<li>The previous object may remain in memory temporarily until garbage collection runs.</li>
+<li>For very large objects, this can result in substantial temporary memory use</li>
+</ul>
+</section>
+<section id="reference-semantics" class="level2">
+<h2 class="anchored" data-anchor-id="reference-semantics">Reference semantics</h2>
+<ul>
+<li>In <code>data.table</code>, reference semantics are used instead.</li>
+<li>You can modify the existing object directly: <code>df[, new := f(old)]</code></li>
+<li>Or delete columns in place: <code>df[, old := NULL]</code></li>
+<li>No full copy is made — the object is modified by reference.</li>
+<li>There is still only one object in memory (and it is still called <code>df</code>).</li>
 </ul>
 </section>
 <section id="example-4" class="level2">
@@ -3980,10 +4117,10 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]</code></pre>
 \____ secondary data.table</code></pre>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 34%">
-<col style="width: 17%">
-<col style="width: 33%">
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4050,7 +4187,133 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]</code></pre>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="external-api" class="level2">
+<h2 class="anchored" data-anchor-id="external-api">External API</h2>
+<ul>
+<li>We previously assumed you get some data delivery from a register holder</li>
+<li>Or mayby you work within the organization were data is collected, and therefore have access to the original data base.</li>
+<li>Some data can also be openly accessed by an Programming Application Interface (API)</li>
+<li>The PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data</li>
+<li>The <code>{pxweb}</code> R package simplifies the process</li>
+</ul>
+</section>
+<section id="available-resources" class="level2">
+<h2 class="anchored" data-anchor-id="available-resources">Available resources</h2>
+<pre class="{r}"><code>#| echo: false
+pxweb::pxweb_api_catalogue() |&gt;
+  purrr::map_chr("description") |&gt;
+  tibble::enframe() |&gt;
+  knitr::kable()</code></pre>
+</section>
+<section id="example-5" class="level2">
+<h2 class="anchored" data-anchor-id="example-5">Example</h2>
+<ul>
+<li>Let’s say we work with cancer data from whole Sweden</li>
+<li>We have access to the number of diagnosed individuals for each month, region,</li>
+<li>Let´s explore some health data for Sweden.</li>
+<li>The first time you need the data, use <code>pxweb_interactive()</code> from your console.</li>
+<li>It will guide you through all the necessary steps.</li>
+<li>It will then provide you the necessary R code to replicate the query</li>
+</ul>
 <hr>
+<pre class="{r}"><code>library(pxweb)
+library(data.table)
+library(ggplot2)
+
+url &lt;- "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N"
+
+## PXWEB query
+pxweb_query_list &lt;-
+  list(
+    "Alder" = "*",
+    "Kon" = c("1", "2"),
+    "ContentsCode" = c("0000053A"),
+    "Tid" = as.character(1864:2024)
+  )
+
+px_data &lt;-
+  pxweb_get(
+    url = url,
+    query = pxweb_query_list
+  )
+
+## A data.table with population numbers
+bef &lt;-
+  px_data |&gt;
+  as.data.frame() |&gt;
+  setDT()
+
+## Some data cleaning
+setnames(
+  bef,
+  c("ålder", "kön", "år", "Antal"),
+  c("age", "sex", "year", "N")
+)
+bef[, `:=`(
+  age = as.numeric(gsub(" år", "", age)),
+  sex = factor(sex, c("män", "kvinnor"), c("males", "females")),
+  year = as.integer(year)
+)]
+bef &lt;- bef[!is.na(age)] # Remove totals
+
+## Aggregate for age groups
+bef[,
+  age_group := cut(
+    age,
+    c(-Inf, 17, 66, Inf),
+    c("children", "adults", "elderly")
+  )
+]
+bef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]
+
+## Visualize
+gg &lt;- bef_ag |&gt;
+  ggplot(aes(year, N, color = age_group, linetype = sex)) +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  scale_y_continuous(
+    labels = scales::label_number(scale = 1e-6, suffix = "M")
+  )</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>eyn #| echo: false gg</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">## Hierachical data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is aother format (used by the IRS/Skatteverket etc when they export population data)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>tlqath { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">## Example</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>eyn #| cache: true library(jsonlite) url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" icd &lt;- fromJSON(url) str(icd$children, max.level = 3)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">## Flatten the hierarchy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">```eyn #| cache: true extract_icd &lt;- function(node) { # Current node current &lt;- tibble::tibble( code = node<span class="math inline">\(code %||% NA_character_,
+description = node\)</span>desc %||% NA_character_ )</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"># If there are children -&gt; recursive call if (!is.null(node<span class="math inline">\(children)) {
+children &lt;- purrr::map_dfr(node\)</span>children, extract_icd) dplyr::bind_rows(current, children) } else { current } }</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">## Flatten the structure for a tabular tibble () (icd_tbl &lt;- purrr::map_dfr(icd$children, extract_icd)) ```</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="el7-standardized-vocabularies" class="level1">
@@ -4438,8 +4701,8 @@ tabellerna. */</code></pre>
 <hr>
 <p><img src="images/bigdata/paste-12.png" class="img-fluid"></p>
 </section>
-<section id="duckdb-2" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-2">DuckDB</h2>
+<section id="duckdb-1" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-1">DuckDB</h2>
 <ul>
 <li>Free and open source (backed by foundation)</li>
 <li>Column based</li>
@@ -4520,8 +4783,8 @@ tabellerna. */</code></pre>
 <li>Very flexible and compact (but perhaps unusual) syntax</li>
 </ul>
 </section>
-<section id="example-5" class="level2">
-<h2 class="anchored" data-anchor-id="example-5">Example</h2>
+<section id="example-6" class="level2">
+<h2 class="anchored" data-anchor-id="example-6">Example</h2>
 <pre class="{r}"><code>#| echo: true
 library(data.table)
 dt &lt;- iris
@@ -4544,8 +4807,8 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]</code></pre
 <li>Only read the results into memory</li>
 </ul>
 </section>
-<section id="example-6" class="level2">
-<h2 class="anchored" data-anchor-id="example-6">Example</h2>
+<section id="example-7" class="level2">
+<h2 class="anchored" data-anchor-id="example-7">Example</h2>
 <pre class="{r}"><code>#| echo: true
 #| eval: false
 library(tidyverse)

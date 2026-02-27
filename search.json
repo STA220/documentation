@@ -837,7 +837,7 @@
     "href": "EL9.html#havenread_sas",
     "title": "EL9: Big data",
     "section": "haven::read_sas()",
-    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x116b35ac8&gt;\n&lt;environment: namespace:haven&gt;"
+    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x12576ccc8&gt;\n&lt;environment: namespace:haven&gt;"
   },
   {
     "objectID": "EL9.html#export-from-sas-to-csv",
@@ -921,7 +921,7 @@
     "href": "EL9.html#example",
     "title": "EL9: Big data",
     "section": "Example",
-    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-28\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-28\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-28\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-28\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-28\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-28\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-28\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-28\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-28\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-28"
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-28\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-28\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-28\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-28\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-28\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-02\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-02\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-02\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-02\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-02\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-28\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-28\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-28\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-28\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-28\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-02\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-02\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-02\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-02\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-02"
   },
   {
     "objectID": "EL9.html#if-it-doesnt-fit",
@@ -1248,161 +1248,252 @@
   {
     "objectID": "EL6.html#reading",
     "href": "EL6.html#reading",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Reading",
     "text": "Reading\n\n(Nguyen 2022, ch. 2) on Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.\nWickham, Çetinkaya-Rundel, and Grolemund (n.d.) chap 21 describes how to connect to a database from R.\nFenk, Furu, and Bakken (n.d.) describe why the current common practice with register data delivery in SAS format should be replaced by parquet files. Until this has happened, we often need to use SAS for data extraction.\nData Analysis Using Data.table (n.d.) introduces the data.table syntax, its general form, how to subset rows, select and compute on columns, and perform aggregations by group.\n\nRecommended references:\n\nArel-Bundock (2025) provides a good comparison between base R, dplyr and data.table."
   },
   {
     "objectID": "EL6.html#optional-practice",
     "href": "EL6.html#optional-practice",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Optional practice",
-    "text": "Optional practice\n\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: SQLzoo\nThe SQL Tutorial for Data Analysis is another option"
+    "text": "Optional practice\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like): - SQLzoo - The SQL Tutorial for Data Analysis"
+  },
+  {
+    "objectID": "EL6.html#imaginaed-scenario",
+    "href": "EL6.html#imaginaed-scenario",
+    "title": "EL6: Data formats",
+    "section": "Imaginaed scenario",
+    "text": "Imaginaed scenario\n\nYou have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)\nAftar a couple of months (it previously took a year), you receive some huge files with file ending .sas7bdat\nWhat do you do now?"
   },
   {
     "objectID": "EL6.html#sas7bdat",
     "href": "EL6.html#sas7bdat",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": ".sas7bdat",
-    "text": ".sas7bdat\n\nIt is common to receive large data files in SAS format (.sas7bdat)\nMany govermental agencies are using SAS internally\nSAS is great for handling big data sets (no need to read everything into memory)\nBut I don’t know how to use SAS 😩\nPossible to read medium-sized SAS files to R by haven::read_sas()\nBut may not work for larger files\nBest practice for current SAS version (9.4) is to export only nececary data to csv\n\nSAS Viya (next version) will be more flexible\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask ChatGPT etc to generate such code for you\n\nThe exported csv file can later be read into R"
+    "text": ".sas7bdat\n\nMany govermental agencies are using SAS\nTheir standard format when delivering big data sets\nSAS is great for handling big data sets (no need to read everything into memory)\nBut you don’t know how to use SAS 😩"
+  },
+  {
+    "objectID": "EL6.html#first-try",
+    "href": "EL6.html#first-try",
+    "title": "EL6: Data formats",
+    "section": "First try",
+    "text": "First try\n\nIt is often possible to read medium-sized SAS files to R by haven::read_sas()\nBased on the ReadStat C library\nBased on reverse-engineering of binary files!\nYou need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)\nBut similar trust always applies when you use open source software, which depend on other peoples software, which depends on …\nBut, yes, it is legal according to EU legislation :-)\n\n\nDirective 2009/24/EC art 6 The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]\n\nBut let’s say this did not work for your data! 😩"
+  },
+  {
+    "objectID": "EL6.html#large-sas-files",
+    "href": "EL6.html#large-sas-files",
+    "title": "EL6: Data formats",
+    "section": "Large SAS files",
+    "text": "Large SAS files\n\nBest practice for current SAS version (9.4) is to export only nessecary data to csv\n\nSAS Viya (another solution not likely replacing SAS 9.4) can export parquet files\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask GenAI to generate such code for you\n\nThe exported csv file can later be read into R\n\n\n\n\n\n\n\nSAS in the course?\n\n\nWe are not using SAS in the course (and it is no longer available for students to download … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost)."
   },
   {
     "objectID": "EL6.html#databases",
     "href": "EL6.html#databases",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Databases",
-    "text": "Databases\n\na database as a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
+    "text": "Databases\n\na database is a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
   },
   {
     "objectID": "EL6.html#row-vs-column-oriented",
     "href": "EL6.html#row-vs-column-oriented",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Row vs column oriented",
     "text": "Row vs column oriented\n\nMost classical databases are optimized for rapidly collecting data, not analyzing existing data.\nThese databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.\nMore recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster."
   },
   {
     "objectID": "EL6.html#dbms",
     "href": "EL6.html#dbms",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "DBMS",
-    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!"
+    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer."
+  },
+  {
+    "objectID": "EL6.html#relevance",
+    "href": "EL6.html#relevance",
+    "title": "EL6: Data formats",
+    "section": "Relevance",
+    "text": "Relevance\n\nClient-server\n\nThose are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and Positron (as well as RStudio). If thi is relevant, you can most likely use tools such as dbplyr to query the data without to much use of SQL itself.\n\nCloud\n\nCommercial cloud products are less likely to be used for sensitive health data within our field.\n\nIn-process\n\nThey’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!"
   },
   {
     "objectID": "EL6.html#sql",
     "href": "EL6.html#sql",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "SQL",
     "text": "SQL\n\nDifferent database systems may use different query languages.\nThe Structured Query Language (SQL) is the most widely used for relational databases.\nDefined by international standards (ANSI/ISO)."
   },
   {
     "objectID": "EL6.html#what-is-sql-used-for",
     "href": "EL6.html#what-is-sql-used-for",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "What is SQL used for?",
     "text": "What is SQL used for?\nSQL is used to:\n\nRetrieve data (SELECT)\nFilter data (WHERE)\nAggregate data (GROUP BY)\nCombine tables (JOIN)\nModify data (INSERT, UPDATE, DELETE)"
   },
   {
     "objectID": "EL6.html#sql-dialects",
     "href": "EL6.html#sql-dialects",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "SQL Dialects",
     "text": "SQL Dialects\n\nSQL is a standard, but implementations differ slightly.\nThese variations are called dialects.\n\nT-SQL (Microsoft SQL Server)\nPL/SQL (Oracle)\nPostgreSQL SQL dialect\nMySQL SQL dialect\n\n\nMost core functionality is similar across systems."
   },
   {
     "objectID": "EL6.html#a-simple-example",
     "href": "EL6.html#a-simple-example",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "A Simple Example",
     "text": "A Simple Example\nSELECT name, age\nFROM students\nWHERE age &gt;= 18\nORDER BY age;\nThis query:\n\nSelects two columns\nFilters rows\nSorts the result"
   },
   {
+    "objectID": "EL6.html#relevance-1",
+    "href": "EL6.html#relevance-1",
+    "title": "EL6: Data formats",
+    "section": "Relevance?",
+    "text": "Relevance?\n\nI don’t think SQL is a necessary skill to master for most statisticians\nYou should nevertheless be aware of its existence and understand simple code examples as above\nIf an employer requires SQL skills, you can probably teach yourself enough if/when needed\nNevertheless, the more languages/tools etc you know, the more competitive you becoma (but don’t sacrifice statistical knowledge for technical. As a statistician, I think it is more important to study statistical theory and methods compared to specific tools)."
+  },
+  {
     "objectID": "EL6.html#duckdb",
     "href": "EL6.html#duckdb",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "DuckDB",
-    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option but not a requirement\n\nIntegration with tidyverse in R (dbplyr or duckplyr)\n\nCan be used both with disk data and data in RAM"
+    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option as API language but not a requirement\nIntegration by DBMS and “hidden” SQL under the hood: dbplyr\nA more “native” implementation by duckplyr\n\nBetter (but perhaps not as widely used yet and therefore a bit les mature/stable)\n\nCan be used both with disk data and data in RAM"
   },
   {
     "objectID": "EL6.html#example",
     "href": "EL6.html#example",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
-    "text": "Example\n\n# pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n# Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n# Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\ntibble(urls)\n\n# A tibble: 3 × 1\n  urls                                                                     \n  &lt;chr&gt;                                                                    \n1 https://blobs.duckdb.org/flight-data-partitioned/Year=2022/data_0.parquet\n2 https://blobs.duckdb.org/flight-data-partitioned/Year=2023/data_0.parquet\n3 https://blobs.duckdb.org/flight-data-partitioned/Year=2024/data_0.parquet\n\n# Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n# nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n# A duckplyr data frame: 2 variables\n   Year       n\n  &lt;dbl&gt;   &lt;int&gt;\n1  2022 6729125\n2  2023 6847899\n3  2024 3461319\n\n# Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()\n\n┌───────────────────────────┐\n│       HASH_GROUP_BY       │\n│    ────────────────────   │\n│          Groups:          │\n│             #0            │\n│             #1            │\n│                           │\n│        Aggregates:        │\n│          mean(#2)         │\n│         median(#3)        │\n│                           │\n│      ~13,458,249 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│            Year           │\n│           Month           │\n│       InFlightDelay       │\n│       InFlightDelay       │\n│                           │\n│      ~13,458,250 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│            Year           │\n│           Month           │\n│       InFlightDelay       │\n│                           │\n│      ~13,458,250 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│       READ_PARQUET        │\n│    ────────────────────   │\n│         Function:         │\n│        READ_PARQUET       │\n│                           │\n│        Projections:       │\n│            Year           │\n│           Month           │\n│          DepDelay         │\n│          ArrDelay         │\n│                           │\n│       File Filters:       │\n│  (CAST(Year AS DOUBLE) &lt;  │\n│           2024.0)         │\n│                           │\n│    Scanning Files: 2/3    │\n│                           │\n│      ~13,458,250 rows     │\n└───────────────────────────┘"
-  },
-  {
-    "objectID": "EL6.html#duckdb-1",
-    "href": "EL6.html#duckdb-1",
-    "title": "EL6: Data sources",
-    "section": "DuckDB",
-    "text": "DuckDB\n\nDuckDB is an embedded analytical SQL database.\nIt supports standard SQL\nNo server installation is required.\nDesigned for analytical workloads"
+    "text": "Example\n\n# pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n# Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n# Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\n\n\n# Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n# nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n# A duckplyr data frame: 2 variables\n   Year       n\n  &lt;dbl&gt;   &lt;int&gt;\n1  2022 6729125\n2  2023 6847899\n3  2024 3461319"
   },
   {
     "objectID": "EL6.html#duckdb-and-data-files",
     "href": "EL6.html#duckdb-and-data-files",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "DuckDB and Data Files",
-    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import is required."
+    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import (to your computers Random Access Memory [RAM]) is required!"
   },
   {
     "objectID": "EL6.html#example-1",
     "href": "EL6.html#example-1",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
     "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n\n\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)\n\n# A duckplyr data frame: 2 variables\n  Gender BMI_mean\n  &lt;chr&gt;     &lt;dbl&gt;\n1 male       28.7\n2 female     28.7"
   },
   {
     "objectID": "EL6.html#parquet",
     "href": "EL6.html#parquet",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Parquet",
     "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read"
   },
   {
     "objectID": "EL6.html#example-2",
     "href": "EL6.html#example-2",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
-    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads all CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n\n# install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n# Now\nread_parquet_duckdb(parquet_file)\n\n# A duckplyr data frame: 77 variables\n      C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  \n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      \n 1     1 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 2     2 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 3     3 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 4     4 51625 2009_10  male       4 \" 0-9\"           49 Other &lt;NA&gt;  &lt;NA&gt;       \n 5     5 51630 2009_10  female    49 \" 40-49\"        596 White &lt;NA&gt;  Some Colle…\n 6     6 51638 2009_10  male       9 \" 0-9\"          115 White &lt;NA&gt;  &lt;NA&gt;       \n 7     7 51646 2009_10  male       8 \" 0-9\"          101 White &lt;NA&gt;  &lt;NA&gt;       \n 8     8 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n 9     9 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n10    10 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n# ℹ more rows\n# ℹ 67 more variables: MaritalStatus &lt;chr&gt;, HHIncome &lt;chr&gt;, HHIncomeMid &lt;int&gt;,\n#   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,\n#   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   BMICatUnder20yrs &lt;chr&gt;, BMI_WHO &lt;chr&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;,\n#   BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;,\n#   BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;, Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, …"
+    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads the CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n\n# install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n# Now\nread_parquet_duckdb(parquet_file)\n\n# A duckplyr data frame: 77 variables\n      C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  \n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      \n 1     1 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 2     2 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 3     3 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 4     4 51625 2009_10  male       4 \" 0-9\"           49 Other &lt;NA&gt;  &lt;NA&gt;       \n 5     5 51630 2009_10  female    49 \" 40-49\"        596 White &lt;NA&gt;  Some Colle…\n 6     6 51638 2009_10  male       9 \" 0-9\"          115 White &lt;NA&gt;  &lt;NA&gt;       \n 7     7 51646 2009_10  male       8 \" 0-9\"          101 White &lt;NA&gt;  &lt;NA&gt;       \n 8     8 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n 9     9 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n10    10 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n# ℹ more rows\n# ℹ 67 more variables: MaritalStatus &lt;chr&gt;, HHIncome &lt;chr&gt;, HHIncomeMid &lt;int&gt;,\n#   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,\n#   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   BMICatUnder20yrs &lt;chr&gt;, BMI_WHO &lt;chr&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;,\n#   BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;,\n#   BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;, Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, …"
   },
   {
     "objectID": "EL6.html#tidy-data",
     "href": "EL6.html#tidy-data",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "tidy data",
     "text": "tidy data\n\nduckplyr let’s you use the familiar dplyr/tidyverse syntax\nIf certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless\nAfter filteringen/aggregation etc you can always choose to collect() the data and use your ordinary workflow from there"
   },
   {
-    "objectID": "EL6.html#fater-in-memory",
-    "href": "EL6.html#fater-in-memory",
-    "title": "EL6: Data sources",
-    "section": "Fater in memory?",
-    "text": "Fater in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nWhat if data would fit?\n\nYou can use tibbles and dplyr etc of course …\n\n… but it might be terribly slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvementsfrom time to time)\n\n\n{data.table} is much more efficient!"
+    "objectID": "EL6.html#data-files",
+    "href": "EL6.html#data-files",
+    "title": "EL6: Data formats",
+    "section": "Data files",
+    "text": "Data files\n\n.qs2\n\nA fast, compressed R-specific binary format used for caching by the {targets} package.\nData must be fully read from disk into memory (RAM), typically via targets::tar_read().\n\n.sas7bdat\n\nA proprietary binary format used by SAS and commonly encountered in register data deliveries.\nIt can be imported into R (e.g. with haven::read_sas()), and some tools allow selection of specific columns at import.\nThe dataset is generally read into memory.\n\n.csv (Comma-Separated Values)\n\nA plain-text format following a loosely defined standard.\nIt is human-readable but inefficient for large datasets.\nTools such as DuckDB (via {duckplyr}) can read only the required columns and rows and perform filtering and aggregation during import.\n\n.parquet (Apache Parquet)\n\nA columnar, compressed, and standardized binary format designed for efficient analytics.\nIt supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow."
+  },
+  {
+    "objectID": "EL6.html#faster-in-memory",
+    "href": "EL6.html#faster-in-memory",
+    "title": "EL6: Data formats",
+    "section": "Faster in memory?",
+    "text": "Faster in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nBut what if data would fit (which is more common)?\n\nYou can use tibbles and dplyr etc as usual …\n\n… but it might be slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvements from time to time)\n\n\n{data.table} is much more efficient!"
   },
   {
     "objectID": "EL6.html#data.table",
     "href": "EL6.html#data.table",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "data.table",
-    "text": "data.table\n\nShare basic properties with data frames (dt[i, j]; merge())\nHas been around since 2006 (stable and well used, even older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare to data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
+    "text": "data.table\n\nAn R package (not a data storage format or a database system)\nComparable to working with data.frame in base R or tibble in the tidyverse\nSometimes described as a Domain Specific Language (DSL) within R\nIntroduced in 2006 (mature, stable, and widely used — older than the tidyverse)\nProvides faster alternatives to several base R functions: fifelse(), fcase(), forder(), fread(), fcoalesce(),\nas.IDate(), %chin%\nCore components implemented in C for performance\nUses concepts similar to databases:\n\nInteger-based keys and indices\n\nEfficient joins and grouping\n\nReference semantics\n(modifications by reference — avoids unnecessary copying)\nVery flexible and compact syntax\n(powerful, but sometimes perceived as unusual at first)\nStrongly appreciated by many statisticians —\nunknown to some — and slightly intimidating to others 🙂"
+  },
+  {
+    "objectID": "EL6.html#copy-on-modify",
+    "href": "EL6.html#copy-on-modify",
+    "title": "EL6: Data formats",
+    "section": "Copy-on-modify",
+    "text": "Copy-on-modify\n\nAssume df is a large data.frame/tibble with many rows and columns, one of them called old.\nLet f() be some function.\nWhat happens when you add a new column using\ndf$new &lt;- f(df$old) or df &lt;- mutate(df, new = f(old))?\nEven though you reuse the name df, R typically creates a modified copy of the object.\nIn R, objects use copy-on-modify semantics:\n\nWhen an object is changed, a new copy is created (if needed).\nThe name df is just a reference to an object in memory.\nAfter reassignment, df refers to the new object.\n\nThe previous object may remain in memory temporarily until garbage collection runs.\nFor very large objects, this can result in substantial temporary memory use"
+  },
+  {
+    "objectID": "EL6.html#reference-semantics",
+    "href": "EL6.html#reference-semantics",
+    "title": "EL6: Data formats",
+    "section": "Reference semantics",
+    "text": "Reference semantics\n\nIn data.table, reference semantics are used instead.\nYou can modify the existing object directly: df[, new := f(old)]\nOr delete columns in place: df[, old := NULL]\nNo full copy is made — the object is modified by reference.\nThere is still only one object in memory (and it is still called df)."
   },
   {
     "objectID": "EL6.html#example-3",
     "href": "EL6.html#example-3",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
     "text": "Example\n\nlibrary(data.table)\ndt &lt;- NHANES::NHANES\nsetDT(dt)\nsetkey(dt, ID) # Use the ID column as index\n# How many adults by gender do we have\ndt[Age &gt;= 18, .N, Gender]\n\n   Gender     N\n   &lt;fctr&gt; &lt;int&gt;\n1:   male  3686\n2: female  3795\n\n# Mean BMI by gender\ndt[Age &gt;= 18, mean(BMI, na.rm = TRUE), Gender]\n\n   Gender       V1\n   &lt;fctr&gt;    &lt;num&gt;\n1:   male 28.67528\n2: female 28.66978\n\n# Convert all factors to characters\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]"
   },
   {
     "objectID": "EL6.html#joins",
     "href": "EL6.html#joins",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "joins",
     "text": "joins\nx[i, on, nomatch]\n| |  |   |\n| |  |   \\__ If NULL only returns rows linked in x and i tables\n| |  \\____ a character vector or list defining match logic\n| \\_____ primary data.table, list or data.frame\n\\____ secondary data.table\n\n\n\n\n\n\n\n\n\nJoin type\ndata.table\nSQL\ndplyr\n\n\n\n\nRight join\nDT1[DT2]\nRIGHT JOIN\nright_join(DT2, DT1)\n\n\nLeft join\nDT2[DT1]\nLEFT JOIN\nleft_join(DT1, DT2)\n\n\nInner join\nDT1[DT2, nomatch = 0]\nINNER JOIN\ninner_join(DT1, DT2)\n\n\nFull join\nmerge(DT1, DT2, all = TRUE)\nFULL OUTER JOIN\nfull_join(DT1, DT2)\n\n\nAnti join\nDT1[!DT2]\nNOT EXISTS\nanti_join(DT1, DT2)\n\n\nSemi join\nDT1[DT2, nomatch = 0][, unique(.SD)]\nEXISTS\nsemi_join(DT1, DT2)\n\n\nRolling join\nDT1[DT2, on = \"date\", roll = TRUE]\n—\njoin_by() + rolling\n\n\nNon-equi join\nDT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]\n—\njoin_by(x &gt;= lower, x &lt;= upper)\n\n\nUpdate join\nDT1[DT2, value := i.value]\nUPDATE … JOIN\nDT1 %&gt;% left_join(DT2) %&gt;% mutate(...)"
   },
   {
+    "objectID": "EL6.html#external-api",
+    "href": "EL6.html#external-api",
+    "title": "EL6: Data formats",
+    "section": "External API",
+    "text": "External API\n\nWe previously assumed you get some data delivery from a register holder\nOr mayby you work within the organization were data is collected, and therefore have access to the original data base.\nSome data can also be openly accessed by an Programming Application Interface (API)\nThe PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data\nThe {pxweb} R package simplifies the process"
+  },
+  {
+    "objectID": "EL6.html#available-resources",
+    "href": "EL6.html#available-resources",
+    "title": "EL6: Data formats",
+    "section": "Available resources",
+    "text": "Available resources\n\n\n\n\n\n\n\n\n\nname\nvalue\n\n\n\n\napi.scb.se\nStatistics Sweden\n\n\nstatfin.stat.fi\nStatistics Finland\n\n\npxwebapi2.stat.fi\nStatistics Finland (old version)\n\n\nstatistik.sjv.se\nThe Swedish Agricultural Agency\n\n\nfohm-app.folkhalsomyndigheten.se\nThe Public Health Agency of Sweden\n\n\nstatistik.konj.se\nThe Swedish National Institute of Economic Research\n\n\nprognos.konj.se\nThe Swedish national institute of economic research, forecast database\n\n\nstatdb.luke.fi\nLUKE Natural Resources Institute Finland\n\n\nvero2.stat.fi\nVerohallinto - Finnish Tax Administration\n\n\npx.hagstofa.is\nStatistics Iceland\n\n\nstatistik.linkoping.se\nLinköping municipality in Sweden\n\n\npxwebb2017.vgregion.se\nVastra Gotaland Region in Sweden\n\n\nbank.stat.gl\nStatbank Greenland\n\n\npx.rsv.is\nIcelandic Centre for Retail Studies\n\n\nstatbank.hagstova.fo\nStatistics Faroe Islands\n\n\ndata.ssb.no\nStatistics Norway\n\n\npxweb.asub.ax\nStatistics Aland\n\n\nmakstat.stat.gov.mk\nState Statistical Office of the Republic of Macedonia\n\n\ndata.stat.gov.lv\nLatvia - official statistics\n\n\nstatbank.statistica.md\nStatistics Moldova\n\n\nwww.pxweb.bfs.admin.ch\nStatistics Switzerland\n\n\naskdata.rks-gov.net\nStatistics Kosovo\n\n\ntrafi2.stat.fi\nFinnish Transport Safety Agency\n\n\nw3.unece.org\nUnited Nations Economic Commission for Europe\n\n\nwww.grande-region.lu\nPortail statistique de la Grande Région\n\n\nvisitfinland.stat.fi\nVisit Finland (Rudolf service)\n\n\nstat.hel.fi\nHelsingin seudun aluesarjat -tilastotietokanta\n\n\nandmed.stat.ee\nEstonia - official statistics\n\n\npxweb.nordicstatistics.org\nNordic Statistics Database\n\n\npxweb.stat.si\nSiStat Database"
+  },
+  {
+    "objectID": "EL6.html#example-4",
+    "href": "EL6.html#example-4",
+    "title": "EL6: Data formats",
+    "section": "Example",
+    "text": "Example\n\nLet’s say we work with cancer data from whole Sweden\nWe have access to the number of diagnosed individuals for each month, region,\nLet´s explore some health data for Sweden.\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query"
+  },
+  {
+    "objectID": "EL6.html#hierachical-data",
+    "href": "EL6.html#hierachical-data",
+    "title": "EL6: Data formats",
+    "section": "Hierachical data",
+    "text": "Hierachical data\n\nWe like tabular data!\nIf we get wide data we can transform it to long data (and vice versa)\nBut we might sometimes encounter more hierarchical data structures\nJSON (JavaScript Object Notation) most popular\nXML is aother format (used by the IRS/Skatteverket etc when they export population data)\n\n\n{\n  \"system\": \"ICD-10\",\n  \"chapter\": {\n    \"code\": \"Chapter I\",\n    \"title\": \"Certain infectious and parasitic diseases\",\n    \"range\": \"A00–B99\",\n    \"blocks\": [\n      {\n        \"code\": \"A00–A09\",\n        \"title\": \"Intestinal infectious diseases\",\n        \"categories\": [\n          {\n            \"code\": \"A00\",\n            \"title\": \"Cholera\",\n            \"includes\": [\"Vibrio cholerae infection\"],\n            \"excludes\": [\"Carrier state\"],\n            \"subcategories\": [\n              {\n                \"code\": \"A00.0\",\n                \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\"\n              },\n              {\n                \"code\": \"A00.1\",\n                \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}"
+  },
+  {
+    "objectID": "EL6.html#example-5",
+    "href": "EL6.html#example-5",
+    "title": "EL6: Data formats",
+    "section": "Example",
+    "text": "Example\n\nlibrary(jsonlite)\nurl &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\"\nicd &lt;- fromJSON(url)\nstr(icd$children, max.level = 3)\n\nList of 22\n $ :'data.frame':   22 obs. of  3 variables:\n  ..$ code    : chr [1:22] \"A00-A09\" \"A15-A19\" \"A20-A28\" \"A30-A49\" ...\n  ..$ desc    : chr [1:22] \"Intestinal infectious diseases\" \"Tuberculosis\" \"Certain zoonotic bacterial diseases\" \"Other bacterial diseases\" ...\n  ..$ children:List of 22\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 18 obs. of  3 variables:\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 15 obs. of  3 variables:\n  .. ..$ :'data.frame': 12 obs. of  3 variables:\n  .. ..$ :'data.frame': 19 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   21 obs. of  3 variables:\n  ..$ code    : chr [1:21] \"C00-C14\" \"C15-C26\" \"C30-C39\" \"C40-C41\" ...\n  ..$ desc    : chr [1:21] \"Malignant neoplasms of lip, oral cavity and pharynx\" \"Malignant neoplasms of digestive organs\" \"Malignant neoplasms of respiratory and intrathoracic organs\" \"Malignant neoplasms of bone and articular cartilage\" ...\n  ..$ children:List of 21\n  .. ..$ :'data.frame': 15 obs. of  3 variables:\n  .. ..$ :'data.frame': 12 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 14 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 27 obs. of  3 variables:\n  .. ..$ :'data.frame': 12 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   7 obs. of  3 variables:\n  ..$ code    : chr [1:7] \"D50-D53\" \"D55-D59\" \"D60-D64\" \"D65-D69\" ...\n  ..$ desc    : chr [1:7] \"Nutritional anemias\" \"Hemolytic anemias\" \"Aplastic and other anemias and other bone marrow failure syndromes\" \"Coagulation defects, purpura and other hemorrhagic conditions\" ...\n  ..$ children:List of 7\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n $ :'data.frame':   10 obs. of  3 variables:\n  ..$ code    : chr [1:10] \"E00-E07\" \"E08-E13\" \"E15-E16\" \"E20-E35\" ...\n  ..$ desc    : chr [1:10] \"Disorders of thyroid gland\" \"Diabetes mellitus\" \"Other disorders of glucose regulation and pancreatic internal secretion\" \"Disorders of other endocrine glands\" ...\n  ..$ children:List of 10\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 15 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 17 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   11 obs. of  3 variables:\n  ..$ code    : chr [1:11] \"F01-F09\" \"F10-F19\" \"F20-F29\" \"F30-F39\" ...\n  ..$ desc    : chr [1:11] \"Mental disorders due to known physiological conditions\" \"Mental and behavioral disorders due to psychoactive substance use\" \"Schizophrenia, schizotypal, delusional, and other non-mood psychotic disorders\" \"Mood [affective] disorders\" ...\n  ..$ children:List of 11\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   11 obs. of  3 variables:\n  ..$ code    : chr [1:11] \"G00-G09\" \"G10-G14\" \"G20-G26\" \"G30-G32\" ...\n  ..$ desc    : chr [1:11] \"Inflammatory diseases of the central nervous system\" \"Systemic atrophies primarily affecting the central nervous system\" \"Extrapyramidal and movement disorders\" \"Other degenerative diseases of the nervous system\" ...\n  ..$ children:List of 11\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n $ :'data.frame':   12 obs. of  3 variables:\n  ..$ code    : chr [1:12] \"H00-H05\" \"H10-H11\" \"H15-H22\" \"H25-H28\" ...\n  ..$ desc    : chr [1:12] \"Disorders of eyelid, lacrimal system and orbit\" \"Disorders of conjunctiva\" \"Disorders of sclera, cornea, iris and ciliary body\" \"Disorders of lens\" ...\n  ..$ children:List of 12\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   5 obs. of  3 variables:\n  ..$ code    : chr [1:5] \"H60-H62\" \"H65-H75\" \"H80-H83\" \"H90-H94\" ...\n  ..$ desc    : chr [1:5] \"Diseases of external ear\" \"Diseases of middle ear and mastoid\" \"Diseases of inner ear\" \"Other disorders of ear\" ...\n  ..$ children:List of 5\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   10 obs. of  3 variables:\n  ..$ code    : chr [1:10] \"I00-I02\" \"I05-I09\" \"I10-I16\" \"I20-I25\" ...\n  ..$ desc    : chr [1:10] \"Acute rheumatic fever\" \"Chronic rheumatic heart diseases\" \"Hypertensive diseases\" \"Ischemic heart diseases\" ...\n  ..$ children:List of 10\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 24 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n $ :'data.frame':   11 obs. of  3 variables:\n  ..$ code    : chr [1:11] \"J00-J06\" \"J09-J18\" \"J20-J22\" \"J30-J39\" ...\n  ..$ desc    : chr [1:11] \"Acute upper respiratory infections\" \"Influenza and pneumonia\" \"Other acute lower respiratory infections\" \"Other diseases of upper respiratory tract\" ...\n  ..$ children:List of 11\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n $ :'data.frame':   10 obs. of  3 variables:\n  ..$ code    : chr [1:10] \"K00-K14\" \"K20-K31\" \"K35-K38\" \"K40-K46\" ...\n  ..$ desc    : chr [1:10] \"Diseases of oral cavity and salivary glands\" \"Diseases of esophagus, stomach and duodenum\" \"Diseases of appendix\" \"Hernia\" ...\n  ..$ children:List of 10\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n $ :'data.frame':   9 obs. of  3 variables:\n  ..$ code    : chr [1:9] \"L00-L08\" \"L10-L14\" \"L20-L30\" \"L40-L45\" ...\n  ..$ desc    : chr [1:9] \"Infections of the skin and subcutaneous tissue\" \"Bullous disorders\" \"Dermatitis and eczema\" \"Papulosquamous disorders\" ...\n  ..$ children:List of 9\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 14 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 19 obs. of  3 variables:\n $ :'data.frame':   20 obs. of  3 variables:\n  ..$ code    : chr [1:20] \"M00-M02\" \"M04-M04\" \"M05-M14\" \"M15-M19\" ...\n  ..$ desc    : chr [1:20] \"Infectious arthropathies\" \"Autoinflammatory syndromes\" \"Inflammatory polyarthropathies\" \"Osteoarthritis\" ...\n  ..$ children:List of 20\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   11 obs. of  3 variables:\n  ..$ code    : chr [1:11] \"N00-N08\" \"N10-N16\" \"N17-N19\" \"N20-N23\" ...\n  ..$ desc    : chr [1:11] \"Glomerular diseases\" \"Renal tubulo-interstitial diseases\" \"Acute kidney failure and chronic kidney disease\" \"Urolithiasis\" ...\n  ..$ children:List of 11\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 14 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 19 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   9 obs. of  3 variables:\n  ..$ code    : chr [1:9] \"O00-O08\" \"O09-O09\" \"O10-O16\" \"O20-O29\" ...\n  ..$ desc    : chr [1:9] \"Pregnancy with abortive outcome\" \"Supervision of high risk pregnancy\" \"Edema, proteinuria and hypertensive disorders in pregnancy, childbirth and the puerperium\" \"Other maternal disorders predominantly related to pregnancy\" ...\n  ..$ children:List of 9\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 16 obs. of  3 variables:\n  .. ..$ :'data.frame': 18 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n $ :'data.frame':   12 obs. of  3 variables:\n  ..$ code    : chr [1:12] \"P00-P04\" \"P05-P08\" \"P09-P09\" \"P10-P15\" ...\n  ..$ desc    : chr [1:12] \"Newborn affected by maternal factors and by complications of pregnancy, labor, and delivery\" \"Disorders of newborn related to length of gestation and fetal growth\" \"Abnormal findings on neonatal screening\" \"Birth trauma\" ...\n  ..$ children:List of 12\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 12 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n $ :'data.frame':   11 obs. of  3 variables:\n  ..$ code    : chr [1:11] \"Q00-Q07\" \"Q10-Q18\" \"Q20-Q28\" \"Q30-Q34\" ...\n  ..$ desc    : chr [1:11] \"Congenital malformations of the nervous system\" \"Congenital malformations of eye, ear, face and neck\" \"Congenital malformations of the circulatory system\" \"Congenital malformations of the respiratory system\" ...\n  ..$ children:List of 11\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 15 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n $ :'data.frame':   14 obs. of  3 variables:\n  ..$ code    : chr [1:14] \"R00-R09\" \"R10-R19\" \"R20-R23\" \"R25-R29\" ...\n  ..$ desc    : chr [1:14] \"Symptoms and signs involving the circulatory and respiratory systems\" \"Symptoms and signs involving the digestive system and abdomen\" \"Symptoms and signs involving the skin and subcutaneous tissue\" \"Symptoms and signs involving the nervous and musculoskeletal systems\" ...\n  ..$ children:List of 14\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 18 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 7 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n $ :'data.frame':   22 obs. of  3 variables:\n  ..$ code    : chr [1:22] \"S00-S09\" \"S10-S19\" \"S20-S29\" \"S30-S39\" ...\n  ..$ desc    : chr [1:22] \"Injuries to the head\" \"Injuries to the neck\" \"Injuries to the thorax\" \"Injuries to the abdomen, lower back, lumbar spine, pelvis and external genitals\" ...\n  ..$ children:List of 22\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 15 obs. of  3 variables:\n  .. ..$ :'data.frame': 15 obs. of  3 variables:\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n $ :'data.frame':   2 obs. of  3 variables:\n  ..$ code    : chr [1:2] \"U00-U49\" \"U50-U85\"\n  ..$ desc    : chr [1:2] \"Provisional assignment of new diseases of uncertain etiology or emergency use\" \"Provisional assignment of new diseases of uncertain etiology or emergency use\"\n  ..$ children:List of 2\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n $ :'data.frame':   30 obs. of  3 variables:\n  ..$ code    : chr [1:30] \"V00-V09\" \"V10-V19\" \"V20-V29\" \"V30-V39\" ...\n  ..$ desc    : chr [1:30] \"Pedestrian injured in transport accident\" \"Pedal cycle rider injured in transport accident\" \"Motorcycle rider injured in transport accident\" \"Occupant of three-wheeled motor vehicle injured in transport accident\" ...\n  ..$ children:List of 30\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 3 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 19 obs. of  3 variables:\n  .. ..$ :'data.frame': 25 obs. of  3 variables:\n  .. ..$ :'data.frame': 14 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 9 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 16 obs. of  3 variables:\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 4 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 5 obs. of  3 variables:\n $ :'data.frame':   15 obs. of  3 variables:\n  ..$ code    : chr [1:15] \"Z00-Z13\" \"Z14-Z15\" \"Z16-Z16\" \"Z17-Z17\" ...\n  ..$ desc    : chr [1:15] \"Persons encountering health services for examinations\" \"Genetic carrier and genetic susceptibility to disease\" \"Resistance to antimicrobial drugs\" \"Estrogen receptor status\" ...\n  ..$ children:List of 15\n  .. ..$ :'data.frame': 11 obs. of  3 variables:\n  .. ..$ :'data.frame': 2 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 6 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 13 obs. of  3 variables:\n  .. ..$ :'data.frame': 10 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 1 obs. of  3 variables:\n  .. ..$ :'data.frame': 8 obs. of  3 variables:\n  .. ..$ :'data.frame': 23 obs. of  3 variables:"
+  },
+  {
+    "objectID": "EL6.html#flatten-the-hierarchy",
+    "href": "EL6.html#flatten-the-hierarchy",
+    "title": "EL6: Data formats",
+    "section": "Flatten the hierarchy",
+    "text": "Flatten the hierarchy\n\nextract_icd &lt;- function(node) {\n  # Current node\n  current &lt;- tibble::tibble(\n    code = node$code %||% NA_character_,\n    description = node$desc %||% NA_character_\n  )\n\n  # If there are children -&gt; recursive call\n  if (!is.null(node$children)) {\n    children &lt;- purrr::map_dfr(node$children, extract_icd)\n    dplyr::bind_rows(current, children)\n  } else {\n    current\n  }\n}\n\n# Flatten the structure for a tabular tibble ()\n(icd_tbl &lt;- purrr::map_dfr(icd$children, extract_icd))\n\n# A tibble: 118,321 × 2\n   code    description                                                \n   &lt;chr&gt;   &lt;chr&gt;                                                      \n 1 A00-A09 Intestinal infectious diseases                             \n 2 A15-A19 Tuberculosis                                               \n 3 A20-A28 Certain zoonotic bacterial diseases                        \n 4 A30-A49 Other bacterial diseases                                   \n 5 A50-A64 Infections with a predominantly sexual mode of transmission\n 6 A65-A69 Other spirochetal diseases                                 \n 7 A70-A74 Other diseases caused by chlamydiae                        \n 8 A75-A79 Rickettsioses                                              \n 9 A80-A89 Viral and prion infections of the central nervous system   \n10 A90-A99 Arthropod-borne viral fevers and viral hemorrhagic fevers  \n# ℹ 118,311 more rows"
+  },
+  {
     "objectID": "EL6.html#references",
     "href": "EL6.html#references",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "",
     "text": "Arel-Bundock, Vincent. 2025. “Data.table Vs. Base Vs. Dplyr  Vincent Arel-Bundock.” https://arelbundock.com/posts/dt_tb_df/index.html.\n\n\nData Analysis Using Data.table. n.d. 2026. https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html.\n\n\nFenk, Simone Rahel, Kari Furu, and Inger Johanne Bakken. n.d. “Improve Data Management in Register-Based Research: Transition from CSV to Parquet.” https://doi.org/10.1101/2025.10.15.25337992.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. “R for Data Science (2e).” https://r4ds.hadley.nz/."
   },
@@ -1572,7 +1663,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-25."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-27."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -2748,21 +2839,42 @@
     "href": "handouts.html#optional-practice",
     "title": "Handouts",
     "section": "Optional practice",
-    "text": "Optional practice\n\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: SQLzoo\nThe SQL Tutorial for Data Analysis is another option"
+    "text": "Optional practice\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like): - SQLzoo - The SQL Tutorial for Data Analysis"
+  },
+  {
+    "objectID": "handouts.html#imaginaed-scenario",
+    "href": "handouts.html#imaginaed-scenario",
+    "title": "Handouts",
+    "section": "Imaginaed scenario",
+    "text": "Imaginaed scenario\n\nYou have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)\nAftar a couple of months (it previously took a year), you receive some huge files with file ending .sas7bdat\nWhat do you do now?"
   },
   {
     "objectID": "handouts.html#sas7bdat",
     "href": "handouts.html#sas7bdat",
     "title": "Handouts",
     "section": ".sas7bdat",
-    "text": ".sas7bdat\n\nIt is common to receive large data files in SAS format (.sas7bdat)\nMany govermental agencies are using SAS internally\nSAS is great for handling big data sets (no need to read everything into memory)\nBut I don’t know how to use SAS 😩\nPossible to read medium-sized SAS files to R by haven::read_sas()\nBut may not work for larger files\nBest practice for current SAS version (9.4) is to export only nececary data to csv\n\nSAS Viya (next version) will be more flexible\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask ChatGPT etc to generate such code for you\n\nThe exported csv file can later be read into R"
+    "text": ".sas7bdat\n\nMany govermental agencies are using SAS\nTheir standard format when delivering big data sets\nSAS is great for handling big data sets (no need to read everything into memory)\nBut you don’t know how to use SAS 😩"
+  },
+  {
+    "objectID": "handouts.html#first-try",
+    "href": "handouts.html#first-try",
+    "title": "Handouts",
+    "section": "First try",
+    "text": "First try\n\nIt is often possible to read medium-sized SAS files to R by haven::read_sas()\nBased on the ReadStat C library\nBased on reverse-engineering of binary files!\nYou need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)\nBut similar trust always applies when you use open source software, which depend on other peoples software, which depends on …\nBut, yes, it is legal according to EU legislation :-)\n\n\nDirective 2009/24/EC art 6 The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]\n\nBut let’s say this did not work for your data! 😩"
+  },
+  {
+    "objectID": "handouts.html#large-sas-files",
+    "href": "handouts.html#large-sas-files",
+    "title": "Handouts",
+    "section": "Large SAS files",
+    "text": "Large SAS files\n\nBest practice for current SAS version (9.4) is to export only nessecary data to csv\n\nSAS Viya (another solution not likely replacing SAS 9.4) can export parquet files\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask GenAI to generate such code for you\n\nThe exported csv file can later be read into R\n\n\n\n\n\n\n\nNoteSAS in the course?\n\n\n\nWe are not using SAS in the course (and it is no longer available for students to download … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost)."
   },
   {
     "objectID": "handouts.html#databases",
     "href": "handouts.html#databases",
     "title": "Handouts",
     "section": "Databases",
-    "text": "Databases\n\na database as a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
+    "text": "Databases\n\na database is a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
   },
   {
     "objectID": "handouts.html#row-vs-column-oriented",
@@ -2776,7 +2888,14 @@
     "href": "handouts.html#dbms",
     "title": "Handouts",
     "section": "DBMS",
-    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!"
+    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer."
+  },
+  {
+    "objectID": "handouts.html#relevance",
+    "href": "handouts.html#relevance",
+    "title": "Handouts",
+    "section": "Relevance",
+    "text": "Relevance\n\nClient-server\n\nThose are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and Positron (as well as RStudio). If thi is relevant, you can most likely use tools such as dbplyr to query the data without to much use of SQL itself.\n\nCloud\n\nCommercial cloud products are less likely to be used for sensitive health data within our field.\n\nIn-process\n\nThey’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!"
   },
   {
     "objectID": "handouts.html#sql",
@@ -2807,32 +2926,32 @@
     "text": "A Simple Example\nSELECT name, age\nFROM students\nWHERE age &gt;= 18\nORDER BY age;\nThis query:\n\nSelects two columns\nFilters rows\nSorts the result"
   },
   {
+    "objectID": "handouts.html#relevance-1",
+    "href": "handouts.html#relevance-1",
+    "title": "Handouts",
+    "section": "Relevance?",
+    "text": "Relevance?\n\nI don’t think SQL is a necessary skill to master for most statisticians\nYou should nevertheless be aware of its existence and understand simple code examples as above\nIf an employer requires SQL skills, you can probably teach yourself enough if/when needed\nNevertheless, the more languages/tools etc you know, the more competitive you becoma (but don’t sacrifice statistical knowledge for technical. As a statistician, I think it is more important to study statistical theory and methods compared to specific tools)."
+  },
+  {
     "objectID": "handouts.html#duckdb",
     "href": "handouts.html#duckdb",
     "title": "Handouts",
     "section": "DuckDB",
-    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option but not a requirement\n\nIntegration with tidyverse in R (dbplyr or duckplyr)\n\nCan be used both with disk data and data in RAM"
+    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option as API language but not a requirement\nIntegration by DBMS and “hidden” SQL under the hood: dbplyr\nA more “native” implementation by duckplyr\n\nBetter (but perhaps not as widely used yet and therefore a bit les mature/stable)\n\nCan be used both with disk data and data in RAM"
   },
   {
     "objectID": "handouts.html#example-1",
     "href": "handouts.html#example-1",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n## pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n## Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n## Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\ntibble(urls)\n\n## Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n## nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n## Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()"
-  },
-  {
-    "objectID": "handouts.html#duckdb-1",
-    "href": "handouts.html#duckdb-1",
-    "title": "Handouts",
-    "section": "DuckDB",
-    "text": "DuckDB\n\nDuckDB is an embedded analytical SQL database.\nIt supports standard SQL\nNo server installation is required.\nDesigned for analytical workloads"
+    "text": "Example\n## pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n## Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n## Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\n\n\n## Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n## nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\nComplex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\n#| cache: true\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()"
   },
   {
     "objectID": "handouts.html#duckdb-and-data-files",
     "href": "handouts.html#duckdb-and-data-files",
     "title": "Handouts",
     "section": "DuckDB and Data Files",
-    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import is required."
+    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import (to your computers Random Access Memory [RAM]) is required!"
   },
   {
     "objectID": "handouts.html#example-2",
@@ -2853,7 +2972,7 @@
     "href": "handouts.html#example-3",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads all CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n#| cache: true\n## install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n## Now\nread_parquet_duckdb(parquet_file)"
+    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads the CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n#| cache: true\n## install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n## Now\nread_parquet_duckdb(parquet_file)"
   },
   {
     "objectID": "handouts.html#tidy-data",
@@ -2863,18 +2982,39 @@
     "text": "tidy data\n\nduckplyr let’s you use the familiar dplyr/tidyverse syntax\nIf certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless\nAfter filteringen/aggregation etc you can always choose to collect() the data and use your ordinary workflow from there"
   },
   {
-    "objectID": "handouts.html#fater-in-memory",
-    "href": "handouts.html#fater-in-memory",
+    "objectID": "handouts.html#data-files",
+    "href": "handouts.html#data-files",
     "title": "Handouts",
-    "section": "Fater in memory?",
-    "text": "Fater in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nWhat if data would fit?\n\nYou can use tibbles and dplyr etc of course …\n\n… but it might be terribly slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvementsfrom time to time)\n\n\n{data.table} is much more efficient!"
+    "section": "Data files",
+    "text": "Data files\n\n.qs2\n\nA fast, compressed R-specific binary format used for caching by the {targets} package.\nData must be fully read from disk into memory (RAM), typically via targets::tar_read().\n\n.sas7bdat\n\nA proprietary binary format used by SAS and commonly encountered in register data deliveries.\nIt can be imported into R (e.g. with haven::read_sas()), and some tools allow selection of specific columns at import.\nThe dataset is generally read into memory.\n\n.csv (Comma-Separated Values)\n\nA plain-text format following a loosely defined standard.\nIt is human-readable but inefficient for large datasets.\nTools such as DuckDB (via {duckplyr}) can read only the required columns and rows and perform filtering and aggregation during import.\n\n.parquet (Apache Parquet)\n\nA columnar, compressed, and standardized binary format designed for efficient analytics.\nIt supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow."
+  },
+  {
+    "objectID": "handouts.html#faster-in-memory",
+    "href": "handouts.html#faster-in-memory",
+    "title": "Handouts",
+    "section": "Faster in memory?",
+    "text": "Faster in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nBut what if data would fit (which is more common)?\n\nYou can use tibbles and dplyr etc as usual …\n\n… but it might be slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvements from time to time)\n\n\n{data.table} is much more efficient!"
   },
   {
     "objectID": "handouts.html#data.table",
     "href": "handouts.html#data.table",
     "title": "Handouts",
     "section": "data.table",
-    "text": "data.table\n\nShare basic properties with data frames (dt[i, j]; merge())\nHas been around since 2006 (stable and well used, even older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare to data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
+    "text": "data.table\n\nAn R package (not a data storage format or a database system)\nComparable to working with data.frame in base R or tibble in the tidyverse\nSometimes described as a Domain Specific Language (DSL) within R\nIntroduced in 2006 (mature, stable, and widely used — older than the tidyverse)\nProvides faster alternatives to several base R functions: fifelse(), fcase(), forder(), fread(), fcoalesce(),\nas.IDate(), %chin%\nCore components implemented in C for performance\nUses concepts similar to databases:\n\nInteger-based keys and indices\n\nEfficient joins and grouping\n\nReference semantics\n(modifications by reference — avoids unnecessary copying)\nVery flexible and compact syntax\n(powerful, but sometimes perceived as unusual at first)\nStrongly appreciated by many statisticians —\nunknown to some — and slightly intimidating to others 🙂"
+  },
+  {
+    "objectID": "handouts.html#copy-on-modify",
+    "href": "handouts.html#copy-on-modify",
+    "title": "Handouts",
+    "section": "Copy-on-modify",
+    "text": "Copy-on-modify\n\nAssume df is a large data.frame/tibble with many rows and columns, one of them called old.\nLet f() be some function.\nWhat happens when you add a new column using\ndf$new &lt;- f(df$old) or df &lt;- mutate(df, new = f(old))?\nEven though you reuse the name df, R typically creates a modified copy of the object.\nIn R, objects use copy-on-modify semantics:\n\nWhen an object is changed, a new copy is created (if needed).\nThe name df is just a reference to an object in memory.\nAfter reassignment, df refers to the new object.\n\nThe previous object may remain in memory temporarily until garbage collection runs.\nFor very large objects, this can result in substantial temporary memory use"
+  },
+  {
+    "objectID": "handouts.html#reference-semantics",
+    "href": "handouts.html#reference-semantics",
+    "title": "Handouts",
+    "section": "Reference semantics",
+    "text": "Reference semantics\n\nIn data.table, reference semantics are used instead.\nYou can modify the existing object directly: df[, new := f(old)]\nOr delete columns in place: df[, old := NULL]\nNo full copy is made — the object is modified by reference.\nThere is still only one object in memory (and it is still called df)."
   },
   {
     "objectID": "handouts.html#example-4",
@@ -2889,6 +3029,27 @@
     "title": "Handouts",
     "section": "joins",
     "text": "joins\nx[i, on, nomatch]\n| |  |   |\n| |  |   \\__ If NULL only returns rows linked in x and i tables\n| |  \\____ a character vector or list defining match logic\n| \\_____ primary data.table, list or data.frame\n\\____ secondary data.table\n\n\n\n\n\n\n\n\n\nJoin type\ndata.table\nSQL\ndplyr\n\n\n\n\nRight join\nDT1[DT2]\nRIGHT JOIN\nright_join(DT2, DT1)\n\n\nLeft join\nDT2[DT1]\nLEFT JOIN\nleft_join(DT1, DT2)\n\n\nInner join\nDT1[DT2, nomatch = 0]\nINNER JOIN\ninner_join(DT1, DT2)\n\n\nFull join\nmerge(DT1, DT2, all = TRUE)\nFULL OUTER JOIN\nfull_join(DT1, DT2)\n\n\nAnti join\nDT1[!DT2]\nNOT EXISTS\nanti_join(DT1, DT2)\n\n\nSemi join\nDT1[DT2, nomatch = 0][, unique(.SD)]\nEXISTS\nsemi_join(DT1, DT2)\n\n\nRolling join\nDT1[DT2, on = \"date\", roll = TRUE]\n—\njoin_by() + rolling\n\n\nNon-equi join\nDT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]\n—\njoin_by(x &gt;= lower, x &lt;= upper)\n\n\nUpdate join\nDT1[DT2, value := i.value]\nUPDATE … JOIN\nDT1 %&gt;% left_join(DT2) %&gt;% mutate(...)"
+  },
+  {
+    "objectID": "handouts.html#external-api",
+    "href": "handouts.html#external-api",
+    "title": "Handouts",
+    "section": "External API",
+    "text": "External API\n\nWe previously assumed you get some data delivery from a register holder\nOr mayby you work within the organization were data is collected, and therefore have access to the original data base.\nSome data can also be openly accessed by an Programming Application Interface (API)\nThe PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data\nThe {pxweb} R package simplifies the process"
+  },
+  {
+    "objectID": "handouts.html#available-resources",
+    "href": "handouts.html#available-resources",
+    "title": "Handouts",
+    "section": "Available resources",
+    "text": "Available resources\n#| echo: false\npxweb::pxweb_api_catalogue() |&gt;\n  purrr::map_chr(\"description\") |&gt;\n  tibble::enframe() |&gt;\n  knitr::kable()"
+  },
+  {
+    "objectID": "handouts.html#example-5",
+    "href": "handouts.html#example-5",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n\nLet’s say we work with cancer data from whole Sweden\nWe have access to the number of diagnosed individuals for each month, region,\nLet´s explore some health data for Sweden.\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\neyn #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is aother format (used by the IRS/Skatteverket etc when they export population data)\n\n\ntlqath { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\neyn #| cache: true library(jsonlite) url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" icd &lt;- fromJSON(url) str(icd$children, max.level = 3)\n\n\n## Flatten the hierarchy\n\n\n```eyn #| cache: true extract_icd &lt;- function(node) { # Current node current &lt;- tibble::tibble( code = node\\(code %||% NA_character_,\ndescription = node\\)desc %||% NA_character_ )\n\n\n# If there are children -&gt; recursive call if (!is.null(node\\(children)) {\nchildren &lt;- purrr::map_dfr(node\\)children, extract_icd) dplyr::bind_rows(current, children) } else { current } }\n\n\n## Flatten the structure for a tabular tibble () (icd_tbl &lt;- purrr::map_dfr(icd$children, extract_icd)) ```"
   },
   {
     "objectID": "handouts.html#reading-2",
@@ -3010,8 +3171,8 @@
     "text": "Database?\n\nI don’t want to administer Microsoft SQL Server myself!\n\n(They had R support for a couple of years but not any more)\n\nSQLight is easy to use …\nbut (as SQL server) it is row based 🙁\nSome complicated ones are column based 😀 (Snowflake, Google Big Query)\n\n… but I don’t want to administer those either …\n\nDuckDB comes for rescue!\n\n\n\n\n\n\n\nImportantIndices\n\n\n\nNever forget to set proper indices if needed!"
   },
   {
-    "objectID": "handouts.html#duckdb-2",
-    "href": "handouts.html#duckdb-2",
+    "objectID": "handouts.html#duckdb-1",
+    "href": "handouts.html#duckdb-1",
     "title": "Handouts",
     "section": "DuckDB",
     "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nIntegration with tidyverse in R\nCan be used both with disk data and data in RAM\n… but I had some bad experience and now I am scared 😢"
@@ -3052,8 +3213,8 @@
     "text": "{data.table}\n\nShare basic properties with data frames (dt[i, j]; merge())\nPrint method inspired by {tibble}\nSome old friends from {reshape2}: melt(), dcast()\nHas been around since 2006 (stable and well used, older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
   },
   {
-    "objectID": "handouts.html#example-5",
-    "href": "handouts.html#example-5",
+    "objectID": "handouts.html#example-6",
+    "href": "handouts.html#example-6",
     "title": "Handouts",
     "section": "Example",
     "text": "Example\n#| echo: true\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\ndt[, .N, Species]\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]"
@@ -3066,8 +3227,8 @@
     "text": "If it doesn’t fit?\n\nConnect to parquet file.\nUse DuckDB to process the data (while still on disk)\nUse {dplyr} to translate its syntax into SQL code\nProcess data on disk\nOnly read the results into memory"
   },
   {
-    "objectID": "handouts.html#example-6",
-    "href": "handouts.html#example-6",
+    "objectID": "handouts.html#example-7",
+    "href": "handouts.html#example-7",
     "title": "Handouts",
     "section": "Example",
     "text": "Example\n#| echo: true\n#| eval: false\nlibrary(tidyverse)\ndb1 &lt;-\n  arrow::open_dataset(\"file1.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  select(col1:col3) |&gt;\n  filter(...) |&gt;\n  pivot_wider(..) \n\ndb2 &lt;-\n  arrow::open_dataset(\"file2.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  count(x, y) |&gt;\n  filter(...)\n\ndf &lt;- \n  db1 |&gt;  \n  left_join(db2) |&gt;\n  collect() # Only the resulting part should be collected!\n  \n\n\nPros 👍\n\nLazy: nothing evaluated until it is actually needed (collected)\nMany basic functions are translated from R to SQL\nDuckDB is parallelized ({data.table} is mostly sequential)\nFamiliar syntax from tidyverse\n\n\n\nCons 👎\n\ntidyverse -&gt; SQL translation not perfect (non optimized)\nmight be relatively slow if intermediate steps are not cached and needs to be performed repeatedly"

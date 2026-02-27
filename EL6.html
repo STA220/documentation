@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – EL6: Data sources</title>
+  <title>STA220 – EL6: Data formats</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -214,7 +214,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EL6: Data sources</h1>
+  <h1 class="title">EL6: Data formats</h1>
   <p class="subtitle">data.table, SQL, DuckDB, parquett, SAS, JSON, API</p>
 
 <div class="quarto-title-authors">
@@ -236,47 +236,91 @@
 </section>
 <section id="optional-practice" class="slide level2">
 <h2>Optional practice</h2>
+<p>We won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like): - <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a> - <a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a></p>
+</section>
+<section id="imaginaed-scenario" class="slide level2">
+<h2>Imaginaed scenario</h2>
 <ul>
-<li>We won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
-<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a> is another option</li>
+<li>You have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)</li>
+<li>Aftar a couple of months (it previously took a year), you receive some huge files with file ending <code>.sas7bdat</code></li>
+<li>What do you do now?</li>
 </ul>
 </section>
 <section id="sas7bdat" class="slide level2">
 <h2>.sas7bdat</h2>
 <ul>
-<li>It is common to receive large data files in SAS format (<code>.sas7bdat</code>)</li>
-<li>Many govermental agencies are using SAS internally</li>
+<li>Many govermental agencies are using SAS</li>
+<li>Their standard format when delivering big data sets</li>
 <li>SAS is great for handling big data sets (no need to read everything into memory)</li>
-<li>But I don’t know how to use SAS 😩</li>
-<li>Possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
-<li>But may not work for larger files</li>
-<li>Best practice for current SAS version (9.4) is to export only nececary data to csv
+<li>But you don’t know how to use SAS 😩</li>
+</ul>
+</section>
+<section id="first-try" class="slide level2">
+<h2>First try</h2>
 <ul>
-<li>SAS Viya (next version) will be more flexible</li>
+<li>It is often possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
+<li>Based on the <a href="https://github.com/WizardMac/ReadStat">ReadStat C library</a></li>
+<li>Based on <a href="https://github.com/FredHutch/sas7bdat-specification/blob/master/sas7bdat.rst">reverse-engineering of binary files</a>!</li>
+<li>You need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)</li>
+<li>But similar trust always applies when you use open source software, which depend on other peoples software, which depends on …</li>
+<li>But, yes, it is legal according to EU legislation :-)</li>
+</ul>
+<blockquote>
+<p><a href="https://eur-lex.europa.eu/eli/dir/2009/24/oj/eng">Directive 2009/24/EC art 6</a> The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]</p>
+</blockquote>
+<p>But let’s say this did not work for your data! 😩</p>
+</section>
+<section id="large-sas-files" class="slide level2">
+<h2>Large SAS files</h2>
+<ul>
+<li>Best practice for current SAS version (9.4) is to export only nessecary data to csv
+<ul>
+<li>SAS Viya (another solution not likely replacing SAS 9.4) can export parquet files</li>
 </ul></li>
 <li>You need a SAS license (expensive) as well as some SAS syntax for this
 <ul>
-<li>But you might ask ChatGPT etc to generate such code for you</li>
+<li>But you might ask GenAI to generate such code for you</li>
 </ul></li>
 <li>The exported csv file can later be read into R</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>SAS in the course?</strong></p>
+</div>
+<div class="callout-content">
+<p>We are not using SAS in the course (and it is <a href="https://studentportal.gu.se/en/digital-tools/other-digital-tools-and-software">no longer available for students to download</a> … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost).</p>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-18.png" class="r-stretch"></section>
 <section id="databases" class="slide level2">
 <h2>Databases</h2>
 <ul>
-<li><p>a database as a collection of “tables” (tabular data frames)</p></li>
+<li><p>a database is a collection of “tables” (tabular data frames)</p></li>
 <li><p>Differences between data frames and database tables:</p>
 <ul>
 <li>Database tables are stored on disk and can be arbitrarily large.</li>
 <li>Data frames are stored in memory</li>
 <li>Database tables almost always have indexes; makes it possible to quickly find rows of interest
 <ul>
-<li>Data frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.</li>
+<li>Data frames and tibbles don’t have indexes, but <code>data.table</code>s do, which is one of the reasons that they’re so fast.</li>
 </ul></li>
 <li>No fixed row order in a table</li>
 </ul></li>
 </ul>
 </section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-28.png" class="r-stretch"></section>
 <section id="row-vs-column-oriented" class="slide level2">
 <h2>Row vs column oriented</h2>
 <ul>
@@ -291,15 +335,32 @@
 <dl>
 <dt>Client-server</dt>
 <dd>
-<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.</p>
+<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.</p>
 </dd>
 <dt>Cloud</dt>
 <dd>
-<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).</p>
+<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.</p>
 </dd>
 <dt>In-process</dt>
 <dd>
-<p>like SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!</p>
+<p>like SQLite or duckdb, run entirely on your computer.</p>
+</dd>
+</dl>
+</section>
+<section id="relevance" class="slide level2">
+<h2>Relevance</h2>
+<dl>
+<dt>Client-server</dt>
+<dd>
+<p>Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and <a href="https://positron.posit.co/connections-pane">Positron</a> (as well as <a href="https://support.posit.co/hc/en-us/articles/115010915687-Using-RStudio-Connections-in-the-RStudio-IDE">RStudio</a>). If thi is relevant, you can most likely use tools such as <a href="https://dbplyr.tidyverse.org">dbplyr</a> to query the data without to much use of SQL itself.</p>
+</dd>
+<dt>Cloud</dt>
+<dd>
+<p>Commercial cloud products are less likely to be used for sensitive health data within our field.</p>
+</dd>
+<dt>In-process</dt>
+<dd>
+<p>They’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!</p>
 </dd>
 </dl>
 </section>
@@ -349,6 +410,15 @@
 <li>Sorts the result</li>
 </ul>
 </section>
+<section id="relevance-1" class="slide level2">
+<h2>Relevance?</h2>
+<ul>
+<li>I don’t think SQL is a necessary skill to master for most statisticians</li>
+<li>You should nevertheless be aware of its existence and understand simple code examples as above</li>
+<li>If an employer requires SQL skills, you can probably teach yourself enough if/when needed</li>
+<li>Nevertheless, the more languages/tools etc you know, the more competitive you becoma (but don’t sacrifice statistical knowledge for technical. As a statistician, I think it is more important to study statistical theory and methods compared to specific tools).</li>
+</ul>
+</section>
 <section class="slide level2">
 
 
@@ -360,9 +430,11 @@
 <li>Column based</li>
 <li>Very easy to set up</li>
 <li>Very efficient!</li>
-<li>SQL is an option but not a requirement
+<li>SQL is an option as API language but not a requirement</li>
+<li>Integration by DBMS and “hidden” SQL under the hood: <a href="https://dbplyr.tidyverse.org">dbplyr</a></li>
+<li>A more “native” implementation by <a href="https://duckplyr.tidyverse.org">duckplyr</a>
 <ul>
-<li>Integration with tidyverse in R (<a href="https://dbplyr.tidyverse.org">dbplyr</a> or <a href="https://duckplyr.tidyverse.org">duckplyr</a>)</li>
+<li>Better (but perhaps not as widely used yet and therefore a bit les mature/stable)</li>
 </ul></li>
 <li>Can be used both with disk data and data in RAM</li>
 </ul>
@@ -382,19 +454,12 @@
 <span id="cb2-10"><a></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://blobs.duckdb.org/flight-data-partitioned/"</span></span>
 <span id="cb2-11"><a></a>files <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Year="</span>, year, <span class="st">"/data_0.parquet"</span>)</span>
 <span id="cb2-12"><a></a>urls <span class="ot">&lt;-</span> <span class="fu">paste0</span>(base_url, files)</span>
-<span id="cb2-13"><a></a><span class="fu">tibble</span>(urls)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 1
-  urls                                                                     
-  &lt;chr&gt;                                                                    
-1 https://blobs.duckdb.org/flight-data-partitioned/Year=2022/data_0.parquet
-2 https://blobs.duckdb.org/flight-data-partitioned/Year=2023/data_0.parquet
-3 https://blobs.duckdb.org/flight-data-partitioned/Year=2024/data_0.parquet</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Connect to the data (without downloading)</span></span>
-<span id="cb4-2"><a></a>flights <span class="ot">&lt;-</span> <span class="fu">read_parquet_duckdb</span>(urls)</span>
-<span id="cb4-3"><a></a><span class="co"># nrow(flights) # It's not in memory!</span></span>
-<span id="cb4-4"><a></a><span class="fu">count</span>(flights, Year) <span class="co"># processing outside memory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a></span>
+<span id="cb2-15"><a></a><span class="co"># Connect to the data (without downloading)</span></span>
+<span id="cb2-16"><a></a>flights <span class="ot">&lt;-</span> <span class="fu">read_parquet_duckdb</span>(urls)</span>
+<span id="cb2-17"><a></a><span class="co"># nrow(flights) # It's not in memory!</span></span>
+<span id="cb2-18"><a></a><span class="fu">count</span>(flights, Year) <span class="co"># processing outside memory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A duckplyr data frame: 2 variables
    Year       n
@@ -403,19 +468,24 @@
 2  2023 6847899
 3  2024 3461319</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.</span></span>
-<span id="cb6-2"><a></a>out <span class="ot">&lt;-</span></span>
-<span id="cb6-3"><a></a>  flights <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a></a>  <span class="fu">mutate</span>(<span class="at">InFlightDelay =</span> ArrDelay <span class="sc">-</span> DepDelay) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb6-6"><a></a>    <span class="at">.by =</span> <span class="fu">c</span>(Year, Month),</span>
-<span id="cb6-7"><a></a>    <span class="at">MeanInFlightDelay =</span> <span class="fu">mean</span>(InFlightDelay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-8"><a></a>    <span class="at">MedianInFlightDelay =</span> <span class="fu">median</span>(InFlightDelay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-9"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-10"><a></a>  <span class="fu">filter</span>(Year <span class="sc">&lt;</span> <span class="dv">2024</span>)</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a>out <span class="sc">|&gt;</span></span>
-<span id="cb6-13"><a></a>  <span class="fu">explain</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>out <span class="ot">&lt;-</span></span>
+<span id="cb4-2"><a></a>  flights <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">mutate</span>(<span class="at">InFlightDelay =</span> ArrDelay <span class="sc">-</span> DepDelay) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb4-5"><a></a>    <span class="at">.by =</span> <span class="fu">c</span>(Year, Month),</span>
+<span id="cb4-6"><a></a>    <span class="at">MeanInFlightDelay =</span> <span class="fu">mean</span>(InFlightDelay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-7"><a></a>    <span class="at">MedianInFlightDelay =</span> <span class="fu">median</span>(InFlightDelay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb4-8"><a></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">filter</span>(Year <span class="sc">&lt;</span> <span class="dv">2024</span>)</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a>out <span class="sc">|&gt;</span></span>
+<span id="cb4-12"><a></a>  <span class="fu">explain</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>┌───────────────────────────┐
 │       HASH_GROUP_BY       │
@@ -472,15 +542,6 @@
 </div>
 </div>
 </section>
-<section id="duckdb-1" class="slide level2">
-<h2>DuckDB</h2>
-<ul>
-<li>DuckDB is an <strong>embedded analytical SQL database</strong>.</li>
-<li>It supports standard SQL</li>
-<li>No server installation is required.</li>
-<li>Designed for analytical workloads</li>
-</ul>
-</section>
 <section id="duckdb-and-data-files" class="slide level2">
 <h2>DuckDB and Data Files</h2>
 <p>DuckDB can query files directly:</p>
@@ -490,7 +551,7 @@
 <li>Arrow</li>
 <li>JSON</li>
 </ul>
-<p>No data import is required.</p>
+<p>No data import (to your computers Random Access Memory [RAM]) is required!</p>
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example</h2>
@@ -499,12 +560,12 @@
 <li>DuckDB can query the relevant data from that file directly and collect only the data you actually need!</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>csv_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".csv"</span>)</span>
-<span id="cb8-2"><a></a><span class="fu">write.csv</span>(NHANES<span class="sc">::</span>NHANES, csv_file)</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="fu">read_csv_duckdb</span>(csv_file) <span class="sc">|&gt;</span></span>
-<span id="cb8-5"><a></a>  <span class="fu">filter</span>(Age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-6"><a></a>  <span class="fu">summarise</span>(<span class="at">BMI_mean =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(BMI), <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.by =</span> Gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>csv_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".csv"</span>)</span>
+<span id="cb6-2"><a></a><span class="fu">write.csv</span>(NHANES<span class="sc">::</span>NHANES, csv_file)</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="fu">read_csv_duckdb</span>(csv_file) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a></a>  <span class="fu">filter</span>(Age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a></a>  <span class="fu">summarise</span>(<span class="at">BMI_mean =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(BMI), <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.by =</span> Gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A duckplyr data frame: 2 variables
   Gender BMI_mean
@@ -531,21 +592,21 @@
 <h2>Example</h2>
 <ul>
 <li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file</li>
-<li>The solution below reads all CSV data and then export it to a new parquet file</li>
+<li>The solution below reads the CSV data and then export it to a new parquet file</li>
 <li>This means that all data must still fit into memory
 <ul>
 <li>If it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)</li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># install.packages("arrow")</span></span>
-<span id="cb10-2"><a></a><span class="fu">library</span>(arrow)</span>
-<span id="cb10-3"><a></a>parquet_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".parquet"</span>)</span>
-<span id="cb10-4"><a></a><span class="fu">read_csv_arrow</span>(csv_file) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">write_parquet</span>(parquet_file)</span>
-<span id="cb10-6"><a></a></span>
-<span id="cb10-7"><a></a><span class="co"># Now</span></span>
-<span id="cb10-8"><a></a><span class="fu">read_parquet_duckdb</span>(parquet_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># install.packages("arrow")</span></span>
+<span id="cb8-2"><a></a><span class="fu">library</span>(arrow)</span>
+<span id="cb8-3"><a></a>parquet_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".parquet"</span>)</span>
+<span id="cb8-4"><a></a><span class="fu">read_csv_arrow</span>(csv_file) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a></a>  <span class="fu">write_parquet</span>(parquet_file)</span>
+<span id="cb8-6"><a></a></span>
+<span id="cb8-7"><a></a><span class="co"># Now</span></span>
+<span id="cb8-8"><a></a><span class="fu">read_parquet_duckdb</span>(parquet_file)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A duckplyr data frame: 77 variables
       C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  
@@ -578,16 +639,43 @@
 <li>After filteringen/aggregation etc you can always choose to <code>collect()</code> the data and use your ordinary workflow from there</li>
 </ul>
 </section>
-<section id="fater-in-memory" class="slide level2">
-<h2>Fater in memory?</h2>
+<section id="data-files" class="slide level2">
+<h2>Data files</h2>
+<dl>
+<dt><code>.qs2</code></dt>
+<dd>
+A fast, compressed R-specific binary format used for caching by the <code>{targets}</code> package.<br>
+Data must be fully read from disk into memory (RAM), typically via <code>targets::tar_read()</code>.
+</dd>
+<dt><code>.sas7bdat</code></dt>
+<dd>
+A proprietary binary format used by SAS and commonly encountered in register data deliveries.<br>
+It can be imported into R (e.g.&nbsp;with <code>haven::read_sas()</code>), and some tools allow selection of specific columns at import.<br>
+The dataset is generally read into memory.
+</dd>
+<dt><code>.csv</code> (Comma-Separated Values)</dt>
+<dd>
+A plain-text format following a loosely defined standard.<br>
+It is human-readable but inefficient for large datasets.<br>
+Tools such as DuckDB (via <code>{duckplyr}</code>) can read only the required columns and rows and perform filtering and aggregation during import.
+</dd>
+<dt><code>.parquet</code> (Apache Parquet)</dt>
+<dd>
+A columnar, compressed, and standardized binary format designed for efficient analytics.<br>
+It supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow.
+</dd>
+</dl>
+</section>
+<section id="faster-in-memory" class="slide level2">
+<h2>Faster in memory?</h2>
 <ul>
 <li>DuckDB and <code>{duckplyr}</code> makes it possible to work with data which does not fit into memory</li>
-<li>What if data would fit?
+<li>But what if data would fit (which is more common)?
 <ul>
-<li>You can use tibbles and dplyr etc of course …
+<li>You can use tibbles and dplyr etc as usual …
 <ul>
-<li>… but it might be terribly slooooooooooooow … for big enough data</li>
-<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a>from time to time)</li>
+<li>… but it might be slooooooooooooow … for big enough data</li>
+<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a> from time to time)</li>
 </ul></li>
 </ul></li>
 <li><code>{data.table}</code> is much more efficient!</li>
@@ -596,40 +684,80 @@
 <section id="data.table" class="slide level2">
 <h2>data.table</h2>
 <ul>
-<li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
-<li>Has been around since 2006 (stable and well used, even older than tidyverse)</li>
-<li>faster alternatives to base: <code>fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%</code></li>
-<li>C and GForce (some difficulties on Mac …)</li>
-<li>integer based keys and indices (compare to data bases)</li>
-<li>Reference semantics (no need to copy on modification)</li>
-<li>Very flexible and compact (but perhaps unusual) syntax</li>
+<li>An R package (not a data storage format or a database system)</li>
+<li>Comparable to working with <code>data.frame</code> in base R or <code>tibble</code> in the tidyverse</li>
+<li>Sometimes described as a Domain Specific Language (DSL) within R</li>
+<li>Introduced in 2006 (mature, stable, and widely used — older than the tidyverse)</li>
+<li>Provides faster alternatives to several base R functions: <code>fifelse()</code>, <code>fcase()</code>, <code>forder()</code>, <code>fread()</code>, <code>fcoalesce()</code>,<br>
+<code>as.IDate()</code>, <code>%chin%</code></li>
+<li>Core components implemented in C for performance</li>
+<li>Uses concepts similar to databases:
+<ul>
+<li>Integer-based keys and indices<br>
+</li>
+<li>Efficient joins and grouping</li>
+</ul></li>
+<li>Reference semantics<br>
+(modifications by reference — avoids unnecessary copying)</li>
+<li>Very flexible and compact syntax<br>
+(powerful, but sometimes perceived as unusual at first)</li>
+<li>Strongly appreciated by many statisticians —<br>
+unknown to some — and slightly intimidating to others 🙂</li>
+</ul>
+</section>
+<section id="copy-on-modify" class="slide level2">
+<h2>Copy-on-modify</h2>
+<ul>
+<li>Assume <code>df</code> is a large <code>data.frame</code>/<code>tibble</code> with many rows and columns, one of them called <code>old</code>.<br>
+Let <code>f()</code> be some function.</li>
+<li>What happens when you add a new column using<br>
+<code>df$new &lt;- f(df$old)</code> or <code>df &lt;- mutate(df, new = f(old))</code>?</li>
+<li>Even though you reuse the name <code>df</code>, R typically creates a modified copy of the object.</li>
+<li>In R, objects use <em>copy-on-modify</em> semantics:
+<ul>
+<li>When an object is changed, a new copy is created (if needed).</li>
+<li>The name <code>df</code> is just a reference to an object in memory.</li>
+<li>After reassignment, <code>df</code> refers to the new object.</li>
+</ul></li>
+<li>The previous object may remain in memory temporarily until garbage collection runs.</li>
+<li>For very large objects, this can result in substantial temporary memory use</li>
+</ul>
+</section>
+<section id="reference-semantics" class="slide level2">
+<h2>Reference semantics</h2>
+<ul>
+<li>In <code>data.table</code>, reference semantics are used instead.</li>
+<li>You can modify the existing object directly: <code>df[, new := f(old)]</code></li>
+<li>Or delete columns in place: <code>df[, old := NULL]</code></li>
+<li>No full copy is made — the object is modified by reference.</li>
+<li>There is still only one object in memory (and it is still called <code>df</code>).</li>
 </ul>
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(data.table)</span>
-<span id="cb12-2"><a></a>dt <span class="ot">&lt;-</span> NHANES<span class="sc">::</span>NHANES</span>
-<span id="cb12-3"><a></a><span class="fu">setDT</span>(dt)</span>
-<span id="cb12-4"><a></a><span class="fu">setkey</span>(dt, ID) <span class="co"># Use the ID column as index</span></span>
-<span id="cb12-5"><a></a><span class="co"># How many adults by gender do we have</span></span>
-<span id="cb12-6"><a></a>dt[Age <span class="sc">&gt;=</span> <span class="dv">18</span>, .N, Gender]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(data.table)</span>
+<span id="cb10-2"><a></a>dt <span class="ot">&lt;-</span> NHANES<span class="sc">::</span>NHANES</span>
+<span id="cb10-3"><a></a><span class="fu">setDT</span>(dt)</span>
+<span id="cb10-4"><a></a><span class="fu">setkey</span>(dt, ID) <span class="co"># Use the ID column as index</span></span>
+<span id="cb10-5"><a></a><span class="co"># How many adults by gender do we have</span></span>
+<span id="cb10-6"><a></a>dt[Age <span class="sc">&gt;=</span> <span class="dv">18</span>, .N, Gender]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Gender     N
    &lt;fctr&gt; &lt;int&gt;
 1:   male  3686
 2: female  3795</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Mean BMI by gender</span></span>
-<span id="cb14-2"><a></a>dt[Age <span class="sc">&gt;=</span> <span class="dv">18</span>, <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Gender]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># Mean BMI by gender</span></span>
+<span id="cb12-2"><a></a>dt[Age <span class="sc">&gt;=</span> <span class="dv">18</span>, <span class="fu">mean</span>(BMI, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Gender]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Gender       V1
    &lt;fctr&gt;    &lt;num&gt;
 1:   male 28.67528
 2: female 28.66978</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Convert all factors to characters</span></span>
-<span id="cb16-2"><a></a>dt[, <span class="fu">names</span>(.SD) <span class="sc">:</span><span class="er">=</span> <span class="fu">lapply</span>(.SD, as.character), .SDcols <span class="ot">=</span> is.factor]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Convert all factors to characters</span></span>
+<span id="cb14-2"><a></a>dt[, <span class="fu">names</span>(.SD) <span class="sc">:</span><span class="er">=</span> <span class="fu">lapply</span>(.SD, as.character), .SDcols <span class="ot">=</span> is.factor]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="joins" class="slide level2">
@@ -642,10 +770,10 @@
 \____ secondary data.table</code></pre>
 <table class="caption-top">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 34%">
-<col style="width: 17%">
-<col style="width: 33%">
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -712,6 +840,703 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="external-api" class="slide level2">
+<h2>External API</h2>
+<ul>
+<li>We previously assumed you get some data delivery from a register holder</li>
+<li>Or mayby you work within the organization were data is collected, and therefore have access to the original data base.</li>
+<li>Some data can also be openly accessed by an Programming Application Interface (API)</li>
+<li>The PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data</li>
+<li>The <code>{pxweb}</code> R package simplifies the process</li>
+</ul>
+</section>
+<section id="available-resources" class="slide level2">
+<h2>Available resources</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">api.scb.se</td>
+<td style="text-align: left;">Statistics Sweden</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">statfin.stat.fi</td>
+<td style="text-align: left;">Statistics Finland</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pxwebapi2.stat.fi</td>
+<td style="text-align: left;">Statistics Finland (old version)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">statistik.sjv.se</td>
+<td style="text-align: left;">The Swedish Agricultural Agency</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fohm-app.folkhalsomyndigheten.se</td>
+<td style="text-align: left;">The Public Health Agency of Sweden</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">statistik.konj.se</td>
+<td style="text-align: left;">The Swedish National Institute of Economic Research</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">prognos.konj.se</td>
+<td style="text-align: left;">The Swedish national institute of economic research, forecast database</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">statdb.luke.fi</td>
+<td style="text-align: left;">LUKE Natural Resources Institute Finland</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vero2.stat.fi</td>
+<td style="text-align: left;">Verohallinto - Finnish Tax Administration</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">px.hagstofa.is</td>
+<td style="text-align: left;">Statistics Iceland</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">statistik.linkoping.se</td>
+<td style="text-align: left;">Linköping municipality in Sweden</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pxwebb2017.vgregion.se</td>
+<td style="text-align: left;">Vastra Gotaland Region in Sweden</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bank.stat.gl</td>
+<td style="text-align: left;">Statbank Greenland</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">px.rsv.is</td>
+<td style="text-align: left;">Icelandic Centre for Retail Studies</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">statbank.hagstova.fo</td>
+<td style="text-align: left;">Statistics Faroe Islands</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">data.ssb.no</td>
+<td style="text-align: left;">Statistics Norway</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pxweb.asub.ax</td>
+<td style="text-align: left;">Statistics Aland</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">makstat.stat.gov.mk</td>
+<td style="text-align: left;">State Statistical Office of the Republic of Macedonia</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">data.stat.gov.lv</td>
+<td style="text-align: left;">Latvia - official statistics</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">statbank.statistica.md</td>
+<td style="text-align: left;">Statistics Moldova</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">www.pxweb.bfs.admin.ch</td>
+<td style="text-align: left;">Statistics Switzerland</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">askdata.rks-gov.net</td>
+<td style="text-align: left;">Statistics Kosovo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trafi2.stat.fi</td>
+<td style="text-align: left;">Finnish Transport Safety Agency</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">w3.unece.org</td>
+<td style="text-align: left;">United Nations Economic Commission for Europe</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">www.grande-region.lu</td>
+<td style="text-align: left;">Portail statistique de la Grande Région</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">visitfinland.stat.fi</td>
+<td style="text-align: left;">Visit Finland (Rudolf service)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">stat.hel.fi</td>
+<td style="text-align: left;">Helsingin seudun aluesarjat -tilastotietokanta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">andmed.stat.ee</td>
+<td style="text-align: left;">Estonia - official statistics</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pxweb.nordicstatistics.org</td>
+<td style="text-align: left;">Nordic Statistics Database</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pxweb.stat.si</td>
+<td style="text-align: left;">SiStat Database</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>Let’s say we work with cancer data from whole Sweden</li>
+<li>We have access to the number of diagnosed individuals for each month, region,</li>
+<li>Let´s explore some health data for Sweden.</li>
+<li>The first time you need the data, use <code>pxweb_interactive()</code> from your console.</li>
+<li>It will guide you through all the necessary steps.</li>
+<li>It will then provide you the necessary R code to replicate the query</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">library</span>(pxweb)</span>
+<span id="cb16-2"><a></a><span class="fu">library</span>(data.table)</span>
+<span id="cb16-3"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-4"><a></a></span>
+<span id="cb16-5"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N"</span></span>
+<span id="cb16-6"><a></a></span>
+<span id="cb16-7"><a></a><span class="co"># PXWEB query</span></span>
+<span id="cb16-8"><a></a>pxweb_query_list <span class="ot">&lt;-</span></span>
+<span id="cb16-9"><a></a>  <span class="fu">list</span>(</span>
+<span id="cb16-10"><a></a>    <span class="st">"Alder"</span> <span class="ot">=</span> <span class="st">"*"</span>,</span>
+<span id="cb16-11"><a></a>    <span class="st">"Kon"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1"</span>, <span class="st">"2"</span>),</span>
+<span id="cb16-12"><a></a>    <span class="st">"ContentsCode"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"0000053A"</span>),</span>
+<span id="cb16-13"><a></a>    <span class="st">"Tid"</span> <span class="ot">=</span> <span class="fu">as.character</span>(<span class="dv">1864</span><span class="sc">:</span><span class="dv">2024</span>)</span>
+<span id="cb16-14"><a></a>  )</span>
+<span id="cb16-15"><a></a></span>
+<span id="cb16-16"><a></a>px_data <span class="ot">&lt;-</span></span>
+<span id="cb16-17"><a></a>  <span class="fu">pxweb_get</span>(</span>
+<span id="cb16-18"><a></a>    <span class="at">url =</span> url,</span>
+<span id="cb16-19"><a></a>    <span class="at">query =</span> pxweb_query_list</span>
+<span id="cb16-20"><a></a>  )</span>
+<span id="cb16-21"><a></a></span>
+<span id="cb16-22"><a></a><span class="co"># A data.table with population numbers</span></span>
+<span id="cb16-23"><a></a>bef <span class="ot">&lt;-</span></span>
+<span id="cb16-24"><a></a>  px_data <span class="sc">|&gt;</span></span>
+<span id="cb16-25"><a></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
+<span id="cb16-26"><a></a>  <span class="fu">setDT</span>()</span>
+<span id="cb16-27"><a></a></span>
+<span id="cb16-28"><a></a><span class="co"># Some data cleaning</span></span>
+<span id="cb16-29"><a></a><span class="fu">setnames</span>(</span>
+<span id="cb16-30"><a></a>  bef,</span>
+<span id="cb16-31"><a></a>  <span class="fu">c</span>(<span class="st">"ålder"</span>, <span class="st">"kön"</span>, <span class="st">"år"</span>, <span class="st">"Antal"</span>),</span>
+<span id="cb16-32"><a></a>  <span class="fu">c</span>(<span class="st">"age"</span>, <span class="st">"sex"</span>, <span class="st">"year"</span>, <span class="st">"N"</span>)</span>
+<span id="cb16-33"><a></a>)</span>
+<span id="cb16-34"><a></a>bef[, <span class="st">`</span><span class="at">:=</span><span class="st">`</span>(</span>
+<span id="cb16-35"><a></a>  <span class="at">age =</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">" år"</span>, <span class="st">""</span>, age)),</span>
+<span id="cb16-36"><a></a>  <span class="at">sex =</span> <span class="fu">factor</span>(sex, <span class="fu">c</span>(<span class="st">"män"</span>, <span class="st">"kvinnor"</span>), <span class="fu">c</span>(<span class="st">"males"</span>, <span class="st">"females"</span>)),</span>
+<span id="cb16-37"><a></a>  <span class="at">year =</span> <span class="fu">as.integer</span>(year)</span>
+<span id="cb16-38"><a></a>)]</span>
+<span id="cb16-39"><a></a>bef <span class="ot">&lt;-</span> bef[<span class="sc">!</span><span class="fu">is.na</span>(age)] <span class="co"># Remove totals</span></span>
+<span id="cb16-40"><a></a></span>
+<span id="cb16-41"><a></a><span class="co"># Aggregate for age groups</span></span>
+<span id="cb16-42"><a></a>bef[,</span>
+<span id="cb16-43"><a></a>  age_group <span class="sc">:</span><span class="er">=</span> <span class="fu">cut</span>(</span>
+<span id="cb16-44"><a></a>    age,</span>
+<span id="cb16-45"><a></a>    <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">17</span>, <span class="dv">66</span>, <span class="cn">Inf</span>),</span>
+<span id="cb16-46"><a></a>    <span class="fu">c</span>(<span class="st">"children"</span>, <span class="st">"adults"</span>, <span class="st">"elderly"</span>)</span>
+<span id="cb16-47"><a></a>  )</span>
+<span id="cb16-48"><a></a>]</span>
+<span id="cb16-49"><a></a>bef_ag <span class="ot">&lt;-</span> bef[, .(<span class="at">N =</span> <span class="fu">sum</span>(N)), .(age_group, sex, year)]</span>
+<span id="cb16-50"><a></a></span>
+<span id="cb16-51"><a></a><span class="co"># Visualize</span></span>
+<span id="cb16-52"><a></a>gg <span class="ot">&lt;-</span> bef_ag <span class="sc">|&gt;</span></span>
+<span id="cb16-53"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, N, <span class="at">color =</span> age_group, <span class="at">linetype =</span> sex)) <span class="sc">+</span></span>
+<span id="cb16-54"><a></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb16-55"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb16-56"><a></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb16-57"><a></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">scale =</span> <span class="fl">1e-6</span>, <span class="at">suffix =</span> <span class="st">"M"</span>)</span>
+<span id="cb16-58"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="EL6_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="hierachical-data" class="slide level2">
+<h2>Hierachical data</h2>
+<ul>
+<li>We like tabular data!</li>
+<li>If we get wide data we can transform it to long data (and vice versa)</li>
+<li>But we might sometimes encounter more hierarchical data structures</li>
+<li>JSON (JavaScript Object Notation) most popular</li>
+<li>XML is aother format (used by the IRS/Skatteverket etc when they export population data)</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb17-1"><a></a><span class="fu">{</span></span>
+<span id="cb17-2"><a></a>  <span class="dt">"system"</span><span class="fu">:</span> <span class="st">"ICD-10"</span><span class="fu">,</span></span>
+<span id="cb17-3"><a></a>  <span class="dt">"chapter"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb17-4"><a></a>    <span class="dt">"code"</span><span class="fu">:</span> <span class="st">"Chapter I"</span><span class="fu">,</span></span>
+<span id="cb17-5"><a></a>    <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Certain infectious and parasitic diseases"</span><span class="fu">,</span></span>
+<span id="cb17-6"><a></a>    <span class="dt">"range"</span><span class="fu">:</span> <span class="st">"A00–B99"</span><span class="fu">,</span></span>
+<span id="cb17-7"><a></a>    <span class="dt">"blocks"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb17-8"><a></a>      <span class="fu">{</span></span>
+<span id="cb17-9"><a></a>        <span class="dt">"code"</span><span class="fu">:</span> <span class="st">"A00–A09"</span><span class="fu">,</span></span>
+<span id="cb17-10"><a></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Intestinal infectious diseases"</span><span class="fu">,</span></span>
+<span id="cb17-11"><a></a>        <span class="dt">"categories"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb17-12"><a></a>          <span class="fu">{</span></span>
+<span id="cb17-13"><a></a>            <span class="dt">"code"</span><span class="fu">:</span> <span class="st">"A00"</span><span class="fu">,</span></span>
+<span id="cb17-14"><a></a>            <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Cholera"</span><span class="fu">,</span></span>
+<span id="cb17-15"><a></a>            <span class="dt">"includes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Vibrio cholerae infection"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb17-16"><a></a>            <span class="dt">"excludes"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Carrier state"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb17-17"><a></a>            <span class="dt">"subcategories"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb17-18"><a></a>              <span class="fu">{</span></span>
+<span id="cb17-19"><a></a>                <span class="dt">"code"</span><span class="fu">:</span> <span class="st">"A00.0"</span><span class="fu">,</span></span>
+<span id="cb17-20"><a></a>                <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Cholera due to Vibrio cholerae 01, biovar cholerae"</span></span>
+<span id="cb17-21"><a></a>              <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb17-22"><a></a>              <span class="fu">{</span></span>
+<span id="cb17-23"><a></a>                <span class="dt">"code"</span><span class="fu">:</span> <span class="st">"A00.1"</span><span class="fu">,</span></span>
+<span id="cb17-24"><a></a>                <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Cholera due to Vibrio cholerae 01, biovar eltor"</span></span>
+<span id="cb17-25"><a></a>              <span class="fu">}</span></span>
+<span id="cb17-26"><a></a>            <span class="ot">]</span></span>
+<span id="cb17-27"><a></a>          <span class="fu">}</span></span>
+<span id="cb17-28"><a></a>        <span class="ot">]</span></span>
+<span id="cb17-29"><a></a>      <span class="fu">}</span></span>
+<span id="cb17-30"><a></a>    <span class="ot">]</span></span>
+<span id="cb17-31"><a></a>  <span class="fu">}</span></span>
+<span id="cb17-32"><a></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="example-5" class="slide level2">
+<h2>Example</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb18-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json"</span></span>
+<span id="cb18-3"><a></a>icd <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb18-4"><a></a><span class="fu">str</span>(icd<span class="sc">$</span>children, <span class="at">max.level =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 22
+ $ :'data.frame':   22 obs. of  3 variables:
+  ..$ code    : chr [1:22] "A00-A09" "A15-A19" "A20-A28" "A30-A49" ...
+  ..$ desc    : chr [1:22] "Intestinal infectious diseases" "Tuberculosis" "Certain zoonotic bacterial diseases" "Other bacterial diseases" ...
+  ..$ children:List of 22
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 18 obs. of  3 variables:
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 15 obs. of  3 variables:
+  .. ..$ :'data.frame': 12 obs. of  3 variables:
+  .. ..$ :'data.frame': 19 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   21 obs. of  3 variables:
+  ..$ code    : chr [1:21] "C00-C14" "C15-C26" "C30-C39" "C40-C41" ...
+  ..$ desc    : chr [1:21] "Malignant neoplasms of lip, oral cavity and pharynx" "Malignant neoplasms of digestive organs" "Malignant neoplasms of respiratory and intrathoracic organs" "Malignant neoplasms of bone and articular cartilage" ...
+  ..$ children:List of 21
+  .. ..$ :'data.frame': 15 obs. of  3 variables:
+  .. ..$ :'data.frame': 12 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 14 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 27 obs. of  3 variables:
+  .. ..$ :'data.frame': 12 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   7 obs. of  3 variables:
+  ..$ code    : chr [1:7] "D50-D53" "D55-D59" "D60-D64" "D65-D69" ...
+  ..$ desc    : chr [1:7] "Nutritional anemias" "Hemolytic anemias" "Aplastic and other anemias and other bone marrow failure syndromes" "Coagulation defects, purpura and other hemorrhagic conditions" ...
+  ..$ children:List of 7
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+ $ :'data.frame':   10 obs. of  3 variables:
+  ..$ code    : chr [1:10] "E00-E07" "E08-E13" "E15-E16" "E20-E35" ...
+  ..$ desc    : chr [1:10] "Disorders of thyroid gland" "Diabetes mellitus" "Other disorders of glucose regulation and pancreatic internal secretion" "Disorders of other endocrine glands" ...
+  ..$ children:List of 10
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 15 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 17 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   11 obs. of  3 variables:
+  ..$ code    : chr [1:11] "F01-F09" "F10-F19" "F20-F29" "F30-F39" ...
+  ..$ desc    : chr [1:11] "Mental disorders due to known physiological conditions" "Mental and behavioral disorders due to psychoactive substance use" "Schizophrenia, schizotypal, delusional, and other non-mood psychotic disorders" "Mood [affective] disorders" ...
+  ..$ children:List of 11
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   11 obs. of  3 variables:
+  ..$ code    : chr [1:11] "G00-G09" "G10-G14" "G20-G26" "G30-G32" ...
+  ..$ desc    : chr [1:11] "Inflammatory diseases of the central nervous system" "Systemic atrophies primarily affecting the central nervous system" "Extrapyramidal and movement disorders" "Other degenerative diseases of the nervous system" ...
+  ..$ children:List of 11
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+ $ :'data.frame':   12 obs. of  3 variables:
+  ..$ code    : chr [1:12] "H00-H05" "H10-H11" "H15-H22" "H25-H28" ...
+  ..$ desc    : chr [1:12] "Disorders of eyelid, lacrimal system and orbit" "Disorders of conjunctiva" "Disorders of sclera, cornea, iris and ciliary body" "Disorders of lens" ...
+  ..$ children:List of 12
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   5 obs. of  3 variables:
+  ..$ code    : chr [1:5] "H60-H62" "H65-H75" "H80-H83" "H90-H94" ...
+  ..$ desc    : chr [1:5] "Diseases of external ear" "Diseases of middle ear and mastoid" "Diseases of inner ear" "Other disorders of ear" ...
+  ..$ children:List of 5
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   10 obs. of  3 variables:
+  ..$ code    : chr [1:10] "I00-I02" "I05-I09" "I10-I16" "I20-I25" ...
+  ..$ desc    : chr [1:10] "Acute rheumatic fever" "Chronic rheumatic heart diseases" "Hypertensive diseases" "Ischemic heart diseases" ...
+  ..$ children:List of 10
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 24 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+ $ :'data.frame':   11 obs. of  3 variables:
+  ..$ code    : chr [1:11] "J00-J06" "J09-J18" "J20-J22" "J30-J39" ...
+  ..$ desc    : chr [1:11] "Acute upper respiratory infections" "Influenza and pneumonia" "Other acute lower respiratory infections" "Other diseases of upper respiratory tract" ...
+  ..$ children:List of 11
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+ $ :'data.frame':   10 obs. of  3 variables:
+  ..$ code    : chr [1:10] "K00-K14" "K20-K31" "K35-K38" "K40-K46" ...
+  ..$ desc    : chr [1:10] "Diseases of oral cavity and salivary glands" "Diseases of esophagus, stomach and duodenum" "Diseases of appendix" "Hernia" ...
+  ..$ children:List of 10
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+ $ :'data.frame':   9 obs. of  3 variables:
+  ..$ code    : chr [1:9] "L00-L08" "L10-L14" "L20-L30" "L40-L45" ...
+  ..$ desc    : chr [1:9] "Infections of the skin and subcutaneous tissue" "Bullous disorders" "Dermatitis and eczema" "Papulosquamous disorders" ...
+  ..$ children:List of 9
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 14 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 19 obs. of  3 variables:
+ $ :'data.frame':   20 obs. of  3 variables:
+  ..$ code    : chr [1:20] "M00-M02" "M04-M04" "M05-M14" "M15-M19" ...
+  ..$ desc    : chr [1:20] "Infectious arthropathies" "Autoinflammatory syndromes" "Inflammatory polyarthropathies" "Osteoarthritis" ...
+  ..$ children:List of 20
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   11 obs. of  3 variables:
+  ..$ code    : chr [1:11] "N00-N08" "N10-N16" "N17-N19" "N20-N23" ...
+  ..$ desc    : chr [1:11] "Glomerular diseases" "Renal tubulo-interstitial diseases" "Acute kidney failure and chronic kidney disease" "Urolithiasis" ...
+  ..$ children:List of 11
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 14 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 19 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   9 obs. of  3 variables:
+  ..$ code    : chr [1:9] "O00-O08" "O09-O09" "O10-O16" "O20-O29" ...
+  ..$ desc    : chr [1:9] "Pregnancy with abortive outcome" "Supervision of high risk pregnancy" "Edema, proteinuria and hypertensive disorders in pregnancy, childbirth and the puerperium" "Other maternal disorders predominantly related to pregnancy" ...
+  ..$ children:List of 9
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 16 obs. of  3 variables:
+  .. ..$ :'data.frame': 18 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+ $ :'data.frame':   12 obs. of  3 variables:
+  ..$ code    : chr [1:12] "P00-P04" "P05-P08" "P09-P09" "P10-P15" ...
+  ..$ desc    : chr [1:12] "Newborn affected by maternal factors and by complications of pregnancy, labor, and delivery" "Disorders of newborn related to length of gestation and fetal growth" "Abnormal findings on neonatal screening" "Birth trauma" ...
+  ..$ children:List of 12
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 12 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+ $ :'data.frame':   11 obs. of  3 variables:
+  ..$ code    : chr [1:11] "Q00-Q07" "Q10-Q18" "Q20-Q28" "Q30-Q34" ...
+  ..$ desc    : chr [1:11] "Congenital malformations of the nervous system" "Congenital malformations of eye, ear, face and neck" "Congenital malformations of the circulatory system" "Congenital malformations of the respiratory system" ...
+  ..$ children:List of 11
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 15 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+ $ :'data.frame':   14 obs. of  3 variables:
+  ..$ code    : chr [1:14] "R00-R09" "R10-R19" "R20-R23" "R25-R29" ...
+  ..$ desc    : chr [1:14] "Symptoms and signs involving the circulatory and respiratory systems" "Symptoms and signs involving the digestive system and abdomen" "Symptoms and signs involving the skin and subcutaneous tissue" "Symptoms and signs involving the nervous and musculoskeletal systems" ...
+  ..$ children:List of 14
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 18 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 7 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+ $ :'data.frame':   22 obs. of  3 variables:
+  ..$ code    : chr [1:22] "S00-S09" "S10-S19" "S20-S29" "S30-S39" ...
+  ..$ desc    : chr [1:22] "Injuries to the head" "Injuries to the neck" "Injuries to the thorax" "Injuries to the abdomen, lower back, lumbar spine, pelvis and external genitals" ...
+  ..$ children:List of 22
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 15 obs. of  3 variables:
+  .. ..$ :'data.frame': 15 obs. of  3 variables:
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+ $ :'data.frame':   2 obs. of  3 variables:
+  ..$ code    : chr [1:2] "U00-U49" "U50-U85"
+  ..$ desc    : chr [1:2] "Provisional assignment of new diseases of uncertain etiology or emergency use" "Provisional assignment of new diseases of uncertain etiology or emergency use"
+  ..$ children:List of 2
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+ $ :'data.frame':   30 obs. of  3 variables:
+  ..$ code    : chr [1:30] "V00-V09" "V10-V19" "V20-V29" "V30-V39" ...
+  ..$ desc    : chr [1:30] "Pedestrian injured in transport accident" "Pedal cycle rider injured in transport accident" "Motorcycle rider injured in transport accident" "Occupant of three-wheeled motor vehicle injured in transport accident" ...
+  ..$ children:List of 30
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 3 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 19 obs. of  3 variables:
+  .. ..$ :'data.frame': 25 obs. of  3 variables:
+  .. ..$ :'data.frame': 14 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 9 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 16 obs. of  3 variables:
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 4 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 5 obs. of  3 variables:
+ $ :'data.frame':   15 obs. of  3 variables:
+  ..$ code    : chr [1:15] "Z00-Z13" "Z14-Z15" "Z16-Z16" "Z17-Z17" ...
+  ..$ desc    : chr [1:15] "Persons encountering health services for examinations" "Genetic carrier and genetic susceptibility to disease" "Resistance to antimicrobial drugs" "Estrogen receptor status" ...
+  ..$ children:List of 15
+  .. ..$ :'data.frame': 11 obs. of  3 variables:
+  .. ..$ :'data.frame': 2 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 6 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 13 obs. of  3 variables:
+  .. ..$ :'data.frame': 10 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 1 obs. of  3 variables:
+  .. ..$ :'data.frame': 8 obs. of  3 variables:
+  .. ..$ :'data.frame': 23 obs. of  3 variables:</code></pre>
+</div>
+</div>
+</section>
+<section id="flatten-the-hierarchy" class="slide level2">
+<h2>Flatten the hierarchy</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>extract_icd <span class="ot">&lt;-</span> <span class="cf">function</span>(node) {</span>
+<span id="cb20-2"><a></a>  <span class="co"># Current node</span></span>
+<span id="cb20-3"><a></a>  current <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb20-4"><a></a>    <span class="at">code =</span> node<span class="sc">$</span>code <span class="sc">%||%</span> <span class="cn">NA_character_</span>,</span>
+<span id="cb20-5"><a></a>    <span class="at">description =</span> node<span class="sc">$</span>desc <span class="sc">%||%</span> <span class="cn">NA_character_</span></span>
+<span id="cb20-6"><a></a>  )</span>
+<span id="cb20-7"><a></a></span>
+<span id="cb20-8"><a></a>  <span class="co"># If there are children -&gt; recursive call</span></span>
+<span id="cb20-9"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(node<span class="sc">$</span>children)) {</span>
+<span id="cb20-10"><a></a>    children <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_dfr</span>(node<span class="sc">$</span>children, extract_icd)</span>
+<span id="cb20-11"><a></a>    dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(current, children)</span>
+<span id="cb20-12"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb20-13"><a></a>    current</span>
+<span id="cb20-14"><a></a>  }</span>
+<span id="cb20-15"><a></a>}</span>
+<span id="cb20-16"><a></a></span>
+<span id="cb20-17"><a></a><span class="co"># Flatten the structure for a tabular tibble ()</span></span>
+<span id="cb20-18"><a></a>(icd_tbl <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_dfr</span>(icd<span class="sc">$</span>children, extract_icd))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 118,321 × 2
+   code    description                                                
+   &lt;chr&gt;   &lt;chr&gt;                                                      
+ 1 A00-A09 Intestinal infectious diseases                             
+ 2 A15-A19 Tuberculosis                                               
+ 3 A20-A28 Certain zoonotic bacterial diseases                        
+ 4 A30-A49 Other bacterial diseases                                   
+ 5 A50-A64 Infections with a predominantly sexual mode of transmission
+ 6 A65-A69 Other spirochetal diseases                                 
+ 7 A70-A74 Other diseases caused by chlamydiae                        
+ 8 A75-A79 Rickettsioses                                              
+ 9 A80-A89 Viral and prion infections of the central nervous system   
+10 A90-A99 Arthropod-borne viral fevers and viral hemorrhagic fevers  
+# ℹ 118,311 more rows</code></pre>
+</div>
+</div>
 </section>
 <section class="slide level2 smaller scrollable" id="references">
 
