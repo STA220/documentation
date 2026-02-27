@@ -236,7 +236,11 @@
 </section>
 <section id="optional-practice" class="slide level2">
 <h2>Optional practice</h2>
-<p>We won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like): - <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a> - <a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a></p>
+<p>We won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like):</p>
+<ul>
+<li><a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
+<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a></li>
+</ul>
 </section>
 <section id="imaginaed-scenario" class="slide level2">
 <h2>Imaginaed scenario</h2>
@@ -415,8 +419,8 @@
 <ul>
 <li>I don’t think SQL is a necessary skill to master for most statisticians</li>
 <li>You should nevertheless be aware of its existence and understand simple code examples as above</li>
-<li>If an employer requires SQL skills, you can probably teach yourself enough if/when needed</li>
-<li>Nevertheless, the more languages/tools etc you know, the more competitive you becoma (but don’t sacrifice statistical knowledge for technical. As a statistician, I think it is more important to study statistical theory and methods compared to specific tools).</li>
+<li>If an employer requires SQL skills, you can probably learn enough if/when needed</li>
+<li>Nevertheless, the more languages/tools etc you know, the more competitive you become (but don’t sacrifice statistical knowledge for technical.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -434,7 +438,7 @@
 <li>Integration by DBMS and “hidden” SQL under the hood: <a href="https://dbplyr.tidyverse.org">dbplyr</a></li>
 <li>A more “native” implementation by <a href="https://duckplyr.tidyverse.org">duckplyr</a>
 <ul>
-<li>Better (but perhaps not as widely used yet and therefore a bit les mature/stable)</li>
+<li>Better (but perhaps not as widely used yet and therefore a bit less mature/stable)</li>
 </ul></li>
 <li>Can be used both with disk data and data in RAM</li>
 </ul>
@@ -450,7 +454,7 @@
 <span id="cb2-6"><a></a><span class="fu">db_exec</span>(<span class="st">"LOAD httpfs"</span>)</span>
 <span id="cb2-7"><a></a></span>
 <span id="cb2-8"><a></a><span class="co"># Use some online data which is to big to keep in memory</span></span>
-<span id="cb2-9"><a></a>year <span class="ot">&lt;-</span> <span class="dv">2022</span><span class="sc">:</span><span class="dv">2024</span></span>
+<span id="cb2-9"><a></a>year <span class="ot">&lt;-</span> <span class="dv">2022</span><span class="sc">:</span><span class="dv">2024</span> <span class="co"># therefore, select just 3 years</span></span>
 <span id="cb2-10"><a></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://blobs.duckdb.org/flight-data-partitioned/"</span></span>
 <span id="cb2-11"><a></a>files <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"Year="</span>, year, <span class="st">"/data_0.parquet"</span>)</span>
 <span id="cb2-12"><a></a>urls <span class="ot">&lt;-</span> <span class="fu">paste0</span>(base_url, files)</span>
@@ -548,7 +552,6 @@
 <ul>
 <li>Parquet</li>
 <li>CSV</li>
-<li>Arrow</li>
 <li>JSON</li>
 </ul>
 <p>No data import (to your computers Random Access Memory [RAM]) is required!</p>
@@ -558,14 +561,16 @@
 <ul>
 <li>Let’s say you used SAS to export your data to a csv file</li>
 <li>DuckDB can query the relevant data from that file directly and collect only the data you actually need!</li>
+<li>(If you knew you only needed i smaller data set you might have performed similar work already in SAS but you often query the data multiple times for different purposes so it still good to have a readable version of everything)</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>csv_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".csv"</span>)</span>
-<span id="cb6-2"><a></a><span class="fu">write.csv</span>(NHANES<span class="sc">::</span>NHANES, csv_file)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="fu">read_csv_duckdb</span>(csv_file) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a></a>  <span class="fu">filter</span>(Age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-6"><a></a>  <span class="fu">summarise</span>(<span class="at">BMI_mean =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(BMI), <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.by =</span> Gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># This is not writing from SAS but to illustrate the point :-)</span></span>
+<span id="cb6-2"><a></a>csv_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".csv"</span>)</span>
+<span id="cb6-3"><a></a><span class="fu">write.csv</span>(NHANES<span class="sc">::</span>NHANES, csv_file)</span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a><span class="fu">read_csv_duckdb</span>(csv_file) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a></a>  <span class="fu">filter</span>(Age <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-7"><a></a>  <span class="fu">summarise</span>(<span class="at">BMI_mean =</span> <span class="fu">mean</span>(<span class="fu">as.numeric</span>(BMI), <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.by =</span> Gender)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A duckplyr data frame: 2 variables
   Gender BMI_mean
@@ -581,7 +586,7 @@
 <li>From Apache Arrow</li>
 <li>Open format</li>
 <li>flat files with possible hierarchical structure by transparent structure of folders and filenames</li>
-<li>very fast to read</li>
+<li>very fast to read and write</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -591,8 +596,8 @@
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
 <ul>
-<li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file</li>
-<li>The solution below reads the CSV data and then export it to a new parquet file</li>
+<li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquet file</li>
+<li>The solution below reads the CSV data and then exports it to a new parquet file</li>
 <li>This means that all data must still fit into memory
 <ul>
 <li>If it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)</li>
@@ -650,8 +655,8 @@ Data must be fully read from disk into memory (RAM), typically via <code>targets
 <dt><code>.sas7bdat</code></dt>
 <dd>
 A proprietary binary format used by SAS and commonly encountered in register data deliveries.<br>
-It can be imported into R (e.g.&nbsp;with <code>haven::read_sas()</code>), and some tools allow selection of specific columns at import.<br>
-The dataset is generally read into memory.
+It can be sometimes be imported into R (<code>haven::read_sas()</code>, which also allow selection of specific columns at import).<br>
+The dataset is read into memory.
 </dd>
 <dt><code>.csv</code> (Comma-Separated Values)</dt>
 <dd>
@@ -698,9 +703,9 @@ It supports selective column access and integrates well with modern analytical e
 <li>Efficient joins and grouping</li>
 </ul></li>
 <li>Reference semantics<br>
-(modifications by reference — avoids unnecessary copying)</li>
+</li>
 <li>Very flexible and compact syntax<br>
-(powerful, but sometimes perceived as unusual at first)</li>
+</li>
 <li>Strongly appreciated by many statisticians —<br>
 unknown to some — and slightly intimidating to others 🙂</li>
 </ul>
@@ -729,7 +734,7 @@ Let <code>f()</code> be some function.</li>
 <li>In <code>data.table</code>, reference semantics are used instead.</li>
 <li>You can modify the existing object directly: <code>df[, new := f(old)]</code></li>
 <li>Or delete columns in place: <code>df[, old := NULL]</code></li>
-<li>No full copy is made — the object is modified by reference.</li>
+<li>No full copy is made</li>
 <li>There is still only one object in memory (and it is still called <code>df</code>).</li>
 </ul>
 </section>
@@ -995,9 +1000,6 @@ Let <code>f()</code> be some function.</li>
 <section id="example-4" class="slide level2">
 <h2>Example</h2>
 <ul>
-<li>Let’s say we work with cancer data from whole Sweden</li>
-<li>We have access to the number of diagnosed individuals for each month, region,</li>
-<li>Let´s explore some health data for Sweden.</li>
 <li>The first time you need the data, use <code>pxweb_interactive()</code> from your console.</li>
 <li>It will guide you through all the necessary steps.</li>
 <li>It will then provide you the necessary R code to replicate the query</li>
@@ -1077,7 +1079,7 @@ Let <code>f()</code> be some function.</li>
 <li>If we get wide data we can transform it to long data (and vice versa)</li>
 <li>But we might sometimes encounter more hierarchical data structures</li>
 <li>JSON (JavaScript Object Notation) most popular</li>
-<li>XML is aother format (used by the IRS/Skatteverket etc when they export population data)</li>
+<li>XML is another format (used for example by the IRS/Skatteverket sometimes)</li>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb17-1"><a></a><span class="fu">{</span></span>
@@ -1117,424 +1119,57 @@ Let <code>f()</code> be some function.</li>
 <section id="example-5" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb18-2"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json"</span></span>
-<span id="cb18-3"><a></a>icd <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
-<span id="cb18-4"><a></a><span class="fu">str</span>(icd<span class="sc">$</span>children, <span class="at">max.level =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># db_exec("INSTALL json")</span></span>
+<span id="cb18-2"><a></a><span class="fu">db_exec</span>(<span class="st">"LOAD json"</span>)</span>
+<span id="cb18-3"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json"</span></span>
+<span id="cb18-4"><a></a>(icd <span class="ot">&lt;-</span> duckplyr<span class="sc">::</span><span class="fu">read_json_duckdb</span>(url))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>List of 22
- $ :'data.frame':   22 obs. of  3 variables:
-  ..$ code    : chr [1:22] "A00-A09" "A15-A19" "A20-A28" "A30-A49" ...
-  ..$ desc    : chr [1:22] "Intestinal infectious diseases" "Tuberculosis" "Certain zoonotic bacterial diseases" "Other bacterial diseases" ...
-  ..$ children:List of 22
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 18 obs. of  3 variables:
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 15 obs. of  3 variables:
-  .. ..$ :'data.frame': 12 obs. of  3 variables:
-  .. ..$ :'data.frame': 19 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   21 obs. of  3 variables:
-  ..$ code    : chr [1:21] "C00-C14" "C15-C26" "C30-C39" "C40-C41" ...
-  ..$ desc    : chr [1:21] "Malignant neoplasms of lip, oral cavity and pharynx" "Malignant neoplasms of digestive organs" "Malignant neoplasms of respiratory and intrathoracic organs" "Malignant neoplasms of bone and articular cartilage" ...
-  ..$ children:List of 21
-  .. ..$ :'data.frame': 15 obs. of  3 variables:
-  .. ..$ :'data.frame': 12 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 14 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 27 obs. of  3 variables:
-  .. ..$ :'data.frame': 12 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   7 obs. of  3 variables:
-  ..$ code    : chr [1:7] "D50-D53" "D55-D59" "D60-D64" "D65-D69" ...
-  ..$ desc    : chr [1:7] "Nutritional anemias" "Hemolytic anemias" "Aplastic and other anemias and other bone marrow failure syndromes" "Coagulation defects, purpura and other hemorrhagic conditions" ...
-  ..$ children:List of 7
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
- $ :'data.frame':   10 obs. of  3 variables:
-  ..$ code    : chr [1:10] "E00-E07" "E08-E13" "E15-E16" "E20-E35" ...
-  ..$ desc    : chr [1:10] "Disorders of thyroid gland" "Diabetes mellitus" "Other disorders of glucose regulation and pancreatic internal secretion" "Disorders of other endocrine glands" ...
-  ..$ children:List of 10
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 15 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 17 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   11 obs. of  3 variables:
-  ..$ code    : chr [1:11] "F01-F09" "F10-F19" "F20-F29" "F30-F39" ...
-  ..$ desc    : chr [1:11] "Mental disorders due to known physiological conditions" "Mental and behavioral disorders due to psychoactive substance use" "Schizophrenia, schizotypal, delusional, and other non-mood psychotic disorders" "Mood [affective] disorders" ...
-  ..$ children:List of 11
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   11 obs. of  3 variables:
-  ..$ code    : chr [1:11] "G00-G09" "G10-G14" "G20-G26" "G30-G32" ...
-  ..$ desc    : chr [1:11] "Inflammatory diseases of the central nervous system" "Systemic atrophies primarily affecting the central nervous system" "Extrapyramidal and movement disorders" "Other degenerative diseases of the nervous system" ...
-  ..$ children:List of 11
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
- $ :'data.frame':   12 obs. of  3 variables:
-  ..$ code    : chr [1:12] "H00-H05" "H10-H11" "H15-H22" "H25-H28" ...
-  ..$ desc    : chr [1:12] "Disorders of eyelid, lacrimal system and orbit" "Disorders of conjunctiva" "Disorders of sclera, cornea, iris and ciliary body" "Disorders of lens" ...
-  ..$ children:List of 12
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   5 obs. of  3 variables:
-  ..$ code    : chr [1:5] "H60-H62" "H65-H75" "H80-H83" "H90-H94" ...
-  ..$ desc    : chr [1:5] "Diseases of external ear" "Diseases of middle ear and mastoid" "Diseases of inner ear" "Other disorders of ear" ...
-  ..$ children:List of 5
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   10 obs. of  3 variables:
-  ..$ code    : chr [1:10] "I00-I02" "I05-I09" "I10-I16" "I20-I25" ...
-  ..$ desc    : chr [1:10] "Acute rheumatic fever" "Chronic rheumatic heart diseases" "Hypertensive diseases" "Ischemic heart diseases" ...
-  ..$ children:List of 10
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 24 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
- $ :'data.frame':   11 obs. of  3 variables:
-  ..$ code    : chr [1:11] "J00-J06" "J09-J18" "J20-J22" "J30-J39" ...
-  ..$ desc    : chr [1:11] "Acute upper respiratory infections" "Influenza and pneumonia" "Other acute lower respiratory infections" "Other diseases of upper respiratory tract" ...
-  ..$ children:List of 11
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
- $ :'data.frame':   10 obs. of  3 variables:
-  ..$ code    : chr [1:10] "K00-K14" "K20-K31" "K35-K38" "K40-K46" ...
-  ..$ desc    : chr [1:10] "Diseases of oral cavity and salivary glands" "Diseases of esophagus, stomach and duodenum" "Diseases of appendix" "Hernia" ...
-  ..$ children:List of 10
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
- $ :'data.frame':   9 obs. of  3 variables:
-  ..$ code    : chr [1:9] "L00-L08" "L10-L14" "L20-L30" "L40-L45" ...
-  ..$ desc    : chr [1:9] "Infections of the skin and subcutaneous tissue" "Bullous disorders" "Dermatitis and eczema" "Papulosquamous disorders" ...
-  ..$ children:List of 9
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 14 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 19 obs. of  3 variables:
- $ :'data.frame':   20 obs. of  3 variables:
-  ..$ code    : chr [1:20] "M00-M02" "M04-M04" "M05-M14" "M15-M19" ...
-  ..$ desc    : chr [1:20] "Infectious arthropathies" "Autoinflammatory syndromes" "Inflammatory polyarthropathies" "Osteoarthritis" ...
-  ..$ children:List of 20
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   11 obs. of  3 variables:
-  ..$ code    : chr [1:11] "N00-N08" "N10-N16" "N17-N19" "N20-N23" ...
-  ..$ desc    : chr [1:11] "Glomerular diseases" "Renal tubulo-interstitial diseases" "Acute kidney failure and chronic kidney disease" "Urolithiasis" ...
-  ..$ children:List of 11
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 14 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 19 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   9 obs. of  3 variables:
-  ..$ code    : chr [1:9] "O00-O08" "O09-O09" "O10-O16" "O20-O29" ...
-  ..$ desc    : chr [1:9] "Pregnancy with abortive outcome" "Supervision of high risk pregnancy" "Edema, proteinuria and hypertensive disorders in pregnancy, childbirth and the puerperium" "Other maternal disorders predominantly related to pregnancy" ...
-  ..$ children:List of 9
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 16 obs. of  3 variables:
-  .. ..$ :'data.frame': 18 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
- $ :'data.frame':   12 obs. of  3 variables:
-  ..$ code    : chr [1:12] "P00-P04" "P05-P08" "P09-P09" "P10-P15" ...
-  ..$ desc    : chr [1:12] "Newborn affected by maternal factors and by complications of pregnancy, labor, and delivery" "Disorders of newborn related to length of gestation and fetal growth" "Abnormal findings on neonatal screening" "Birth trauma" ...
-  ..$ children:List of 12
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 12 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
- $ :'data.frame':   11 obs. of  3 variables:
-  ..$ code    : chr [1:11] "Q00-Q07" "Q10-Q18" "Q20-Q28" "Q30-Q34" ...
-  ..$ desc    : chr [1:11] "Congenital malformations of the nervous system" "Congenital malformations of eye, ear, face and neck" "Congenital malformations of the circulatory system" "Congenital malformations of the respiratory system" ...
-  ..$ children:List of 11
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 15 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
- $ :'data.frame':   14 obs. of  3 variables:
-  ..$ code    : chr [1:14] "R00-R09" "R10-R19" "R20-R23" "R25-R29" ...
-  ..$ desc    : chr [1:14] "Symptoms and signs involving the circulatory and respiratory systems" "Symptoms and signs involving the digestive system and abdomen" "Symptoms and signs involving the skin and subcutaneous tissue" "Symptoms and signs involving the nervous and musculoskeletal systems" ...
-  ..$ children:List of 14
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 18 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 7 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
- $ :'data.frame':   22 obs. of  3 variables:
-  ..$ code    : chr [1:22] "S00-S09" "S10-S19" "S20-S29" "S30-S39" ...
-  ..$ desc    : chr [1:22] "Injuries to the head" "Injuries to the neck" "Injuries to the thorax" "Injuries to the abdomen, lower back, lumbar spine, pelvis and external genitals" ...
-  ..$ children:List of 22
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 15 obs. of  3 variables:
-  .. ..$ :'data.frame': 15 obs. of  3 variables:
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
- $ :'data.frame':   2 obs. of  3 variables:
-  ..$ code    : chr [1:2] "U00-U49" "U50-U85"
-  ..$ desc    : chr [1:2] "Provisional assignment of new diseases of uncertain etiology or emergency use" "Provisional assignment of new diseases of uncertain etiology or emergency use"
-  ..$ children:List of 2
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
- $ :'data.frame':   30 obs. of  3 variables:
-  ..$ code    : chr [1:30] "V00-V09" "V10-V19" "V20-V29" "V30-V39" ...
-  ..$ desc    : chr [1:30] "Pedestrian injured in transport accident" "Pedal cycle rider injured in transport accident" "Motorcycle rider injured in transport accident" "Occupant of three-wheeled motor vehicle injured in transport accident" ...
-  ..$ children:List of 30
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 3 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 19 obs. of  3 variables:
-  .. ..$ :'data.frame': 25 obs. of  3 variables:
-  .. ..$ :'data.frame': 14 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 9 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 16 obs. of  3 variables:
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 4 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 5 obs. of  3 variables:
- $ :'data.frame':   15 obs. of  3 variables:
-  ..$ code    : chr [1:15] "Z00-Z13" "Z14-Z15" "Z16-Z16" "Z17-Z17" ...
-  ..$ desc    : chr [1:15] "Persons encountering health services for examinations" "Genetic carrier and genetic susceptibility to disease" "Resistance to antimicrobial drugs" "Estrogen receptor status" ...
-  ..$ children:List of 15
-  .. ..$ :'data.frame': 11 obs. of  3 variables:
-  .. ..$ :'data.frame': 2 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 6 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 13 obs. of  3 variables:
-  .. ..$ :'data.frame': 10 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 1 obs. of  3 variables:
-  .. ..$ :'data.frame': 8 obs. of  3 variables:
-  .. ..$ :'data.frame': 23 obs. of  3 variables:</code></pre>
+<pre><code># A duckplyr data frame: 3 variables
+   code    desc                                                         children
+   &lt;chr&gt;   &lt;chr&gt;                                                        &lt;list&gt;  
+ 1 A00-B99 Certain infectious and parasitic diseases                    &lt;df&gt;    
+ 2 C00-D49 Neoplasms                                                    &lt;df&gt;    
+ 3 D50-D89 Diseases of the blood and blood-forming organs and certain … &lt;df&gt;    
+ 4 E00-E89 Endocrine, nutritional and metabolic diseases                &lt;df&gt;    
+ 5 F01-F99 Mental, Behavioral and Neurodevelopmental disorders          &lt;df&gt;    
+ 6 G00-G99 Diseases of the nervous system                               &lt;df&gt;    
+ 7 H00-H59 Diseases of the eye and adnexa                               &lt;df&gt;    
+ 8 H60-H95 Diseases of the ear and mastoid process                      &lt;df&gt;    
+ 9 I00-I99 Diseases of the circulatory system                           &lt;df&gt;    
+10 J00-J99 Diseases of the respiratory system                           &lt;df&gt;    
+# ℹ more rows</code></pre>
 </div>
 </div>
 </section>
-<section id="flatten-the-hierarchy" class="slide level2">
-<h2>Flatten the hierarchy</h2>
+<section id="flattening" class="slide level2">
+<h2>Flattening</h2>
+<p>So you now have a duckplyr data frame. One of its columns is nested and, with additional data frames as children) If we unnest the children for chapter 1, we see that those children also have children … and so it continous. To get a simple translation between individual codes and their description, you might need to define some recursive function to unnest until you have found the last children in line.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>extract_icd <span class="ot">&lt;-</span> <span class="cf">function</span>(node) {</span>
-<span id="cb20-2"><a></a>  <span class="co"># Current node</span></span>
-<span id="cb20-3"><a></a>  current <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb20-4"><a></a>    <span class="at">code =</span> node<span class="sc">$</span>code <span class="sc">%||%</span> <span class="cn">NA_character_</span>,</span>
-<span id="cb20-5"><a></a>    <span class="at">description =</span> node<span class="sc">$</span>desc <span class="sc">%||%</span> <span class="cn">NA_character_</span></span>
-<span id="cb20-6"><a></a>  )</span>
-<span id="cb20-7"><a></a></span>
-<span id="cb20-8"><a></a>  <span class="co"># If there are children -&gt; recursive call</span></span>
-<span id="cb20-9"><a></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(node<span class="sc">$</span>children)) {</span>
-<span id="cb20-10"><a></a>    children <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_dfr</span>(node<span class="sc">$</span>children, extract_icd)</span>
-<span id="cb20-11"><a></a>    dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(current, children)</span>
-<span id="cb20-12"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb20-13"><a></a>    current</span>
-<span id="cb20-14"><a></a>  }</span>
-<span id="cb20-15"><a></a>}</span>
-<span id="cb20-16"><a></a></span>
-<span id="cb20-17"><a></a><span class="co"># Flatten the structure for a tabular tibble ()</span></span>
-<span id="cb20-18"><a></a>(icd_tbl <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_dfr</span>(icd<span class="sc">$</span>children, extract_icd))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>(chap1 <span class="ot">&lt;-</span> icd <span class="sc">|&gt;</span> <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">collect</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 118,321 × 2
-   code    description                                                
-   &lt;chr&gt;   &lt;chr&gt;                                                      
- 1 A00-A09 Intestinal infectious diseases                             
- 2 A15-A19 Tuberculosis                                               
- 3 A20-A28 Certain zoonotic bacterial diseases                        
- 4 A30-A49 Other bacterial diseases                                   
- 5 A50-A64 Infections with a predominantly sexual mode of transmission
- 6 A65-A69 Other spirochetal diseases                                 
- 7 A70-A74 Other diseases caused by chlamydiae                        
- 8 A75-A79 Rickettsioses                                              
- 9 A80-A89 Viral and prion infections of the central nervous system   
-10 A90-A99 Arthropod-borne viral fevers and viral hemorrhagic fevers  
-# ℹ 118,311 more rows</code></pre>
+<pre><code># A tibble: 1 × 3
+  code    desc                                      children     
+  &lt;chr&gt;   &lt;chr&gt;                                     &lt;list&gt;       
+1 A00-B99 Certain infectious and parasitic diseases &lt;df [22 × 3]&gt;</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>chap1 <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a></a>  <span class="fu">select</span>(children) <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a></a>  tidyr<span class="sc">::</span><span class="fu">unnest</span>(children)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 22 × 3
+   code    desc                                                        children
+   &lt;chr&gt;   &lt;chr&gt;                                                       &lt;list&gt;  
+ 1 A00-A09 Intestinal infectious diseases                              &lt;df&gt;    
+ 2 A15-A19 Tuberculosis                                                &lt;df&gt;    
+ 3 A20-A28 Certain zoonotic bacterial diseases                         &lt;df&gt;    
+ 4 A30-A49 Other bacterial diseases                                    &lt;df&gt;    
+ 5 A50-A64 Infections with a predominantly sexual mode of transmission &lt;df&gt;    
+ 6 A65-A69 Other spirochetal diseases                                  &lt;df&gt;    
+ 7 A70-A74 Other diseases caused by chlamydiae                         &lt;df&gt;    
+ 8 A75-A79 Rickettsioses                                               &lt;df&gt;    
+ 9 A80-A89 Viral and prion infections of the central nervous system    &lt;df&gt;    
+10 A90-A99 Arthropod-borne viral fevers and viral hemorrhagic fevers   &lt;df&gt;    
+# ℹ 12 more rows</code></pre>
 </div>
 </div>
 </section>
