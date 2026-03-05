@@ -5,8 +5,7 @@ library(gt)
 actshort <- c(
   "Lecture" = "L",
   "Computer training" = "CS",
-  "Compulsory, Seminar" = "S",
-  "Compulsory, Computer training" = "CSM"
+  "Seminar" = "S"
 )
 
 # Find lecture titles based on lecture slides
@@ -30,21 +29,27 @@ qs2::qs_save(lectures, "cache/lectures.qs2")
 
 
 # Based on recent export from TimeEdit
+# Export av Excel då csv saknar vecka!
 readxl::read_excel("schema.xlsx") |>
   filter(
     grepl("STA220", Course),
-    grepl("Erik", Teacher),
+    grepl("Erik", Person),
     !grepl("Digital Exam|Retake", Activity),
     # Hårdkodar bort session där jag hjälper Anna men inte har så mkt ansvar
-    !(grepl("Anna", Teacher) & Activity == "Computer training")
+    !(grepl("Anna", Person) & Activity == "Computer training")
   ) |>
   transmute(
     Week,
     Weekday = factor(Weekday, c("Monday", "Wednesday"), c("Mon", "Wed")),
     # Date = `Begin date`,
-    Time = paste(`Begin time`, `End time`, sep = "-"),
-    Shared = if_else(grepl("Anna", Teacher), "⌧", ""),
-    Activity,
+    Time = paste(
+      gsub(":00", "", `Begin time`),
+      gsub(":00", "", `End time`),
+      sep = "-"
+    ),
+    Shared = if_else(grepl("Anna", Person), "X", ""),
+    Compulsory = if_else(grepl("Compulsory", Activity), "Compulsory", ""),
+    Activity = gsub("Compulsory, ", "", Activity)
   ) |>
   group_by(Activity) |>
   mutate(Session = paste0("E", actshort[Activity], row_number())) |>
@@ -58,6 +63,13 @@ readxl::read_excel("schema.xlsx") |>
   tab_footnote(
     footnote = "Shared sessin for the whole course (AGE and EB).",
     locations = cells_column_labels(columns = Shared)
+  ) |>
+  tab_style(
+    style = cell_fill(color = "orange"),
+    locations = cells_body(
+      rows = grepl("Compulsory", Compulsory),
+      columns = Compulsory
+    )
   ) |>
   tab_style(
     style = cell_fill(color = "lightgreen"),

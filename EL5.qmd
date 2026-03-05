@@ -2,6 +2,7 @@
 title: "EL5: Reproducibility"
 subtitle: "{targets} and safe environments"
 reading: "[@nguyen2022a, ch. 2], [@baker2016], [@deoliveiraandrade2025], [@kavianpour2022], [@peng2021]"
+date: last-modified
 format:
   revealjs:
     theme: blood

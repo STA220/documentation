@@ -92,10 +92,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2ec1ecde4794cf0ca2676fdbadd3167b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -154,7 +154,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -205,11 +204,11 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL6.html">
- <span class="dropdown-text">EL6: Data sources</span></a>
+ <span class="dropdown-text">EL6: Data formats</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL7.html">
- <span class="dropdown-text">EL7: Standardized vocabularies</span></a>
+ <span class="dropdown-text">EL7: Medical codes</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL8.html">
@@ -237,6 +236,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./ECS1.html">
  <span class="dropdown-text">ECS1: IDE and version control</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ECS2.html">
+ <span class="dropdown-text">ECS2: Pipeline and reproducibility</span></a>
   </li>  
     </ul>
   </li>
@@ -452,35 +455,93 @@ window.Quarto = {
   <li><a href="#tre" id="toc-tre" class="nav-link" data-scroll-target="#tre">TRE</a></li>
   <li><a href="#in-practice" id="toc-in-practice" class="nav-link" data-scroll-target="#in-practice">In practice</a></li>
   </ul></li>
-  <li><a href="#el6-data-sources" id="toc-el6-data-sources" class="nav-link" data-scroll-target="#el6-data-sources">EL6: Data sources</a>
+  <li><a href="#el6-data-formats" id="toc-el6-data-formats" class="nav-link" data-scroll-target="#el6-data-formats">EL6: Data formats</a>
   <ul class="collapse">
   <li><a href="#reading-1" id="toc-reading-1" class="nav-link" data-scroll-target="#reading-1">Reading</a></li>
   <li><a href="#optional-practice" id="toc-optional-practice" class="nav-link" data-scroll-target="#optional-practice">Optional practice</a></li>
+  <li><a href="#imaginaed-scenario" id="toc-imaginaed-scenario" class="nav-link" data-scroll-target="#imaginaed-scenario">Imaginaed scenario</a></li>
   <li><a href="#sas7bdat" id="toc-sas7bdat" class="nav-link" data-scroll-target="#sas7bdat">.sas7bdat</a></li>
+  <li><a href="#first-try" id="toc-first-try" class="nav-link" data-scroll-target="#first-try">First try</a></li>
+  <li><a href="#large-sas-files" id="toc-large-sas-files" class="nav-link" data-scroll-target="#large-sas-files">Large SAS files</a></li>
   <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">Databases</a></li>
   <li><a href="#row-vs-column-oriented" id="toc-row-vs-column-oriented" class="nav-link" data-scroll-target="#row-vs-column-oriented">Row vs column oriented</a></li>
   <li><a href="#dbms" id="toc-dbms" class="nav-link" data-scroll-target="#dbms">DBMS</a></li>
+  <li><a href="#relevance" id="toc-relevance" class="nav-link" data-scroll-target="#relevance">Relevance</a></li>
   <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
   <li><a href="#what-is-sql-used-for" id="toc-what-is-sql-used-for" class="nav-link" data-scroll-target="#what-is-sql-used-for">What is SQL used for?</a></li>
   <li><a href="#sql-dialects" id="toc-sql-dialects" class="nav-link" data-scroll-target="#sql-dialects">SQL Dialects</a></li>
   <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example">A Simple Example</a></li>
+  <li><a href="#relevance-1" id="toc-relevance-1" class="nav-link" data-scroll-target="#relevance-1">Relevance?</a></li>
   <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb">DuckDB</a></li>
   <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
-  <li><a href="#duckdb-1" id="toc-duckdb-1" class="nav-link" data-scroll-target="#duckdb-1">DuckDB</a></li>
   <li><a href="#duckdb-and-data-files" id="toc-duckdb-and-data-files" class="nav-link" data-scroll-target="#duckdb-and-data-files">DuckDB and Data Files</a></li>
   <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
   <li><a href="#parquet" id="toc-parquet" class="nav-link" data-scroll-target="#parquet">Parquet</a></li>
   <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
   <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data">tidy data</a></li>
-  <li><a href="#fater-in-memory" id="toc-fater-in-memory" class="nav-link" data-scroll-target="#fater-in-memory">Fater in memory?</a></li>
+  <li><a href="#data-files" id="toc-data-files" class="nav-link" data-scroll-target="#data-files">Data files</a></li>
+  <li><a href="#archiving" id="toc-archiving" class="nav-link" data-scroll-target="#archiving">Archiving</a></li>
+  <li><a href="#faster-in-memory" id="toc-faster-in-memory" class="nav-link" data-scroll-target="#faster-in-memory">Faster in memory?</a></li>
   <li><a href="#data.table" id="toc-data.table" class="nav-link" data-scroll-target="#data.table">data.table</a></li>
+  <li><a href="#copy-on-modify" id="toc-copy-on-modify" class="nav-link" data-scroll-target="#copy-on-modify">Copy-on-modify</a></li>
+  <li><a href="#reference-semantics" id="toc-reference-semantics" class="nav-link" data-scroll-target="#reference-semantics">Reference semantics</a></li>
   <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
   <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">joins</a></li>
+  <li><a href="#external-api" id="toc-external-api" class="nav-link" data-scroll-target="#external-api">External API</a></li>
+  <li><a href="#available-resources" id="toc-available-resources" class="nav-link" data-scroll-target="#available-resources">Available resources</a></li>
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  <li><a href="#flattening" id="toc-flattening" class="nav-link" data-scroll-target="#flattening">Flattening</a></li>
   </ul></li>
-  <li><a href="#el7-standardized-vocabularies" id="toc-el7-standardized-vocabularies" class="nav-link" data-scroll-target="#el7-standardized-vocabularies">EL7: Standardized vocabularies</a>
+  <li><a href="#el7-medical-codes" id="toc-el7-medical-codes" class="nav-link" data-scroll-target="#el7-medical-codes">EL7: Medical codes</a>
   <ul class="collapse">
   <li><a href="#reading-2" id="toc-reading-2" class="nav-link" data-scroll-target="#reading-2">Reading</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#relevance-2" id="toc-relevance-2" class="nav-link" data-scroll-target="#relevance-2">Relevance</a></li>
+  <li><a href="#granularityreliabaility" id="toc-granularityreliabaility" class="nav-link" data-scroll-target="#granularityreliabaility">Granularity/reliabaility</a></li>
+  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a></li>
+  <li><a href="#icd-international-classification-of-diseases" id="toc-icd-international-classification-of-diseases" class="nav-link" data-scroll-target="#icd-international-classification-of-diseases">ICD – International Classification of Diseases</a></li>
+  <li><a href="#historical-background" id="toc-historical-background" class="nav-link" data-scroll-target="#historical-background">Historical Background</a></li>
+  <li><a href="#major-icd-versions" id="toc-major-icd-versions" class="nav-link" data-scroll-target="#major-icd-versions">Major ICD Versions</a></li>
+  <li><a href="#national-modifications" id="toc-national-modifications" class="nav-link" data-scroll-target="#national-modifications">National Modifications</a></li>
+  <li><a href="#structure-of-icd-10" id="toc-structure-of-icd-10" class="nav-link" data-scroll-target="#structure-of-icd-10">Structure of ICD-10</a></li>
+  <li><a href="#hierarchy" id="toc-hierarchy" class="nav-link" data-scroll-target="#hierarchy">Hierarchy</a></li>
+  <li><a href="#what-does-an-icd-code-represent" id="toc-what-does-an-icd-code-represent" class="nav-link" data-scroll-target="#what-does-an-icd-code-represent">What Does an ICD Code Represent?</a></li>
+  <li><a href="#changes-over-time" id="toc-changes-over-time" class="nav-link" data-scroll-target="#changes-over-time">Changes Over Time</a></li>
+  <li><a href="#crosswalks-between-versions" id="toc-crosswalks-between-versions" class="nav-link" data-scroll-target="#crosswalks-between-versions">Crosswalks Between Versions</a></li>
+  <li><a href="#crosswalk-patterns-who-icd-9-who-icd-10" id="toc-crosswalk-patterns-who-icd-9-who-icd-10" class="nav-link" data-scroll-target="#crosswalk-patterns-who-icd-9-who-icd-10">Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)</a></li>
+  <li><a href="#crosswalk-before-or-after" id="toc-crosswalk-before-or-after" class="nav-link" data-scroll-target="#crosswalk-before-or-after">Crosswalk before or after</a></li>
+  <li><a href="#icd-o" id="toc-icd-o" class="nav-link" data-scroll-target="#icd-o">ICD-O</a></li>
+  <li><a href="#relationship-between-icd-10-and-icd-o" id="toc-relationship-between-icd-10-and-icd-o" class="nav-link" data-scroll-target="#relationship-between-icd-10-and-icd-o">Relationship Between ICD-10 and ICD-O</a></li>
+  <li><a href="#regional-variation-in-coding" id="toc-regional-variation-in-coding" class="nav-link" data-scroll-target="#regional-variation-in-coding">Regional Variation in Coding</a></li>
+  <li><a href="#validity-of-icd-codes" id="toc-validity-of-icd-codes" class="nav-link" data-scroll-target="#validity-of-icd-codes">Validity of ICD Codes</a></li>
+  <li><a href="#key-measures-of-validity" id="toc-key-measures-of-validity" class="nav-link" data-scroll-target="#key-measures-of-validity">Key Measures of Validity</a></li>
+  <li><a href="#conceptual-22-table" id="toc-conceptual-22-table" class="nav-link" data-scroll-target="#conceptual-22-table">Conceptual 2×2 Table</a></li>
+  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why It Matters</a></li>
+  <li><a href="#practical-implications-for-statisticians" id="toc-practical-implications-for-statisticians" class="nav-link" data-scroll-target="#practical-implications-for-statisticians">Practical Implications for Statisticians</a></li>
+  <li><a href="#atc" id="toc-atc" class="nav-link" data-scroll-target="#atc">ATC</a></li>
+  <li><a href="#sweden" id="toc-sweden" class="nav-link" data-scroll-target="#sweden">Sweden</a></li>
+  <li><a href="#procedure-codes" id="toc-procedure-codes" class="nav-link" data-scroll-target="#procedure-codes">Procedure codes</a></li>
+  <li><a href="#nomesco" id="toc-nomesco" class="nav-link" data-scroll-target="#nomesco">NOMESCO</a></li>
+  <li><a href="#kvå" id="toc-kvå" class="nav-link" data-scroll-target="#kvå">KVÅ</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#important-distinction" id="toc-important-distinction" class="nav-link" data-scroll-target="#important-distinction">Important Distinction</a></li>
+  <li><a href="#implications-for-research" id="toc-implications-for-research" class="nav-link" data-scroll-target="#implications-for-research">Implications for Research</a></li>
+  <li><a href="#drg" id="toc-drg" class="nav-link" data-scroll-target="#drg">DRG</a></li>
+  <li><a href="#how-is-a-drg-determined" id="toc-how-is-a-drg-determined" class="nav-link" data-scroll-target="#how-is-a-drg-determined">How Is a DRG Determined?</a></li>
+  <li><a href="#implications-for-research-1" id="toc-implications-for-research-1" class="nav-link" data-scroll-target="#implications-for-research-1">Implications for Research</a></li>
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a></li>
+  <li><a href="#regular-expressions-regex" id="toc-regular-expressions-regex" class="nav-link" data-scroll-target="#regular-expressions-regex">Regular Expressions (Regex)</a></li>
+  <li><a href="#relevance-3" id="toc-relevance-3" class="nav-link" data-scroll-target="#relevance-3">Relevance</a></li>
+  <li><a href="#basic-building-blocks" id="toc-basic-building-blocks" class="nav-link" data-scroll-target="#basic-building-blocks">Basic Building Blocks</a></li>
+  <li><a href="#example-icd-10-structure" id="toc-example-icd-10-structure" class="nav-link" data-scroll-target="#example-icd-10-structure">Example: ICD-10 Structure</a></li>
+  <li><a href="#example-select-a-diagnosis-group" id="toc-example-select-a-diagnosis-group" class="nav-link" data-scroll-target="#example-select-a-diagnosis-group">Example: Select a Diagnosis Group</a></li>
+  <li><a href="#atc-code-structure" id="toc-atc-code-structure" class="nav-link" data-scroll-target="#atc-code-structure">ATC Code Structure</a></li>
+  <li><a href="#implementations" id="toc-implementations" class="nav-link" data-scroll-target="#implementations">Implementations</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
+  <li><a href="#standardised-groupings" id="toc-standardised-groupings" class="nav-link" data-scroll-target="#standardised-groupings">Standardised Groupings</a></li>
+  <li><a href="#decoder" id="toc-decoder" class="nav-link" data-scroll-target="#decoder"><code>{decoder}</code></a></li>
+  <li><a href="#coder" id="toc-coder" class="nav-link" data-scroll-target="#coder"><code>{coder}</code></a></li>
   </ul></li>
   <li><a href="#el8-health-care-registers" id="toc-el8-health-care-registers" class="nav-link" data-scroll-target="#el8-health-care-registers">EL8: Health care registers</a>
   <ul class="collapse">
@@ -503,15 +564,15 @@ window.Quarto = {
   <li><a href="#altrep" id="toc-altrep" class="nav-link" data-scroll-target="#altrep"><code>ALTREP</code>?</a></li>
   <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database">Database?</a></li>
   <li><a href="#database-1" id="toc-database-1" class="nav-link" data-scroll-target="#database-1">Database?</a></li>
-  <li><a href="#duckdb-2" id="toc-duckdb-2" class="nav-link" data-scroll-target="#duckdb-2">DuckDB</a></li>
+  <li><a href="#duckdb-1" id="toc-duckdb-1" class="nav-link" data-scroll-target="#duckdb-1">DuckDB</a></li>
   <li><a href="#from-csv-to-parquet" id="toc-from-csv-to-parquet" class="nav-link" data-scroll-target="#from-csv-to-parquet">From CSV to Parquet</a></li>
   <li><a href="#parquet-1" id="toc-parquet-1" class="nav-link" data-scroll-target="#parquet-1">Parquet</a></li>
   <li><a href="#r-specific-data-files" id="toc-r-specific-data-files" class="nav-link" data-scroll-target="#r-specific-data-files">R specific data files?</a></li>
   <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data management</a></li>
   <li><a href="#data.table-1" id="toc-data.table-1" class="nav-link" data-scroll-target="#data.table-1">{data.table}</a></li>
-  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
   <li><a href="#if-it-doesnt-fit" id="toc-if-it-doesnt-fit" class="nav-link" data-scroll-target="#if-it-doesnt-fit">If it doesn’t fit?</a></li>
-  <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a>
+  <li><a href="#example-8" id="toc-example-8" class="nav-link" data-scroll-target="#example-8">Example</a>
   <ul class="collapse">
   <li><a href="#pros" id="toc-pros" class="nav-link" data-scroll-target="#pros">Pros 👍</a></li>
   <li><a href="#cons" id="toc-cons" class="nav-link" data-scroll-target="#cons">Cons 👎</a></li>
@@ -581,28 +642,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-02-25</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-03-05</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="stzcjnmdbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#stzcjnmdbl table {
+<div id="zcfsozicuy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zcfsozicuy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#stzcjnmdbl thead, #stzcjnmdbl tbody, #stzcjnmdbl tfoot, #stzcjnmdbl tr, #stzcjnmdbl td, #stzcjnmdbl th {
+#zcfsozicuy thead, #zcfsozicuy tbody, #zcfsozicuy tfoot, #zcfsozicuy tr, #zcfsozicuy td, #zcfsozicuy th {
   border-style: none;
 }
 
-#stzcjnmdbl p {
+#zcfsozicuy p {
   margin: 0;
   padding: 0;
 }
 
-#stzcjnmdbl .gt_table {
+#zcfsozicuy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -628,12 +689,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_caption {
+#zcfsozicuy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#stzcjnmdbl .gt_title {
+#zcfsozicuy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -645,7 +706,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#stzcjnmdbl .gt_subtitle {
+#zcfsozicuy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -657,7 +718,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#stzcjnmdbl .gt_heading {
+#zcfsozicuy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -669,13 +730,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_bottom_border {
+#zcfsozicuy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_col_headings {
+#zcfsozicuy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -690,7 +751,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_col_heading {
+#zcfsozicuy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -710,7 +771,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#stzcjnmdbl .gt_column_spanner_outer {
+#zcfsozicuy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -722,15 +783,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#stzcjnmdbl .gt_column_spanner_outer:first-child {
+#zcfsozicuy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#stzcjnmdbl .gt_column_spanner_outer:last-child {
+#zcfsozicuy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#stzcjnmdbl .gt_column_spanner {
+#zcfsozicuy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -742,11 +803,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#stzcjnmdbl .gt_spanner_row {
+#zcfsozicuy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#stzcjnmdbl .gt_group_heading {
+#zcfsozicuy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -772,7 +833,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#stzcjnmdbl .gt_empty_group_heading {
+#zcfsozicuy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -787,15 +848,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#stzcjnmdbl .gt_from_md > :first-child {
+#zcfsozicuy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#stzcjnmdbl .gt_from_md > :last-child {
+#zcfsozicuy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#stzcjnmdbl .gt_row {
+#zcfsozicuy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -814,7 +875,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#stzcjnmdbl .gt_stub {
+#zcfsozicuy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -827,7 +888,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#stzcjnmdbl .gt_stub_row_group {
+#zcfsozicuy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -841,15 +902,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#stzcjnmdbl .gt_row_group_first td {
+#zcfsozicuy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#stzcjnmdbl .gt_row_group_first th {
+#zcfsozicuy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#stzcjnmdbl .gt_summary_row {
+#zcfsozicuy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -859,16 +920,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#stzcjnmdbl .gt_first_summary_row {
+#zcfsozicuy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_first_summary_row.thick {
+#zcfsozicuy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#stzcjnmdbl .gt_last_summary_row {
+#zcfsozicuy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -878,7 +939,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_grand_summary_row {
+#zcfsozicuy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -888,7 +949,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#stzcjnmdbl .gt_first_grand_summary_row {
+#zcfsozicuy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,7 +959,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_last_grand_summary_row_top {
+#zcfsozicuy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -908,11 +969,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_striped {
+#zcfsozicuy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#stzcjnmdbl .gt_table_body {
+#zcfsozicuy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -921,7 +982,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_footnotes {
+#zcfsozicuy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -935,7 +996,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_footnote {
+#zcfsozicuy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -944,7 +1005,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#stzcjnmdbl .gt_sourcenotes {
+#zcfsozicuy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -958,7 +1019,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#stzcjnmdbl .gt_sourcenote {
+#zcfsozicuy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -966,72 +1027,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#stzcjnmdbl .gt_left {
+#zcfsozicuy .gt_left {
   text-align: left;
 }
 
-#stzcjnmdbl .gt_center {
+#zcfsozicuy .gt_center {
   text-align: center;
 }
 
-#stzcjnmdbl .gt_right {
+#zcfsozicuy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#stzcjnmdbl .gt_font_normal {
+#zcfsozicuy .gt_font_normal {
   font-weight: normal;
 }
 
-#stzcjnmdbl .gt_font_bold {
+#zcfsozicuy .gt_font_bold {
   font-weight: bold;
 }
 
-#stzcjnmdbl .gt_font_italic {
+#zcfsozicuy .gt_font_italic {
   font-style: italic;
 }
 
-#stzcjnmdbl .gt_super {
+#zcfsozicuy .gt_super {
   font-size: 65%;
 }
 
-#stzcjnmdbl .gt_footnote_marks {
+#zcfsozicuy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#stzcjnmdbl .gt_asterisk {
+#zcfsozicuy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#stzcjnmdbl .gt_indent_1 {
+#zcfsozicuy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#stzcjnmdbl .gt_indent_2 {
+#zcfsozicuy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#stzcjnmdbl .gt_indent_3 {
+#zcfsozicuy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#stzcjnmdbl .gt_indent_4 {
+#zcfsozicuy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#stzcjnmdbl .gt_indent_5 {
+#zcfsozicuy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#stzcjnmdbl .katex-display {
+#zcfsozicuy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#stzcjnmdbl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zcfsozicuy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3658,8 +3719,8 @@ positron .</code></pre>
 <hr>
 </section>
 </section>
-<section id="el6-data-sources" class="level1">
-<h1>EL6: Data sources</h1>
+<section id="el6-data-formats" class="level1">
+<h1>EL6: Data formats</h1>
 <p><a href="https://sta220.github.io/documentation/EL6.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -3694,46 +3755,90 @@ positron .</code></pre>
 </section>
 <section id="optional-practice" class="level2">
 <h2 class="anchored" data-anchor-id="optional-practice">Optional practice</h2>
+<p>We won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like):</p>
 <ul>
-<li>We won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: <a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
-<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a> is another option</li>
+<li><a href="https://sqlzoo.net/wiki/SQL_Tutorial">SQLzoo</a></li>
+<li><a href="https://www.thoughtspot.com/sql-tutorial/introduction-to-sql">The SQL Tutorial for Data Analysis</a></li>
+</ul>
+</section>
+<section id="imaginaed-scenario" class="level2">
+<h2 class="anchored" data-anchor-id="imaginaed-scenario">Imaginaed scenario</h2>
+<ul>
+<li>You have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)</li>
+<li>Aftar a couple of months (it previously took a year), you receive some huge files with file ending <code>.sas7bdat</code></li>
+<li>What do you do now?</li>
 </ul>
 </section>
 <section id="sas7bdat" class="level2">
 <h2 class="anchored" data-anchor-id="sas7bdat">.sas7bdat</h2>
 <ul>
-<li>It is common to receive large data files in SAS format (<code>.sas7bdat</code>)</li>
-<li>Many govermental agencies are using SAS internally</li>
+<li>Many govermental agencies are using SAS</li>
+<li>Their standard format when delivering big data sets</li>
 <li>SAS is great for handling big data sets (no need to read everything into memory)</li>
-<li>But I don’t know how to use SAS 😩</li>
-<li>Possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
-<li>But may not work for larger files</li>
-<li>Best practice for current SAS version (9.4) is to export only nececary data to csv
+<li>But you don’t know how to use SAS 😩</li>
+</ul>
+</section>
+<section id="first-try" class="level2">
+<h2 class="anchored" data-anchor-id="first-try">First try</h2>
 <ul>
-<li>SAS Viya (next version) will be more flexible</li>
+<li>It is often possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
+<li>Based on the <a href="https://github.com/WizardMac/ReadStat">ReadStat C library</a></li>
+<li>Based on <a href="https://github.com/FredHutch/sas7bdat-specification/blob/master/sas7bdat.rst">reverse-engineering of binary files</a>!</li>
+<li>You need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)</li>
+<li>But similar trust always applies when you use open source software, which depend on other peoples software, which depends on …</li>
+<li>But, yes, it is legal according to EU legislation :-)</li>
+</ul>
+<blockquote class="blockquote">
+<p><a href="https://eur-lex.europa.eu/eli/dir/2009/24/oj/eng">Directive 2009/24/EC art 6</a> The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]</p>
+</blockquote>
+<p>But let’s say this did not work for your data! 😩</p>
+</section>
+<section id="large-sas-files" class="level2">
+<h2 class="anchored" data-anchor-id="large-sas-files">Large SAS files</h2>
+<ul>
+<li>Best practice for current SAS version (9.4) is to export only nessecary data to csv
+<ul>
+<li>SAS Viya (another solution not likely replacing SAS 9.4) can export parquet files</li>
 </ul></li>
 <li>You need a SAS license (expensive) as well as some SAS syntax for this
 <ul>
-<li>But you might ask ChatGPT etc to generate such code for you</li>
+<li>But you might ask GenAI to generate such code for you</li>
 </ul></li>
 <li>The exported csv file can later be read into R</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>SAS in the course?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are not using SAS in the course (and it is <a href="https://studentportal.gu.se/en/digital-tools/other-digital-tools-and-software">no longer available for students to download</a> … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost).</p>
+</div>
+</div>
+<hr>
+<p><img src="images/paste-18.png" class="img-fluid"></p>
 </section>
 <section id="databases" class="level2">
 <h2 class="anchored" data-anchor-id="databases">Databases</h2>
 <ul>
-<li><p>a database as a collection of “tables” (tabular data frames)</p></li>
+<li><p>a database is a collection of “tables” (tabular data frames)</p></li>
 <li><p>Differences between data frames and database tables:</p>
 <ul>
 <li>Database tables are stored on disk and can be arbitrarily large.</li>
 <li>Data frames are stored in memory</li>
 <li>Database tables almost always have indexes; makes it possible to quickly find rows of interest
 <ul>
-<li>Data frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.</li>
+<li>Data frames and tibbles don’t have indexes, but <code>data.table</code>s do, which is one of the reasons that they’re so fast.</li>
 </ul></li>
 <li>No fixed row order in a table</li>
 </ul></li>
 </ul>
+<hr>
+<p><img src="images/paste-28.png" class="img-fluid"></p>
 </section>
 <section id="row-vs-column-oriented" class="level2">
 <h2 class="anchored" data-anchor-id="row-vs-column-oriented">Row vs column oriented</h2>
@@ -3749,15 +3854,32 @@ positron .</code></pre>
 <dl>
 <dt>Client-server</dt>
 <dd>
-<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.</p>
+<p>run on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.</p>
 </dd>
 <dt>Cloud</dt>
 <dd>
-<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).</p>
+<p>like Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the <strong>cloud</strong>. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.</p>
 </dd>
 <dt>In-process</dt>
 <dd>
-<p>like SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!</p>
+<p>like SQLite or duckdb, run entirely on your computer.</p>
+</dd>
+</dl>
+</section>
+<section id="relevance" class="level2">
+<h2 class="anchored" data-anchor-id="relevance">Relevance</h2>
+<dl>
+<dt>Client-server</dt>
+<dd>
+<p>Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and <a href="https://positron.posit.co/connections-pane">Positron</a> (as well as <a href="https://support.posit.co/hc/en-us/articles/115010915687-Using-RStudio-Connections-in-the-RStudio-IDE">RStudio</a>). If thi is relevant, you can most likely use tools such as <a href="https://dbplyr.tidyverse.org">dbplyr</a> to query the data without to much use of SQL itself.</p>
+</dd>
+<dt>Cloud</dt>
+<dd>
+<p>Commercial cloud products are less likely to be used for sensitive health data within our field.</p>
+</dd>
+<dt>In-process</dt>
+<dd>
+<p>They’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!</p>
 </dd>
 </dl>
 </section>
@@ -3806,6 +3928,15 @@ positron .</code></pre>
 <li>Filters rows</li>
 <li>Sorts the result</li>
 </ul>
+</section>
+<section id="relevance-1" class="level2">
+<h2 class="anchored" data-anchor-id="relevance-1">Relevance?</h2>
+<ul>
+<li>I don’t think SQL is a necessary skill to master for most statisticians</li>
+<li>You should nevertheless be aware of its existence and understand simple code examples as above</li>
+<li>If an employer requires SQL skills, you can probably learn enough if/when needed</li>
+<li>Nevertheless, the more languages/tools etc you know, the more competitive you become (but don’t sacrifice statistical knowledge for technical.</li>
+</ul>
 <hr>
 <p><img src="images/paste-25.png" class="img-fluid"></p>
 </section>
@@ -3816,9 +3947,11 @@ positron .</code></pre>
 <li>Column based</li>
 <li>Very easy to set up</li>
 <li>Very efficient!</li>
-<li>SQL is an option but not a requirement
+<li>SQL is an option as API language but not a requirement</li>
+<li>Integration by DBMS and “hidden” SQL under the hood: <a href="https://dbplyr.tidyverse.org">dbplyr</a></li>
+<li>A more “native” implementation by <a href="https://duckplyr.tidyverse.org">duckplyr</a>
 <ul>
-<li>Integration with tidyverse in R (<a href="https://dbplyr.tidyverse.org">dbplyr</a> or <a href="https://duckplyr.tidyverse.org">duckplyr</a>)</li>
+<li>Better (but perhaps not as widely used yet and therefore a bit less mature/stable)</li>
 </ul></li>
 <li>Can be used both with disk data and data in RAM</li>
 </ul>
@@ -3833,18 +3966,19 @@ db_exec("INSTALL httpfs")
 db_exec("LOAD httpfs")
 
 ## Use some online data which is to big to keep in memory
-year &lt;- 2022:2024
+year &lt;- 2022:2024 # therefore, select just 3 years
 base_url &lt;- "https://blobs.duckdb.org/flight-data-partitioned/"
 files &lt;- paste0("Year=", year, "/data_0.parquet")
 urls &lt;- paste0(base_url, files)
-tibble(urls)
+
 
 ## Connect to the data (without downloading)
 flights &lt;- read_parquet_duckdb(urls)
 ## nrow(flights) # It's not in memory!
-count(flights, Year) # processing outside memory
-
-## Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.
+count(flights, Year) # processing outside memory</code></pre>
+<hr>
+<p>Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.</p>
+<pre class="{r}"><code>#| cache: true
 out &lt;-
   flights |&gt;
   mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;
@@ -3858,33 +3992,25 @@ out &lt;-
 out |&gt;
   explain()</code></pre>
 </section>
-<section id="duckdb-1" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-1">DuckDB</h2>
-<ul>
-<li>DuckDB is an <strong>embedded analytical SQL database</strong>.</li>
-<li>It supports standard SQL</li>
-<li>No server installation is required.</li>
-<li>Designed for analytical workloads</li>
-</ul>
-</section>
 <section id="duckdb-and-data-files" class="level2">
 <h2 class="anchored" data-anchor-id="duckdb-and-data-files">DuckDB and Data Files</h2>
 <p>DuckDB can query files directly:</p>
 <ul>
 <li>Parquet</li>
 <li>CSV</li>
-<li>Arrow</li>
 <li>JSON</li>
 </ul>
-<p>No data import is required.</p>
+<p>No data import (to your computers Random Access Memory [RAM]) is required!</p>
 </section>
 <section id="example-2" class="level2">
 <h2 class="anchored" data-anchor-id="example-2">Example</h2>
 <ul>
 <li>Let’s say you used SAS to export your data to a csv file</li>
 <li>DuckDB can query the relevant data from that file directly and collect only the data you actually need!</li>
+<li>(If you knew you only needed i smaller data set you might have performed similar work already in SAS but you often query the data multiple times for different purposes so it still good to have a readable version of everything)</li>
 </ul>
-<pre class="{r}"><code>csv_file &lt;- tempfile(fileext = ".csv")
+<pre class="{r}"><code>## This is not writing from SAS but to illustrate the point :-)
+csv_file &lt;- tempfile(fileext = ".csv")
 write.csv(NHANES::NHANES, csv_file)
 
 read_csv_duckdb(csv_file) |&gt;
@@ -3897,7 +4023,7 @@ read_csv_duckdb(csv_file) |&gt;
 <li>From Apache Arrow</li>
 <li>Open format</li>
 <li>flat files with possible hierarchical structure by transparent structure of folders and filenames</li>
-<li>very fast to read</li>
+<li>very fast to read and write</li>
 </ul>
 <hr>
 <p><img src="images/paste-26.png" class="img-fluid"></p>
@@ -3905,8 +4031,8 @@ read_csv_duckdb(csv_file) |&gt;
 <section id="example-3" class="level2">
 <h2 class="anchored" data-anchor-id="example-3">Example</h2>
 <ul>
-<li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file</li>
-<li>The solution below reads all CSV data and then export it to a new parquet file</li>
+<li>So we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquet file</li>
+<li>The solution below reads the CSV data and then exports it to a new parquet file</li>
 <li>This means that all data must still fit into memory
 <ul>
 <li>If it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)</li>
@@ -3930,16 +4056,62 @@ read_parquet_duckdb(parquet_file)</code></pre>
 <li>After filteringen/aggregation etc you can always choose to <code>collect()</code> the data and use your ordinary workflow from there</li>
 </ul>
 </section>
-<section id="fater-in-memory" class="level2">
-<h2 class="anchored" data-anchor-id="fater-in-memory">Fater in memory?</h2>
+<section id="data-files" class="level2">
+<h2 class="anchored" data-anchor-id="data-files">Data files</h2>
+<dl>
+<dt><code>.qs2</code></dt>
+<dd>
+A fast, compressed R-specific binary format used for caching by the <code>{targets}</code> package.<br>
+Data must be fully read from disk into memory (RAM), typically via <code>targets::tar_read()</code>.
+</dd>
+<dt><code>.sas7bdat</code></dt>
+<dd>
+A proprietary binary format used by SAS and commonly encountered in register data deliveries.<br>
+It can be sometimes be imported into R (<code>haven::read_sas()</code>, which also allow selection of specific columns at import).<br>
+The dataset is read into memory.
+</dd>
+<dt><code>.csv</code> (Comma-Separated Values)</dt>
+<dd>
+A plain-text format following a loosely defined standard.<br>
+It is human-readable but inefficient for large datasets.<br>
+Tools such as DuckDB (via <code>{duckplyr}</code>) can read only the required columns and rows and perform filtering and aggregation during import.
+</dd>
+<dt><code>.parquet</code> (Apache Parquet)</dt>
+<dd>
+A columnar, compressed, and standardized binary format designed for efficient analytics.<br>
+It supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow.
+</dd>
+</dl>
+</section>
+<section id="archiving" class="level2">
+<h2 class="anchored" data-anchor-id="archiving">Archiving</h2>
+<ul>
+<li>Swedish law say that we must archive the data (within the public sector).</li>
+<li>General practice is to store every “official document” forever … which is a long time :-)</li>
+<li>Usualy conceptualized as 500 years.</li>
+<li>Retention (dokumenthanteringsplan/gallringsplan) usually limit the time needed to store source material for statistcal reporting/research etc
+<ul>
+<li>Varies between organisations but usually 10 years (25 for some research, which is also regulated by the EU)</li>
+</ul></li>
+<li>Can you read a 25 year old data file?
+<ul>
+<li>Yes, if storeed as an inefficient CSV-file …</li>
+<li>Maybe not if using another less human-readable format …</li>
+</ul></li>
+<li>The work of a professional archivist might contain responsibilities for data conversion from time to time (CD-ROMS or floppy disks etc might otherwise not be accasible)</li>
+<li>It seems, however, less common that organizational standardd etc imply that statisticians are limited to certain formats (it is more often up to you and your collegues)</li>
+</ul>
+</section>
+<section id="faster-in-memory" class="level2">
+<h2 class="anchored" data-anchor-id="faster-in-memory">Faster in memory?</h2>
 <ul>
 <li>DuckDB and <code>{duckplyr}</code> makes it possible to work with data which does not fit into memory</li>
-<li>What if data would fit?
+<li>But what if data would fit (which is more common)?
 <ul>
-<li>You can use tibbles and dplyr etc of course …
+<li>You can use tibbles and dplyr etc as usual …
 <ul>
-<li>… but it might be terribly slooooooooooooow … for big enough data</li>
-<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a>from time to time)</li>
+<li>… but it might be slooooooooooooow … for big enough data</li>
+<li>(Although dplyr also gets some <a href="https://tidyverse.org/blog/2026/02/dplyr-performance/">speed improvements</a> from time to time)</li>
 </ul></li>
 </ul></li>
 <li><code>{data.table}</code> is much more efficient!</li>
@@ -3948,13 +4120,53 @@ read_parquet_duckdb(parquet_file)</code></pre>
 <section id="data.table" class="level2">
 <h2 class="anchored" data-anchor-id="data.table">data.table</h2>
 <ul>
-<li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
-<li>Has been around since 2006 (stable and well used, even older than tidyverse)</li>
-<li>faster alternatives to base: <code>fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%</code></li>
-<li>C and GForce (some difficulties on Mac …)</li>
-<li>integer based keys and indices (compare to data bases)</li>
-<li>Reference semantics (no need to copy on modification)</li>
-<li>Very flexible and compact (but perhaps unusual) syntax</li>
+<li>An R package (not a data storage format or a database system)</li>
+<li>Comparable to working with <code>data.frame</code> in base R or <code>tibble</code> in the tidyverse</li>
+<li>Sometimes described as a Domain Specific Language (DSL) within R</li>
+<li>Introduced in 2006 (mature, stable, and widely used — older than the tidyverse)</li>
+<li>Provides faster alternatives to several base R functions: <code>fifelse()</code>, <code>fcase()</code>, <code>forder()</code>, <code>fread()</code>, <code>fcoalesce()</code>,<br>
+<code>as.IDate()</code>, <code>%chin%</code></li>
+<li>Core components implemented in C for performance</li>
+<li>Uses concepts similar to databases:
+<ul>
+<li>Integer-based keys and indices<br>
+</li>
+<li>Efficient joins and grouping</li>
+</ul></li>
+<li>Reference semantics<br>
+</li>
+<li>Very flexible and compact syntax<br>
+</li>
+<li>Strongly appreciated by many statisticians —<br>
+unknown to some — and slightly intimidating to others 🙂</li>
+</ul>
+</section>
+<section id="copy-on-modify" class="level2">
+<h2 class="anchored" data-anchor-id="copy-on-modify">Copy-on-modify</h2>
+<ul>
+<li>Assume <code>df</code> is a large <code>data.frame</code>/<code>tibble</code> with many rows and columns, one of them called <code>old</code>.<br>
+Let <code>f()</code> be some function.</li>
+<li>What happens when you add a new column using<br>
+<code>df$new &lt;- f(df$old)</code> or <code>df &lt;- mutate(df, new = f(old))</code>?</li>
+<li>Even though you reuse the name <code>df</code>, R typically creates a modified copy of the object.</li>
+<li>In R, objects use <em>copy-on-modify</em> semantics:
+<ul>
+<li>When an object is changed, a new copy is created (if needed).</li>
+<li>The name <code>df</code> is just a reference to an object in memory.</li>
+<li>After reassignment, <code>df</code> refers to the new object.</li>
+</ul></li>
+<li>The previous object may remain in memory temporarily until garbage collection runs.</li>
+<li>For very large objects, this can result in substantial temporary memory use</li>
+</ul>
+</section>
+<section id="reference-semantics" class="level2">
+<h2 class="anchored" data-anchor-id="reference-semantics">Reference semantics</h2>
+<ul>
+<li>In <code>data.table</code>, reference semantics are used instead.</li>
+<li>You can modify the existing object directly: <code>df[, new := f(old)]</code></li>
+<li>Or delete columns in place: <code>df[, old := NULL]</code></li>
+<li>No full copy is made</li>
+<li>There is still only one object in memory (and it is still called <code>df</code>).</li>
 </ul>
 </section>
 <section id="example-4" class="level2">
@@ -3981,10 +4193,10 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]</code></pre>
 \____ secondary data.table</code></pre>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 34%">
-<col style="width: 17%">
-<col style="width: 33%">
+<col style="width: 20%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4051,11 +4263,130 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]</code></pre>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="external-api" class="level2">
+<h2 class="anchored" data-anchor-id="external-api">External API</h2>
+<ul>
+<li>We previously assumed you get some data delivery from a register holder</li>
+<li>Or mayby you work within the organization where data is collected, and therefore have access to the original data base.</li>
+<li>Some data can also be openly accessed by an Programming Application Interface (API)</li>
+<li>The PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data</li>
+<li>The <code>{pxweb}</code> R package simplifies the process</li>
+</ul>
+</section>
+<section id="available-resources" class="level2">
+<h2 class="anchored" data-anchor-id="available-resources">Available resources</h2>
+<pre class="{r}"><code>#| echo: false
+pxweb::pxweb_api_catalogue() |&gt;
+  purrr::map_chr("description") |&gt;
+  tibble::enframe() |&gt;
+  knitr::kable()</code></pre>
+</section>
+<section id="example-5" class="level2">
+<h2 class="anchored" data-anchor-id="example-5">Example</h2>
+<ul>
+<li>The first time you need the data, use <code>pxweb_interactive()</code> from your console.</li>
+<li>It will guide you through all the necessary steps.</li>
+<li>It will then provide you the necessary R code to replicate the query</li>
+</ul>
+<hr>
+<pre class="{r}"><code>library(pxweb)
+library(data.table)
+library(ggplot2)
+
+url &lt;- "https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N"
+
+## PXWEB query
+pxweb_query_list &lt;-
+  list(
+    "Alder" = "*",
+    "Kon" = c("1", "2"),
+    "ContentsCode" = c("0000053A"),
+    "Tid" = as.character(1864:2024)
+  )
+
+px_data &lt;-
+  pxweb_get(
+    url = url,
+    query = pxweb_query_list
+  )
+
+## A data.table with population numbers
+bef &lt;-
+  px_data |&gt;
+  as.data.frame() |&gt;
+  setDT()
+
+## Some data cleaning
+setnames(
+  bef,
+  c("ålder", "kön", "år", "Antal"),
+  c("age", "sex", "year", "N")
+)
+bef[, `:=`(
+  age = as.numeric(gsub(" år", "", age)),
+  sex = factor(sex, c("män", "kvinnor"), c("males", "females")),
+  year = as.integer(year)
+)]
+bef &lt;- bef[!is.na(age)] # Remove totals
+
+## Aggregate for age groups
+bef[,
+  age_group := cut(
+    age,
+    c(-Inf, 17, 66, Inf),
+    c("children", "adults", "elderly")
+  )
+]
+bef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]
+
+## Visualize
+gg &lt;- bef_ag |&gt;
+  ggplot(aes(year, N, color = age_group, linetype = sex)) +
+  geom_line() +
+  theme(legend.position = "bottom") +
+  scale_y_continuous(
+    labels = scales::label_number(scale = 1e-6, suffix = "M")
+  )</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>qku #| echo: false gg</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">## Hierachical data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>gdpqjk { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">## Example</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>qku #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="flattening" class="level2">
+<h2 class="anchored" data-anchor-id="flattening">Flattening</h2>
+<p>So you now have a duckplyr data frame. One of its columns is nested and, with additional data frames as children) If we unnest the children for chapter 1, we see that those children also have children … and so it continous. To get a simple translation between individual codes and their description, you might need to define some recursive function to unnest until you have found the last children in line.</p>
+<pre class="{r}"><code>#| cache: true
+(chap1 &lt;- icd |&gt; slice(1) |&gt; collect())
+chap1 |&gt;
+  select(children) |&gt;
+  tidyr::unnest(children)</code></pre>
 <hr>
 </section>
 </section>
-<section id="el7-standardized-vocabularies" class="level1">
-<h1>EL7: Standardized vocabularies</h1>
+<section id="el7-medical-codes" class="level1">
+<h1>EL7: Medical codes</h1>
 <p><a href="https://sta220.github.io/documentation/EL7.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -4069,21 +4400,858 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]</code></pre>
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;3)</span></li>
+<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch.&nbsp;15)</span></li>
+<li><span class="citation" data-cites="bindel2025">(<a href="#ref-bindel2025" role="doc-biblioref">Bindel and Seifert 2025</a>)</span></li>
+<li><span class="citation" data-cites="alharbi2021">(<a href="#ref-alharbi2021" role="doc-biblioref">Alharbi, Isouard, and Tolchard 2021</a>)</span></li>
+<li><span class="citation" data-cites="nelson2024">(<a href="#ref-nelson2024" role="doc-biblioref">Nelson et al. 2024</a>)</span></li>
 </ul>
 </div>
 </div>
 <section id="reading-2" class="level2">
 <h2 class="anchored" data-anchor-id="reading-2">Reading</h2>
 <ul>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;3)</span></li>
+<li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;3)</span> on standardized vocabularies. You may skip the sections “CPT”, “LOINC”, “RxNorm” and “Using the Unified Medical Language System” (not examined within the course). Even if you skip those section, remember to read the conclusions in the end of the chapter!</li>
+<li><span class="citation" data-cites="alharbi2021">Alharbi, Isouard, and Tolchard (<a href="#ref-alharbi2021" role="doc-biblioref">2021</a>)</span> provides an historical expose of the development of medical coding, with focus on the International Classificatin of Diseases (ICD).</li>
+<li><span class="citation" data-cites="nelson2024">Nelson et al. (<a href="#ref-nelson2024" role="doc-biblioref">2024</a>)</span> argue (based on a statistical analysis) that we should not put to much trust in the coded data (you may skip the methods section).</li>
+<li><span class="citation" data-cites="bindel2025">Bindel and Seifert (<a href="#ref-bindel2025" role="doc-biblioref">2025</a>)</span> introduces the Anatomical Therapeutic Chemical (ATC) and some associated problems. Focus on the introduction and conclusion sections (results and discussion may be skipped).</li>
+<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch.&nbsp;15)</span>: Using <code>{stringr}</code> for regular expressions in R including exercises</li>
 </ul>
 <p><strong>Recommended references:</strong></p>
 <ul>
-<li></li>
+<li><a href="file:///Users/xbuler/Downloads/cdc_5928_DS1.pdf">History of the Statistical Classification of Diseases</a><a href="https://stacks.cdc.gov/view/cdc/5928">and</a><a href="file:///Users/xbuler/Downloads/cdc_5928_DS1.pdf">Causes of Death</a></li>
+</ul>
+<p><strong>Recommended practice:</strong></p>
+<ul>
+<li><a href="https://www.regexone.com">Regular expressins</a>: But please not that this is general practice and deviations may exist between those exercises and R.</li>
 </ul>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<ul>
+<li>Standardized vocabularies, controlled vocabularies, terminologies and ontologies …</li>
+<li>This is a field of its onwn (health informatics and clinical terminology)</li>
+<li>Let’s just call it “medical coding” for now.</li>
+</ul>
+</section>
+<section id="relevance-2" class="level2">
+<h2 class="anchored" data-anchor-id="relevance-2">Relevance</h2>
+<ul>
+<li>Imaganine you are diagnosed with “cancer” (hope not …)</li>
+<li>Your doctor writes that you have “kräfta” in your medical records
+<ul>
+<li>“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”</li>
+</ul></li>
+<li>She might as well write:
+<ul>
+<li>The patient was diagnosed with a malignant neoplasm of the colon.</li>
+<li>Histology confirms invasive adenocarcinoma.</li>
+<li>Evidence of metastatic disease to the liver.</li>
+</ul></li>
+<li>Natural languages (English/Swedish etc) are not well suited for statistical analysis
+<ul>
+<li>Natural language processing (NLP) is nice but outside the scope of the course</li>
+</ul></li>
+<li>Statisticians need clear definitions of diagnoses, procedures, medications etc.</li>
+<li>Therefore, such information is encoded in a standardized way</li>
+</ul>
+</section>
+<section id="granularityreliabaility" class="level2">
+<h2 class="anchored" data-anchor-id="granularityreliabaility">Granularity/reliabaility</h2>
+<ul>
+<li>Cancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)</li>
+<li>Cancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)</li>
+<li>The more we learn about a diseases, the more granularity we expect from the coding</li>
+<li>The coding systems therefore tend to be quite complex, evolve over time and often have regional differences</li>
+<li>Even though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.</li>
+<li>The codes might also be misued for re-imbursment practices
+<ul>
+<li>There was a regional scandal in Western Sweden not so many years ago</li>
+</ul></li>
+<li>In practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff</li>
+</ul>
+</section>
+<section id="example-6" class="level2">
+<h2 class="anchored" data-anchor-id="example-6">Example</h2>
+<ul>
+<li>The Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems</li>
+<li>At first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?</li>
+<li>However, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.</li>
+<li>It was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.</li>
+<li>The apparent “complication” was therefore not a real clinical problem, but a coding error.</li>
+</ul>
+<p><strong>Lesson:</strong> Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions.</p>
+</section>
+<section id="icd-international-classification-of-diseases" class="level2">
+<h2 class="anchored" data-anchor-id="icd-international-classification-of-diseases">ICD – International Classification of Diseases</h2>
+<ul>
+<li>Maintained by the World Health Organization (WHO)</li>
+<li>Global standard for coding diseases and causes of death</li>
+<li>Used for:
+<ul>
+<li>Clinical documentation</li>
+<li>Mortality statistics</li>
+<li>Epidemiological research</li>
+<li>Health system planning and monitoring</li>
+</ul></li>
+</ul>
+</section>
+<section id="historical-background" class="level2">
+<h2 class="anchored" data-anchor-id="historical-background">Historical Background</h2>
+<ul>
+<li>First version: 1893 (International List of Causes of Death)</li>
+<li>WHO assumed responsibility in 1948 (ICD-6)</li>
+<li>Major revisions approximately every 10–20 years</li>
+<li>Each revision reflects:
+<ul>
+<li>Advances in medical knowledge</li>
+<li>Changes in disease concepts</li>
+<li>Administrative and reporting needs</li>
+</ul></li>
+</ul>
+<p>ICD has evolved from a mortality list to a comprehensive disease classification.</p>
+</section>
+<section id="major-icd-versions" class="level2">
+<h2 class="anchored" data-anchor-id="major-icd-versions">Major ICD Versions</h2>
+<ul>
+<li>ICD-7 (used in many countries in the 1950s–1970s)
+<ul>
+<li>Still used in the Swedish cancer register for backward compability</li>
+</ul></li>
+<li>ICD-8 (used in many countries in the 1960s–1980s)</li>
+<li>ICD-9 (widely used until the early 2000s)
+<ul>
+<li>Also still used in the Swedish cancer register</li>
+</ul></li>
+<li>ICD-10 (introduced in the 1990s; still dominant in many countries)
+<ul>
+<li>From 1997 in Sweden. What we currently most care about</li>
+</ul></li>
+<li>ICD-11 (adopted in 2019; gradually being implemented)</li>
+</ul>
+<p>Different countries adopted versions at different times, creating challenges for international comparisons.</p>
+</section>
+<section id="national-modifications" class="level2">
+<h2 class="anchored" data-anchor-id="national-modifications">National Modifications</h2>
+<p>Many countries use national adaptations:</p>
+<ul>
+<li>ICD-10-CM (USA; Clinical Modification)</li>
+<li>ICD-10-CA (Canada)</li>
+<li>ICD-10-SE (Sweden)
+<ul>
+<li>A fifth position (ignoring the dot) sometimes used for more granularity</li>
+<li>ICD-10: S72.0 Fracture of neck of femur</li>
+<li>ICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …</li>
+</ul></li>
+</ul>
+<hr>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 32%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>WHO ICD-10</th>
+<th>ICD-10-SE (Sweden)</th>
+<th>ICD-10-CM (USA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maintained by</td>
+<td>WHO</td>
+<td>Swedish National Board of Health and Welfare (Socialstyrelsen)</td>
+<td>U.S. National Center for Health Statistics (NCHS)</td>
+</tr>
+<tr class="even">
+<td>Primary purpose</td>
+<td>Global disease classification</td>
+<td>National clinical and statistical reporting</td>
+<td>Clinical documentation and reimbursement</td>
+</tr>
+<tr class="odd">
+<td>Level of detail</td>
+<td>Moderate</td>
+<td>More detailed than WHO ICD-10</td>
+<td>Much more detailed than WHO ICD-10</td>
+</tr>
+<tr class="even">
+<td>Additional digits</td>
+<td>Typically 3–4 characters</td>
+<td>Often includes 5th character extensions</td>
+<td>Up to 7 characters</td>
+</tr>
+<tr class="odd">
+<td>Laterality (right/left)</td>
+<td>Usually not specified</td>
+<td>Limited</td>
+<td>Frequently specified</td>
+</tr>
+<tr class="even">
+<td>Encounter type (initial, follow-up, sequela)</td>
+<td>Not included</td>
+<td>Not included</td>
+<td>Explicitly coded</td>
+</tr>
+<tr class="odd">
+<td>Administrative focus</td>
+<td>Epidemiology and mortality statistics</td>
+<td>Clinical and national register reporting</td>
+<td>Strongly tied to billing and reimbursement</td>
+</tr>
+<tr class="even">
+<td>International comparability</td>
+<td>High (reference standard)</td>
+<td>High within Nordic context, requires mapping internationally</td>
+<td>Requires crosswalk to WHO ICD-10 for comparison</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="structure-of-icd-10" class="level2">
+<h2 class="anchored" data-anchor-id="structure-of-icd-10">Structure of ICD-10</h2>
+<p>Typical format:</p>
+<ul>
+<li>One letter (chapter)</li>
+<li>Two digits (category)</li>
+<li>Optional dot and additional digit(s) (subcategory)</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><strong>I21</strong> – Acute myocardial infarction (AMI)</li>
+<li><strong>I21.0</strong> – AMI of anterior wall</li>
+<li><strong>I21.9</strong> – AMI, unspecified</li>
+</ul>
+</section>
+<section id="hierarchy" class="level2">
+<h2 class="anchored" data-anchor-id="hierarchy">Hierarchy</h2>
+<ul>
+<li>Chapter → Block → Category (3-digit) → Subcategory (4-digit+)</li>
+</ul>
+<p>Researchers must decide:</p>
+<ul>
+<li>Analyse at 3-digit level?</li>
+<li>Or at more detailed subcategory level?</li>
+</ul>
+<p>There is a trade-off between specificity and statistical power.</p>
+</section>
+<section id="what-does-an-icd-code-represent" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-an-icd-code-represent">What Does an ICD Code Represent?</h2>
+<p>An ICD code reflects:</p>
+<ul>
+<li>Clinical documentation</li>
+<li>Coding rules</li>
+<li>Administrative structure</li>
+<li>Local practice</li>
+</ul>
+<p>It does not necessarily reflect:</p>
+<ul>
+<li>Biological mechanism</li>
+<li>Diagnostic certainty</li>
+<li>Uniform clinical interpretation</li>
+</ul>
+<p>Register data therefore reflect both medicine and administration.</p>
+</section>
+<section id="changes-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="changes-over-time">Changes Over Time</h2>
+<p>Between ICD versions:</p>
+<ul>
+<li>Codes may be split into more detailed categories</li>
+<li>Codes may be merged</li>
+<li>Codes may move between chapters</li>
+<li>Definitions may change</li>
+</ul>
+<p>Example: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.</p>
+<p>Implication: Observed changes in incidence may reflect coding changes rather than true epidemiology.</p>
+</section>
+<section id="crosswalks-between-versions" class="level2">
+<h2 class="anchored" data-anchor-id="crosswalks-between-versions">Crosswalks Between Versions</h2>
+<p>When analysing long time series:</p>
+<ul>
+<li>Mapping tables (“crosswalks”) are often used</li>
+<li>Mapping may be:
+<ul>
+<li>One-to-one</li>
+<li>One-to-many (most common)</li>
+<li>Many-to-one</li>
+</ul></li>
+</ul>
+<p>Crosswalks are rarely exact. Information loss or ambiguity is common.</p>
+<p>Aggregation to broader diagnostic groups is often necessary.</p>
+</section>
+<section id="crosswalk-patterns-who-icd-9-who-icd-10" class="level2">
+<h2 class="anchored" data-anchor-id="crosswalk-patterns-who-icd-9-who-icd-10">Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)</h2>
+<p>When mapping between ICD versions, different structural relationships may occur.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mapping type</th>
+<th>ICD-9 (WHO)</th>
+<th>ICD-10 (WHO)</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>One → Many (Split)</td>
+<td>250 – Diabetes mellitus</td>
+<td>E10–E14</td>
+<td>One broad ICD-9 category split into multiple etiological types</td>
+</tr>
+<tr class="even">
+<td>Many → One (Merge)</td>
+<td>038 – Septicaemia<br>790.7 – Bacteraemia</td>
+<td>A41 – Other sepsis</td>
+<td>Separate ICD-9 concepts consolidated into broader ICD-10 category</td>
+</tr>
+<tr class="odd">
+<td>Many ↔︎ Many (Reorganisation)</td>
+<td>296 – Affective psychoses<br>300 – Neurotic disorders</td>
+<td>F30–F39 (Mood disorders)<br>F40–F48 (Neurotic disorders)</td>
+<td>Structural reorganisation and conceptual reclassification across chapters</td>
+</tr>
+<tr class="even">
+<td>Chapter relocation</td>
+<td>011 – Pulmonary tuberculosis</td>
+<td>A15 – Respiratory tuberculosis</td>
+<td>Infectious diseases reorganised under new chapter structure</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="crosswalk-before-or-after" class="level2">
+<h2 class="anchored" data-anchor-id="crosswalk-before-or-after">Crosswalk before or after</h2>
+<ul>
+<li>The Swedish caner register has an internal “crosswalk” applied uniformly to the register itself</li>
+<li>Other registers typically only records the current version in use</li>
+<li>If so, you might perform the crosswalk yourself after receiving the data
+<ul>
+<li>Applies if you want to look at longer time trends etc or combine data from different periods</li>
+</ul></li>
+</ul>
+</section>
+<section id="icd-o" class="level2">
+<h2 class="anchored" data-anchor-id="icd-o">ICD-O</h2>
+<p>ICD-O (International Classification of Diseases for Oncology):</p>
+<ul>
+<li>Used mainly in cancer registries</li>
+<li>Combines:
+<ul>
+<li>Topography (tumour site)</li>
+<li>Morphology (histology and behaviour)</li>
+</ul></li>
+<li>Current commonly used version: - ICD-O-3</li>
+<li>Earlier versions: - ICD-O-1 - ICD-O-2</li>
+<li>ICD-O is more detailed than ICD-10 for cancer incidence studies.</li>
+</ul>
+</section>
+<section id="relationship-between-icd-10-and-icd-o" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-between-icd-10-and-icd-o">Relationship Between ICD-10 and ICD-O</h2>
+<ul>
+<li>ICD-10 commonly used for mortality and hospital discharge diagnoses</li>
+<li>ICD-O primarily used for cancer registry incidence data</li>
+</ul>
+<p>A cancer case may have:</p>
+<ul>
+<li>An ICD-10 code in hospital data</li>
+<li>An ICD-O morphology and topography code in a cancer registry</li>
+</ul>
+<p>Researchers must understand which system underlies their dataset.</p>
+<hr>
+<p><img src="images/paste-30.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/paste-31.png" class="img-fluid"></p>
+</section>
+<section id="regional-variation-in-coding" class="level2">
+<h2 class="anchored" data-anchor-id="regional-variation-in-coding">Regional Variation in Coding</h2>
+<p>Differences between hospitals or regions may arise due to:</p>
+<ul>
+<li>Coding training</li>
+<li>Local guidelines</li>
+<li>Administrative incentives</li>
+<li>Reimbursement systems</li>
+<li>Electronic health record design</li>
+</ul>
+<p>Registers capture both clinical events and coding behaviour.</p>
+</section>
+<section id="validity-of-icd-codes" class="level2">
+<h2 class="anchored" data-anchor-id="validity-of-icd-codes">Validity of ICD Codes</h2>
+<p>Important research question:</p>
+<ul>
+<li>Does the code correspond to the true disease?</li>
+</ul>
+<p>Validation studies compare ICD codes with a reference standard<br>
+(e.g., chart review, clinical registry, laboratory confirmation).</p>
+</section>
+<section id="key-measures-of-validity" class="level2">
+<h2 class="anchored" data-anchor-id="key-measures-of-validity">Key Measures of Validity</h2>
+<ul>
+<li><p><strong>Sensitivity</strong><br>
+Among patients who truly have the disease,<br>
+how many receive the correct ICD code?<br>
+→ Measures undercoding (missed cases).</p></li>
+<li><p><strong>Specificity</strong><br>
+Among patients who do not have the disease,<br>
+how many are correctly not assigned the code?<br>
+→ Measures overcoding (false positives).</p></li>
+<li><p><strong>Positive Predictive Value (PPV)</strong><br>
+Among patients assigned the ICD code,<br>
+how many truly have the disease?<br>
+→ Measures how reliable the code is for identifying true cases.</p></li>
+</ul>
+</section>
+<section id="conceptual-22-table" class="level2">
+<h2 class="anchored" data-anchor-id="conceptual-22-table">Conceptual 2×2 Table</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>True disease</th>
+<th>No disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ICD code present</td>
+<td>True positive</td>
+<td>False positive</td>
+</tr>
+<tr class="even">
+<td>ICD code absent</td>
+<td>False negative</td>
+<td>True negative</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Sensitivity = True positives / (True positives + False negatives)</li>
+<li>Specificity = True negatives / (True negatives + False positives)</li>
+<li>PPV = True positives / (True positives + False positives)</li>
+</ul>
+</section>
+<section id="why-it-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-matters">Why It Matters</h2>
+<p>Low sensitivity → underestimated incidence<br>
+Low PPV → inflated case counts<br>
+Variation in validity may depend on:</p>
+<ul>
+<li>Diagnosis (e.g., myocardial infarction vs mild depression)</li>
+<li>Care setting (inpatient vs primary care)</li>
+<li>Time period (coding changes)</li>
+<li>ICD version and national modification</li>
+</ul>
+<p>Not all ICD codes are equally reliable for research.</p>
+</section>
+<section id="practical-implications-for-statisticians" class="level2">
+<h2 class="anchored" data-anchor-id="practical-implications-for-statisticians">Practical Implications for Statisticians</h2>
+<p>Before analysis, always clarify:</p>
+<ul>
+<li>Which ICD version?</li>
+<li>Which national modification?</li>
+<li>Which coding level (3-digit vs 4-digit)?</li>
+<li>Has coding practice changed over time?</li>
+<li>Are crosswalks required?</li>
+<li>Is there validation evidence for the diagnosis?</li>
+</ul>
+<p>ICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research.</p>
+</section>
+<section id="atc" class="level2">
+<h2 class="anchored" data-anchor-id="atc">ATC</h2>
+<ul>
+<li>Anatomical Therapeutic Chemical (ATC) classification</li>
+<li>categorizing therapeutic drugs,</li>
+<li>structured into 14 main groups and 5 levels, with a disease-oriented focus</li>
+<li>introduced in the 1960s</li>
+<li>In 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”</li>
+<li>follow a hierarchical structure:
+<ul>
+<li>1 letter</li>
+<li>2 digits</li>
+<li>2 letters</li>
+<li>2 digits</li>
+<li>Example: <code>C09AA05</code></li>
+</ul></li>
+<li>Several problems exist <span class="citation" data-cites="bindel2025">(<a href="#ref-bindel2025" role="doc-biblioref">Bindel and Seifert 2025</a>)</span> but it is nevertheless widely used</li>
+</ul>
+<hr>
+<p><img src="images/paste-29.png" class="img-fluid"></p>
+</section>
+<section id="sweden" class="level2">
+<h2 class="anchored" data-anchor-id="sweden">Sweden</h2>
+<ul>
+<li>We have ATC codes in the national prescription register</li>
+<li>When a doctor prescribes a medicatin, the ATC code will follow automatically</li>
+<li>Less room for interpretation when coding</li>
+<li>New medications are introduced over time</li>
+<li>The Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions</li>
+<li>Daily updates to the <a href="https://www.lakemedelsverket.se/en/e-services-and-forms/substance-register-and-product-register/national-substance-register-for-medicinal-products-nsl#hmainbody1">National Substance Register</a></li>
+</ul>
+</section>
+<section id="procedure-codes" class="level2">
+<h2 class="anchored" data-anchor-id="procedure-codes">Procedure codes</h2>
+<ul>
+<li>We use ICD for diagnoses and medical condition</li>
+<li>But how are patients with such diagnosis treated?</li>
+<li>What actions (in addition to the prescription of medicines) do we have?</li>
+<li>USA has a special version of ICD for this: ICD-10-PCS
+<ul>
+<li>PCS = Procedure Coding System</li>
+</ul></li>
+</ul>
+</section>
+<section id="nomesco" class="level2">
+<h2 class="anchored" data-anchor-id="nomesco">NOMESCO</h2>
+<p>In Sweden, medical procedures are coded using the <strong>NOMESCO Classification of Surgical Procedures (NCSP)</strong>.</p>
+<ul>
+<li>Developed by the Nordic Medico-Statistical Committee (NOMESCO)</li>
+<li>Used in Sweden, Denmark, Finland, Norway, and Iceland</li>
+<li>Primarily for on surgical procedures</li>
+</ul>
+</section>
+<section id="kvå" class="level2">
+<h2 class="anchored" data-anchor-id="kvå">KVÅ</h2>
+<ul>
+<li>In Sweden implemented through <strong>KVÅ</strong> (Klassifikation av vårdåtgärder)</li>
+<li>Maintained nationally by Socialstyrelsen</li>
+<li>Includes the NOMESCO-NCSP codes for surgery</li>
+<li>Also includes additional codes for non-surgical treatments and activities
+<ul>
+<li>Administration of chemotherapy (cytostatic treatment)</li>
+<li>Radiotherapy sessions</li>
+<li>Dialysis treatment (hemodialysis, peritoneal dialysis)</li>
+<li>Blood transfusion</li>
+<li>Vaccination</li>
+<li>Advanced wound care (non-surgical)</li>
+<li>Multidisciplinary team conference (MDT conference)</li>
+<li>Smoking cessation counselling</li>
+<li>Nutritional counselling</li>
+<li>Physiotherapy interventions</li>
+<li>Occupational therapy interventions</li>
+<li>Psychotherapeutic treatment sessions</li>
+<li>Structured patient education programmes</li>
+<li>Palliative care planning</li>
+</ul></li>
+</ul>
+</section>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<ul>
+<li>Alphanumeric codes (typically 5 characters)</li>
+<li>First letter indicates anatomical or procedural group</li>
+<li>Subsequent characters specify procedure type and detail</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><strong>NFB49</strong> – Primary total hip replacement</li>
+<li><strong>JKA20</strong> – Appendectomy</li>
+</ul>
+</section>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<ul>
+<li>Record surgical and certain non-surgical interventions</li>
+<li>Used in:
+<ul>
+<li>National Patient Register</li>
+<li>Quality registers</li>
+<li>Reimbursement and administrative reporting</li>
+<li>Health services research</li>
+</ul></li>
+</ul>
+</section>
+<section id="important-distinction" class="level2">
+<h2 class="anchored" data-anchor-id="important-distinction">Important Distinction</h2>
+<ul>
+<li><strong>ICD-10-SE</strong> → Diagnosis codes</li>
+<li><strong>NOMESCO/KVÅ</strong> → Procedure codes</li>
+</ul>
+<p>A patient record may therefore contain:</p>
+<ul>
+<li>An ICD diagnosis (e.g., hip fracture)</li>
+<li>A NOMESCO procedure code (e.g., hip replacement surgery)</li>
+</ul>
+</section>
+<section id="implications-for-research" class="level2">
+<h2 class="anchored" data-anchor-id="implications-for-research">Implications for Research</h2>
+<ul>
+<li>Diagnosis and procedure must not be confused</li>
+<li>Trends in procedures may reflect:
+<ul>
+<li>Clinical practice changes</li>
+<li>Technology changes</li>
+<li>Policy and reimbursement incentives</li>
+</ul></li>
+<li>International comparisons require awareness that other countries (e.g., USA) use different coding systems</li>
+</ul>
+<p>NOMESCO codes capture <em>what was done</em>, not <em>what disease the patient had</em>.</p>
+</section>
+<section id="drg" class="level2">
+<h2 class="anchored" data-anchor-id="drg">DRG</h2>
+<p><strong>DRG (Diagnosis-Related Groups)</strong> is a classification system used to group hospital cases into categories expected to require similar levels of resources.</p>
+<p>In Sweden:</p>
+<ul>
+<li>Based on the <strong>NordDRG</strong> system</li>
+<li>Used for:
+<ul>
+<li>Hospital reimbursement</li>
+<li>Resource allocation</li>
+<li>Health care management</li>
+<li>Productivity and efficiency analyses</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-is-a-drg-determined" class="level2">
+<h2 class="anchored" data-anchor-id="how-is-a-drg-determined">How Is a DRG Determined?</h2>
+<p>A DRG is assigned based on a combination of:</p>
+<ul>
+<li>Primary diagnosis (ICD-10-SE)</li>
+<li>Secondary diagnoses</li>
+<li>Procedure codes (NOMESCO/KVÅ)</li>
+<li>Age</li>
+<li>Sex</li>
+<li>Discharge status</li>
+<li>Presence of complications or comorbidities</li>
+</ul>
+<p>DRG codes are therefore derived classifications, not primary clinical codes.</p>
+</section>
+<section id="implications-for-research-1" class="level2">
+<h2 class="anchored" data-anchor-id="implications-for-research-1">Implications for Research</h2>
+<ul>
+<li>DRG reflects resource use, not disease incidence.</li>
+<li>Changes in reimbursement rules may influence coding behavior.</li>
+<li>Regional comparisons must consider administrative incentives.</li>
+<li>DRG is suitable for health services and economic analyses, but less appropriate for etiological research.</li>
+</ul>
+</section>
+<section id="regular-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions">Regular expressions</h2>
+</section>
+<section id="regular-expressions-regex" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (Regex)</h2>
+<ul>
+<li>A way to describe <strong>patterns in text</strong></li>
+<li>Used to:
+<ul>
+<li>Identify diagnosis codes (ICD-10)</li>
+<li>Identify drug codes (ATC)</li>
+<li>Clean register data</li>
+<li>Validate variables</li>
+</ul></li>
+<li>In R:
+<ul>
+<li>Base R: <code>grepl()</code>, <code>sub()</code>, <code>gsub()</code></li>
+<li>Tidyverse: <code>stringr::str_detect()</code>, <code>str_extract()</code>, <code>str_replace()</code></li>
+<li>More efficient for big data: <a href="https://github.com/traversc/stringfish">stringfish</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="relevance-3" class="level2">
+<h2 class="anchored" data-anchor-id="relevance-3">Relevance</h2>
+<p>Typical use cases:</p>
+<ul>
+<li>Select all ICD-10 codes starting with <code>"I21"</code> (acute myocardial infarction)</li>
+<li>Identify all ATC codes beginning with <code>"C09"</code> (antihypertensives)</li>
+<li>Check for malformed codes (quality control)</li>
+<li>Extract codes embedded in free text (e.g., notes, text fields)</li>
+</ul>
+<hr>
+</section>
+<section id="basic-building-blocks" class="level2">
+<h2 class="anchored" data-anchor-id="basic-building-blocks">Basic Building Blocks</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>^</code></td>
+<td>Start of string</td>
+</tr>
+<tr class="even">
+<td><code>$</code></td>
+<td>End of string</td>
+</tr>
+<tr class="odd">
+<td><code>.</code></td>
+<td>Any character</td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>0 or more repetitions</td>
+</tr>
+<tr class="odd">
+<td><code>+</code></td>
+<td>1 or more repetitions</td>
+</tr>
+<tr class="even">
+<td><code>?</code></td>
+<td>0 or 1 repetition</td>
+</tr>
+<tr class="odd">
+<td><code>{m,n}</code></td>
+<td>Between m and n repetitions</td>
+</tr>
+<tr class="even">
+<td><code>[ABC]</code></td>
+<td>Any of A, B, or C</td>
+</tr>
+<tr class="odd">
+<td><code>[0-9]</code></td>
+<td>Any digit</td>
+</tr>
+<tr class="even">
+<td><code>\\d</code></td>
+<td>Any digit (PCRE)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Different versions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are different implementations of regular expressions! The implementation in base R is described by <code>?base::regex</code> in R. Perl-like Regular Expressions (PCRE) is a commonly used alternative requireing (<code>perl = TRUE</code> as argument) for the base functions.</p>
+</div>
+</div>
+</section>
+<section id="example-icd-10-structure" class="level2">
+<h2 class="anchored" data-anchor-id="example-icd-10-structure">Example: ICD-10 Structure</h2>
+<p>ICD-10 codes typically follow:</p>
+<ul>
+<li>One letter</li>
+<li>Two digits</li>
+<li>Optional dot and additional digit</li>
+</ul>
+<p>Regex pattern: <code>^[A-Z][0-9]{2}(\\.[0-9])?$</code></p>
+<p>where <code>\\</code> is ussed to remove the special meaning of <code>.</code> as described above. Hence, in this case <code>\\.</code> is interpreted as a literal <code>.</code> as to be found in the character string. In R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">"^[A-Z][0-9]{2}(</span><span class="sc">\\</span><span class="st">.[0-9])?$"</span>, icd) <span class="co"># base</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_detect</span>(icd, <span class="st">"^[A-Z][0-9]{2}(</span><span class="sc">\\</span><span class="st">.[0-9])?$"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Faster and using 10 CPU cores in paralell (only relevant for "big enough data"):</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>stringfish<span class="sc">::</span><span class="fu">sf_grepl</span>(icd, <span class="st">"^[A-Z][0-9]{2}(</span><span class="sc">\\</span><span class="st">.[0-9])?$"</span>, <span class="at">nthreads =</span> <span class="dv">10</span>L)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-select-a-diagnosis-group" class="level2">
+<h2 class="anchored" data-anchor-id="example-select-a-diagnosis-group">Example: Select a Diagnosis Group</h2>
+<ul>
+<li>All acute myocardial infarction codes: <code>^I21</code></li>
+<li>In R: <code>stringr::str_detect(icd, "^I21")</code></li>
+</ul>
+<p>This selects:</p>
+<ul>
+<li><code>I21</code></li>
+<li><code>I21.0</code></li>
+<li><code>I21.9</code></li>
+</ul>
+<p>But not:</p>
+<ul>
+<li><code>I20</code></li>
+<li><code>I22</code></li>
+</ul>
+</section>
+<section id="atc-code-structure" class="level2">
+<h2 class="anchored" data-anchor-id="atc-code-structure">ATC Code Structure</h2>
+<ul>
+<li><p>Example: <code>C09AA05</code></p></li>
+<li><p>Regex pattern:<code>^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$</code></p></li>
+<li><p>In R: <code>stringr::str_detect(atc, "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$")</code></p></li>
+<li><p>This will find any ATC code.</p></li>
+<li><p>You might receive data with a variable supposed to contain only ATC codes</p></li>
+<li><p>It might as well contain other information such as <code>??</code>, <code>don't know</code>, <code>XXXXXXX</code> etc</p></li>
+<li><p>You might replace such character strings by <code>&lt;NA&gt;</code></p></li>
+</ul>
+</section>
+<section id="implementations" class="level2">
+<h2 class="anchored" data-anchor-id="implementations">Implementations</h2>
+<ul>
+<li>base R and <code>{stringr}</code> both use the same underlying regex engine (PCRE)
+<ul>
+<li>but <code>{stringr}</code> is more “user friendly”.</li>
+</ul></li>
+<li>Stringfish seems technically sperior but is less maintained (more of a hobby project).</li>
+</ul>
+</section>
+<section id="common-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
+<ul>
+<li>Forgetting <code>^</code> when matching prefixes
+<ul>
+<li>This is even forgotten in the <code>stringfish::sf_starts()</code> implementation! <a href="https://github.com/traversc/stringfish/issues/25">See bug report</a>.</li>
+</ul></li>
+<li>Forgetting to escape <code>.</code></li>
+<li>Not validating full string with <code>$</code></li>
+<li>Overmatching (e.g., <code>I2</code> instead of <code>^I21</code>)</li>
+</ul>
+</section>
+<section id="standardised-groupings" class="level2">
+<h2 class="anchored" data-anchor-id="standardised-groupings">Standardised Groupings</h2>
+<p>To account for overall disease burden, researchers often use established grouping systems, such as:</p>
+<ul>
+<li><strong>Charlson Comorbidity Index</strong> (ICD)</li>
+<li><strong>Elixhauser Comorbidity Index</strong> (ICD)</li>
+<li>Similar groupings of ATC-codes</li>
+<li>Combinations of those</li>
+</ul>
+<p>These indices:</p>
+<ul>
+<li>Aggregate multiple ICD codes into clinically meaningful comorbidity categories</li>
+<li>Are commonly used for:
+<ul>
+<li>Risk adjustment</li>
+<li>Prognostic modelling</li>
+<li>Confounding control in observational studies</li>
+</ul></li>
+</ul>
+</section>
+<section id="decoder" class="level2">
+<h2 class="anchored" data-anchor-id="decoder"><code>{decoder}</code></h2>
+<ul>
+<li>The R package <code>{decoder}</code> provides descriptions for many commonly used coding systems.</li>
+<li>In register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.</li>
+<li><code>{decoder}</code> allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Up-to-date?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I am the maintainer of <code>{decoder}</code> and <code>{coder}</code> but I have not had the time or energy to update them for a cuople of years. There are some reported issues.</p>
+</div>
+</div>
+</section>
+<section id="coder" class="level2">
+<h2 class="anchored" data-anchor-id="coder"><code>{coder}</code></h2>
+<ul>
+<li>The R package <code>{coder}</code> can be used to aggregate individual diagnosis codes into broader clinical categories.</li>
+<li>Common applications include:
+<ul>
+<li><strong>Charlson Comorbidity Index</strong></li>
+<li><strong>Elixhauser Comorbidity Index</strong></li>
+<li>Other diagnosis-based groupings</li>
+</ul></li>
+</ul>
+<p>This allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies</p>
+<hr>
 </section>
 </section>
 <section id="el8-health-care-registers" class="level1">
@@ -4439,8 +5607,8 @@ tabellerna. */</code></pre>
 <hr>
 <p><img src="images/bigdata/paste-12.png" class="img-fluid"></p>
 </section>
-<section id="duckdb-2" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-2">DuckDB</h2>
+<section id="duckdb-1" class="level2">
+<h2 class="anchored" data-anchor-id="duckdb-1">DuckDB</h2>
 <ul>
 <li>Free and open source (backed by foundation)</li>
 <li>Column based</li>
@@ -4521,8 +5689,8 @@ tabellerna. */</code></pre>
 <li>Very flexible and compact (but perhaps unusual) syntax</li>
 </ul>
 </section>
-<section id="example-5" class="level2">
-<h2 class="anchored" data-anchor-id="example-5">Example</h2>
+<section id="example-7" class="level2">
+<h2 class="anchored" data-anchor-id="example-7">Example</h2>
 <pre class="{r}"><code>#| echo: true
 library(data.table)
 dt &lt;- iris
@@ -4545,8 +5713,8 @@ dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]</code></pre
 <li>Only read the results into memory</li>
 </ul>
 </section>
-<section id="example-6" class="level2">
-<h2 class="anchored" data-anchor-id="example-6">Example</h2>
+<section id="example-8" class="level2">
+<h2 class="anchored" data-anchor-id="example-8">Example</h2>
 <pre class="{r}"><code>#| echo: true
 #| eval: false
 library(tidyverse)
@@ -4959,11 +6127,17 @@ cache_wrapper &lt;- function(dt_part, name, ...) {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alharbi2021" class="csl-entry" role="listitem">
+Alharbi, Musaed Ali, Godfrey Isouard, and Barry Tolchard. 2021. <span>“Historical Development of the Statistical Classification of Causes of Death and Diseases.”</span> Edited by Rahman Shiri. <em>Cogent Medicine</em> 8 (1): 1893422. <a href="https://doi.org/10.1080/2331205X.2021.1893422">https://doi.org/10.1080/2331205X.2021.1893422</a>.
+</div>
 <div id="ref-arel-bundock2025" class="csl-entry" role="listitem">
 Arel-Bundock, Vincent. 2025. <span>“Data.table Vs. Base Vs. Dplyr <span></span> Vincent Arel-Bundock.”</span> <a href="https://arelbundock.com/posts/dt_tb_df/index.html">https://arelbundock.com/posts/dt_tb_df/index.html</a>.
 </div>
 <div id="ref-baker2016" class="csl-entry" role="listitem">
 Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533 (7604): 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
+</div>
+<div id="ref-bindel2025" class="csl-entry" role="listitem">
+Bindel, Lilly Josephine, and Roland Seifert. 2025. <span>“Problems Associated with the ATC System of Drug Classification.”</span> <em>Naunyn-Schmiedeberg’s Archives of Pharmacology</em>, December. <a href="https://doi.org/10.1007/s00210-025-04833-1">https://doi.org/10.1007/s00210-025-04833-1</a>.
 </div>
 <div id="ref-dataana" class="csl-entry" role="listitem">
 <em>Data Analysis Using Data.table</em>. n.d. 2026. <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html</a>.
@@ -4982,6 +6156,9 @@ Laugesen, Kristina, Jonas F Ludvigsson, Morten Schmidt, Mika Gissler, Unnur Anna
 </div>
 <div id="ref-ludvigsson2009" class="csl-entry" role="listitem">
 Ludvigsson, Jonas F., Petra Otterblad-Olausson, Birgitta U. Pettersson, and Anders Ekbom. 2009. <span>“The Swedish Personal Identity Number: Possibilities and Pitfalls in Healthcare and Medical Research.”</span> <em>European Journal of Epidemiology</em> 24 (11): 659–67. <a href="https://doi.org/10.1007/s10654-009-9350-y">https://doi.org/10.1007/s10654-009-9350-y</a>.
+</div>
+<div id="ref-nelson2024" class="csl-entry" role="listitem">
+Nelson, Stuart J., Ying Yin, Eduardo A. Trujillo Rivera, Yijun Shao, Phillip Ma, Mark S. Tuttle, Jennifer Garvin, and Qing Zeng-Treitler. 2024. <span>“Are ICD Codes Reliable for Observational Studies? Assessing Coding Consistency for Data Quality.”</span> <em>DIGITAL HEALTH</em> 10 (September): 20552076241297056. <a href="https://doi.org/10.1177/20552076241297056">https://doi.org/10.1177/20552076241297056</a>.
 </div>
 <div id="ref-nguyen2022a" class="csl-entry" role="listitem">
 Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.

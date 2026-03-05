@@ -25,17 +25,14 @@ website:
       - text: Computer exercises
         menu:
           - ECS1.qmd
+          - ECS2.qmd
       - text: Seminars
         menu:
           - ES1.qmd
       - text: Handouts
         href: handouts.qmd
-
-
 format:
   html:
-    theme:
-      - dark
-    css: styles.css
+    theme: darkly
     toc: true
     toc-depth: 3

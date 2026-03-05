@@ -14,11 +14,15 @@ sta220 <- get_courses(canvas) |>
 
 # Närvarolista studenter -------------------------------------------------
 
-get_course_students(canvas, sta220$id) |>
+students <-
+  get_course_students(canvas, sta220$id) |>
   as_tibble() |>
   arrange(sortable_name) |>
   select(sortable_name) |>
-  filter(!grepl("student, Test", sortable_name)) |>
+  filter(!grepl("student, Test", sortable_name))
+
+# Save list
+students |>
   mutate(i = row_number(), sign = "", X = "") |>
   relocate(i) |>
   flextable::flextable() |>
@@ -118,8 +122,6 @@ If you are not able to do that, static PDF:s are found below.
 
 # Rendera och publicera --------------------------------------------------
 
-# Rendera siten lokalt
-quarto::quarto_render(".")
-
 # publicera till GitHub Pages (gh-pages branch)
+# Detta bygger allt även lokalt
 system("quarto publish gh-pages --no-prompt")

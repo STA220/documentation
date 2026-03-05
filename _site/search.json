@@ -366,9 +366,338 @@
   {
     "objectID": "EL7.html#reading",
     "href": "EL7.html#reading",
-    "title": "EL7: Standardized vocabularies",
+    "title": "EL7: Medical codes",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
+    "text": "Reading\n\n(Nguyen 2022, ch. 3) on standardized vocabularies. You may skip the sections “CPT”, “LOINC”, “RxNorm” and “Using the Unified Medical Language System” (not examined within the course). Even if you skip those section, remember to read the conclusions in the end of the chapter!\nAlharbi, Isouard, and Tolchard (2021) provides an historical expose of the development of medical coding, with focus on the International Classificatin of Diseases (ICD).\nNelson et al. (2024) argue (based on a statistical analysis) that we should not put to much trust in the coded data (you may skip the methods section).\nBindel and Seifert (2025) introduces the Anatomical Therapeutic Chemical (ATC) and some associated problems. Focus on the introduction and conclusion sections (results and discussion may be skipped).\n(Wickham, Çetinkaya-Rundel, and Grolemund, n.d., ch. 15): Using {stringr} for regular expressions in R including exercises\n\nRecommended references:\n\nHistory of the Statistical Classification of DiseasesandCauses of Death\n\nRecommended practice:\n\nRegular expressins: But please not that this is general practice and deviations may exist between those exercises and R."
+  },
+  {
+    "objectID": "EL7.html#overview",
+    "href": "EL7.html#overview",
+    "title": "EL7: Medical codes",
+    "section": "Overview",
+    "text": "Overview\n\nStandardized vocabularies, controlled vocabularies, terminologies and ontologies …\nThis is a field of its onwn (health informatics and clinical terminology)\nLet’s just call it “medical coding” for now."
+  },
+  {
+    "objectID": "EL7.html#relevance",
+    "href": "EL7.html#relevance",
+    "title": "EL7: Medical codes",
+    "section": "Relevance",
+    "text": "Relevance\n\nImaganine you are diagnosed with “cancer” (hope not …)\nYour doctor writes that you have “kräfta” in your medical records\n\n“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”\n\nShe might as well write:\n\nThe patient was diagnosed with a malignant neoplasm of the colon.\nHistology confirms invasive adenocarcinoma.\nEvidence of metastatic disease to the liver.\n\nNatural languages (English/Swedish etc) are not well suited for statistical analysis\n\nNatural language processing (NLP) is nice but outside the scope of the course\n\nStatisticians need clear definitions of diagnoses, procedures, medications etc.\nTherefore, such information is encoded in a standardized way"
+  },
+  {
+    "objectID": "EL7.html#granularityreliabaility",
+    "href": "EL7.html#granularityreliabaility",
+    "title": "EL7: Medical codes",
+    "section": "Granularity/reliabaility",
+    "text": "Granularity/reliabaility\n\nCancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)\nCancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)\nThe more we learn about a diseases, the more granularity we expect from the coding\nThe coding systems therefore tend to be quite complex, evolve over time and often have regional differences\nEven though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.\nThe codes might also be misued for re-imbursment practices\n\nThere was a regional scandal in Western Sweden not so many years ago\n\nIn practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff"
+  },
+  {
+    "objectID": "EL7.html#example",
+    "href": "EL7.html#example",
+    "title": "EL7: Medical codes",
+    "section": "Example",
+    "text": "Example\n\nThe Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems\nAt first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?\nHowever, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.\nIt was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.\nThe apparent “complication” was therefore not a real clinical problem, but a coding error.\n\nLesson: Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions."
+  },
+  {
+    "objectID": "EL7.html#icd-international-classification-of-diseases",
+    "href": "EL7.html#icd-international-classification-of-diseases",
+    "title": "EL7: Medical codes",
+    "section": "ICD – International Classification of Diseases",
+    "text": "ICD – International Classification of Diseases\n\nMaintained by the World Health Organization (WHO)\nGlobal standard for coding diseases and causes of death\nUsed for:\n\nClinical documentation\nMortality statistics\nEpidemiological research\nHealth system planning and monitoring"
+  },
+  {
+    "objectID": "EL7.html#historical-background",
+    "href": "EL7.html#historical-background",
+    "title": "EL7: Medical codes",
+    "section": "Historical Background",
+    "text": "Historical Background\n\nFirst version: 1893 (International List of Causes of Death)\nWHO assumed responsibility in 1948 (ICD-6)\nMajor revisions approximately every 10–20 years\nEach revision reflects:\n\nAdvances in medical knowledge\nChanges in disease concepts\nAdministrative and reporting needs\n\n\nICD has evolved from a mortality list to a comprehensive disease classification."
+  },
+  {
+    "objectID": "EL7.html#major-icd-versions",
+    "href": "EL7.html#major-icd-versions",
+    "title": "EL7: Medical codes",
+    "section": "Major ICD Versions",
+    "text": "Major ICD Versions\n\nICD-7 (used in many countries in the 1950s–1970s)\n\nStill used in the Swedish cancer register for backward compability\n\nICD-8 (used in many countries in the 1960s–1980s)\nICD-9 (widely used until the early 2000s)\n\nAlso still used in the Swedish cancer register\n\nICD-10 (introduced in the 1990s; still dominant in many countries)\n\nFrom 1997 in Sweden. What we currently most care about\n\nICD-11 (adopted in 2019; gradually being implemented)\n\nDifferent countries adopted versions at different times, creating challenges for international comparisons."
+  },
+  {
+    "objectID": "EL7.html#national-modifications",
+    "href": "EL7.html#national-modifications",
+    "title": "EL7: Medical codes",
+    "section": "National Modifications",
+    "text": "National Modifications\nMany countries use national adaptations:\n\nICD-10-CM (USA; Clinical Modification)\nICD-10-CA (Canada)\nICD-10-SE (Sweden)\n\nA fifth position (ignoring the dot) sometimes used for more granularity\nICD-10: S72.0 Fracture of neck of femur\nICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …"
+  },
+  {
+    "objectID": "EL7.html#structure-of-icd-10",
+    "href": "EL7.html#structure-of-icd-10",
+    "title": "EL7: Medical codes",
+    "section": "Structure of ICD-10",
+    "text": "Structure of ICD-10\nTypical format:\n\nOne letter (chapter)\nTwo digits (category)\nOptional dot and additional digit(s) (subcategory)\n\nExample:\n\nI21 – Acute myocardial infarction (AMI)\nI21.0 – AMI of anterior wall\nI21.9 – AMI, unspecified"
+  },
+  {
+    "objectID": "EL7.html#hierarchy",
+    "href": "EL7.html#hierarchy",
+    "title": "EL7: Medical codes",
+    "section": "Hierarchy",
+    "text": "Hierarchy\n\nChapter → Block → Category (3-digit) → Subcategory (4-digit+)\n\nResearchers must decide:\n\nAnalyse at 3-digit level?\nOr at more detailed subcategory level?\n\nThere is a trade-off between specificity and statistical power."
+  },
+  {
+    "objectID": "EL7.html#what-does-an-icd-code-represent",
+    "href": "EL7.html#what-does-an-icd-code-represent",
+    "title": "EL7: Medical codes",
+    "section": "What Does an ICD Code Represent?",
+    "text": "What Does an ICD Code Represent?\nAn ICD code reflects:\n\nClinical documentation\nCoding rules\nAdministrative structure\nLocal practice\n\nIt does not necessarily reflect:\n\nBiological mechanism\nDiagnostic certainty\nUniform clinical interpretation\n\nRegister data therefore reflect both medicine and administration."
+  },
+  {
+    "objectID": "EL7.html#changes-over-time",
+    "href": "EL7.html#changes-over-time",
+    "title": "EL7: Medical codes",
+    "section": "Changes Over Time",
+    "text": "Changes Over Time\nBetween ICD versions:\n\nCodes may be split into more detailed categories\nCodes may be merged\nCodes may move between chapters\nDefinitions may change\n\nExample: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.\nImplication: Observed changes in incidence may reflect coding changes rather than true epidemiology."
+  },
+  {
+    "objectID": "EL7.html#crosswalks-between-versions",
+    "href": "EL7.html#crosswalks-between-versions",
+    "title": "EL7: Medical codes",
+    "section": "Crosswalks Between Versions",
+    "text": "Crosswalks Between Versions\nWhen analysing long time series:\n\nMapping tables (“crosswalks”) are often used\nMapping may be:\n\nOne-to-one\nOne-to-many (most common)\nMany-to-one\n\n\nCrosswalks are rarely exact. Information loss or ambiguity is common.\nAggregation to broader diagnostic groups is often necessary."
+  },
+  {
+    "objectID": "EL7.html#crosswalk-patterns-who-icd-9-who-icd-10",
+    "href": "EL7.html#crosswalk-patterns-who-icd-9-who-icd-10",
+    "title": "EL7: Medical codes",
+    "section": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)",
+    "text": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)\nWhen mapping between ICD versions, different structural relationships may occur.\n\n\n\n\n\n\n\n\n\nMapping type\nICD-9 (WHO)\nICD-10 (WHO)\nInterpretation\n\n\n\n\nOne → Many (Split)\n250 – Diabetes mellitus\nE10–E14\nOne broad ICD-9 category split into multiple etiological types\n\n\nMany → One (Merge)\n038 – Septicaemia790.7 – Bacteraemia\nA41 – Other sepsis\nSeparate ICD-9 concepts consolidated into broader ICD-10 category\n\n\nMany ↔︎ Many (Reorganisation)\n296 – Affective psychoses300 – Neurotic disorders\nF30–F39 (Mood disorders)F40–F48 (Neurotic disorders)\nStructural reorganisation and conceptual reclassification across chapters\n\n\nChapter relocation\n011 – Pulmonary tuberculosis\nA15 – Respiratory tuberculosis\nInfectious diseases reorganised under new chapter structure"
+  },
+  {
+    "objectID": "EL7.html#crosswalk-before-or-after",
+    "href": "EL7.html#crosswalk-before-or-after",
+    "title": "EL7: Medical codes",
+    "section": "Crosswalk before or after",
+    "text": "Crosswalk before or after\n\nThe Swedish caner register has an internal “crosswalk” applied uniformly to the register itself\nOther registers typically only records the current version in use\nIf so, you might perform the crosswalk yourself after receiving the data\n\nApplies if you want to look at longer time trends etc or combine data from different periods"
+  },
+  {
+    "objectID": "EL7.html#icd-o",
+    "href": "EL7.html#icd-o",
+    "title": "EL7: Medical codes",
+    "section": "ICD-O",
+    "text": "ICD-O\nICD-O (International Classification of Diseases for Oncology):\n\nUsed mainly in cancer registries\nCombines:\n\nTopography (tumour site)\nMorphology (histology and behaviour)\n\nCurrent commonly used version: - ICD-O-3\nEarlier versions: - ICD-O-1 - ICD-O-2\nICD-O is more detailed than ICD-10 for cancer incidence studies."
+  },
+  {
+    "objectID": "EL7.html#relationship-between-icd-10-and-icd-o",
+    "href": "EL7.html#relationship-between-icd-10-and-icd-o",
+    "title": "EL7: Medical codes",
+    "section": "Relationship Between ICD-10 and ICD-O",
+    "text": "Relationship Between ICD-10 and ICD-O\n\nICD-10 commonly used for mortality and hospital discharge diagnoses\nICD-O primarily used for cancer registry incidence data\n\nA cancer case may have:\n\nAn ICD-10 code in hospital data\nAn ICD-O morphology and topography code in a cancer registry\n\nResearchers must understand which system underlies their dataset."
+  },
+  {
+    "objectID": "EL7.html#regional-variation-in-coding",
+    "href": "EL7.html#regional-variation-in-coding",
+    "title": "EL7: Medical codes",
+    "section": "Regional Variation in Coding",
+    "text": "Regional Variation in Coding\nDifferences between hospitals or regions may arise due to:\n\nCoding training\nLocal guidelines\nAdministrative incentives\nReimbursement systems\nElectronic health record design\n\nRegisters capture both clinical events and coding behaviour."
+  },
+  {
+    "objectID": "EL7.html#validity-of-icd-codes",
+    "href": "EL7.html#validity-of-icd-codes",
+    "title": "EL7: Medical codes",
+    "section": "Validity of ICD Codes",
+    "text": "Validity of ICD Codes\nImportant research question:\n\nDoes the code correspond to the true disease?\n\nValidation studies compare ICD codes with a reference standard\n(e.g., chart review, clinical registry, laboratory confirmation)."
+  },
+  {
+    "objectID": "EL7.html#key-measures-of-validity",
+    "href": "EL7.html#key-measures-of-validity",
+    "title": "EL7: Medical codes",
+    "section": "Key Measures of Validity",
+    "text": "Key Measures of Validity\n\nSensitivity\nAmong patients who truly have the disease,\nhow many receive the correct ICD code?\n→ Measures undercoding (missed cases).\nSpecificity\nAmong patients who do not have the disease,\nhow many are correctly not assigned the code?\n→ Measures overcoding (false positives).\nPositive Predictive Value (PPV)\nAmong patients assigned the ICD code,\nhow many truly have the disease?\n→ Measures how reliable the code is for identifying true cases."
+  },
+  {
+    "objectID": "EL7.html#conceptual-22-table",
+    "href": "EL7.html#conceptual-22-table",
+    "title": "EL7: Medical codes",
+    "section": "Conceptual 2×2 Table",
+    "text": "Conceptual 2×2 Table\n\n\n\n\nTrue disease\nNo disease\n\n\n\n\nICD code present\nTrue positive\nFalse positive\n\n\nICD code absent\nFalse negative\nTrue negative\n\n\n\n\nSensitivity = True positives / (True positives + False negatives)\nSpecificity = True negatives / (True negatives + False positives)\nPPV = True positives / (True positives + False positives)"
+  },
+  {
+    "objectID": "EL7.html#why-it-matters",
+    "href": "EL7.html#why-it-matters",
+    "title": "EL7: Medical codes",
+    "section": "Why It Matters",
+    "text": "Why It Matters\nLow sensitivity → underestimated incidence\nLow PPV → inflated case counts\nVariation in validity may depend on:\n\nDiagnosis (e.g., myocardial infarction vs mild depression)\nCare setting (inpatient vs primary care)\nTime period (coding changes)\nICD version and national modification\n\nNot all ICD codes are equally reliable for research."
+  },
+  {
+    "objectID": "EL7.html#practical-implications-for-statisticians",
+    "href": "EL7.html#practical-implications-for-statisticians",
+    "title": "EL7: Medical codes",
+    "section": "Practical Implications for Statisticians",
+    "text": "Practical Implications for Statisticians\nBefore analysis, always clarify:\n\nWhich ICD version?\nWhich national modification?\nWhich coding level (3-digit vs 4-digit)?\nHas coding practice changed over time?\nAre crosswalks required?\nIs there validation evidence for the diagnosis?\n\nICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research."
+  },
+  {
+    "objectID": "EL7.html#atc",
+    "href": "EL7.html#atc",
+    "title": "EL7: Medical codes",
+    "section": "ATC",
+    "text": "ATC\n\nAnatomical Therapeutic Chemical (ATC) classification\ncategorizing therapeutic drugs,\nstructured into 14 main groups and 5 levels, with a disease-oriented focus\nintroduced in the 1960s\nIn 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”\nfollow a hierarchical structure:\n\n1 letter\n2 digits\n2 letters\n2 digits\nExample: C09AA05\n\nSeveral problems exist (Bindel and Seifert 2025) but it is nevertheless widely used"
+  },
+  {
+    "objectID": "EL7.html#sweden",
+    "href": "EL7.html#sweden",
+    "title": "EL7: Medical codes",
+    "section": "Sweden",
+    "text": "Sweden\n\nWe have ATC codes in the national prescription register\nWhen a doctor prescribes a medicatin, the ATC code will follow automatically\nLess room for interpretation when coding\nNew medications are introduced over time\nThe Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions\nDaily updates to the National Substance Register"
+  },
+  {
+    "objectID": "EL7.html#procedure-codes",
+    "href": "EL7.html#procedure-codes",
+    "title": "EL7: Medical codes",
+    "section": "Procedure codes",
+    "text": "Procedure codes\n\nWe use ICD for diagnoses and medical condition\nBut how are patients with such diagnosis treated?\nWhat actions (in addition to the prescription of medicines) do we have?\nUSA has a special version of ICD for this: ICD-10-PCS\n\nPCS = Procedure Coding System"
+  },
+  {
+    "objectID": "EL7.html#nomesco",
+    "href": "EL7.html#nomesco",
+    "title": "EL7: Medical codes",
+    "section": "NOMESCO",
+    "text": "NOMESCO\nIn Sweden, medical procedures are coded using the NOMESCO Classification of Surgical Procedures (NCSP).\n\nDeveloped by the Nordic Medico-Statistical Committee (NOMESCO)\nUsed in Sweden, Denmark, Finland, Norway, and Iceland\nPrimarily for on surgical procedures"
+  },
+  {
+    "objectID": "EL7.html#kvå",
+    "href": "EL7.html#kvå",
+    "title": "EL7: Medical codes",
+    "section": "KVÅ",
+    "text": "KVÅ\n\nIn Sweden implemented through KVÅ (Klassifikation av vårdåtgärder)\nMaintained nationally by Socialstyrelsen\nIncludes the NOMESCO-NCSP codes for surgery\nAlso includes additional codes for non-surgical treatments and activities\n\nAdministration of chemotherapy (cytostatic treatment)\nRadiotherapy sessions\nDialysis treatment (hemodialysis, peritoneal dialysis)\nBlood transfusion\nVaccination\nAdvanced wound care (non-surgical)\nMultidisciplinary team conference (MDT conference)\nSmoking cessation counselling\nNutritional counselling\nPhysiotherapy interventions\nOccupational therapy interventions\nPsychotherapeutic treatment sessions\nStructured patient education programmes\nPalliative care planning"
+  },
+  {
+    "objectID": "EL7.html#structure",
+    "href": "EL7.html#structure",
+    "title": "EL7: Medical codes",
+    "section": "Structure",
+    "text": "Structure\n\nAlphanumeric codes (typically 5 characters)\nFirst letter indicates anatomical or procedural group\nSubsequent characters specify procedure type and detail\n\nExample:\n\nNFB49 – Primary total hip replacement\nJKA20 – Appendectomy"
+  },
+  {
+    "objectID": "EL7.html#purpose",
+    "href": "EL7.html#purpose",
+    "title": "EL7: Medical codes",
+    "section": "Purpose",
+    "text": "Purpose\n\nRecord surgical and certain non-surgical interventions\nUsed in:\n\nNational Patient Register\nQuality registers\nReimbursement and administrative reporting\nHealth services research"
+  },
+  {
+    "objectID": "EL7.html#important-distinction",
+    "href": "EL7.html#important-distinction",
+    "title": "EL7: Medical codes",
+    "section": "Important Distinction",
+    "text": "Important Distinction\n\nICD-10-SE → Diagnosis codes\nNOMESCO/KVÅ → Procedure codes\n\nA patient record may therefore contain:\n\nAn ICD diagnosis (e.g., hip fracture)\nA NOMESCO procedure code (e.g., hip replacement surgery)"
+  },
+  {
+    "objectID": "EL7.html#implications-for-research",
+    "href": "EL7.html#implications-for-research",
+    "title": "EL7: Medical codes",
+    "section": "Implications for Research",
+    "text": "Implications for Research\n\nDiagnosis and procedure must not be confused\nTrends in procedures may reflect:\n\nClinical practice changes\nTechnology changes\nPolicy and reimbursement incentives\n\nInternational comparisons require awareness that other countries (e.g., USA) use different coding systems\n\nNOMESCO codes capture what was done, not what disease the patient had."
+  },
+  {
+    "objectID": "EL7.html#drg",
+    "href": "EL7.html#drg",
+    "title": "EL7: Medical codes",
+    "section": "DRG",
+    "text": "DRG\nDRG (Diagnosis-Related Groups) is a classification system used to group hospital cases into categories expected to require similar levels of resources.\nIn Sweden:\n\nBased on the NordDRG system\nUsed for:\n\nHospital reimbursement\nResource allocation\nHealth care management\nProductivity and efficiency analyses"
+  },
+  {
+    "objectID": "EL7.html#how-is-a-drg-determined",
+    "href": "EL7.html#how-is-a-drg-determined",
+    "title": "EL7: Medical codes",
+    "section": "How Is a DRG Determined?",
+    "text": "How Is a DRG Determined?\nA DRG is assigned based on a combination of:\n\nPrimary diagnosis (ICD-10-SE)\nSecondary diagnoses\nProcedure codes (NOMESCO/KVÅ)\nAge\nSex\nDischarge status\nPresence of complications or comorbidities\n\nDRG codes are therefore derived classifications, not primary clinical codes."
+  },
+  {
+    "objectID": "EL7.html#implications-for-research-1",
+    "href": "EL7.html#implications-for-research-1",
+    "title": "EL7: Medical codes",
+    "section": "Implications for Research",
+    "text": "Implications for Research\n\nDRG reflects resource use, not disease incidence.\nChanges in reimbursement rules may influence coding behavior.\nRegional comparisons must consider administrative incentives.\nDRG is suitable for health services and economic analyses, but less appropriate for etiological research."
+  },
+  {
+    "objectID": "EL7.html#regular-expressions-regex",
+    "href": "EL7.html#regular-expressions-regex",
+    "title": "EL7: Medical codes",
+    "section": "Regular Expressions (Regex)",
+    "text": "Regular Expressions (Regex)\n\nA way to describe patterns in text\nUsed to:\n\nIdentify diagnosis codes (ICD-10)\nIdentify drug codes (ATC)\nClean register data\nValidate variables\n\nIn R:\n\nBase R: grepl(), sub(), gsub()\nTidyverse: stringr::str_detect(), str_extract(), str_replace()\nMore efficient for big data: stringfish"
+  },
+  {
+    "objectID": "EL7.html#relevance-1",
+    "href": "EL7.html#relevance-1",
+    "title": "EL7: Medical codes",
+    "section": "Relevance",
+    "text": "Relevance\nTypical use cases:\n\nSelect all ICD-10 codes starting with \"I21\" (acute myocardial infarction)\nIdentify all ATC codes beginning with \"C09\" (antihypertensives)\nCheck for malformed codes (quality control)\nExtract codes embedded in free text (e.g., notes, text fields)"
+  },
+  {
+    "objectID": "EL7.html#basic-building-blocks",
+    "href": "EL7.html#basic-building-blocks",
+    "title": "EL7: Medical codes",
+    "section": "Basic Building Blocks",
+    "text": "Basic Building Blocks\n\n\n\nSymbol\nMeaning\n\n\n\n\n^\nStart of string\n\n\n$\nEnd of string\n\n\n.\nAny character\n\n\n*\n0 or more repetitions\n\n\n+\n1 or more repetitions\n\n\n?\n0 or 1 repetition\n\n\n{m,n}\nBetween m and n repetitions\n\n\n[ABC]\nAny of A, B, or C\n\n\n[0-9]\nAny digit\n\n\n\\\\d\nAny digit (PCRE)\n\n\n\n\n\n\n\n\n\nDifferent versions\n\n\nThere are different implementations of regular expressions! The implementation in base R is described by ?base::regex in R. Perl-like Regular Expressions (PCRE) is a commonly used alternative requireing (perl = TRUE as argument) for the base functions."
+  },
+  {
+    "objectID": "EL7.html#example-icd-10-structure",
+    "href": "EL7.html#example-icd-10-structure",
+    "title": "EL7: Medical codes",
+    "section": "Example: ICD-10 Structure",
+    "text": "Example: ICD-10 Structure\nICD-10 codes typically follow:\n\nOne letter\nTwo digits\nOptional dot and additional digit\n\nRegex pattern: ^[A-Z][0-9]{2}(\\\\.[0-9])?$\nwhere \\\\ is ussed to remove the special meaning of . as described above. Hence, in this case \\\\. is interpreted as a literal . as to be found in the character string. In R:\ngrepl(\"^[A-Z][0-9]{2}(\\\\.[0-9])?$\", icd) # base\nstringr::str_detect(icd, \"^[A-Z][0-9]{2}(\\\\.[0-9])?$\")\n# Faster and using 10 CPU cores in paralell (only relevant for \"big enough data\"):\nstringfish::sf_grepl(icd, \"^[A-Z][0-9]{2}(\\\\.[0-9])?$\", nthreads = 10L)"
+  },
+  {
+    "objectID": "EL7.html#example-select-a-diagnosis-group",
+    "href": "EL7.html#example-select-a-diagnosis-group",
+    "title": "EL7: Medical codes",
+    "section": "Example: Select a Diagnosis Group",
+    "text": "Example: Select a Diagnosis Group\n\nAll acute myocardial infarction codes: ^I21\nIn R: stringr::str_detect(icd, \"^I21\")\n\nThis selects:\n\nI21\nI21.0\nI21.9\n\nBut not:\n\nI20\nI22"
+  },
+  {
+    "objectID": "EL7.html#atc-code-structure",
+    "href": "EL7.html#atc-code-structure",
+    "title": "EL7: Medical codes",
+    "section": "ATC Code Structure",
+    "text": "ATC Code Structure\n\nExample: C09AA05\nRegex pattern:^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$\nIn R: stringr::str_detect(atc, \"^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$\")\nThis will find any ATC code.\nYou might receive data with a variable supposed to contain only ATC codes\nIt might as well contain other information such as ??, don't know, XXXXXXX etc\nYou might replace such character strings by &lt;NA&gt;"
+  },
+  {
+    "objectID": "EL7.html#implementations",
+    "href": "EL7.html#implementations",
+    "title": "EL7: Medical codes",
+    "section": "Implementations",
+    "text": "Implementations\n\nbase R and {stringr} both use the same underlying regex engine (PCRE)\n\nbut {stringr} is more “user friendly”.\n\nStringfish seems technically sperior but is less maintained (more of a hobby project)."
+  },
+  {
+    "objectID": "EL7.html#common-mistakes",
+    "href": "EL7.html#common-mistakes",
+    "title": "EL7: Medical codes",
+    "section": "Common Mistakes",
+    "text": "Common Mistakes\n\nForgetting ^ when matching prefixes\n\nThis is even forgotten in the stringfish::sf_starts() implementation! See bug report.\n\nForgetting to escape .\nNot validating full string with $\nOvermatching (e.g., I2 instead of ^I21)"
+  },
+  {
+    "objectID": "EL7.html#standardised-groupings",
+    "href": "EL7.html#standardised-groupings",
+    "title": "EL7: Medical codes",
+    "section": "Standardised Groupings",
+    "text": "Standardised Groupings\nTo account for overall disease burden, researchers often use established grouping systems, such as:\n\nCharlson Comorbidity Index (ICD)\nElixhauser Comorbidity Index (ICD)\nSimilar groupings of ATC-codes\nCombinations of those\n\nThese indices:\n\nAggregate multiple ICD codes into clinically meaningful comorbidity categories\nAre commonly used for:\n\nRisk adjustment\nPrognostic modelling\nConfounding control in observational studies"
+  },
+  {
+    "objectID": "EL7.html#decoder",
+    "href": "EL7.html#decoder",
+    "title": "EL7: Medical codes",
+    "section": "{decoder}",
+    "text": "{decoder}\n\nThe R package {decoder} provides descriptions for many commonly used coding systems.\nIn register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.\n{decoder} allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.\n\n\n\n\n\n\n\nUp-to-date?\n\n\nI am the maintainer of {decoder} and {coder} but I have not had the time or energy to update them for a cuople of years. There are some reported issues."
+  },
+  {
+    "objectID": "EL7.html#coder",
+    "href": "EL7.html#coder",
+    "title": "EL7: Medical codes",
+    "section": "{coder}",
+    "text": "{coder}\n\nThe R package {coder} can be used to aggregate individual diagnosis codes into broader clinical categories.\nCommon applications include:\n\nCharlson Comorbidity Index\nElixhauser Comorbidity Index\nOther diagnosis-based groupings\n\n\nThis allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies"
+  },
+  {
+    "objectID": "EL7.html#references",
+    "href": "EL7.html#references",
+    "title": "EL7: Medical codes",
+    "section": "",
+    "text": "Alharbi, Musaed Ali, Godfrey Isouard, and Barry Tolchard. 2021. “Historical Development of the Statistical Classification of Causes of Death and Diseases.” Edited by Rahman Shiri. Cogent Medicine 8 (1): 1893422. https://doi.org/10.1080/2331205X.2021.1893422.\n\n\nBindel, Lilly Josephine, and Roland Seifert. 2025. “Problems Associated with the ATC System of Drug Classification.” Naunyn-Schmiedeberg’s Archives of Pharmacology, December. https://doi.org/10.1007/s00210-025-04833-1.\n\n\nNelson, Stuart J., Ying Yin, Eduardo A. Trujillo Rivera, Yijun Shao, Phillip Ma, Mark S. Tuttle, Jennifer Garvin, and Qing Zeng-Treitler. 2024. “Are ICD Codes Reliable for Observational Studies? Assessing Coding Consistency for Data Quality.” DIGITAL HEALTH 10 (September): 20552076241297056. https://doi.org/10.1177/20552076241297056.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. “R for Data Science (2e).” https://r4ds.hadley.nz/."
   },
   {
     "objectID": "EL4.html#reading-and-practicing",
@@ -721,74 +1050,25 @@
     "text": "Rodrigues, Bruno. 2023. “Building Reproducible Analytical Pipelines with R.” https://raps-with-r.dev/.\n\n\nStaples, Timothy L. 2023. “Expansion and Evolution of the R Programming Language.” Royal Society Open Science 10 (4): 221550. https://doi.org/10.1098/rsos.221550.\n\n\n“The Unix Shell: Summary and Setup.” 2026. https://swcarpentry.github.io/shell-novice/."
   },
   {
-    "objectID": "ES1.html",
-    "href": "ES1.html",
-    "title": "ES1: Ethics and Legality",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
     "section": "",
-    "text": "ImportantExamination\n\n\n\nThis seminar is mandatory and active participation is required to pass the course!"
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the course STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
   },
   {
-    "objectID": "ES1.html#discussion-order",
-    "href": "ES1.html#discussion-order",
-    "title": "ES1: Ethics and Legality",
-    "section": "Discussion order",
-    "text": "Discussion order\nThere are 7 scenarios described below. Each group take them in the order described here:\n\nGrupp 1: 1, 2, 3, 4, 5, 6, 7\nGrupp 2: 2, 3, 4, 5, 6, 7, 1\nGrupp 3: 3, 4, 5, 6, 7, 1, 2\nGrupp 4: 4, 5, 6, 7, 1, 2, 3\nGrupp 5: 5, 6, 7, 1, 2, 3, 4\n\n\n\n\n\n\n\nImportantTime planning\n\n\n\nThe difference scenarios varies in length! Don’t get stressed if you start with a time-consuming scenario. If you have a lot to discuss, it might be enough to discuss that one only. If it is a short one, you may have time to cover many more. Put quality before quantity!"
+    "objectID": "index.html#positron-extensions",
+    "href": "index.html#positron-extensions",
+    "title": "Health data",
+    "section": "Positron extensions",
+    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
   },
   {
-    "objectID": "ES1.html#scenarios",
-    "href": "ES1.html#scenarios",
-    "title": "ES1: Ethics and Legality",
-    "section": "Scenarios",
-    "text": "Scenarios\n\nScenario 1: The Data ReceiverScenario 2: Working with Data Across BordersScenario 3: Secure EnvironmentScenario 4: The AccidentScenario 5: The Role ModelScenario 6: Contacting Children from a Quality RegisterScenario 7: Unreasonable Promises?\n\n\nYou are participating in consultancy work through Akademistatistik.\nA client from the Sahlgrenska Academy (University of Gothenburg) is conducting research where the Västra Götaland Region is the research principal (forskningshuvudman).\nAfter an initial meeting, the client emails you a non-encrypted Excel file. The first column contains Swedish personal identity numbers (personnummer).\n\nDiscussion\n\nWhat are your immediate reactions — legally, ethically, and practically?\nDoes the transfer itself constitute a personal data breach under GDPR?\nWhat risks are involved (for individuals and institutions)?\n\nSuppose the client used his xxx@gu.se address to send the file.\n\nWhat does this mean in practice? Identify which organizations may now be involved in the incident.\nUnder GDPR, who is likely the data controller? Could there be joint controller-ship? What role does Akademistatistik have?\nWhat obligations arise immediately (documentation, reporting, internal notification)?\n\nYou find the following text on the GU intranet:\n\nA personal data breach is a security incident that can involve risks to human rights and freedoms. Everyone at the University of Gothenburg has an obligation to report incidents that they discover to the Data Protection Group. A personal data breach has occurred if, for example, data concerning, one or several registered persons have been destroyed, got lost in any other way or made available for unauthorized persons. The risks of a personal data breach can include loss of control over data or the restriction of people’s rights. A personal data breach is therefore a security incident that has affected the confidentiality, accuracy or availability of data. A personal data breach may consist of: An unauthorized party has gained access to the personal data, for example by sending personal data to recipients who should not have the data. […] The University of Gothenburg is responsible for the incidents that occur within the university’s activities. The head of the part of the organization where the incident occur must ensure that the incident is reported, managed and assessed. When you discover a suspected personal data breach at the University of Gothenburg, you must report it within the organization as soon as you become aware of it. You do this by emailing dataskydd@gu.se with a copy to the closest superior college. The Data Protection Group will then initiate documentation and assessment of the breach. It is very important that any incident is reported swiftly, as serious breaches must be reported to the Swedish Authority for Privacy Protection (IMY) within 72 hours of the incident being discovered. The 72 hours is the time that the Data Protection Group and the Data Protection Officer have to make their assessment of the incident.\n\n\nWhat do you do now — concretely and immediately?\n\nInstead, imagine that the researcher used xxx@vgregion.se.\n\nWould that change anything? Consider controller responsibility, breach notification, and organizational accountability.\n\nLater, at a restaurant, you mention receiving the file. A person nearby asks you to share the data. You refuse. He claims that since you work for a public authority, the Freedom of the Press Act (TF) gives him the right to access the document immediately.\n\nWhat is your response?\n\nIs the Excel file a public document?\n\nDoes secrecy under OSL apply?\n\nWho decides on disclosure?\n\n\n\n\n\nYou are hired remotely by a company in Moldova. You have not yet received a work computer. Sometimes you work from cafes or libraries.\nThe company has a Swedish client who is the data controller. You download their data from an encrypted server connection.\n\nDiscussion\n\nBefore starting work, what technical and organizational safeguards must be in place?\n\nSuddenly, the client realizes that no Data Processing Agreement (DPA) exists between them and your employer.\nYour boss says: “Not my problem. GDPR does not apply to me.”\n\nIs that correct?\n\nWhat is your professional responsibility?\n\nDo you continue working?\n\n\n\n\nYou must work in a restricted remote server environment.\nYou cannot install packages outside CRAN.\nYou cannot copy text or files.\nThe client can access the report directly on the server.\nYou urgently need a GitHub package not available on CRAN. You discover a technical workaround to install it despite restrictions.\n\nDiscussion\n\nDo you use the workaround? Why or why not?\nIs bypassing IT restrictions merely a policy violation — or potentially a legal issue?\n\nLater, you discover you can activate AI tools externally to assist your analysis. You are severely sleep deprived and under pressure.\n\nDo you use AI tools?\n\nCould this involve unlawful data transfer outside the EU?\n\nHow do exhaustion and working conditions affect ethical responsibility?\n\n\n\n\nYou work for a national quality register of joint replacements. Late one evening, a hospital calls you:\n\n“We have a severely injured patient. His face is unrecognizable, and he is unconscious. We cannot identify him. However, his hip prosthesis is exposed and we have located the serial number. If we can identify him and access his medical history, we may be able to save his life.”\n\nThe hospital asks whether you can use the register to identify the patient based on the prosthesis serial number and provide identifying information.\n\nDiscussion\n\nAre you legally allowed to disclose identifying information?\nWhat is the original purpose of the register, and does this situation fall within that purpose?\nIf not, is it still possible to provide the information?\nWhen, if ever, should privacy yield to immediate medical necessity?\nWould you make the same decision at 10 a.m. on a weekday as at 2 a.m. when you are alone?\n\n\n\nVariation\nImagine that: - The patient survives regardless of your decision. - Later, relatives question how the hospital obtained identifying information. - Media becomes aware of the incident.\nDoes this change your reasoning in retrospect?\n\n\n\nYou are relatively new at your workplace. A senior colleague has taken you under his wing, helped you understand internal systems, and supported you in difficult projects. This colleague is widely respected, seen as highly competent, and something of a role model in the organization.\nOne evening, you are working late. While navigating a shared network folder for a project, you come across several script files. Out of curiosity — and because the file names seem related to a database you recognize — you open them.\nThe scripts clearly show that your colleague has performed a data extraction containing names, personal identity numbers, and addresses for all individuals living on the same street as him.\nThere is no obvious documentation justifying the query.\n\nDiscussion\n\nWhat are your immediate reactions?\nDoes this appear to constitute:\n\nUnlawful processing under GDPR (lack of legal basis, purpose limitation)?\nA personal data breach?\nPossible misconduct or even a criminal offense (e.g. breach of confidentiality)?\n\nDoes it matter whether the data was merely accessed, or also exported and used?\nWhat risks arise for:\n\nThe affected individuals?\nThe organization?\nYou?\n\n\n\n\nFurther Considerations\n\nDo you confront your colleague?\nDo you report the incident internally? If so, to whom?\nAre you yourself at risk if you ignore what you have seen?\nHow does the power imbalance (junior vs senior) affect your responsibility?\n\n\n\n\nYou are the head of a unit responsible for a national quality register for children born with cleft lip and/or palate.\nYou receive a formal data access request. The researcher has an approved ethical review decision from the Swedish Ethical Review Authority (Etikprövningsmyndigheten).\nThe researcher requests access to identifiable personal data (names, personal identity numbers, and contact information) for children living in Western Sweden. The stated purpose is to contact the children and their guardians directly to invite them to participate in a new research project involving follow-up questionnaires and interviews.\n\nDiscussion\n\nDoes the purpose of the quality register allow this type of secondary use?\nDoes an approved ethical review automatically mean that the data may be disclosed?\nDoes the age of the children matter (minor vs adult at time of contact)?\nWhat are the ethical implications of contacting families about a condition that may carry psychological or social sensitivity?\nDoes secrecy under the Public Access to Information and Secrecy Act (OSL) apply?\nAre there any personal risks for you if you accept to give the researcher the data?\nWill you accept or decline the request?\n\n\n\nVariation\nImagine that:\n\nThe researcher is well-known and highly respected.\nThe project has strong potential to improve long-term care.\nThe researcher argues that obtaining consent indirectly will drastically reduce participation rates.\n\nDoes this change your decision?\n\n\n\nRead about the Gothenburg Study of Children with DAMP (the abbreviation was used at the time but has since become outdated). Focus on the section “Allegations and destruction.”\n\n\n\n\n\n\nTip\n\n\n\nYou are also recommended (although it is not mandatory) to read this BMJ Feature. However, please do so after the seminar (or beforehand if you happen to come across this text in advance, since we will not have the time during the seminar). It is an interesting case and may provide some additional insights in the grey-area between legality, ethics and research practice.\nAs a side note, the Church of Scientology’s involvement in relation to Sweden’s Freedom of the Press Act and public access to official documents is also an interesting topic in its own right, although most discussions of it are available only in Swedish.\n\n\n\nBackground (Summary)\nIn brief:\n\nResearchers collected highly sensitive data from children and their families.\nParticipants were given strong assurances that their privacy would be protected and that the data would not be shared outside the research group.\nThe scientific validity of parts of the research was later questioned.\nExternal researchers requested access to the original source material in order to replicate or scrutinize the findings.\nThe University of Gothenburg refused to disclose the material.\nThe external researchers appealed to the Administrative Court of Appeal (“Kammarrätten”), which ruled in their favor but accepted ten conditions set by the university for access.\nThe researchers in possession of the data appealed to the Supreme Administrative Court (“Regeringsrätten”, now “Högsta förvaltningsdomstolen”), which did not overturn the decision.\nThe requesting researchers also appealed, objecting to some of the conditions; a later ruling further strengthened their right of access.\nThe researchers holding the material destroyed the data rather than disclose it.\nThe destruction of the data was ruled illegal.\nThe responsible researcher was fined and received a suspended sentence.\nThe university rector and additional researchers (including the wife of the responsible researcher) were also convicted and fined.\nThe responsible researcher filed an application with the European Court of Human Rights in Strasbourg, arguing:\n\n\nIn my view, it is unreasonable that I am first obliged to give strict promises of confidentiality by the State in order to conduct medical research, then… I am ordered by the State to break hundreds of promises of confidentiality…then am sentenced as a criminal by the State because I had not broken those promises of confidentiality. “Something is clearly wrong in this chain of events, but it is difficult to see how the error can be mine.”\n\n\nThe European Court of Human Rights rejected this argument.\nThe researcher remains active and successful within his academic field.\n\n\n\n\n\n\n\nNoteLegal Context\n\n\n\nThese events took place approximately 20 years ago, before the GDPR entered into force (although the Swedish Personal Data Act, PUL, was in effect at the time). The current Public Access to Information and Secrecy Act (Offentlighets- och sekretesslagen, OSL) was enacted later.\nFor the purposes of this discussion, base your reasoning on current Swedish and EU legal frameworks.\n\n\n\n\nDiscussion\nFeel free to choose among those questions if you don’t have time to discuss them all:\n\nCan researchers promise absolute confidentiality in a country with strong public access to official documents (offentlighetsprincipen)?\nIf a public university is the data controller, who ultimately decides whether data must be disclosed — the researcher, the university, or the court?\nDoes an ethical approval and informed consent override obligations under freedom-of-information legislation?\nUnder current GDPR and OSL:\n\nWould disclosure of identifiable research data be possible?\nUnder what conditions?\nWould pseudonymisation change the legal assessment?\n\nWas the destruction of data ethically defensible, even if illegal?\n\nIs it ever justifiable to break the law to protect research participants?\nDoes intent matter?\n\nHow should conflicts between:\n\nResearch integrity (replicability and transparency)\nProtection of vulnerable participants\nPublic access to documents\nLegal compliance be balanced?\n\nCould the promises made to participants have been formulated differently?\n\nShould researchers in public institutions avoid absolute guarantees?\nIs “maximum protection within the limits of the law” a more appropriate formulation?\n\nWho carries the ultimate responsibility in such cases?\n\nIndividual researchers?\nUniversity leadership?\nThe legal department?\n\nConsider a modern parallel:\n\nSuppose a similar dataset existed today under GDPR.\nWould the legal outcome likely differ?\nWould reputation consequences differ?\n\nIs the European Court’s rejection of Gillberg’s argument legally unsurprising?\n\nOr does it reveal a structural tension between research ethics and public law?"
-  },
-  {
-    "objectID": "EL8.html#reading",
-    "href": "EL8.html#reading",
-    "title": "EL8: Health care registers",
-    "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:\n\n\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
-  },
-  {
-    "objectID": "ECS1.html",
-    "href": "ECS1.html",
-    "title": "ECS1: IDE and version control",
-    "section": "",
-    "text": "NoteTake your time\n\n\n\nYou might not finish all the exercises during the scheduled hours. No, worries. Continue later! Please do the exercises yourself (on your computer). However, you are allowed to help each other!"
-  },
-  {
-    "objectID": "ECS1.html#preparations",
-    "href": "ECS1.html#preparations",
-    "title": "ECS1: IDE and version control",
-    "section": "Preparations",
-    "text": "Preparations\nIf you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://positron.posit.co/download.html\nInstall Git: https://git-scm.com/downloads\n\n\nWindows: Download and install binary version\nMacOS: Git may already be installed. Type $ git and see what happens! Otherwise $ xcode-select --install but more recent version with $ brew install git (where $ indicates that this is a command to be run from a terminal, but which itself is not part of the command).\n\n\nCreate a GitHub account (if you do not already have one): https://github.com\n\nCreating a GitHub account requires an e-mail address. GitHub is owned by Microsoft, and the University of Gothenburg also uses Microsoft as its e-mail provider. You may use your university e-mail address if you wish. Alternatively, you are free to register a separate e-mail account for GitHub.\n\nOpen Positron\nEnter your credentials in the terminal (replace relevant parts with your own information and press enter after typing):\n\nSet your username: git config --global user.name \"FIRST_NAME LAST_NAME\"\nSet your email address: git config --global user.email \"MY_NAME@example.com\"\n\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/sta220/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK. \nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have committed and viewed the history of that repo."
-  },
-  {
-    "objectID": "ECS1.html#new-project",
-    "href": "ECS1.html#new-project",
-    "title": "ECS1: IDE and version control",
-    "section": "New project",
-    "text": "New project\nLet’s make a new project from scratch!\nYou will now re-use your data and R-scripts from the first computer exercise in the course (with questionaire data led by AGE). This will be referred to as CSQ below.\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv” (it’s a good tool but that can wait to some other time). Open the new project.\nCreate a “data” sub-folder (use the “Explorer” pane from the left side bar to navigate through your files or use the terminal if you feel confident (mkdir data) … or perhaps the fs package fs::dir_create(\"data)). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and healthcare data is sensitive) so let’s add that we do not want to commit anything which is later found in the “data” sub-folder. Simply type data/** on a new line in the .gitignore file and save the file.\nCopy your old data files used in CSQ (SPSS-files, Excel, or whatever format they are in) to the data folder. (If you don’t have access to this data, just type write.csv(iris, \"data/iris.csv\") or something to store at least some data in the folder).\nCheck that the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git using the .gitignore file).\nOpen the README.md file and make some changes to that file. Briefly describe what this repo is used for; the purpose of CSQ etc. Make some spelling mistakes on purpose :-)\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes (correct your intentional spelling mistakes!) to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visible locally as well.\nGo back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete: “Include all R scripts from CSQ in the R folder”.\nIn Positron: Perform the task you previously gave yourself through the issue tracker.\nCommit your changes and in the commit message, write Fix #N where N is the number of the issue you were working on (probably no 1, hence Fix #1). Sync the local repo with GitHub.\nHave a new look at the issue and check if it was updated/closed automatically by your commit.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLab or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packages. To collaborate within projects including sensitive health data, however, is often a bit more difficult. For this course we will only use synthetic data and can therefore be less careful for now. It is otherwise common to only share selected parts (such as the finalized R code) through GitHub and to use bare Git for collaboration on a secure server. To share R code for a research paper, it is also recommended to use a fixed version of the GitHub repo. This can be achieved by linking the GitHub repo to Zenodo or other services."
-  },
-  {
-    "objectID": "ECS1.html#source-code-for-the-sta220-website",
-    "href": "ECS1.html#source-code-for-the-sta220-website",
-    "title": "ECS1: IDE and version control",
-    "section": "Source code for the STA220 website",
-    "text": "Source code for the STA220 website\nThe course web site is itself a GitHub repo! You can see a small link and icon “View source” in the right hand menu. Clone the repo locally, “fork it”, play around! File an issue or make some edits if you find anything to improve! Make a “pull request” if you have concrete suggestions!\nNote, it is technically easy to reuse code from GitHub. Some repositories might nevertheless have associated licenses, which you should of course respect. Take a look at the LICENSE file for the popular dplyr package. R packages which are also distributed through CRAN have permissive licenses but their exact content may vary. There is no license file attached to the course web site yet, you might suggest one in a pull request or file an issue :-)"
-  },
-  {
-    "objectID": "ECS1.html#try-to-contribute-to-an-r-package",
-    "href": "ECS1.html#try-to-contribute-to-an-r-package",
-    "title": "ECS1: IDE and version control",
-    "section": "(Try to) contribute to an R package",
-    "text": "(Try to) contribute to an R package\nROpenSci is an open community of R developers. Help them according to their instructions here: https://contributing.ropensci.org/resources.html#issues\n\nRead the instructions above.\nLook for an open issue (start with the “good first issue” or “documentation” issue lists)\nRead everything that is written/discussed in your issue of choice and try to understand the problem/task.\nWhen you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.\nTry to fix the issue! Note that this can be (VERY!) difficult and you don’t have to actually fix it if it seems impossible. But don’t give up to easy!\nSubmit your changes locally with an informative message and a reference to #N (where N is the issue number). Do this regardless if you fixed the issue or not.\nIf you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).\nIf you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (for example click on the smiley at the end of a comment you agree with and chose a relevant emoji)."
-  },
-  {
-    "objectID": "ECS1.html#additional-practice",
-    "href": "ECS1.html#additional-practice",
-    "title": "ECS1: IDE and version control",
-    "section": "Additional practice",
-    "text": "Additional practice\nPlease note the “Reading and practicing” section in the beginning of EL4 (homework)."
+    "objectID": "index.html#additional-mandatory-reading",
+    "href": "index.html#additional-mandatory-reading",
+    "title": "Health data",
+    "section": "Additional mandatory reading",
+    "text": "Additional mandatory reading\nPDF versions of scientific articles are found in Canvas."
   },
   {
     "objectID": "EL9.html#big-data",
@@ -837,7 +1117,7 @@
     "href": "EL9.html#havenread_sas",
     "title": "EL9: Big data",
     "section": "haven::read_sas()",
-    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x10ba41878&gt;\n&lt;environment: namespace:haven&gt;"
+    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x11c7805b0&gt;\n&lt;environment: namespace:haven&gt;"
   },
   {
     "objectID": "EL9.html#export-from-sas-to-csv",
@@ -921,7 +1201,7 @@
     "href": "EL9.html#example",
     "title": "EL9: Big data",
     "section": "Example",
-    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-28\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-28\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-28\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-28\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-28\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-02-26\n  2:          4.4         2.9          1.4         0.2    setosa 2026-02-26\n  3:          4.4         3.0          1.3         0.2    setosa 2026-02-26\n  4:          4.4         3.2          1.3         0.2    setosa 2026-02-26\n  5:          4.5         2.3          1.3         0.3    setosa 2026-02-26\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-02-28\n147:          7.7         2.8          6.7         2.0 virginica 2026-02-28\n148:          7.7         3.0          6.1         2.3 virginica 2026-02-28\n149:          7.7         3.8          6.7         2.2 virginica 2026-02-28\n150:          7.9         3.8          6.4         2.0 virginica 2026-02-28"
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-06\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-06\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-06\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-06\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-06\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-08\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-08\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-08\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-08\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-08\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-06\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-06\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-06\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-06\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-06\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-08\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-08\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-08\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-08\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-08"
   },
   {
     "objectID": "EL9.html#if-it-doesnt-fit",
@@ -1022,25 +1302,88 @@
     "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE?)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
+    "objectID": "ECS2.html",
+    "href": "ECS2.html",
+    "title": "ECS2: Pipeline and reproducibility",
     "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the course STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
+    "text": "This time we will use Github classroom. This means that your Canvas account will be linked to your GitHUb repository, which hopefully simplifies things in this setting.\n\n\nHere is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
   },
   {
-    "objectID": "index.html#positron-extensions",
-    "href": "index.html#positron-extensions",
-    "title": "Health data",
-    "section": "Positron extensions",
-    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
+    "objectID": "ECS2.html#canvas-assignemnt",
+    "href": "ECS2.html#canvas-assignemnt",
+    "title": "ECS2: Pipeline and reproducibility",
+    "section": "",
+    "text": "Here is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
   },
   {
-    "objectID": "index.html#additional-mandatory-reading",
-    "href": "index.html#additional-mandatory-reading",
-    "title": "Health data",
-    "section": "Additional mandatory reading",
-    "text": "Additional mandatory reading\nPDF versions of scientific articles are found in Canvas."
+    "objectID": "ECS1.html",
+    "href": "ECS1.html",
+    "title": "ECS1: IDE and version control",
+    "section": "",
+    "text": "NoteTake your time\n\n\n\nYou might not finish all the exercises during the scheduled hours. No, worries. Continue later! Please do the exercises yourself (on your computer). However, you are allowed to help each other!"
+  },
+  {
+    "objectID": "ECS1.html#preparations",
+    "href": "ECS1.html#preparations",
+    "title": "ECS1: IDE and version control",
+    "section": "Preparations",
+    "text": "Preparations\nIf you have not already done so, please install the following software on your computer:\n\nInstall Positron: https://positron.posit.co/download.html\nInstall Git: https://git-scm.com/downloads\n\n\nWindows: Download and install binary version\nMacOS: Git may already be installed. Type $ git and see what happens! Otherwise $ xcode-select --install but more recent version with $ brew install git (where $ indicates that this is a command to be run from a terminal, but which itself is not part of the command).\n\n\nCreate a GitHub account (if you do not already have one): https://github.com\n\nCreating a GitHub account requires an e-mail address. GitHub is owned by Microsoft, and the University of Gothenburg also uses Microsoft as its e-mail provider. You may use your university e-mail address if you wish. Alternatively, you are free to register a separate e-mail account for GitHub.\n\nOpen Positron\nEnter your credentials in the terminal (replace relevant parts with your own information and press enter after typing):\n\nSet your username: git config --global user.name \"FIRST_NAME LAST_NAME\"\nSet your email address: git config --global user.email \"MY_NAME@example.com\"\n\nIn the upper right corner press the folder button and choose “New folder from Git …” with the URL: https://github.com/sta220/crap and place the folder somewhere you can find it, tick the box “Open in a new window” and press OK. \nIn the cloned project, open the TODO file and follow the instructions there\n\nYou have now cloned an existing public repo from GitHub, made some changes which you have committed and viewed the history of that repo."
+  },
+  {
+    "objectID": "ECS1.html#new-project",
+    "href": "ECS1.html#new-project",
+    "title": "ECS1: IDE and version control",
+    "section": "New project",
+    "text": "New project\nLet’s make a new project from scratch!\nYou will now re-use your data and R-scripts from the first computer exercise in the course (with questionaire data led by AGE). This will be referred to as CSQ below.\n\nPress the folder button in the upper right corner of Positron and select “New folder from template” &gt; R project and specify a folder name as well as a parent folder. Check the box “Create a git repository”. Choose which version of R you are using but don’t use “renv” (it’s a good tool but that can wait to some other time). Open the new project.\nCreate a “data” sub-folder (use the “Explorer” pane from the left side bar to navigate through your files or use the terminal if you feel confident (mkdir data) … or perhaps the fs package fs::dir_create(\"data)). This is a good place to store your data later.\nCreate an “R” folder where you can later save your R scripts.\nOpen the already existing .gitignore file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).\nYou should never share any sensitive data (and healthcare data is sensitive) so let’s add that we do not want to commit anything which is later found in the “data” sub-folder. Simply type data/** on a new line in the .gitignore file and save the file.\nCopy your old data files used in CSQ (SPSS-files, Excel, or whatever format they are in) to the data folder. (If you don’t have access to this data, just type write.csv(iris, \"data/iris.csv\") or something to store at least some data in the folder).\nCheck that the names of all data files in the Explorer pane are in gray. This means that those files will not be included in later git commits (because it is found in a folder which is ignored by git using the .gitignore file).\nOpen the README.md file and make some changes to that file. Briefly describe what this repo is used for; the purpose of CSQ etc. Make some spelling mistakes on purpose :-)\nCommit your changes (as you did for the previous crap repo).\nPress “Publish to GitHub” (you might need to log in) and select public repo. If everything works you should get a notification in the lower right corner of Positron that the repo has now been published and you can click a link to open it in your browser; do that!\nOpen the README.md file in the browser to have a look\nPress “edit this file” (the pencil symbol to the upper right of the file).\nMake some changes (correct your intentional spelling mistakes!) to the file in the online text editor and press “Commit changes …”. Write a message and click “Commit changes”.\nGo back to Positron and look at the source control pane. Press “Sync changes”.\nThe changes you made online should now be visible locally as well.\nGo back to the repo website. Click “Issues” &gt; “New issues” and give yourself a task to complete: “Include all R scripts from CSQ in the R folder”.\nIn Positron: Perform the task you previously gave yourself through the issue tracker.\nCommit your changes and in the commit message, write Fix #N where N is the number of the issue you were working on (probably no 1, hence Fix #1). Sync the local repo with GitHub.\nHave a new look at the issue and check if it was updated/closed automatically by your commit.\n\nTo share your repo using GitHub (or Git alone or another provider such as GitLab or Bitbucket) makes it easy to collaborate with others and also to work with your projects from different computers. This is often done for software development, including for R packages. To collaborate within projects including sensitive health data, however, is often a bit more difficult. For this course we will only use synthetic data and can therefore be less careful for now. It is otherwise common to only share selected parts (such as the finalized R code) through GitHub and to use bare Git for collaboration on a secure server. To share R code for a research paper, it is also recommended to use a fixed version of the GitHub repo. This can be achieved by linking the GitHub repo to Zenodo or other services."
+  },
+  {
+    "objectID": "ECS1.html#source-code-for-the-sta220-website",
+    "href": "ECS1.html#source-code-for-the-sta220-website",
+    "title": "ECS1: IDE and version control",
+    "section": "Source code for the STA220 website",
+    "text": "Source code for the STA220 website\nThe course web site is itself a GitHub repo! You can see a small link and icon “View source” in the right hand menu. Clone the repo locally, “fork it”, play around! File an issue or make some edits if you find anything to improve! Make a “pull request” if you have concrete suggestions!\nNote, it is technically easy to reuse code from GitHub. Some repositories might nevertheless have associated licenses, which you should of course respect. Take a look at the LICENSE file for the popular dplyr package. R packages which are also distributed through CRAN have permissive licenses but their exact content may vary. There is no license file attached to the course web site yet, you might suggest one in a pull request or file an issue :-)"
+  },
+  {
+    "objectID": "ECS1.html#try-to-contribute-to-an-r-package",
+    "href": "ECS1.html#try-to-contribute-to-an-r-package",
+    "title": "ECS1: IDE and version control",
+    "section": "(Try to) contribute to an R package",
+    "text": "(Try to) contribute to an R package\nROpenSci is an open community of R developers. Help them according to their instructions here: https://contributing.ropensci.org/resources.html#issues\n\nRead the instructions above.\nLook for an open issue (start with the “good first issue” or “documentation” issue lists)\nRead everything that is written/discussed in your issue of choice and try to understand the problem/task.\nWhen you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.\nTry to fix the issue! Note that this can be (VERY!) difficult and you don’t have to actually fix it if it seems impossible. But don’t give up to easy!\nSubmit your changes locally with an informative message and a reference to #N (where N is the issue number). Do this regardless if you fixed the issue or not.\nIf you were able to fix the issue, submit your suggested changes back to GitHub (don’t do this if you were not able to fix it).\nIf you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (for example click on the smiley at the end of a comment you agree with and chose a relevant emoji)."
+  },
+  {
+    "objectID": "ECS1.html#additional-practice",
+    "href": "ECS1.html#additional-practice",
+    "title": "ECS1: IDE and version control",
+    "section": "Additional practice",
+    "text": "Additional practice\nPlease note the “Reading and practicing” section in the beginning of EL4 (homework)."
+  },
+  {
+    "objectID": "EL8.html#reading",
+    "href": "EL8.html#reading",
+    "title": "EL8: Health care registers",
+    "section": "Reading",
+    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:\n\n\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+  },
+  {
+    "objectID": "ES1.html",
+    "href": "ES1.html",
+    "title": "ES1: Ethics and Legality",
+    "section": "",
+    "text": "ImportantExamination\n\n\n\nThis seminar is mandatory and active participation is required to pass the course!"
+  },
+  {
+    "objectID": "ES1.html#discussion-order",
+    "href": "ES1.html#discussion-order",
+    "title": "ES1: Ethics and Legality",
+    "section": "Discussion order",
+    "text": "Discussion order\nThere are 7 scenarios described below. Each group take them in the order described here (starting with the scenario matching the group number, continue to the end and then from the beginning):\n\nGrupp 1: 1, 2, 3, 4, 5, 6, 7\nGrupp 2: 2, 3, 4, 5, 6, 7, 1\nGrupp 3: 3, 4, 5, 6, 7, 1, 2\nGrupp 4: 4, 5, 6, 7, 1, 2, 3\nGrupp 5: 5, 6, 7, 1, 2, 3, 4\nGrupp 6: 6, 7, 1, 2, 3, 4, 5\nGrupp 7: 7, 1, 2, 3, 4, 4, 5\n\n(There would probably be less than 7 groups in total.)\n\n\n\n\n\n\nImportantTime planning\n\n\n\nThe difference scenarios varies in length! Don’t get stressed if you start with a time-consuming scenario. If you have a lot to discuss, it might be enough to discuss just a few scenarios. Quality before quantity!"
+  },
+  {
+    "objectID": "ES1.html#roles",
+    "href": "ES1.html#roles",
+    "title": "ES1: Ethics and Legality",
+    "section": "Roles",
+    "text": "Roles\n\nJustice Warrior\n\nThe rule of law is the foundation of society. Laws must be followed strictly, even when inconvenient. You are knowledgeable about legal structures and precise when referring to specific regulations. If an action violates GDPR, TF, OSL, or any other laws or regulations, including internal policies, it must not be taken — regardless of good intentions!\n\nBurnout Statistician\n\nYou are officially employed for 40 hours per week but regularly work twice that. Deadlines are unrealistic and resources limited. You are exhausted and under personal stress. You want to do the right thing — but you are close to your limits. Practical survival sometimes outweighs ideal compliance.\n\nThe Idealistic Reformer\n\nYour primary concern is improving outcomes for patients and society. Bureaucracy can stand in the way of meaningful progress. If rigid compliance prevents real-world benefits, you are willing to challenge procedures. Ethics and impact matter more than formalism.\n\nThe Budget Guardian\n\nPublic resources are limited. Every action has financial consequences. Legal violations can result in heavy fines, reputation damage, and loss of funding. You focus on long-term sustainability, cost-effectiveness, and institutional risk."
   },
   {
     "objectID": "EL5.html#reading",
@@ -1248,161 +1591,259 @@
   {
     "objectID": "EL6.html#reading",
     "href": "EL6.html#reading",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Reading",
     "text": "Reading\n\n(Nguyen 2022, ch. 2) on Databases: it is important to understand some basic concepts. You might, however, ignore sections about “(Hyper)graph databases”. Try to understand the SQL code even though you might not need to write such code on your own.\nWickham, Çetinkaya-Rundel, and Grolemund (n.d.) chap 21 describes how to connect to a database from R.\nFenk, Furu, and Bakken (n.d.) describe why the current common practice with register data delivery in SAS format should be replaced by parquet files. Until this has happened, we often need to use SAS for data extraction.\nData Analysis Using Data.table (n.d.) introduces the data.table syntax, its general form, how to subset rows, select and compute on columns, and perform aggregations by group.\n\nRecommended references:\n\nArel-Bundock (2025) provides a good comparison between base R, dplyr and data.table."
   },
   {
     "objectID": "EL6.html#optional-practice",
     "href": "EL6.html#optional-practice",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Optional practice",
-    "text": "Optional practice\n\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: SQLzoo\nThe SQL Tutorial for Data Analysis is another option"
+    "text": "Optional practice\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like):\n\nSQLzoo\nThe SQL Tutorial for Data Analysis"
+  },
+  {
+    "objectID": "EL6.html#imaginaed-scenario",
+    "href": "EL6.html#imaginaed-scenario",
+    "title": "EL6: Data formats",
+    "section": "Imaginaed scenario",
+    "text": "Imaginaed scenario\n\nYou have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)\nAftar a couple of months (it previously took a year), you receive some huge files with file ending .sas7bdat\nWhat do you do now?"
   },
   {
     "objectID": "EL6.html#sas7bdat",
     "href": "EL6.html#sas7bdat",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": ".sas7bdat",
-    "text": ".sas7bdat\n\nIt is common to receive large data files in SAS format (.sas7bdat)\nMany govermental agencies are using SAS internally\nSAS is great for handling big data sets (no need to read everything into memory)\nBut I don’t know how to use SAS 😩\nPossible to read medium-sized SAS files to R by haven::read_sas()\nBut may not work for larger files\nBest practice for current SAS version (9.4) is to export only nececary data to csv\n\nSAS Viya (next version) will be more flexible\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask ChatGPT etc to generate such code for you\n\nThe exported csv file can later be read into R"
+    "text": ".sas7bdat\n\nMany govermental agencies are using SAS\nTheir standard format when delivering big data sets\nSAS is great for handling big data sets (no need to read everything into memory)\nBut you don’t know how to use SAS 😩"
+  },
+  {
+    "objectID": "EL6.html#first-try",
+    "href": "EL6.html#first-try",
+    "title": "EL6: Data formats",
+    "section": "First try",
+    "text": "First try\n\nIt is often possible to read medium-sized SAS files to R by haven::read_sas()\nBased on the ReadStat C library\nBased on reverse-engineering of binary files!\nYou need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)\nBut similar trust always applies when you use open source software, which depend on other peoples software, which depends on …\nBut, yes, it is legal according to EU legislation :-)\n\n\nDirective 2009/24/EC art 6 The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]\n\nBut let’s say this did not work for your data! 😩"
+  },
+  {
+    "objectID": "EL6.html#large-sas-files",
+    "href": "EL6.html#large-sas-files",
+    "title": "EL6: Data formats",
+    "section": "Large SAS files",
+    "text": "Large SAS files\n\nBest practice for current SAS version (9.4) is to export only nessecary data to csv\n\nSAS Viya (another solution not likely replacing SAS 9.4) can export parquet files\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask GenAI to generate such code for you\n\nThe exported csv file can later be read into R\n\n\n\n\n\n\n\nSAS in the course?\n\n\nWe are not using SAS in the course (and it is no longer available for students to download … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost)."
   },
   {
     "objectID": "EL6.html#databases",
     "href": "EL6.html#databases",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Databases",
-    "text": "Databases\n\na database as a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
+    "text": "Databases\n\na database is a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
   },
   {
     "objectID": "EL6.html#row-vs-column-oriented",
     "href": "EL6.html#row-vs-column-oriented",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Row vs column oriented",
     "text": "Row vs column oriented\n\nMost classical databases are optimized for rapidly collecting data, not analyzing existing data.\nThese databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.\nMore recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster."
   },
   {
     "objectID": "EL6.html#dbms",
     "href": "EL6.html#dbms",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "DBMS",
-    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!"
+    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer."
+  },
+  {
+    "objectID": "EL6.html#relevance",
+    "href": "EL6.html#relevance",
+    "title": "EL6: Data formats",
+    "section": "Relevance",
+    "text": "Relevance\n\nClient-server\n\nThose are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and Positron (as well as RStudio). If thi is relevant, you can most likely use tools such as dbplyr to query the data without to much use of SQL itself.\n\nCloud\n\nCommercial cloud products are less likely to be used for sensitive health data within our field.\n\nIn-process\n\nThey’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!"
   },
   {
     "objectID": "EL6.html#sql",
     "href": "EL6.html#sql",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "SQL",
     "text": "SQL\n\nDifferent database systems may use different query languages.\nThe Structured Query Language (SQL) is the most widely used for relational databases.\nDefined by international standards (ANSI/ISO)."
   },
   {
     "objectID": "EL6.html#what-is-sql-used-for",
     "href": "EL6.html#what-is-sql-used-for",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "What is SQL used for?",
     "text": "What is SQL used for?\nSQL is used to:\n\nRetrieve data (SELECT)\nFilter data (WHERE)\nAggregate data (GROUP BY)\nCombine tables (JOIN)\nModify data (INSERT, UPDATE, DELETE)"
   },
   {
     "objectID": "EL6.html#sql-dialects",
     "href": "EL6.html#sql-dialects",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "SQL Dialects",
     "text": "SQL Dialects\n\nSQL is a standard, but implementations differ slightly.\nThese variations are called dialects.\n\nT-SQL (Microsoft SQL Server)\nPL/SQL (Oracle)\nPostgreSQL SQL dialect\nMySQL SQL dialect\n\n\nMost core functionality is similar across systems."
   },
   {
     "objectID": "EL6.html#a-simple-example",
     "href": "EL6.html#a-simple-example",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "A Simple Example",
     "text": "A Simple Example\nSELECT name, age\nFROM students\nWHERE age &gt;= 18\nORDER BY age;\nThis query:\n\nSelects two columns\nFilters rows\nSorts the result"
   },
   {
+    "objectID": "EL6.html#relevance-1",
+    "href": "EL6.html#relevance-1",
+    "title": "EL6: Data formats",
+    "section": "Relevance?",
+    "text": "Relevance?\n\nI don’t think SQL is a necessary skill to master for most statisticians\nYou should nevertheless be aware of its existence and understand simple code examples as above\nIf an employer requires SQL skills, you can probably learn enough if/when needed\nNevertheless, the more languages/tools etc you know, the more competitive you become (but don’t sacrifice statistical knowledge for technical."
+  },
+  {
     "objectID": "EL6.html#duckdb",
     "href": "EL6.html#duckdb",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "DuckDB",
-    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option but not a requirement\n\nIntegration with tidyverse in R (dbplyr or duckplyr)\n\nCan be used both with disk data and data in RAM"
+    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option as API language but not a requirement\nIntegration by DBMS and “hidden” SQL under the hood: dbplyr\nA more “native” implementation by duckplyr\n\nBetter (but perhaps not as widely used yet and therefore a bit less mature/stable)\n\nCan be used both with disk data and data in RAM"
   },
   {
     "objectID": "EL6.html#example",
     "href": "EL6.html#example",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
-    "text": "Example\n\n# pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n# Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n# Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\ntibble(urls)\n\n# A tibble: 3 × 1\n  urls                                                                     \n  &lt;chr&gt;                                                                    \n1 https://blobs.duckdb.org/flight-data-partitioned/Year=2022/data_0.parquet\n2 https://blobs.duckdb.org/flight-data-partitioned/Year=2023/data_0.parquet\n3 https://blobs.duckdb.org/flight-data-partitioned/Year=2024/data_0.parquet\n\n# Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n# nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n# A duckplyr data frame: 2 variables\n   Year       n\n  &lt;dbl&gt;   &lt;int&gt;\n1  2022 6729125\n2  2023 6847899\n3  2024 3461319\n\n# Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()\n\n┌───────────────────────────┐\n│       HASH_GROUP_BY       │\n│    ────────────────────   │\n│          Groups:          │\n│             #0            │\n│             #1            │\n│                           │\n│        Aggregates:        │\n│          mean(#2)         │\n│         median(#3)        │\n│                           │\n│      ~13,458,249 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│            Year           │\n│           Month           │\n│       InFlightDelay       │\n│       InFlightDelay       │\n│                           │\n│      ~13,458,250 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│            Year           │\n│           Month           │\n│       InFlightDelay       │\n│                           │\n│      ~13,458,250 rows     │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│       READ_PARQUET        │\n│    ────────────────────   │\n│         Function:         │\n│        READ_PARQUET       │\n│                           │\n│        Projections:       │\n│            Year           │\n│           Month           │\n│          DepDelay         │\n│          ArrDelay         │\n│                           │\n│       File Filters:       │\n│  (CAST(Year AS DOUBLE) &lt;  │\n│           2024.0)         │\n│                           │\n│    Scanning Files: 2/3    │\n│                           │\n│      ~13,458,250 rows     │\n└───────────────────────────┘"
-  },
-  {
-    "objectID": "EL6.html#duckdb-1",
-    "href": "EL6.html#duckdb-1",
-    "title": "EL6: Data sources",
-    "section": "DuckDB",
-    "text": "DuckDB\n\nDuckDB is an embedded analytical SQL database.\nIt supports standard SQL\nNo server installation is required.\nDesigned for analytical workloads"
+    "text": "Example\n\n# pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n# Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n# Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024 # therefore, select just 3 years\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\n\n\n# Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n# nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n# A duckplyr data frame: 2 variables\n   Year       n\n  &lt;dbl&gt;   &lt;int&gt;\n1  2022 6729125\n2  2023 6847899\n3  2024 3461319"
   },
   {
     "objectID": "EL6.html#duckdb-and-data-files",
     "href": "EL6.html#duckdb-and-data-files",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "DuckDB and Data Files",
-    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import is required."
+    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nJSON\n\nNo data import (to your computers Random Access Memory [RAM]) is required!"
   },
   {
     "objectID": "EL6.html#example-1",
     "href": "EL6.html#example-1",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
-    "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n\n\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)\n\n# A duckplyr data frame: 2 variables\n  Gender BMI_mean\n  &lt;chr&gt;     &lt;dbl&gt;\n1 male       28.7\n2 female     28.7"
+    "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n(If you knew you only needed i smaller data set you might have performed similar work already in SAS but you often query the data multiple times for different purposes so it still good to have a readable version of everything)\n\n\n# This is not writing from SAS but to illustrate the point :-)\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)\n\n# A duckplyr data frame: 2 variables\n  Gender BMI_mean\n  &lt;chr&gt;     &lt;dbl&gt;\n1 male       28.7\n2 female     28.7"
   },
   {
     "objectID": "EL6.html#parquet",
     "href": "EL6.html#parquet",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Parquet",
-    "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read"
+    "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read and write"
   },
   {
     "objectID": "EL6.html#example-2",
     "href": "EL6.html#example-2",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
-    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads all CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n\n# install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n# Now\nread_parquet_duckdb(parquet_file)\n\n# A duckplyr data frame: 77 variables\n      C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  \n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      \n 1     1 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 2     2 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 3     3 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 4     4 51625 2009_10  male       4 \" 0-9\"           49 Other &lt;NA&gt;  &lt;NA&gt;       \n 5     5 51630 2009_10  female    49 \" 40-49\"        596 White &lt;NA&gt;  Some Colle…\n 6     6 51638 2009_10  male       9 \" 0-9\"          115 White &lt;NA&gt;  &lt;NA&gt;       \n 7     7 51646 2009_10  male       8 \" 0-9\"          101 White &lt;NA&gt;  &lt;NA&gt;       \n 8     8 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n 9     9 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n10    10 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n# ℹ more rows\n# ℹ 67 more variables: MaritalStatus &lt;chr&gt;, HHIncome &lt;chr&gt;, HHIncomeMid &lt;int&gt;,\n#   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,\n#   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   BMICatUnder20yrs &lt;chr&gt;, BMI_WHO &lt;chr&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;,\n#   BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;,\n#   BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;, Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, …"
+    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquet file\nThe solution below reads the CSV data and then exports it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n\n# install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n# Now\nread_parquet_duckdb(parquet_file)\n\n# A duckplyr data frame: 77 variables\n      C0    ID SurveyYr Gender   Age AgeDecade AgeMonths Race1 Race3 Education  \n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;      \n 1     1 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 2     2 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 3     3 51624 2009_10  male      34 \" 30-39\"        409 White &lt;NA&gt;  High School\n 4     4 51625 2009_10  male       4 \" 0-9\"           49 Other &lt;NA&gt;  &lt;NA&gt;       \n 5     5 51630 2009_10  female    49 \" 40-49\"        596 White &lt;NA&gt;  Some Colle…\n 6     6 51638 2009_10  male       9 \" 0-9\"          115 White &lt;NA&gt;  &lt;NA&gt;       \n 7     7 51646 2009_10  male       8 \" 0-9\"          101 White &lt;NA&gt;  &lt;NA&gt;       \n 8     8 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n 9     9 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n10    10 51647 2009_10  female    45 \" 40-49\"        541 White &lt;NA&gt;  College Gr…\n# ℹ more rows\n# ℹ 67 more variables: MaritalStatus &lt;chr&gt;, HHIncome &lt;chr&gt;, HHIncomeMid &lt;int&gt;,\n#   Poverty &lt;dbl&gt;, HomeRooms &lt;int&gt;, HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;,\n#   Length &lt;dbl&gt;, HeadCirc &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   BMICatUnder20yrs &lt;chr&gt;, BMI_WHO &lt;chr&gt;, Pulse &lt;int&gt;, BPSysAve &lt;int&gt;,\n#   BPDiaAve &lt;int&gt;, BPSys1 &lt;int&gt;, BPDia1 &lt;int&gt;, BPSys2 &lt;int&gt;, BPDia2 &lt;int&gt;,\n#   BPSys3 &lt;int&gt;, BPDia3 &lt;int&gt;, Testosterone &lt;dbl&gt;, DirectChol &lt;dbl&gt;, …"
   },
   {
     "objectID": "EL6.html#tidy-data",
     "href": "EL6.html#tidy-data",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "tidy data",
     "text": "tidy data\n\nduckplyr let’s you use the familiar dplyr/tidyverse syntax\nIf certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless\nAfter filteringen/aggregation etc you can always choose to collect() the data and use your ordinary workflow from there"
   },
   {
-    "objectID": "EL6.html#fater-in-memory",
-    "href": "EL6.html#fater-in-memory",
-    "title": "EL6: Data sources",
-    "section": "Fater in memory?",
-    "text": "Fater in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nWhat if data would fit?\n\nYou can use tibbles and dplyr etc of course …\n\n… but it might be terribly slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvementsfrom time to time)\n\n\n{data.table} is much more efficient!"
+    "objectID": "EL6.html#data-files",
+    "href": "EL6.html#data-files",
+    "title": "EL6: Data formats",
+    "section": "Data files",
+    "text": "Data files\n\n.qs2\n\nA fast, compressed R-specific binary format used for caching by the {targets} package.\nData must be fully read from disk into memory (RAM), typically via targets::tar_read().\n\n.sas7bdat\n\nA proprietary binary format used by SAS and commonly encountered in register data deliveries.\nIt can be sometimes be imported into R (haven::read_sas(), which also allow selection of specific columns at import).\nThe dataset is read into memory.\n\n.csv (Comma-Separated Values)\n\nA plain-text format following a loosely defined standard.\nIt is human-readable but inefficient for large datasets.\nTools such as DuckDB (via {duckplyr}) can read only the required columns and rows and perform filtering and aggregation during import.\n\n.parquet (Apache Parquet)\n\nA columnar, compressed, and standardized binary format designed for efficient analytics.\nIt supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow."
+  },
+  {
+    "objectID": "EL6.html#archiving",
+    "href": "EL6.html#archiving",
+    "title": "EL6: Data formats",
+    "section": "Archiving",
+    "text": "Archiving\n\nSwedish law say that we must archive the data (within the public sector).\nGeneral practice is to store every “official document” forever … which is a long time :-)\nUsualy conceptualized as 500 years.\nRetention (dokumenthanteringsplan/gallringsplan) usually limit the time needed to store source material for statistcal reporting/research etc\n\nVaries between organisations but usually 10 years (25 for some research, which is also regulated by the EU)\n\nCan you read a 25 year old data file?\n\nYes, if storeed as an inefficient CSV-file …\nMaybe not if using another less human-readable format …\n\nThe work of a professional archivist might contain responsibilities for data conversion from time to time (CD-ROMS or floppy disks etc might otherwise not be accasible)\nIt seems, however, less common that organizational standardd etc imply that statisticians are limited to certain formats (it is more often up to you and your collegues)"
+  },
+  {
+    "objectID": "EL6.html#faster-in-memory",
+    "href": "EL6.html#faster-in-memory",
+    "title": "EL6: Data formats",
+    "section": "Faster in memory?",
+    "text": "Faster in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nBut what if data would fit (which is more common)?\n\nYou can use tibbles and dplyr etc as usual …\n\n… but it might be slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvements from time to time)\n\n\n{data.table} is much more efficient!"
   },
   {
     "objectID": "EL6.html#data.table",
     "href": "EL6.html#data.table",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "data.table",
-    "text": "data.table\n\nShare basic properties with data frames (dt[i, j]; merge())\nHas been around since 2006 (stable and well used, even older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare to data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
+    "text": "data.table\n\nAn R package (not a data storage format or a database system)\nComparable to working with data.frame in base R or tibble in the tidyverse\nSometimes described as a Domain Specific Language (DSL) within R\nIntroduced in 2006 (mature, stable, and widely used — older than the tidyverse)\nProvides faster alternatives to several base R functions: fifelse(), fcase(), forder(), fread(), fcoalesce(),\nas.IDate(), %chin%\nCore components implemented in C for performance\nUses concepts similar to databases:\n\nInteger-based keys and indices\n\nEfficient joins and grouping\n\nReference semantics\n\nVery flexible and compact syntax\n\nStrongly appreciated by many statisticians —\nunknown to some — and slightly intimidating to others 🙂"
+  },
+  {
+    "objectID": "EL6.html#copy-on-modify",
+    "href": "EL6.html#copy-on-modify",
+    "title": "EL6: Data formats",
+    "section": "Copy-on-modify",
+    "text": "Copy-on-modify\n\nAssume df is a large data.frame/tibble with many rows and columns, one of them called old.\nLet f() be some function.\nWhat happens when you add a new column using\ndf$new &lt;- f(df$old) or df &lt;- mutate(df, new = f(old))?\nEven though you reuse the name df, R typically creates a modified copy of the object.\nIn R, objects use copy-on-modify semantics:\n\nWhen an object is changed, a new copy is created (if needed).\nThe name df is just a reference to an object in memory.\nAfter reassignment, df refers to the new object.\n\nThe previous object may remain in memory temporarily until garbage collection runs.\nFor very large objects, this can result in substantial temporary memory use"
+  },
+  {
+    "objectID": "EL6.html#reference-semantics",
+    "href": "EL6.html#reference-semantics",
+    "title": "EL6: Data formats",
+    "section": "Reference semantics",
+    "text": "Reference semantics\n\nIn data.table, reference semantics are used instead.\nYou can modify the existing object directly: df[, new := f(old)]\nOr delete columns in place: df[, old := NULL]\nNo full copy is made\nThere is still only one object in memory (and it is still called df)."
   },
   {
     "objectID": "EL6.html#example-3",
     "href": "EL6.html#example-3",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "Example",
     "text": "Example\n\nlibrary(data.table)\ndt &lt;- NHANES::NHANES\nsetDT(dt)\nsetkey(dt, ID) # Use the ID column as index\n# How many adults by gender do we have\ndt[Age &gt;= 18, .N, Gender]\n\n   Gender     N\n   &lt;fctr&gt; &lt;int&gt;\n1:   male  3686\n2: female  3795\n\n# Mean BMI by gender\ndt[Age &gt;= 18, mean(BMI, na.rm = TRUE), Gender]\n\n   Gender       V1\n   &lt;fctr&gt;    &lt;num&gt;\n1:   male 28.67528\n2: female 28.66978\n\n# Convert all factors to characters\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor]"
   },
   {
     "objectID": "EL6.html#joins",
     "href": "EL6.html#joins",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "joins",
     "text": "joins\nx[i, on, nomatch]\n| |  |   |\n| |  |   \\__ If NULL only returns rows linked in x and i tables\n| |  \\____ a character vector or list defining match logic\n| \\_____ primary data.table, list or data.frame\n\\____ secondary data.table\n\n\n\n\n\n\n\n\n\nJoin type\ndata.table\nSQL\ndplyr\n\n\n\n\nRight join\nDT1[DT2]\nRIGHT JOIN\nright_join(DT2, DT1)\n\n\nLeft join\nDT2[DT1]\nLEFT JOIN\nleft_join(DT1, DT2)\n\n\nInner join\nDT1[DT2, nomatch = 0]\nINNER JOIN\ninner_join(DT1, DT2)\n\n\nFull join\nmerge(DT1, DT2, all = TRUE)\nFULL OUTER JOIN\nfull_join(DT1, DT2)\n\n\nAnti join\nDT1[!DT2]\nNOT EXISTS\nanti_join(DT1, DT2)\n\n\nSemi join\nDT1[DT2, nomatch = 0][, unique(.SD)]\nEXISTS\nsemi_join(DT1, DT2)\n\n\nRolling join\nDT1[DT2, on = \"date\", roll = TRUE]\n—\njoin_by() + rolling\n\n\nNon-equi join\nDT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]\n—\njoin_by(x &gt;= lower, x &lt;= upper)\n\n\nUpdate join\nDT1[DT2, value := i.value]\nUPDATE … JOIN\nDT1 %&gt;% left_join(DT2) %&gt;% mutate(...)"
   },
   {
+    "objectID": "EL6.html#external-api",
+    "href": "EL6.html#external-api",
+    "title": "EL6: Data formats",
+    "section": "External API",
+    "text": "External API\n\nWe previously assumed you get some data delivery from a register holder\nOr mayby you work within the organization where data is collected, and therefore have access to the original data base.\nSome data can also be openly accessed by an Programming Application Interface (API)\nThe PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data\nThe {pxweb} R package simplifies the process"
+  },
+  {
+    "objectID": "EL6.html#available-resources",
+    "href": "EL6.html#available-resources",
+    "title": "EL6: Data formats",
+    "section": "Available resources",
+    "text": "Available resources\n\n\n\n\n\n\n\n\n\nname\nvalue\n\n\n\n\napi.scb.se\nStatistics Sweden\n\n\nstatfin.stat.fi\nStatistics Finland\n\n\npxwebapi2.stat.fi\nStatistics Finland (old version)\n\n\nstatistik.sjv.se\nThe Swedish Agricultural Agency\n\n\nfohm-app.folkhalsomyndigheten.se\nThe Public Health Agency of Sweden\n\n\nstatistik.konj.se\nThe Swedish National Institute of Economic Research\n\n\nprognos.konj.se\nThe Swedish national institute of economic research, forecast database\n\n\nstatdb.luke.fi\nLUKE Natural Resources Institute Finland\n\n\nvero2.stat.fi\nVerohallinto - Finnish Tax Administration\n\n\npx.hagstofa.is\nStatistics Iceland\n\n\nstatistik.linkoping.se\nLinköping municipality in Sweden\n\n\npxwebb2017.vgregion.se\nVastra Gotaland Region in Sweden\n\n\nbank.stat.gl\nStatbank Greenland\n\n\npx.rsv.is\nIcelandic Centre for Retail Studies\n\n\nstatbank.hagstova.fo\nStatistics Faroe Islands\n\n\ndata.ssb.no\nStatistics Norway\n\n\npxweb.asub.ax\nStatistics Aland\n\n\nmakstat.stat.gov.mk\nState Statistical Office of the Republic of Macedonia\n\n\ndata.stat.gov.lv\nLatvia - official statistics\n\n\nstatbank.statistica.md\nStatistics Moldova\n\n\nwww.pxweb.bfs.admin.ch\nStatistics Switzerland\n\n\naskdata.rks-gov.net\nStatistics Kosovo\n\n\ntrafi2.stat.fi\nFinnish Transport Safety Agency\n\n\nw3.unece.org\nUnited Nations Economic Commission for Europe\n\n\nwww.grande-region.lu\nPortail statistique de la Grande Région\n\n\nvisitfinland.stat.fi\nVisit Finland (Rudolf service)\n\n\nstat.hel.fi\nHelsingin seudun aluesarjat -tilastotietokanta\n\n\nandmed.stat.ee\nEstonia - official statistics\n\n\npxweb.nordicstatistics.org\nNordic Statistics Database\n\n\npxweb.stat.si\nSiStat Database"
+  },
+  {
+    "objectID": "EL6.html#example-4",
+    "href": "EL6.html#example-4",
+    "title": "EL6: Data formats",
+    "section": "Example",
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query"
+  },
+  {
+    "objectID": "EL6.html#hierachical-data",
+    "href": "EL6.html#hierachical-data",
+    "title": "EL6: Data formats",
+    "section": "Hierachical data",
+    "text": "Hierachical data\n\nWe like tabular data!\nIf we get wide data we can transform it to long data (and vice versa)\nBut we might sometimes encounter more hierarchical data structures\nJSON (JavaScript Object Notation) most popular\nXML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\n{\n  \"system\": \"ICD-10\",\n  \"chapter\": {\n    \"code\": \"Chapter I\",\n    \"title\": \"Certain infectious and parasitic diseases\",\n    \"range\": \"A00–B99\",\n    \"blocks\": [\n      {\n        \"code\": \"A00–A09\",\n        \"title\": \"Intestinal infectious diseases\",\n        \"categories\": [\n          {\n            \"code\": \"A00\",\n            \"title\": \"Cholera\",\n            \"includes\": [\"Vibrio cholerae infection\"],\n            \"excludes\": [\"Carrier state\"],\n            \"subcategories\": [\n              {\n                \"code\": \"A00.0\",\n                \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\"\n              },\n              {\n                \"code\": \"A00.1\",\n                \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}"
+  },
+  {
+    "objectID": "EL6.html#example-5",
+    "href": "EL6.html#example-5",
+    "title": "EL6: Data formats",
+    "section": "Example",
+    "text": "Example\n\n# db_exec(\"INSTALL json\")\ndb_exec(\"LOAD json\")\nurl &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\"\n(icd &lt;- duckplyr::read_json_duckdb(url))\n\n# A duckplyr data frame: 3 variables\n   code    desc                                                         children\n   &lt;chr&gt;   &lt;chr&gt;                                                        &lt;list&gt;  \n 1 A00-B99 Certain infectious and parasitic diseases                    &lt;df&gt;    \n 2 C00-D49 Neoplasms                                                    &lt;df&gt;    \n 3 D50-D89 Diseases of the blood and blood-forming organs and certain … &lt;df&gt;    \n 4 E00-E89 Endocrine, nutritional and metabolic diseases                &lt;df&gt;    \n 5 F01-F99 Mental, Behavioral and Neurodevelopmental disorders          &lt;df&gt;    \n 6 G00-G99 Diseases of the nervous system                               &lt;df&gt;    \n 7 H00-H59 Diseases of the eye and adnexa                               &lt;df&gt;    \n 8 H60-H95 Diseases of the ear and mastoid process                      &lt;df&gt;    \n 9 I00-I99 Diseases of the circulatory system                           &lt;df&gt;    \n10 J00-J99 Diseases of the respiratory system                           &lt;df&gt;    \n# ℹ more rows"
+  },
+  {
+    "objectID": "EL6.html#flattening",
+    "href": "EL6.html#flattening",
+    "title": "EL6: Data formats",
+    "section": "Flattening",
+    "text": "Flattening\nSo you now have a duckplyr data frame. One of its columns is nested and, with additional data frames as children) If we unnest the children for chapter 1, we see that those children also have children … and so it continous. To get a simple translation between individual codes and their description, you might need to define some recursive function to unnest until you have found the last children in line.\n\n(chap1 &lt;- icd |&gt; slice(1) |&gt; collect())\n\n# A tibble: 1 × 3\n  code    desc                                      children     \n  &lt;chr&gt;   &lt;chr&gt;                                     &lt;list&gt;       \n1 A00-B99 Certain infectious and parasitic diseases &lt;df [22 × 3]&gt;\n\nchap1 |&gt;\n  select(children) |&gt;\n  tidyr::unnest(children)\n\n# A tibble: 22 × 3\n   code    desc                                                        children\n   &lt;chr&gt;   &lt;chr&gt;                                                       &lt;list&gt;  \n 1 A00-A09 Intestinal infectious diseases                              &lt;df&gt;    \n 2 A15-A19 Tuberculosis                                                &lt;df&gt;    \n 3 A20-A28 Certain zoonotic bacterial diseases                         &lt;df&gt;    \n 4 A30-A49 Other bacterial diseases                                    &lt;df&gt;    \n 5 A50-A64 Infections with a predominantly sexual mode of transmission &lt;df&gt;    \n 6 A65-A69 Other spirochetal diseases                                  &lt;df&gt;    \n 7 A70-A74 Other diseases caused by chlamydiae                         &lt;df&gt;    \n 8 A75-A79 Rickettsioses                                               &lt;df&gt;    \n 9 A80-A89 Viral and prion infections of the central nervous system    &lt;df&gt;    \n10 A90-A99 Arthropod-borne viral fevers and viral hemorrhagic fevers   &lt;df&gt;    \n# ℹ 12 more rows"
+  },
+  {
     "objectID": "EL6.html#references",
     "href": "EL6.html#references",
-    "title": "EL6: Data sources",
+    "title": "EL6: Data formats",
     "section": "",
     "text": "Arel-Bundock, Vincent. 2025. “Data.table Vs. Base Vs. Dplyr  Vincent Arel-Bundock.” https://arelbundock.com/posts/dt_tb_df/index.html.\n\n\nData Analysis Using Data.table. n.d. 2026. https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html.\n\n\nFenk, Simone Rahel, Kari Furu, and Inger Johanne Bakken. n.d. “Improve Data Management in Register-Based Research: Transition from CSV to Parquet.” https://doi.org/10.1101/2025.10.15.25337992.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. “R for Data Science (2e).” https://r4ds.hadley.nz/."
   },
@@ -1572,7 +2013,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-02-25."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-05."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -2748,21 +3189,42 @@
     "href": "handouts.html#optional-practice",
     "title": "Handouts",
     "section": "Optional practice",
-    "text": "Optional practice\n\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. A useful resources for your own practicing: SQLzoo\nThe SQL Tutorial for Data Analysis is another option"
+    "text": "Optional practice\nWe won’t focus on SQL in this course but it might still be good to know some of the basics. Two useful resources for your own practicing (if you like):\n\nSQLzoo\nThe SQL Tutorial for Data Analysis"
+  },
+  {
+    "objectID": "handouts.html#imaginaed-scenario",
+    "href": "handouts.html#imaginaed-scenario",
+    "title": "Handouts",
+    "section": "Imaginaed scenario",
+    "text": "Imaginaed scenario\n\nYou have requested register data from Statistics Sweden (SCB) and The National Board of Health and Welfare (NBHW; SoS)\nAftar a couple of months (it previously took a year), you receive some huge files with file ending .sas7bdat\nWhat do you do now?"
   },
   {
     "objectID": "handouts.html#sas7bdat",
     "href": "handouts.html#sas7bdat",
     "title": "Handouts",
     "section": ".sas7bdat",
-    "text": ".sas7bdat\n\nIt is common to receive large data files in SAS format (.sas7bdat)\nMany govermental agencies are using SAS internally\nSAS is great for handling big data sets (no need to read everything into memory)\nBut I don’t know how to use SAS 😩\nPossible to read medium-sized SAS files to R by haven::read_sas()\nBut may not work for larger files\nBest practice for current SAS version (9.4) is to export only nececary data to csv\n\nSAS Viya (next version) will be more flexible\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask ChatGPT etc to generate such code for you\n\nThe exported csv file can later be read into R"
+    "text": ".sas7bdat\n\nMany govermental agencies are using SAS\nTheir standard format when delivering big data sets\nSAS is great for handling big data sets (no need to read everything into memory)\nBut you don’t know how to use SAS 😩"
+  },
+  {
+    "objectID": "handouts.html#first-try",
+    "href": "handouts.html#first-try",
+    "title": "Handouts",
+    "section": "First try",
+    "text": "First try\n\nIt is often possible to read medium-sized SAS files to R by haven::read_sas()\nBased on the ReadStat C library\nBased on reverse-engineering of binary files!\nYou need to put some trust that those wizards where good “hackers” (your analyzis and future patients lifes may depend on it) :-)\nBut similar trust always applies when you use open source software, which depend on other peoples software, which depends on …\nBut, yes, it is legal according to EU legislation :-)\n\n\nDirective 2009/24/EC art 6 The authorisation of the rightholder shall not be required where reproduction of the code and translation of its form within the meaning of points (a) and (b) of Article 4(1) are indispensable to obtain the information necessary to achieve the interoperability of an independently created computer program with other programs […]\n\nBut let’s say this did not work for your data! 😩"
+  },
+  {
+    "objectID": "handouts.html#large-sas-files",
+    "href": "handouts.html#large-sas-files",
+    "title": "Handouts",
+    "section": "Large SAS files",
+    "text": "Large SAS files\n\nBest practice for current SAS version (9.4) is to export only nessecary data to csv\n\nSAS Viya (another solution not likely replacing SAS 9.4) can export parquet files\n\nYou need a SAS license (expensive) as well as some SAS syntax for this\n\nBut you might ask GenAI to generate such code for you\n\nThe exported csv file can later be read into R\n\n\n\n\n\n\n\nNoteSAS in the course?\n\n\n\nWe are not using SAS in the course (and it is no longer available for students to download … it’s to expensive even for a large university …). Hence, this is just as a future advice if you will work in an organisation with a SAS license (it is still available for empoyers within GU for a monthly cost)."
   },
   {
     "objectID": "handouts.html#databases",
     "href": "handouts.html#databases",
     "title": "Handouts",
     "section": "Databases",
-    "text": "Databases\n\na database as a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
+    "text": "Databases\n\na database is a collection of “tables” (tabular data frames)\nDifferences between data frames and database tables:\n\nDatabase tables are stored on disk and can be arbitrarily large.\nData frames are stored in memory\nDatabase tables almost always have indexes; makes it possible to quickly find rows of interest\n\nData frames and tibbles don’t have indexes, but data.tables do, which is one of the reasons that they’re so fast.\n\nNo fixed row order in a table"
   },
   {
     "objectID": "handouts.html#row-vs-column-oriented",
@@ -2776,7 +3238,14 @@
     "href": "handouts.html#dbms",
     "title": "Handouts",
     "section": "DBMS",
-    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle. Those are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed. Commercial cloud products are less likely to be used for sensitive health data within our field (so we will not focus on these).\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer. They’re great for working with large datasets where you’re the primary user. We focus on DuckDB in this course!"
+    "text": "DBMS\nDatabases are run by database management systems (DBMS’s for short), which come in three basic forms\n\nClient-server\n\nrun on a powerful central server, which you connect to from your computer (the client). For example PostgreSQL, MariaDB, SQL Server, and Oracle.\n\nCloud\n\nlike Snowflake, Amazon’s RedShift, and Google’s BigQuery, are similar to client server DBMS’s, but they run in the cloud. This means that they can easily handle extremely large datasets and can automatically provide more compute resources as needed.\n\nIn-process\n\nlike SQLite or duckdb, run entirely on your computer."
+  },
+  {
+    "objectID": "handouts.html#relevance",
+    "href": "handouts.html#relevance",
+    "title": "Handouts",
+    "section": "Relevance",
+    "text": "Relevance\n\nClient-server\n\nThose are sometimes used in our field but if so, you will hopefully get some initial help from the IT department who will provide acess details etc. Such access is then integrated into R and Positron (as well as RStudio). If thi is relevant, you can most likely use tools such as dbplyr to query the data without to much use of SQL itself.\n\nCloud\n\nCommercial cloud products are less likely to be used for sensitive health data within our field.\n\nIn-process\n\nThey’re great for working with large datasets locally where you (the statistician) is the primary user. SQLite was a good tool in the past (it might still be but …) nowadays DuckDB is the most prominent implementation!"
   },
   {
     "objectID": "handouts.html#sql",
@@ -2807,53 +3276,53 @@
     "text": "A Simple Example\nSELECT name, age\nFROM students\nWHERE age &gt;= 18\nORDER BY age;\nThis query:\n\nSelects two columns\nFilters rows\nSorts the result"
   },
   {
+    "objectID": "handouts.html#relevance-1",
+    "href": "handouts.html#relevance-1",
+    "title": "Handouts",
+    "section": "Relevance?",
+    "text": "Relevance?\n\nI don’t think SQL is a necessary skill to master for most statisticians\nYou should nevertheless be aware of its existence and understand simple code examples as above\nIf an employer requires SQL skills, you can probably learn enough if/when needed\nNevertheless, the more languages/tools etc you know, the more competitive you become (but don’t sacrifice statistical knowledge for technical."
+  },
+  {
     "objectID": "handouts.html#duckdb",
     "href": "handouts.html#duckdb",
     "title": "Handouts",
     "section": "DuckDB",
-    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option but not a requirement\n\nIntegration with tidyverse in R (dbplyr or duckplyr)\n\nCan be used both with disk data and data in RAM"
+    "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nSQL is an option as API language but not a requirement\nIntegration by DBMS and “hidden” SQL under the hood: dbplyr\nA more “native” implementation by duckplyr\n\nBetter (but perhaps not as widely used yet and therefore a bit less mature/stable)\n\nCan be used both with disk data and data in RAM"
   },
   {
     "objectID": "handouts.html#example-1",
     "href": "handouts.html#example-1",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n## pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n## Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n## Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\ntibble(urls)\n\n## Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n## nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\n## Complex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()"
-  },
-  {
-    "objectID": "handouts.html#duckdb-1",
-    "href": "handouts.html#duckdb-1",
-    "title": "Handouts",
-    "section": "DuckDB",
-    "text": "DuckDB\n\nDuckDB is an embedded analytical SQL database.\nIt supports standard SQL\nNo server installation is required.\nDesigned for analytical workloads"
+    "text": "Example\n## pak::pak(\"tidyverse/duckplyr\")\nlibrary(duckplyr)\nconflicted::conflicts_prefer(dplyr::filter)\n## Extra tools to connect to internet data\ndb_exec(\"INSTALL httpfs\")\ndb_exec(\"LOAD httpfs\")\n\n## Use some online data which is to big to keep in memory\nyear &lt;- 2022:2024 # therefore, select just 3 years\nbase_url &lt;- \"https://blobs.duckdb.org/flight-data-partitioned/\"\nfiles &lt;- paste0(\"Year=\", year, \"/data_0.parquet\")\nurls &lt;- paste0(base_url, files)\n\n\n## Connect to the data (without downloading)\nflights &lt;- read_parquet_duckdb(urls)\n## nrow(flights) # It's not in memory!\ncount(flights, Year) # processing outside memory\n\nComplex queries can be executed on the remote data. Note how only the relevant columns are fetched and the 2024 data isn’t even touched, as it’s not needed for the result.\n#| cache: true\nout &lt;-\n  flights |&gt;\n  mutate(InFlightDelay = ArrDelay - DepDelay) |&gt;\n  summarize(\n    .by = c(Year, Month),\n    MeanInFlightDelay = mean(InFlightDelay, na.rm = TRUE),\n    MedianInFlightDelay = median(InFlightDelay, na.rm = TRUE),\n  ) |&gt;\n  filter(Year &lt; 2024)\n\nout |&gt;\n  explain()"
   },
   {
     "objectID": "handouts.html#duckdb-and-data-files",
     "href": "handouts.html#duckdb-and-data-files",
     "title": "Handouts",
     "section": "DuckDB and Data Files",
-    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nArrow\nJSON\n\nNo data import is required."
+    "text": "DuckDB and Data Files\nDuckDB can query files directly:\n\nParquet\nCSV\nJSON\n\nNo data import (to your computers Random Access Memory [RAM]) is required!"
   },
   {
     "objectID": "handouts.html#example-2",
     "href": "handouts.html#example-2",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)"
+    "text": "Example\n\nLet’s say you used SAS to export your data to a csv file\nDuckDB can query the relevant data from that file directly and collect only the data you actually need!\n(If you knew you only needed i smaller data set you might have performed similar work already in SAS but you often query the data multiple times for different purposes so it still good to have a readable version of everything)\n\n## This is not writing from SAS but to illustrate the point :-)\ncsv_file &lt;- tempfile(fileext = \".csv\")\nwrite.csv(NHANES::NHANES, csv_file)\n\nread_csv_duckdb(csv_file) |&gt;\n  filter(Age &gt;= 18) |&gt;\n  summarise(BMI_mean = mean(as.numeric(BMI), na.rm = TRUE), .by = Gender)"
   },
   {
     "objectID": "handouts.html#parquet",
     "href": "handouts.html#parquet",
     "title": "Handouts",
     "section": "Parquet",
-    "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read"
+    "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nvery fast to read and write"
   },
   {
     "objectID": "handouts.html#example-3",
     "href": "handouts.html#example-3",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquete file\nThe solution below reads all CSV data and then export it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n#| cache: true\n## install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n## Now\nread_parquet_duckdb(parquet_file)"
+    "text": "Example\n\nSo we might work with CSV + DuckDB but it is even more efficient if we could convert the CSV to a parquet file\nThe solution below reads the CSV data and then exports it to a new parquet file\nThis means that all data must still fit into memory\n\nIf it doesn’t, do it chunk-wise (piece by piece, 1 M rows at the time or similar)\n\n\n#| cache: true\n## install.packages(\"arrow\")\nlibrary(arrow)\nparquet_file &lt;- tempfile(fileext = \".parquet\")\nread_csv_arrow(csv_file) |&gt;\n  write_parquet(parquet_file)\n\n## Now\nread_parquet_duckdb(parquet_file)"
   },
   {
     "objectID": "handouts.html#tidy-data",
@@ -2863,18 +3332,46 @@
     "text": "tidy data\n\nduckplyr let’s you use the familiar dplyr/tidyverse syntax\nIf certain steps in your pipeline are not compatible with DuckDB, data might be collected into memory and the pipeline contonous nevertheless\nAfter filteringen/aggregation etc you can always choose to collect() the data and use your ordinary workflow from there"
   },
   {
-    "objectID": "handouts.html#fater-in-memory",
-    "href": "handouts.html#fater-in-memory",
+    "objectID": "handouts.html#data-files",
+    "href": "handouts.html#data-files",
     "title": "Handouts",
-    "section": "Fater in memory?",
-    "text": "Fater in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nWhat if data would fit?\n\nYou can use tibbles and dplyr etc of course …\n\n… but it might be terribly slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvementsfrom time to time)\n\n\n{data.table} is much more efficient!"
+    "section": "Data files",
+    "text": "Data files\n\n.qs2\n\nA fast, compressed R-specific binary format used for caching by the {targets} package.\nData must be fully read from disk into memory (RAM), typically via targets::tar_read().\n\n.sas7bdat\n\nA proprietary binary format used by SAS and commonly encountered in register data deliveries.\nIt can be sometimes be imported into R (haven::read_sas(), which also allow selection of specific columns at import).\nThe dataset is read into memory.\n\n.csv (Comma-Separated Values)\n\nA plain-text format following a loosely defined standard.\nIt is human-readable but inefficient for large datasets.\nTools such as DuckDB (via {duckplyr}) can read only the required columns and rows and perform filtering and aggregation during import.\n\n.parquet (Apache Parquet)\n\nA columnar, compressed, and standardized binary format designed for efficient analytics.\nIt supports selective column access and integrates well with modern analytical engines such as DuckDB and Arrow."
+  },
+  {
+    "objectID": "handouts.html#archiving",
+    "href": "handouts.html#archiving",
+    "title": "Handouts",
+    "section": "Archiving",
+    "text": "Archiving\n\nSwedish law say that we must archive the data (within the public sector).\nGeneral practice is to store every “official document” forever … which is a long time :-)\nUsualy conceptualized as 500 years.\nRetention (dokumenthanteringsplan/gallringsplan) usually limit the time needed to store source material for statistcal reporting/research etc\n\nVaries between organisations but usually 10 years (25 for some research, which is also regulated by the EU)\n\nCan you read a 25 year old data file?\n\nYes, if storeed as an inefficient CSV-file …\nMaybe not if using another less human-readable format …\n\nThe work of a professional archivist might contain responsibilities for data conversion from time to time (CD-ROMS or floppy disks etc might otherwise not be accasible)\nIt seems, however, less common that organizational standardd etc imply that statisticians are limited to certain formats (it is more often up to you and your collegues)"
+  },
+  {
+    "objectID": "handouts.html#faster-in-memory",
+    "href": "handouts.html#faster-in-memory",
+    "title": "Handouts",
+    "section": "Faster in memory?",
+    "text": "Faster in memory?\n\nDuckDB and {duckplyr} makes it possible to work with data which does not fit into memory\nBut what if data would fit (which is more common)?\n\nYou can use tibbles and dplyr etc as usual …\n\n… but it might be slooooooooooooow … for big enough data\n(Although dplyr also gets some speed improvements from time to time)\n\n\n{data.table} is much more efficient!"
   },
   {
     "objectID": "handouts.html#data.table",
     "href": "handouts.html#data.table",
     "title": "Handouts",
     "section": "data.table",
-    "text": "data.table\n\nShare basic properties with data frames (dt[i, j]; merge())\nHas been around since 2006 (stable and well used, even older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare to data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
+    "text": "data.table\n\nAn R package (not a data storage format or a database system)\nComparable to working with data.frame in base R or tibble in the tidyverse\nSometimes described as a Domain Specific Language (DSL) within R\nIntroduced in 2006 (mature, stable, and widely used — older than the tidyverse)\nProvides faster alternatives to several base R functions: fifelse(), fcase(), forder(), fread(), fcoalesce(),\nas.IDate(), %chin%\nCore components implemented in C for performance\nUses concepts similar to databases:\n\nInteger-based keys and indices\n\nEfficient joins and grouping\n\nReference semantics\n\nVery flexible and compact syntax\n\nStrongly appreciated by many statisticians —\nunknown to some — and slightly intimidating to others 🙂"
+  },
+  {
+    "objectID": "handouts.html#copy-on-modify",
+    "href": "handouts.html#copy-on-modify",
+    "title": "Handouts",
+    "section": "Copy-on-modify",
+    "text": "Copy-on-modify\n\nAssume df is a large data.frame/tibble with many rows and columns, one of them called old.\nLet f() be some function.\nWhat happens when you add a new column using\ndf$new &lt;- f(df$old) or df &lt;- mutate(df, new = f(old))?\nEven though you reuse the name df, R typically creates a modified copy of the object.\nIn R, objects use copy-on-modify semantics:\n\nWhen an object is changed, a new copy is created (if needed).\nThe name df is just a reference to an object in memory.\nAfter reassignment, df refers to the new object.\n\nThe previous object may remain in memory temporarily until garbage collection runs.\nFor very large objects, this can result in substantial temporary memory use"
+  },
+  {
+    "objectID": "handouts.html#reference-semantics",
+    "href": "handouts.html#reference-semantics",
+    "title": "Handouts",
+    "section": "Reference semantics",
+    "text": "Reference semantics\n\nIn data.table, reference semantics are used instead.\nYou can modify the existing object directly: df[, new := f(old)]\nOr delete columns in place: df[, old := NULL]\nNo full copy is made\nThere is still only one object in memory (and it is still called df)."
   },
   {
     "objectID": "handouts.html#example-4",
@@ -2891,11 +3388,368 @@
     "text": "joins\nx[i, on, nomatch]\n| |  |   |\n| |  |   \\__ If NULL only returns rows linked in x and i tables\n| |  \\____ a character vector or list defining match logic\n| \\_____ primary data.table, list or data.frame\n\\____ secondary data.table\n\n\n\n\n\n\n\n\n\nJoin type\ndata.table\nSQL\ndplyr\n\n\n\n\nRight join\nDT1[DT2]\nRIGHT JOIN\nright_join(DT2, DT1)\n\n\nLeft join\nDT2[DT1]\nLEFT JOIN\nleft_join(DT1, DT2)\n\n\nInner join\nDT1[DT2, nomatch = 0]\nINNER JOIN\ninner_join(DT1, DT2)\n\n\nFull join\nmerge(DT1, DT2, all = TRUE)\nFULL OUTER JOIN\nfull_join(DT1, DT2)\n\n\nAnti join\nDT1[!DT2]\nNOT EXISTS\nanti_join(DT1, DT2)\n\n\nSemi join\nDT1[DT2, nomatch = 0][, unique(.SD)]\nEXISTS\nsemi_join(DT1, DT2)\n\n\nRolling join\nDT1[DT2, on = \"date\", roll = TRUE]\n—\njoin_by() + rolling\n\n\nNon-equi join\nDT1[DT2, on = .(x &gt;= lower, x &lt;= upper)]\n—\njoin_by(x &gt;= lower, x &lt;= upper)\n\n\nUpdate join\nDT1[DT2, value := i.value]\nUPDATE … JOIN\nDT1 %&gt;% left_join(DT2) %&gt;% mutate(...)"
   },
   {
+    "objectID": "handouts.html#external-api",
+    "href": "handouts.html#external-api",
+    "title": "Handouts",
+    "section": "External API",
+    "text": "External API\n\nWe previously assumed you get some data delivery from a register holder\nOr mayby you work within the organization where data is collected, and therefore have access to the original data base.\nSome data can also be openly accessed by an Programming Application Interface (API)\nThe PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data\nThe {pxweb} R package simplifies the process"
+  },
+  {
+    "objectID": "handouts.html#available-resources",
+    "href": "handouts.html#available-resources",
+    "title": "Handouts",
+    "section": "Available resources",
+    "text": "Available resources\n#| echo: false\npxweb::pxweb_api_catalogue() |&gt;\n  purrr::map_chr(\"description\") |&gt;\n  tibble::enframe() |&gt;\n  knitr::kable()"
+  },
+  {
+    "objectID": "handouts.html#example-5",
+    "href": "handouts.html#example-5",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nqku #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\ngdpqjk { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nqku #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
+  },
+  {
+    "objectID": "handouts.html#flattening",
+    "href": "handouts.html#flattening",
+    "title": "Handouts",
+    "section": "Flattening",
+    "text": "Flattening\nSo you now have a duckplyr data frame. One of its columns is nested and, with additional data frames as children) If we unnest the children for chapter 1, we see that those children also have children … and so it continous. To get a simple translation between individual codes and their description, you might need to define some recursive function to unnest until you have found the last children in line.\n#| cache: true\n(chap1 &lt;- icd |&gt; slice(1) |&gt; collect())\nchap1 |&gt;\n  select(children) |&gt;\n  tidyr::unnest(children)"
+  },
+  {
     "objectID": "handouts.html#reading-2",
     "href": "handouts.html#reading-2",
     "title": "Handouts",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 3)\n\nRecommended references:"
+    "text": "Reading\n\n(Nguyen 2022, ch. 3) on standardized vocabularies. You may skip the sections “CPT”, “LOINC”, “RxNorm” and “Using the Unified Medical Language System” (not examined within the course). Even if you skip those section, remember to read the conclusions in the end of the chapter!\nAlharbi, Isouard, and Tolchard (2021) provides an historical expose of the development of medical coding, with focus on the International Classificatin of Diseases (ICD).\nNelson et al. (2024) argue (based on a statistical analysis) that we should not put to much trust in the coded data (you may skip the methods section).\nBindel and Seifert (2025) introduces the Anatomical Therapeutic Chemical (ATC) and some associated problems. Focus on the introduction and conclusion sections (results and discussion may be skipped).\n(Wickham, Çetinkaya-Rundel, and Grolemund, n.d., ch. 15): Using {stringr} for regular expressions in R including exercises\n\nRecommended references:\n\nHistory of the Statistical Classification of DiseasesandCauses of Death\n\nRecommended practice:\n\nRegular expressins: But please not that this is general practice and deviations may exist between those exercises and R."
+  },
+  {
+    "objectID": "handouts.html#overview",
+    "href": "handouts.html#overview",
+    "title": "Handouts",
+    "section": "Overview",
+    "text": "Overview\n\nStandardized vocabularies, controlled vocabularies, terminologies and ontologies …\nThis is a field of its onwn (health informatics and clinical terminology)\nLet’s just call it “medical coding” for now."
+  },
+  {
+    "objectID": "handouts.html#relevance-2",
+    "href": "handouts.html#relevance-2",
+    "title": "Handouts",
+    "section": "Relevance",
+    "text": "Relevance\n\nImaganine you are diagnosed with “cancer” (hope not …)\nYour doctor writes that you have “kräfta” in your medical records\n\n“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”\n\nShe might as well write:\n\nThe patient was diagnosed with a malignant neoplasm of the colon.\nHistology confirms invasive adenocarcinoma.\nEvidence of metastatic disease to the liver.\n\nNatural languages (English/Swedish etc) are not well suited for statistical analysis\n\nNatural language processing (NLP) is nice but outside the scope of the course\n\nStatisticians need clear definitions of diagnoses, procedures, medications etc.\nTherefore, such information is encoded in a standardized way"
+  },
+  {
+    "objectID": "handouts.html#granularityreliabaility",
+    "href": "handouts.html#granularityreliabaility",
+    "title": "Handouts",
+    "section": "Granularity/reliabaility",
+    "text": "Granularity/reliabaility\n\nCancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)\nCancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)\nThe more we learn about a diseases, the more granularity we expect from the coding\nThe coding systems therefore tend to be quite complex, evolve over time and often have regional differences\nEven though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.\nThe codes might also be misued for re-imbursment practices\n\nThere was a regional scandal in Western Sweden not so many years ago\n\nIn practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff"
+  },
+  {
+    "objectID": "handouts.html#example-6",
+    "href": "handouts.html#example-6",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\n\nThe Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems\nAt first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?\nHowever, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.\nIt was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.\nThe apparent “complication” was therefore not a real clinical problem, but a coding error.\n\nLesson: Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions."
+  },
+  {
+    "objectID": "handouts.html#icd-international-classification-of-diseases",
+    "href": "handouts.html#icd-international-classification-of-diseases",
+    "title": "Handouts",
+    "section": "ICD – International Classification of Diseases",
+    "text": "ICD – International Classification of Diseases\n\nMaintained by the World Health Organization (WHO)\nGlobal standard for coding diseases and causes of death\nUsed for:\n\nClinical documentation\nMortality statistics\nEpidemiological research\nHealth system planning and monitoring"
+  },
+  {
+    "objectID": "handouts.html#historical-background",
+    "href": "handouts.html#historical-background",
+    "title": "Handouts",
+    "section": "Historical Background",
+    "text": "Historical Background\n\nFirst version: 1893 (International List of Causes of Death)\nWHO assumed responsibility in 1948 (ICD-6)\nMajor revisions approximately every 10–20 years\nEach revision reflects:\n\nAdvances in medical knowledge\nChanges in disease concepts\nAdministrative and reporting needs\n\n\nICD has evolved from a mortality list to a comprehensive disease classification."
+  },
+  {
+    "objectID": "handouts.html#major-icd-versions",
+    "href": "handouts.html#major-icd-versions",
+    "title": "Handouts",
+    "section": "Major ICD Versions",
+    "text": "Major ICD Versions\n\nICD-7 (used in many countries in the 1950s–1970s)\n\nStill used in the Swedish cancer register for backward compability\n\nICD-8 (used in many countries in the 1960s–1980s)\nICD-9 (widely used until the early 2000s)\n\nAlso still used in the Swedish cancer register\n\nICD-10 (introduced in the 1990s; still dominant in many countries)\n\nFrom 1997 in Sweden. What we currently most care about\n\nICD-11 (adopted in 2019; gradually being implemented)\n\nDifferent countries adopted versions at different times, creating challenges for international comparisons."
+  },
+  {
+    "objectID": "handouts.html#national-modifications",
+    "href": "handouts.html#national-modifications",
+    "title": "Handouts",
+    "section": "National Modifications",
+    "text": "National Modifications\nMany countries use national adaptations:\n\nICD-10-CM (USA; Clinical Modification)\nICD-10-CA (Canada)\nICD-10-SE (Sweden)\n\nA fifth position (ignoring the dot) sometimes used for more granularity\nICD-10: S72.0 Fracture of neck of femur\nICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nWHO ICD-10\nICD-10-SE (Sweden)\nICD-10-CM (USA)\n\n\n\n\nMaintained by\nWHO\nSwedish National Board of Health and Welfare (Socialstyrelsen)\nU.S. National Center for Health Statistics (NCHS)\n\n\nPrimary purpose\nGlobal disease classification\nNational clinical and statistical reporting\nClinical documentation and reimbursement\n\n\nLevel of detail\nModerate\nMore detailed than WHO ICD-10\nMuch more detailed than WHO ICD-10\n\n\nAdditional digits\nTypically 3–4 characters\nOften includes 5th character extensions\nUp to 7 characters\n\n\nLaterality (right/left)\nUsually not specified\nLimited\nFrequently specified\n\n\nEncounter type (initial, follow-up, sequela)\nNot included\nNot included\nExplicitly coded\n\n\nAdministrative focus\nEpidemiology and mortality statistics\nClinical and national register reporting\nStrongly tied to billing and reimbursement\n\n\nInternational comparability\nHigh (reference standard)\nHigh within Nordic context, requires mapping internationally\nRequires crosswalk to WHO ICD-10 for comparison"
+  },
+  {
+    "objectID": "handouts.html#structure-of-icd-10",
+    "href": "handouts.html#structure-of-icd-10",
+    "title": "Handouts",
+    "section": "Structure of ICD-10",
+    "text": "Structure of ICD-10\nTypical format:\n\nOne letter (chapter)\nTwo digits (category)\nOptional dot and additional digit(s) (subcategory)\n\nExample:\n\nI21 – Acute myocardial infarction (AMI)\nI21.0 – AMI of anterior wall\nI21.9 – AMI, unspecified"
+  },
+  {
+    "objectID": "handouts.html#hierarchy",
+    "href": "handouts.html#hierarchy",
+    "title": "Handouts",
+    "section": "Hierarchy",
+    "text": "Hierarchy\n\nChapter → Block → Category (3-digit) → Subcategory (4-digit+)\n\nResearchers must decide:\n\nAnalyse at 3-digit level?\nOr at more detailed subcategory level?\n\nThere is a trade-off between specificity and statistical power."
+  },
+  {
+    "objectID": "handouts.html#what-does-an-icd-code-represent",
+    "href": "handouts.html#what-does-an-icd-code-represent",
+    "title": "Handouts",
+    "section": "What Does an ICD Code Represent?",
+    "text": "What Does an ICD Code Represent?\nAn ICD code reflects:\n\nClinical documentation\nCoding rules\nAdministrative structure\nLocal practice\n\nIt does not necessarily reflect:\n\nBiological mechanism\nDiagnostic certainty\nUniform clinical interpretation\n\nRegister data therefore reflect both medicine and administration."
+  },
+  {
+    "objectID": "handouts.html#changes-over-time",
+    "href": "handouts.html#changes-over-time",
+    "title": "Handouts",
+    "section": "Changes Over Time",
+    "text": "Changes Over Time\nBetween ICD versions:\n\nCodes may be split into more detailed categories\nCodes may be merged\nCodes may move between chapters\nDefinitions may change\n\nExample: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.\nImplication: Observed changes in incidence may reflect coding changes rather than true epidemiology."
+  },
+  {
+    "objectID": "handouts.html#crosswalks-between-versions",
+    "href": "handouts.html#crosswalks-between-versions",
+    "title": "Handouts",
+    "section": "Crosswalks Between Versions",
+    "text": "Crosswalks Between Versions\nWhen analysing long time series:\n\nMapping tables (“crosswalks”) are often used\nMapping may be:\n\nOne-to-one\nOne-to-many (most common)\nMany-to-one\n\n\nCrosswalks are rarely exact. Information loss or ambiguity is common.\nAggregation to broader diagnostic groups is often necessary."
+  },
+  {
+    "objectID": "handouts.html#crosswalk-patterns-who-icd-9-who-icd-10",
+    "href": "handouts.html#crosswalk-patterns-who-icd-9-who-icd-10",
+    "title": "Handouts",
+    "section": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)",
+    "text": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)\nWhen mapping between ICD versions, different structural relationships may occur.\n\n\n\n\n\n\n\n\n\nMapping type\nICD-9 (WHO)\nICD-10 (WHO)\nInterpretation\n\n\n\n\nOne → Many (Split)\n250 – Diabetes mellitus\nE10–E14\nOne broad ICD-9 category split into multiple etiological types\n\n\nMany → One (Merge)\n038 – Septicaemia790.7 – Bacteraemia\nA41 – Other sepsis\nSeparate ICD-9 concepts consolidated into broader ICD-10 category\n\n\nMany ↔︎ Many (Reorganisation)\n296 – Affective psychoses300 – Neurotic disorders\nF30–F39 (Mood disorders)F40–F48 (Neurotic disorders)\nStructural reorganisation and conceptual reclassification across chapters\n\n\nChapter relocation\n011 – Pulmonary tuberculosis\nA15 – Respiratory tuberculosis\nInfectious diseases reorganised under new chapter structure"
+  },
+  {
+    "objectID": "handouts.html#crosswalk-before-or-after",
+    "href": "handouts.html#crosswalk-before-or-after",
+    "title": "Handouts",
+    "section": "Crosswalk before or after",
+    "text": "Crosswalk before or after\n\nThe Swedish caner register has an internal “crosswalk” applied uniformly to the register itself\nOther registers typically only records the current version in use\nIf so, you might perform the crosswalk yourself after receiving the data\n\nApplies if you want to look at longer time trends etc or combine data from different periods"
+  },
+  {
+    "objectID": "handouts.html#icd-o",
+    "href": "handouts.html#icd-o",
+    "title": "Handouts",
+    "section": "ICD-O",
+    "text": "ICD-O\nICD-O (International Classification of Diseases for Oncology):\n\nUsed mainly in cancer registries\nCombines:\n\nTopography (tumour site)\nMorphology (histology and behaviour)\n\nCurrent commonly used version: - ICD-O-3\nEarlier versions: - ICD-O-1 - ICD-O-2\nICD-O is more detailed than ICD-10 for cancer incidence studies."
+  },
+  {
+    "objectID": "handouts.html#relationship-between-icd-10-and-icd-o",
+    "href": "handouts.html#relationship-between-icd-10-and-icd-o",
+    "title": "Handouts",
+    "section": "Relationship Between ICD-10 and ICD-O",
+    "text": "Relationship Between ICD-10 and ICD-O\n\nICD-10 commonly used for mortality and hospital discharge diagnoses\nICD-O primarily used for cancer registry incidence data\n\nA cancer case may have:\n\nAn ICD-10 code in hospital data\nAn ICD-O morphology and topography code in a cancer registry\n\nResearchers must understand which system underlies their dataset."
+  },
+  {
+    "objectID": "handouts.html#regional-variation-in-coding",
+    "href": "handouts.html#regional-variation-in-coding",
+    "title": "Handouts",
+    "section": "Regional Variation in Coding",
+    "text": "Regional Variation in Coding\nDifferences between hospitals or regions may arise due to:\n\nCoding training\nLocal guidelines\nAdministrative incentives\nReimbursement systems\nElectronic health record design\n\nRegisters capture both clinical events and coding behaviour."
+  },
+  {
+    "objectID": "handouts.html#validity-of-icd-codes",
+    "href": "handouts.html#validity-of-icd-codes",
+    "title": "Handouts",
+    "section": "Validity of ICD Codes",
+    "text": "Validity of ICD Codes\nImportant research question:\n\nDoes the code correspond to the true disease?\n\nValidation studies compare ICD codes with a reference standard\n(e.g., chart review, clinical registry, laboratory confirmation)."
+  },
+  {
+    "objectID": "handouts.html#key-measures-of-validity",
+    "href": "handouts.html#key-measures-of-validity",
+    "title": "Handouts",
+    "section": "Key Measures of Validity",
+    "text": "Key Measures of Validity\n\nSensitivity\nAmong patients who truly have the disease,\nhow many receive the correct ICD code?\n→ Measures undercoding (missed cases).\nSpecificity\nAmong patients who do not have the disease,\nhow many are correctly not assigned the code?\n→ Measures overcoding (false positives).\nPositive Predictive Value (PPV)\nAmong patients assigned the ICD code,\nhow many truly have the disease?\n→ Measures how reliable the code is for identifying true cases."
+  },
+  {
+    "objectID": "handouts.html#conceptual-22-table",
+    "href": "handouts.html#conceptual-22-table",
+    "title": "Handouts",
+    "section": "Conceptual 2×2 Table",
+    "text": "Conceptual 2×2 Table\n\n\n\n\nTrue disease\nNo disease\n\n\n\n\nICD code present\nTrue positive\nFalse positive\n\n\nICD code absent\nFalse negative\nTrue negative\n\n\n\n\nSensitivity = True positives / (True positives + False negatives)\nSpecificity = True negatives / (True negatives + False positives)\nPPV = True positives / (True positives + False positives)"
+  },
+  {
+    "objectID": "handouts.html#why-it-matters",
+    "href": "handouts.html#why-it-matters",
+    "title": "Handouts",
+    "section": "Why It Matters",
+    "text": "Why It Matters\nLow sensitivity → underestimated incidence\nLow PPV → inflated case counts\nVariation in validity may depend on:\n\nDiagnosis (e.g., myocardial infarction vs mild depression)\nCare setting (inpatient vs primary care)\nTime period (coding changes)\nICD version and national modification\n\nNot all ICD codes are equally reliable for research."
+  },
+  {
+    "objectID": "handouts.html#practical-implications-for-statisticians",
+    "href": "handouts.html#practical-implications-for-statisticians",
+    "title": "Handouts",
+    "section": "Practical Implications for Statisticians",
+    "text": "Practical Implications for Statisticians\nBefore analysis, always clarify:\n\nWhich ICD version?\nWhich national modification?\nWhich coding level (3-digit vs 4-digit)?\nHas coding practice changed over time?\nAre crosswalks required?\nIs there validation evidence for the diagnosis?\n\nICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research."
+  },
+  {
+    "objectID": "handouts.html#atc",
+    "href": "handouts.html#atc",
+    "title": "Handouts",
+    "section": "ATC",
+    "text": "ATC\n\nAnatomical Therapeutic Chemical (ATC) classification\ncategorizing therapeutic drugs,\nstructured into 14 main groups and 5 levels, with a disease-oriented focus\nintroduced in the 1960s\nIn 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”\nfollow a hierarchical structure:\n\n1 letter\n2 digits\n2 letters\n2 digits\nExample: C09AA05\n\nSeveral problems exist (Bindel and Seifert 2025) but it is nevertheless widely used"
+  },
+  {
+    "objectID": "handouts.html#sweden",
+    "href": "handouts.html#sweden",
+    "title": "Handouts",
+    "section": "Sweden",
+    "text": "Sweden\n\nWe have ATC codes in the national prescription register\nWhen a doctor prescribes a medicatin, the ATC code will follow automatically\nLess room for interpretation when coding\nNew medications are introduced over time\nThe Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions\nDaily updates to the National Substance Register"
+  },
+  {
+    "objectID": "handouts.html#procedure-codes",
+    "href": "handouts.html#procedure-codes",
+    "title": "Handouts",
+    "section": "Procedure codes",
+    "text": "Procedure codes\n\nWe use ICD for diagnoses and medical condition\nBut how are patients with such diagnosis treated?\nWhat actions (in addition to the prescription of medicines) do we have?\nUSA has a special version of ICD for this: ICD-10-PCS\n\nPCS = Procedure Coding System"
+  },
+  {
+    "objectID": "handouts.html#nomesco",
+    "href": "handouts.html#nomesco",
+    "title": "Handouts",
+    "section": "NOMESCO",
+    "text": "NOMESCO\nIn Sweden, medical procedures are coded using the NOMESCO Classification of Surgical Procedures (NCSP).\n\nDeveloped by the Nordic Medico-Statistical Committee (NOMESCO)\nUsed in Sweden, Denmark, Finland, Norway, and Iceland\nPrimarily for on surgical procedures"
+  },
+  {
+    "objectID": "handouts.html#kvå",
+    "href": "handouts.html#kvå",
+    "title": "Handouts",
+    "section": "KVÅ",
+    "text": "KVÅ\n\nIn Sweden implemented through KVÅ (Klassifikation av vårdåtgärder)\nMaintained nationally by Socialstyrelsen\nIncludes the NOMESCO-NCSP codes for surgery\nAlso includes additional codes for non-surgical treatments and activities\n\nAdministration of chemotherapy (cytostatic treatment)\nRadiotherapy sessions\nDialysis treatment (hemodialysis, peritoneal dialysis)\nBlood transfusion\nVaccination\nAdvanced wound care (non-surgical)\nMultidisciplinary team conference (MDT conference)\nSmoking cessation counselling\nNutritional counselling\nPhysiotherapy interventions\nOccupational therapy interventions\nPsychotherapeutic treatment sessions\nStructured patient education programmes\nPalliative care planning"
+  },
+  {
+    "objectID": "handouts.html#structure",
+    "href": "handouts.html#structure",
+    "title": "Handouts",
+    "section": "Structure",
+    "text": "Structure\n\nAlphanumeric codes (typically 5 characters)\nFirst letter indicates anatomical or procedural group\nSubsequent characters specify procedure type and detail\n\nExample:\n\nNFB49 – Primary total hip replacement\nJKA20 – Appendectomy"
+  },
+  {
+    "objectID": "handouts.html#purpose",
+    "href": "handouts.html#purpose",
+    "title": "Handouts",
+    "section": "Purpose",
+    "text": "Purpose\n\nRecord surgical and certain non-surgical interventions\nUsed in:\n\nNational Patient Register\nQuality registers\nReimbursement and administrative reporting\nHealth services research"
+  },
+  {
+    "objectID": "handouts.html#important-distinction",
+    "href": "handouts.html#important-distinction",
+    "title": "Handouts",
+    "section": "Important Distinction",
+    "text": "Important Distinction\n\nICD-10-SE → Diagnosis codes\nNOMESCO/KVÅ → Procedure codes\n\nA patient record may therefore contain:\n\nAn ICD diagnosis (e.g., hip fracture)\nA NOMESCO procedure code (e.g., hip replacement surgery)"
+  },
+  {
+    "objectID": "handouts.html#implications-for-research",
+    "href": "handouts.html#implications-for-research",
+    "title": "Handouts",
+    "section": "Implications for Research",
+    "text": "Implications for Research\n\nDiagnosis and procedure must not be confused\nTrends in procedures may reflect:\n\nClinical practice changes\nTechnology changes\nPolicy and reimbursement incentives\n\nInternational comparisons require awareness that other countries (e.g., USA) use different coding systems\n\nNOMESCO codes capture what was done, not what disease the patient had."
+  },
+  {
+    "objectID": "handouts.html#drg",
+    "href": "handouts.html#drg",
+    "title": "Handouts",
+    "section": "DRG",
+    "text": "DRG\nDRG (Diagnosis-Related Groups) is a classification system used to group hospital cases into categories expected to require similar levels of resources.\nIn Sweden:\n\nBased on the NordDRG system\nUsed for:\n\nHospital reimbursement\nResource allocation\nHealth care management\nProductivity and efficiency analyses"
+  },
+  {
+    "objectID": "handouts.html#how-is-a-drg-determined",
+    "href": "handouts.html#how-is-a-drg-determined",
+    "title": "Handouts",
+    "section": "How Is a DRG Determined?",
+    "text": "How Is a DRG Determined?\nA DRG is assigned based on a combination of:\n\nPrimary diagnosis (ICD-10-SE)\nSecondary diagnoses\nProcedure codes (NOMESCO/KVÅ)\nAge\nSex\nDischarge status\nPresence of complications or comorbidities\n\nDRG codes are therefore derived classifications, not primary clinical codes."
+  },
+  {
+    "objectID": "handouts.html#implications-for-research-1",
+    "href": "handouts.html#implications-for-research-1",
+    "title": "Handouts",
+    "section": "Implications for Research",
+    "text": "Implications for Research\n\nDRG reflects resource use, not disease incidence.\nChanges in reimbursement rules may influence coding behavior.\nRegional comparisons must consider administrative incentives.\nDRG is suitable for health services and economic analyses, but less appropriate for etiological research."
+  },
+  {
+    "objectID": "handouts.html#regular-expressions",
+    "href": "handouts.html#regular-expressions",
+    "title": "Handouts",
+    "section": "Regular expressions",
+    "text": "Regular expressions"
+  },
+  {
+    "objectID": "handouts.html#regular-expressions-regex",
+    "href": "handouts.html#regular-expressions-regex",
+    "title": "Handouts",
+    "section": "Regular Expressions (Regex)",
+    "text": "Regular Expressions (Regex)\n\nA way to describe patterns in text\nUsed to:\n\nIdentify diagnosis codes (ICD-10)\nIdentify drug codes (ATC)\nClean register data\nValidate variables\n\nIn R:\n\nBase R: grepl(), sub(), gsub()\nTidyverse: stringr::str_detect(), str_extract(), str_replace()\nMore efficient for big data: stringfish"
+  },
+  {
+    "objectID": "handouts.html#relevance-3",
+    "href": "handouts.html#relevance-3",
+    "title": "Handouts",
+    "section": "Relevance",
+    "text": "Relevance\nTypical use cases:\n\nSelect all ICD-10 codes starting with \"I21\" (acute myocardial infarction)\nIdentify all ATC codes beginning with \"C09\" (antihypertensives)\nCheck for malformed codes (quality control)\nExtract codes embedded in free text (e.g., notes, text fields)"
+  },
+  {
+    "objectID": "handouts.html#basic-building-blocks",
+    "href": "handouts.html#basic-building-blocks",
+    "title": "Handouts",
+    "section": "Basic Building Blocks",
+    "text": "Basic Building Blocks\n\n\n\nSymbol\nMeaning\n\n\n\n\n^\nStart of string\n\n\n$\nEnd of string\n\n\n.\nAny character\n\n\n*\n0 or more repetitions\n\n\n+\n1 or more repetitions\n\n\n?\n0 or 1 repetition\n\n\n{m,n}\nBetween m and n repetitions\n\n\n[ABC]\nAny of A, B, or C\n\n\n[0-9]\nAny digit\n\n\n\\\\d\nAny digit (PCRE)\n\n\n\n\n\n\n\n\n\nImportantDifferent versions\n\n\n\nThere are different implementations of regular expressions! The implementation in base R is described by ?base::regex in R. Perl-like Regular Expressions (PCRE) is a commonly used alternative requireing (perl = TRUE as argument) for the base functions."
+  },
+  {
+    "objectID": "handouts.html#example-icd-10-structure",
+    "href": "handouts.html#example-icd-10-structure",
+    "title": "Handouts",
+    "section": "Example: ICD-10 Structure",
+    "text": "Example: ICD-10 Structure\nICD-10 codes typically follow:\n\nOne letter\nTwo digits\nOptional dot and additional digit\n\nRegex pattern: ^[A-Z][0-9]{2}(\\\\.[0-9])?$\nwhere \\\\ is ussed to remove the special meaning of . as described above. Hence, in this case \\\\. is interpreted as a literal . as to be found in the character string. In R:\ngrepl(\"^[A-Z][0-9]{2}(\\\\.[0-9])?$\", icd) # base\nstringr::str_detect(icd, \"^[A-Z][0-9]{2}(\\\\.[0-9])?$\")\n## Faster and using 10 CPU cores in paralell (only relevant for \"big enough data\"):\nstringfish::sf_grepl(icd, \"^[A-Z][0-9]{2}(\\\\.[0-9])?$\", nthreads = 10L)"
+  },
+  {
+    "objectID": "handouts.html#example-select-a-diagnosis-group",
+    "href": "handouts.html#example-select-a-diagnosis-group",
+    "title": "Handouts",
+    "section": "Example: Select a Diagnosis Group",
+    "text": "Example: Select a Diagnosis Group\n\nAll acute myocardial infarction codes: ^I21\nIn R: stringr::str_detect(icd, \"^I21\")\n\nThis selects:\n\nI21\nI21.0\nI21.9\n\nBut not:\n\nI20\nI22"
+  },
+  {
+    "objectID": "handouts.html#atc-code-structure",
+    "href": "handouts.html#atc-code-structure",
+    "title": "Handouts",
+    "section": "ATC Code Structure",
+    "text": "ATC Code Structure\n\nExample: C09AA05\nRegex pattern:^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$\nIn R: stringr::str_detect(atc, \"^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$\")\nThis will find any ATC code.\nYou might receive data with a variable supposed to contain only ATC codes\nIt might as well contain other information such as ??, don't know, XXXXXXX etc\nYou might replace such character strings by &lt;NA&gt;"
+  },
+  {
+    "objectID": "handouts.html#implementations",
+    "href": "handouts.html#implementations",
+    "title": "Handouts",
+    "section": "Implementations",
+    "text": "Implementations\n\nbase R and {stringr} both use the same underlying regex engine (PCRE)\n\nbut {stringr} is more “user friendly”.\n\nStringfish seems technically sperior but is less maintained (more of a hobby project)."
+  },
+  {
+    "objectID": "handouts.html#common-mistakes",
+    "href": "handouts.html#common-mistakes",
+    "title": "Handouts",
+    "section": "Common Mistakes",
+    "text": "Common Mistakes\n\nForgetting ^ when matching prefixes\n\nThis is even forgotten in the stringfish::sf_starts() implementation! See bug report.\n\nForgetting to escape .\nNot validating full string with $\nOvermatching (e.g., I2 instead of ^I21)"
+  },
+  {
+    "objectID": "handouts.html#standardised-groupings",
+    "href": "handouts.html#standardised-groupings",
+    "title": "Handouts",
+    "section": "Standardised Groupings",
+    "text": "Standardised Groupings\nTo account for overall disease burden, researchers often use established grouping systems, such as:\n\nCharlson Comorbidity Index (ICD)\nElixhauser Comorbidity Index (ICD)\nSimilar groupings of ATC-codes\nCombinations of those\n\nThese indices:\n\nAggregate multiple ICD codes into clinically meaningful comorbidity categories\nAre commonly used for:\n\nRisk adjustment\nPrognostic modelling\nConfounding control in observational studies"
+  },
+  {
+    "objectID": "handouts.html#decoder",
+    "href": "handouts.html#decoder",
+    "title": "Handouts",
+    "section": "{decoder}",
+    "text": "{decoder}\n\nThe R package {decoder} provides descriptions for many commonly used coding systems.\nIn register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.\n{decoder} allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.\n\n\n\n\n\n\n\nNoteUp-to-date?\n\n\n\nI am the maintainer of {decoder} and {coder} but I have not had the time or energy to update them for a cuople of years. There are some reported issues."
+  },
+  {
+    "objectID": "handouts.html#coder",
+    "href": "handouts.html#coder",
+    "title": "Handouts",
+    "section": "{coder}",
+    "text": "{coder}\n\nThe R package {coder} can be used to aggregate individual diagnosis codes into broader clinical categories.\nCommon applications include:\n\nCharlson Comorbidity Index\nElixhauser Comorbidity Index\nOther diagnosis-based groupings\n\n\nThis allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies"
   },
   {
     "objectID": "handouts.html#reading-3",
@@ -3010,8 +3864,8 @@
     "text": "Database?\n\nI don’t want to administer Microsoft SQL Server myself!\n\n(They had R support for a couple of years but not any more)\n\nSQLight is easy to use …\nbut (as SQL server) it is row based 🙁\nSome complicated ones are column based 😀 (Snowflake, Google Big Query)\n\n… but I don’t want to administer those either …\n\nDuckDB comes for rescue!\n\n\n\n\n\n\n\nImportantIndices\n\n\n\nNever forget to set proper indices if needed!"
   },
   {
-    "objectID": "handouts.html#duckdb-2",
-    "href": "handouts.html#duckdb-2",
+    "objectID": "handouts.html#duckdb-1",
+    "href": "handouts.html#duckdb-1",
     "title": "Handouts",
     "section": "DuckDB",
     "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nIntegration with tidyverse in R\nCan be used both with disk data and data in RAM\n… but I had some bad experience and now I am scared 😢"
@@ -3052,8 +3906,8 @@
     "text": "{data.table}\n\nShare basic properties with data frames (dt[i, j]; merge())\nPrint method inspired by {tibble}\nSome old friends from {reshape2}: melt(), dcast()\nHas been around since 2006 (stable and well used, older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
   },
   {
-    "objectID": "handouts.html#example-5",
-    "href": "handouts.html#example-5",
+    "objectID": "handouts.html#example-7",
+    "href": "handouts.html#example-7",
     "title": "Handouts",
     "section": "Example",
     "text": "Example\n#| echo: true\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\ndt[, .N, Species]\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]"
@@ -3066,8 +3920,8 @@
     "text": "If it doesn’t fit?\n\nConnect to parquet file.\nUse DuckDB to process the data (while still on disk)\nUse {dplyr} to translate its syntax into SQL code\nProcess data on disk\nOnly read the results into memory"
   },
   {
-    "objectID": "handouts.html#example-6",
-    "href": "handouts.html#example-6",
+    "objectID": "handouts.html#example-8",
+    "href": "handouts.html#example-8",
     "title": "Handouts",
     "section": "Example",
     "text": "Example\n#| echo: true\n#| eval: false\nlibrary(tidyverse)\ndb1 &lt;-\n  arrow::open_dataset(\"file1.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  select(col1:col3) |&gt;\n  filter(...) |&gt;\n  pivot_wider(..) \n\ndb2 &lt;-\n  arrow::open_dataset(\"file2.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  count(x, y) |&gt;\n  filter(...)\n\ndf &lt;- \n  db1 |&gt;  \n  left_join(db2) |&gt;\n  collect() # Only the resulting part should be collected!\n  \n\n\nPros 👍\n\nLazy: nothing evaluated until it is actually needed (collected)\nMany basic functions are translated from R to SQL\nDuckDB is parallelized ({data.table} is mostly sequential)\nFamiliar syntax from tidyverse\n\n\n\nCons 👎\n\ntidyverse -&gt; SQL translation not perfect (non optimized)\nmight be relatively slow if intermediate steps are not cached and needs to be performed repeatedly"

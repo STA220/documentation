@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – EL7: Standardized vocabularies</title>
+  <title>STA220 – EL7: Medical codes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +27,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -148,8 +214,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EL7: Standardized vocabularies</h1>
-  <p class="subtitle">ICD, ATC, SNOMED, regex</p>
+  <h1 class="title">EL7: Medical codes</h1>
+  <p class="subtitle">ICD, ATC, KVÅ, regex</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -158,23 +224,879 @@
 <section id="reading" class="slide level2">
 <h2>Reading</h2>
 <ul>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#/section" role="doc-biblioref" onclick="">Nguyen 2022</a>, ch.&nbsp;3)</span></li>
+<li><span class="citation" data-cites="nguyen2022a">(<a href="#/references" role="doc-biblioref" onclick="">Nguyen 2022</a>, ch.&nbsp;3)</span> on standardized vocabularies. You may skip the sections “CPT”, “LOINC”, “RxNorm” and “Using the Unified Medical Language System” (not examined within the course). Even if you skip those section, remember to read the conclusions in the end of the chapter!</li>
+<li><span class="citation" data-cites="alharbi2021">Alharbi, Isouard, and Tolchard (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> provides an historical expose of the development of medical coding, with focus on the International Classificatin of Diseases (ICD).</li>
+<li><span class="citation" data-cites="nelson2024">Nelson et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> argue (based on a statistical analysis) that we should not put to much trust in the coded data (you may skip the methods section).</li>
+<li><span class="citation" data-cites="bindel2025">Bindel and Seifert (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span> introduces the Anatomical Therapeutic Chemical (ATC) and some associated problems. Focus on the introduction and conclusion sections (results and discussion may be skipped).</li>
+<li><span class="citation" data-cites="wickham">(<a href="#/references" role="doc-biblioref" onclick="">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch.&nbsp;15)</span>: Using <code>{stringr}</code> for regular expressions in R including exercises</li>
 </ul>
 <p><strong>Recommended references:</strong></p>
 <ul>
-<li></li>
+<li><a href="file:///Users/xbuler/Downloads/cdc_5928_DS1.pdf">History of the Statistical Classification of Diseases</a><a href="https://stacks.cdc.gov/view/cdc/5928">and</a><a href="file:///Users/xbuler/Downloads/cdc_5928_DS1.pdf">Causes of Death</a></li>
+</ul>
+<p><strong>Recommended practice:</strong></p>
+<ul>
+<li><a href="https://www.regexone.com">Regular expressins</a>: But please not that this is general practice and deviations may exist between those exercises and R.</li>
 </ul>
 </section>
-<section id="section" class="title-slide slide level1 smaller scrollable">
-<h1></h1>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<ul>
+<li>Standardized vocabularies, controlled vocabularies, terminologies and ontologies …</li>
+<li>This is a field of its onwn (health informatics and clinical terminology)</li>
+<li>Let’s just call it “medical coding” for now.</li>
+</ul>
+</section>
+<section id="relevance" class="slide level2">
+<h2>Relevance</h2>
+<ul>
+<li>Imaganine you are diagnosed with “cancer” (hope not …)</li>
+<li>Your doctor writes that you have “kräfta” in your medical records
+<ul>
+<li>“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”</li>
+</ul></li>
+<li>She might as well write:
+<ul>
+<li>The patient was diagnosed with a malignant neoplasm of the colon.</li>
+<li>Histology confirms invasive adenocarcinoma.</li>
+<li>Evidence of metastatic disease to the liver.</li>
+</ul></li>
+<li>Natural languages (English/Swedish etc) are not well suited for statistical analysis
+<ul>
+<li>Natural language processing (NLP) is nice but outside the scope of the course</li>
+</ul></li>
+<li>Statisticians need clear definitions of diagnoses, procedures, medications etc.</li>
+<li>Therefore, such information is encoded in a standardized way</li>
+</ul>
+</section>
+<section id="granularityreliabaility" class="slide level2">
+<h2>Granularity/reliabaility</h2>
+<ul>
+<li>Cancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)</li>
+<li>Cancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)</li>
+<li>The more we learn about a diseases, the more granularity we expect from the coding</li>
+<li>The coding systems therefore tend to be quite complex, evolve over time and often have regional differences</li>
+<li>Even though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.</li>
+<li>The codes might also be misued for re-imbursment practices
+<ul>
+<li>There was a regional scandal in Western Sweden not so many years ago</li>
+</ul></li>
+<li>In practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li>The Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems</li>
+<li>At first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?</li>
+<li>However, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.</li>
+<li>It was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.</li>
+<li>The apparent “complication” was therefore not a real clinical problem, but a coding error.</li>
+</ul>
+<p><strong>Lesson:</strong> Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions.</p>
+</section>
+<section id="icd-international-classification-of-diseases" class="slide level2">
+<h2>ICD – International Classification of Diseases</h2>
+<ul>
+<li>Maintained by the World Health Organization (WHO)</li>
+<li>Global standard for coding diseases and causes of death</li>
+<li>Used for:
+<ul>
+<li>Clinical documentation</li>
+<li>Mortality statistics</li>
+<li>Epidemiological research</li>
+<li>Health system planning and monitoring</li>
+</ul></li>
+</ul>
+</section>
+<section id="historical-background" class="slide level2">
+<h2>Historical Background</h2>
+<ul>
+<li>First version: 1893 (International List of Causes of Death)</li>
+<li>WHO assumed responsibility in 1948 (ICD-6)</li>
+<li>Major revisions approximately every 10–20 years</li>
+<li>Each revision reflects:
+<ul>
+<li>Advances in medical knowledge</li>
+<li>Changes in disease concepts</li>
+<li>Administrative and reporting needs</li>
+</ul></li>
+</ul>
+<p>ICD has evolved from a mortality list to a comprehensive disease classification.</p>
+</section>
+<section id="major-icd-versions" class="slide level2">
+<h2>Major ICD Versions</h2>
+<ul>
+<li>ICD-7 (used in many countries in the 1950s–1970s)
+<ul>
+<li>Still used in the Swedish cancer register for backward compability</li>
+</ul></li>
+<li>ICD-8 (used in many countries in the 1960s–1980s)</li>
+<li>ICD-9 (widely used until the early 2000s)
+<ul>
+<li>Also still used in the Swedish cancer register</li>
+</ul></li>
+<li>ICD-10 (introduced in the 1990s; still dominant in many countries)
+<ul>
+<li>From 1997 in Sweden. What we currently most care about</li>
+</ul></li>
+<li>ICD-11 (adopted in 2019; gradually being implemented)</li>
+</ul>
+<p>Different countries adopted versions at different times, creating challenges for international comparisons.</p>
+</section>
+<section id="national-modifications" class="slide level2">
+<h2>National Modifications</h2>
+<p>Many countries use national adaptations:</p>
+<ul>
+<li>ICD-10-CM (USA; Clinical Modification)</li>
+<li>ICD-10-CA (Canada)</li>
+<li>ICD-10-SE (Sweden)
+<ul>
+<li>A fifth position (ignoring the dot) sometimes used for more granularity</li>
+<li>ICD-10: S72.0 Fracture of neck of femur</li>
+<li>ICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 32%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>WHO ICD-10</th>
+<th>ICD-10-SE (Sweden)</th>
+<th>ICD-10-CM (USA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maintained by</td>
+<td>WHO</td>
+<td>Swedish National Board of Health and Welfare (Socialstyrelsen)</td>
+<td>U.S. National Center for Health Statistics (NCHS)</td>
+</tr>
+<tr class="even">
+<td>Primary purpose</td>
+<td>Global disease classification</td>
+<td>National clinical and statistical reporting</td>
+<td>Clinical documentation and reimbursement</td>
+</tr>
+<tr class="odd">
+<td>Level of detail</td>
+<td>Moderate</td>
+<td>More detailed than WHO ICD-10</td>
+<td>Much more detailed than WHO ICD-10</td>
+</tr>
+<tr class="even">
+<td>Additional digits</td>
+<td>Typically 3–4 characters</td>
+<td>Often includes 5th character extensions</td>
+<td>Up to 7 characters</td>
+</tr>
+<tr class="odd">
+<td>Laterality (right/left)</td>
+<td>Usually not specified</td>
+<td>Limited</td>
+<td>Frequently specified</td>
+</tr>
+<tr class="even">
+<td>Encounter type (initial, follow-up, sequela)</td>
+<td>Not included</td>
+<td>Not included</td>
+<td>Explicitly coded</td>
+</tr>
+<tr class="odd">
+<td>Administrative focus</td>
+<td>Epidemiology and mortality statistics</td>
+<td>Clinical and national register reporting</td>
+<td>Strongly tied to billing and reimbursement</td>
+</tr>
+<tr class="even">
+<td>International comparability</td>
+<td>High (reference standard)</td>
+<td>High within Nordic context, requires mapping internationally</td>
+<td>Requires crosswalk to WHO ICD-10 for comparison</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="structure-of-icd-10" class="slide level2">
+<h2>Structure of ICD-10</h2>
+<p>Typical format:</p>
+<ul>
+<li>One letter (chapter)</li>
+<li>Two digits (category)</li>
+<li>Optional dot and additional digit(s) (subcategory)</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><strong>I21</strong> – Acute myocardial infarction (AMI)</li>
+<li><strong>I21.0</strong> – AMI of anterior wall</li>
+<li><strong>I21.9</strong> – AMI, unspecified</li>
+</ul>
+</section>
+<section id="hierarchy" class="slide level2">
+<h2>Hierarchy</h2>
+<ul>
+<li>Chapter → Block → Category (3-digit) → Subcategory (4-digit+)</li>
+</ul>
+<p>Researchers must decide:</p>
+<ul>
+<li>Analyse at 3-digit level?</li>
+<li>Or at more detailed subcategory level?</li>
+</ul>
+<p>There is a trade-off between specificity and statistical power.</p>
+</section>
+<section id="what-does-an-icd-code-represent" class="slide level2">
+<h2>What Does an ICD Code Represent?</h2>
+<p>An ICD code reflects:</p>
+<ul>
+<li>Clinical documentation</li>
+<li>Coding rules</li>
+<li>Administrative structure</li>
+<li>Local practice</li>
+</ul>
+<p>It does not necessarily reflect:</p>
+<ul>
+<li>Biological mechanism</li>
+<li>Diagnostic certainty</li>
+<li>Uniform clinical interpretation</li>
+</ul>
+<p>Register data therefore reflect both medicine and administration.</p>
+</section>
+<section id="changes-over-time" class="slide level2">
+<h2>Changes Over Time</h2>
+<p>Between ICD versions:</p>
+<ul>
+<li>Codes may be split into more detailed categories</li>
+<li>Codes may be merged</li>
+<li>Codes may move between chapters</li>
+<li>Definitions may change</li>
+</ul>
+<p>Example: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.</p>
+<p>Implication: Observed changes in incidence may reflect coding changes rather than true epidemiology.</p>
+</section>
+<section id="crosswalks-between-versions" class="slide level2">
+<h2>Crosswalks Between Versions</h2>
+<p>When analysing long time series:</p>
+<ul>
+<li>Mapping tables (“crosswalks”) are often used</li>
+<li>Mapping may be:
+<ul>
+<li>One-to-one</li>
+<li>One-to-many (most common)</li>
+<li>Many-to-one</li>
+</ul></li>
+</ul>
+<p>Crosswalks are rarely exact. Information loss or ambiguity is common.</p>
+<p>Aggregation to broader diagnostic groups is often necessary.</p>
+</section>
+<section id="crosswalk-patterns-who-icd-9-who-icd-10" class="slide level2">
+<h2>Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)</h2>
+<p>When mapping between ICD versions, different structural relationships may occur.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mapping type</th>
+<th>ICD-9 (WHO)</th>
+<th>ICD-10 (WHO)</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>One → Many (Split)</td>
+<td>250 – Diabetes mellitus</td>
+<td>E10–E14</td>
+<td>One broad ICD-9 category split into multiple etiological types</td>
+</tr>
+<tr class="even">
+<td>Many → One (Merge)</td>
+<td>038 – Septicaemia<br>790.7 – Bacteraemia</td>
+<td>A41 – Other sepsis</td>
+<td>Separate ICD-9 concepts consolidated into broader ICD-10 category</td>
+</tr>
+<tr class="odd">
+<td>Many ↔︎ Many (Reorganisation)</td>
+<td>296 – Affective psychoses<br>300 – Neurotic disorders</td>
+<td>F30–F39 (Mood disorders)<br>F40–F48 (Neurotic disorders)</td>
+<td>Structural reorganisation and conceptual reclassification across chapters</td>
+</tr>
+<tr class="even">
+<td>Chapter relocation</td>
+<td>011 – Pulmonary tuberculosis</td>
+<td>A15 – Respiratory tuberculosis</td>
+<td>Infectious diseases reorganised under new chapter structure</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="crosswalk-before-or-after" class="slide level2">
+<h2>Crosswalk before or after</h2>
+<ul>
+<li>The Swedish caner register has an internal “crosswalk” applied uniformly to the register itself</li>
+<li>Other registers typically only records the current version in use</li>
+<li>If so, you might perform the crosswalk yourself after receiving the data
+<ul>
+<li>Applies if you want to look at longer time trends etc or combine data from different periods</li>
+</ul></li>
+</ul>
+</section>
+<section id="icd-o" class="slide level2">
+<h2>ICD-O</h2>
+<p>ICD-O (International Classification of Diseases for Oncology):</p>
+<ul>
+<li>Used mainly in cancer registries</li>
+<li>Combines:
+<ul>
+<li>Topography (tumour site)</li>
+<li>Morphology (histology and behaviour)</li>
+</ul></li>
+<li>Current commonly used version: - ICD-O-3</li>
+<li>Earlier versions: - ICD-O-1 - ICD-O-2</li>
+<li>ICD-O is more detailed than ICD-10 for cancer incidence studies.</li>
+</ul>
+</section>
+<section id="relationship-between-icd-10-and-icd-o" class="slide level2">
+<h2>Relationship Between ICD-10 and ICD-O</h2>
+<ul>
+<li>ICD-10 commonly used for mortality and hospital discharge diagnoses</li>
+<li>ICD-O primarily used for cancer registry incidence data</li>
+</ul>
+<p>A cancer case may have:</p>
+<ul>
+<li>An ICD-10 code in hospital data</li>
+<li>An ICD-O morphology and topography code in a cancer registry</li>
+</ul>
+<p>Researchers must understand which system underlies their dataset.</p>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-30.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-31.png" class="r-stretch"></section>
+<section id="regional-variation-in-coding" class="slide level2">
+<h2>Regional Variation in Coding</h2>
+<p>Differences between hospitals or regions may arise due to:</p>
+<ul>
+<li>Coding training</li>
+<li>Local guidelines</li>
+<li>Administrative incentives</li>
+<li>Reimbursement systems</li>
+<li>Electronic health record design</li>
+</ul>
+<p>Registers capture both clinical events and coding behaviour.</p>
+</section>
+<section id="validity-of-icd-codes" class="slide level2">
+<h2>Validity of ICD Codes</h2>
+<p>Important research question:</p>
+<ul>
+<li>Does the code correspond to the true disease?</li>
+</ul>
+<p>Validation studies compare ICD codes with a reference standard<br>
+(e.g., chart review, clinical registry, laboratory confirmation).</p>
+</section>
+<section id="key-measures-of-validity" class="slide level2">
+<h2>Key Measures of Validity</h2>
+<ul>
+<li><p><strong>Sensitivity</strong><br>
+Among patients who truly have the disease,<br>
+how many receive the correct ICD code?<br>
+→ Measures undercoding (missed cases).</p></li>
+<li><p><strong>Specificity</strong><br>
+Among patients who do not have the disease,<br>
+how many are correctly not assigned the code?<br>
+→ Measures overcoding (false positives).</p></li>
+<li><p><strong>Positive Predictive Value (PPV)</strong><br>
+Among patients assigned the ICD code,<br>
+how many truly have the disease?<br>
+→ Measures how reliable the code is for identifying true cases.</p></li>
+</ul>
+</section>
+<section id="conceptual-22-table" class="slide level2">
+<h2>Conceptual 2×2 Table</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>True disease</th>
+<th>No disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ICD code present</td>
+<td>True positive</td>
+<td>False positive</td>
+</tr>
+<tr class="even">
+<td>ICD code absent</td>
+<td>False negative</td>
+<td>True negative</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Sensitivity = True positives / (True positives + False negatives)</li>
+<li>Specificity = True negatives / (True negatives + False positives)</li>
+<li>PPV = True positives / (True positives + False positives)</li>
+</ul>
+</section>
+<section id="why-it-matters" class="slide level2">
+<h2>Why It Matters</h2>
+<p>Low sensitivity → underestimated incidence<br>
+Low PPV → inflated case counts<br>
+Variation in validity may depend on:</p>
+<ul>
+<li>Diagnosis (e.g., myocardial infarction vs mild depression)</li>
+<li>Care setting (inpatient vs primary care)</li>
+<li>Time period (coding changes)</li>
+<li>ICD version and national modification</li>
+</ul>
+<p>Not all ICD codes are equally reliable for research.</p>
+</section>
+<section id="practical-implications-for-statisticians" class="slide level2">
+<h2>Practical Implications for Statisticians</h2>
+<p>Before analysis, always clarify:</p>
+<ul>
+<li>Which ICD version?</li>
+<li>Which national modification?</li>
+<li>Which coding level (3-digit vs 4-digit)?</li>
+<li>Has coding practice changed over time?</li>
+<li>Are crosswalks required?</li>
+<li>Is there validation evidence for the diagnosis?</li>
+</ul>
+<p>ICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research.</p>
+</section>
+<section id="atc" class="slide level2">
+<h2>ATC</h2>
+<ul>
+<li>Anatomical Therapeutic Chemical (ATC) classification</li>
+<li>categorizing therapeutic drugs,</li>
+<li>structured into 14 main groups and 5 levels, with a disease-oriented focus</li>
+<li>introduced in the 1960s</li>
+<li>In 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”</li>
+<li>follow a hierarchical structure:
+<ul>
+<li>1 letter</li>
+<li>2 digits</li>
+<li>2 letters</li>
+<li>2 digits</li>
+<li>Example: <code>C09AA05</code></li>
+</ul></li>
+<li>Several problems exist <span class="citation" data-cites="bindel2025">(<a href="#/references" role="doc-biblioref" onclick="">Bindel and Seifert 2025</a>)</span> but it is nevertheless widely used</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-29.png" class="r-stretch"></section>
+<section id="sweden" class="slide level2">
+<h2>Sweden</h2>
+<ul>
+<li>We have ATC codes in the national prescription register</li>
+<li>When a doctor prescribes a medicatin, the ATC code will follow automatically</li>
+<li>Less room for interpretation when coding</li>
+<li>New medications are introduced over time</li>
+<li>The Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions</li>
+<li>Daily updates to the <a href="https://www.lakemedelsverket.se/en/e-services-and-forms/substance-register-and-product-register/national-substance-register-for-medicinal-products-nsl#hmainbody1">National Substance Register</a></li>
+</ul>
+</section>
+<section id="procedure-codes" class="slide level2">
+<h2>Procedure codes</h2>
+<ul>
+<li>We use ICD for diagnoses and medical condition</li>
+<li>But how are patients with such diagnosis treated?</li>
+<li>What actions (in addition to the prescription of medicines) do we have?</li>
+<li>USA has a special version of ICD for this: ICD-10-PCS
+<ul>
+<li>PCS = Procedure Coding System</li>
+</ul></li>
+</ul>
+</section>
+<section id="nomesco" class="slide level2">
+<h2>NOMESCO</h2>
+<p>In Sweden, medical procedures are coded using the <strong>NOMESCO Classification of Surgical Procedures (NCSP)</strong>.</p>
+<ul>
+<li>Developed by the Nordic Medico-Statistical Committee (NOMESCO)</li>
+<li>Used in Sweden, Denmark, Finland, Norway, and Iceland</li>
+<li>Primarily for on surgical procedures</li>
+</ul>
+</section>
+<section id="kvå" class="slide level2">
+<h2>KVÅ</h2>
+<ul>
+<li>In Sweden implemented through <strong>KVÅ</strong> (Klassifikation av vårdåtgärder)</li>
+<li>Maintained nationally by Socialstyrelsen</li>
+<li>Includes the NOMESCO-NCSP codes for surgery</li>
+<li>Also includes additional codes for non-surgical treatments and activities
+<ul>
+<li>Administration of chemotherapy (cytostatic treatment)</li>
+<li>Radiotherapy sessions</li>
+<li>Dialysis treatment (hemodialysis, peritoneal dialysis)</li>
+<li>Blood transfusion</li>
+<li>Vaccination</li>
+<li>Advanced wound care (non-surgical)</li>
+<li>Multidisciplinary team conference (MDT conference)</li>
+<li>Smoking cessation counselling</li>
+<li>Nutritional counselling</li>
+<li>Physiotherapy interventions</li>
+<li>Occupational therapy interventions</li>
+<li>Psychotherapeutic treatment sessions</li>
+<li>Structured patient education programmes</li>
+<li>Palliative care planning</li>
+</ul></li>
+</ul>
+</section>
+<section id="structure" class="slide level2">
+<h2>Structure</h2>
+<ul>
+<li>Alphanumeric codes (typically 5 characters)</li>
+<li>First letter indicates anatomical or procedural group</li>
+<li>Subsequent characters specify procedure type and detail</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><strong>NFB49</strong> – Primary total hip replacement</li>
+<li><strong>JKA20</strong> – Appendectomy</li>
+</ul>
+</section>
+<section id="purpose" class="slide level2">
+<h2>Purpose</h2>
+<ul>
+<li>Record surgical and certain non-surgical interventions</li>
+<li>Used in:
+<ul>
+<li>National Patient Register</li>
+<li>Quality registers</li>
+<li>Reimbursement and administrative reporting</li>
+<li>Health services research</li>
+</ul></li>
+</ul>
+</section>
+<section id="important-distinction" class="slide level2">
+<h2>Important Distinction</h2>
+<ul>
+<li><strong>ICD-10-SE</strong> → Diagnosis codes</li>
+<li><strong>NOMESCO/KVÅ</strong> → Procedure codes</li>
+</ul>
+<p>A patient record may therefore contain:</p>
+<ul>
+<li>An ICD diagnosis (e.g., hip fracture)</li>
+<li>A NOMESCO procedure code (e.g., hip replacement surgery)</li>
+</ul>
+</section>
+<section id="implications-for-research" class="slide level2">
+<h2>Implications for Research</h2>
+<ul>
+<li>Diagnosis and procedure must not be confused</li>
+<li>Trends in procedures may reflect:
+<ul>
+<li>Clinical practice changes</li>
+<li>Technology changes</li>
+<li>Policy and reimbursement incentives</li>
+</ul></li>
+<li>International comparisons require awareness that other countries (e.g., USA) use different coding systems</li>
+</ul>
+<p>NOMESCO codes capture <em>what was done</em>, not <em>what disease the patient had</em>.</p>
+</section>
+<section id="drg" class="slide level2">
+<h2>DRG</h2>
+<p><strong>DRG (Diagnosis-Related Groups)</strong> is a classification system used to group hospital cases into categories expected to require similar levels of resources.</p>
+<p>In Sweden:</p>
+<ul>
+<li>Based on the <strong>NordDRG</strong> system</li>
+<li>Used for:
+<ul>
+<li>Hospital reimbursement</li>
+<li>Resource allocation</li>
+<li>Health care management</li>
+<li>Productivity and efficiency analyses</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-is-a-drg-determined" class="slide level2">
+<h2>How Is a DRG Determined?</h2>
+<p>A DRG is assigned based on a combination of:</p>
+<ul>
+<li>Primary diagnosis (ICD-10-SE)</li>
+<li>Secondary diagnoses</li>
+<li>Procedure codes (NOMESCO/KVÅ)</li>
+<li>Age</li>
+<li>Sex</li>
+<li>Discharge status</li>
+<li>Presence of complications or comorbidities</li>
+</ul>
+<p>DRG codes are therefore derived classifications, not primary clinical codes.</p>
+</section>
+<section id="implications-for-research-1" class="slide level2">
+<h2>Implications for Research</h2>
+<ul>
+<li>DRG reflects resource use, not disease incidence.</li>
+<li>Changes in reimbursement rules may influence coding behavior.</li>
+<li>Regional comparisons must consider administrative incentives.</li>
+<li>DRG is suitable for health services and economic analyses, but less appropriate for etiological research.</li>
+</ul>
+</section>
+<section>
+<section id="regular-expressions" class="title-slide slide level1 center">
+<h1>Regular expressions</h1>
+
+</section>
+<section id="regular-expressions-regex" class="slide level2">
+<h2>Regular Expressions (Regex)</h2>
+<ul>
+<li>A way to describe <strong>patterns in text</strong></li>
+<li>Used to:
+<ul>
+<li>Identify diagnosis codes (ICD-10)</li>
+<li>Identify drug codes (ATC)</li>
+<li>Clean register data</li>
+<li>Validate variables</li>
+</ul></li>
+<li>In R:
+<ul>
+<li>Base R: <code>grepl()</code>, <code>sub()</code>, <code>gsub()</code></li>
+<li>Tidyverse: <code>stringr::str_detect()</code>, <code>str_extract()</code>, <code>str_replace()</code></li>
+<li>More efficient for big data: <a href="https://github.com/traversc/stringfish">stringfish</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="relevance-1" class="slide level2">
+<h2>Relevance</h2>
+<p>Typical use cases:</p>
+<ul>
+<li>Select all ICD-10 codes starting with <code>"I21"</code> (acute myocardial infarction)</li>
+<li>Identify all ATC codes beginning with <code>"C09"</code> (antihypertensives)</li>
+<li>Check for malformed codes (quality control)</li>
+<li>Extract codes embedded in free text (e.g., notes, text fields)</li>
+</ul>
+</section>
+<section id="basic-building-blocks" class="slide level2">
+<h2>Basic Building Blocks</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>^</code></td>
+<td>Start of string</td>
+</tr>
+<tr class="even">
+<td><code>$</code></td>
+<td>End of string</td>
+</tr>
+<tr class="odd">
+<td><code>.</code></td>
+<td>Any character</td>
+</tr>
+<tr class="even">
+<td><code>*</code></td>
+<td>0 or more repetitions</td>
+</tr>
+<tr class="odd">
+<td><code>+</code></td>
+<td>1 or more repetitions</td>
+</tr>
+<tr class="even">
+<td><code>?</code></td>
+<td>0 or 1 repetition</td>
+</tr>
+<tr class="odd">
+<td><code>{m,n}</code></td>
+<td>Between m and n repetitions</td>
+</tr>
+<tr class="even">
+<td><code>[ABC]</code></td>
+<td>Any of A, B, or C</td>
+</tr>
+<tr class="odd">
+<td><code>[0-9]</code></td>
+<td>Any digit</td>
+</tr>
+<tr class="even">
+<td><code>\\d</code></td>
+<td>Any digit (PCRE)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Different versions</strong></p>
+</div>
+<div class="callout-content">
+<p>There are different implementations of regular expressions! The implementation in base R is described by <code>?base::regex</code> in R. Perl-like Regular Expressions (PCRE) is a commonly used alternative requireing (<code>perl = TRUE</code> as argument) for the base functions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-icd-10-structure" class="slide level2">
+<h2>Example: ICD-10 Structure</h2>
+<p>ICD-10 codes typically follow:</p>
+<ul>
+<li>One letter</li>
+<li>Two digits</li>
+<li>Optional dot and additional digit</li>
+</ul>
+<p>Regex pattern: <code>^[A-Z][0-9]{2}(\\.[0-9])?$</code></p>
+<p>where <code>\\</code> is ussed to remove the special meaning of <code>.</code> as described above. Hence, in this case <code>\\.</code> is interpreted as a literal <code>.</code> as to be found in the character string. In R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">grepl</span>(<span class="st">"^[A-Z][0-9]{2}(</span><span class="sc">\\</span><span class="st">.[0-9])?$"</span>, icd) <span class="co"># base</span></span>
+<span id="cb1-2"><a></a>stringr<span class="sc">::</span><span class="fu">str_detect</span>(icd, <span class="st">"^[A-Z][0-9]{2}(</span><span class="sc">\\</span><span class="st">.[0-9])?$"</span>)</span>
+<span id="cb1-3"><a></a><span class="co"># Faster and using 10 CPU cores in paralell (only relevant for "big enough data"):</span></span>
+<span id="cb1-4"><a></a>stringfish<span class="sc">::</span><span class="fu">sf_grepl</span>(icd, <span class="st">"^[A-Z][0-9]{2}(</span><span class="sc">\\</span><span class="st">.[0-9])?$"</span>, <span class="at">nthreads =</span> <span class="dv">10</span>L)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-select-a-diagnosis-group" class="slide level2">
+<h2>Example: Select a Diagnosis Group</h2>
+<ul>
+<li>All acute myocardial infarction codes: <code>^I21</code></li>
+<li>In R: <code>stringr::str_detect(icd, "^I21")</code></li>
+</ul>
+<p>This selects:</p>
+<ul>
+<li><code>I21</code></li>
+<li><code>I21.0</code></li>
+<li><code>I21.9</code></li>
+</ul>
+<p>But not:</p>
+<ul>
+<li><code>I20</code></li>
+<li><code>I22</code></li>
+</ul>
+</section>
+<section id="atc-code-structure" class="slide level2">
+<h2>ATC Code Structure</h2>
+<ul>
+<li><p>Example: <code>C09AA05</code></p></li>
+<li><p>Regex pattern:<code>^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$</code></p></li>
+<li><p>In R: <code>stringr::str_detect(atc, "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$")</code></p></li>
+<li><p>This will find any ATC code.</p></li>
+<li><p>You might receive data with a variable supposed to contain only ATC codes</p></li>
+<li><p>It might as well contain other information such as <code>??</code>, <code>don't know</code>, <code>XXXXXXX</code> etc</p></li>
+<li><p>You might replace such character strings by <code>&lt;NA&gt;</code></p></li>
+</ul>
+</section>
+<section id="implementations" class="slide level2">
+<h2>Implementations</h2>
+<ul>
+<li>base R and <code>{stringr}</code> both use the same underlying regex engine (PCRE)
+<ul>
+<li>but <code>{stringr}</code> is more “user friendly”.</li>
+</ul></li>
+<li>Stringfish seems technically sperior but is less maintained (more of a hobby project).</li>
+</ul>
+</section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common Mistakes</h2>
+<ul>
+<li>Forgetting <code>^</code> when matching prefixes
+<ul>
+<li>This is even forgotten in the <code>stringfish::sf_starts()</code> implementation! <a href="https://github.com/traversc/stringfish/issues/25">See bug report</a>.</li>
+</ul></li>
+<li>Forgetting to escape <code>.</code></li>
+<li>Not validating full string with <code>$</code></li>
+<li>Overmatching (e.g., <code>I2</code> instead of <code>^I21</code>)</li>
+</ul>
+</section>
+<section id="standardised-groupings" class="slide level2">
+<h2>Standardised Groupings</h2>
+<p>To account for overall disease burden, researchers often use established grouping systems, such as:</p>
+<ul>
+<li><strong>Charlson Comorbidity Index</strong> (ICD)</li>
+<li><strong>Elixhauser Comorbidity Index</strong> (ICD)</li>
+<li>Similar groupings of ATC-codes</li>
+<li>Combinations of those</li>
+</ul>
+<p>These indices:</p>
+<ul>
+<li>Aggregate multiple ICD codes into clinically meaningful comorbidity categories</li>
+<li>Are commonly used for:
+<ul>
+<li>Risk adjustment</li>
+<li>Prognostic modelling</li>
+<li>Confounding control in observational studies</li>
+</ul></li>
+</ul>
+</section>
+<section id="decoder" class="slide level2">
+<h2><code>{decoder}</code></h2>
+<ul>
+<li>The R package <code>{decoder}</code> provides descriptions for many commonly used coding systems.</li>
+<li>In register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.</li>
+<li><code>{decoder}</code> allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Up-to-date?</strong></p>
+</div>
+<div class="callout-content">
+<p>I am the maintainer of <code>{decoder}</code> and <code>{coder}</code> but I have not had the time or energy to update them for a cuople of years. There are some reported issues.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="coder" class="slide level2">
+<h2><code>{coder}</code></h2>
+<ul>
+<li>The R package <code>{coder}</code> can be used to aggregate individual diagnosis codes into broader clinical categories.</li>
+<li>Common applications include:
+<ul>
+<li><strong>Charlson Comorbidity Index</strong></li>
+<li><strong>Elixhauser Comorbidity Index</strong></li>
+<li>Other diagnosis-based groupings</li>
+</ul></li>
+</ul>
+<p>This allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies</p>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alharbi2021" class="csl-entry" role="listitem">
+Alharbi, Musaed Ali, Godfrey Isouard, and Barry Tolchard. 2021. <span>“Historical Development of the Statistical Classification of Causes of Death and Diseases.”</span> Edited by Rahman Shiri. <em>Cogent Medicine</em> 8 (1): 1893422. <a href="https://doi.org/10.1080/2331205X.2021.1893422">https://doi.org/10.1080/2331205X.2021.1893422</a>.
+</div>
+<div id="ref-bindel2025" class="csl-entry" role="listitem">
+Bindel, Lilly Josephine, and Roland Seifert. 2025. <span>“Problems Associated with the ATC System of Drug Classification.”</span> <em>Naunyn-Schmiedeberg’s Archives of Pharmacology</em>, December. <a href="https://doi.org/10.1007/s00210-025-04833-1">https://doi.org/10.1007/s00210-025-04833-1</a>.
+</div>
+<div id="ref-nelson2024" class="csl-entry" role="listitem">
+Nelson, Stuart J., Ying Yin, Eduardo A. Trujillo Rivera, Yijun Shao, Phillip Ma, Mark S. Tuttle, Jennifer Garvin, and Qing Zeng-Treitler. 2024. <span>“Are ICD Codes Reliable for Observational Studies? Assessing Coding Consistency for Data Quality.”</span> <em>DIGITAL HEALTH</em> 10 (September): 20552076241297056. <a href="https://doi.org/10.1177/20552076241297056">https://doi.org/10.1177/20552076241297056</a>.
+</div>
 <div id="ref-nguyen2022a" class="csl-entry" role="listitem">
 Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
 </div>
+<div id="ref-wickham" class="csl-entry" role="listitem">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. <span>“R for Data Science (2e).”</span> <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
-</section>
+</div>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

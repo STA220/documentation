@@ -1,10 +1,7 @@
-base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 dplyr
 duckplyr
 arrow
+data.table
+pxweb
+ggplot2
+jsonlite

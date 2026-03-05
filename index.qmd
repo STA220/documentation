@@ -1,6 +1,7 @@
 ---
 title: "Health data"
 bibliography: references.bib
+date: last-modified
 ---
 
 This website includes documentation for lectures and exercises concerning the health data part of the course STA220 Health data and questionnaires. General information about the course is found on the corresponding [Canvas](https://canvas.gu.se/courses/97348) page.

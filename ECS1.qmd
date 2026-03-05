@@ -3,6 +3,7 @@ title: "ECS1: IDE and version control"
 subtitle: "Positron, git and GitHub"
 reading: ""
 format: html
+date: last-modified
 ---
 
 ::: callout-note

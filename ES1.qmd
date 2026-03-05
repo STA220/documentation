@@ -1,10 +1,12 @@
 ---
 title: "ES1: Ethics and Legality"
+date: last-modified
 subtitle: ""
 reading: ""
 format: 
   html: default
-  typst: default
+  typst:
+    toc: true
 ---
 
 ::: callout-important
@@ -27,23 +29,27 @@ Part 2 (45 min)
 
 ## Discussion order
 
-There are 7 scenarios described below. Each group take them in the order described here:
+There are 7 scenarios described below. Each group take them in the order described here (starting with the scenario matching the group number, continue to the end and then from the beginning):
 
 -   **Grupp 1:** 1, 2, 3, 4, 5, 6, 7
 -   **Grupp 2:** 2, 3, 4, 5, 6, 7, 1
 -   **Grupp 3:** 3, 4, 5, 6, 7, 1, 2
 -   **Grupp 4:** 4, 5, 6, 7, 1, 2, 3
 -   **Grupp 5:** 5, 6, 7, 1, 2, 3, 4
+-   **Grupp 6:** 6, 7, 1, 2, 3, 4, 5
+-   **Grupp 7:** 7, 1, 2, 3, 4, 4, 5
+
+*(There would probably be less than 7 groups in total.)*
 
 ::: callout-important
 # Time planning
 
-The difference scenarios varies in length! Don't get stressed if you start with a time-consuming scenario. If you have a lot to discuss, it might be enough to discuss that one only. If it is a short one, you may have time to cover many more. Put quality before quantity!
+The difference scenarios varies in length! Don't get stressed if you start with a time-consuming scenario. If you have a lot to discuss, it might be enough to discuss just a few scenarios. Quality before quantity!
 :::
 
 # Instructions
 
-This is not a mathematics exercise. There is no single correct answer to the questions you will discuss.
+This is not a mathematics exercise. There are no single correct answers to the questions you will discuss.
 
 The purpose of this seminar is to explore tensions between legality, ethics, professional responsibility, organizational constraints, and personal circumstances. Something may be legal yet ethically questionable. Something may be ethically appealing yet unlawful. Your task is to explore these gray areas.
 
@@ -56,7 +62,7 @@ You are allowed to use generative AI during discussions but if so, also reflect 
 -   Work in groups of four.
 -   For each scenario, each of you must argue from the perspective of one assigned role.
 -   Assign roles randomly.
--   Rotate roles for each new scenario (if you have time to discuss more than one).
+-   Rotate roles for each new scenario (or after let's say 10-15 minutes; the aim is to lete everyone have each of the roles).
 -   You must argue from your assigned perspective — even if you personally disagree.
 
 The goal is not to “win”, but to understand how different values, pressures, and institutional frameworks shape decision-making.
@@ -67,12 +73,13 @@ When relevant, explicitly refer to:
 -   The concept of data controller and processor
 -   The Freedom of the Press Act (Tryckfrihetsförordningen, TF)
 -   The Public Access to Information and Secrecy Act (Offentlighets- och sekretesslagen, OSL)
+-   Other relevant laws and regulations listed in the handouts/presented in [EL2](EL2.qmd) and [EL3](EL3.qmd)
 
-# Roles
+## Roles
 
 Justice Warrior
 
-:   The rule of law is the foundation of society. Laws must be followed strictly, even when inconvenient. You are knowledgeable about legal structures and precise when referring to specific regulations. If an action violates GDPR, OSL, or internal policies, it must not be taken — regardless of good intentions.
+:   The rule of law is the foundation of society. Laws must be followed strictly, even when inconvenient. You are knowledgeable about legal structures and precise when referring to specific regulations. If an action violates GDPR, TF, OSL, or any other laws or regulations, including internal policies, it must not be taken — regardless of good intentions!
 
 Burnout Statistician
 
@@ -86,10 +93,10 @@ The Budget Guardian
 
 :   Public resources are limited. Every action has financial consequences. Legal violations can result in heavy fines, reputation damage, and loss of funding. You focus on long-term sustainability, cost-effectiveness, and institutional risk.
 
-## Scenarios
+# Scenarios
 
 ::::: panel-tabset
-### Scenario 1: The Data Receiver
+## Scenario 1: The Data Receiver
 
 You are participating in consultancy work through Akademistatistik.
 
@@ -97,7 +104,7 @@ A client from the Sahlgrenska Academy (University of Gothenburg) is conducting r
 
 After an initial meeting, the client emails you a non-encrypted Excel file. The first column contains Swedish personal identity numbers (personnummer).
 
-#### Discussion
+### Discussion
 
 1.  What are your immediate reactions — legally, ethically, and practically?
 2.  Does the transfer itself constitute a personal data breach under GDPR?
@@ -126,13 +133,13 @@ Later, at a restaurant, you mention receiving the file. A person nearby asks you
     -   Does secrecy under OSL apply?\
     -   Who decides on disclosure?
 
-### Scenario 2: Working with Data Across Borders
+## Scenario 2: Working with Data Across Borders
 
 You are hired remotely by a company in Moldova. You have not yet received a work computer. Sometimes you work from cafes or libraries.
 
 The company has a Swedish client who is the data controller. You download their data from an encrypted server connection.
 
-#### Discussion
+### Discussion
 
 1.  Before starting work, what technical and organizational safeguards must be in place?
 
@@ -144,16 +151,16 @@ Your boss says: “Not my problem. GDPR does not apply to me.”
 3.  What is your professional responsibility?\
 4.  Do you continue working?
 
-### Scenario 3: Secure Environment
+## Scenario 3: Secure Environment
 
 You must work in a restricted remote server environment.\
 You cannot install packages outside CRAN.\
 You cannot copy text or files.\
-The client can access the report directly on the server.
+The client can only access your final reports (results/tables/figures etc) directly on the server.
 
 You urgently need a GitHub package not available on CRAN. You discover a technical workaround to install it despite restrictions.
 
-#### Discussion
+### Discussion
 
 1.  Do you use the workaround? Why or why not?
 2.  Is bypassing IT restrictions merely a policy violation — or potentially a legal issue?
@@ -164,7 +171,7 @@ Later, you discover you can activate AI tools externally to assist your analysis
 4.  Could this involve unlawful data transfer outside the EU?\
 5.  How do exhaustion and working conditions affect ethical responsibility?
 
-### Scenario 4: The Accident
+## Scenario 4: The Accident
 
 You work for a national quality register of joint replacements. Late one evening, a hospital calls you:
 
@@ -172,7 +179,7 @@ You work for a national quality register of joint replacements. Late one evening
 
 The hospital asks whether you can use the register to identify the patient based on the prosthesis serial number and provide identifying information.
 
-#### Discussion
+### Discussion
 
 1.  Are you legally allowed to disclose identifying information?
 2.  What is the original purpose of the register, and does this situation fall within that purpose?
@@ -180,13 +187,13 @@ The hospital asks whether you can use the register to identify the patient based
 4.  When, if ever, should privacy yield to immediate medical necessity?
 5.  Would you make the same decision at 10 a.m. on a weekday as at 2 a.m. when you are alone?
 
-#### Variation
+### Variation
 
 Imagine that: - The patient survives regardless of your decision. - Later, relatives question how the hospital obtained identifying information. - Media becomes aware of the incident.
 
 Does this change your reasoning in retrospect?
 
-### Scenario 5: The Role Model
+## Scenario 5: The Role Model
 
 You are relatively new at your workplace. A senior colleague has taken you under his wing, helped you understand internal systems, and supported you in difficult projects. This colleague is widely respected, seen as highly competent, and something of a role model in the organization.
 
@@ -196,7 +203,7 @@ The scripts clearly show that your colleague has performed a data extraction con
 
 There is no obvious documentation justifying the query.
 
-#### Discussion
+### Discussion
 
 1.  What are your immediate reactions?
 2.  Does this appear to constitute:
@@ -209,14 +216,14 @@ There is no obvious documentation justifying the query.
     -   The organization?
     -   You?
 
-#### Further Considerations
+### Further Considerations
 
 5.  Do you confront your colleague?
 6.  Do you report the incident internally? If so, to whom?
 7.  Are you yourself at risk if you ignore what you have seen?
 8.  How does the power imbalance (junior vs senior) affect your responsibility?
 
-### Scenario 6: Contacting Children from a Quality Register
+## Scenario 6: Contacting Children from a Quality Register
 
 You are the head of a unit responsible for a national quality register for children born with cleft lip and/or palate.
 
@@ -224,7 +231,7 @@ You receive a formal data access request. The researcher has an approved ethical
 
 The researcher requests access to identifiable personal data (names, personal identity numbers, and contact information) for children living in Western Sweden. The stated purpose is to contact the children and their guardians directly to invite them to participate in a new research project involving follow-up questionnaires and interviews.
 
-#### Discussion
+### Discussion
 
 1.  Does the purpose of the quality register allow this type of secondary use?
 2.  Does an approved ethical review automatically mean that the data may be disclosed?
@@ -234,7 +241,7 @@ The researcher requests access to identifiable personal data (names, personal id
 6.  Are there any personal risks for you if you accept to give the researcher the data?
 7.  Will you accept or decline the request?
 
-#### Variation
+### Variation
 
 Imagine that:
 
@@ -246,7 +253,7 @@ Imagine that:
 
 Does this change your decision?
 
-### Scenario 7: Unreasonable Promises?
+## Scenario 7: Unreasonable Promises?
 
 Read about the [Gothenburg Study of Children with DAMP](https://en.wikipedia.org/wiki/Gothenburg_Study_of_Children_with_DAMP) (the abbreviation was used at the time but has since become outdated). Focus on the section “Allegations and destruction.”
 
@@ -256,7 +263,7 @@ You are also recommended (although it is not mandatory) to read this [BMJ Featur
 As a side note, the Church of Scientology’s involvement in relation to Sweden’s Freedom of the Press Act and public access to official documents is also an interesting topic in its own right, although most discussions of it are available only in Swedish.
 :::
 
-#### Background (Summary)
+### Background (Summary)
 
 In brief:
 
@@ -287,7 +294,7 @@ These events took place approximately 20 years ago, before the GDPR entered into
 For the purposes of this discussion, base your reasoning on **current Swedish and EU legal frameworks**.
 :::
 
-#### Discussion
+### Discussion
 
 *Feel free to choose among those questions if you don't have time to discuss them all:*
 

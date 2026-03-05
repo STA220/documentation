@@ -1,0 +1,16 @@
+---
+title: "ECS2: Pipeline and reproducibility"
+subtitle: "targets and understanding the data"
+reading: ""
+format: html
+date: last-modified
+---
+
+# GitHub Classroom
+
+This time we will use [Github classroom](https://classroom.github.com).
+This means that your Canvas account will be linked to your GitHUb repository, which hopefully simplifies things in this setting.
+
+## Canvas assignemnt
+
+Here is a [link to a Canvas assignment](https://canvas.gu.se/courses/97348/assignments/375401?module_item_id=1607166) (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked). 
