@@ -208,7 +208,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL7.html">
- <span class="dropdown-text">EL7: Medical codes</span></a>
+ <span class="dropdown-text">EL7: Medical coding</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL8.html">
@@ -240,10 +240,6 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./ECS2.html">
  <span class="dropdown-text">ECS2: Pipeline and reproducibility</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ECS3.html">
- <span class="dropdown-text">ECS3: Data formats</span></a>
   </li>  
     </ul>
   </li>
@@ -496,12 +492,12 @@ window.Quarto = {
   <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
   <li><a href="#flattening" id="toc-flattening" class="nav-link" data-scroll-target="#flattening">Flattening</a></li>
   </ul></li>
-  <li><a href="#el7-medical-codes" id="toc-el7-medical-codes" class="nav-link" data-scroll-target="#el7-medical-codes">EL7: Medical codes</a>
+  <li><a href="#el7-medical-coding" id="toc-el7-medical-coding" class="nav-link" data-scroll-target="#el7-medical-coding">EL7: Medical coding</a>
   <ul class="collapse">
   <li><a href="#reading-2" id="toc-reading-2" class="nav-link" data-scroll-target="#reading-2">Reading</a></li>
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#relevance-2" id="toc-relevance-2" class="nav-link" data-scroll-target="#relevance-2">Relevance</a></li>
-  <li><a href="#granularityreliabaility" id="toc-granularityreliabaility" class="nav-link" data-scroll-target="#granularityreliabaility">Granularity/reliabaility</a></li>
+  <li><a href="#granularityreliability" id="toc-granularityreliability" class="nav-link" data-scroll-target="#granularityreliability">Granularity/reliability</a></li>
   <li><a href="#example-6" id="toc-example-6" class="nav-link" data-scroll-target="#example-6">Example</a></li>
   <li><a href="#icd-international-classification-of-diseases" id="toc-icd-international-classification-of-diseases" class="nav-link" data-scroll-target="#icd-international-classification-of-diseases">ICD – International Classification of Diseases</a></li>
   <li><a href="#historical-background" id="toc-historical-background" class="nav-link" data-scroll-target="#historical-background">Historical Background</a></li>
@@ -516,13 +512,13 @@ window.Quarto = {
   <li><a href="#crosswalk-before-or-after" id="toc-crosswalk-before-or-after" class="nav-link" data-scroll-target="#crosswalk-before-or-after">Crosswalk before or after</a></li>
   <li><a href="#icd-o" id="toc-icd-o" class="nav-link" data-scroll-target="#icd-o">ICD-O</a></li>
   <li><a href="#relationship-between-icd-10-and-icd-o" id="toc-relationship-between-icd-10-and-icd-o" class="nav-link" data-scroll-target="#relationship-between-icd-10-and-icd-o">Relationship Between ICD-10 and ICD-O</a></li>
-  <li><a href="#regional-variation-in-coding" id="toc-regional-variation-in-coding" class="nav-link" data-scroll-target="#regional-variation-in-coding">Regional Variation in Coding</a></li>
+  <li><a href="#variation-in-coding" id="toc-variation-in-coding" class="nav-link" data-scroll-target="#variation-in-coding">Variation in Coding</a></li>
   <li><a href="#validity-of-icd-codes" id="toc-validity-of-icd-codes" class="nav-link" data-scroll-target="#validity-of-icd-codes">Validity of ICD Codes</a></li>
   <li><a href="#key-measures-of-validity" id="toc-key-measures-of-validity" class="nav-link" data-scroll-target="#key-measures-of-validity">Key Measures of Validity</a></li>
   <li><a href="#conceptual-22-table" id="toc-conceptual-22-table" class="nav-link" data-scroll-target="#conceptual-22-table">Conceptual 2×2 Table</a></li>
   <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why It Matters</a></li>
   <li><a href="#practical-implications-for-statisticians" id="toc-practical-implications-for-statisticians" class="nav-link" data-scroll-target="#practical-implications-for-statisticians">Practical Implications for Statisticians</a></li>
-  <li><a href="#atc" id="toc-atc" class="nav-link" data-scroll-target="#atc">ATC</a></li>
+  <li><a href="#atc-for-drugs" id="toc-atc-for-drugs" class="nav-link" data-scroll-target="#atc-for-drugs">ATC for drugs</a></li>
   <li><a href="#sweden" id="toc-sweden" class="nav-link" data-scroll-target="#sweden">Sweden</a></li>
   <li><a href="#procedure-codes" id="toc-procedure-codes" class="nav-link" data-scroll-target="#procedure-codes">Procedure codes</a></li>
   <li><a href="#nomesco" id="toc-nomesco" class="nav-link" data-scroll-target="#nomesco">NOMESCO</a></li>
@@ -534,6 +530,9 @@ window.Quarto = {
   <li><a href="#drg" id="toc-drg" class="nav-link" data-scroll-target="#drg">DRG</a></li>
   <li><a href="#how-is-a-drg-determined" id="toc-how-is-a-drg-determined" class="nav-link" data-scroll-target="#how-is-a-drg-determined">How Is a DRG Determined?</a></li>
   <li><a href="#implications-for-research-1" id="toc-implications-for-research-1" class="nav-link" data-scroll-target="#implications-for-research-1">Implications for Research</a></li>
+  <li><a href="#snomed-ct-what-is-it" id="toc-snomed-ct-what-is-it" class="nav-link" data-scroll-target="#snomed-ct-what-is-it">SNOMED CT – What Is It?</a></li>
+  <li><a href="#terminology-vs-classification" id="toc-terminology-vs-classification" class="nav-link" data-scroll-target="#terminology-vs-classification">Terminology vs Classification</a></li>
+  <li><a href="#why-snomed-ct-is-not-widely-used-in-registers" id="toc-why-snomed-ct-is-not-widely-used-in-registers" class="nav-link" data-scroll-target="#why-snomed-ct-is-not-widely-used-in-registers">Why SNOMED CT Is Not Widely Used in Registers</a></li>
   <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a></li>
   <li><a href="#regular-expressions-regex" id="toc-regular-expressions-regex" class="nav-link" data-scroll-target="#regular-expressions-regex">Regular Expressions (Regex)</a></li>
   <li><a href="#relevance-3" id="toc-relevance-3" class="nav-link" data-scroll-target="#relevance-3">Relevance</a></li>
@@ -646,28 +645,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-03-06</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-03-09</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="nxhassasrn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nxhassasrn table {
+<div id="lacqhjhqri" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lacqhjhqri table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nxhassasrn thead, #nxhassasrn tbody, #nxhassasrn tfoot, #nxhassasrn tr, #nxhassasrn td, #nxhassasrn th {
+#lacqhjhqri thead, #lacqhjhqri tbody, #lacqhjhqri tfoot, #lacqhjhqri tr, #lacqhjhqri td, #lacqhjhqri th {
   border-style: none;
 }
 
-#nxhassasrn p {
+#lacqhjhqri p {
   margin: 0;
   padding: 0;
 }
 
-#nxhassasrn .gt_table {
+#lacqhjhqri .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -693,12 +692,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_caption {
+#lacqhjhqri .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nxhassasrn .gt_title {
+#lacqhjhqri .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -710,7 +709,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#nxhassasrn .gt_subtitle {
+#lacqhjhqri .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -722,7 +721,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#nxhassasrn .gt_heading {
+#lacqhjhqri .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -734,13 +733,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_bottom_border {
+#lacqhjhqri .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_col_headings {
+#lacqhjhqri .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -755,7 +754,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_col_heading {
+#lacqhjhqri .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -775,7 +774,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#nxhassasrn .gt_column_spanner_outer {
+#lacqhjhqri .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -787,15 +786,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#nxhassasrn .gt_column_spanner_outer:first-child {
+#lacqhjhqri .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nxhassasrn .gt_column_spanner_outer:last-child {
+#lacqhjhqri .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nxhassasrn .gt_column_spanner {
+#lacqhjhqri .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -807,11 +806,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#nxhassasrn .gt_spanner_row {
+#lacqhjhqri .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nxhassasrn .gt_group_heading {
+#lacqhjhqri .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,7 +836,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#nxhassasrn .gt_empty_group_heading {
+#lacqhjhqri .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -852,15 +851,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#nxhassasrn .gt_from_md > :first-child {
+#lacqhjhqri .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nxhassasrn .gt_from_md > :last-child {
+#lacqhjhqri .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nxhassasrn .gt_row {
+#lacqhjhqri .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -879,7 +878,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#nxhassasrn .gt_stub {
+#lacqhjhqri .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -892,7 +891,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nxhassasrn .gt_stub_row_group {
+#lacqhjhqri .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -906,15 +905,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#nxhassasrn .gt_row_group_first td {
+#lacqhjhqri .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nxhassasrn .gt_row_group_first th {
+#lacqhjhqri .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nxhassasrn .gt_summary_row {
+#lacqhjhqri .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -924,16 +923,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nxhassasrn .gt_first_summary_row {
+#lacqhjhqri .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_first_summary_row.thick {
+#lacqhjhqri .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nxhassasrn .gt_last_summary_row {
+#lacqhjhqri .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -943,7 +942,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_grand_summary_row {
+#lacqhjhqri .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -953,7 +952,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nxhassasrn .gt_first_grand_summary_row {
+#lacqhjhqri .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -963,7 +962,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_last_grand_summary_row_top {
+#lacqhjhqri .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -973,11 +972,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_striped {
+#lacqhjhqri .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nxhassasrn .gt_table_body {
+#lacqhjhqri .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -986,7 +985,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_footnotes {
+#lacqhjhqri .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1000,7 +999,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_footnote {
+#lacqhjhqri .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1009,7 +1008,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nxhassasrn .gt_sourcenotes {
+#lacqhjhqri .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1023,7 +1022,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#nxhassasrn .gt_sourcenote {
+#lacqhjhqri .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1031,72 +1030,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#nxhassasrn .gt_left {
+#lacqhjhqri .gt_left {
   text-align: left;
 }
 
-#nxhassasrn .gt_center {
+#lacqhjhqri .gt_center {
   text-align: center;
 }
 
-#nxhassasrn .gt_right {
+#lacqhjhqri .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nxhassasrn .gt_font_normal {
+#lacqhjhqri .gt_font_normal {
   font-weight: normal;
 }
 
-#nxhassasrn .gt_font_bold {
+#lacqhjhqri .gt_font_bold {
   font-weight: bold;
 }
 
-#nxhassasrn .gt_font_italic {
+#lacqhjhqri .gt_font_italic {
   font-style: italic;
 }
 
-#nxhassasrn .gt_super {
+#lacqhjhqri .gt_super {
   font-size: 65%;
 }
 
-#nxhassasrn .gt_footnote_marks {
+#lacqhjhqri .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nxhassasrn .gt_asterisk {
+#lacqhjhqri .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nxhassasrn .gt_indent_1 {
+#lacqhjhqri .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nxhassasrn .gt_indent_2 {
+#lacqhjhqri .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nxhassasrn .gt_indent_3 {
+#lacqhjhqri .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nxhassasrn .gt_indent_4 {
+#lacqhjhqri .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nxhassasrn .gt_indent_5 {
+#lacqhjhqri .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nxhassasrn .katex-display {
+#lacqhjhqri .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nxhassasrn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lacqhjhqri div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4358,7 +4357,7 @@ gg &lt;- bef_ag |&gt;
 </colgroup>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>dpj #| echo: false gg</code></td>
+<td style="text-align: left;"><code>juz #| echo: false gg</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">## Hierachical data</td>
@@ -4367,13 +4366,13 @@ gg &lt;- bef_ag |&gt;
 <td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>ywlubf { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+<td style="text-align: left;"><code>eyaunr { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">## Example</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>dpj #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
+<td style="text-align: left;"><code>juz #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
 </tr>
 </tbody>
 </table>
@@ -4389,8 +4388,8 @@ chap1 |&gt;
 <hr>
 </section>
 </section>
-<section id="el7-medical-codes" class="level1">
-<h1>EL7: Medical codes</h1>
+<section id="el7-medical-coding" class="level1">
+<h1>EL7: Medical coding</h1>
 <p><a href="https://sta220.github.io/documentation/EL7.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -4433,7 +4432,7 @@ chap1 |&gt;
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <ul>
 <li>Standardized vocabularies, controlled vocabularies, terminologies and ontologies …</li>
-<li>This is a field of its onwn (health informatics and clinical terminology)</li>
+<li>This is a field of its own (health informatics)</li>
 <li>Let’s just call it “medical coding” for now.</li>
 </ul>
 </section>
@@ -4443,15 +4442,15 @@ chap1 |&gt;
 <li>Imaganine you are diagnosed with “cancer” (hope not …)</li>
 <li>Your doctor writes that you have “kräfta” in your medical records
 <ul>
-<li>“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”</li>
+<li><strong>“kräfta”</strong> (Swedish) = <strong>cancer</strong> (latin), although the astrological sign “cancer” is a “crab” (latin does not distinguish the two)</li>
 </ul></li>
 <li>She might as well write:
 <ul>
-<li>The patient was diagnosed with a malignant neoplasm of the colon.</li>
-<li>Histology confirms invasive adenocarcinoma.</li>
-<li>Evidence of metastatic disease to the liver.</li>
+<li>The patient was diagnosed with a <strong>malignant neoplasm</strong> of the colon.</li>
+<li>Histology confirms <strong>invasive adenocarcinoma</strong>.</li>
+<li>Evidence of <strong>metastatic disease</strong> to the liver.</li>
 </ul></li>
-<li>Natural languages (English/Swedish etc) are not well suited for statistical analysis
+<li>Natural languages (English/Swedish/Latin etc) are not well suited for statistical analysis
 <ul>
 <li>Natural language processing (NLP) is nice but outside the scope of the course</li>
 </ul></li>
@@ -4459,19 +4458,19 @@ chap1 |&gt;
 <li>Therefore, such information is encoded in a standardized way</li>
 </ul>
 </section>
-<section id="granularityreliabaility" class="level2">
-<h2 class="anchored" data-anchor-id="granularityreliabaility">Granularity/reliabaility</h2>
+<section id="granularityreliability" class="level2">
+<h2 class="anchored" data-anchor-id="granularityreliability">Granularity/reliability</h2>
 <ul>
 <li>Cancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)</li>
 <li>Cancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)</li>
 <li>The more we learn about a diseases, the more granularity we expect from the coding</li>
 <li>The coding systems therefore tend to be quite complex, evolve over time and often have regional differences</li>
-<li>Even though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.</li>
-<li>The codes might also be misued for re-imbursment practices
+<li>Even though the intention of the coding system might be granular and precise, the data quality often relies on different coding practices in different hospitals etc.</li>
+<li>The codes might also be misused for re-imbursment practices
 <ul>
-<li>There was a regional scandal in Western Sweden not so many years ago</li>
+<li>There was a regional scandal in Western Sweden not so many years ago (<a href="https://www.svt.se/nyheter/lokalt/vast/vardcentraler-fuskar-med-diagnoser-for-att-fa-hogre-ersattning">you may read about int in Swedish</a>)</li>
 </ul></li>
-<li>In practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff</li>
+<li>In practice, the medical doctor might dictate a diagnosis, which then needs to be translated to a code by administrative staff</li>
 </ul>
 </section>
 <section id="example-6" class="level2">
@@ -4479,8 +4478,8 @@ chap1 |&gt;
 <ul>
 <li>The Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems</li>
 <li>At first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?</li>
-<li>However, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.</li>
-<li>It was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.</li>
+<li>However, hip surgery is often performed under general anesthesia. During general anesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.</li>
+<li>It was eventually discovered that a procedural code related to anesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.</li>
 <li>The apparent “complication” was therefore not a real clinical problem, but a coding error.</li>
 </ul>
 <p><strong>Lesson:</strong> Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions.</p>
@@ -4536,7 +4535,7 @@ chap1 |&gt;
 </section>
 <section id="national-modifications" class="level2">
 <h2 class="anchored" data-anchor-id="national-modifications">National Modifications</h2>
-<p>Many countries use national adaptations:</p>
+<p>Several countries use national adaptations:</p>
 <ul>
 <li>ICD-10-CM (USA; Clinical Modification)</li>
 <li>ICD-10-CA (Canada)</li>
@@ -4550,10 +4549,10 @@ chap1 |&gt;
 <hr>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 21%">
-<col style="width: 32%">
+<col style="width: 22%">
+<col style="width: 22%">
 <col style="width: 29%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4621,7 +4620,8 @@ chap1 |&gt;
 <ul>
 <li>One letter (chapter)</li>
 <li>Two digits (category)</li>
-<li>Optional dot and additional digit(s) (subcategory)</li>
+<li>Optional dot</li>
+<li>additional digit(s) (subcategory)</li>
 </ul>
 <p>Example:</p>
 <ul>
@@ -4663,9 +4663,9 @@ chap1 |&gt;
 <h2 class="anchored" data-anchor-id="changes-over-time">Changes Over Time</h2>
 <p>Between ICD versions:</p>
 <ul>
-<li>Codes may be split into more detailed categories</li>
-<li>Codes may be merged</li>
-<li>Codes may move between chapters</li>
+<li>Codes may be split (1-to-many) into more detailed categories (common)</li>
+<li>Codes may be merged (many-to-one, although uncommon)</li>
+<li>Codes may move between chapters (affects the aggregated chapter counts/incidence/prevalence)</li>
 <li>Definitions may change</li>
 </ul>
 <p>Example: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.</p>
@@ -4673,13 +4673,13 @@ chap1 |&gt;
 </section>
 <section id="crosswalks-between-versions" class="level2">
 <h2 class="anchored" data-anchor-id="crosswalks-between-versions">Crosswalks Between Versions</h2>
-<p>When analysing long time series:</p>
+<p>When analyzing long time series:</p>
 <ul>
 <li>Mapping tables (“crosswalks”) are often used</li>
 <li>Mapping may be:
 <ul>
 <li>One-to-one</li>
-<li>One-to-many (most common)</li>
+<li>One-to-many</li>
 <li>Many-to-one</li>
 </ul></li>
 </ul>
@@ -4691,9 +4691,9 @@ chap1 |&gt;
 <p>When mapping between ICD versions, different structural relationships may occur.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 23%">
-<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -4713,14 +4713,14 @@ chap1 |&gt;
 </tr>
 <tr class="even">
 <td>Many → One (Merge)</td>
-<td>038 – Septicaemia<br>790.7 – Bacteraemia</td>
+<td>038 – Septicaemia; 790.7 – Bacteraemia</td>
 <td>A41 – Other sepsis</td>
 <td>Separate ICD-9 concepts consolidated into broader ICD-10 category</td>
 </tr>
 <tr class="odd">
 <td>Many ↔︎ Many (Reorganisation)</td>
-<td>296 – Affective psychoses<br>300 – Neurotic disorders</td>
-<td>F30–F39 (Mood disorders)<br>F40–F48 (Neurotic disorders)</td>
+<td>296 – Affective psychoses; 300 – Neurotic disorders</td>
+<td>F30–F39 (Mood disorders); F40–F48 (Neurotic disorders)</td>
 <td>Structural reorganisation and conceptual reclassification across chapters</td>
 </tr>
 <tr class="even">
@@ -4735,7 +4735,10 @@ chap1 |&gt;
 <section id="crosswalk-before-or-after" class="level2">
 <h2 class="anchored" data-anchor-id="crosswalk-before-or-after">Crosswalk before or after</h2>
 <ul>
-<li>The Swedish caner register has an internal “crosswalk” applied uniformly to the register itself</li>
+<li>The Swedish caner register has an internal “crosswalk” applied uniformly to the register itself
+<ul>
+<li>Updated regularly, <a href="https://www.socialstyrelsen.se/contentassets/73ddf4d21b7d41408b826caf96fa6dd7/2026-1-10005.pdf">2026 version with 360 pages (in Swedish)</a></li>
+</ul></li>
 <li>Other registers typically only records the current version in use</li>
 <li>If so, you might perform the crosswalk yourself after receiving the data
 <ul>
@@ -4754,7 +4757,7 @@ chap1 |&gt;
 <li>Morphology (histology and behaviour)</li>
 </ul></li>
 <li>Current commonly used version: - ICD-O-3</li>
-<li>Earlier versions: - ICD-O-1 - ICD-O-2</li>
+<li>Earlier versions: ICD-O, ICD-O-2</li>
 <li>ICD-O is more detailed than ICD-10 for cancer incidence studies.</li>
 </ul>
 </section>
@@ -4775,15 +4778,31 @@ chap1 |&gt;
 <hr>
 <p><img src="images/paste-31.png" class="img-fluid"></p>
 </section>
-<section id="regional-variation-in-coding" class="level2">
-<h2 class="anchored" data-anchor-id="regional-variation-in-coding">Regional Variation in Coding</h2>
+<section id="variation-in-coding" class="level2">
+<h2 class="anchored" data-anchor-id="variation-in-coding">Variation in Coding</h2>
 <p>Differences between hospitals or regions may arise due to:</p>
 <ul>
-<li>Coding training</li>
-<li>Local guidelines</li>
+<li>Coding training
+<ul>
+<li>A primary health care unit may encounter all possible diagnosis (wide but shallow knowledge) while a very specialized unit might have routines for a very narrow but detailed coding</li>
+</ul></li>
+<li>Local guidelines
+<ul>
+<li>Regions are independent in Sweden</li>
+</ul></li>
 <li>Administrative incentives</li>
-<li>Reimbursement systems</li>
-<li>Electronic health record design</li>
+<li>Reimbursement systems
+<ul>
+<li>public and private health care providers may have different incentives</li>
+</ul></li>
+<li>Electronic health record design
+<ul>
+<li>National registers often relies on combining multiple different sources</li>
+</ul></li>
+<li>Somatic vs psychiatric care
+<ul>
+<li>In psychiatric care, diagnoses may sometimes be recorded with less specificity, potentially due to concerns about stigma or the sensitive nature of certain conditions</li>
+</ul></li>
 </ul>
 <p>Registers capture both clinical events and coding behaviour.</p>
 </section>
@@ -4868,20 +4887,16 @@ Variation in validity may depend on:</p>
 </ul>
 <p>ICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research.</p>
 </section>
-<section id="atc" class="level2">
-<h2 class="anchored" data-anchor-id="atc">ATC</h2>
+<section id="atc-for-drugs" class="level2">
+<h2 class="anchored" data-anchor-id="atc-for-drugs">ATC for drugs</h2>
 <ul>
 <li>Anatomical Therapeutic Chemical (ATC) classification</li>
 <li>categorizing therapeutic drugs,</li>
 <li>structured into 14 main groups and 5 levels, with a disease-oriented focus</li>
 <li>introduced in the 1960s</li>
 <li>In 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”</li>
-<li>follow a hierarchical structure:
+<li>follow a hierarchical structure: 1 letter, 2 digits, 2 letters, 2 digits
 <ul>
-<li>1 letter</li>
-<li>2 digits</li>
-<li>2 letters</li>
-<li>2 digits</li>
 <li>Example: <code>C09AA05</code></li>
 </ul></li>
 <li>Several problems exist <span class="citation" data-cites="bindel2025">(<a href="#ref-bindel2025" role="doc-biblioref">Bindel and Seifert 2025</a>)</span> but it is nevertheless widely used</li>
@@ -4893,7 +4908,7 @@ Variation in validity may depend on:</p>
 <h2 class="anchored" data-anchor-id="sweden">Sweden</h2>
 <ul>
 <li>We have ATC codes in the national prescription register</li>
-<li>When a doctor prescribes a medicatin, the ATC code will follow automatically</li>
+<li>When a doctor prescribes a medication, the ATC code will follow automatically</li>
 <li>Less room for interpretation when coding</li>
 <li>New medications are introduced over time</li>
 <li>The Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions</li>
@@ -5034,6 +5049,65 @@ Variation in validity may depend on:</p>
 <li>Changes in reimbursement rules may influence coding behavior.</li>
 <li>Regional comparisons must consider administrative incentives.</li>
 <li>DRG is suitable for health services and economic analyses, but less appropriate for etiological research.</li>
+</ul>
+</section>
+<section id="snomed-ct-what-is-it" class="level2">
+<h2 class="anchored" data-anchor-id="snomed-ct-what-is-it">SNOMED CT – What Is It?</h2>
+<p><strong>SNOMED CT (Systematized Nomenclature of Medicine – Clinical Terms)</strong> is a large clinical terminology system.</p>
+<ul>
+<li>Maintained by <strong>SNOMED International</strong></li>
+<li>Contains <strong>hundreds of thousands of clinical concepts</strong></li>
+<li>Designed for <strong>structured documentation in electronic health records</strong></li>
+</ul>
+<p>Unlike ICD or ATC, SNOMED CT is primarily a <strong>terminology</strong>, not a statistical classification.</p>
+</section>
+<section id="terminology-vs-classification" class="level2">
+<h2 class="anchored" data-anchor-id="terminology-vs-classification">Terminology vs Classification</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ICD</td>
+<td>Classification</td>
+<td>Epidemiology and health statistics</td>
+</tr>
+<tr class="even">
+<td>ATC</td>
+<td>Classification</td>
+<td>Drug classification</td>
+</tr>
+<tr class="odd">
+<td>KVÅ / NOMESCO</td>
+<td>Classification</td>
+<td>Medical procedures</td>
+</tr>
+<tr class="even">
+<td><strong>SNOMED CT</strong></td>
+<td>Terminology</td>
+<td>Detailed clinical documentation</td>
+</tr>
+</tbody>
+</table>
+<p>Classification systems simplify reality for <strong>statistics and reporting</strong>, while terminologies allow <strong>very detailed clinical descriptions</strong>.</p>
+</section>
+<section id="why-snomed-ct-is-not-widely-used-in-registers" class="level2">
+<h2 class="anchored" data-anchor-id="why-snomed-ct-is-not-widely-used-in-registers">Why SNOMED CT Is Not Widely Used in Registers</h2>
+<p>Despite its strengths, SNOMED CT is rarely used directly in:</p>
+<ul>
+<li>national health registers</li>
+<li>epidemiological statistics</li>
+</ul>
+<p>Main reasons:</p>
+<ul>
+<li><strong>Too detailed</strong> for statistical aggregation</li>
+<li>Harder to ensure consistent coding</li>
+<li>Statistical reporting systems are built around <strong>ICD</strong></li>
 </ul>
 </section>
 <section id="regular-expressions" class="level2">
@@ -5195,7 +5269,7 @@ Variation in validity may depend on:</p>
 <ul>
 <li>Forgetting <code>^</code> when matching prefixes
 <ul>
-<li>This is even forgotten in the <code>stringfish::sf_starts()</code> implementation! <a href="https://github.com/traversc/stringfish/issues/25">See bug report</a>.</li>
+<li>This is problematic even in the <code>stringfish::sf_starts()</code> implementation! <a href="https://github.com/traversc/stringfish/issues/25">See bug report</a>.</li>
 </ul></li>
 <li>Forgetting to escape <code>.</code></li>
 <li>Not validating full string with <code>$</code></li>
@@ -5254,7 +5328,12 @@ Variation in validity may depend on:</p>
 <li>Other diagnosis-based groupings</li>
 </ul></li>
 </ul>
-<p>This allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies</p>
+<p>This allows:</p>
+<ul>
+<li>Standardised comorbidity adjustment</li>
+<li>(Sort of/relatively …) transparent and reproducible case definitions</li>
+<li>Consistent grouping across studies (hopefully)</li>
+</ul>
 <hr>
 </section>
 </section>
