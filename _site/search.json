@@ -366,336 +366,357 @@
   {
     "objectID": "EL7.html#reading",
     "href": "EL7.html#reading",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Reading",
     "text": "Reading\n\n(Nguyen 2022, ch. 3) on standardized vocabularies. You may skip the sections “CPT”, “LOINC”, “RxNorm” and “Using the Unified Medical Language System” (not examined within the course). Even if you skip those section, remember to read the conclusions in the end of the chapter!\nAlharbi, Isouard, and Tolchard (2021) provides an historical expose of the development of medical coding, with focus on the International Classificatin of Diseases (ICD).\nNelson et al. (2024) argue (based on a statistical analysis) that we should not put to much trust in the coded data (you may skip the methods section).\nBindel and Seifert (2025) introduces the Anatomical Therapeutic Chemical (ATC) and some associated problems. Focus on the introduction and conclusion sections (results and discussion may be skipped).\n(Wickham, Çetinkaya-Rundel, and Grolemund, n.d., ch. 15): Using {stringr} for regular expressions in R including exercises\n\nRecommended references:\n\nHistory of the Statistical Classification of DiseasesandCauses of Death\n\nRecommended practice:\n\nRegular expressins: But please not that this is general practice and deviations may exist between those exercises and R."
   },
   {
     "objectID": "EL7.html#overview",
     "href": "EL7.html#overview",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Overview",
-    "text": "Overview\n\nStandardized vocabularies, controlled vocabularies, terminologies and ontologies …\nThis is a field of its onwn (health informatics and clinical terminology)\nLet’s just call it “medical coding” for now."
+    "text": "Overview\n\nStandardized vocabularies, controlled vocabularies, terminologies and ontologies …\nThis is a field of its own (health informatics)\nLet’s just call it “medical coding” for now."
   },
   {
     "objectID": "EL7.html#relevance",
     "href": "EL7.html#relevance",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Relevance",
-    "text": "Relevance\n\nImaganine you are diagnosed with “cancer” (hope not …)\nYour doctor writes that you have “kräfta” in your medical records\n\n“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”\n\nShe might as well write:\n\nThe patient was diagnosed with a malignant neoplasm of the colon.\nHistology confirms invasive adenocarcinoma.\nEvidence of metastatic disease to the liver.\n\nNatural languages (English/Swedish etc) are not well suited for statistical analysis\n\nNatural language processing (NLP) is nice but outside the scope of the course\n\nStatisticians need clear definitions of diagnoses, procedures, medications etc.\nTherefore, such information is encoded in a standardized way"
+    "text": "Relevance\n\nImaganine you are diagnosed with “cancer” (hope not …)\nYour doctor writes that you have “kräfta” in your medical records\n\n“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is a “crab” (latin does not distinguish the two)\n\nShe might as well write:\n\nThe patient was diagnosed with a malignant neoplasm of the colon.\nHistology confirms invasive adenocarcinoma.\nEvidence of metastatic disease to the liver.\n\nNatural languages (English/Swedish/Latin etc) are not well suited for statistical analysis\n\nNatural language processing (NLP) is nice but outside the scope of the course\n\nStatisticians need clear definitions of diagnoses, procedures, medications etc.\nTherefore, such information is encoded in a standardized way"
   },
   {
-    "objectID": "EL7.html#granularityreliabaility",
-    "href": "EL7.html#granularityreliabaility",
-    "title": "EL7: Medical codes",
-    "section": "Granularity/reliabaility",
-    "text": "Granularity/reliabaility\n\nCancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)\nCancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)\nThe more we learn about a diseases, the more granularity we expect from the coding\nThe coding systems therefore tend to be quite complex, evolve over time and often have regional differences\nEven though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.\nThe codes might also be misued for re-imbursment practices\n\nThere was a regional scandal in Western Sweden not so many years ago\n\nIn practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff"
+    "objectID": "EL7.html#granularityreliability",
+    "href": "EL7.html#granularityreliability",
+    "title": "EL7: Medical coding",
+    "section": "Granularity/reliability",
+    "text": "Granularity/reliability\n\nCancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)\nCancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)\nThe more we learn about a diseases, the more granularity we expect from the coding\nThe coding systems therefore tend to be quite complex, evolve over time and often have regional differences\nEven though the intention of the coding system might be granular and precise, the data quality often relies on different coding practices in different hospitals etc.\nThe codes might also be misused for re-imbursment practices\n\nThere was a regional scandal in Western Sweden not so many years ago (you may read about int in Swedish)\n\nIn practice, the medical doctor might dictate a diagnosis, which then needs to be translated to a code by administrative staff"
   },
   {
     "objectID": "EL7.html#example",
     "href": "EL7.html#example",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Example",
-    "text": "Example\n\nThe Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems\nAt first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?\nHowever, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.\nIt was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.\nThe apparent “complication” was therefore not a real clinical problem, but a coding error.\n\nLesson: Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions."
+    "text": "Example\n\nThe Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems\nAt first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?\nHowever, hip surgery is often performed under general anesthesia. During general anesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.\nIt was eventually discovered that a procedural code related to anesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.\nThe apparent “complication” was therefore not a real clinical problem, but a coding error.\n\nLesson: Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions."
   },
   {
     "objectID": "EL7.html#icd-international-classification-of-diseases",
     "href": "EL7.html#icd-international-classification-of-diseases",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "ICD – International Classification of Diseases",
     "text": "ICD – International Classification of Diseases\n\nMaintained by the World Health Organization (WHO)\nGlobal standard for coding diseases and causes of death\nUsed for:\n\nClinical documentation\nMortality statistics\nEpidemiological research\nHealth system planning and monitoring"
   },
   {
     "objectID": "EL7.html#historical-background",
     "href": "EL7.html#historical-background",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Historical Background",
     "text": "Historical Background\n\nFirst version: 1893 (International List of Causes of Death)\nWHO assumed responsibility in 1948 (ICD-6)\nMajor revisions approximately every 10–20 years\nEach revision reflects:\n\nAdvances in medical knowledge\nChanges in disease concepts\nAdministrative and reporting needs\n\n\nICD has evolved from a mortality list to a comprehensive disease classification."
   },
   {
     "objectID": "EL7.html#major-icd-versions",
     "href": "EL7.html#major-icd-versions",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Major ICD Versions",
     "text": "Major ICD Versions\n\nICD-7 (used in many countries in the 1950s–1970s)\n\nStill used in the Swedish cancer register for backward compability\n\nICD-8 (used in many countries in the 1960s–1980s)\nICD-9 (widely used until the early 2000s)\n\nAlso still used in the Swedish cancer register\n\nICD-10 (introduced in the 1990s; still dominant in many countries)\n\nFrom 1997 in Sweden. What we currently most care about\n\nICD-11 (adopted in 2019; gradually being implemented)\n\nDifferent countries adopted versions at different times, creating challenges for international comparisons."
   },
   {
     "objectID": "EL7.html#national-modifications",
     "href": "EL7.html#national-modifications",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "National Modifications",
-    "text": "National Modifications\nMany countries use national adaptations:\n\nICD-10-CM (USA; Clinical Modification)\nICD-10-CA (Canada)\nICD-10-SE (Sweden)\n\nA fifth position (ignoring the dot) sometimes used for more granularity\nICD-10: S72.0 Fracture of neck of femur\nICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …"
+    "text": "National Modifications\nSeveral countries use national adaptations:\n\nICD-10-CM (USA; Clinical Modification)\nICD-10-CA (Canada)\nICD-10-SE (Sweden)\n\nA fifth position (ignoring the dot) sometimes used for more granularity\nICD-10: S72.0 Fracture of neck of femur\nICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …"
   },
   {
     "objectID": "EL7.html#structure-of-icd-10",
     "href": "EL7.html#structure-of-icd-10",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Structure of ICD-10",
-    "text": "Structure of ICD-10\nTypical format:\n\nOne letter (chapter)\nTwo digits (category)\nOptional dot and additional digit(s) (subcategory)\n\nExample:\n\nI21 – Acute myocardial infarction (AMI)\nI21.0 – AMI of anterior wall\nI21.9 – AMI, unspecified"
+    "text": "Structure of ICD-10\nTypical format:\n\nOne letter (chapter)\nTwo digits (category)\nOptional dot\nadditional digit(s) (subcategory)\n\nExample:\n\nI21 – Acute myocardial infarction (AMI)\nI21.0 – AMI of anterior wall\nI21.9 – AMI, unspecified"
   },
   {
     "objectID": "EL7.html#hierarchy",
     "href": "EL7.html#hierarchy",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Hierarchy",
     "text": "Hierarchy\n\nChapter → Block → Category (3-digit) → Subcategory (4-digit+)\n\nResearchers must decide:\n\nAnalyse at 3-digit level?\nOr at more detailed subcategory level?\n\nThere is a trade-off between specificity and statistical power."
   },
   {
     "objectID": "EL7.html#what-does-an-icd-code-represent",
     "href": "EL7.html#what-does-an-icd-code-represent",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "What Does an ICD Code Represent?",
     "text": "What Does an ICD Code Represent?\nAn ICD code reflects:\n\nClinical documentation\nCoding rules\nAdministrative structure\nLocal practice\n\nIt does not necessarily reflect:\n\nBiological mechanism\nDiagnostic certainty\nUniform clinical interpretation\n\nRegister data therefore reflect both medicine and administration."
   },
   {
     "objectID": "EL7.html#changes-over-time",
     "href": "EL7.html#changes-over-time",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Changes Over Time",
-    "text": "Changes Over Time\nBetween ICD versions:\n\nCodes may be split into more detailed categories\nCodes may be merged\nCodes may move between chapters\nDefinitions may change\n\nExample: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.\nImplication: Observed changes in incidence may reflect coding changes rather than true epidemiology."
+    "text": "Changes Over Time\nBetween ICD versions:\n\nCodes may be split (1-to-many) into more detailed categories (common)\nCodes may be merged (many-to-one, although uncommon)\nCodes may move between chapters (affects the aggregated chapter counts/incidence/prevalence)\nDefinitions may change\n\nExample: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.\nImplication: Observed changes in incidence may reflect coding changes rather than true epidemiology."
   },
   {
     "objectID": "EL7.html#crosswalks-between-versions",
     "href": "EL7.html#crosswalks-between-versions",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Crosswalks Between Versions",
-    "text": "Crosswalks Between Versions\nWhen analysing long time series:\n\nMapping tables (“crosswalks”) are often used\nMapping may be:\n\nOne-to-one\nOne-to-many (most common)\nMany-to-one\n\n\nCrosswalks are rarely exact. Information loss or ambiguity is common.\nAggregation to broader diagnostic groups is often necessary."
+    "text": "Crosswalks Between Versions\nWhen analyzing long time series:\n\nMapping tables (“crosswalks”) are often used\nMapping may be:\n\nOne-to-one\nOne-to-many\nMany-to-one\n\n\nCrosswalks are rarely exact. Information loss or ambiguity is common.\nAggregation to broader diagnostic groups is often necessary."
   },
   {
     "objectID": "EL7.html#crosswalk-patterns-who-icd-9-who-icd-10",
     "href": "EL7.html#crosswalk-patterns-who-icd-9-who-icd-10",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)",
-    "text": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)\nWhen mapping between ICD versions, different structural relationships may occur.\n\n\n\n\n\n\n\n\n\nMapping type\nICD-9 (WHO)\nICD-10 (WHO)\nInterpretation\n\n\n\n\nOne → Many (Split)\n250 – Diabetes mellitus\nE10–E14\nOne broad ICD-9 category split into multiple etiological types\n\n\nMany → One (Merge)\n038 – Septicaemia790.7 – Bacteraemia\nA41 – Other sepsis\nSeparate ICD-9 concepts consolidated into broader ICD-10 category\n\n\nMany ↔︎ Many (Reorganisation)\n296 – Affective psychoses300 – Neurotic disorders\nF30–F39 (Mood disorders)F40–F48 (Neurotic disorders)\nStructural reorganisation and conceptual reclassification across chapters\n\n\nChapter relocation\n011 – Pulmonary tuberculosis\nA15 – Respiratory tuberculosis\nInfectious diseases reorganised under new chapter structure"
+    "text": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)\nWhen mapping between ICD versions, different structural relationships may occur.\n\n\n\n\n\n\n\n\n\nMapping type\nICD-9 (WHO)\nICD-10 (WHO)\nInterpretation\n\n\n\n\nOne → Many (Split)\n250 – Diabetes mellitus\nE10–E14\nOne broad ICD-9 category split into multiple etiological types\n\n\nMany → One (Merge)\n038 – Septicaemia; 790.7 – Bacteraemia\nA41 – Other sepsis\nSeparate ICD-9 concepts consolidated into broader ICD-10 category\n\n\nMany ↔︎ Many (Reorganisation)\n296 – Affective psychoses; 300 – Neurotic disorders\nF30–F39 (Mood disorders); F40–F48 (Neurotic disorders)\nStructural reorganisation and conceptual reclassification across chapters\n\n\nChapter relocation\n011 – Pulmonary tuberculosis\nA15 – Respiratory tuberculosis\nInfectious diseases reorganised under new chapter structure"
   },
   {
     "objectID": "EL7.html#crosswalk-before-or-after",
     "href": "EL7.html#crosswalk-before-or-after",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Crosswalk before or after",
-    "text": "Crosswalk before or after\n\nThe Swedish caner register has an internal “crosswalk” applied uniformly to the register itself\nOther registers typically only records the current version in use\nIf so, you might perform the crosswalk yourself after receiving the data\n\nApplies if you want to look at longer time trends etc or combine data from different periods"
+    "text": "Crosswalk before or after\n\nThe Swedish caner register has an internal “crosswalk” applied uniformly to the register itself\n\nUpdated regularly, 2026 version with 360 pages (in Swedish)\n\nOther registers typically only records the current version in use\nIf so, you might perform the crosswalk yourself after receiving the data\n\nApplies if you want to look at longer time trends etc or combine data from different periods"
   },
   {
     "objectID": "EL7.html#icd-o",
     "href": "EL7.html#icd-o",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "ICD-O",
-    "text": "ICD-O\nICD-O (International Classification of Diseases for Oncology):\n\nUsed mainly in cancer registries\nCombines:\n\nTopography (tumour site)\nMorphology (histology and behaviour)\n\nCurrent commonly used version: - ICD-O-3\nEarlier versions: - ICD-O-1 - ICD-O-2\nICD-O is more detailed than ICD-10 for cancer incidence studies."
+    "text": "ICD-O\nICD-O (International Classification of Diseases for Oncology):\n\nUsed mainly in cancer registries\nCombines:\n\nTopography (tumour site)\nMorphology (histology and behaviour)\n\nCurrent commonly used version: - ICD-O-3\nEarlier versions: ICD-O, ICD-O-2\nICD-O is more detailed than ICD-10 for cancer incidence studies."
   },
   {
     "objectID": "EL7.html#relationship-between-icd-10-and-icd-o",
     "href": "EL7.html#relationship-between-icd-10-and-icd-o",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Relationship Between ICD-10 and ICD-O",
     "text": "Relationship Between ICD-10 and ICD-O\n\nICD-10 commonly used for mortality and hospital discharge diagnoses\nICD-O primarily used for cancer registry incidence data\n\nA cancer case may have:\n\nAn ICD-10 code in hospital data\nAn ICD-O morphology and topography code in a cancer registry\n\nResearchers must understand which system underlies their dataset."
   },
   {
-    "objectID": "EL7.html#regional-variation-in-coding",
-    "href": "EL7.html#regional-variation-in-coding",
-    "title": "EL7: Medical codes",
-    "section": "Regional Variation in Coding",
-    "text": "Regional Variation in Coding\nDifferences between hospitals or regions may arise due to:\n\nCoding training\nLocal guidelines\nAdministrative incentives\nReimbursement systems\nElectronic health record design\n\nRegisters capture both clinical events and coding behaviour."
+    "objectID": "EL7.html#variation-in-coding",
+    "href": "EL7.html#variation-in-coding",
+    "title": "EL7: Medical coding",
+    "section": "Variation in Coding",
+    "text": "Variation in Coding\nDifferences between hospitals or regions may arise due to:\n\nCoding training\n\nA primary health care unit may encounter all possible diagnosis (wide but shallow knowledge) while a very specialized unit might have routines for a very narrow but detailed coding\n\nLocal guidelines\n\nRegions are independent in Sweden\n\nAdministrative incentives\nReimbursement systems\n\npublic and private health care providers may have different incentives\n\nElectronic health record design\n\nNational registers often relies on combining multiple different sources\n\nSomatic vs psychiatric care\n\nIn psychiatric care, diagnoses may sometimes be recorded with less specificity, potentially due to concerns about stigma or the sensitive nature of certain conditions\n\n\nRegisters capture both clinical events and coding behaviour."
   },
   {
     "objectID": "EL7.html#validity-of-icd-codes",
     "href": "EL7.html#validity-of-icd-codes",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Validity of ICD Codes",
     "text": "Validity of ICD Codes\nImportant research question:\n\nDoes the code correspond to the true disease?\n\nValidation studies compare ICD codes with a reference standard\n(e.g., chart review, clinical registry, laboratory confirmation)."
   },
   {
     "objectID": "EL7.html#key-measures-of-validity",
     "href": "EL7.html#key-measures-of-validity",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Key Measures of Validity",
     "text": "Key Measures of Validity\n\nSensitivity\nAmong patients who truly have the disease,\nhow many receive the correct ICD code?\n→ Measures undercoding (missed cases).\nSpecificity\nAmong patients who do not have the disease,\nhow many are correctly not assigned the code?\n→ Measures overcoding (false positives).\nPositive Predictive Value (PPV)\nAmong patients assigned the ICD code,\nhow many truly have the disease?\n→ Measures how reliable the code is for identifying true cases."
   },
   {
     "objectID": "EL7.html#conceptual-22-table",
     "href": "EL7.html#conceptual-22-table",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Conceptual 2×2 Table",
     "text": "Conceptual 2×2 Table\n\n\n\n\nTrue disease\nNo disease\n\n\n\n\nICD code present\nTrue positive\nFalse positive\n\n\nICD code absent\nFalse negative\nTrue negative\n\n\n\n\nSensitivity = True positives / (True positives + False negatives)\nSpecificity = True negatives / (True negatives + False positives)\nPPV = True positives / (True positives + False positives)"
   },
   {
     "objectID": "EL7.html#why-it-matters",
     "href": "EL7.html#why-it-matters",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Why It Matters",
     "text": "Why It Matters\nLow sensitivity → underestimated incidence\nLow PPV → inflated case counts\nVariation in validity may depend on:\n\nDiagnosis (e.g., myocardial infarction vs mild depression)\nCare setting (inpatient vs primary care)\nTime period (coding changes)\nICD version and national modification\n\nNot all ICD codes are equally reliable for research."
   },
   {
     "objectID": "EL7.html#practical-implications-for-statisticians",
     "href": "EL7.html#practical-implications-for-statisticians",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Practical Implications for Statisticians",
     "text": "Practical Implications for Statisticians\nBefore analysis, always clarify:\n\nWhich ICD version?\nWhich national modification?\nWhich coding level (3-digit vs 4-digit)?\nHas coding practice changed over time?\nAre crosswalks required?\nIs there validation evidence for the diagnosis?\n\nICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research."
   },
   {
-    "objectID": "EL7.html#atc",
-    "href": "EL7.html#atc",
-    "title": "EL7: Medical codes",
-    "section": "ATC",
-    "text": "ATC\n\nAnatomical Therapeutic Chemical (ATC) classification\ncategorizing therapeutic drugs,\nstructured into 14 main groups and 5 levels, with a disease-oriented focus\nintroduced in the 1960s\nIn 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”\nfollow a hierarchical structure:\n\n1 letter\n2 digits\n2 letters\n2 digits\nExample: C09AA05\n\nSeveral problems exist (Bindel and Seifert 2025) but it is nevertheless widely used"
+    "objectID": "EL7.html#atc-for-drugs",
+    "href": "EL7.html#atc-for-drugs",
+    "title": "EL7: Medical coding",
+    "section": "ATC for drugs",
+    "text": "ATC for drugs\n\nAnatomical Therapeutic Chemical (ATC) classification\ncategorizing therapeutic drugs,\nstructured into 14 main groups and 5 levels, with a disease-oriented focus\nintroduced in the 1960s\nIn 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”\nfollow a hierarchical structure: 1 letter, 2 digits, 2 letters, 2 digits\n\nExample: C09AA05\n\nSeveral problems exist (Bindel and Seifert 2025) but it is nevertheless widely used"
   },
   {
     "objectID": "EL7.html#sweden",
     "href": "EL7.html#sweden",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Sweden",
-    "text": "Sweden\n\nWe have ATC codes in the national prescription register\nWhen a doctor prescribes a medicatin, the ATC code will follow automatically\nLess room for interpretation when coding\nNew medications are introduced over time\nThe Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions\nDaily updates to the National Substance Register"
+    "text": "Sweden\n\nWe have ATC codes in the national prescription register\nWhen a doctor prescribes a medication, the ATC code will follow automatically\nLess room for interpretation when coding\nNew medications are introduced over time\nThe Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions\nDaily updates to the National Substance Register"
   },
   {
     "objectID": "EL7.html#procedure-codes",
     "href": "EL7.html#procedure-codes",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Procedure codes",
     "text": "Procedure codes\n\nWe use ICD for diagnoses and medical condition\nBut how are patients with such diagnosis treated?\nWhat actions (in addition to the prescription of medicines) do we have?\nUSA has a special version of ICD for this: ICD-10-PCS\n\nPCS = Procedure Coding System"
   },
   {
     "objectID": "EL7.html#nomesco",
     "href": "EL7.html#nomesco",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "NOMESCO",
     "text": "NOMESCO\nIn Sweden, medical procedures are coded using the NOMESCO Classification of Surgical Procedures (NCSP).\n\nDeveloped by the Nordic Medico-Statistical Committee (NOMESCO)\nUsed in Sweden, Denmark, Finland, Norway, and Iceland\nPrimarily for on surgical procedures"
   },
   {
     "objectID": "EL7.html#kvå",
     "href": "EL7.html#kvå",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "KVÅ",
     "text": "KVÅ\n\nIn Sweden implemented through KVÅ (Klassifikation av vårdåtgärder)\nMaintained nationally by Socialstyrelsen\nIncludes the NOMESCO-NCSP codes for surgery\nAlso includes additional codes for non-surgical treatments and activities\n\nAdministration of chemotherapy (cytostatic treatment)\nRadiotherapy sessions\nDialysis treatment (hemodialysis, peritoneal dialysis)\nBlood transfusion\nVaccination\nAdvanced wound care (non-surgical)\nMultidisciplinary team conference (MDT conference)\nSmoking cessation counselling\nNutritional counselling\nPhysiotherapy interventions\nOccupational therapy interventions\nPsychotherapeutic treatment sessions\nStructured patient education programmes\nPalliative care planning"
   },
   {
     "objectID": "EL7.html#structure",
     "href": "EL7.html#structure",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Structure",
     "text": "Structure\n\nAlphanumeric codes (typically 5 characters)\nFirst letter indicates anatomical or procedural group\nSubsequent characters specify procedure type and detail\n\nExample:\n\nNFB49 – Primary total hip replacement\nJKA20 – Appendectomy"
   },
   {
     "objectID": "EL7.html#purpose",
     "href": "EL7.html#purpose",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Purpose",
     "text": "Purpose\n\nRecord surgical and certain non-surgical interventions\nUsed in:\n\nNational Patient Register\nQuality registers\nReimbursement and administrative reporting\nHealth services research"
   },
   {
     "objectID": "EL7.html#important-distinction",
     "href": "EL7.html#important-distinction",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Important Distinction",
     "text": "Important Distinction\n\nICD-10-SE → Diagnosis codes\nNOMESCO/KVÅ → Procedure codes\n\nA patient record may therefore contain:\n\nAn ICD diagnosis (e.g., hip fracture)\nA NOMESCO procedure code (e.g., hip replacement surgery)"
   },
   {
     "objectID": "EL7.html#implications-for-research",
     "href": "EL7.html#implications-for-research",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Implications for Research",
     "text": "Implications for Research\n\nDiagnosis and procedure must not be confused\nTrends in procedures may reflect:\n\nClinical practice changes\nTechnology changes\nPolicy and reimbursement incentives\n\nInternational comparisons require awareness that other countries (e.g., USA) use different coding systems\n\nNOMESCO codes capture what was done, not what disease the patient had."
   },
   {
     "objectID": "EL7.html#drg",
     "href": "EL7.html#drg",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "DRG",
     "text": "DRG\nDRG (Diagnosis-Related Groups) is a classification system used to group hospital cases into categories expected to require similar levels of resources.\nIn Sweden:\n\nBased on the NordDRG system\nUsed for:\n\nHospital reimbursement\nResource allocation\nHealth care management\nProductivity and efficiency analyses"
   },
   {
     "objectID": "EL7.html#how-is-a-drg-determined",
     "href": "EL7.html#how-is-a-drg-determined",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "How Is a DRG Determined?",
     "text": "How Is a DRG Determined?\nA DRG is assigned based on a combination of:\n\nPrimary diagnosis (ICD-10-SE)\nSecondary diagnoses\nProcedure codes (NOMESCO/KVÅ)\nAge\nSex\nDischarge status\nPresence of complications or comorbidities\n\nDRG codes are therefore derived classifications, not primary clinical codes."
   },
   {
     "objectID": "EL7.html#implications-for-research-1",
     "href": "EL7.html#implications-for-research-1",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Implications for Research",
     "text": "Implications for Research\n\nDRG reflects resource use, not disease incidence.\nChanges in reimbursement rules may influence coding behavior.\nRegional comparisons must consider administrative incentives.\nDRG is suitable for health services and economic analyses, but less appropriate for etiological research."
   },
   {
+    "objectID": "EL7.html#snomed-ct-what-is-it",
+    "href": "EL7.html#snomed-ct-what-is-it",
+    "title": "EL7: Medical coding",
+    "section": "SNOMED CT – What Is It?",
+    "text": "SNOMED CT – What Is It?\nSNOMED CT (Systematized Nomenclature of Medicine – Clinical Terms) is a large clinical terminology system.\n\nMaintained by SNOMED International\nContains hundreds of thousands of clinical concepts\nDesigned for structured documentation in electronic health records\n\nUnlike ICD or ATC, SNOMED CT is primarily a terminology, not a statistical classification."
+  },
+  {
+    "objectID": "EL7.html#terminology-vs-classification",
+    "href": "EL7.html#terminology-vs-classification",
+    "title": "EL7: Medical coding",
+    "section": "Terminology vs Classification",
+    "text": "Terminology vs Classification\n\n\n\nSystem\nType\nPurpose\n\n\n\n\nICD\nClassification\nEpidemiology and health statistics\n\n\nATC\nClassification\nDrug classification\n\n\nKVÅ / NOMESCO\nClassification\nMedical procedures\n\n\nSNOMED CT\nTerminology\nDetailed clinical documentation\n\n\n\nClassification systems simplify reality for statistics and reporting, while terminologies allow very detailed clinical descriptions."
+  },
+  {
+    "objectID": "EL7.html#why-snomed-ct-is-not-widely-used-in-registers",
+    "href": "EL7.html#why-snomed-ct-is-not-widely-used-in-registers",
+    "title": "EL7: Medical coding",
+    "section": "Why SNOMED CT Is Not Widely Used in Registers",
+    "text": "Why SNOMED CT Is Not Widely Used in Registers\nDespite its strengths, SNOMED CT is rarely used directly in:\n\nnational health registers\nepidemiological statistics\n\nMain reasons:\n\nToo detailed for statistical aggregation\nHarder to ensure consistent coding\nStatistical reporting systems are built around ICD"
+  },
+  {
     "objectID": "EL7.html#regular-expressions-regex",
     "href": "EL7.html#regular-expressions-regex",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Regular Expressions (Regex)",
     "text": "Regular Expressions (Regex)\n\nA way to describe patterns in text\nUsed to:\n\nIdentify diagnosis codes (ICD-10)\nIdentify drug codes (ATC)\nClean register data\nValidate variables\n\nIn R:\n\nBase R: grepl(), sub(), gsub()\nTidyverse: stringr::str_detect(), str_extract(), str_replace()\nMore efficient for big data: stringfish"
   },
   {
     "objectID": "EL7.html#relevance-1",
     "href": "EL7.html#relevance-1",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Relevance",
     "text": "Relevance\nTypical use cases:\n\nSelect all ICD-10 codes starting with \"I21\" (acute myocardial infarction)\nIdentify all ATC codes beginning with \"C09\" (antihypertensives)\nCheck for malformed codes (quality control)\nExtract codes embedded in free text (e.g., notes, text fields)"
   },
   {
     "objectID": "EL7.html#basic-building-blocks",
     "href": "EL7.html#basic-building-blocks",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Basic Building Blocks",
     "text": "Basic Building Blocks\n\n\n\nSymbol\nMeaning\n\n\n\n\n^\nStart of string\n\n\n$\nEnd of string\n\n\n.\nAny character\n\n\n*\n0 or more repetitions\n\n\n+\n1 or more repetitions\n\n\n?\n0 or 1 repetition\n\n\n{m,n}\nBetween m and n repetitions\n\n\n[ABC]\nAny of A, B, or C\n\n\n[0-9]\nAny digit\n\n\n\\\\d\nAny digit (PCRE)\n\n\n\n\n\n\n\n\n\nDifferent versions\n\n\nThere are different implementations of regular expressions! The implementation in base R is described by ?base::regex in R. Perl-like Regular Expressions (PCRE) is a commonly used alternative requireing (perl = TRUE as argument) for the base functions."
   },
   {
     "objectID": "EL7.html#example-icd-10-structure",
     "href": "EL7.html#example-icd-10-structure",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Example: ICD-10 Structure",
     "text": "Example: ICD-10 Structure\nICD-10 codes typically follow:\n\nOne letter\nTwo digits\nOptional dot and additional digit\n\nRegex pattern: ^[A-Z][0-9]{2}(\\\\.[0-9])?$\nwhere \\\\ is ussed to remove the special meaning of . as described above. Hence, in this case \\\\. is interpreted as a literal . as to be found in the character string. In R:\ngrepl(\"^[A-Z][0-9]{2}(\\\\.[0-9])?$\", icd) # base\nstringr::str_detect(icd, \"^[A-Z][0-9]{2}(\\\\.[0-9])?$\")\n# Faster and using 10 CPU cores in paralell (only relevant for \"big enough data\"):\nstringfish::sf_grepl(icd, \"^[A-Z][0-9]{2}(\\\\.[0-9])?$\", nthreads = 10L)"
   },
   {
     "objectID": "EL7.html#example-select-a-diagnosis-group",
     "href": "EL7.html#example-select-a-diagnosis-group",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Example: Select a Diagnosis Group",
     "text": "Example: Select a Diagnosis Group\n\nAll acute myocardial infarction codes: ^I21\nIn R: stringr::str_detect(icd, \"^I21\")\n\nThis selects:\n\nI21\nI21.0\nI21.9\n\nBut not:\n\nI20\nI22"
   },
   {
     "objectID": "EL7.html#atc-code-structure",
     "href": "EL7.html#atc-code-structure",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "ATC Code Structure",
     "text": "ATC Code Structure\n\nExample: C09AA05\nRegex pattern:^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$\nIn R: stringr::str_detect(atc, \"^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$\")\nThis will find any ATC code.\nYou might receive data with a variable supposed to contain only ATC codes\nIt might as well contain other information such as ??, don't know, XXXXXXX etc\nYou might replace such character strings by &lt;NA&gt;"
   },
   {
     "objectID": "EL7.html#implementations",
     "href": "EL7.html#implementations",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Implementations",
     "text": "Implementations\n\nbase R and {stringr} both use the same underlying regex engine (PCRE)\n\nbut {stringr} is more “user friendly”.\n\nStringfish seems technically sperior but is less maintained (more of a hobby project)."
   },
   {
     "objectID": "EL7.html#common-mistakes",
     "href": "EL7.html#common-mistakes",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\n\nForgetting ^ when matching prefixes\n\nThis is even forgotten in the stringfish::sf_starts() implementation! See bug report.\n\nForgetting to escape .\nNot validating full string with $\nOvermatching (e.g., I2 instead of ^I21)"
+    "text": "Common Mistakes\n\nForgetting ^ when matching prefixes\n\nThis is problematic even in the stringfish::sf_starts() implementation! See bug report.\n\nForgetting to escape .\nNot validating full string with $\nOvermatching (e.g., I2 instead of ^I21)"
   },
   {
     "objectID": "EL7.html#standardised-groupings",
     "href": "EL7.html#standardised-groupings",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "Standardised Groupings",
     "text": "Standardised Groupings\nTo account for overall disease burden, researchers often use established grouping systems, such as:\n\nCharlson Comorbidity Index (ICD)\nElixhauser Comorbidity Index (ICD)\nSimilar groupings of ATC-codes\nCombinations of those\n\nThese indices:\n\nAggregate multiple ICD codes into clinically meaningful comorbidity categories\nAre commonly used for:\n\nRisk adjustment\nPrognostic modelling\nConfounding control in observational studies"
   },
   {
     "objectID": "EL7.html#decoder",
     "href": "EL7.html#decoder",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "{decoder}",
     "text": "{decoder}\n\nThe R package {decoder} provides descriptions for many commonly used coding systems.\nIn register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.\n{decoder} allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.\n\n\n\n\n\n\n\nUp-to-date?\n\n\nI am the maintainer of {decoder} and {coder} but I have not had the time or energy to update them for a cuople of years. There are some reported issues."
   },
   {
     "objectID": "EL7.html#coder",
     "href": "EL7.html#coder",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "{coder}",
-    "text": "{coder}\n\nThe R package {coder} can be used to aggregate individual diagnosis codes into broader clinical categories.\nCommon applications include:\n\nCharlson Comorbidity Index\nElixhauser Comorbidity Index\nOther diagnosis-based groupings\n\n\nThis allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies"
+    "text": "{coder}\n\nThe R package {coder} can be used to aggregate individual diagnosis codes into broader clinical categories.\nCommon applications include:\n\nCharlson Comorbidity Index\nElixhauser Comorbidity Index\nOther diagnosis-based groupings\n\n\nThis allows:\n\nStandardised comorbidity adjustment\n(Sort of/relatively …) transparent and reproducible case definitions\nConsistent grouping across studies (hopefully)"
   },
   {
     "objectID": "EL7.html#references",
     "href": "EL7.html#references",
-    "title": "EL7: Medical codes",
+    "title": "EL7: Medical coding",
     "section": "",
     "text": "Alharbi, Musaed Ali, Godfrey Isouard, and Barry Tolchard. 2021. “Historical Development of the Statistical Classification of Causes of Death and Diseases.” Edited by Rahman Shiri. Cogent Medicine 8 (1): 1893422. https://doi.org/10.1080/2331205X.2021.1893422.\n\n\nBindel, Lilly Josephine, and Roland Seifert. 2025. “Problems Associated with the ATC System of Drug Classification.” Naunyn-Schmiedeberg’s Archives of Pharmacology, December. https://doi.org/10.1007/s00210-025-04833-1.\n\n\nNelson, Stuart J., Ying Yin, Eduardo A. Trujillo Rivera, Yijun Shao, Phillip Ma, Mark S. Tuttle, Jennifer Garvin, and Qing Zeng-Treitler. 2024. “Are ICD Codes Reliable for Observational Studies? Assessing Coding Consistency for Data Quality.” DIGITAL HEALTH 10 (September): 20552076241297056. https://doi.org/10.1177/20552076241297056.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nWickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. “R for Data Science (2e).” https://r4ds.hadley.nz/."
   },
@@ -1117,7 +1138,7 @@
     "href": "EL9.html#havenread_sas",
     "title": "EL9: Big data",
     "section": "haven::read_sas()",
-    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x11c7805b0&gt;\n&lt;environment: namespace:haven&gt;"
+    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x10428d780&gt;\n&lt;environment: namespace:haven&gt;"
   },
   {
     "objectID": "EL9.html#export-from-sas-to-csv",
@@ -1201,7 +1222,7 @@
     "href": "EL9.html#example",
     "title": "EL9: Big data",
     "section": "Example",
-    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-06\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-06\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-06\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-06\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-06\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-08\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-08\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-08\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-08\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-08\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-06\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-06\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-06\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-06\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-06\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-08\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-08\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-08\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-08\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-08"
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-11\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-11\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-11\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-11\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-11\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-13\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-13\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-13\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-13\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-13\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-11\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-11\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-11\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-11\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-11\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-13\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-13\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-13\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-13\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-13"
   },
   {
     "objectID": "EL9.html#if-it-doesnt-fit",
@@ -1300,6 +1321,62 @@
     "title": "EL9: Big data",
     "section": "C-code changes",
     "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE?)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
+  },
+  {
+    "objectID": "ECS3.html",
+    "href": "ECS3.html",
+    "title": "ECS3: Data formats and regex",
+    "section": "",
+    "text": "GitHub Classroom\nAs for ECS2 you will find a link to the GitHub classroom assignment in Canvas!"
+  },
+  {
+    "objectID": "ECS4.html",
+    "href": "ECS4.html",
+    "title": "ECS4: Data project",
+    "section": "",
+    "text": "All remaining computer sessions, as well as the final seminar, will be devoted to a mini-project.\nThe formal examination consists of:\nThe scheduled computer sessions are intended for group work, during which the teacher will be available to help. You are of course also free to work on the project outside these hours."
+  },
+  {
+    "objectID": "ECS4.html#suggested-workflow",
+    "href": "ECS4.html#suggested-workflow",
+    "title": "ECS4: Data project",
+    "section": "Suggested workflow",
+    "text": "Suggested workflow\n\nDecide how you want to organize your work.\n\nI recommend using the {targets} package. You are not required to do so, but without a workflow tool your scripts can quickly become difficult to manage when collaborating.\nIf you want to ensure that you are using exactly the same R version and packages, consider also using renv.\nOtherwise, check that you are using the same R version (R.version.string) and run update.packages(ask = FALSE) in a fresh R session.\n\nCreate a basic folder and file structure for the project (you may reuse the example from ECS3).\nAdd other necessary files such as README.md and .gitignore.\nThe person creating the structure commits the changes and pushes them to GitHub.\nThe other person pulls the changes to obtain the same structure locally.\nDiscuss the direction of your project (see instructions below).\nDocument your project decisions in the README.md.\nUse GitHub issues to discuss tasks and assign responsibilities.\nWork on the tasks, commit changes, push to GitHub, and repeat.\n\n\nCommit early and commit often. Do not wait until the last day to push your work to GitHub.\n\n\n\n\n\n\n\nImportantIndividual grading\n\n\n\nAlthough this is group work, the project will be graded individually (pass or fail). Git makes it possible to identify which contributions were made by each individual. During the final seminar the class will be divided into two groups. One student from each group will present the project during the first hour, and the other student during the second hour. You should therefore both be prepared to present the project independently (although you are encouraged to collaborate closely beforehand).\n\n\n\n\n\n\n\n\nTipMerge conflicts\n\n\n\nSince two people may modify the same files simultaneously, you should try to work from the latest version of the repository (sync often). It is not necessary to work only one at a time, but if conflicting changes are made to the same file you will need to resolve merge conflicts. Instructions for resolving merge conflicts in VS Code / Positron\n\n\n\n\n\n\n\n\nTipDraft files\n\n\n\nYou may create draft files (for example R/draft-your-name.R) where you experiment with code before integrating it into the main workflow or targets pipeline. You may also decide that one person primarily handles merge conflicts while the other focuses on preparing the presentation draft. You may want to read this"
+  },
+  {
+    "objectID": "ECS4.html#expected-repository-contents",
+    "href": "ECS4.html#expected-repository-contents",
+    "title": "ECS4: Data project",
+    "section": "Expected repository contents",
+    "text": "Expected repository contents\nYour repository should contain at least:\n\nreproducible analysis scripts\na README.md describing the project\ncode needed to reproduce the figures/tables used in the presentation\na clear workflow (for example using {targets} or similar)"
+  },
+  {
+    "objectID": "ECS4.html#some-examples",
+    "href": "ECS4.html#some-examples",
+    "title": "ECS4: Data project",
+    "section": "Some examples",
+    "text": "Some examples\nSome example reports are provided below that illustrate possible analyses and research questions based on the available data. These examples are intended only as inspiration.\nYou have considerable freedom in how you choose to formulate your research question, structure your analysis, and present your results. You do not need to follow the same approach, methods, structure, or level of detail as in the example reports.\nThe examples should therefore not be seen as a standard to aim for, either in terms of content or presentation. They are merely provided to help generate ideas if you find it difficult to get started or are unsure about possible directions for the project.\n\nCardiovascular risk analysis\nHealthcare cost analysis\nHealthcare trends analysis\nsocial determinants"
+  },
+  {
+    "objectID": "ECS4.html#figures",
+    "href": "ECS4.html#figures",
+    "title": "ECS4: Data project",
+    "section": "Figures",
+    "text": "Figures\n\nggplot2\nggpubr\nplotly\nbase graphics\nany other tool that produces clear presentation-quality figures"
+  },
+  {
+    "objectID": "ECS4.html#tables",
+    "href": "ECS4.html#tables",
+    "title": "ECS4: Data project",
+    "section": "Tables",
+    "text": "Tables\n\ngt\ngtsummary\nflextable\nkableExtra"
+  },
+  {
+    "objectID": "ECS4.html#interactive-tools-optional",
+    "href": "ECS4.html#interactive-tools-optional",
+    "title": "ECS4: Data project",
+    "section": "Interactive tools (optional)",
+    "text": "Interactive tools (optional)\n\nshiny\nshinydashboard\nhtmlwidgets"
   },
   {
     "objectID": "ECS2.html",
@@ -2013,7 +2090,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-05."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-10."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -3406,7 +3483,7 @@
     "href": "handouts.html#example-5",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nqku #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\ngdpqjk { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nqku #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nuva #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nzpumho { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nuva #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
   },
   {
     "objectID": "handouts.html#flattening",
@@ -3427,28 +3504,28 @@
     "href": "handouts.html#overview",
     "title": "Handouts",
     "section": "Overview",
-    "text": "Overview\n\nStandardized vocabularies, controlled vocabularies, terminologies and ontologies …\nThis is a field of its onwn (health informatics and clinical terminology)\nLet’s just call it “medical coding” for now."
+    "text": "Overview\n\nStandardized vocabularies, controlled vocabularies, terminologies and ontologies …\nThis is a field of its own (health informatics)\nLet’s just call it “medical coding” for now."
   },
   {
     "objectID": "handouts.html#relevance-2",
     "href": "handouts.html#relevance-2",
     "title": "Handouts",
     "section": "Relevance",
-    "text": "Relevance\n\nImaganine you are diagnosed with “cancer” (hope not …)\nYour doctor writes that you have “kräfta” in your medical records\n\n“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”\n\nShe might as well write:\n\nThe patient was diagnosed with a malignant neoplasm of the colon.\nHistology confirms invasive adenocarcinoma.\nEvidence of metastatic disease to the liver.\n\nNatural languages (English/Swedish etc) are not well suited for statistical analysis\n\nNatural language processing (NLP) is nice but outside the scope of the course\n\nStatisticians need clear definitions of diagnoses, procedures, medications etc.\nTherefore, such information is encoded in a standardized way"
+    "text": "Relevance\n\nImaganine you are diagnosed with “cancer” (hope not …)\nYour doctor writes that you have “kräfta” in your medical records\n\n“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is a “crab” (latin does not distinguish the two)\n\nShe might as well write:\n\nThe patient was diagnosed with a malignant neoplasm of the colon.\nHistology confirms invasive adenocarcinoma.\nEvidence of metastatic disease to the liver.\n\nNatural languages (English/Swedish/Latin etc) are not well suited for statistical analysis\n\nNatural language processing (NLP) is nice but outside the scope of the course\n\nStatisticians need clear definitions of diagnoses, procedures, medications etc.\nTherefore, such information is encoded in a standardized way"
   },
   {
-    "objectID": "handouts.html#granularityreliabaility",
-    "href": "handouts.html#granularityreliabaility",
+    "objectID": "handouts.html#granularityreliability",
+    "href": "handouts.html#granularityreliability",
     "title": "Handouts",
-    "section": "Granularity/reliabaility",
-    "text": "Granularity/reliabaility\n\nCancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)\nCancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)\nThe more we learn about a diseases, the more granularity we expect from the coding\nThe coding systems therefore tend to be quite complex, evolve over time and often have regional differences\nEven though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.\nThe codes might also be misued for re-imbursment practices\n\nThere was a regional scandal in Western Sweden not so many years ago\n\nIn practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff"
+    "section": "Granularity/reliability",
+    "text": "Granularity/reliability\n\nCancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)\nCancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)\nThe more we learn about a diseases, the more granularity we expect from the coding\nThe coding systems therefore tend to be quite complex, evolve over time and often have regional differences\nEven though the intention of the coding system might be granular and precise, the data quality often relies on different coding practices in different hospitals etc.\nThe codes might also be misused for re-imbursment practices\n\nThere was a regional scandal in Western Sweden not so many years ago (you may read about int in Swedish)\n\nIn practice, the medical doctor might dictate a diagnosis, which then needs to be translated to a code by administrative staff"
   },
   {
     "objectID": "handouts.html#example-6",
     "href": "handouts.html#example-6",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nThe Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems\nAt first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?\nHowever, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.\nIt was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.\nThe apparent “complication” was therefore not a real clinical problem, but a coding error.\n\nLesson: Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions."
+    "text": "Example\n\nThe Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems\nAt first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?\nHowever, hip surgery is often performed under general anesthesia. During general anesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.\nIt was eventually discovered that a procedural code related to anesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.\nThe apparent “complication” was therefore not a real clinical problem, but a coding error.\n\nLesson: Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions."
   },
   {
     "objectID": "handouts.html#icd-international-classification-of-diseases",
@@ -3476,14 +3553,14 @@
     "href": "handouts.html#national-modifications",
     "title": "Handouts",
     "section": "National Modifications",
-    "text": "National Modifications\nMany countries use national adaptations:\n\nICD-10-CM (USA; Clinical Modification)\nICD-10-CA (Canada)\nICD-10-SE (Sweden)\n\nA fifth position (ignoring the dot) sometimes used for more granularity\nICD-10: S72.0 Fracture of neck of femur\nICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nWHO ICD-10\nICD-10-SE (Sweden)\nICD-10-CM (USA)\n\n\n\n\nMaintained by\nWHO\nSwedish National Board of Health and Welfare (Socialstyrelsen)\nU.S. National Center for Health Statistics (NCHS)\n\n\nPrimary purpose\nGlobal disease classification\nNational clinical and statistical reporting\nClinical documentation and reimbursement\n\n\nLevel of detail\nModerate\nMore detailed than WHO ICD-10\nMuch more detailed than WHO ICD-10\n\n\nAdditional digits\nTypically 3–4 characters\nOften includes 5th character extensions\nUp to 7 characters\n\n\nLaterality (right/left)\nUsually not specified\nLimited\nFrequently specified\n\n\nEncounter type (initial, follow-up, sequela)\nNot included\nNot included\nExplicitly coded\n\n\nAdministrative focus\nEpidemiology and mortality statistics\nClinical and national register reporting\nStrongly tied to billing and reimbursement\n\n\nInternational comparability\nHigh (reference standard)\nHigh within Nordic context, requires mapping internationally\nRequires crosswalk to WHO ICD-10 for comparison"
+    "text": "National Modifications\nSeveral countries use national adaptations:\n\nICD-10-CM (USA; Clinical Modification)\nICD-10-CA (Canada)\nICD-10-SE (Sweden)\n\nA fifth position (ignoring the dot) sometimes used for more granularity\nICD-10: S72.0 Fracture of neck of femur\nICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, …\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nWHO ICD-10\nICD-10-SE (Sweden)\nICD-10-CM (USA)\n\n\n\n\nMaintained by\nWHO\nSwedish National Board of Health and Welfare (Socialstyrelsen)\nU.S. National Center for Health Statistics (NCHS)\n\n\nPrimary purpose\nGlobal disease classification\nNational clinical and statistical reporting\nClinical documentation and reimbursement\n\n\nLevel of detail\nModerate\nMore detailed than WHO ICD-10\nMuch more detailed than WHO ICD-10\n\n\nAdditional digits\nTypically 3–4 characters\nOften includes 5th character extensions\nUp to 7 characters\n\n\nLaterality (right/left)\nUsually not specified\nLimited\nFrequently specified\n\n\nEncounter type (initial, follow-up, sequela)\nNot included\nNot included\nExplicitly coded\n\n\nAdministrative focus\nEpidemiology and mortality statistics\nClinical and national register reporting\nStrongly tied to billing and reimbursement\n\n\nInternational comparability\nHigh (reference standard)\nHigh within Nordic context, requires mapping internationally\nRequires crosswalk to WHO ICD-10 for comparison"
   },
   {
     "objectID": "handouts.html#structure-of-icd-10",
     "href": "handouts.html#structure-of-icd-10",
     "title": "Handouts",
     "section": "Structure of ICD-10",
-    "text": "Structure of ICD-10\nTypical format:\n\nOne letter (chapter)\nTwo digits (category)\nOptional dot and additional digit(s) (subcategory)\n\nExample:\n\nI21 – Acute myocardial infarction (AMI)\nI21.0 – AMI of anterior wall\nI21.9 – AMI, unspecified"
+    "text": "Structure of ICD-10\nTypical format:\n\nOne letter (chapter)\nTwo digits (category)\nOptional dot\nadditional digit(s) (subcategory)\n\nExample:\n\nI21 – Acute myocardial infarction (AMI)\nI21.0 – AMI of anterior wall\nI21.9 – AMI, unspecified"
   },
   {
     "objectID": "handouts.html#hierarchy",
@@ -3504,35 +3581,35 @@
     "href": "handouts.html#changes-over-time",
     "title": "Handouts",
     "section": "Changes Over Time",
-    "text": "Changes Over Time\nBetween ICD versions:\n\nCodes may be split into more detailed categories\nCodes may be merged\nCodes may move between chapters\nDefinitions may change\n\nExample: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.\nImplication: Observed changes in incidence may reflect coding changes rather than true epidemiology."
+    "text": "Changes Over Time\nBetween ICD versions:\n\nCodes may be split (1-to-many) into more detailed categories (common)\nCodes may be merged (many-to-one, although uncommon)\nCodes may move between chapters (affects the aggregated chapter counts/incidence/prevalence)\nDefinitions may change\n\nExample: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.\nImplication: Observed changes in incidence may reflect coding changes rather than true epidemiology."
   },
   {
     "objectID": "handouts.html#crosswalks-between-versions",
     "href": "handouts.html#crosswalks-between-versions",
     "title": "Handouts",
     "section": "Crosswalks Between Versions",
-    "text": "Crosswalks Between Versions\nWhen analysing long time series:\n\nMapping tables (“crosswalks”) are often used\nMapping may be:\n\nOne-to-one\nOne-to-many (most common)\nMany-to-one\n\n\nCrosswalks are rarely exact. Information loss or ambiguity is common.\nAggregation to broader diagnostic groups is often necessary."
+    "text": "Crosswalks Between Versions\nWhen analyzing long time series:\n\nMapping tables (“crosswalks”) are often used\nMapping may be:\n\nOne-to-one\nOne-to-many\nMany-to-one\n\n\nCrosswalks are rarely exact. Information loss or ambiguity is common.\nAggregation to broader diagnostic groups is often necessary."
   },
   {
     "objectID": "handouts.html#crosswalk-patterns-who-icd-9-who-icd-10",
     "href": "handouts.html#crosswalk-patterns-who-icd-9-who-icd-10",
     "title": "Handouts",
     "section": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)",
-    "text": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)\nWhen mapping between ICD versions, different structural relationships may occur.\n\n\n\n\n\n\n\n\n\nMapping type\nICD-9 (WHO)\nICD-10 (WHO)\nInterpretation\n\n\n\n\nOne → Many (Split)\n250 – Diabetes mellitus\nE10–E14\nOne broad ICD-9 category split into multiple etiological types\n\n\nMany → One (Merge)\n038 – Septicaemia790.7 – Bacteraemia\nA41 – Other sepsis\nSeparate ICD-9 concepts consolidated into broader ICD-10 category\n\n\nMany ↔︎ Many (Reorganisation)\n296 – Affective psychoses300 – Neurotic disorders\nF30–F39 (Mood disorders)F40–F48 (Neurotic disorders)\nStructural reorganisation and conceptual reclassification across chapters\n\n\nChapter relocation\n011 – Pulmonary tuberculosis\nA15 – Respiratory tuberculosis\nInfectious diseases reorganised under new chapter structure"
+    "text": "Crosswalk Patterns (WHO ICD-9 → WHO ICD-10)\nWhen mapping between ICD versions, different structural relationships may occur.\n\n\n\n\n\n\n\n\n\nMapping type\nICD-9 (WHO)\nICD-10 (WHO)\nInterpretation\n\n\n\n\nOne → Many (Split)\n250 – Diabetes mellitus\nE10–E14\nOne broad ICD-9 category split into multiple etiological types\n\n\nMany → One (Merge)\n038 – Septicaemia; 790.7 – Bacteraemia\nA41 – Other sepsis\nSeparate ICD-9 concepts consolidated into broader ICD-10 category\n\n\nMany ↔︎ Many (Reorganisation)\n296 – Affective psychoses; 300 – Neurotic disorders\nF30–F39 (Mood disorders); F40–F48 (Neurotic disorders)\nStructural reorganisation and conceptual reclassification across chapters\n\n\nChapter relocation\n011 – Pulmonary tuberculosis\nA15 – Respiratory tuberculosis\nInfectious diseases reorganised under new chapter structure"
   },
   {
     "objectID": "handouts.html#crosswalk-before-or-after",
     "href": "handouts.html#crosswalk-before-or-after",
     "title": "Handouts",
     "section": "Crosswalk before or after",
-    "text": "Crosswalk before or after\n\nThe Swedish caner register has an internal “crosswalk” applied uniformly to the register itself\nOther registers typically only records the current version in use\nIf so, you might perform the crosswalk yourself after receiving the data\n\nApplies if you want to look at longer time trends etc or combine data from different periods"
+    "text": "Crosswalk before or after\n\nThe Swedish caner register has an internal “crosswalk” applied uniformly to the register itself\n\nUpdated regularly, 2026 version with 360 pages (in Swedish)\n\nOther registers typically only records the current version in use\nIf so, you might perform the crosswalk yourself after receiving the data\n\nApplies if you want to look at longer time trends etc or combine data from different periods"
   },
   {
     "objectID": "handouts.html#icd-o",
     "href": "handouts.html#icd-o",
     "title": "Handouts",
     "section": "ICD-O",
-    "text": "ICD-O\nICD-O (International Classification of Diseases for Oncology):\n\nUsed mainly in cancer registries\nCombines:\n\nTopography (tumour site)\nMorphology (histology and behaviour)\n\nCurrent commonly used version: - ICD-O-3\nEarlier versions: - ICD-O-1 - ICD-O-2\nICD-O is more detailed than ICD-10 for cancer incidence studies."
+    "text": "ICD-O\nICD-O (International Classification of Diseases for Oncology):\n\nUsed mainly in cancer registries\nCombines:\n\nTopography (tumour site)\nMorphology (histology and behaviour)\n\nCurrent commonly used version: - ICD-O-3\nEarlier versions: ICD-O, ICD-O-2\nICD-O is more detailed than ICD-10 for cancer incidence studies."
   },
   {
     "objectID": "handouts.html#relationship-between-icd-10-and-icd-o",
@@ -3542,11 +3619,11 @@
     "text": "Relationship Between ICD-10 and ICD-O\n\nICD-10 commonly used for mortality and hospital discharge diagnoses\nICD-O primarily used for cancer registry incidence data\n\nA cancer case may have:\n\nAn ICD-10 code in hospital data\nAn ICD-O morphology and topography code in a cancer registry\n\nResearchers must understand which system underlies their dataset."
   },
   {
-    "objectID": "handouts.html#regional-variation-in-coding",
-    "href": "handouts.html#regional-variation-in-coding",
+    "objectID": "handouts.html#variation-in-coding",
+    "href": "handouts.html#variation-in-coding",
     "title": "Handouts",
-    "section": "Regional Variation in Coding",
-    "text": "Regional Variation in Coding\nDifferences between hospitals or regions may arise due to:\n\nCoding training\nLocal guidelines\nAdministrative incentives\nReimbursement systems\nElectronic health record design\n\nRegisters capture both clinical events and coding behaviour."
+    "section": "Variation in Coding",
+    "text": "Variation in Coding\nDifferences between hospitals or regions may arise due to:\n\nCoding training\n\nA primary health care unit may encounter all possible diagnosis (wide but shallow knowledge) while a very specialized unit might have routines for a very narrow but detailed coding\n\nLocal guidelines\n\nRegions are independent in Sweden\n\nAdministrative incentives\nReimbursement systems\n\npublic and private health care providers may have different incentives\n\nElectronic health record design\n\nNational registers often relies on combining multiple different sources\n\nSomatic vs psychiatric care\n\nIn psychiatric care, diagnoses may sometimes be recorded with less specificity, potentially due to concerns about stigma or the sensitive nature of certain conditions\n\n\nRegisters capture both clinical events and coding behaviour."
   },
   {
     "objectID": "handouts.html#validity-of-icd-codes",
@@ -3584,18 +3661,18 @@
     "text": "Practical Implications for Statisticians\nBefore analysis, always clarify:\n\nWhich ICD version?\nWhich national modification?\nWhich coding level (3-digit vs 4-digit)?\nHas coding practice changed over time?\nAre crosswalks required?\nIs there validation evidence for the diagnosis?\n\nICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research."
   },
   {
-    "objectID": "handouts.html#atc",
-    "href": "handouts.html#atc",
+    "objectID": "handouts.html#atc-for-drugs",
+    "href": "handouts.html#atc-for-drugs",
     "title": "Handouts",
-    "section": "ATC",
-    "text": "ATC\n\nAnatomical Therapeutic Chemical (ATC) classification\ncategorizing therapeutic drugs,\nstructured into 14 main groups and 5 levels, with a disease-oriented focus\nintroduced in the 1960s\nIn 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”\nfollow a hierarchical structure:\n\n1 letter\n2 digits\n2 letters\n2 digits\nExample: C09AA05\n\nSeveral problems exist (Bindel and Seifert 2025) but it is nevertheless widely used"
+    "section": "ATC for drugs",
+    "text": "ATC for drugs\n\nAnatomical Therapeutic Chemical (ATC) classification\ncategorizing therapeutic drugs,\nstructured into 14 main groups and 5 levels, with a disease-oriented focus\nintroduced in the 1960s\nIn 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”\nfollow a hierarchical structure: 1 letter, 2 digits, 2 letters, 2 digits\n\nExample: C09AA05\n\nSeveral problems exist (Bindel and Seifert 2025) but it is nevertheless widely used"
   },
   {
     "objectID": "handouts.html#sweden",
     "href": "handouts.html#sweden",
     "title": "Handouts",
     "section": "Sweden",
-    "text": "Sweden\n\nWe have ATC codes in the national prescription register\nWhen a doctor prescribes a medicatin, the ATC code will follow automatically\nLess room for interpretation when coding\nNew medications are introduced over time\nThe Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions\nDaily updates to the National Substance Register"
+    "text": "Sweden\n\nWe have ATC codes in the national prescription register\nWhen a doctor prescribes a medication, the ATC code will follow automatically\nLess room for interpretation when coding\nNew medications are introduced over time\nThe Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions\nDaily updates to the National Substance Register"
   },
   {
     "objectID": "handouts.html#procedure-codes",
@@ -3668,6 +3745,27 @@
     "text": "Implications for Research\n\nDRG reflects resource use, not disease incidence.\nChanges in reimbursement rules may influence coding behavior.\nRegional comparisons must consider administrative incentives.\nDRG is suitable for health services and economic analyses, but less appropriate for etiological research."
   },
   {
+    "objectID": "handouts.html#snomed-ct-what-is-it",
+    "href": "handouts.html#snomed-ct-what-is-it",
+    "title": "Handouts",
+    "section": "SNOMED CT – What Is It?",
+    "text": "SNOMED CT – What Is It?\nSNOMED CT (Systematized Nomenclature of Medicine – Clinical Terms) is a large clinical terminology system.\n\nMaintained by SNOMED International\nContains hundreds of thousands of clinical concepts\nDesigned for structured documentation in electronic health records\n\nUnlike ICD or ATC, SNOMED CT is primarily a terminology, not a statistical classification."
+  },
+  {
+    "objectID": "handouts.html#terminology-vs-classification",
+    "href": "handouts.html#terminology-vs-classification",
+    "title": "Handouts",
+    "section": "Terminology vs Classification",
+    "text": "Terminology vs Classification\n\n\n\nSystem\nType\nPurpose\n\n\n\n\nICD\nClassification\nEpidemiology and health statistics\n\n\nATC\nClassification\nDrug classification\n\n\nKVÅ / NOMESCO\nClassification\nMedical procedures\n\n\nSNOMED CT\nTerminology\nDetailed clinical documentation\n\n\n\nClassification systems simplify reality for statistics and reporting, while terminologies allow very detailed clinical descriptions."
+  },
+  {
+    "objectID": "handouts.html#why-snomed-ct-is-not-widely-used-in-registers",
+    "href": "handouts.html#why-snomed-ct-is-not-widely-used-in-registers",
+    "title": "Handouts",
+    "section": "Why SNOMED CT Is Not Widely Used in Registers",
+    "text": "Why SNOMED CT Is Not Widely Used in Registers\nDespite its strengths, SNOMED CT is rarely used directly in:\n\nnational health registers\nepidemiological statistics\n\nMain reasons:\n\nToo detailed for statistical aggregation\nHarder to ensure consistent coding\nStatistical reporting systems are built around ICD"
+  },
+  {
     "objectID": "handouts.html#regular-expressions",
     "href": "handouts.html#regular-expressions",
     "title": "Handouts",
@@ -3728,7 +3826,7 @@
     "href": "handouts.html#common-mistakes",
     "title": "Handouts",
     "section": "Common Mistakes",
-    "text": "Common Mistakes\n\nForgetting ^ when matching prefixes\n\nThis is even forgotten in the stringfish::sf_starts() implementation! See bug report.\n\nForgetting to escape .\nNot validating full string with $\nOvermatching (e.g., I2 instead of ^I21)"
+    "text": "Common Mistakes\n\nForgetting ^ when matching prefixes\n\nThis is problematic even in the stringfish::sf_starts() implementation! See bug report.\n\nForgetting to escape .\nNot validating full string with $\nOvermatching (e.g., I2 instead of ^I21)"
   },
   {
     "objectID": "handouts.html#standardised-groupings",
@@ -3749,7 +3847,7 @@
     "href": "handouts.html#coder",
     "title": "Handouts",
     "section": "{coder}",
-    "text": "{coder}\n\nThe R package {coder} can be used to aggregate individual diagnosis codes into broader clinical categories.\nCommon applications include:\n\nCharlson Comorbidity Index\nElixhauser Comorbidity Index\nOther diagnosis-based groupings\n\n\nThis allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies"
+    "text": "{coder}\n\nThe R package {coder} can be used to aggregate individual diagnosis codes into broader clinical categories.\nCommon applications include:\n\nCharlson Comorbidity Index\nElixhauser Comorbidity Index\nOther diagnosis-based groupings\n\n\nThis allows:\n\nStandardised comorbidity adjustment\n(Sort of/relatively …) transparent and reproducible case definitions\nConsistent grouping across studies (hopefully)"
   },
   {
     "objectID": "handouts.html#reading-3",

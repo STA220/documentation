@@ -1,0 +1,13 @@
+---
+title: "ECS3: Data formats and regex"
+subtitle: ""
+reading: ""
+format: html
+date: last-modified
+execute:
+  freeze: true
+---
+
+# GitHub Classroom
+
+As for [ECS2](ECS2.qmd) you will find a link to the GitHub classroom assignment in [Canvas](https://canvas.gu.se/courses/97348/assignments/376296)!

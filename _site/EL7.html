@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – EL7: Medical codes</title>
+  <title>STA220 – EL7: Medical coding</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -214,7 +214,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EL7: Medical codes</h1>
+  <h1 class="title">EL7: Medical coding</h1>
   <p class="subtitle">ICD, ATC, KVÅ, regex</p>
 
 <div class="quarto-title-authors">
@@ -243,7 +243,7 @@
 <h2>Overview</h2>
 <ul>
 <li>Standardized vocabularies, controlled vocabularies, terminologies and ontologies …</li>
-<li>This is a field of its onwn (health informatics and clinical terminology)</li>
+<li>This is a field of its own (health informatics)</li>
 <li>Let’s just call it “medical coding” for now.</li>
 </ul>
 </section>
@@ -253,15 +253,15 @@
 <li>Imaganine you are diagnosed with “cancer” (hope not …)</li>
 <li>Your doctor writes that you have “kräfta” in your medical records
 <ul>
-<li>“kräfta” (Swedish) = cancer (latin), although the astrological sign “cancer” is actually a “crab”</li>
+<li><strong>“kräfta”</strong> (Swedish) = <strong>cancer</strong> (latin), although the astrological sign “cancer” is a “crab” (latin does not distinguish the two)</li>
 </ul></li>
 <li>She might as well write:
 <ul>
-<li>The patient was diagnosed with a malignant neoplasm of the colon.</li>
-<li>Histology confirms invasive adenocarcinoma.</li>
-<li>Evidence of metastatic disease to the liver.</li>
+<li>The patient was diagnosed with a <strong>malignant neoplasm</strong> of the colon.</li>
+<li>Histology confirms <strong>invasive adenocarcinoma</strong>.</li>
+<li>Evidence of <strong>metastatic disease</strong> to the liver.</li>
 </ul></li>
-<li>Natural languages (English/Swedish etc) are not well suited for statistical analysis
+<li>Natural languages (English/Swedish/Latin etc) are not well suited for statistical analysis
 <ul>
 <li>Natural language processing (NLP) is nice but outside the scope of the course</li>
 </ul></li>
@@ -269,19 +269,19 @@
 <li>Therefore, such information is encoded in a standardized way</li>
 </ul>
 </section>
-<section id="granularityreliabaility" class="slide level2">
-<h2>Granularity/reliabaility</h2>
+<section id="granularityreliability" class="slide level2">
+<h2>Granularity/reliability</h2>
 <ul>
 <li>Cancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as “C” (or possibly “D”)</li>
 <li>Cancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)</li>
 <li>The more we learn about a diseases, the more granularity we expect from the coding</li>
 <li>The coding systems therefore tend to be quite complex, evolve over time and often have regional differences</li>
-<li>Even though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.</li>
-<li>The codes might also be misued for re-imbursment practices
+<li>Even though the intention of the coding system might be granular and precise, the data quality often relies on different coding practices in different hospitals etc.</li>
+<li>The codes might also be misused for re-imbursment practices
 <ul>
-<li>There was a regional scandal in Western Sweden not so many years ago</li>
+<li>There was a regional scandal in Western Sweden not so many years ago (<a href="https://www.svt.se/nyheter/lokalt/vast/vardcentraler-fuskar-med-diagnoser-for-att-fa-hogre-ersattning">you may read about int in Swedish</a>)</li>
 </ul></li>
-<li>In practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff</li>
+<li>In practice, the medical doctor might dictate a diagnosis, which then needs to be translated to a code by administrative staff</li>
 </ul>
 </section>
 <section id="example" class="slide level2">
@@ -289,8 +289,8 @@
 <ul>
 <li>The Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems</li>
 <li>At first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?</li>
-<li>However, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.</li>
-<li>It was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.</li>
+<li>However, hip surgery is often performed under general anesthesia. During general anesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.</li>
+<li>It was eventually discovered that a procedural code related to anesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.</li>
 <li>The apparent “complication” was therefore not a real clinical problem, but a coding error.</li>
 </ul>
 <p><strong>Lesson:</strong> Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions.</p>
@@ -346,7 +346,7 @@
 </section>
 <section id="national-modifications" class="slide level2">
 <h2>National Modifications</h2>
-<p>Many countries use national adaptations:</p>
+<p>Several countries use national adaptations:</p>
 <ul>
 <li>ICD-10-CM (USA; Clinical Modification)</li>
 <li>ICD-10-CA (Canada)</li>
@@ -360,12 +360,12 @@
 </section>
 <section class="slide level2">
 
-<table class="caption-top" style="width:100%;">
+<table class="caption-top">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 21%">
-<col style="width: 32%">
+<col style="width: 22%">
+<col style="width: 22%">
 <col style="width: 29%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -433,7 +433,8 @@
 <ul>
 <li>One letter (chapter)</li>
 <li>Two digits (category)</li>
-<li>Optional dot and additional digit(s) (subcategory)</li>
+<li>Optional dot</li>
+<li>additional digit(s) (subcategory)</li>
 </ul>
 <p>Example:</p>
 <ul>
@@ -475,9 +476,9 @@
 <h2>Changes Over Time</h2>
 <p>Between ICD versions:</p>
 <ul>
-<li>Codes may be split into more detailed categories</li>
-<li>Codes may be merged</li>
-<li>Codes may move between chapters</li>
+<li>Codes may be split (1-to-many) into more detailed categories (common)</li>
+<li>Codes may be merged (many-to-one, although uncommon)</li>
+<li>Codes may move between chapters (affects the aggregated chapter counts/incidence/prevalence)</li>
 <li>Definitions may change</li>
 </ul>
 <p>Example: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.</p>
@@ -485,13 +486,13 @@
 </section>
 <section id="crosswalks-between-versions" class="slide level2">
 <h2>Crosswalks Between Versions</h2>
-<p>When analysing long time series:</p>
+<p>When analyzing long time series:</p>
 <ul>
 <li>Mapping tables (“crosswalks”) are often used</li>
 <li>Mapping may be:
 <ul>
 <li>One-to-one</li>
-<li>One-to-many (most common)</li>
+<li>One-to-many</li>
 <li>Many-to-one</li>
 </ul></li>
 </ul>
@@ -503,9 +504,9 @@
 <p>When mapping between ICD versions, different structural relationships may occur.</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 23%">
-<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
 <col style="width: 26%">
 </colgroup>
 <thead>
@@ -525,14 +526,14 @@
 </tr>
 <tr class="even">
 <td>Many → One (Merge)</td>
-<td>038 – Septicaemia<br>790.7 – Bacteraemia</td>
+<td>038 – Septicaemia; 790.7 – Bacteraemia</td>
 <td>A41 – Other sepsis</td>
 <td>Separate ICD-9 concepts consolidated into broader ICD-10 category</td>
 </tr>
 <tr class="odd">
 <td>Many ↔︎ Many (Reorganisation)</td>
-<td>296 – Affective psychoses<br>300 – Neurotic disorders</td>
-<td>F30–F39 (Mood disorders)<br>F40–F48 (Neurotic disorders)</td>
+<td>296 – Affective psychoses; 300 – Neurotic disorders</td>
+<td>F30–F39 (Mood disorders); F40–F48 (Neurotic disorders)</td>
 <td>Structural reorganisation and conceptual reclassification across chapters</td>
 </tr>
 <tr class="even">
@@ -547,7 +548,10 @@
 <section id="crosswalk-before-or-after" class="slide level2">
 <h2>Crosswalk before or after</h2>
 <ul>
-<li>The Swedish caner register has an internal “crosswalk” applied uniformly to the register itself</li>
+<li>The Swedish caner register has an internal “crosswalk” applied uniformly to the register itself
+<ul>
+<li>Updated regularly, <a href="https://www.socialstyrelsen.se/contentassets/73ddf4d21b7d41408b826caf96fa6dd7/2026-1-10005.pdf">2026 version with 360 pages (in Swedish)</a></li>
+</ul></li>
 <li>Other registers typically only records the current version in use</li>
 <li>If so, you might perform the crosswalk yourself after receiving the data
 <ul>
@@ -566,7 +570,7 @@
 <li>Morphology (histology and behaviour)</li>
 </ul></li>
 <li>Current commonly used version: - ICD-O-3</li>
-<li>Earlier versions: - ICD-O-1 - ICD-O-2</li>
+<li>Earlier versions: ICD-O, ICD-O-2</li>
 <li>ICD-O is more detailed than ICD-10 for cancer incidence studies.</li>
 </ul>
 </section>
@@ -591,15 +595,31 @@
 
 
 <img data-src="images/paste-31.png" class="r-stretch"></section>
-<section id="regional-variation-in-coding" class="slide level2">
-<h2>Regional Variation in Coding</h2>
+<section id="variation-in-coding" class="slide level2">
+<h2>Variation in Coding</h2>
 <p>Differences between hospitals or regions may arise due to:</p>
 <ul>
-<li>Coding training</li>
-<li>Local guidelines</li>
+<li>Coding training
+<ul>
+<li>A primary health care unit may encounter all possible diagnosis (wide but shallow knowledge) while a very specialized unit might have routines for a very narrow but detailed coding</li>
+</ul></li>
+<li>Local guidelines
+<ul>
+<li>Regions are independent in Sweden</li>
+</ul></li>
 <li>Administrative incentives</li>
-<li>Reimbursement systems</li>
-<li>Electronic health record design</li>
+<li>Reimbursement systems
+<ul>
+<li>public and private health care providers may have different incentives</li>
+</ul></li>
+<li>Electronic health record design
+<ul>
+<li>National registers often relies on combining multiple different sources</li>
+</ul></li>
+<li>Somatic vs psychiatric care
+<ul>
+<li>In psychiatric care, diagnoses may sometimes be recorded with less specificity, potentially due to concerns about stigma or the sensitive nature of certain conditions</li>
+</ul></li>
 </ul>
 <p>Registers capture both clinical events and coding behaviour.</p>
 </section>
@@ -684,20 +704,16 @@ Variation in validity may depend on:</p>
 </ul>
 <p>ICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research.</p>
 </section>
-<section id="atc" class="slide level2">
-<h2>ATC</h2>
+<section id="atc-for-drugs" class="slide level2">
+<h2>ATC for drugs</h2>
 <ul>
 <li>Anatomical Therapeutic Chemical (ATC) classification</li>
 <li>categorizing therapeutic drugs,</li>
 <li>structured into 14 main groups and 5 levels, with a disease-oriented focus</li>
 <li>introduced in the 1960s</li>
 <li>In 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”</li>
-<li>follow a hierarchical structure:
+<li>follow a hierarchical structure: 1 letter, 2 digits, 2 letters, 2 digits
 <ul>
-<li>1 letter</li>
-<li>2 digits</li>
-<li>2 letters</li>
-<li>2 digits</li>
 <li>Example: <code>C09AA05</code></li>
 </ul></li>
 <li>Several problems exist <span class="citation" data-cites="bindel2025">(<a href="#/references" role="doc-biblioref" onclick="">Bindel and Seifert 2025</a>)</span> but it is nevertheless widely used</li>
@@ -711,7 +727,7 @@ Variation in validity may depend on:</p>
 <h2>Sweden</h2>
 <ul>
 <li>We have ATC codes in the national prescription register</li>
-<li>When a doctor prescribes a medicatin, the ATC code will follow automatically</li>
+<li>When a doctor prescribes a medication, the ATC code will follow automatically</li>
 <li>Less room for interpretation when coding</li>
 <li>New medications are introduced over time</li>
 <li>The Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions</li>
@@ -852,6 +868,65 @@ Variation in validity may depend on:</p>
 <li>Changes in reimbursement rules may influence coding behavior.</li>
 <li>Regional comparisons must consider administrative incentives.</li>
 <li>DRG is suitable for health services and economic analyses, but less appropriate for etiological research.</li>
+</ul>
+</section>
+<section id="snomed-ct-what-is-it" class="slide level2">
+<h2>SNOMED CT – What Is It?</h2>
+<p><strong>SNOMED CT (Systematized Nomenclature of Medicine – Clinical Terms)</strong> is a large clinical terminology system.</p>
+<ul>
+<li>Maintained by <strong>SNOMED International</strong></li>
+<li>Contains <strong>hundreds of thousands of clinical concepts</strong></li>
+<li>Designed for <strong>structured documentation in electronic health records</strong></li>
+</ul>
+<p>Unlike ICD or ATC, SNOMED CT is primarily a <strong>terminology</strong>, not a statistical classification.</p>
+</section>
+<section id="terminology-vs-classification" class="slide level2">
+<h2>Terminology vs Classification</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ICD</td>
+<td>Classification</td>
+<td>Epidemiology and health statistics</td>
+</tr>
+<tr class="even">
+<td>ATC</td>
+<td>Classification</td>
+<td>Drug classification</td>
+</tr>
+<tr class="odd">
+<td>KVÅ / NOMESCO</td>
+<td>Classification</td>
+<td>Medical procedures</td>
+</tr>
+<tr class="even">
+<td><strong>SNOMED CT</strong></td>
+<td>Terminology</td>
+<td>Detailed clinical documentation</td>
+</tr>
+</tbody>
+</table>
+<p>Classification systems simplify reality for <strong>statistics and reporting</strong>, while terminologies allow <strong>very detailed clinical descriptions</strong>.</p>
+</section>
+<section id="why-snomed-ct-is-not-widely-used-in-registers" class="slide level2">
+<h2>Why SNOMED CT Is Not Widely Used in Registers</h2>
+<p>Despite its strengths, SNOMED CT is rarely used directly in:</p>
+<ul>
+<li>national health registers</li>
+<li>epidemiological statistics</li>
+</ul>
+<p>Main reasons:</p>
+<ul>
+<li><strong>Too detailed</strong> for statistical aggregation</li>
+<li>Harder to ensure consistent coding</li>
+<li>Statistical reporting systems are built around <strong>ICD</strong></li>
 </ul>
 </section>
 <section>
@@ -1014,7 +1089,7 @@ Variation in validity may depend on:</p>
 <ul>
 <li>Forgetting <code>^</code> when matching prefixes
 <ul>
-<li>This is even forgotten in the <code>stringfish::sf_starts()</code> implementation! <a href="https://github.com/traversc/stringfish/issues/25">See bug report</a>.</li>
+<li>This is problematic even in the <code>stringfish::sf_starts()</code> implementation! <a href="https://github.com/traversc/stringfish/issues/25">See bug report</a>.</li>
 </ul></li>
 <li>Forgetting to escape <code>.</code></li>
 <li>Not validating full string with <code>$</code></li>
@@ -1073,7 +1148,12 @@ Variation in validity may depend on:</p>
 <li>Other diagnosis-based groupings</li>
 </ul></li>
 </ul>
-<p>This allows: - Standardised comorbidity adjustment - Transparent and reproducible case definitions - Consistent grouping across studies</p>
+<p>This allows:</p>
+<ul>
+<li>Standardised comorbidity adjustment</li>
+<li>(Sort of/relatively …) transparent and reproducible case definitions</li>
+<li>Consistent grouping across studies (hopefully)</li>
+</ul>
 </section>
 <section class="slide level2 smaller scrollable" id="references">
 

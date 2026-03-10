@@ -4,6 +4,8 @@ subtitle: "targets and understanding the data"
 reading: ""
 format: html
 date: last-modified
+execute:
+  freeze: true
 ---
 
 # GitHub Classroom

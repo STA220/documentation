@@ -1,5 +1,5 @@
 ---
-title: "EL7: Medical codes"
+title: "EL7: Medical coding"
 subtitle: "ICD, ATC, KVÅ, regex"
 reading: "[@nguyen2022a, ch. 3], [@wickham, ch. 15], [@bindel2025], [@alharbi2021], [@nelson2024]"
 format:
@@ -40,40 +40,40 @@ bibliography: references.bib
 ## Overview
 
 -   Standardized vocabularies, controlled vocabularies, terminologies and ontologies ...
--   This is a field of its onwn (health informatics and clinical terminology)
+-   This is a field of its own (health informatics)
 -   Let's just call it "medical coding" for now.
 
 ## Relevance
 
 -   Imaganine you are diagnosed with "cancer" (hope not ...)
 -   Your doctor writes that you have "kräfta" in your medical records
-    -   "kräfta" (Swedish) = cancer (latin), although the astrological sign "cancer" is actually a "crab"
+    -   **"kräfta"** (Swedish) = **cancer** (latin), although the astrological sign "cancer" is a "crab" (latin does not distinguish the two)
 -   She might as well write:
-    -   The patient was diagnosed with a malignant neoplasm of the colon.
-    -   Histology confirms invasive adenocarcinoma.
-    -   Evidence of metastatic disease to the liver.
--   Natural languages (English/Swedish etc) are not well suited for statistical analysis
+    -   The patient was diagnosed with a **malignant neoplasm** of the colon.
+    -   Histology confirms **invasive adenocarcinoma**.
+    -   Evidence of **metastatic disease** to the liver.
+-   Natural languages (English/Swedish/Latin etc) are not well suited for statistical analysis
     -   Natural language processing (NLP) is nice but outside the scope of the course
 -   Statisticians need clear definitions of diagnoses, procedures, medications etc.
 -   Therefore, such information is encoded in a standardized way
 
-## Granularity/reliabaility
+## Granularity/reliability
 
 -   Cancer might be coded by an ICD-10 code (International Classificatin of Diseases v. 10) as "C" (or possibly "D")
 -   Cancer, however, is a very general term. Is it lung cancer, brain cancer, skin cancer etc (those are very different)
 -   The more we learn about a diseases, the more granularity we expect from the coding
 -   The coding systems therefore tend to be quite complex, evolve over time and often have regional differences
--   Even though the intention of the coding system might be grannular and precise, the data quality often relies on different coding practicies in different hospitals etc.
--   The codes might also be misued for re-imbursment practices
-    -   There was a regional scandal in Western Sweden not so many years ago
--   In practice, the medical doctor might dictate a diagnosis, which then needs to be translaed to a code by administrative staff
+-   Even though the intention of the coding system might be granular and precise, the data quality often relies on different coding practices in different hospitals etc.
+-   The codes might also be misused for re-imbursment practices
+    -   There was a regional scandal in Western Sweden not so many years ago ([you may read about int in Swedish](https://www.svt.se/nyheter/lokalt/vast/vardcentraler-fuskar-med-diagnoser-for-att-fa-hogre-ersattning))
+-   In practice, the medical doctor might dictate a diagnosis, which then needs to be translated to a code by administrative staff
 
 ## Example
 
 -   The Swedish Hip Arthroplasty Register identified that one hospital appeared to have an unusually high number of patients recorded with severe respiratory problems
 -   At first glance, this raised a clinical question: could hip problems somehow lead to serious breathing problems?
--   However, hip surgery is often performed under general anaesthesia. During general anaesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.
--   It was eventually discovered that a procedural code related to anaesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.
+-   However, hip surgery is often performed under general anesthesia. During general anesthesia, patients are intubated and mechanically ventilated, which involves procedures related to the respiratory system.
+-   It was eventually discovered that a procedural code related to anesthesia and airway management had been incorrectly registered as a severe respiratory diagnosis.
 -   The apparent “complication” was therefore not a real clinical problem, but a coding error.
 
 **Lesson:** Register data reflect coding practices. Without understanding how variables are defined and recorded, one may draw incorrect conclusions.
@@ -100,7 +100,6 @@ bibliography: references.bib
 
 ICD has evolved from a mortality list to a comprehensive disease classification.
 
-
 ## Major ICD Versions
 
 -   ICD-7 (used in many countries in the 1950s–1970s)
@@ -116,7 +115,7 @@ Different countries adopted versions at different times, creating challenges for
 
 ## National Modifications
 
-Many countries use national adaptations:
+Several countries use national adaptations:
 
 -   ICD-10-CM (USA; Clinical Modification)
 -   ICD-10-CA (Canada)
@@ -125,10 +124,10 @@ Many countries use national adaptations:
     -   ICD-10: S72.0 Fracture of neck of femur
     -   ICD-10-SE: S72.00 Fracture of neck of femur, closed; S72.01 Fracture of neck of femur, open; S72.10 Pertrochanteric fracture, closed; S72.11 Pertrochanteric fracture, open, ...
 
--------------
+------------------------------------------------------------------------
 
 | Feature | WHO ICD-10 | ICD-10-SE (Sweden) | ICD-10-CM (USA) |
-|----------|-------------|--------------------|------------------|
+|----------------|----------------|---------------------|-------------------|
 | Maintained by | WHO | Swedish National Board of Health and Welfare (Socialstyrelsen) | U.S. National Center for Health Statistics (NCHS) |
 | Primary purpose | Global disease classification | National clinical and statistical reporting | Clinical documentation and reimbursement |
 | Level of detail | Moderate | More detailed than WHO ICD-10 | Much more detailed than WHO ICD-10 |
@@ -144,7 +143,8 @@ Typical format:
 
 -   One letter (chapter)
 -   Two digits (category)
--   Optional dot and additional digit(s) (subcategory)
+-   Optional dot
+-   additional digit(s) (subcategory)
 
 Example:
 
@@ -184,24 +184,23 @@ Register data therefore reflect both medicine and administration.
 
 Between ICD versions:
 
--   Codes may be split into more detailed categories
--   Codes may be merged
--   Codes may move between chapters
+-   Codes may be split (1-to-many) into more detailed categories (common)
+-   Codes may be merged (many-to-one, although uncommon)
+-   Codes may move between chapters (affects the aggregated chapter counts/incidence/prevalence)
 -   Definitions may change
 
 Example: A condition classified under one chapter in ICD-9 may appear elsewhere in ICD-10.
 
 Implication: Observed changes in incidence may reflect coding changes rather than true epidemiology.
 
-
 ## Crosswalks Between Versions
 
-When analysing long time series:
+When analyzing long time series:
 
 -   Mapping tables (“crosswalks”) are often used
 -   Mapping may be:
     -   One-to-one
-    -   One-to-many (most common)
+    -   One-to-many
     -   Many-to-one
 
 Crosswalks are rarely exact. Information loss or ambiguity is common.
@@ -213,16 +212,16 @@ Aggregation to broader diagnostic groups is often necessary.
 When mapping between ICD versions, different structural relationships may occur.
 
 | Mapping type | ICD-9 (WHO) | ICD-10 (WHO) | Interpretation |
-|---------------|--------------|---------------|----------------|
+|------------------|------------------|------------------|-------------------|
 | One → Many (Split) | 250 – Diabetes mellitus | E10–E14 | One broad ICD-9 category split into multiple etiological types |
-| Many → One (Merge) | 038 – Septicaemia<br>790.7 – Bacteraemia | A41 – Other sepsis | Separate ICD-9 concepts consolidated into broader ICD-10 category |
-| Many ↔ Many (Reorganisation) | 296 – Affective psychoses<br>300 – Neurotic disorders | F30–F39 (Mood disorders)<br>F40–F48 (Neurotic disorders) | Structural reorganisation and conceptual reclassification across chapters |
+| Many → One (Merge) | 038 – Septicaemia; 790.7 – Bacteraemia | A41 – Other sepsis | Separate ICD-9 concepts consolidated into broader ICD-10 category |
+| Many ↔ Many (Reorganisation) | 296 – Affective psychoses; 300 – Neurotic disorders | F30–F39 (Mood disorders); F40–F48 (Neurotic disorders) | Structural reorganisation and conceptual reclassification across chapters |
 | Chapter relocation | 011 – Pulmonary tuberculosis | A15 – Respiratory tuberculosis | Infectious diseases reorganised under new chapter structure |
-
 
 ## Crosswalk before or after
 
 -   The Swedish caner register has an internal "crosswalk" applied uniformly to the register itself
+    -   Updated regularly, [2026 version with 360 pages (in Swedish)](https://www.socialstyrelsen.se/contentassets/73ddf4d21b7d41408b826caf96fa6dd7/2026-1-10005.pdf)
 -   Other registers typically only records the current version in use
 -   If so, you might perform the crosswalk yourself after receiving the data
     -   Applies if you want to look at longer time trends etc or combine data from different periods
@@ -236,7 +235,7 @@ ICD-O (International Classification of Diseases for Oncology):
     -   Topography (tumour site)
     -   Morphology (histology and behaviour)
 -   Current commonly used version: - ICD-O-3
--   Earlier versions: - ICD-O-1 - ICD-O-2
+-   Earlier versions: ICD-O, ICD-O-2
 -   ICD-O is more detailed than ICD-10 for cancer incidence studies.
 
 ## Relationship Between ICD-10 and ICD-O
@@ -244,10 +243,10 @@ ICD-O (International Classification of Diseases for Oncology):
 -   ICD-10 commonly used for mortality and hospital discharge diagnoses
 -   ICD-O primarily used for cancer registry incidence data
 
-A cancer case may have: 
+A cancer case may have:
 
-- An ICD-10 code in hospital data 
-- An ICD-O morphology and topography code in a cancer registry
+-   An ICD-10 code in hospital data
+-   An ICD-O morphology and topography code in a cancer registry
 
 Researchers must understand which system underlies their dataset.
 
@@ -259,15 +258,21 @@ Researchers must understand which system underlies their dataset.
 
 ![](images/paste-31.png)
 
-## Regional Variation in Coding
+## Variation in Coding
 
 Differences between hospitals or regions may arise due to:
 
 -   Coding training
+    -   A primary health care unit may encounter all possible diagnosis (wide but shallow knowledge) while a very specialized unit might have routines for a very narrow but detailed coding
 -   Local guidelines
+    -   Regions are independent in Sweden
 -   Administrative incentives
 -   Reimbursement systems
+    -   public and private health care providers may have different incentives
 -   Electronic health record design
+    -   National registers often relies on combining multiple different sources
+-   Somatic vs psychiatric care
+    -   In psychiatric care, diagnoses may sometimes be recorded with less specificity, potentially due to concerns about stigma or the sensitive nature of certain conditions
 
 Registers capture both clinical events and coding behaviour.
 
@@ -275,52 +280,51 @@ Registers capture both clinical events and coding behaviour.
 
 Important research question:
 
-- Does the code correspond to the true disease?
+-   Does the code correspond to the true disease?
 
-Validation studies compare ICD codes with a reference standard  
+Validation studies compare ICD codes with a reference standard\
 (e.g., chart review, clinical registry, laboratory confirmation).
 
 ## Key Measures of Validity
 
-- **Sensitivity**  
-  Among patients who truly have the disease,  
-  how many receive the correct ICD code?  
-  → Measures undercoding (missed cases).
+-   **Sensitivity**\
+    Among patients who truly have the disease,\
+    how many receive the correct ICD code?\
+    → Measures undercoding (missed cases).
 
-- **Specificity**  
-  Among patients who do not have the disease,  
-  how many are correctly not assigned the code?  
-  → Measures overcoding (false positives).
+-   **Specificity**\
+    Among patients who do not have the disease,\
+    how many are correctly not assigned the code?\
+    → Measures overcoding (false positives).
 
-- **Positive Predictive Value (PPV)**  
-  Among patients assigned the ICD code,  
-  how many truly have the disease?  
-  → Measures how reliable the code is for identifying true cases.
+-   **Positive Predictive Value (PPV)**\
+    Among patients assigned the ICD code,\
+    how many truly have the disease?\
+    → Measures how reliable the code is for identifying true cases.
 
 ## Conceptual 2×2 Table
 
-|                | True disease | No disease |
-|----------------|--------------|------------|
-| ICD code present | True positive | False positive |
-| ICD code absent  | False negative | True negative |
+|                  | True disease   | No disease     |
+|------------------|----------------|----------------|
+| ICD code present | True positive  | False positive |
+| ICD code absent  | False negative | True negative  |
 
-- Sensitivity = True positives / (True positives + False negatives)
-- Specificity = True negatives / (True negatives + False positives)
-- PPV = True positives / (True positives + False positives)
+-   Sensitivity = True positives / (True positives + False negatives)
+-   Specificity = True negatives / (True negatives + False positives)
+-   PPV = True positives / (True positives + False positives)
 
 ## Why It Matters
 
-Low sensitivity → underestimated incidence  
-Low PPV → inflated case counts  
+Low sensitivity → underestimated incidence\
+Low PPV → inflated case counts\
 Variation in validity may depend on:
 
-- Diagnosis (e.g., myocardial infarction vs mild depression)
-- Care setting (inpatient vs primary care)
-- Time period (coding changes)
-- ICD version and national modification
+-   Diagnosis (e.g., myocardial infarction vs mild depression)
+-   Care setting (inpatient vs primary care)
+-   Time period (coding changes)
+-   ICD version and national modification
 
 Not all ICD codes are equally reliable for research.
-
 
 ## Practical Implications for Statisticians
 
@@ -335,18 +339,14 @@ Before analysis, always clarify:
 
 ICD is a classification system. It is not identical to clinical truth. Transparent documentation of code selection is essential for reproducible research.
 
-## ATC
+## ATC for drugs
 
 -   Anatomical Therapeutic Chemical (ATC) classification
 -   categorizing therapeutic drugs,
 -   structured into 14 main groups and 5 levels, with a disease-oriented focus
 -   introduced in the 1960s
 -   In 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”
--   follow a hierarchical structure:
-    -   1 letter
-    -   2 digits
-    -   2 letters
-    -   2 digits
+-   follow a hierarchical structure: 1 letter, 2 digits, 2 letters, 2 digits
     -   Example: `C09AA05`
 -   Several problems exist [@bindel2025] but it is nevertheless widely used
 
@@ -356,88 +356,88 @@ ICD is a classification system. It is not identical to clinical truth. Transpare
 
 ## Sweden
 
-- We have ATC codes in the national prescription register
-- When a doctor prescribes a medicatin, the ATC code will follow automatically
-- Less room for interpretation when coding
-- New medications are introduced over time
-- The Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions
-- Daily updates to the [National Substance Register](https://www.lakemedelsverket.se/en/e-services-and-forms/substance-register-and-product-register/national-substance-register-for-medicinal-products-nsl#hmainbody1)
+-   We have ATC codes in the national prescription register
+-   When a doctor prescribes a medication, the ATC code will follow automatically
+-   Less room for interpretation when coding
+-   New medications are introduced over time
+-   The Swedish Medical Products Agency (MPA; Läkemedelsverket) make such decisions
+-   Daily updates to the [National Substance Register](https://www.lakemedelsverket.se/en/e-services-and-forms/substance-register-and-product-register/national-substance-register-for-medicinal-products-nsl#hmainbody1)
 
 ## Procedure codes
 
-- We use ICD for diagnoses and medical condition
-- But how are patients with such diagnosis treated? 
-- What actions (in addition to the prescription of medicines) do we have?
-- USA has a special version of ICD for this: ICD-10-PCS
-  - PCS = Procedure Coding System
+-   We use ICD for diagnoses and medical condition
+-   But how are patients with such diagnosis treated?
+-   What actions (in addition to the prescription of medicines) do we have?
+-   USA has a special version of ICD for this: ICD-10-PCS
+    -   PCS = Procedure Coding System
 
 ## NOMESCO
 
 In Sweden, medical procedures are coded using the **NOMESCO Classification of Surgical Procedures (NCSP)**.
 
-- Developed by the Nordic Medico-Statistical Committee (NOMESCO)
-- Used in Sweden, Denmark, Finland, Norway, and Iceland
-- Primarily for on surgical procedures
+-   Developed by the Nordic Medico-Statistical Committee (NOMESCO)
+-   Used in Sweden, Denmark, Finland, Norway, and Iceland
+-   Primarily for on surgical procedures
 
 ## KVÅ
 
-- In Sweden implemented through **KVÅ** (Klassifikation av vårdåtgärder)
-- Maintained nationally by Socialstyrelsen
-- Includes the NOMESCO-NCSP codes for surgery
-- Also includes additional codes for non-surgical treatments and activities
-    - Administration of chemotherapy (cytostatic treatment)
-    - Radiotherapy sessions
-    - Dialysis treatment (hemodialysis, peritoneal dialysis)
-    - Blood transfusion
-    - Vaccination
-    - Advanced wound care (non-surgical)
-    - Multidisciplinary team conference (MDT conference)
-    - Smoking cessation counselling
-    - Nutritional counselling
-    - Physiotherapy interventions
-    - Occupational therapy interventions
-    - Psychotherapeutic treatment sessions
-    - Structured patient education programmes
-    - Palliative care planning
+-   In Sweden implemented through **KVÅ** (Klassifikation av vårdåtgärder)
+-   Maintained nationally by Socialstyrelsen
+-   Includes the NOMESCO-NCSP codes for surgery
+-   Also includes additional codes for non-surgical treatments and activities
+    -   Administration of chemotherapy (cytostatic treatment)
+    -   Radiotherapy sessions
+    -   Dialysis treatment (hemodialysis, peritoneal dialysis)
+    -   Blood transfusion
+    -   Vaccination
+    -   Advanced wound care (non-surgical)
+    -   Multidisciplinary team conference (MDT conference)
+    -   Smoking cessation counselling
+    -   Nutritional counselling
+    -   Physiotherapy interventions
+    -   Occupational therapy interventions
+    -   Psychotherapeutic treatment sessions
+    -   Structured patient education programmes
+    -   Palliative care planning
 
 ## Structure
 
-- Alphanumeric codes (typically 5 characters)
-- First letter indicates anatomical or procedural group
-- Subsequent characters specify procedure type and detail
+-   Alphanumeric codes (typically 5 characters)
+-   First letter indicates anatomical or procedural group
+-   Subsequent characters specify procedure type and detail
 
 Example:
 
-- **NFB49** – Primary total hip replacement
-- **JKA20** – Appendectomy
+-   **NFB49** – Primary total hip replacement
+-   **JKA20** – Appendectomy
 
 ## Purpose
 
-- Record surgical and certain non-surgical interventions
-- Used in:
-  - National Patient Register
-  - Quality registers
-  - Reimbursement and administrative reporting
-  - Health services research
+-   Record surgical and certain non-surgical interventions
+-   Used in:
+    -   National Patient Register
+    -   Quality registers
+    -   Reimbursement and administrative reporting
+    -   Health services research
 
 ## Important Distinction
 
-- **ICD-10-SE** → Diagnosis codes
-- **NOMESCO/KVÅ** → Procedure codes
+-   **ICD-10-SE** → Diagnosis codes
+-   **NOMESCO/KVÅ** → Procedure codes
 
 A patient record may therefore contain:
 
-- An ICD diagnosis (e.g., hip fracture)
-- A NOMESCO procedure code (e.g., hip replacement surgery)
+-   An ICD diagnosis (e.g., hip fracture)
+-   A NOMESCO procedure code (e.g., hip replacement surgery)
 
 ## Implications for Research
 
-- Diagnosis and procedure must not be confused
-- Trends in procedures may reflect:
-  - Clinical practice changes
-  - Technology changes
-  - Policy and reimbursement incentives
-- International comparisons require awareness that other countries (e.g., USA) use different coding systems
+-   Diagnosis and procedure must not be confused
+-   Trends in procedures may reflect:
+    -   Clinical practice changes
+    -   Technology changes
+    -   Policy and reimbursement incentives
+-   International comparisons require awareness that other countries (e.g., USA) use different coding systems
 
 NOMESCO codes capture *what was done*, not *what disease the patient had*.
 
@@ -447,34 +447,67 @@ NOMESCO codes capture *what was done*, not *what disease the patient had*.
 
 In Sweden:
 
-- Based on the **NordDRG** system
-- Used for:
-  - Hospital reimbursement
-  - Resource allocation
-  - Health care management
-  - Productivity and efficiency analyses
+-   Based on the **NordDRG** system
+-   Used for:
+    -   Hospital reimbursement
+    -   Resource allocation
+    -   Health care management
+    -   Productivity and efficiency analyses
 
 ## How Is a DRG Determined?
 
 A DRG is assigned based on a combination of:
 
-- Primary diagnosis (ICD-10-SE)
-- Secondary diagnoses
-- Procedure codes (NOMESCO/KVÅ)
-- Age
-- Sex
-- Discharge status
-- Presence of complications or comorbidities
+-   Primary diagnosis (ICD-10-SE)
+-   Secondary diagnoses
+-   Procedure codes (NOMESCO/KVÅ)
+-   Age
+-   Sex
+-   Discharge status
+-   Presence of complications or comorbidities
 
 DRG codes are therefore derived classifications, not primary clinical codes.
 
-
 ## Implications for Research
 
-- DRG reflects resource use, not disease incidence.
-- Changes in reimbursement rules may influence coding behavior.
-- Regional comparisons must consider administrative incentives.
-- DRG is suitable for health services and economic analyses, but less appropriate for etiological research.
+-   DRG reflects resource use, not disease incidence.
+-   Changes in reimbursement rules may influence coding behavior.
+-   Regional comparisons must consider administrative incentives.
+-   DRG is suitable for health services and economic analyses, but less appropriate for etiological research.
+
+## SNOMED CT – What Is It?
+
+**SNOMED CT (Systematized Nomenclature of Medicine – Clinical Terms)** is a large clinical terminology system.
+
+- Maintained by **SNOMED International**
+- Contains **hundreds of thousands of clinical concepts**
+- Designed for **structured documentation in electronic health records**
+
+Unlike ICD or ATC, SNOMED CT is primarily a **terminology**, not a statistical classification.
+
+## Terminology vs Classification
+
+| System | Type | Purpose |
+|------|------|---------|
+| ICD | Classification | Epidemiology and health statistics |
+| ATC | Classification | Drug classification |
+| KVÅ / NOMESCO | Classification | Medical procedures |
+| **SNOMED CT** | Terminology | Detailed clinical documentation |
+
+Classification systems simplify reality for **statistics and reporting**, while terminologies allow **very detailed clinical descriptions**.
+
+## Why SNOMED CT Is Not Widely Used in Registers
+
+Despite its strengths, SNOMED CT is rarely used directly in:
+
+- national health registers
+- epidemiological statistics
+
+Main reasons:
+
+- **Too detailed** for statistical aggregation
+- Harder to ensure consistent coding
+- Statistical reporting systems are built around **ICD**
 
 
 # Regular expressions
@@ -548,16 +581,16 @@ stringfish::sf_grepl(icd, "^[A-Z][0-9]{2}(\\.[0-9])?$", nthreads = 10L)
 -   All acute myocardial infarction codes: `^I21`
 -   In R: `stringr::str_detect(icd, "^I21")`
 
-This selects: 
+This selects:
 
-- `I21` 
-- `I21.0` 
-- `I21.9`
+-   `I21`
+-   `I21.0`
+-   `I21.9`
 
-But not: 
+But not:
 
-- `I20` 
-- `I22`
+-   `I20`
+-   `I22`
 
 ## ATC Code Structure
 
@@ -577,14 +610,14 @@ But not:
 
 ## Implementations
 
--   base R and `{stringr}` both use the same underlying regex engine (PCRE) 
-    - but `{stringr}` is more "user friendly".
+-   base R and `{stringr}` both use the same underlying regex engine (PCRE)
+    -   but `{stringr}` is more "user friendly".
 -   Stringfish seems technically sperior but is less maintained (more of a hobby project).
 
 ## Common Mistakes
 
 -   Forgetting `^` when matching prefixes
-    -   This is even forgotten in the `stringfish::sf_starts()` implementation! [See bug report](https://github.com/traversc/stringfish/issues/25).
+    -   This is problematic even in the `stringfish::sf_starts()` implementation! [See bug report](https://github.com/traversc/stringfish/issues/25).
 -   Forgetting to escape `.`
 -   Not validating full string with `$`
 -   Overmatching (e.g., `I2` instead of `^I21`)
@@ -593,43 +626,43 @@ But not:
 
 To account for overall disease burden, researchers often use established grouping systems, such as:
 
-- **Charlson Comorbidity Index** (ICD)
-- **Elixhauser Comorbidity Index** (ICD)
-- Similar groupings of ATC-codes
-- Combinations of those
+-   **Charlson Comorbidity Index** (ICD)
+-   **Elixhauser Comorbidity Index** (ICD)
+-   Similar groupings of ATC-codes
+-   Combinations of those
 
 These indices:
 
-- Aggregate multiple ICD codes into clinically meaningful comorbidity categories
-- Are commonly used for:
-  - Risk adjustment
-  - Prognostic modelling
-  - Confounding control in observational studies
+-   Aggregate multiple ICD codes into clinically meaningful comorbidity categories
+-   Are commonly used for:
+    -   Risk adjustment
+    -   Prognostic modelling
+    -   Confounding control in observational studies
 
 ## `{decoder}`
 
-- The R package `{decoder}` provides descriptions for many commonly used coding systems.
-- In register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.
-- `{decoder}` allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.
+-   The R package `{decoder}` provides descriptions for many commonly used coding systems.
+-   In register data, you often only have the raw codes (e.g., ICD, ATC), without textual labels.
+-   `{decoder}` allows you to translate codes into meaningful descriptions (in Swedish or English), making interpretation easier and more transparent.
 
-::: {.callout-note}
+::: callout-note
 # Up-to-date?
+
 I am the maintainer of `{decoder}` and `{coder}` but I have not had the time or energy to update them for a cuople of years. There are some reported issues.
 :::
 
 ## `{coder}`
 
-- The R package `{coder}` can be used to aggregate individual diagnosis codes into broader clinical categories.
-- Common applications include:
-  - **Charlson Comorbidity Index**
-  - **Elixhauser Comorbidity Index**
-  - Other diagnosis-based groupings
+-   The R package `{coder}` can be used to aggregate individual diagnosis codes into broader clinical categories.
+-   Common applications include:
+    -   **Charlson Comorbidity Index**
+    -   **Elixhauser Comorbidity Index**
+    -   Other diagnosis-based groupings
 
-This allows:
-- Standardised comorbidity adjustment
-- Transparent and reproducible case definitions
-- Consistent grouping across studies
+This allows: 
 
+- Standardised comorbidity adjustment 
+- (Sort of/relatively ...) transparent and reproducible case definitions 
+- Consistent grouping across studies (hopefully)
 
-
---------------
+------------------------------------------------------------------------

@@ -21,6 +21,7 @@ format:
 bibliography: references.bib
 execute:
   echo: true
+  freeze: true
 ---
 
 ## Reading

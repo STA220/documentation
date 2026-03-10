@@ -18,6 +18,8 @@ format:
           #show link: underline
   docx: default
 bibliography: references.bib
+execute:
+  freeze: true
 ---
 
 ## Important aspects

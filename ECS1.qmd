@@ -4,6 +4,8 @@ subtitle: "Positron, git and GitHub"
 reading: ""
 format: html
 date: last-modified
+execute:
+  freeze: true
 ---
 
 ::: callout-note

@@ -1,0 +1,170 @@
+---
+title: "ECS4: Data project"
+subtitle: ""
+reading: ""
+format: html
+date: last-modified
+---
+
+All remaining computer sessions, as well as the final seminar, will be devoted to a mini-project.
+
+The formal examination consists of:
+
+- A presentation of your work during the final seminar
+- A review of your group's submitted Git repository
+
+::: {.callout-note}
+The GitHub repository itself constitutes the submission. No additional files need to be uploaded to Canvas.
+You should, however, indicate in the Canvas assignment submission when your work is ready for review.
+:::
+
+The scheduled computer sessions are intended for group work, during which the teacher will be available to help. You are of course also free to work on the project outside these hours.
+
+# Group work
+
+For this assignment you will collaborate through GitHub in **groups of two students**.
+
+1. Find a partner.
+2. One of you should start the assignment from Canvas and create a new group (choose any group name).
+3. The other student should then join the same group using the same Canvas link.
+4. Both of you clone the group repository locally.
+
+Once the repository has been created, you should organize your project.
+
+## Suggested workflow
+
+5. Decide how you want to organize your work.
+
+   - I recommend using the `{targets}` package. You are not required to do so, but without a workflow tool your scripts can quickly become difficult to manage when collaborating.
+   - If you want to ensure that you are using exactly the same R version and packages, consider also using [`renv`](https://rstudio.github.io/renv/articles/renv.html).
+   - Otherwise, check that you are using the same R version (`R.version.string`) and run `update.packages(ask = FALSE)` in a fresh R session.
+
+6. Create a basic folder and file structure for the project (you may reuse the example from ECS3).
+7. Add other necessary files such as `README.md` and `.gitignore`.
+8. The person creating the structure commits the changes and pushes them to GitHub.
+9. The other person pulls the changes to obtain the same structure locally.
+
+10. Discuss the direction of your project (see instructions below).
+11. Document your project decisions in the `README.md`.
+12. Use GitHub **issues** to discuss tasks and assign responsibilities.
+13. Work on the tasks, commit changes, push to GitHub, and repeat.
+
+> **Commit early and commit often. Do not wait until the last day to push your work to GitHub.**
+
+::: {.callout-important}
+# Individual grading
+
+Although this is group work, the project will be graded **individually** (pass or fail).
+Git makes it possible to identify which contributions were made by each individual.
+During the final seminar the class will be divided into two groups. One student from each group will present the project during the first hour, and the other student during the second hour.
+You should therefore both be prepared to present the project independently (although you are encouraged to collaborate closely beforehand).
+:::
+
+::: {.callout-tip}
+# Merge conflicts
+
+Since two people may modify the same files simultaneously, you should try to work from the **latest version of the repository** (sync often).
+It is not necessary to work only one at a time, but if conflicting changes are made to the same file you will need to resolve merge conflicts.
+[Instructions for resolving merge conflicts in VS Code / Positron](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
+:::
+
+::: {.callout-tip}
+# Draft files
+
+You may create draft files (for example `R/draft-your-name.R`) where you experiment with code before integrating it into the main workflow or targets pipeline.
+You may also decide that one person primarily handles merge conflicts while the other focuses on preparing the presentation draft.
+[You may want to read this](https://r-cubed-intro.rostools.org/sessions/github#reading-task-collaborating-using-git-and-github)
+:::
+
+# Git repository
+
+- As for previous computer sessions, you will find the GitHub Classroom link in Canvas.
+- This time the repository will initially be empty. It is up to you and your collaborator to organize the project and ensure that your analysis is **reproducible**.
+- You should use the same data as in previous computer sessions, so feel free to reuse any relevant code from those exercises.
+
+## Expected repository contents
+
+Your repository should contain at least:
+
+- reproducible analysis scripts
+- a `README.md` describing the project
+- code needed to reproduce the figures/tables used in the presentation
+- a clear workflow (for example using `{targets}` or similar)
+
+
+# A health data project
+
+In the previous exercises you learned techniques for preparing and validating data before analysis.
+
+Now formulate a simple research question that can be explored using the available datasets (possibly through data linkage between them). The question does **not** need to be novel, but it should be interesting enough for you to investigate.
+
+During the project it is perfectly acceptable to:
+
+- refine your question
+- narrow or broaden the scope
+- adapt your approach based on intermediate findings
+
+Exploratory analysis is also acceptable.
+
+Your project should involve **more than one dataset** and may include additional contextual data (for example aggregated state-level information, translations of medical codes, or other relevant sources). You may also use APIs such as `{pxweb}` or download external datasets if useful.
+
+Your work should include:
+
+- obtaining the data
+- selecting relevant datasets
+- preparing the data (validation, labeling variables, interpreting medical codes, grouping rare categories, etc.)
+- deriving new variables (e.g., age at specific time points)
+- linking/merging datasets
+- investigating your research question
+- presenting your findings using figures, tables, and interpretation
+
+More information about the data can be found in [this GitHub wiki](https://github.com/synthetichealth/synthea/wiki).
+
+::: {.callout-note}
+# Statistical analysis
+You may use formal hypothesis tests, regression analysis or wahthever statistical method you might find relevant (as long as you motivate your choises). Note, however, that this is not a strict requirement. Descriptive statistcs (tables/figures) etc might be enough (it's your choice)!
+:::
+
+
+## Some examples
+
+Some example reports are provided below that illustrate possible analyses and research questions based on the available data. These examples are intended only as inspiration.
+
+You have considerable freedom in how you choose to formulate your research question, structure your analysis, and present your results. You do not need to follow the same approach, methods, structure, or level of detail as in the example reports.
+
+The examples should therefore not be seen as a standard to aim for, either in terms of content or presentation. They are merely provided to help generate ideas if you find it difficult to get started or are unsure about possible directions for the project.
+
+- [Cardiovascular risk analysis](project_examples/cardiovascular_risk_analysis.html)
+- [Healthcare cost analysis](project_examples/healthcare_cost_analysis.html)
+- [Healthcare trends analysis](project_examples/healthcare_trends_analysis.html)
+- [social determinants](project_examples/social_determinants_health_cost_analysis.html)
+
+
+# Presentation
+
+After [EL10](EL10.qmd) you will prepare a presentation of your work.
+
+Think early about how to communicate your results through **figures and tables**, but allow your exploratory analysis to guide your decisions.
+
+Possible tools include:
+
+## Figures
+
+- [ggplot2](https://ggplot2.tidyverse.org)
+- [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
+- [plotly](https://github.com/plotly/plotly.R)
+- base graphics
+- any other tool that produces clear presentation-quality figures
+
+## Tables
+
+- [gt](https://gt.rstudio.com)
+- [gtsummary](https://www.danieldsjoberg.com/gtsummary/)
+- [flextable](https://davidgohel.github.io/flextable/)
+- [kableExtra](https://haozhu233.github.io/kableExtra/)
+
+## Interactive tools (optional)
+
+- [shiny](https://shiny.posit.co)
+- [shinydashboard](https://rstudio.github.io/shinydashboard/)
+- [htmlwidgets](https://www.htmlwidgets.org)

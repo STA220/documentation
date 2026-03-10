@@ -1,5 +1,6 @@
 project:
   type: website
+  resources: project_examples/**
 website:
   title: "STA220"
   site-url: "https://sta220.github.io/documentation/"
@@ -26,6 +27,8 @@ website:
         menu:
           - ECS1.qmd
           - ECS2.qmd
+          - ECS3.qmd
+          - ECS4.qmd
       - text: Seminars
         menu:
           - ES1.qmd
