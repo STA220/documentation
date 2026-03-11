@@ -1071,326 +1071,452 @@
     "text": "Rodrigues, Bruno. 2023. “Building Reproducible Analytical Pipelines with R.” https://raps-with-r.dev/.\n\n\nStaples, Timothy L. 2023. “Expansion and Evolution of the R Programming Language.” Royal Society Open Science 10 (4): 221550. https://doi.org/10.1098/rsos.221550.\n\n\n“The Unix Shell: Summary and Setup.” 2026. https://swcarpentry.github.io/shell-novice/."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Health data",
+    "objectID": "ES2.html",
+    "href": "ES2.html",
+    "title": "ES2: Project presentations",
     "section": "",
-    "text": "This website includes documentation for lectures and exercises concerning the health data part of the course STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
+    "text": "ImportantExamination\n\n\n\nThis seminar is mandatory and active participation is required to pass the course!"
   },
   {
-    "objectID": "index.html#positron-extensions",
-    "href": "index.html#positron-extensions",
-    "title": "Health data",
-    "section": "Positron extensions",
-    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
-  },
-  {
-    "objectID": "index.html#additional-mandatory-reading",
-    "href": "index.html#additional-mandatory-reading",
-    "title": "Health data",
-    "section": "Additional mandatory reading",
-    "text": "Additional mandatory reading\nPDF versions of scientific articles are found in Canvas."
-  },
-  {
-    "objectID": "EL9.html#big-data",
-    "href": "EL9.html#big-data",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#big-data",
+    "href": "EL10.html#big-data",
+    "title": "EL10: Big data",
     "section": "Big data",
     "text": "Big data"
   },
   {
-    "objectID": "EL9.html#biggish-data",
-    "href": "EL9.html#biggish-data",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#biggish-data",
+    "href": "EL10.html#biggish-data",
+    "title": "EL10: Big data",
     "section": "Biggish data",
     "text": "Biggish data\nMy definition:\n\nOnly tabular data\nOriginal data might fit into physical RAM but …\nmight be multiplied due to temporary necessity\nphysical RAM might be constrained due to other processes/settings\nthings might just take too much time … and life is short …"
   },
   {
-    "objectID": "EL9.html#software",
-    "href": "EL9.html#software",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#software",
+    "href": "EL10.html#software",
+    "title": "EL10: Big data",
     "section": "Software",
     "text": "Software\n\nSAS for big data files from register holders\nR for everything else\nDatabase?"
   },
   {
-    "objectID": "EL9.html#file-storage",
-    "href": "EL9.html#file-storage",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#file-storage",
+    "href": "EL10.html#file-storage",
+    "title": "EL10: Big data",
     "section": "File storage",
     "text": "File storage\n\nAvoid reading big files over ethernet connection\n\ndata stored on network drive\n\nUsually faster to first copy file to local SSD drive\n\nfs::file_copy(path, new_path)\n(“libuv provides a wide variety of cross-platform sync and async file system operations.”)\nobviously only if “local drive” is also in the (same) secure environment\n\nwork with the project on disk\nmove back\nAlthough not always possble with very large files it seems"
   },
   {
-    "objectID": "EL9.html#sync_project",
-    "href": "EL9.html#sync_project",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#sync_project",
+    "href": "EL10.html#sync_project",
+    "title": "EL10: Big data",
     "section": "sync_project()",
     "text": "sync_project()\n\nI have a function sync_project() in my .Rprofile\n\nusethis::edit_r_profile()\n\nHowever, I don’t include all data files in each individual project\n“Chek out” all files from network storage to disk\nWork with it\nSync back to allow back-ups and common folder structure\nGit-repo kept for the network storage"
   },
   {
-    "objectID": "EL9.html#reading-sas-files-in-r",
-    "href": "EL9.html#reading-sas-files-in-r",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#reading-sas-files-in-r",
+    "href": "EL10.html#reading-sas-files-in-r",
+    "title": "EL10: Big data",
     "section": "👎 Reading SAS files in R",
     "text": "👎 Reading SAS files in R\n\nCommon to get large register files in SAS-format (SoS, SCB)\n👍 SAS can handle that (files on disk) 😀\n👎 I am a terrible SAS user 🙁\n👎 Seems to be no easy way to read only parts of SAS-files into R directly\nhaven::read_sas()?"
   },
   {
-    "objectID": "EL9.html#havenread_sas",
-    "href": "EL9.html#havenread_sas",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#havenread_sas",
+    "href": "EL10.html#havenread_sas",
+    "title": "EL10: Big data",
     "section": "haven::read_sas()",
-    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x10428d780&gt;\n&lt;environment: namespace:haven&gt;"
+    "text": "haven::read_sas()\n\n👍 May work if big enough RAM …\n👎 Whole file is first read into RAM (readr::datasource(data_file))\n👎 Most time spent on df_parse_sas_file()\n(Same for .dta-files [Stata])\n\n\n\nfunction (data_file, catalog_file = NULL, encoding = NULL, catalog_encoding = encoding, \n    col_select = NULL, skip = 0L, n_max = Inf, cols_only = deprecated(), \n    .name_repair = \"unique\") \n{\n    if (lifecycle::is_present(cols_only)) {\n        lifecycle::deprecate_warn(\"2.2.0\", \"read_sas(cols_only)\", \n            \"read_sas(col_select)\")\n        stopifnot(is.character(cols_only))\n        col_select &lt;- quo(c(!!!cols_only))\n    }\n    else {\n        col_select &lt;- enquo(col_select)\n    }\n    if (is.null(encoding)) {\n        encoding &lt;- \"\"\n    }\n    cols_skip &lt;- skip_cols(read_sas, !!col_select, data_file, \n        encoding = encoding)\n    n_max &lt;- validate_n_max(n_max)\n    spec_data &lt;- readr::datasource(data_file)\n    if (is.null(catalog_file)) {\n        spec_cat &lt;- list()\n    }\n    else {\n        spec_cat &lt;- readr::datasource(catalog_file)\n    }\n    switch(class(spec_data)[1], source_file = df_parse_sas_file(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), source_raw = df_parse_sas_raw(spec_data, \n        spec_cat, encoding = encoding, catalog_encoding = catalog_encoding, \n        cols_skip = cols_skip, n_max = n_max, rows_skip = skip, \n        name_repair = .name_repair), cli_abort(\"This kind of input is not handled.\"))\n}\n&lt;bytecode: 0x106a13438&gt;\n&lt;environment: namespace:haven&gt;"
   },
   {
-    "objectID": "EL9.html#export-from-sas-to-csv",
-    "href": "EL9.html#export-from-sas-to-csv",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#export-from-sas-to-csv",
+    "href": "EL10.html#export-from-sas-to-csv",
+    "title": "EL10: Big data",
     "section": "👍 Export from SAS to csv",
     "text": "👍 Export from SAS to csv\n\nI use SAS code to export only nececary data to csv\nI might use a prefiltering list exported from R to limit the data\nSAS Viya more flexible (I’ve heard) but not SAS 9.4\nUse (set=1000) etc for tests and then run over night\ncsv-files exported to local SSD drive (and then synced back to storage folder)"
   },
   {
-    "objectID": "EL9.html#chatgpt",
-    "href": "EL9.html#chatgpt",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#chatgpt",
+    "href": "EL10.html#chatgpt",
+    "title": "EL10: Big data",
     "section": "ChatGPT",
     "text": "ChatGPT\n\nJag har exporterat en csv-fil från R som innehåller en lista med löpnummer på individer. Jag vill nu använda SAS. Först vill jag läsa in CSV-filen. Sedan vill jag filtrera ett dataset i SAS (vi kan kalla det pelle) som har en kolumn med samma löpnummer som i CSV-filen (jag vill bara ha med de fall där det finns en match). Därefter vill jag exportera resultatet till en ny csv-fil. Jag vill att detta ska ske på ett effektivt och snabbt sätt. Hjälp med med SAS-syntax för detta"
   },
   {
-    "objectID": "EL9.html#ide",
-    "href": "EL9.html#ide",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#ide",
+    "href": "EL10.html#ide",
+    "title": "EL10: Big data",
     "section": "IDE",
     "text": "IDE\n\nRStudio displays object info from the global environment\nThis is inefficient for big data\nWhole session can hang and/or crash\nI recommend Positron\n\nOptimezed View() pane etc\nActive and enthusiastic development\n\nSometimes needed to ditch the IDE completely (even RGui)\n\nRun R from the terminal"
   },
   {
-    "objectID": "EL9.html#from-csv-to-r",
-    "href": "EL9.html#from-csv-to-r",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#from-csv-to-r",
+    "href": "EL10.html#from-csv-to-r",
+    "title": "EL10: Big data",
     "section": "From csv to R",
     "text": "From csv to R\n\ndata.table::fread() is super good as long as the data can fit into RAM\n\nIf necessary pre-process by awk\n\n{vroom} use ALTREP and might be faster for character data\nBoth data.table::fread() and {vroom} are multithreaded but vroom has lazy evaluation (good and bad)\narrow::open_csv_dataset() can be good (if data does not fit into RAM but I prefer .parquette if so)"
   },
   {
-    "objectID": "EL9.html#altrep",
-    "href": "EL9.html#altrep",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#altrep",
+    "href": "EL10.html#altrep",
+    "title": "EL10: Big data",
     "section": "ALTREP?",
     "text": "ALTREP?\n\nALTernative REPresentation of R Objects\nSince R version 3.5.0\nApplies to the C-level representation of R objects under the hood\nUsed by some base R packages/functions + specialized packages\n\n\nallow vector data to be in a memory-mapped file; distributed, e.g. within Apache Spark or Hadoop; shared with other applications, e.g. with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments."
   },
   {
-    "objectID": "EL9.html#database-1",
-    "href": "EL9.html#database-1",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#database-1",
+    "href": "EL10.html#database-1",
+    "title": "EL10: Big data",
     "section": "Database?",
     "text": "Database?\n\nI don’t want to administer Microsoft SQL Server myself!\n\n(They had R support for a couple of years but not any more)\n\nSQLight is easy to use …\nbut (as SQL server) it is row based 🙁\nSome complicated ones are column based 😀 (Snowflake, Google Big Query)\n\n… but I don’t want to administer those either …\n\nDuckDB comes for rescue!\n\n\n\n\n\n\n\nIndices\n\n\nNever forget to set proper indices if needed!"
   },
   {
-    "objectID": "EL9.html#duckdb",
-    "href": "EL9.html#duckdb",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#duckdb",
+    "href": "EL10.html#duckdb",
+    "title": "EL10: Big data",
     "section": "DuckDB",
     "text": "DuckDB\n\nFree and open source (backed by foundation)\nColumn based\nVery easy to set up\nVery efficient!\nIntegration with tidyverse in R\nCan be used both with disk data and data in RAM\n… but I had some bad experience and now I am scared 😢"
   },
   {
-    "objectID": "EL9.html#from-csv-to-parquet",
-    "href": "EL9.html#from-csv-to-parquet",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#from-csv-to-parquet",
+    "href": "EL10.html#from-csv-to-parquet",
+    "title": "EL10: Big data",
     "section": "From CSV to Parquet",
     "text": "From CSV to Parquet\n\nCSV is not very nice 🙁\n\nNo meta data\nSensitive to errors (missing values, decimal point, numbers with leading 0 etc, although fread can take care of this)\nEncoding, BOM, whatever …\n\nWrite to Parquet files\nI don’t think it is possible to convert csv to parquett on disk (first read csv, then write parquette)\n\nBut it can be done in chunks (read portion of csv and write to individual parquet file which are later “combined”)"
   },
   {
-    "objectID": "EL9.html#parquet",
-    "href": "EL9.html#parquet",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#parquet",
+    "href": "EL10.html#parquet",
+    "title": "EL10: Big data",
     "section": "Parquet",
     "text": "Parquet\n\nFrom Apache Arrow\nOpen format\nflat files with possible hierarchical structure by transparent structure of folders and filenames\nIntegrates with DuckDB (which integrates with R/tidyverse)\nSee example later!"
   },
   {
-    "objectID": "EL9.html#r-specific-data-files",
-    "href": "EL9.html#r-specific-data-files",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#r-specific-data-files",
+    "href": "EL10.html#r-specific-data-files",
+    "title": "EL10: Big data",
     "section": "R specific data files?",
     "text": "R specific data files?\n\nI use .qd-files (previously .qs) to cache non-tabular or intermediate data objects\n\n\n{qs2}: a framework for efficient serialization … The qs2 format directly uses R serialization (via the R_Serialize/R_Unserialize C API) while improving underlying compression and disk IO patterns.\n\n\n.RData is terribly slow!\n.rds should now be much faster than before (serialized)\n.fst might be better in some cases but .qd/.qs is more generic (I think)"
   },
   {
-    "objectID": "EL9.html#data.table",
-    "href": "EL9.html#data.table",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#data.table",
+    "href": "EL10.html#data.table",
+    "title": "EL10: Big data",
     "section": "{data.table}",
     "text": "{data.table}\n\nShare basic properties with data frames (dt[i, j]; merge())\nPrint method inspired by {tibble}\nSome old friends from {reshape2}: melt(), dcast()\nHas been around since 2006 (stable and well used, older than tidyverse)\nfaster alternatives to base: fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%\nC and GForce (some difficulties on Mac …)\ninteger based keys and indices (compare data bases)\nReference semantics (no need to copy on modification)\nVery flexible and compact (but perhaps unusual) syntax"
   },
   {
-    "objectID": "EL9.html#example",
-    "href": "EL9.html#example",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#example",
+    "href": "EL10.html#example",
+    "title": "EL10: Big data",
     "section": "Example",
-    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-11\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-11\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-11\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-11\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-11\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-13\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-13\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-13\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-13\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-13\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-11\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-11\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-11\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-11\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-11\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-13\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-13\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-13\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-13\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-13"
+    "text": "Example\n\nlibrary(data.table)\ndt &lt;- iris\nsetDT(dt)\nsetkey(iris)\niris\n\nKey: &lt;Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species&gt;\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;\n  1:          4.3         3.0          1.1         0.1    setosa\n  2:          4.4         2.9          1.4         0.2    setosa\n  3:          4.4         3.0          1.3         0.2    setosa\n  4:          4.4         3.2          1.3         0.2    setosa\n  5:          4.5         2.3          1.3         0.3    setosa\n ---                                                            \n146:          7.7         2.6          6.9         2.3 virginica\n147:          7.7         2.8          6.7         2.0 virginica\n148:          7.7         3.0          6.1         2.3 virginica\n149:          7.7         3.8          6.7         2.2 virginica\n150:          7.9         3.8          6.4         2.0 virginica\n\ndt[, .N, Species]\n\n      Species     N\n       &lt;fctr&gt; &lt;int&gt;\n1:     setosa    50\n2: versicolor    50\n3:  virginica    50\n\ndt[, date := as.IDate(Sys.Date()) + .GRP, Species][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;fctr&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-12\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-12\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-12\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-12\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-12\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-14\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-14\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-14\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-14\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-14\n\ndt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]\n\n     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species       date\n            &lt;num&gt;       &lt;num&gt;        &lt;num&gt;       &lt;num&gt;    &lt;char&gt;     &lt;IDat&gt;\n  1:          4.3         3.0          1.1         0.1    setosa 2026-03-12\n  2:          4.4         2.9          1.4         0.2    setosa 2026-03-12\n  3:          4.4         3.0          1.3         0.2    setosa 2026-03-12\n  4:          4.4         3.2          1.3         0.2    setosa 2026-03-12\n  5:          4.5         2.3          1.3         0.3    setosa 2026-03-12\n ---                                                                       \n146:          7.7         2.6          6.9         2.3 virginica 2026-03-14\n147:          7.7         2.8          6.7         2.0 virginica 2026-03-14\n148:          7.7         3.0          6.1         2.3 virginica 2026-03-14\n149:          7.7         3.8          6.7         2.2 virginica 2026-03-14\n150:          7.9         3.8          6.4         2.0 virginica 2026-03-14"
   },
   {
-    "objectID": "EL9.html#if-it-doesnt-fit",
-    "href": "EL9.html#if-it-doesnt-fit",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#if-it-doesnt-fit",
+    "href": "EL10.html#if-it-doesnt-fit",
+    "title": "EL10: Big data",
     "section": "If it doesn’t fit?",
     "text": "If it doesn’t fit?\n\nConnect to parquet file.\nUse DuckDB to process the data (while still on disk)\nUse {dplyr} to translate its syntax into SQL code\nProcess data on disk\nOnly read the results into memory"
   },
   {
-    "objectID": "EL9.html#example-1",
-    "href": "EL9.html#example-1",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#example-1",
+    "href": "EL10.html#example-1",
+    "title": "EL10: Big data",
     "section": "Example",
     "text": "Example\n\nlibrary(tidyverse)\ndb1 &lt;-\n  arrow::open_dataset(\"file1.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  select(col1:col3) |&gt;\n  filter(...) |&gt;\n  pivot_wider(..) \n\ndb2 &lt;-\n  arrow::open_dataset(\"file2.parquet\") |&gt;\n  arrow::to_duckdb() |&gt;\n  count(x, y) |&gt;\n  filter(...)\n\ndf &lt;- \n  db1 |&gt;  \n  left_join(db2) |&gt;\n  collect() # Only the resulting part should be collected!"
   },
   {
-    "objectID": "EL9.html#duckplyr",
-    "href": "EL9.html#duckplyr",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#duckplyr",
+    "href": "EL10.html#duckplyr",
+    "title": "EL10: Big data",
     "section": "DuckPlyr",
     "text": "DuckPlyr\n\nNew package with API-calls to DuckDB (no standard SQL code in between … I think)\nDrop-in-replacement of {dplyr}\nAutomatically fail-safe to collect and use standard {dplyr} if needed\nUptimized engine to not touch more data than necessary!\nAlthough very limited functionality so far (but wait and see!)"
   },
   {
-    "objectID": "EL9.html#dates",
-    "href": "EL9.html#dates",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#dates",
+    "href": "EL10.html#dates",
+    "title": "EL10: Big data",
     "section": "Dates",
     "text": "Dates\n\nUse as.IDate() instead of as.Date() if using {data.table}. Integer based.\nUse {anytime} (or maybe {fasttime}) if conversion is needed (ALTREP)"
   },
   {
-    "objectID": "EL9.html#string-manipulation",
-    "href": "EL9.html#string-manipulation",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#string-manipulation",
+    "href": "EL10.html#string-manipulation",
+    "title": "EL10: Big data",
     "section": "String manipulation",
     "text": "String manipulation\n\nCharacter manipulation in base R can be quite slow (does not use ALTREP and only single core by default)\n\nFor example regular expressions (grep(), gsub() etc)\n\n{stringfish} use multithreads and ALTREP - much faster!"
   },
   {
-    "objectID": "EL9.html#paralellization-1",
-    "href": "EL9.html#paralellization-1",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#paralellization-1",
+    "href": "EL10.html#paralellization-1",
+    "title": "EL10: Big data",
     "section": "Paralellization",
     "text": "Paralellization\n\nR is single threaded by default\nSome packages and functions may use multithreading by default\nSome functions might have arguments such as nthreads, ncores etc\nTo handle multicore/thread computations can be (very) difficult (I’ve heard)\nEasy if data can be divided and conquered (split-apply-combine)\n{futureverse} is my favorite (Henrik Bengtsson)\n\n{furrr} is a a drop-in replacement for {purrr}"
   },
   {
-    "objectID": "EL9.html#furrr",
-    "href": "EL9.html#furrr",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#furrr",
+    "href": "EL10.html#furrr",
+    "title": "EL10: Big data",
     "section": "{furrr}",
     "text": "{furrr}\n\n# How many cores do we have?\nparallel::detectCores()\n\n[1] 12\n\nlibrary(furrr)\n# Save at least one for OS etc\nplan(multisession, workers = parallel::detectCores() - 1)\n\n1:10 |&gt; \n  future_map(rnorm, n = 10, .options = furrr_options(seed = 123)) |&gt; \n  future_map_dbl(mean)\n\n [1] 1.180279 2.140442 2.909823 3.692207 5.058100 6.653926 7.065630 7.960713\n [9] 9.105674 9.766827"
   },
   {
-    "objectID": "EL9.html#mirai",
-    "href": "EL9.html#mirai",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#mirai",
+    "href": "EL10.html#mirai",
+    "title": "EL10: Big data",
     "section": "{mirai}",
     "text": "{mirai}\n\nSuposed to be up to 1,000 times “faster” compared to {furrr}(according to some metric …)\nshould not block the main process while executing (haven’t tried)\n\n\nDesigned for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.\n\n\nlibrary(mirai)\ndaemons(11, dispatcher = \"thread\") # \"thread\" still experimental\n\n# data.table with 1 billion rows:\ndt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))\n# row sums (row wise )\nmirai_map(dt, sum)[.flat]"
   },
   {
-    "objectID": "EL9.html#note",
-    "href": "EL9.html#note",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#note",
+    "href": "EL10.html#note",
+    "title": "EL10: Big data",
     "section": "Note",
     "text": "Note\n\nData must be copied for each paralell worker\nIf all data is needed for each worker, it will be multiplied in memory\n\nThis might not be possible for big data\nIt also takes time\n\nHence, there is no guarantee that the over all time will decrease\nOften a tradeof between no of workers/threads/deamons/cores and efficiency etc\n“Standard” computations in {data.table} is optimized for single core\nMessage handling and progress bar etc is complicated"
   },
   {
-    "objectID": "EL9.html#caching",
-    "href": "EL9.html#caching",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#caching",
+    "href": "EL10.html#caching",
+    "title": "EL10: Big data",
     "section": "Caching",
     "text": "Caching\n\nI use {ProjectTemplate} to organize R projects into different steps\nIt has an inbuilt cache mechanism through ProjectTemplate::cache()\nI have my own cache-functions in my .Rprofile\n\n\n# OBS kollar inte att det verkligen finns cache-folder etc\ncache_dt &lt;- function(x, name = deparse(substitute(x)), nthreads = 5) {\n  qs2::qd_save(x, glue::glue(\"cache/{name}.qd\"), nthreads = nthreads)\n  invisible(x)\n}\n\ndecache_dt &lt;- function(name, nthreads = 5) {\n  x &lt;- qs2::qd_read(glue::glue(\"cache/{name}.qd\"), TRUE, nthreads = nthreads)\n  if (data.table::is.data.table(x)) {\n    data.table::setDT(x)\n  }\n  assign(name, x, envir = .GlobalEnv)\n  invisible(x)\n}"
   },
   {
-    "objectID": "EL9.html#intermediate-caching",
-    "href": "EL9.html#intermediate-caching",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#intermediate-caching",
+    "href": "EL10.html#intermediate-caching",
+    "title": "EL10: Big data",
     "section": "Intermediate caching",
     "text": "Intermediate caching\n\nFor long running function calls (hours, days)\nDivide task into smaller pieces and execute each part in paralell if feasable\nUse wrapper function with some index/grouping variable to indicate which part is currently processed\nCache intermediate object as soon as possible (with name based on the grouping variable)\nIf process is disrupted and must be restarted, parts which are already executed are just retrieved from from cache\n\n\ncache_wrapper &lt;- function(dt_part, name, ...) {\n  if (fs::file_exists(glue::glue(\"cache/{name}.qd\"))) {\n    decache_dt(name)\n  } else {\n    x &lt;- do_what_should_be_done()\n    cache_dt(x, name, ...)\n    x\n  }\n}"
   },
   {
-    "objectID": "EL9.html#profiling",
-    "href": "EL9.html#profiling",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#profiling",
+    "href": "EL10.html#profiling",
+    "title": "EL10: Big data",
     "section": "Profiling",
     "text": "Profiling\n\nFirst version of R script might be inneficient\nOptimazation is difficult\nMight be suboptimal if made ad hoc\n{profvis} visualise time and memory usage for each step\nimprove the most important step first\n\nFor example change {base} and {tidyverse} code to {data.table}\nset keys\nEfficient handling of dates and strings\n\nitterate\nIntegrated in RStudio (but not yet Positron)"
   },
   {
-    "objectID": "EL9.html#modify-packages-1",
-    "href": "EL9.html#modify-packages-1",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#modify-packages-1",
+    "href": "EL10.html#modify-packages-1",
+    "title": "EL10: Big data",
     "section": "Modify packages",
     "text": "Modify packages\n\nFunctions from packages might be inefficient\nProfile those as well\nClone package from GitHub if available or download source code from CRAN\nImprove\nJust load the modified function in global environment\n\nmight need to modify internal calls to :::-accesed functions\n\nOr rebuild/install the package if more convenient\n\n\n\n\n\n\n\nNotify maintainer\n\n\nIf you find ways to improve a package, the maintainer might be eager to hear! Suggest pull request or open GitHub issue!"
   },
   {
-    "objectID": "EL9.html#c-code-changes",
-    "href": "EL9.html#c-code-changes",
-    "title": "EL9: Big data",
+    "objectID": "EL10.html#c-code-changes",
+    "href": "EL10.html#c-code-changes",
+    "title": "EL10: Big data",
     "section": "C-code changes",
     "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE?)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
   },
   {
-    "objectID": "ECS3.html",
-    "href": "ECS3.html",
-    "title": "ECS3: Data formats and regex",
+    "objectID": "EL8.html#reading",
+    "href": "EL8.html#reading",
+    "title": "EL8: Health care registers",
+    "section": "Reading",
+    "text": "Reading\n\nHiyoshi (2026) gives a brief and recent introduction and to all registers covered in this lecture.\nLudvigsson et al. (2016) provides an excellent overview of the Swedish population registers and their use in medical research.\n\nThe Personal Data Act (PUL) has been replaced by GDPR.\nThe former Regional Ethical Review Boards were replaced in 2019 by a single national authority, the Swedish Ethical Review Authority (Etikprövningsmyndigheten)\nThe legislation governing legal gender recognition has been revised, with a new law adopted in 2024 and entering into force in 2025."
+  },
+  {
+    "objectID": "EL8.html#types-of-registers",
+    "href": "EL8.html#types-of-registers",
+    "title": "EL8: Health care registers",
+    "section": "Types of registers",
+    "text": "Types of registers\nNational health registers\n\nmandated by law\nSometimes with regional data collection and yearly updates\nGoverned by state authority\n\nQuality registers\n\nVolontary for health care providers but commonly adopted\nopt-out for individuals\nA typically Swedish concept\nmore than 100 in Sweden\nBut similar data collections in other countries by other names\nGoverned by regional authorities\nCollaboration within The Swedish Association of Local Authorities and Regions (SALAR/SKR)"
+  },
+  {
+    "objectID": "EL8.html#swedish-medical-birth-register",
+    "href": "EL8.html#swedish-medical-birth-register",
+    "title": "EL8: Health care registers",
+    "section": "Swedish Medical Birth Register",
+    "text": "Swedish Medical Birth Register\n\nEstablished in 1973\nCovers pregnancies resulting in delivery in Sweden\nIncludes live births and stillbirths from gestational week 22+0\nContains information reported by maternal care, delivery care, and neonatal care\n\nMain variables include:\n\nmother’s previous pregnancies, smoking status, delivery clinic\ngestational age, pain relief, and mode of delivery\ndiagnoses and procedures for mother and child\nchild’s sex, weight, length, head circumference, and condition at birth"
+  },
+  {
+    "objectID": "EL8.html#national-register-of-congenital-anomalies",
+    "href": "EL8.html#national-register-of-congenital-anomalies",
+    "title": "EL8: Health care registers",
+    "section": "National Register of Congenital Anomalies",
+    "text": "National Register of Congenital Anomalies\n\nSurveillance register for congenital malformations (ICD-10) and chromosomal abnormalities\nFor live births and stillbirths (≥22 weeks gestation)\nAlso includes anonymised data on terminated pregnancies due to fetal anomalies\n\nBackground\n\nmonitoring of congenital anomalies started in 1964 following the Thalidomide (Neurosedyn) scandal\nintegrated with the Medical Birth Register in 1973\nreporting expanded in 1999 to include terminated pregnancies due to fetal anomalies"
+  },
+  {
+    "objectID": "EL8.html#population-registration",
+    "href": "EL8.html#population-registration",
+    "title": "EL8: Health care registers",
+    "section": "Population registration",
+    "text": "Population registration\n\nMaintained by the Tax Agency\n\nadministrative register used for legal residence and taxation\n\nPersonal identity number assigned at birth (at the hospital)\nLegal sex registered as part of the personal identity number\nChild’s given name decided by parents and reported to the Tax Agency within 3 months\nRegistration of municipality of residence (and thereby county)\nRegistration district (earlier parish, now district)\nRegistered residential address\nMigration events (immigration and emigration)\nChanges of address within Sweden\nMarital status and family relations\nDate of death"
+  },
+  {
+    "objectID": "EL8.html#the-total-population-register-rtp",
+    "href": "EL8.html#the-total-population-register-rtp",
+    "title": "EL8: Health care registers",
+    "section": "The Total population Register (RTP)",
+    "text": "The Total population Register (RTP)\n\nmaintained by Statistics Sweden (SCB)\nbased on data from the Population registration\nstructured for statistical analysis and research\nused as the sampling frame for surveys and register-based studies"
+  },
+  {
+    "objectID": "EL8.html#childhood",
+    "href": "EL8.html#childhood",
+    "title": "EL8: Health care registers",
+    "section": "Childhood",
+    "text": "Childhood\nDuring childhood and school years, health information is collected through:\n\nChild health services (BVC)\nSchool health services\nVaccination records\nExaminations by school nurses or physicians\ndentists etc\n\nIn contrast to many other stages of life in Sweden, these data are not collected in a national register."
+  },
+  {
+    "objectID": "EL8.html#vaccination-register",
+    "href": "EL8.html#vaccination-register",
+    "title": "EL8: Health care registers",
+    "section": "Vaccination Register",
+    "text": "Vaccination Register\n\nNational register maintained by the Public Health Agency of Sweden (Folkhälsomyndigheten)\nEstablished in 2013\nPrimarily covers vaccinations given within national vaccination programmes\n\nIncludes\n\nvaccine administered\ndate of vaccination\ndose number\nhealthcare provider\n\nPurpose\n\nmonitor vaccination coverage\ndetect changes in uptake\nsupport surveillance of vaccine-preventable diseases\n\nLimitations\n\nvaccinations given outside national programmes (e.g. travel vaccines) may not be fully captured\nreporting comes from many providers (regions, schools, private clinics)\n\ntherefore coverage may vary for some vaccines"
+  },
+  {
+    "objectID": "EL8.html#military-conscription",
+    "href": "EL8.html#military-conscription",
+    "title": "EL8: Health care registers",
+    "section": "Military conscription",
+    "text": "Military conscription\nThe conscription register contains information from military conscription examination\n\nphysical measurements (e.g. height, weight)\ncognitive ability tests\npsychological assessments\nhealth status and diagnoses\nphysical fitness\n\nImportant characteristics:\n\ncovers most Swedish men born roughly 1951–1990\nInactive 2010-2016\nBoth men and women since 2017 (but only approximately 25 %)\nexaminations typically performed at age 18–19\ndata collected by the Swedish Armed Forces\n\nImplications for research:\n\nprovides rich health and ability data in late adolescence for historic cohort\nwidely used in epidemiological and social science research\nmainly includes men, which limits generalisability"
+  },
+  {
+    "objectID": "EL8.html#swedish-dental-health-register",
+    "href": "EL8.html#swedish-dental-health-register",
+    "title": "EL8: Health care registers",
+    "section": "Swedish Dental Health Register",
+    "text": "Swedish Dental Health Register\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nEstablished in 2008\nIncludes adults (≥20 years)\n\nMain variables include:\n\ndental diagnoses\ndental procedures (treatment codes)\ndental status (e.g. number of remaining teeth)\ntreatment dates\ntreatment costs and reimbursement\n\nImportant characteristics:\n\nbased on reports submitted within the national dental care subsidy system\nincludes both public and private dental care providers"
+  },
+  {
+    "objectID": "EL8.html#screening-registers",
+    "href": "EL8.html#screening-registers",
+    "title": "EL8: Health care registers",
+    "section": "Screening registers",
+    "text": "Screening registers\n\nbreast cancer (mammography)\ncervical cancer\ncolorectal cancer\n\nThese programmes aim to detect disease at an early stage in otherwise healthy individuals.\nData from screening programmes are often stored in regional systems and coordinated nationally through:\n\nnational screening programmes\nnational quality registers\nregional cancer centres (RCC)"
+  },
+  {
+    "objectID": "EL8.html#national-patient-register-npr",
+    "href": "EL8.html#national-patient-register-npr",
+    "title": "EL8: Health care registers",
+    "section": "National Patient Register (NPR)",
+    "text": "National Patient Register (NPR)\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nCovers specialised health care in Sweden\nData are collected by regions and healthcare providers and then reported to the national register\n\nCoverage\n\ninpatient care since the 1960s\nnationwide coverage since 1987\nspecialised outpatient care since 2001"
+  },
+  {
+    "objectID": "EL8.html#primary-care-data",
+    "href": "EL8.html#primary-care-data",
+    "title": "EL8: Health care registers",
+    "section": "Primary care data",
+    "text": "Primary care data\nPrimary care accounts for a large share of health care contacts in Sweden, but there is still no comprehensive national primary care register comparable to NPR.\n\nmost primary care data are stored in regional electronic health record systems\nreporting practices differ between regions\nnational coverage for research and statistics is therefore limited\n\nRecent developments\n\nthere have been long-standing discussions about establishing a national primary care register\nthe National Board of Health and Welfare has begun collecting some aggregated primary care statistics\nseveral pilot initiatives and data collections are ongoing"
+  },
+  {
+    "objectID": "EL8.html#prescribed-drug-register-pdr",
+    "href": "EL8.html#prescribed-drug-register-pdr",
+    "title": "EL8: Health care registers",
+    "section": "Prescribed Drug Register (PDR)",
+    "text": "Prescribed Drug Register (PDR)\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nCovers dispensed prescription drugs from Swedish pharmacies\nEstablished in 2005\nNationwide coverage\n\n\n\n\nProfession\nPrescribing rights\n\n\n\n\nPhysicians\nBroad prescribing rights (most medications)\n\n\nDentists\nMedications related to dental care\n\n\nMidwives\nSelected medications (e.g., contraceptives)\n\n\nNurses\nLimited list of medications after additional training\n\n\nOptometrists\nCertain diagnostic eye medications"
+  },
+  {
+    "objectID": "EL8.html#cancer-register",
+    "href": "EL8.html#cancer-register",
+    "title": "EL8: Health care registers",
+    "section": "Cancer Register",
+    "text": "Cancer Register\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nEstablished in 1958\nCovers all newly diagnosed malignant tumors in Sweden\nBased on “primary tumour”\n\nReporting is mandatory for clinicians (“A-anmälan”) and pathology laboratories (“B-anmälan”).\nIncludes\n\ndate of diagnosis\ntumor site and morphology\nstage and diagnostic basis\nreporting clinic and region\n\nDiagnoses are classified using ICD and ICD-O codes."
+  },
+  {
+    "objectID": "EL8.html#strengths-and-limitations",
+    "href": "EL8.html#strengths-and-limitations",
+    "title": "EL8: Health care registers",
+    "section": "Strengths and limitations",
+    "text": "Strengths and limitations\nStrengths:\n\none of the oldest nationwide cancer registers in the world\nhigh completeness due to mandatory reporting\nenables long-term studies of cancer incidence and survival\n\nLimitations:\n\nlimited information on treatment and outcomes\nadditional clinical details often require linkage to quality registers or NPR"
+  },
+  {
+    "objectID": "EL8.html#other-disease-specific-registers",
+    "href": "EL8.html#other-disease-specific-registers",
+    "title": "EL8: Health care registers",
+    "section": "Other disease-specific registers",
+    "text": "Other disease-specific registers\nThe Swedish Cancer Register is one of the few nationwide disease-specific health data registers.\nSome other diagnoses are monitored through national systems, often related to infectious disease surveillance.\nExamples:\n\nHIV (InfCare HIV register)\nnotifiable infectious diseases reported through SmiNet\ntuberculosis surveillance systems\nhepatitis registers\n\nCharacteristics\n\noften linked to infectious disease control\nreporting may be mandatory under the Communicable Diseases Act\nmaintained by the Public Health Agency of Sweden"
+  },
+  {
+    "objectID": "EL8.html#cause-of-death-register",
+    "href": "EL8.html#cause-of-death-register",
+    "title": "EL8: Health care registers",
+    "section": "Cause of Death Register",
+    "text": "Cause of Death Register\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nEstablished in 1952\nCovers all deaths among persons registered in Sweden\nInformation is based on death certificates completed by physicians.\nDiagnoses are classified using ICD codes. Currently ICD-10 (not ICD-10-SE)"
+  },
+  {
+    "objectID": "EL8.html#lisa",
+    "href": "EL8.html#lisa",
+    "title": "EL8: Health care registers",
+    "section": "LISA",
+    "text": "LISA\nNot a health care register but often used for background data.\n\nLongitudinal Integration Database for Health Insurance and Labour Market Studies\nMaintained by Statistics Sweden (SCB)\nEstablished in 1990, with data available annually from that year\n\nThe database contains socioeconomic information for all individuals aged 16 and older registered in Sweden.\nPurpose\n\nprovide background variables for research and statistics\nenable studies of social determinants of health"
+  },
+  {
+    "objectID": "EL8.html#social-services-registers-sol",
+    "href": "EL8.html#social-services-registers-sol",
+    "title": "EL8: Health care registers",
+    "section": "Social services registers (SoL)",
+    "text": "Social services registers (SoL)\nMaintained by the National Board of Health and Welfare (Socialstyrelsen).\nData reported under the Social Services Act (SoL).\nExamples\n\nsocial assistance (economic support)\ninterventions for children and adolescents\nsubstance abuse treatment\nsome elderly care services\n\nPurpose:\n\nmonitor social welfare services\nsupport research on social determinants of health"
+  },
+  {
+    "objectID": "EL8.html#social-insurance-registers",
+    "href": "EL8.html#social-insurance-registers",
+    "title": "EL8: Health care registers",
+    "section": "Social insurance registers",
+    "text": "Social insurance registers\nRegisters on sickness absence and social insurance are maintained by the Swedish Social Insurance Agency (Försäkringskassan).\nExamples\n\nsickness benefit (sick leave compensation)\ndisability pension\nparental leave benefits\nwork injury compensation\n\nMain variables\n\nbenefit type\nstart and end dates\ndegree of compensation (e.g. 25–100%)\ndiagnosis for sickness absence\ndemographic information\n\nImportant characteristics\n\nbased on administrative data used for benefit decisions\nwidely used in research on work ability, labour market participation, and health\n\nThese registers complement health registers by providing information on functional consequences of disease, such as long-term sickness absence."
+  },
+  {
+    "objectID": "EL8.html#national-quality-registers",
+    "href": "EL8.html#national-quality-registers",
+    "title": "EL8: Health care registers",
+    "section": "National Quality Registers",
+    "text": "National Quality Registers\nNational quality registers collect detailed clinical information on specific diseases or treatments.\nThey are designed to:\n\nmonitor and improve quality of care\nsupport clinical quality improvement\n\nBut they can also be used for research\nTypical characteristics:\n\nfocus on specific diagnoses, treatments, or procedures\ncontain more detailed clinical data than national health data registers\nparticipation is generally voluntary for healthcare providers\n\nThere are currently around 100 national quality registers in Sweden."
+  },
+  {
+    "objectID": "EL8.html#organisation",
+    "href": "EL8.html#organisation",
+    "title": "EL8: Health care registers",
+    "section": "Organisation",
+    "text": "Organisation\nQuality registers are typically organised by clinical communities.\nKey actors include:\n\nclinicians and researchers responsible for the register\nsteering groups for each register\nregional cancer centres and register centers\nThe system is nationally coordinated by the Swedish Association of Local Authorities and Regions (SALAR / SKR)\nRegisters are usually hosted by regional healthcare organisations and funded through national and regional support.\nQuality registers therefore complement national health data registers by providing more detailed clinical information."
+  },
+  {
+    "objectID": "EL8.html#promprem",
+    "href": "EL8.html#promprem",
+    "title": "EL8: Health care registers",
+    "section": "PROM/PREM",
+    "text": "PROM/PREM\nIn addition to clinical data, many registers also collect:\n\nPROM – Patient Reported Outcome Measures\nPREM – Patient Reported Experience Measures\n\nThese variables capture:\n\npatients’ own assessment of health status\nquality of care from the patient perspective"
+  },
+  {
+    "objectID": "EL8.html#the-swedish-register-ecosystem",
+    "href": "EL8.html#the-swedish-register-ecosystem",
+    "title": "EL8: Health care registers",
+    "section": "The Swedish register ecosystem",
+    "text": "The Swedish register ecosystem\nSweden has a unique infrastructure of population-based registers that can be linked using the personal identity number.\n\n\n\n\n\n\n\n\nRegister type\nExamples\nMaintained by\n\n\n\n\nPopulation registers\nPopulation Register / RTB\nStatistics Sweden (SCB)\n\n\nSocioeconomic registers\nLISA database\nStatistics Sweden (SCB)\n\n\nHealth data registers\nNPR, MBR, PDR, Cancer Register, Cause of Death Register, Dental Health Register\nNational Board of Health and Welfare\n\n\nInfectious disease surveillance\nNational Vaccination Register, SmiNet\nPublic Health Agency of Sweden\n\n\nSocial insurance registers\nSickness absence, disability benefits\nSwedish Social Insurance Agency\n\n\nSocial services registers\nSocial assistance, child welfare\nNational Board of Health and Welfare\n\n\nQuality registers\n~100 disease- or treatment-specific registers\nRegions / SALAR\n\n\n\nKey characteristics:\n\nNationwide coverage for many registers\nLongitudinal data spanning several decades\nPossibility of individual-level linkage across registers\n\nLimitations:\n\nsome sectors lack national registers (e.g. primary care, school health services)\ncoverage and data quality may vary across registers"
+  },
+  {
+    "objectID": "EL8.html#international-perspective",
+    "href": "EL8.html#international-perspective",
+    "title": "EL8: Health care registers",
+    "section": "International perspective",
+    "text": "International perspective\nMany countries maintain health-related registers, but the structure and coverage vary considerably.\nCommon challenges internationally:\n\nfragmented healthcare systems\nlack of unique personal identifiers\nmultiple data holders (insurance systems, hospitals, regions)\nlimited possibilities for linking data across sectors\n\nAs a result, nationwide longitudinal register studies are often more difficult to conduct than in the Nordic countries."
+  },
+  {
+    "objectID": "EL8.html#countries-with-similar-register-infrastructures",
+    "href": "EL8.html#countries-with-similar-register-infrastructures",
+    "title": "EL8: Health care registers",
+    "section": "Countries with similar register infrastructures",
+    "text": "Countries with similar register infrastructures\nThe Nordic countries have relatively similar systems based on:\n\nnationwide administrative registers\nuniversal healthcare systems\npersonal identification numbers\n\nThese countries are therefore often used in comparative register-based research."
+  },
+  {
+    "objectID": "EL8.html#examples-from-other-countries",
+    "href": "EL8.html#examples-from-other-countries",
+    "title": "EL8: Health care registers",
+    "section": "Examples from other countries",
+    "text": "Examples from other countries\nHealth data systems in other countries are often organised differently:\n\nUnited Kingdom: NHS administrative datasets\nNetherlands: population registers linked with health insurance data\nUnited States: insurance claims databases and cohort studies\nCanada: provincial administrative health data\n\nThese systems can provide valuable data, but often lack:\n\nnationwide coverage\nconsistent linkage across registers\nvery long follow-up periods\n\nThe Nordic register systems are therefore widely used in international epidemiological research."
+  },
+  {
+    "objectID": "EL8.html#swedish-twin-registry",
+    "href": "EL8.html#swedish-twin-registry",
+    "title": "EL8: Health care registers",
+    "section": "Swedish Twin Registry",
+    "text": "Swedish Twin Registry\n\nMaintained by Karolinska Institutet\nEstablished in 1961\nOne of the largest twin registers in the world\n\nInformation on\n\ntwins born in Sweden since the late 1800s\nzygosity (monozygotic / dizygotic)\nhealth outcomes\nlifestyle and environmental factors\n\nThe register currently includes more than 190,000 twins."
+  },
+  {
+    "objectID": "EL8.html#references",
+    "href": "EL8.html#references",
+    "title": "EL8: Health care registers",
     "section": "",
-    "text": "GitHub Classroom\nAs for ECS2 you will find a link to the GitHub classroom assignment in Canvas!"
-  },
-  {
-    "objectID": "ECS4.html",
-    "href": "ECS4.html",
-    "title": "ECS4: Data project",
-    "section": "",
-    "text": "All remaining computer sessions, as well as the final seminar, will be devoted to a mini-project.\nThe formal examination consists of:\nThe scheduled computer sessions are intended for group work, during which the teacher will be available to help. You are of course also free to work on the project outside these hours."
-  },
-  {
-    "objectID": "ECS4.html#suggested-workflow",
-    "href": "ECS4.html#suggested-workflow",
-    "title": "ECS4: Data project",
-    "section": "Suggested workflow",
-    "text": "Suggested workflow\n\nDecide how you want to organize your work.\n\nI recommend using the {targets} package. You are not required to do so, but without a workflow tool your scripts can quickly become difficult to manage when collaborating.\nIf you want to ensure that you are using exactly the same R version and packages, consider also using renv.\nOtherwise, check that you are using the same R version (R.version.string) and run update.packages(ask = FALSE) in a fresh R session.\n\nCreate a basic folder and file structure for the project (you may reuse the example from ECS3).\nAdd other necessary files such as README.md and .gitignore.\nThe person creating the structure commits the changes and pushes them to GitHub.\nThe other person pulls the changes to obtain the same structure locally.\nDiscuss the direction of your project (see instructions below).\nDocument your project decisions in the README.md.\nUse GitHub issues to discuss tasks and assign responsibilities.\nWork on the tasks, commit changes, push to GitHub, and repeat.\n\n\nCommit early and commit often. Do not wait until the last day to push your work to GitHub.\n\n\n\n\n\n\n\nImportantIndividual grading\n\n\n\nAlthough this is group work, the project will be graded individually (pass or fail). Git makes it possible to identify which contributions were made by each individual. During the final seminar the class will be divided into two groups. One student from each group will present the project during the first hour, and the other student during the second hour. You should therefore both be prepared to present the project independently (although you are encouraged to collaborate closely beforehand).\n\n\n\n\n\n\n\n\nTipMerge conflicts\n\n\n\nSince two people may modify the same files simultaneously, you should try to work from the latest version of the repository (sync often). It is not necessary to work only one at a time, but if conflicting changes are made to the same file you will need to resolve merge conflicts. Instructions for resolving merge conflicts in VS Code / Positron\n\n\n\n\n\n\n\n\nTipDraft files\n\n\n\nYou may create draft files (for example R/draft-your-name.R) where you experiment with code before integrating it into the main workflow or targets pipeline. You may also decide that one person primarily handles merge conflicts while the other focuses on preparing the presentation draft. You may want to read this"
-  },
-  {
-    "objectID": "ECS4.html#expected-repository-contents",
-    "href": "ECS4.html#expected-repository-contents",
-    "title": "ECS4: Data project",
-    "section": "Expected repository contents",
-    "text": "Expected repository contents\nYour repository should contain at least:\n\nreproducible analysis scripts\na README.md describing the project\ncode needed to reproduce the figures/tables used in the presentation\na clear workflow (for example using {targets} or similar)"
-  },
-  {
-    "objectID": "ECS4.html#some-examples",
-    "href": "ECS4.html#some-examples",
-    "title": "ECS4: Data project",
-    "section": "Some examples",
-    "text": "Some examples\nSome example reports are provided below that illustrate possible analyses and research questions based on the available data. These examples are intended only as inspiration.\nYou have considerable freedom in how you choose to formulate your research question, structure your analysis, and present your results. You do not need to follow the same approach, methods, structure, or level of detail as in the example reports.\nThe examples should therefore not be seen as a standard to aim for, either in terms of content or presentation. They are merely provided to help generate ideas if you find it difficult to get started or are unsure about possible directions for the project.\n\nCardiovascular risk analysis\nHealthcare cost analysis\nHealthcare trends analysis\nsocial determinants"
-  },
-  {
-    "objectID": "ECS4.html#figures",
-    "href": "ECS4.html#figures",
-    "title": "ECS4: Data project",
-    "section": "Figures",
-    "text": "Figures\n\nggplot2\nggpubr\nplotly\nbase graphics\nany other tool that produces clear presentation-quality figures"
-  },
-  {
-    "objectID": "ECS4.html#tables",
-    "href": "ECS4.html#tables",
-    "title": "ECS4: Data project",
-    "section": "Tables",
-    "text": "Tables\n\ngt\ngtsummary\nflextable\nkableExtra"
-  },
-  {
-    "objectID": "ECS4.html#interactive-tools-optional",
-    "href": "ECS4.html#interactive-tools-optional",
-    "title": "ECS4: Data project",
-    "section": "Interactive tools (optional)",
-    "text": "Interactive tools (optional)\n\nshiny\nshinydashboard\nhtmlwidgets"
-  },
-  {
-    "objectID": "ECS2.html",
-    "href": "ECS2.html",
-    "title": "ECS2: Pipeline and reproducibility",
-    "section": "",
-    "text": "This time we will use Github classroom. This means that your Canvas account will be linked to your GitHUb repository, which hopefully simplifies things in this setting.\n\n\nHere is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
-  },
-  {
-    "objectID": "ECS2.html#canvas-assignemnt",
-    "href": "ECS2.html#canvas-assignemnt",
-    "title": "ECS2: Pipeline and reproducibility",
-    "section": "",
-    "text": "Here is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
+    "text": "Brooke, Hannah Louise, Mats Talbäck, Jesper Hörnblad, Lars Age Johansson, Jonas Filip Ludvigsson, Henrik Druid, Maria Feychting, and Rickard Ljung. 2017. “The Swedish Cause of Death Register.” European Journal of Epidemiology 32 (9): 765–73. https://doi.org/10.1007/s10654-017-0316-1.\n\n\nEmilsson, L., B. Lindahl, M. Köster, M. Lambe, and J. F. Ludvigsson. 2015. “Review of 103 Swedish Healthcare Quality Registries.” Journal of Internal Medicine 277 (1): 94–136. https://doi.org/10.1111/joim.12303.\n\n\nEverhov, Åsa H., Thomas Frisell, Mehdi Osooli, Hannah L. Brooke, Hanne K. Carlsen, Karin Modig, Karl Mårild, et al. 2025. “Diagnostic Accuracy in the Swedish National Patient Register: A Review Including Diagnoses in the Outpatient Register.” European Journal of Epidemiology 40 (3): 359–69. https://doi.org/10.1007/s10654-025-01221-0.\n\n\nHiyoshi, Ayako. 2026. “Overview of Swedish Register Data for Health Research.” Annals of Clinical Epidemiology advpub. https://doi.org/10.37737/ace.27005.\n\n\nLudvigsson, Jonas F., Catarina Almqvist, Anna Karin Edstedt Bonamy, Rickard Ljung, Karl Michaëlsson, Martin Neovius, Olof Stephansson, and Weimin Ye. 2016. “Registers of the Swedish Total Population and Their Use in Medical Research.” European Journal of Epidemiology, 1–12. https://doi.org/10.1007/s10654-016-0117-y.\n\n\nLudvigsson, Jonas F., Pia Svedberg, Ola Olén, Gustaf Bruze, and Martin Neovius. 2019. “The Longitudinal Integrated Database for Health Insurance and Labour Market Studies (LISA) and Its Use in Medical Research.” European Journal of Epidemiology 34 (4): 423–37. https://doi.org/10.1007/s10654-019-00511-8."
   },
   {
     "objectID": "ECS1.html",
@@ -1435,11 +1561,130 @@
     "text": "Additional practice\nPlease note the “Reading and practicing” section in the beginning of EL4 (homework)."
   },
   {
-    "objectID": "EL8.html#reading",
-    "href": "EL8.html#reading",
-    "title": "EL8: Health care registers",
-    "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:\n\n\n\n\n\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly."
+    "objectID": "ECS2.html",
+    "href": "ECS2.html",
+    "title": "ECS2: Pipeline and reproducibility",
+    "section": "",
+    "text": "This time we will use Github classroom. This means that your Canvas account will be linked to your GitHUb repository, which hopefully simplifies things in this setting.\n\n\nHere is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
+  },
+  {
+    "objectID": "ECS2.html#canvas-assignemnt",
+    "href": "ECS2.html#canvas-assignemnt",
+    "title": "ECS2: Pipeline and reproducibility",
+    "section": "",
+    "text": "Here is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
+  },
+  {
+    "objectID": "ECS4.html",
+    "href": "ECS4.html",
+    "title": "ECS4: Data project",
+    "section": "",
+    "text": "All remaining computer sessions, as well as the final seminar, will be devoted to a mini-project.\nThe formal examination consists of:\nThe scheduled computer sessions are primarily intended to give groups an opportunity to work together in person and to allow the teacher to be available for questions and guidance.\nYou should expect that additional work on the project will be required outside these sessions."
+  },
+  {
+    "objectID": "ECS4.html#if-you-already-have-a-partner",
+    "href": "ECS4.html#if-you-already-have-a-partner",
+    "title": "ECS4: Data project",
+    "section": "If you already have a partner",
+    "text": "If you already have a partner\n\nDecide who will create the team.\nThat person accepts the assignment and chooses Create a new team.\nChoose any team name.\nThe other student accepts the assignment and chooses Join team, selecting the same team.\nBoth of you clone the repository locally.\n\nImportant: Only one person should create the team."
+  },
+  {
+    "objectID": "ECS4.html#if-you-do-not-yet-have-a-partner",
+    "href": "ECS4.html#if-you-do-not-yet-have-a-partner",
+    "title": "ECS4: Data project",
+    "section": "If you do not yet have a partner",
+    "text": "If you do not yet have a partner\n\nOpen the assignment link in Canvas.\nCheck if there is a team whose name starts with join-.\nIf such a team exists, join that team.\nIf no such team exists, create a team whose name starts with join- (for example join-1, join-2 etc).\nClone the repository locally and wait for another student to join.\n\nIf no one joins your team (for example because the number of students is odd), please inform the teacher."
+  },
+  {
+    "objectID": "ECS4.html#initial-setup",
+    "href": "ECS4.html#initial-setup",
+    "title": "ECS4: Data project",
+    "section": "Initial setup",
+    "text": "Initial setup\nAfter agreeing on both the project direction and the technical structure:\n\nThe Workflow Lead creates the basic repository structure.\nAdd essential files such as README.md and .gitignore.\nCommit the structure and push it to GitHub.\nThe other student pulls the repository so both work from the same structure.\n\nDuring this early stage it is often helpful if one person manages structural changes to reduce merge conflicts."
+  },
+  {
+    "objectID": "ECS4.html#collaborative-development",
+    "href": "ECS4.html#collaborative-development",
+    "title": "ECS4: Data project",
+    "section": "Collaborative development",
+    "text": "Collaborative development\nOnce the structure is established, both students should contribute actively to the analysis and code development.\nTo keep the collaboration organised:\n\ndiscuss tasks using GitHub issues\nassign issues where appropriate\ncommit small changes frequently\npush updates regularly\npull the latest version before starting work"
+  },
+  {
+    "objectID": "ECS4.html#draft-scripts",
+    "href": "ECS4.html#draft-scripts",
+    "title": "ECS4: Data project",
+    "section": "Draft scripts",
+    "text": "Draft scripts\nTo experiment without disrupting the main workflow, you may create draft scripts such as draft-your-name.R within the repository (for both of you to see).\nThese can be used to test ideas before integrating code into the main workflow.\nIf you are using {targets}, place such files outside the R/ folder so that they are not executed automatically.\nIt might be easier if both students develop draft code in parallel and that you use pair programming (see below) to later copy and past different parts of your draft code into your formal pipeline. You may need to experiment and see what works best for you!"
+  },
+  {
+    "objectID": "ECS4.html#working-with-workflows",
+    "href": "ECS4.html#working-with-workflows",
+    "title": "ECS4: Data project",
+    "section": "Working with workflows",
+    "text": "Working with workflows\nUsing {targets} to organise the workflow is recommended but not required.\nIf you want to ensure identical package versions, you may also use renv.\nOtherwise, verify that you are using the same R version:\nR.version.string # run it in your R console\nand update packages if needed (in a fresh R sessin without any packages loaded):\nupdate.packages(ask = FALSE)\n\n\n\n\n\n\nTipMerge conflicts\n\n\n\nSince two people may modify the same files simultaneously, try to work from the latest version of the repository (sync often).\nIf conflicting changes occur, you will need to resolve merge conflicts.\nInstructions"
+  },
+  {
+    "objectID": "ECS4.html#pair-programming",
+    "href": "ECS4.html#pair-programming",
+    "title": "ECS4: Data project",
+    "section": "Pair programming",
+    "text": "Pair programming\nIt can sometimes be useful to work together at the same computer. In such cases only one group member may commit the changes, even though both contributed.\nIndicate in the commit message that the commit was made jointly."
+  },
+  {
+    "objectID": "ECS5.html",
+    "href": "ECS5.html",
+    "title": "ECS5: Presentation",
+    "section": "",
+    "text": "Important\n\n\n\nThis is part of the project examined by ECS4. Although, you do not need to start working on this part until EL9 has been given."
+  },
+  {
+    "objectID": "ECS5.html#figures",
+    "href": "ECS5.html#figures",
+    "title": "ECS5: Presentation",
+    "section": "Figures",
+    "text": "Figures\n\nggplot2\nggpubr\nplotly\nbase graphics\nany other tool that produces clear presentation-quality figures"
+  },
+  {
+    "objectID": "ECS5.html#tables",
+    "href": "ECS5.html#tables",
+    "title": "ECS5: Presentation",
+    "section": "Tables",
+    "text": "Tables\n\ngt\ngtsummary\nflextable\nkableExtra\nany other tool that produces clear presentation-quality tables"
+  },
+  {
+    "objectID": "ECS5.html#interactive-tools-optional",
+    "href": "ECS5.html#interactive-tools-optional",
+    "title": "ECS5: Presentation",
+    "section": "Interactive tools (optional)",
+    "text": "Interactive tools (optional)\nAs an alternative to a static presentation, you may choose to use something more interactive. For most groups, however, this might be to stressfull if you do not already have sme knowledge about those tools.\n\nshiny\nshinydashboard\nhtmlwidgets"
+  },
+  {
+    "objectID": "ECS3.html",
+    "href": "ECS3.html",
+    "title": "ECS3: Data formats and regex",
+    "section": "",
+    "text": "GitHub Classroom\nAs for ECS2 you will find a link to the GitHub classroom assignment in Canvas!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health data",
+    "section": "",
+    "text": "This website includes documentation for lectures and exercises concerning the health data part of the course STA220 Health data and questionnaires. General information about the course is found on the corresponding Canvas page."
+  },
+  {
+    "objectID": "index.html#positron-extensions",
+    "href": "index.html#positron-extensions",
+    "title": "Health data",
+    "section": "Positron extensions",
+    "text": "Positron extensions\nPositron is an integrated development environment (IDE) for R. It makes it easy to write and execute R code, manage projects, and visualize data. It is made by Posit (formerly RStudio) PBC and is free for individual use.\nPositron is based on Code OS, an open source version of VS Code from Microsoft. As such, it supports a wide range of extensions and customization options.\nWe will use GitHub Pull Requests. Search for it in the Extensions pane in Positron and install it.\nInstructions for Git in Positron"
+  },
+  {
+    "objectID": "index.html#additional-mandatory-reading",
+    "href": "index.html#additional-mandatory-reading",
+    "title": "Health data",
+    "section": "Additional mandatory reading",
+    "text": "Additional mandatory reading\nPDF versions of scientific articles are found in Canvas."
   },
   {
     "objectID": "ES1.html",
@@ -2090,7 +2335,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-10."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-11."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -3483,7 +3728,7 @@
     "href": "handouts.html#example-5",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nuva #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nzpumho { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nuva #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nxwm #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nrljcck { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nxwm #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
   },
   {
     "objectID": "handouts.html#flattening",
@@ -3854,7 +4099,210 @@
     "href": "handouts.html#reading-3",
     "title": "Handouts",
     "section": "Reading",
-    "text": "Reading\n\n(Nguyen 2022, ch. 4)\n(Nguyen 2022, ch. 5) Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.\n\nRecommended references:"
+    "text": "Reading\n\nHiyoshi (2026) gives a brief and recent introduction and to all registers covered in this lecture.\nLudvigsson et al. (2016) provides an excellent overview of the Swedish population registers and their use in medical research.\n\nThe Personal Data Act (PUL) has been replaced by GDPR.\nThe former Regional Ethical Review Boards were replaced in 2019 by a single national authority, the Swedish Ethical Review Authority (Etikprövningsmyndigheten)\nThe legislation governing legal gender recognition has been revised, with a new law adopted in 2024 and entering into force in 2025.\n\n\n\nRecommended references:\n\nBrooke et al. (2017) introduces the Swedish cause of death register\nLudvigsson et al. (2019) describes The longitudinal integrated database for health insurance and labour market studies (LISA) and its use in medical research\nEverhov et al. (2025) have investigated the completeness of the national patient register (focus on the intoduction, discussion and conslussions)\nEmilsson et al. (2015) gives an overview of the Swedish Quality Registers. Some things have changed since then, but most of it is still relevant."
+  },
+  {
+    "objectID": "handouts.html#types-of-registers",
+    "href": "handouts.html#types-of-registers",
+    "title": "Handouts",
+    "section": "Types of registers",
+    "text": "Types of registers\n\nNational health registers\n\nmandated by law\nSometimes with regional data collection and yearly updates\nGoverned by state authority\n\n\n\nQuality registers\n\nVolontary for health care providers but commonly adopted\nopt-out for individuals\nA typically Swedish concept\nmore than 100 in Sweden\nBut similar data collections in other countries by other names\nGoverned by regional authorities\nCollaboration within The Swedish Association of Local Authorities and Regions (SALAR/SKR)\n\n\n\n\n\n\n\n\n\n\nAuthority\nNational registers / systems\nNotes\n\n\n\n\nNational Board of Health and Welfare (Socialstyrelsen)\nNational Patient Register, Medical Birth Register, Cause of Death Register, Cancer Register, Prescribed Drug Register, Dental Health Register\nMain authority responsible for Swedish health data registers\n\n\nPublic Health Agency of Sweden (Folkhälsomyndigheten)\nNational Vaccination Register, SmiNet (notifiable communicable diseases)\nRegisters related to infectious disease surveillance\n\n\nSwedish eHealth Agency (E-hälsomyndigheten)\nNational prescription database (dispensed prescription data)\nData on dispensed medicines from pharmacies\n\n\nStatistics Sweden (SCB)\nLISA database, Population Register, Education Register, Income and Tax Register\nSocioeconomic and demographic registers often linked to health data\n\n\nSwedish regions / national quality register organisations\nNational Quality Registers (e.g. SWEDEHEART, Swedish Hip Arthroplasty Register, National Diabetes Register)\nClinical quality registers maintained by healthcare organisations"
+  },
+  {
+    "objectID": "handouts.html#swedish-medical-birth-register",
+    "href": "handouts.html#swedish-medical-birth-register",
+    "title": "Handouts",
+    "section": "Swedish Medical Birth Register",
+    "text": "Swedish Medical Birth Register\n\nEstablished in 1973\nCovers pregnancies resulting in delivery in Sweden\nIncludes live births and stillbirths from gestational week 22+0\nContains information reported by maternal care, delivery care, and neonatal care\n\nMain variables include:\n\nmother’s previous pregnancies, smoking status, delivery clinic\ngestational age, pain relief, and mode of delivery\ndiagnoses and procedures for mother and child\nchild’s sex, weight, length, head circumference, and condition at birth"
+  },
+  {
+    "objectID": "handouts.html#national-register-of-congenital-anomalies",
+    "href": "handouts.html#national-register-of-congenital-anomalies",
+    "title": "Handouts",
+    "section": "National Register of Congenital Anomalies",
+    "text": "National Register of Congenital Anomalies\n\nSurveillance register for congenital malformations (ICD-10) and chromosomal abnormalities\nFor live births and stillbirths (≥22 weeks gestation)\nAlso includes anonymised data on terminated pregnancies due to fetal anomalies\n\n\nBackground\n\nmonitoring of congenital anomalies started in 1964 following the Thalidomide (Neurosedyn) scandal\nintegrated with the Medical Birth Register in 1973\nreporting expanded in 1999 to include terminated pregnancies due to fetal anomalies"
+  },
+  {
+    "objectID": "handouts.html#population-registration",
+    "href": "handouts.html#population-registration",
+    "title": "Handouts",
+    "section": "Population registration",
+    "text": "Population registration\n\nMaintained by the Tax Agency\n\nadministrative register used for legal residence and taxation\n\nPersonal identity number assigned at birth (at the hospital)\nLegal sex registered as part of the personal identity number\nChild’s given name decided by parents and reported to the Tax Agency within 3 months\nRegistration of municipality of residence (and thereby county)\nRegistration district (earlier parish, now district)\nRegistered residential address\nMigration events (immigration and emigration)\nChanges of address within Sweden\nMarital status and family relations\nDate of death"
+  },
+  {
+    "objectID": "handouts.html#the-total-population-register-rtp",
+    "href": "handouts.html#the-total-population-register-rtp",
+    "title": "Handouts",
+    "section": "The Total population Register (RTP)",
+    "text": "The Total population Register (RTP)\n\nmaintained by Statistics Sweden (SCB)\nbased on data from the Population registration\nstructured for statistical analysis and research\nused as the sampling frame for surveys and register-based studies"
+  },
+  {
+    "objectID": "handouts.html#childhood",
+    "href": "handouts.html#childhood",
+    "title": "Handouts",
+    "section": "Childhood",
+    "text": "Childhood\nDuring childhood and school years, health information is collected through:\n\nChild health services (BVC)\nSchool health services\nVaccination records\nExaminations by school nurses or physicians\ndentists etc\n\nIn contrast to many other stages of life in Sweden, these data are not collected in a national register."
+  },
+  {
+    "objectID": "handouts.html#vaccination-register",
+    "href": "handouts.html#vaccination-register",
+    "title": "Handouts",
+    "section": "Vaccination Register",
+    "text": "Vaccination Register\n\nNational register maintained by the Public Health Agency of Sweden (Folkhälsomyndigheten)\nEstablished in 2013\nPrimarily covers vaccinations given within national vaccination programmes\n\n\nIncludes\n\nvaccine administered\ndate of vaccination\ndose number\nhealthcare provider\n\n\n\nPurpose\n\nmonitor vaccination coverage\ndetect changes in uptake\nsupport surveillance of vaccine-preventable diseases\n\n\n\nLimitations\n\nvaccinations given outside national programmes (e.g. travel vaccines) may not be fully captured\nreporting comes from many providers (regions, schools, private clinics)\n\ntherefore coverage may vary for some vaccines"
+  },
+  {
+    "objectID": "handouts.html#military-conscription",
+    "href": "handouts.html#military-conscription",
+    "title": "Handouts",
+    "section": "Military conscription",
+    "text": "Military conscription\nThe conscription register contains information from military conscription examination\n\nphysical measurements (e.g. height, weight)\ncognitive ability tests\npsychological assessments\nhealth status and diagnoses\nphysical fitness\n\nImportant characteristics:\n\ncovers most Swedish men born roughly 1951–1990\nInactive 2010-2016\nBoth men and women since 2017 (but only approximately 25 %)\nexaminations typically performed at age 18–19\ndata collected by the Swedish Armed Forces\n\nImplications for research:\n\nprovides rich health and ability data in late adolescence for historic cohort\nwidely used in epidemiological and social science research\nmainly includes men, which limits generalisability"
+  },
+  {
+    "objectID": "handouts.html#swedish-dental-health-register",
+    "href": "handouts.html#swedish-dental-health-register",
+    "title": "Handouts",
+    "section": "Swedish Dental Health Register",
+    "text": "Swedish Dental Health Register\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nEstablished in 2008\nIncludes adults (≥20 years)\n\nMain variables include:\n\ndental diagnoses\ndental procedures (treatment codes)\ndental status (e.g. number of remaining teeth)\ntreatment dates\ntreatment costs and reimbursement\n\nImportant characteristics:\n\nbased on reports submitted within the national dental care subsidy system\nincludes both public and private dental care providers"
+  },
+  {
+    "objectID": "handouts.html#screening-registers",
+    "href": "handouts.html#screening-registers",
+    "title": "Handouts",
+    "section": "Screening registers",
+    "text": "Screening registers\n\nbreast cancer (mammography)\ncervical cancer\ncolorectal cancer\n\nThese programmes aim to detect disease at an early stage in otherwise healthy individuals.\nData from screening programmes are often stored in regional systems and coordinated nationally through:\n\nnational screening programmes\nnational quality registers\nregional cancer centres (RCC)\n\n\nTypical variables include:\n\ninvitation to screening\nparticipation\nscreening results\nfollow-up examinations\ndetected diagnoses\n\nScreening data are important for studies of:\n\nparticipation in preventive care\nearly disease detection\neffectiveness of screening programmes"
+  },
+  {
+    "objectID": "handouts.html#national-patient-register-npr",
+    "href": "handouts.html#national-patient-register-npr",
+    "title": "Handouts",
+    "section": "National Patient Register (NPR)",
+    "text": "National Patient Register (NPR)\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nCovers specialised health care in Sweden\nData are collected by regions and healthcare providers and then reported to the national register\n\n\nCoverage\n\ninpatient care since the 1960s\nnationwide coverage since 1987\nspecialised outpatient care since 2001\n\n\nEach record represents a healthcare contact or episode of care.\nExamples of contacts included:\n\nhospital admissions\noutpatient specialist visits\npsychiatric specialist care\nday surgery or day care procedures\n\nMain variables include:\n\ndiagnoses (ICD codes)\nprocedures (KVÅ codes – Swedish classification of healthcare interventions)\ncase-mix classification (DRG codes)\ndates of admission and discharge\nhospital or clinic\npatient demographics\n\nHistorical note:\n\nearlier records used ICD-8 and ICD-9\ntoday diagnoses are classified using ICD-10-SE\n\n\n\n\nImportant limitations:\n\nprimary care is not included\ncoverage before 1987 is incomplete\ncoding practices may vary between regions and over time\n\n\n\nAdditional considerations:\n\nreporting is nationally standardized but based on regional data collection\nhistorically, some psychiatric care has been less consistently reported\nmany outpatient contacts require a physician encounter, but coding practices for contacts involving other professionals (e.g. nurses or psychologists) may vary\n\nDespite these limitations, the NPR is widely used for:\n\nepidemiological research\ndisease surveillance\nhealth services research"
+  },
+  {
+    "objectID": "handouts.html#primary-care-data",
+    "href": "handouts.html#primary-care-data",
+    "title": "Handouts",
+    "section": "Primary care data",
+    "text": "Primary care data\nPrimary care accounts for a large share of health care contacts in Sweden, but there is still no comprehensive national primary care register comparable to NPR.\n\nmost primary care data are stored in regional electronic health record systems\nreporting practices differ between regions\nnational coverage for research and statistics is therefore limited\n\n\nRecent developments\n\nthere have been long-standing discussions about establishing a national primary care register\nthe National Board of Health and Welfare has begun collecting some aggregated primary care statistics\nseveral pilot initiatives and data collections are ongoing"
+  },
+  {
+    "objectID": "handouts.html#prescribed-drug-register-pdr",
+    "href": "handouts.html#prescribed-drug-register-pdr",
+    "title": "Handouts",
+    "section": "Prescribed Drug Register (PDR)",
+    "text": "Prescribed Drug Register (PDR)\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nCovers dispensed prescription drugs from Swedish pharmacies\nEstablished in 2005\nNationwide coverage\n\n\n\n\nProfession\nPrescribing rights\n\n\n\n\nPhysicians\nBroad prescribing rights (most medications)\n\n\nDentists\nMedications related to dental care\n\n\nMidwives\nSelected medications (e.g., contraceptives)\n\n\nNurses\nLimited list of medications after additional training\n\n\nOptometrists\nCertain diagnostic eye medications\n\n\n\n\n\nMain variables include:\n\ndrug classification (ATC code)\ndate of dispensing\namount dispensed\ndosage information\nprescribing clinic or prescriber category\n\nThe register contains drugs dispensed at pharmacies, not all prescriptions written by physicians.\n\n\n\nPDR does not include\n\ndrugs administered in hospitals\nover-the-counter drugs\n\nsince 2009, many non-prescription drugs can also be sold outside pharmacies (e.g. supermarkets and petrol stations)\n\nmost herbal medicines or dietary supplements\n\nDispension does not guarantee that the patient actually used the medication\n\n\nused for\n\npharmacoepidemiology\nstudies of drug safety and effectiveness\nstudies of treatment patterns"
+  },
+  {
+    "objectID": "handouts.html#cancer-register",
+    "href": "handouts.html#cancer-register",
+    "title": "Handouts",
+    "section": "Cancer Register",
+    "text": "Cancer Register\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nEstablished in 1958\nCovers all newly diagnosed malignant tumors in Sweden\nBased on “primary tumour”\n\nReporting is mandatory for clinicians (“A-anmälan”) and pathology laboratories (“B-anmälan”).\n\nIncludes\n\ndate of diagnosis\ntumor site and morphology\nstage and diagnostic basis\nreporting clinic and region\n\nDiagnoses are classified using ICD and ICD-O codes.\n\nCancer reporting in Sweden is organised through six healthcare regions:\n\nNorthern\nUppsala–Örebro\nStockholm–Gotland\nSouth-East\nWestern (VGR + [Northern] Halland)\nSouthern\n\nWithin each region, a Regional Cancer Centre (RCC) coordinates:\n\ncancer data reporting (combining A- and B-anmälan)\nquality improvement\nclinical guidelines\ncancer care monitoring"
+  },
+  {
+    "objectID": "handouts.html#strengths-and-limitations",
+    "href": "handouts.html#strengths-and-limitations",
+    "title": "Handouts",
+    "section": "Strengths and limitations",
+    "text": "Strengths and limitations\nStrengths:\n\none of the oldest nationwide cancer registers in the world\nhigh completeness due to mandatory reporting\nenables long-term studies of cancer incidence and survival\n\nLimitations:\n\nlimited information on treatment and outcomes\nadditional clinical details often require linkage to quality registers or NPR"
+  },
+  {
+    "objectID": "handouts.html#other-disease-specific-registers",
+    "href": "handouts.html#other-disease-specific-registers",
+    "title": "Handouts",
+    "section": "Other disease-specific registers",
+    "text": "Other disease-specific registers\nThe Swedish Cancer Register is one of the few nationwide disease-specific health data registers.\nSome other diagnoses are monitored through national systems, often related to infectious disease surveillance.\n\nExamples:\n\nHIV (InfCare HIV register)\nnotifiable infectious diseases reported through SmiNet\ntuberculosis surveillance systems\nhepatitis registers\n\n\n\nCharacteristics\n\noften linked to infectious disease control\nreporting may be mandatory under the Communicable Diseases Act\nmaintained by the Public Health Agency of Sweden"
+  },
+  {
+    "objectID": "handouts.html#cause-of-death-register",
+    "href": "handouts.html#cause-of-death-register",
+    "title": "Handouts",
+    "section": "Cause of Death Register",
+    "text": "Cause of Death Register\n\nNational register maintained by the National Board of Health and Welfare (Socialstyrelsen)\nEstablished in 1952\nCovers all deaths among persons registered in Sweden\nInformation is based on death certificates completed by physicians.\nDiagnoses are classified using ICD codes. Currently ICD-10 (not ICD-10-SE)\n\n\nEach death certificate contains:\n\nunderlying cause of death\n(the disease or injury that initiated the chain of events leading to death)\ncontributing causes of death\n(other conditions that contributed to the death)\n\nExample structure:\n\nDisease → complication → death\nDiabetes → kidney failure → death\n\nThis structure allows analyses of both underlying and contributing causes of death.\n\n\nStrengths\n\nnationwide coverage since the 1950s\nvery long time series for mortality research\nstandardized (international) classification using ICD\n\n\n\nLimitations\n\ncause of death depends on clinical judgement and available information\nautopsy rates have decreased over time\nmisclassification can occur, especially at older ages\n\n\n\n\n\n\n\nNote\n\n\n\nThe register is used when the cause of death is of importance. The date of eath is otherwise also found in TPR and can often be accesed directly from the Tax Agency."
+  },
+  {
+    "objectID": "handouts.html#lisa",
+    "href": "handouts.html#lisa",
+    "title": "Handouts",
+    "section": "LISA",
+    "text": "LISA\nNot a health care register but often used for background data.\n\nLongitudinal Integration Database for Health Insurance and Labour Market Studies\nMaintained by Statistics Sweden (SCB)\nEstablished in 1990, with data available annually from that year\n\nThe database contains socioeconomic information for all individuals aged 16 and older registered in Sweden.\n\nPurpose\n\nprovide background variables for research and statistics\nenable studies of social determinants of health\n\n\n\n\nMain types of variables include\n\neducation level\nincome and taxation\nemployment status\noccupation and workplace\nsocial insurance benefits\nfamily situation\n\n\n\nImportant characteristics\n\nlongitudinal data updated annually\nbased on administrative registers from several authorities\ncan be linked to health registers using the personal identity number\n\n\n\nused for\n\nadjustment for socioeconomic factors\nstudies of inequalities in health\nlabour market and health research"
+  },
+  {
+    "objectID": "handouts.html#social-services-registers-sol",
+    "href": "handouts.html#social-services-registers-sol",
+    "title": "Handouts",
+    "section": "Social services registers (SoL)",
+    "text": "Social services registers (SoL)\nMaintained by the National Board of Health and Welfare (Socialstyrelsen).\nData reported under the Social Services Act (SoL).\n\nExamples\n\nsocial assistance (economic support)\ninterventions for children and adolescents\nsubstance abuse treatment\nsome elderly care services\n\n\n\nPurpose:\n\nmonitor social welfare services\nsupport research on social determinants of health"
+  },
+  {
+    "objectID": "handouts.html#social-insurance-registers",
+    "href": "handouts.html#social-insurance-registers",
+    "title": "Handouts",
+    "section": "Social insurance registers",
+    "text": "Social insurance registers\nRegisters on sickness absence and social insurance are maintained by the Swedish Social Insurance Agency (Försäkringskassan).\n\nExamples\n\nsickness benefit (sick leave compensation)\ndisability pension\nparental leave benefits\nwork injury compensation\n\n\n\nMain variables\n\nbenefit type\nstart and end dates\ndegree of compensation (e.g. 25–100%)\ndiagnosis for sickness absence\ndemographic information\n\n\n\nImportant characteristics\n\nbased on administrative data used for benefit decisions\nwidely used in research on work ability, labour market participation, and health\n\nThese registers complement health registers by providing information on functional consequences of disease, such as long-term sickness absence."
+  },
+  {
+    "objectID": "handouts.html#national-quality-registers",
+    "href": "handouts.html#national-quality-registers",
+    "title": "Handouts",
+    "section": "National Quality Registers",
+    "text": "National Quality Registers\nNational quality registers collect detailed clinical information on specific diseases or treatments.\nThey are designed to:\n\nmonitor and improve quality of care\nsupport clinical quality improvement\n\nBut they can also be used for research\nTypical characteristics:\n\nfocus on specific diagnoses, treatments, or procedures\ncontain more detailed clinical data than national health data registers\nparticipation is generally voluntary for healthcare providers\n\nThere are currently around 100 national quality registers in Sweden."
+  },
+  {
+    "objectID": "handouts.html#organisation",
+    "href": "handouts.html#organisation",
+    "title": "Handouts",
+    "section": "Organisation",
+    "text": "Organisation\nQuality registers are typically organised by clinical communities.\nKey actors include:\n\nclinicians and researchers responsible for the register\nsteering groups for each register\nregional cancer centres and register centers\nThe system is nationally coordinated by the Swedish Association of Local Authorities and Regions (SALAR / SKR)\nRegisters are usually hosted by regional healthcare organisations and funded through national and regional support.\nQuality registers therefore complement national health data registers by providing more detailed clinical information."
+  },
+  {
+    "objectID": "handouts.html#promprem",
+    "href": "handouts.html#promprem",
+    "title": "Handouts",
+    "section": "PROM/PREM",
+    "text": "PROM/PREM\nIn addition to clinical data, many registers also collect:\n\nPROM – Patient Reported Outcome Measures\nPREM – Patient Reported Experience Measures\n\nThese variables capture:\n\npatients’ own assessment of health status\nquality of care from the patient perspective"
+  },
+  {
+    "objectID": "handouts.html#the-swedish-register-ecosystem",
+    "href": "handouts.html#the-swedish-register-ecosystem",
+    "title": "Handouts",
+    "section": "The Swedish register ecosystem",
+    "text": "The Swedish register ecosystem\nSweden has a unique infrastructure of population-based registers that can be linked using the personal identity number.\n\n\n\n\n\n\n\n\nRegister type\nExamples\nMaintained by\n\n\n\n\nPopulation registers\nPopulation Register / RTB\nStatistics Sweden (SCB)\n\n\nSocioeconomic registers\nLISA database\nStatistics Sweden (SCB)\n\n\nHealth data registers\nNPR, MBR, PDR, Cancer Register, Cause of Death Register, Dental Health Register\nNational Board of Health and Welfare\n\n\nInfectious disease surveillance\nNational Vaccination Register, SmiNet\nPublic Health Agency of Sweden\n\n\nSocial insurance registers\nSickness absence, disability benefits\nSwedish Social Insurance Agency\n\n\nSocial services registers\nSocial assistance, child welfare\nNational Board of Health and Welfare\n\n\nQuality registers\n~100 disease- or treatment-specific registers\nRegions / SALAR\n\n\n\nKey characteristics:\n\nNationwide coverage for many registers\nLongitudinal data spanning several decades\nPossibility of individual-level linkage across registers\n\nLimitations:\n\nsome sectors lack national registers (e.g. primary care, school health services)\ncoverage and data quality may vary across registers"
+  },
+  {
+    "objectID": "handouts.html#international-perspective",
+    "href": "handouts.html#international-perspective",
+    "title": "Handouts",
+    "section": "International perspective",
+    "text": "International perspective\nMany countries maintain health-related registers, but the structure and coverage vary considerably.\nCommon challenges internationally:\n\nfragmented healthcare systems\nlack of unique personal identifiers\nmultiple data holders (insurance systems, hospitals, regions)\nlimited possibilities for linking data across sectors\n\nAs a result, nationwide longitudinal register studies are often more difficult to conduct than in the Nordic countries."
+  },
+  {
+    "objectID": "handouts.html#countries-with-similar-register-infrastructures",
+    "href": "handouts.html#countries-with-similar-register-infrastructures",
+    "title": "Handouts",
+    "section": "Countries with similar register infrastructures",
+    "text": "Countries with similar register infrastructures\nThe Nordic countries have relatively similar systems based on:\n\nnationwide administrative registers\nuniversal healthcare systems\npersonal identification numbers\n\nThese countries are therefore often used in comparative register-based research."
+  },
+  {
+    "objectID": "handouts.html#examples-from-other-countries",
+    "href": "handouts.html#examples-from-other-countries",
+    "title": "Handouts",
+    "section": "Examples from other countries",
+    "text": "Examples from other countries\nHealth data systems in other countries are often organised differently:\n\nUnited Kingdom: NHS administrative datasets\nNetherlands: population registers linked with health insurance data\nUnited States: insurance claims databases and cohort studies\nCanada: provincial administrative health data\n\n\nThese systems can provide valuable data, but often lack:\n\nnationwide coverage\nconsistent linkage across registers\nvery long follow-up periods\n\nThe Nordic register systems are therefore widely used in international epidemiological research."
+  },
+  {
+    "objectID": "handouts.html#swedish-twin-registry",
+    "href": "handouts.html#swedish-twin-registry",
+    "title": "Handouts",
+    "section": "Swedish Twin Registry",
+    "text": "Swedish Twin Registry\n\nMaintained by Karolinska Institutet\nEstablished in 1961\nOne of the largest twin registers in the world\n\n\nInformation on\n\ntwins born in Sweden since the late 1800s\nzygosity (monozygotic / dizygotic)\nhealth outcomes\nlifestyle and environmental factors\n\nThe register currently includes more than 190,000 twins.\n\n\n\nresearch use\nMain purpose to study the role of genetic vs environmental factors in health and disease\n\n\nTypical study designs:\n\ntwin concordance studies\nco-twin control studies\nlongitudinal follow-up"
+  },
+  {
+    "objectID": "handouts.html#na",
+    "href": "handouts.html#na",
+    "title": "Handouts",
+    "section": "NA",
+    "text": "NA"
   },
   {
     "objectID": "handouts.html#big-data",
@@ -4121,13 +4569,6 @@
     "title": "Handouts",
     "section": "C-code changes",
     "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE?)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
-  },
-  {
-    "objectID": "handouts.html#na",
-    "href": "handouts.html#na",
-    "title": "Handouts",
-    "section": "NA",
-    "text": "NA"
   },
   {
     "objectID": "handouts.html#na-1",

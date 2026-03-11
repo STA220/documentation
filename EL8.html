@@ -149,27 +149,821 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">EL8: Health care registers</h1>
-  <p class="subtitle">LISA, RTB, dödsorsak, kvalreg, cancerreg, …</p>
+  <p class="subtitle">From cradle to grave</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="reading" class="slide level2 smaller scrollable">
+<section id="reading" class="slide level2">
 <h2>Reading</h2>
 <ul>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#/reading" role="doc-biblioref" onclick="">Nguyen 2022</a>, ch.&nbsp;4)</span></li>
-<li><span class="citation" data-cites="nguyen2022a">(<a href="#/reading" role="doc-biblioref" onclick="">Nguyen 2022</a>, ch.&nbsp;5)</span> Claims data is less commonly used in Sweden but is more important for example in the US where the health care system is more decentralized.</li>
+<li><p><span class="citation" data-cites="hiyoshi2026">Hiyoshi (<a href="#/references" role="doc-biblioref" onclick="">2026</a>)</span> gives a brief and recent introduction and to all registers covered in this lecture.</p></li>
+<li><p><span class="citation" data-cites="ludvigsson2016">Ludvigsson et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> provides an excellent overview of the Swedish population registers and their use in medical research.</p>
+<ul>
+<li><p>The Personal Data Act (PUL) has been replaced by GDPR.</p></li>
+<li><p>The former Regional Ethical Review Boards were replaced in 2019 by a single national authority, the Swedish Ethical Review Authority (Etikprövningsmyndigheten)</p></li>
+<li><p>The legislation governing legal gender recognition has been revised, with a new law adopted in 2024 and entering into force in 2025.</p></li>
+</ul></li>
 </ul>
+</section>
+<section class="slide level2">
+
 <p><strong>Recommended references:</strong></p>
 <ul>
-<li></li>
+<li><span class="citation" data-cites="brooke2017">Brooke et al. (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span> introduces the Swedish cause of death register</li>
+<li><span class="citation" data-cites="ludvigsson2019">Ludvigsson et al. (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span> describes The longitudinal integrated database for health insurance and labour market studies (LISA) and its use in medical research</li>
+<li><span class="citation" data-cites="everhov2025">Everhov et al. (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span> have investigated the completeness of the national patient register (focus on the intoduction, discussion and conslussions)</li>
+<li><span class="citation" data-cites="emilsson2015">Emilsson et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span> gives an overview of the Swedish Quality Registers. Some things have changed since then, but most of it is still relevant.</li>
 </ul>
+</section>
+<section id="types-of-registers" class="slide level2">
+<h2>Types of registers</h2>
+<h3 id="national-health-registers">National health registers</h3>
+<ul>
+<li>mandated by law</li>
+<li>Sometimes with regional data collection and yearly updates</li>
+<li>Governed by state authority</li>
+</ul>
+<h3 id="quality-registers">Quality registers</h3>
+<ul>
+<li>Volontary for health care providers but commonly adopted</li>
+<li>opt-out for individuals</li>
+<li>A typically Swedish concept</li>
+<li>more than 100 in Sweden</li>
+<li>But similar data collections in other countries by other names</li>
+<li>Governed by regional authorities</li>
+<li>Collaboration within The Swedish Association of Local Authorities and Regions (SALAR/SKR)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Authority</th>
+<th>National registers / systems</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>National Board of Health and Welfare (Socialstyrelsen)</td>
+<td>National Patient Register, Medical Birth Register, Cause of Death Register, Cancer Register, Prescribed Drug Register, Dental Health Register</td>
+<td>Main authority responsible for Swedish health data registers</td>
+</tr>
+<tr class="even">
+<td>Public Health Agency of Sweden (Folkhälsomyndigheten)</td>
+<td>National Vaccination Register, SmiNet (notifiable communicable diseases)</td>
+<td>Registers related to infectious disease surveillance</td>
+</tr>
+<tr class="odd">
+<td>Swedish eHealth Agency (E-hälsomyndigheten)</td>
+<td>National prescription database (dispensed prescription data)</td>
+<td>Data on dispensed medicines from pharmacies</td>
+</tr>
+<tr class="even">
+<td>Statistics Sweden (SCB)</td>
+<td>LISA database, Population Register, Education Register, Income and Tax Register</td>
+<td>Socioeconomic and demographic registers often linked to health data</td>
+</tr>
+<tr class="odd">
+<td>Swedish regions / national quality register organisations</td>
+<td>National Quality Registers (e.g.&nbsp;SWEDEHEART, Swedish Hip Arthroplasty Register, National Diabetes Register)</td>
+<td>Clinical quality registers maintained by healthcare organisations</td>
+</tr>
+</tbody>
+</table>
+
+<img data-src="images/paste-32.png" class="r-stretch"></section>
+<section id="swedish-medical-birth-register" class="slide level2">
+<h2>Swedish Medical Birth Register</h2>
+<ul>
+<li>Established in <strong>1973</strong></li>
+<li>Covers pregnancies resulting in delivery in Sweden</li>
+<li>Includes <strong>live births and stillbirths</strong> from gestational week 22+0</li>
+<li>Contains information reported by <strong>maternal care, delivery care, and neonatal care</strong></li>
+</ul>
+<p>Main variables include:</p>
+<ul>
+<li>mother’s <strong>previous pregnancies</strong>, smoking status, delivery clinic</li>
+<li><strong>gestational age</strong>, pain relief, and mode of delivery</li>
+<li><strong>diagnoses and procedures</strong> for mother and child</li>
+<li>child’s <strong>sex, weight, length, head circumference, and condition at birth</strong></li>
+</ul>
+</section>
+<section id="national-register-of-congenital-anomalies" class="slide level2">
+<h2>National Register of Congenital Anomalies</h2>
+<ul>
+<li>Surveillance register for congenital malformations (ICD-10) and chromosomal abnormalities</li>
+<li>For live births and stillbirths (≥22 weeks gestation)</li>
+<li>Also includes anonymised data on terminated pregnancies due to fetal anomalies</li>
+</ul>
+<h3 id="background">Background</h3>
+<ul>
+<li>monitoring of congenital anomalies started in 1964 following the Thalidomide (Neurosedyn) scandal</li>
+<li>integrated with the Medical Birth Register in 1973</li>
+<li>reporting expanded in 1999 to include terminated pregnancies due to fetal anomalies</li>
+</ul>
+</section>
+<section id="population-registration" class="slide level2">
+<h2>Population registration</h2>
+<ul>
+<li>Maintained by the Tax Agency
+<ul>
+<li>administrative register used for <strong>legal residence and taxation</strong></li>
+</ul></li>
+<li>Personal identity number assigned at birth (at the hospital)</li>
+<li>Legal sex registered as part of the personal identity number</li>
+<li>Child’s given name decided by parents and reported to the Tax Agency within 3 months</li>
+<li>Registration of municipality of residence (and thereby county)</li>
+<li>Registration district (earlier parish, now district)</li>
+<li>Registered residential address</li>
+<li>Migration events (immigration and emigration)</li>
+<li>Changes of address within Sweden</li>
+<li>Marital status and family relations</li>
+<li>Date of death</li>
+</ul>
+</section>
+<section id="the-total-population-register-rtp" class="slide level2">
+<h2>The Total population Register (RTP)</h2>
+<ul>
+<li>maintained by Statistics Sweden (SCB)</li>
+<li>based on data from the Population registration</li>
+<li>structured for statistical analysis and research</li>
+<li>used as the sampling frame for surveys and register-based studies</li>
+</ul>
+</section>
+<section id="childhood" class="slide level2">
+<h2>Childhood</h2>
+<p>During childhood and school years, health information is collected through:</p>
+<ul>
+<li>Child health services (BVC)</li>
+<li>School health services</li>
+<li>Vaccination records</li>
+<li>Examinations by school nurses or physicians</li>
+<li>dentists etc</li>
+</ul>
+<p>In contrast to many other stages of life in Sweden, these data are <strong>not collected in a national register</strong>.</p>
+</section>
+<section id="vaccination-register" class="slide level2">
+<h2>Vaccination Register</h2>
+<ul>
+<li>National register maintained by the Public Health Agency of Sweden (Folkhälsomyndigheten)</li>
+<li>Established in <strong>2013</strong></li>
+<li>Primarily covers vaccinations given within <strong>national vaccination programmes</strong></li>
+</ul>
+<h3 id="includes">Includes</h3>
+<ul>
+<li>vaccine administered</li>
+<li>date of vaccination</li>
+<li>dose number</li>
+<li>healthcare provider</li>
+</ul>
+<h3 id="purpose">Purpose</h3>
+<ul>
+<li>monitor vaccination coverage</li>
+<li>detect changes in uptake</li>
+<li>support surveillance of vaccine-preventable diseases</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>vaccinations given outside national programmes (e.g.&nbsp;travel vaccines) may not be fully captured</li>
+<li>reporting comes from many providers (regions, schools, private clinics)
+<ul>
+<li>therefore coverage may vary for some vaccines</li>
+</ul></li>
+</ul>
+</section>
+<section id="military-conscription" class="slide level2">
+<h2>Military conscription</h2>
+<p>The conscription register contains information from military conscription examination</p>
+<ul>
+<li>physical measurements (e.g.&nbsp;height, weight)</li>
+<li>cognitive ability tests</li>
+<li>psychological assessments</li>
+<li>health status and diagnoses</li>
+<li>physical fitness</li>
+</ul>
+<p>Important characteristics:</p>
+<ul>
+<li>covers most Swedish men born roughly <strong>1951–1990</strong></li>
+<li>Inactive 2010-2016</li>
+<li>Both men and women since 2017 (but only approximately 25 %)</li>
+<li>examinations typically performed at <strong>age 18–19</strong></li>
+<li>data collected by the <strong>Swedish Armed Forces</strong></li>
+</ul>
+<p>Implications for research:</p>
+<ul>
+<li>provides rich health and ability data in <strong>late adolescence</strong> for historic cohort</li>
+<li>widely used in epidemiological and social science research</li>
+<li>mainly includes <strong>men</strong>, which limits generalisability</li>
+</ul>
+</section>
+<section id="swedish-dental-health-register" class="slide level2">
+<h2>Swedish Dental Health Register</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Established in <strong>2008</strong></li>
+<li>Includes adults (≥20 years)</li>
+</ul>
+<p>Main variables include:</p>
+<ul>
+<li>dental diagnoses</li>
+<li>dental procedures (treatment codes)</li>
+<li>dental status (e.g.&nbsp;number of remaining teeth)</li>
+<li>treatment dates</li>
+<li>treatment costs and reimbursement</li>
+</ul>
+<p>Important characteristics:</p>
+<ul>
+<li>based on reports submitted within the national dental care subsidy system</li>
+<li>includes both public and private dental care providers</li>
+</ul>
+</section>
+<section id="screening-registers" class="slide level2">
+<h2>Screening registers</h2>
+<ul>
+<li>breast cancer (mammography)</li>
+<li>cervical cancer</li>
+<li>colorectal cancer</li>
+</ul>
+<p>These programmes aim to <strong>detect disease at an early stage</strong> in otherwise healthy individuals.</p>
+<p>Data from screening programmes are often stored in <strong>regional systems</strong> and coordinated nationally through:</p>
+<ul>
+<li>national screening programmes</li>
+<li>national quality registers</li>
+<li>regional cancer centres (RCC)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Typical variables include:</p>
+<ul>
+<li>invitation to screening</li>
+<li>participation</li>
+<li>screening results</li>
+<li>follow-up examinations</li>
+<li>detected diagnoses</li>
+</ul>
+<p>Screening data are important for studies of:</p>
+<ul>
+<li>participation in preventive care</li>
+<li>early disease detection</li>
+<li>effectiveness of screening programmes</li>
+</ul>
+</section>
+<section id="national-patient-register-npr" class="slide level2">
+<h2>National Patient Register (NPR)</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Covers <strong>specialised health care in Sweden</strong></li>
+<li>Data are collected by <strong>regions and healthcare providers</strong> and then reported to the national register</li>
+</ul>
+<h3 id="coverage">Coverage</h3>
+<ul>
+<li>inpatient care since the <strong>1960s</strong></li>
+<li>nationwide coverage since <strong>1987</strong></li>
+<li>specialised outpatient care since <strong>2001</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Each record represents a <strong>healthcare contact or episode of care</strong>.</p>
+<p>Examples of contacts included:</p>
+<ul>
+<li>hospital admissions</li>
+<li>outpatient specialist visits</li>
+<li>psychiatric specialist care</li>
+<li>day surgery or day care procedures</li>
+</ul>
+<p>Main variables include:</p>
+<ul>
+<li>diagnoses (<strong>ICD codes</strong>)</li>
+<li>procedures (<strong>KVÅ codes – Swedish classification of healthcare interventions</strong>)</li>
+<li>case-mix classification (<strong>DRG codes</strong>)</li>
+<li>dates of admission and discharge</li>
+<li>hospital or clinic</li>
+<li>patient demographics</li>
+</ul>
+<p>Historical note:</p>
+<ul>
+<li>earlier records used <strong>ICD-8 and ICD-9</strong></li>
+<li>today diagnoses are classified using <strong>ICD-10-SE</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="important-limitations">Important limitations:</h3>
+<ul>
+<li><strong>primary care is not included</strong></li>
+<li>coverage before 1987 is incomplete</li>
+<li>coding practices may vary between regions and over time</li>
+</ul>
+<h3 id="additional-considerations">Additional considerations:</h3>
+<ul>
+<li>reporting is <strong>nationally standardized but based on regional data collection</strong></li>
+<li>historically, some psychiatric care has been <strong>less consistently reported</strong></li>
+<li>many outpatient contacts require a <strong>physician encounter</strong>, but coding practices for contacts involving other professionals (e.g.&nbsp;nurses or psychologists) may vary</li>
+</ul>
+<p><strong>Despite these limitations, the NPR is widely used for:</strong></p>
+<ul>
+<li>epidemiological research</li>
+<li>disease surveillance</li>
+<li>health services research</li>
+</ul>
+</section>
+<section id="primary-care-data" class="slide level2">
+<h2>Primary care data</h2>
+<p>Primary care accounts for a large share of health care contacts in Sweden, but <strong>there is still no comprehensive national primary care register</strong> comparable to NPR.</p>
+<ul>
+<li>most primary care data are stored in <strong>regional electronic health record systems</strong></li>
+<li>reporting practices differ between regions</li>
+<li>national coverage for research and statistics is therefore limited</li>
+</ul>
+<h3 id="recent-developments">Recent developments</h3>
+<ul>
+<li>there have been long-standing discussions about establishing a national primary care register</li>
+<li>the National Board of Health and Welfare has begun collecting some aggregated primary care statistics</li>
+<li>several pilot initiatives and data collections are ongoing</li>
+</ul>
+</section>
+<section id="prescribed-drug-register-pdr" class="slide level2">
+<h2>Prescribed Drug Register (PDR)</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Covers dispensed prescription drugs from Swedish pharmacies</li>
+<li>Established in 2005</li>
+<li>Nationwide coverage</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Profession</th>
+<th>Prescribing rights</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Physicians</td>
+<td>Broad prescribing rights (most medications)</td>
+</tr>
+<tr class="even">
+<td>Dentists</td>
+<td>Medications related to dental care</td>
+</tr>
+<tr class="odd">
+<td>Midwives</td>
+<td>Selected medications (e.g., contraceptives)</td>
+</tr>
+<tr class="even">
+<td>Nurses</td>
+<td>Limited list of medications after additional training</td>
+</tr>
+<tr class="odd">
+<td>Optometrists</td>
+<td>Certain diagnostic eye medications</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+<h3 id="main-variables-include">Main variables include:</h3>
+<ul>
+<li>drug classification (<strong>ATC code</strong>)</li>
+<li>date of dispensing</li>
+<li>amount dispensed</li>
+<li>dosage information</li>
+<li>prescribing clinic or prescriber category</li>
+</ul>
+<p>The register contains <strong>drugs dispensed at pharmacies</strong>, not all prescriptions written by physicians.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="pdr-does-not-include">PDR does not include</h3>
+<ul>
+<li>drugs administered in hospitals</li>
+<li>over-the-counter drugs
+<ul>
+<li>since 2009, many non-prescription drugs can also be sold outside pharmacies (e.g.&nbsp;supermarkets and petrol stations)</li>
+</ul></li>
+<li>most herbal medicines or dietary supplements</li>
+</ul>
+<p>Dispension does not guarantee that the patient <strong>actually used the medication</strong></p>
+<h3 id="used-for">used for</h3>
+<ul>
+<li>pharmacoepidemiology</li>
+<li>studies of drug safety and effectiveness</li>
+<li>studies of treatment patterns</li>
+</ul>
+</section>
+<section id="cancer-register" class="slide level2">
+<h2>Cancer Register</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Established in <strong>1958</strong></li>
+<li>Covers <strong>all newly diagnosed malignant tumors in Sweden</strong></li>
+<li>Based on “primary tumour”</li>
+</ul>
+<p>Reporting is <strong>mandatory</strong> for clinicians (“A-anmälan”) and pathology laboratories (“B-anmälan”).</p>
+<h3 id="includes-1">Includes</h3>
+<ul>
+<li>date of diagnosis</li>
+<li>tumor site and morphology</li>
+<li>stage and diagnostic basis</li>
+<li>reporting clinic and region</li>
+</ul>
+<p>Diagnoses are classified using <strong>ICD and ICD-O codes</strong>.</p>
+</section>
+<section class="slide level2">
+
+<p>Cancer reporting in Sweden is organised through <strong>six healthcare regions</strong>:</p>
+<ul>
+<li>Northern</li>
+<li>Uppsala–Örebro</li>
+<li>Stockholm–Gotland</li>
+<li>South-East</li>
+<li>Western (VGR + [Northern] Halland)</li>
+<li>Southern</li>
+</ul>
+<p>Within each region, a <strong>Regional Cancer Centre (RCC)</strong> coordinates:</p>
+<ul>
+<li>cancer data reporting (combining A- and B-anmälan)</li>
+<li>quality improvement</li>
+<li>clinical guidelines</li>
+<li>cancer care monitoring</li>
+</ul>
+</section>
+<section id="strengths-and-limitations" class="slide level2">
+<h2>Strengths and limitations</h2>
+<p>Strengths:</p>
+<ul>
+<li>one of the oldest nationwide cancer registers in the world</li>
+<li>high completeness due to mandatory reporting</li>
+<li>enables long-term studies of cancer incidence and survival</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>limited information on <strong>treatment and outcomes</strong></li>
+<li>additional clinical details often require linkage to <strong>quality registers or NPR</strong></li>
+</ul>
+</section>
+<section id="other-disease-specific-registers" class="slide level2">
+<h2>Other disease-specific registers</h2>
+<p>The Swedish Cancer Register is one of the few nationwide disease-specific health data registers.</p>
+<p>Some other diagnoses are monitored through national systems, often related to infectious disease surveillance.</p>
+<h3 id="examples">Examples:</h3>
+<ul>
+<li>HIV (InfCare HIV register)</li>
+<li>notifiable infectious diseases reported through <strong>SmiNet</strong></li>
+<li>tuberculosis surveillance systems</li>
+<li>hepatitis registers</li>
+</ul>
+<h3 id="characteristics">Characteristics</h3>
+<ul>
+<li>often linked to <strong>infectious disease control</strong></li>
+<li>reporting may be <strong>mandatory under the Communicable Diseases Act</strong></li>
+<li>maintained by the <strong>Public Health Agency of Sweden</strong></li>
+</ul>
+</section>
+<section id="cause-of-death-register" class="slide level2">
+<h2>Cause of Death Register</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Established in <strong>1952</strong></li>
+<li>Covers <strong>all deaths among persons registered in Sweden</strong></li>
+<li>Information is based on <strong>death certificates completed by physicians</strong>.</li>
+<li>Diagnoses are classified using <strong>ICD codes</strong>. Currently ICD-10 (not ICD-10-SE)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Each death certificate contains:</p>
+<ul>
+<li><p><strong>underlying cause of death</strong><br>
+(the disease or injury that initiated the chain of events leading to death)</p></li>
+<li><p><strong>contributing causes of death</strong><br>
+(other conditions that contributed to the death)</p></li>
+</ul>
+<p>Example structure:</p>
+<ul>
+<li><p>Disease → complication → death</p></li>
+<li><p>Diabetes → kidney failure → death</p></li>
+</ul>
+<p>This structure allows analyses of <strong>both underlying and contributing causes of death</strong>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li>nationwide coverage since the <strong>1950s</strong></li>
+<li>very long time series for mortality research</li>
+<li>standardized (international) classification using <strong>ICD</strong></li>
+</ul>
+<h3 id="limitations-1">Limitations</h3>
+<ul>
+<li>cause of death depends on <strong>clinical judgement and available information</strong></li>
+<li>autopsy rates have decreased over time</li>
+<li>misclassification can occur, especially at <strong>older ages</strong></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>The register is used when the cause of death is of importance. The date of eath is otherwise also found in TPR and can often be accesed directly from the Tax Agency.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lisa" class="slide level2">
+<h2>LISA</h2>
+<p>Not a health care register but often used for background data.</p>
+<ul>
+<li>Longitudinal Integration Database for Health Insurance and Labour Market Studies</li>
+<li>Maintained by <strong>Statistics Sweden (SCB)</strong></li>
+<li>Established in <strong>1990</strong>, with data available annually from that year</li>
+</ul>
+<p>The database contains <strong>socioeconomic information for all individuals aged 16 and older registered in Sweden</strong>.</p>
+<h3 id="purpose-1">Purpose</h3>
+<ul>
+<li>provide background variables for research and statistics</li>
+<li>enable studies of <strong>social determinants of health</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="main-types-of-variables-include">Main types of variables include</h3>
+<ul>
+<li>education level</li>
+<li>income and taxation</li>
+<li>employment status</li>
+<li>occupation and workplace</li>
+<li>social insurance benefits</li>
+<li>family situation</li>
+</ul>
+<h3 id="important-characteristics">Important characteristics</h3>
+<ul>
+<li><strong>longitudinal data updated annually</strong></li>
+<li>based on administrative registers from several authorities</li>
+<li>can be linked to health registers using the <strong>personal identity number</strong></li>
+</ul>
+<h3 id="used-for-1">used for</h3>
+<ul>
+<li>adjustment for socioeconomic factors</li>
+<li>studies of inequalities in health</li>
+<li>labour market and health research</li>
+</ul>
+</section>
+<section id="social-services-registers-sol" class="slide level2">
+<h2>Social services registers (SoL)</h2>
+<p>Maintained by the <strong>National Board of Health and Welfare (Socialstyrelsen)</strong>.</p>
+<p>Data reported under the <strong>Social Services Act (SoL)</strong>.</p>
+<h3 id="examples-1">Examples</h3>
+<ul>
+<li>social assistance (economic support)</li>
+<li>interventions for children and adolescents</li>
+<li>substance abuse treatment</li>
+<li>some elderly care services</li>
+</ul>
+<h3 id="purpose-2">Purpose:</h3>
+<ul>
+<li>monitor social welfare services</li>
+<li>support research on <strong>social determinants of health</strong></li>
+</ul>
+</section>
+<section id="social-insurance-registers" class="slide level2">
+<h2>Social insurance registers</h2>
+<p>Registers on sickness absence and social insurance are maintained by the <strong>Swedish Social Insurance Agency (Försäkringskassan)</strong>.</p>
+<h3 id="examples-2">Examples</h3>
+<ul>
+<li>sickness benefit (sick leave compensation)</li>
+<li>disability pension</li>
+<li>parental leave benefits</li>
+<li>work injury compensation</li>
+</ul>
+<h3 id="main-variables">Main variables</h3>
+<ul>
+<li>benefit type</li>
+<li>start and end dates</li>
+<li>degree of compensation (e.g.&nbsp;25–100%)</li>
+<li>diagnosis for sickness absence</li>
+<li>demographic information</li>
+</ul>
+<h3 id="important-characteristics-1">Important characteristics</h3>
+<ul>
+<li>based on <strong>administrative data used for benefit decisions</strong></li>
+<li>widely used in research on <strong>work ability, labour market participation, and health</strong></li>
+</ul>
+<p>These registers complement health registers by providing information on <strong>functional consequences of disease</strong>, such as long-term sickness absence.</p>
+</section>
+<section id="national-quality-registers" class="slide level2">
+<h2>National Quality Registers</h2>
+<p>National quality registers collect detailed clinical information on specific diseases or treatments.</p>
+<p>They are designed to:</p>
+<ul>
+<li>monitor and improve quality of care</li>
+<li>support clinical quality improvement</li>
+</ul>
+<p>But they can also be used for research</p>
+<p>Typical characteristics:</p>
+<ul>
+<li>focus on specific diagnoses, treatments, or procedures</li>
+<li>contain more detailed clinical data than national health data registers</li>
+<li>participation is generally voluntary for healthcare providers</li>
+</ul>
+<p>There are currently <strong>around 100 national quality registers</strong> in Sweden.</p>
+</section>
+<section id="organisation" class="slide level2">
+<h2>Organisation</h2>
+<p>Quality registers are typically organised by <strong>clinical communities</strong>.</p>
+<p>Key actors include:</p>
+<ul>
+<li>clinicians and researchers responsible for the register</li>
+<li>steering groups for each register</li>
+<li>regional cancer centres and register centers</li>
+<li>The system is nationally coordinated by the <strong>Swedish Association of Local Authorities and Regions (SALAR / SKR)</strong></li>
+<li>Registers are usually hosted by <strong>regional healthcare organisations</strong> and funded through national and regional support.</li>
+<li>Quality registers therefore complement national health data registers by providing <strong>more detailed clinical information</strong>.</li>
+</ul>
+</section>
+<section id="promprem" class="slide level2">
+<h2>PROM/PREM</h2>
+<p>In addition to clinical data, many registers also collect:</p>
+<ul>
+<li><strong>PROM</strong> – Patient Reported Outcome Measures</li>
+<li><strong>PREM</strong> – Patient Reported Experience Measures</li>
+</ul>
+<p>These variables capture:</p>
+<ul>
+<li>patients’ own assessment of health status</li>
+<li>quality of care from the patient perspective</li>
+</ul>
+</section>
+<section id="the-swedish-register-ecosystem" class="slide level2">
+<h2>The Swedish register ecosystem</h2>
+<p>Sweden has a unique infrastructure of population-based registers that can be linked using the <strong>personal identity number</strong>.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Register type</th>
+<th>Examples</th>
+<th>Maintained by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Population registers</td>
+<td>Population Register / RTB</td>
+<td>Statistics Sweden (SCB)</td>
+</tr>
+<tr class="even">
+<td>Socioeconomic registers</td>
+<td>LISA database</td>
+<td>Statistics Sweden (SCB)</td>
+</tr>
+<tr class="odd">
+<td>Health data registers</td>
+<td>NPR, MBR, PDR, Cancer Register, Cause of Death Register, Dental Health Register</td>
+<td>National Board of Health and Welfare</td>
+</tr>
+<tr class="even">
+<td>Infectious disease surveillance</td>
+<td>National Vaccination Register, SmiNet</td>
+<td>Public Health Agency of Sweden</td>
+</tr>
+<tr class="odd">
+<td>Social insurance registers</td>
+<td>Sickness absence, disability benefits</td>
+<td>Swedish Social Insurance Agency</td>
+</tr>
+<tr class="even">
+<td>Social services registers</td>
+<td>Social assistance, child welfare</td>
+<td>National Board of Health and Welfare</td>
+</tr>
+<tr class="odd">
+<td>Quality registers</td>
+<td>~100 disease- or treatment-specific registers</td>
+<td>Regions / SALAR</td>
+</tr>
+</tbody>
+</table>
+<p>Key characteristics:</p>
+<ul>
+<li><strong>Nationwide coverage</strong> for many registers</li>
+<li>Longitudinal data spanning several decades</li>
+<li>Possibility of <strong>individual-level linkage across registers</strong></li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>some sectors lack national registers (e.g.&nbsp;<strong>primary care, school health services</strong>)</li>
+<li>coverage and data quality may vary across registers</li>
+</ul>
+</section>
+<section id="international-perspective" class="slide level2">
+<h2>International perspective</h2>
+<p>Many countries maintain health-related registers, but the <strong>structure and coverage vary considerably</strong>.</p>
+<p>Common challenges internationally:</p>
+<ul>
+<li>fragmented healthcare systems</li>
+<li>lack of unique personal identifiers</li>
+<li>multiple data holders (insurance systems, hospitals, regions)</li>
+<li>limited possibilities for linking data across sectors</li>
+</ul>
+<p>As a result, nationwide longitudinal register studies are often more difficult to conduct than in the Nordic countries.</p>
+</section>
+<section id="countries-with-similar-register-infrastructures" class="slide level2">
+<h2>Countries with similar register infrastructures</h2>
+<p>The Nordic countries have relatively similar systems based on:</p>
+<ul>
+<li>nationwide administrative registers</li>
+<li>universal healthcare systems</li>
+<li>personal identification numbers</li>
+</ul>
+<p>These countries are therefore often used in <strong>comparative register-based research</strong>.</p>
+</section>
+<section id="examples-from-other-countries" class="slide level2">
+<h2>Examples from other countries</h2>
+<p>Health data systems in other countries are often organised differently:</p>
+<ul>
+<li>United Kingdom: NHS administrative datasets</li>
+<li>Netherlands: population registers linked with health insurance data</li>
+<li>United States: insurance claims databases and cohort studies</li>
+<li>Canada: provincial administrative health data</li>
+</ul>
+<h3 id="these-systems-can-provide-valuable-data-but-often-lack">These systems can provide valuable data, but often lack:</h3>
+<ul>
+<li>nationwide coverage</li>
+<li>consistent linkage across registers</li>
+<li>very long follow-up periods</li>
+</ul>
+<p>The Nordic register systems are therefore <strong>widely used in international epidemiological research</strong>.</p>
+</section>
+<section id="swedish-twin-registry" class="slide level2">
+<h2>Swedish Twin Registry</h2>
+<ul>
+<li>Maintained by <strong>Karolinska Institutet</strong></li>
+<li>Established in <strong>1961</strong></li>
+<li>One of the <strong>largest twin registers in the world</strong></li>
+</ul>
+<h3 id="information-on">Information on</h3>
+<ul>
+<li>twins born in Sweden since the late 1800s</li>
+<li>zygosity (monozygotic / dizygotic)</li>
+<li>health outcomes</li>
+<li>lifestyle and environmental factors</li>
+</ul>
+<p>The register currently includes <strong>more than 190,000 twins</strong>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="research-use">research use</h3>
+<p>Main purpose to study the role of <strong>genetic vs environmental factors</strong> in health and disease</p>
+<h3 id="typical-study-designs">Typical study designs:</h3>
+<ul>
+<li>twin concordance studies</li>
+<li>co-twin control studies</li>
+<li>longitudinal follow-up</li>
+</ul>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-nguyen2022a" class="csl-entry" role="listitem">
-Nguyen, Andrew. 2022. <em>Hands-on healthcare data: taming the complexity of real-world data</em>. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.
+<div id="ref-brooke2017" class="csl-entry" role="listitem">
+Brooke, Hannah Louise, Mats Talbäck, Jesper Hörnblad, Lars Age Johansson, Jonas Filip Ludvigsson, Henrik Druid, Maria Feychting, and Rickard Ljung. 2017. <span>“The Swedish Cause of Death Register.”</span> <em>European Journal of Epidemiology</em> 32 (9): 765–73. <a href="https://doi.org/10.1007/s10654-017-0316-1">https://doi.org/10.1007/s10654-017-0316-1</a>.
+</div>
+<div id="ref-emilsson2015" class="csl-entry" role="listitem">
+Emilsson, L., B. Lindahl, M. Köster, M. Lambe, and J. F. Ludvigsson. 2015. <span>“Review of 103 Swedish Healthcare Quality Registries.”</span> <em>Journal of Internal Medicine</em> 277 (1): 94–136. <a href="https://doi.org/10.1111/joim.12303">https://doi.org/10.1111/joim.12303</a>.
+</div>
+<div id="ref-everhov2025" class="csl-entry" role="listitem">
+Everhov, Åsa H., Thomas Frisell, Mehdi Osooli, Hannah L. Brooke, Hanne K. Carlsen, Karin Modig, Karl Mårild, et al. 2025. <span>“Diagnostic Accuracy in the Swedish National Patient Register: A Review Including Diagnoses in the Outpatient Register.”</span> <em>European Journal of Epidemiology</em> 40 (3): 359–69. <a href="https://doi.org/10.1007/s10654-025-01221-0">https://doi.org/10.1007/s10654-025-01221-0</a>.
+</div>
+<div id="ref-hiyoshi2026" class="csl-entry" role="listitem">
+Hiyoshi, Ayako. 2026. <span>“Overview of Swedish Register Data for Health Research.”</span> <em>Annals of Clinical Epidemiology</em> advpub. <a href="https://doi.org/10.37737/ace.27005">https://doi.org/10.37737/ace.27005</a>.
+</div>
+<div id="ref-ludvigsson2016" class="csl-entry" role="listitem">
+Ludvigsson, Jonas F., Catarina Almqvist, Anna Karin Edstedt Bonamy, Rickard Ljung, Karl Michaëlsson, Martin Neovius, Olof Stephansson, and Weimin Ye. 2016. <span>“Registers of the Swedish Total Population and Their Use in Medical Research.”</span> <em>European Journal of Epidemiology</em>, 1–12. <a href="https://doi.org/10.1007/s10654-016-0117-y">https://doi.org/10.1007/s10654-016-0117-y</a>.
+</div>
+<div id="ref-ludvigsson2019" class="csl-entry" role="listitem">
+Ludvigsson, Jonas F., Pia Svedberg, Ola Olén, Gustaf Bruze, and Martin Neovius. 2019. <span>“The Longitudinal Integrated Database for Health Insurance and Labour Market Studies (LISA) and Its Use in Medical Research.”</span> <em>European Journal of Epidemiology</em> 34 (4): 423–37. <a href="https://doi.org/10.1007/s10654-019-00511-8">https://doi.org/10.1007/s10654-019-00511-8</a>.
 </div>
 </div>
 </section>
