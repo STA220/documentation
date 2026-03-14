@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-11">
+<meta name="dcterms.date" content="2026-03-14">
 
 <title>ECS5: Presentation – STA220</title>
 <style>
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL9.html">
- <span class="dropdown-text">EL9: Reporting, presentation</span></a>
+ <span class="dropdown-text">EL9: Documentation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL10.html">
@@ -181,6 +181,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./ES1.html">
  <span class="dropdown-text">ES1: Ethics and Legality</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./ES2.html">
+ <span class="dropdown-text">ES2: Project presentations</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -205,9 +209,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#presentation" id="toc-presentation" class="nav-link active" data-scroll-target="#presentation">Presentation</a>
   <ul class="collapse">
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
-  <li><a href="#interactive-tools-optional" id="toc-interactive-tools-optional" class="nav-link" data-scroll-target="#interactive-tools-optional">Interactive tools (optional)</a></li>
+  <li><a href="#suggested-tools-for-presenting-results" id="toc-suggested-tools-for-presenting-results" class="nav-link" data-scroll-target="#suggested-tools-for-presenting-results">Suggested tools for presenting results</a></li>
+  <li><a href="#examination" id="toc-examination" class="nav-link" data-scroll-target="#examination">Examination</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS5.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -228,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 11, 2026</p>
+      <p class="date">March 14, 2026</p>
     </div>
   </div>
   
@@ -250,41 +253,61 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is part of the project examined by <a href="./ECS4.html">ECS4</a>. Although, you do not need to start working on this part until <a href="./EL9.html">EL9</a> has been given.</p>
+<p>This is part of the project introduced in <a href="./ECS4.html">ECS4</a> and examined in <a href="./ES2.html">ES2</a>.</p>
 </div>
 </div>
 <section id="presentation" class="level1">
 <h1>Presentation</h1>
-<p>After <a href="./EL9.html">EL9</a> you will prepare a presentation of your work.</p>
-<p>Think early about how to communicate your results through <strong>figures, tables and text</strong>, but allow your exploratory analysis to guide your decisions. Hence, don’t prepare the actual presentation until you have seen <a href="./EL9.html">EL9</a>.</p>
-<section id="figures" class="level2">
-<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<p>After <a href="./EL9.html">EL9</a> you will prepare a presentation of your work using <strong>Quarto</strong>.</p>
+<p>The length of that presentation will be around 5 minutes.</p>
+<p>Start thinking early about how you want to communicate your results through <strong>figures, tables, and text</strong>. However, let your exploratory analysis guide your decisions. For this reason, you should not prepare the actual presentation before <a href="./EL9.html">EL9</a>.</p>
+<p>Your group may choose one of the following formats:</p>
 <ul>
-<li><a href="https://ggplot2.tidyverse.org">ggplot2</a></li>
-<li><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></li>
-<li><a href="https://github.com/plotly/plotly.R">plotly</a></li>
-<li>base graphics</li>
-<li>any other tool that produces clear presentation-quality figures</li>
+<li>a written report (<code>format: html</code> or <code>format: typst</code>)</li>
+<li>a slideshow (<code>format: revealjs</code>)</li>
+<li>both</li>
 </ul>
+<p>If you choose to produce only a written report, you may still present it during <a href="./ES2.html">ES2</a> by showing it on screen and scrolling through the document while presenting.</p>
+<p>Keep in mind that producing polished figures and tables can take time. Aim for <strong>clear and readable results</strong>, but do not spend excessive time on perfect formatting.</p>
+<section id="suggested-tools-for-presenting-results" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-tools-for-presenting-results">Suggested tools for presenting results</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Purpose</th>
+<th>Examples</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Figures</strong></td>
+<td><a href="https://ggplot2.tidyverse.org">ggplot2</a>, <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a>, <a href="https://github.com/plotly/plotly.R">plotly</a>, base R graphics</td>
+<td>Use any tool that produces <strong>clear, presentation-quality figures</strong>.</td>
+</tr>
+<tr class="even">
+<td><strong>Tables</strong></td>
+<td><a href="https://gt.rstudio.com">gt</a>, <a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a>, <a href="https://davidgohel.github.io/flextable/">flextable</a>, <a href="https://haozhu233.github.io/kableExtra/">kableExtra</a></td>
+<td>Use any tool that produces <strong>clear, presentation-quality tables</strong>.</td>
+</tr>
+<tr class="odd">
+<td><strong>Interactive tools (optional)</strong></td>
+<td><a href="https://shiny.posit.co">shiny</a>, <a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a>, <a href="https://www.htmlwidgets.org">htmlwidgets</a></td>
+<td>These allow interactive presentations, but may be too ambitious unless you already have experience with them.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="tables" class="level2">
-<h2 class="anchored" data-anchor-id="tables">Tables</h2>
-<ul>
-<li><a href="https://gt.rstudio.com">gt</a></li>
-<li><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a></li>
-<li><a href="https://davidgohel.github.io/flextable/">flextable</a></li>
-<li><a href="https://haozhu233.github.io/kableExtra/">kableExtra</a></li>
-<li>any other tool that produces clear presentation-quality tables</li>
-</ul>
-</section>
-<section id="interactive-tools-optional" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-tools-optional">Interactive tools (optional)</h2>
-<p>As an alternative to a static presentation, you may choose to use something more interactive. For most groups, however, this might be to stressfull if you do not already have sme knowledge about those tools.</p>
-<ul>
-<li><a href="https://shiny.posit.co">shiny</a></li>
-<li><a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a></li>
-<li><a href="https://www.htmlwidgets.org">htmlwidgets</a></li>
-</ul>
+<section id="examination" class="level2">
+<h2 class="anchored" data-anchor-id="examination">Examination</h2>
+<p>For the examination you are expected to:</p>
+<ol type="1">
+<li>Use your report or presentation as the basis for your <strong>oral seminar presentation</strong> in <a href="./ES2.html">ES2</a>.</li>
+<li>The report/presentation should include at least one figure and one table of relevance</li>
+<li>Include the <strong>Quarto source file (<code>.qmd</code>)</strong> that generates the report or presentation in your <strong>GitHub repository</strong>.</li>
+</ol>
+<p>The repository should therefore contain the <code>.qmd</code> document and any files required to render the report or presentation, as well as rendered output document.</p>
+<p>Both group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming).</p>
 
 
 </section>

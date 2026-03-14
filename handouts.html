@@ -216,7 +216,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL9.html">
- <span class="dropdown-text">EL9: Reporting, presentation</span></a>
+ <span class="dropdown-text">EL9: Documentation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL10.html">
@@ -263,6 +263,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./ES1.html">
  <span class="dropdown-text">ES1: Ethics and Legality</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ES2.html">
+ <span class="dropdown-text">ES2: Project presentations</span></a>
   </li>  
     </ul>
   </li>
@@ -650,9 +654,46 @@ window.Quarto = {
   <li><a href="#typical-study-designs" id="toc-typical-study-designs" class="nav-link" data-scroll-target="#typical-study-designs">Typical study designs:</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#el9-reporting-presentation" id="toc-el9-reporting-presentation" class="nav-link" data-scroll-target="#el9-reporting-presentation">EL9: Reporting, presentation</a>
+  <li><a href="#el9-documentation" id="toc-el9-documentation" class="nav-link" data-scroll-target="#el9-documentation">EL9: Documentation</a>
   <ul class="collapse">
-  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
+  <li><a href="#reading-4" id="toc-reading-4" class="nav-link" data-scroll-target="#reading-4">Reading</a></li>
+  <li><a href="#levels-of-documentation" id="toc-levels-of-documentation" class="nav-link" data-scroll-target="#levels-of-documentation">Levels of documentation</a></li>
+  <li><a href="#documenting-r-scripts" id="toc-documenting-r-scripts" class="nav-link" data-scroll-target="#documenting-r-scripts">Documenting R scripts</a></li>
+  <li><a href="#documenting-r-functions" id="toc-documenting-r-functions" class="nav-link" data-scroll-target="#documenting-r-functions">Documenting R functions</a></li>
+  <li><a href="#documenting-a-project" id="toc-documenting-a-project" class="nav-link" data-scroll-target="#documenting-a-project">Documenting a project</a></li>
+  <li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting">Basic formatting</a></li>
+  <li><a href="#reproducible-workflows-in-biostatistics" id="toc-reproducible-workflows-in-biostatistics" class="nav-link" data-scroll-target="#reproducible-workflows-in-biostatistics">Reproducible Workflows in Biostatistics</a></li>
+  <li><a href="#what" id="toc-what" class="nav-link" data-scroll-target="#what">What?</a></li>
+  <li><a href="#why-1" id="toc-why-1" class="nav-link" data-scroll-target="#why-1">Why?</a></li>
+  <li><a href="#a-reproducible-analysis-document" id="toc-a-reproducible-analysis-document" class="nav-link" data-scroll-target="#a-reproducible-analysis-document">A reproducible analysis document</a></li>
+  <li><a href="#used-in-three-ways" id="toc-used-in-three-ways" class="nav-link" data-scroll-target="#used-in-three-ways">Used in three ways</a></li>
+  <li><a href="#a-simple-report" id="toc-a-simple-report" class="nav-link" data-scroll-target="#a-simple-report">A simple report</a></li>
+  <li><a href="#yaml-structure" id="toc-yaml-structure" class="nav-link" data-scroll-target="#yaml-structure">YAML structure</a>
+  <ul class="collapse">
+  <li><a href="#what-happens-if-indentation-is-wrong" id="toc-what-happens-if-indentation-is-wrong" class="nav-link" data-scroll-target="#what-happens-if-indentation-is-wrong">What happens if indentation is wrong?</a></li>
+  </ul></li>
+  <li><a href="#three-parts" id="toc-three-parts" class="nav-link" data-scroll-target="#three-parts">Three parts</a></li>
+  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a></li>
+  <li><a href="#to-publish" id="toc-to-publish" class="nav-link" data-scroll-target="#to-publish">To publish</a></li>
+  <li><a href="#for-collaborators" id="toc-for-collaborators" class="nav-link" data-scroll-target="#for-collaborators">For collaborators</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#better-with-kable" id="toc-better-with-kable" class="nav-link" data-scroll-target="#better-with-kable">Better with kable</a></li>
+  <li><a href="#best-with-gt" id="toc-best-with-gt" class="nav-link" data-scroll-target="#best-with-gt">Best with gt</a></li>
+  <li><a href="#gtsummary" id="toc-gtsummary" class="nav-link" data-scroll-target="#gtsummary">gtsummary</a></li>
+  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations">Presentations</a></li>
+  <li><a href="#manuscripts" id="toc-manuscripts" class="nav-link" data-scroll-target="#manuscripts">Manuscripts</a></li>
+  <li><a href="#use-references" id="toc-use-references" class="nav-link" data-scroll-target="#use-references">USe references</a></li>
+  <li><a href="#what-is-reference-management" id="toc-what-is-reference-management" class="nav-link" data-scroll-target="#what-is-reference-management">What is reference management?</a></li>
+  <li><a href="#common-reference-management-tools" id="toc-common-reference-management-tools" class="nav-link" data-scroll-target="#common-reference-management-tools">Common reference management tools</a></li>
+  <li><a href="#how-quarto-handles-references" id="toc-how-quarto-handles-references" class="nav-link" data-scroll-target="#how-quarto-handles-references">How Quarto handles references</a></li>
+  <li><a href="#integrate-with-targets" id="toc-integrate-with-targets" class="nav-link" data-scroll-target="#integrate-with-targets">Integrate with <code>{targets}</code></a>
+  <ul class="collapse">
+  <li><a href="#in-_targets.r" id="toc-in-_targets.r" class="nav-link" data-scroll-target="#in-_targets.r">in <code>_targets.R</code></a></li>
+  <li><a href="#in-report.qmd" id="toc-in-report.qmd" class="nav-link" data-scroll-target="#in-report.qmd">In <code>report.qmd</code></a></li>
+  </ul></li>
+  <li><a href="#try-it" id="toc-try-it" class="nav-link" data-scroll-target="#try-it">Try it</a></li>
+  <li><a href="#online-portfolio" id="toc-online-portfolio" class="nav-link" data-scroll-target="#online-portfolio">Online portfolio</a></li>
   </ul></li>
   <li><a href="#el10-big-data" id="toc-el10-big-data" class="nav-link" data-scroll-target="#el10-big-data">EL10: Big data</a>
   <ul class="collapse">
@@ -701,7 +742,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#el11-repetition" id="toc-el11-repetition" class="nav-link" data-scroll-target="#el11-repetition">EL11: Repetition</a>
   <ul class="collapse">
-  <li><a href="#na-1" id="toc-na-1" class="nav-link" data-scroll-target="#na-1">NA</a></li>
+  <li><a href="#na" id="toc-na" class="nav-link" data-scroll-target="#na">NA</a></li>
   </ul></li>
   <li><a href="#complete-reading-list" id="toc-complete-reading-list" class="nav-link" data-scroll-target="#complete-reading-list">Complete Reading list</a></li>
   </ul>
@@ -745,28 +786,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-03-11</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-03-14</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="evbwgmikah" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#evbwgmikah table {
+<div id="aupwpdxvyo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aupwpdxvyo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#evbwgmikah thead, #evbwgmikah tbody, #evbwgmikah tfoot, #evbwgmikah tr, #evbwgmikah td, #evbwgmikah th {
+#aupwpdxvyo thead, #aupwpdxvyo tbody, #aupwpdxvyo tfoot, #aupwpdxvyo tr, #aupwpdxvyo td, #aupwpdxvyo th {
   border-style: none;
 }
 
-#evbwgmikah p {
+#aupwpdxvyo p {
   margin: 0;
   padding: 0;
 }
 
-#evbwgmikah .gt_table {
+#aupwpdxvyo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -792,12 +833,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_caption {
+#aupwpdxvyo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#evbwgmikah .gt_title {
+#aupwpdxvyo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -809,7 +850,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#evbwgmikah .gt_subtitle {
+#aupwpdxvyo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -821,7 +862,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#evbwgmikah .gt_heading {
+#aupwpdxvyo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -833,13 +874,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_bottom_border {
+#aupwpdxvyo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_col_headings {
+#aupwpdxvyo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -854,7 +895,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_col_heading {
+#aupwpdxvyo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -874,7 +915,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#evbwgmikah .gt_column_spanner_outer {
+#aupwpdxvyo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -886,15 +927,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#evbwgmikah .gt_column_spanner_outer:first-child {
+#aupwpdxvyo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#evbwgmikah .gt_column_spanner_outer:last-child {
+#aupwpdxvyo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#evbwgmikah .gt_column_spanner {
+#aupwpdxvyo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -906,11 +947,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#evbwgmikah .gt_spanner_row {
+#aupwpdxvyo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#evbwgmikah .gt_group_heading {
+#aupwpdxvyo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -936,7 +977,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#evbwgmikah .gt_empty_group_heading {
+#aupwpdxvyo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -951,15 +992,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#evbwgmikah .gt_from_md > :first-child {
+#aupwpdxvyo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#evbwgmikah .gt_from_md > :last-child {
+#aupwpdxvyo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#evbwgmikah .gt_row {
+#aupwpdxvyo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -978,7 +1019,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#evbwgmikah .gt_stub {
+#aupwpdxvyo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -991,7 +1032,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#evbwgmikah .gt_stub_row_group {
+#aupwpdxvyo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1005,15 +1046,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#evbwgmikah .gt_row_group_first td {
+#aupwpdxvyo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#evbwgmikah .gt_row_group_first th {
+#aupwpdxvyo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#evbwgmikah .gt_summary_row {
+#aupwpdxvyo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1023,16 +1064,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#evbwgmikah .gt_first_summary_row {
+#aupwpdxvyo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_first_summary_row.thick {
+#aupwpdxvyo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#evbwgmikah .gt_last_summary_row {
+#aupwpdxvyo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1042,7 +1083,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_grand_summary_row {
+#aupwpdxvyo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1052,7 +1093,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#evbwgmikah .gt_first_grand_summary_row {
+#aupwpdxvyo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1062,7 +1103,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_last_grand_summary_row_top {
+#aupwpdxvyo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1072,11 +1113,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_striped {
+#aupwpdxvyo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#evbwgmikah .gt_table_body {
+#aupwpdxvyo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1085,7 +1126,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_footnotes {
+#aupwpdxvyo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1099,7 +1140,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_footnote {
+#aupwpdxvyo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1108,7 +1149,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#evbwgmikah .gt_sourcenotes {
+#aupwpdxvyo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1122,7 +1163,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#evbwgmikah .gt_sourcenote {
+#aupwpdxvyo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1130,72 +1171,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#evbwgmikah .gt_left {
+#aupwpdxvyo .gt_left {
   text-align: left;
 }
 
-#evbwgmikah .gt_center {
+#aupwpdxvyo .gt_center {
   text-align: center;
 }
 
-#evbwgmikah .gt_right {
+#aupwpdxvyo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#evbwgmikah .gt_font_normal {
+#aupwpdxvyo .gt_font_normal {
   font-weight: normal;
 }
 
-#evbwgmikah .gt_font_bold {
+#aupwpdxvyo .gt_font_bold {
   font-weight: bold;
 }
 
-#evbwgmikah .gt_font_italic {
+#aupwpdxvyo .gt_font_italic {
   font-style: italic;
 }
 
-#evbwgmikah .gt_super {
+#aupwpdxvyo .gt_super {
   font-size: 65%;
 }
 
-#evbwgmikah .gt_footnote_marks {
+#aupwpdxvyo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#evbwgmikah .gt_asterisk {
+#aupwpdxvyo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#evbwgmikah .gt_indent_1 {
+#aupwpdxvyo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#evbwgmikah .gt_indent_2 {
+#aupwpdxvyo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#evbwgmikah .gt_indent_3 {
+#aupwpdxvyo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#evbwgmikah .gt_indent_4 {
+#aupwpdxvyo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#evbwgmikah .gt_indent_5 {
+#aupwpdxvyo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#evbwgmikah .katex-display {
+#aupwpdxvyo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#evbwgmikah div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aupwpdxvyo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4457,7 +4498,7 @@ gg &lt;- bef_ag |&gt;
 </colgroup>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>zzo #| echo: false gg</code></td>
+<td style="text-align: left;"><code>mku #| echo: false gg</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">## Hierachical data</td>
@@ -4466,13 +4507,13 @@ gg &lt;- bef_ag |&gt;
 <td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>pezvvo { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+<td style="text-align: left;"><code>qqdbqa { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">## Example</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>zzo #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
+<td style="text-align: left;"><code>mku #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
 </tr>
 </tbody>
 </table>
@@ -6285,8 +6326,8 @@ Note
 </section>
 </section>
 </section>
-<section id="el9-reporting-presentation" class="level1">
-<h1>EL9: Reporting, presentation</h1>
+<section id="el9-documentation" class="level1">
+<h1>EL9: Documentation</h1>
 <p><a href="https://sta220.github.io/documentation/EL9.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -6299,12 +6340,611 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li></li>
+<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch.&nbsp;28-29)</span></li>
 </ul>
 </div>
 </div>
-<section id="na" class="level2">
-<h2 class="anchored" data-anchor-id="na">NA</h2>
+<section id="reading-4" class="level2">
+<h2 class="anchored" data-anchor-id="reading-4">Reading</h2>
+<ul>
+<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch.&nbsp;28-29)</span> introduces Quarto with good examples</li>
+</ul>
+<p><strong>For reference</strong></p>
+<p><a href="https://quarto.org">quarto.org</a></p>
+</section>
+<section id="levels-of-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="levels-of-documentation">Levels of documentation</h2>
+<p>Documentation can exist at several levels in a project.</p>
+<ul>
+<li><strong>Code level</strong>
+<ul>
+<li>scripts (comments, e.g.&nbsp;<code># clean data and merge cohorts</code>)</li>
+<li>functions (Roxygen2 documentation)</li>
+<li>notes and reminders (e.g.&nbsp;<code># TODO:</code>)</li>
+</ul></li>
+<li><strong>Project level</strong>
+<ul>
+<li><code>README.md</code></li>
+</ul></li>
+<li><strong>Output level</strong>
+<ul>
+<li>figures and tables</li>
+<li>reports (PDF / HTML)</li>
+<li>presentations (slides)</li>
+</ul></li>
+</ul>
+</section>
+<section id="documenting-r-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="documenting-r-scripts">Documenting R scripts</h2>
+<ul>
+<li>Section labels by <code>Shift + Ctrl/Cmd + R</code> in Positron and RStudio</li>
+<li>Easiest way to aid navigation in R scripts</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## My section heading -----------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><a href="https://bitbucket.org/cancercentrum/commentr/src/master/">commentr package</a>
+<ul>
+<li><code>remotes::install_bitbucket("cancercentrum/commentr")</code></li>
+</ul></li>
+</ul>
+<pre class="{r}"><code>#| echo: true
+commentr::header_comment(
+  "My nice script",
+  "Bla bla bla ...",
+  "Erik Bülow",
+  "xxx@yyy.zzz",
+  "John Doe"
+)</code></pre>
+<hr>
+<p><img src="images/paste-33.png" class="img-fluid"></p>
+<pre><code>## TODO: Change this to something better:
+1 + 2</code></pre>
+</section>
+<section id="documenting-r-functions" class="level2">
+<h2 class="anchored" data-anchor-id="documenting-r-functions">Documenting R functions</h2>
+<p>What does this function do?</p>
+<pre class="{r}"><code>#| echo: true
+hello &lt;- function(who) {
+  sprintf("Hello %s!", if (missing(who)) "world" else who)
+}</code></pre>
+<hr>
+<pre class="{r}"><code>#| echo: true
+#' Say hello!
+#'
+#' This function let's you greet someone or something
+#' @param character vector. Someone or something to great. Will great the world if argumen is missing.
+#' @return character vector of the same length as `character`
+#' @examples
+#' hello()
+#' hello("you")
+hello &lt;- function(who) {
+  sprintf("Hello %s!", if (missing(who)) "world" else who)
+}</code></pre>
+<ul>
+<li>There is a standardized syntax to document R functions</li>
+<li>You should be able to click a small light bulb (💡) to insert a sceleton when writing your function</li>
+<li>The same syntax is used within modern R packages
+<ul>
+<li>but it is useful even within your own projects</li>
+</ul></li>
+<li><a href="https://roxygen2.r-lib.org/index.html">roxygen2</a> is a package used for package documentation but it also has a great <a href="https://roxygen2.r-lib.org/articles/rd.html">manual for documenteing functions in general</a></li>
+</ul>
+</section>
+<section id="documenting-a-project" class="level2">
+<h2 class="anchored" data-anchor-id="documenting-a-project">Documenting a project</h2>
+<ul>
+<li>You have a <code>README.md</code> file within your git repository</li>
+<li>It can contain plain text without any formatting</li>
+<li>It will be displayed up-front in GitHub</li>
+<li>You can also include formatting!</li>
+<li>It will be nicely rendered on GitHub or elsewhere</li>
+</ul>
+<p><img src="images/paste-34.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="basic-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="basic-formatting">Basic formatting</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>What you want</th>
+<th>Markdown syntax</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Heading</td>
+<td><code># Heading</code></td>
+<td>Heading</td>
+</tr>
+<tr class="even">
+<td>Italic</td>
+<td><code>*text*</code></td>
+<td><em>text</em></td>
+</tr>
+<tr class="odd">
+<td>Bold</td>
+<td><code>**text**</code></td>
+<td><strong>text</strong></td>
+</tr>
+<tr class="even">
+<td>Inline code</td>
+<td><code>`code`</code></td>
+<td><code>code</code></td>
+</tr>
+<tr class="odd">
+<td>Link</td>
+<td><code>[text](https://example.com)</code></td>
+<td><a href="https://example.com">text</a></td>
+</tr>
+<tr class="even">
+<td>Bullet list</td>
+<td><code>- item</code></td>
+<td>• item</td>
+</tr>
+<tr class="odd">
+<td>Numbered list</td>
+<td><code>1. item</code></td>
+<td>1. item</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Comment or heading
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>#</code> is used for comments in R files and within R blocks but for headings in <code>.md</code> and <code>.qmd</code> files!</p>
+</div>
+</div>
+</section>
+<section id="reproducible-workflows-in-biostatistics" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-workflows-in-biostatistics">Reproducible Workflows in Biostatistics</h2>
+<p>Modern biostatistics projects rarely involve only statistics.</p>
+<ul>
+<li>data cleaning and preprocessing</li>
+<li>statistical modelling</li>
+<li>visualisation</li>
+<li>interpretation of results</li>
+<li>reporting and documentation</li>
+</ul>
+<p>A good workflow should make it possible to <strong>combine all of these steps in one place</strong>.</p>
+</section>
+<section id="what" class="level2">
+<h2 class="anchored" data-anchor-id="what">What?</h2>
+<p><strong>Quarto</strong> is a publishing system for scientific and technical documents.</p>
+<p>It allows you to combine:</p>
+<ul>
+<li>text</li>
+<li>R code</li>
+<li>statistical results</li>
+<li>tables and figures</li>
+</ul>
+<p>in a <strong>single workflow</strong>.</p>
+<p>This makes it easier to create <strong>reproducible statistical reports</strong>.</p>
+</section>
+<section id="why-1" class="level2">
+<h2 class="anchored" data-anchor-id="why-1">Why?</h2>
+<p>In many projects people work with:</p>
+<ul>
+<li>R scripts for analysis</li>
+<li>Word documents for reporting</li>
+<li>PowerPoint slides for presentations</li>
+</ul>
+<p>This separation often leads to:</p>
+<ul>
+<li>copy–paste errors</li>
+<li>outdated figures</li>
+<li>results that cannot easily be reproduced</li>
+</ul>
+<p>Quarto helps avoid these problems.</p>
+</section>
+<section id="a-reproducible-analysis-document" class="level2">
+<h2 class="anchored" data-anchor-id="a-reproducible-analysis-document">A reproducible analysis document</h2>
+<p>In a Quarto document you can:</p>
+<ol type="1">
+<li>write the explanation of your analysis</li>
+<li>include the R code used</li>
+<li>generate figures and tables automatically</li>
+<li>update everything by re-running the document</li>
+</ol>
+<ul>
+<li>If the data or model changes, the <strong>entire report can be regenerated automatically</strong>.</li>
+<li>It is widely used in <strong>data science, epidemiology and biostatistics</strong>.</li>
+<li>Integrated in Positron and developed by Posit PBC</li>
+</ul>
+</section>
+<section id="used-in-three-ways" class="level2">
+<h2 class="anchored" data-anchor-id="used-in-three-ways">Used in three ways</h2>
+<ol type="1">
+<li>For <strong>communicating to decision-makers</strong>, who want to <em>focus on the conclusions, not the code behind the analysis</em>.</li>
+<li>For <strong>collaborating with collegues</strong> (including future you!), who are interested in both your <em>conclusions, and how you reached them (i.e.&nbsp;the code).</em></li>
+<li>As an <strong>environment</strong> in which to do data science and statistics, as a modern-day lab notebook where you can capture not only what you did, but also what you were thinking.</li>
+</ol>
+</section>
+<section id="a-simple-report" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-report">A simple report</h2>
+<ul>
+<li>When you chose “New &gt; New File …” in the upper left corner in Positron you may chose “Quarto document”</li>
+<li>The file will be almost empty but contains:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>This is a YAML header (Yet Another Markup Language)</li>
+<li>Different formats available:
+<ul>
+<li><strong>html:</strong> can also be published online</li>
+<li><strong>docx:</strong> for collaborating with non-statisticians etc</li>
+<li><strong>typst:</strong> Modern PDF rendering</li>
+<li><strong>revealjs:</strong> slide decks (you are looking at one!)</li>
+</ul></li>
+<li>Can render to multiple formats at once!</li>
+</ul>
+<hr>
+<p>This is the yaml header for this presentation:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"EL9: Documentation"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto, roxygn2"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">reading</span><span class="kw">:</span><span class="at"> </span><span class="st">"[@wickham, ch. 28-29]"</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> blood</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-before-body</span><span class="kw">:</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="kw">      - </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="ch">|</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>          // Gör alla länkar tydliga i PDF: blå + understrukna</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>          #show link: set text(fill: rgb("1a5fb4"))</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>          #show link: underline</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="yaml-structure" class="level2">
+<h2 class="anchored" data-anchor-id="yaml-structure">YAML structure</h2>
+<p>YAML uses <strong>indentation to represent structure</strong>.</p>
+<p>Think of it like a tree.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This corresponds to the structure:</p>
+<pre><code>format
+└── html
+    └── code-fold: true</code></pre>
+<section id="what-happens-if-indentation-is-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="what-happens-if-indentation-is-wrong">What happens if indentation is wrong?</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now Quarto interprets this as:</p>
+<pre><code>format
+html
+└── code-fold: true</code></pre>
+<p>This is <strong>not the intended structure</strong>, and the document may fail to render.</p>
+<hr>
+<p>💡 <strong>Rule of thumb</strong></p>
+<ul>
+<li>use <strong>two spaces per level</strong></li>
+<li>never use <strong>tabs</strong></li>
+<li>when something fails, <strong>check indentation first</strong></li>
+</ul>
+</section>
+</section>
+<section id="three-parts" class="level2">
+<h2 class="anchored" data-anchor-id="three-parts">Three parts</h2>
+<p>Quarto documents have three parts:</p>
+<ol type="1">
+<li>An (optional) YAML header surrounded by <code>---</code>s.</li>
+<li>Chunks of R code surrounded by <code>```{r}</code> and <code>```</code>.</li>
+</ol>
+<pre class="verbatim"><code>```{r}          ← chunk header
+#| echo: false  ← options controlling the output
+summary(x)      ← R code
+```             ← end of chunk</code></pre>
+<ol start="3" type="1">
+<li>Text with markdown format</li>
+</ol>
+<p>Where 1 (YAML header) comes first and where 2 and 3 are intermingled throughout the rest of the document.</p>
+<hr>
+<p><img src="images/paste-35.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/paste-36.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="inline-code" class="level2">
+<h2 class="anchored" data-anchor-id="inline-code">Inline code</h2>
+<p>Sometimes we want to insert <strong>small pieces of R output directly in the text</strong>.</p>
+<p>This is called <strong>inline code</strong>.</p>
+<p>Inline code will always just show the result of the call (not the code itself in the rendered document):</p>
+<pre class="{verbatim}"><code>Todays date is `r Sys.Date()` and it is `r format(Sys.time(), format = "%H")` </code></pre>
+<blockquote class="blockquote">
+<p>Todys date is <code>r Sys.Date()</code> and it is <code>r format(Sys.time(), format = "%I %p")</code></p>
+</blockquote>
+<p>To higlight with bold and italic:</p>
+<pre class="{verbatim}"><code>Todays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = "%I %p")`*</code></pre>
+<blockquote class="blockquote">
+<p>Todays date is <strong><code>r Sys.Date()</code></strong> and it is <em><code>r format(Sys.time(), format = "%I %p")</code></em></p>
+</blockquote>
+</section>
+<section id="to-publish" class="level2">
+<h2 class="anchored" data-anchor-id="to-publish">To publish</h2>
+<p>Decision makers, stake holders, friends or the public might not care about R. Disable R code (echoing the code itself), warnings and messages:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="for-collaborators" class="level2">
+<h2 class="anchored" data-anchor-id="for-collaborators">For collaborators</h2>
+<ul>
+<li>Might still care less about verbose R messages and warnings (they trust that you have already considered those)</li>
+<li>May check the underlaying R code if relevant (use <code>code-fold</code>)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This can also be set individually for each code chunk:</p>
+<pre class="{verbatim}"><code>```{r}
+#| echo: false
+#| warning: false
+#| message: true
+message("will be muted!")
+warning("will be ignored")
+plot(something_beautiful, realy = TRUE)
+```</code></pre>
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Figures</h2>
+<p>Figures are usualy displayed without problem (and you can adjust their size, add captions etc):</p>
+<pre class="{verbatim}"><code>```{r}
+#| fig-cap: This is origo!
+plot(0, 0)
+```</code></pre>
+<pre class="{r}"><code>#| fig-cap: This is origo!
+plot(0, 0)</code></pre>
+</section>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
+<p>Just printing the R output might not look very nice:</p>
+<pre class="{r}"><code>iris</code></pre>
+<hr>
+</section>
+<section id="better-with-kable" class="level2">
+<h2 class="anchored" data-anchor-id="better-with-kable">Better with kable</h2>
+<p>The easiest way to make tibbles/data.frames/data.tables look nicer is with <code>df-print: kable</code> in the yaml header.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">df-print</span><span class="kw">:</span><span class="at"> kable</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="{r}"><code>#| tbl-cap: Some iris data
+knitr::kable(iris)</code></pre>
+</section>
+<section id="best-with-gt" class="level2">
+<h2 class="anchored" data-anchor-id="best-with-gt">Best with gt</h2>
+<ul>
+<li>Very flexible</li>
+<li>Publication ready</li>
+<li><a href="https://gt.rstudio.com">Package from Posit</a></li>
+<li>Sometimes <a href="https://ardata-fr.github.io/flextable-book/">flextable</a> if rendering MS Office documents (Word, PowerPoint)</li>
+</ul>
+<hr>
+<p><img src="images/paste-37.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/paste-38.png" class="img-fluid"></p>
+</section>
+<section id="gtsummary" class="level2">
+<h2 class="anchored" data-anchor-id="gtsummary">gtsummary</h2>
+<p><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary package</a> build on top of <code>{gt}</code> to easily summarise datasets, regression models etc</p>
+<pre class="{verbatim}"><code>```{r}
+gtsummary::tbl_summary(iris, Species)
+```</code></pre>
+<pre class="{r}"><code>gtsummary::tbl_summary(iris, Species)</code></pre>
+</section>
+<section id="presentations" class="level2">
+<h2 class="anchored" data-anchor-id="presentations">Presentations</h2>
+<ul>
+<li>Quarto can export to PowerPoint</li>
+<li>And to the older Beamer format</li>
+<li>But I recommend <a href="https://revealjs.com">revealjs</a>
+<ul>
+<li><code>format: revealjs</code></li>
+<li>can also be modified with speaker notes, laser pointer etc</li>
+</ul></li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/">Info and examples</a></li>
+</ul>
+<p>For examplen (as used for those slides):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> blood</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="manuscripts" class="level2">
+<h2 class="anchored" data-anchor-id="manuscripts">Manuscripts</h2>
+<ul>
+<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscript</a></li>
+<li>framework for writing and publishing scholarly articles</li>
+<li>Something for your later thesis work?</li>
+<li>Handles references</li>
+<li>Export to Word documents (<code>.docx</code>) etc
+<ul>
+<li>which is still the most common format for submission to medical/epidemiological journals</li>
+<li>Still used for collaborative work with non-statisticians etc</li>
+</ul></li>
+</ul>
+</section>
+<section id="use-references" class="level2">
+<h2 class="anchored" data-anchor-id="use-references">USe references</h2>
+<p>When writing scientific reports we need to:</p>
+<ul>
+<li>acknowledge previous research</li>
+<li>support claims with evidence</li>
+<li>allow readers to find the original sources</li>
+</ul>
+<p>This is done through <strong>citations</strong> and a <strong>reference list</strong>.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Don’t blame me, it was according to <span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#ref-wickham" role="doc-biblioref">n.d.</a>)</span>.</p>
+</blockquote>
+<p>At the end of the document a <strong>bibliography</strong> is automatically generated.</p>
+<hr>
+</section>
+<section id="what-is-reference-management" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-reference-management">What is reference management?</h2>
+<p>Reference management means keeping track of:</p>
+<ul>
+<li>articles, books, reports, datasets</li>
+</ul>
+<p>including information such as:</p>
+<ul>
+<li>authors, title, journal, year</li>
+<li><a href="https://www.doi.org/the-identifier/what-is-a-doi/">DOI</a></li>
+</ul>
+<p>Instead of typing references manually, software can <strong>store and format them automatically</strong>.</p>
+<hr>
+</section>
+<section id="common-reference-management-tools" class="level2">
+<h2 class="anchored" data-anchor-id="common-reference-management-tools">Common reference management tools</h2>
+<p>Many researchers use tools such as:</p>
+<ul>
+<li><strong>Zotero</strong></li>
+<li><strong>Mendeley</strong></li>
+<li><strong>EndNote</strong></li>
+</ul>
+<p>These tools allow you to:</p>
+<ul>
+<li>collect references from databases (PubMed, Google Scholar, etc.)</li>
+<li>organise them in libraries</li>
+<li>export them to writing tools</li>
+</ul>
+<p>Quarto can work with references from these systems directly.</p>
+<hr>
+</section>
+<section id="how-quarto-handles-references" class="level2">
+<h2 class="anchored" data-anchor-id="how-quarto-handles-references">How Quarto handles references</h2>
+<p>Quarto uses a <strong>bibliography file</strong>, usually in <code>.bib</code> format.</p>
+<p>Example in the document header:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then citations can be written directly in the text:</p>
+<pre><code>Several studies have examined this relationship @smith2020.</code></pre>
+<p>Quarto will render something like:</p>
+<blockquote class="blockquote">
+<p>Several studies have examined this relationship (Smith 2020).</p>
+</blockquote>
+<p>The full reference will appear automatically in the bibliography.</p>
+</section>
+<section id="integrate-with-targets" class="level2">
+<h2 class="anchored" data-anchor-id="integrate-with-targets">Integrate with <code>{targets}</code></h2>
+<p><a href="https://docs.ropensci.org/tarchetypes/reference/tar_quarto.html"><code>tarchetypes::tar_quarto()</code></a></p>
+<section id="in-_targets.r" class="level3">
+<h3 class="anchored" data-anchor-id="in-_targets.r">in <code>_targets.R</code></h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tarchetypes) <span class="co"># Let you integrate a quarto report/presentation</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(data, <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="dv">26</span>), <span class="at">y =</span> letters))</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_quarto</span>(report, <span class="st">"report.qmd"</span>) <span class="co"># Make presentation</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="in-report.qmd" class="level3">
+<h3 class="anchored" data-anchor-id="in-report.qmd">In <code>report.qmd</code></h3>
+<pre class="{verbatim}"><code>---
+title: My report
+format: html
+---
+
+## Here is my beautiful data!
+
+```{r}
+gt::gt(tar_read(data))
+```</code></pre>
+</section>
+</section>
+<section id="try-it" class="level2">
+<h2 class="anchored" data-anchor-id="try-it">Try it</h2>
+<p>Copy this code to the terminal (not the console!) and try <code>targets::tar_make()</code> in the console!</p>
+<pre class="{bash}"><code>#| eval: false
+#| echo: true
+cd
+mkdir test_targets_quarto
+cat &gt; test_targets_quarto/_targets.R &lt;&lt;'EOF'
+library(targets)
+library(tarchetypes) # Lets you integrate a quarto report/presentation
+
+list(
+  tar_target(data, iris),
+  tar_target(model, lm(Sepal.Length ~ ., data)),
+  tar_quarto(report, "report.qmd") # Make presentation
+)
+EOF
+
+cat &gt; test_targets_quarto/report.qmd &lt;&lt;'EOF'
+---
+title: My project
+author: My name
+date: today
+format:
+  typst: default
+  docx: default
+  html: default
+  revealjs:
+    output-file: slides.html
+---
+
+## Here are some flowers!
+
+```{r}
+gtsummary::tbl_summary(targets::tar_read(data))
+```
+
+## And here is a model
+
+```{r}
+gtsummary::tbl_regression(targets::tar_read(model))
+```
+EOF
+
+positron test_targets_quarto
+## rm -r test_targets_quarto</code></pre>
+</section>
+<section id="online-portfolio" class="level2">
+<h2 class="anchored" data-anchor-id="online-portfolio">Online portfolio</h2>
+<ul>
+<li>Looking for a job after you fininsh the master program?</li>
+<li>An online portfolia might increase your visability!</li>
+<li>Perhaps add your course project to such portfolio?</li>
+<li><a href="https://deepshamenghani.quarto.pub/portfolio-with-quarto-workshop/#/title-slide">Demo</a></li>
+</ul>
+<hr>
 </section>
 </section>
 <section id="el10-big-data" class="level1">
@@ -7113,8 +7753,8 @@ cache_wrapper &lt;- function(dt_part, name, ...) {
 </ul>
 </div>
 </div>
-<section id="na-1" class="level2">
-<h2 class="anchored" data-anchor-id="na-1">NA</h2>
+<section id="na" class="level2">
+<h2 class="anchored" data-anchor-id="na">NA</h2>
 </section>
 </section>
 <section id="complete-reading-list" class="level1">
