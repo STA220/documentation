@@ -1,0 +1,50 @@
+---
+title: "ECS5: Presentation"
+subtitle: ""
+reading: ""
+format: html
+date: last-modified
+---
+
+::: {.callout-important}
+This is part of the project introduced in [ECS4](ECS4.qmd) and examined in [ES2](ES2.qmd).
+:::
+
+# Presentation
+
+After [EL9](EL9.qmd) you will prepare a presentation of your work using **Quarto**.
+
+The length of that presentation will be around 5 minutes.
+
+Start thinking early about how you want to communicate your results through **figures, tables, and text**. However, let your exploratory analysis guide your decisions. For this reason, you should not prepare the actual presentation before [EL9](EL9.qmd).
+
+Your group may choose one of the following formats:
+
+- a written report (`format: html` or `format: typst`)
+- a slideshow (`format: revealjs`)
+- both
+
+If you choose to produce only a written report, you may still present it during [ES2](ES2.qmd) by showing it on screen and scrolling through the document while presenting.
+
+Keep in mind that producing polished figures and tables can take time. Aim for **clear and readable results**, but do not spend excessive time on perfect formatting.
+
+
+## Suggested tools for presenting results
+
+| Purpose | Examples | Notes |
+|---|---|---|
+| **Figures** | [ggplot2](https://ggplot2.tidyverse.org), [ggpubr](https://rpkgs.datanovia.com/ggpubr/), [plotly](https://github.com/plotly/plotly.R), base R graphics | Use any tool that produces **clear, presentation-quality figures**. |
+| **Tables** | [gt](https://gt.rstudio.com), [gtsummary](https://www.danieldsjoberg.com/gtsummary/), [flextable](https://davidgohel.github.io/flextable/), [kableExtra](https://haozhu233.github.io/kableExtra/) | Use any tool that produces **clear, presentation-quality tables**. |
+| **Interactive tools (optional)** | [shiny](https://shiny.posit.co), [shinydashboard](https://rstudio.github.io/shinydashboard/), [htmlwidgets](https://www.htmlwidgets.org) | These allow interactive presentations, but may be too ambitious unless you already have experience with them. |
+## Examination
+
+For the examination you are expected to:
+
+1. Use your report or presentation as the basis for your **oral seminar presentation** in [ES2](ES2.qmd).
+2. The report/presentation should include at least one figure and one table of relevance 
+3. Include the **Quarto source file (`.qmd`)** that generates the report or presentation in your **GitHub repository**.
+
+The repository should therefore contain the `.qmd` document and any files required to render the report or presentation, as well as rendered output document.
+
+Both group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming).
+

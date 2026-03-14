@@ -2,7 +2,10 @@
 title: "ECS4: Data project"
 subtitle: ""
 reading: ""
-format: html
+format: 
+  html: default
+  typst:
+    toc: true
 date: last-modified
 ---
 
@@ -11,160 +14,207 @@ All remaining computer sessions, as well as the final seminar, will be devoted t
 The formal examination consists of:
 
 - A presentation of your work during the final seminar
-- A review of your group's submitted Git repository
+- A review of your Git repository
 
 ::: {.callout-note}
 The GitHub repository itself constitutes the submission. No additional files need to be uploaded to Canvas.
-You should, however, indicate in the Canvas assignment submission when your work is ready for review.
+
+When your work is ready for review, first push all commits to GitHub and then submit the Canvas assignment.
 :::
 
-The scheduled computer sessions are intended for group work, during which the teacher will be available to help. You are of course also free to work on the project outside these hours.
+The scheduled computer sessions are primarily intended to give groups an opportunity to work together in person and to allow the teacher to be available for questions and guidance.  
+You should expect that additional work on the project will be required outside these sessions.
 
-# Group work
+# The project
 
-For this assignment you will collaborate through GitHub in **groups of two students**.
+Your task is to conduct a small **health data project** using the datasets from the previous computer exercises.
 
-1. Find a partner.
-2. One of you should start the assignment from Canvas and create a new group (choose any group name).
-3. The other student should then join the same group using the same Canvas link.
-4. Both of you clone the group repository locally.
-
-Once the repository has been created, you should organize your project.
-
-## Suggested workflow
-
-5. Decide how you want to organize your work.
-
-   - I recommend using the `{targets}` package. You are not required to do so, but without a workflow tool your scripts can quickly become difficult to manage when collaborating.
-   - If you want to ensure that you are using exactly the same R version and packages, consider also using [`renv`](https://rstudio.github.io/renv/articles/renv.html).
-   - Otherwise, check that you are using the same R version (`R.version.string`) and run `update.packages(ask = FALSE)` in a fresh R session.
-
-6. Create a basic folder and file structure for the project (you may reuse the example from ECS3).
-7. Add other necessary files such as `README.md` and `.gitignore`.
-8. The person creating the structure commits the changes and pushes them to GitHub.
-9. The other person pulls the changes to obtain the same structure locally.
-
-10. Discuss the direction of your project (see instructions below).
-11. Document your project decisions in the `README.md`.
-12. Use GitHub **issues** to discuss tasks and assign responsibilities.
-13. Work on the tasks, commit changes, push to GitHub, and repeat.
-
-> **Commit early and commit often. Do not wait until the last day to push your work to GitHub.**
-
-::: {.callout-important}
-# Individual grading
-
-Although this is group work, the project will be graded **individually** (pass or fail).
-Git makes it possible to identify which contributions were made by each individual.
-During the final seminar the class will be divided into two groups. One student from each group will present the project during the first hour, and the other student during the second hour.
-You should therefore both be prepared to present the project independently (although you are encouraged to collaborate closely beforehand).
-:::
-
-::: {.callout-tip}
-# Merge conflicts
-
-Since two people may modify the same files simultaneously, you should try to work from the **latest version of the repository** (sync often).
-It is not necessary to work only one at a time, but if conflicting changes are made to the same file you will need to resolve merge conflicts.
-[Instructions for resolving merge conflicts in VS Code / Positron](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
-:::
-
-::: {.callout-tip}
-# Draft files
-
-You may create draft files (for example `R/draft-your-name.R`) where you experiment with code before integrating it into the main workflow or targets pipeline.
-You may also decide that one person primarily handles merge conflicts while the other focuses on preparing the presentation draft.
-[You may want to read this](https://r-cubed-intro.rostools.org/sessions/github#reading-task-collaborating-using-git-and-github)
-:::
-
-# Git repository
-
-- As for previous computer sessions, you will find the GitHub Classroom link in Canvas.
-- This time the repository will initially be empty. It is up to you and your collaborator to organize the project and ensure that your analysis is **reproducible**.
-- You should use the same data as in previous computer sessions, so feel free to reuse any relevant code from those exercises.
-
-## Expected repository contents
-
-Your repository should contain at least:
-
-- reproducible analysis scripts
-- a `README.md` describing the project
-- code needed to reproduce the figures/tables used in the presentation
-- a clear workflow (for example using `{targets}` or similar)
-
-
-# A health data project
-
-In the previous exercises you learned techniques for preparing and validating data before analysis.
-
-Now formulate a simple research question that can be explored using the available datasets (possibly through data linkage between them). The question does **not** need to be novel, but it should be interesting enough for you to investigate.
+You should formulate a research question that can be explored using the available datasets (for example through data linkage). The question does **not** need to be novel, but it should be clear and interesting enough to investigate.
 
 During the project it is perfectly acceptable to:
 
 - refine your question
 - narrow or broaden the scope
-- adapt your approach based on intermediate findings
+- adapt the analysis based on intermediate findings
 
 Exploratory analysis is also acceptable.
 
-Your project should involve **more than one dataset** and may include additional contextual data (for example aggregated state-level information, translations of medical codes, or other relevant sources). You may also use APIs such as `{pxweb}` or download external datasets if useful.
+Your project should involve **more than one dataset** and may include additional contextual data (for example aggregated state-level information, translations of medical codes, or other external sources).
 
-Your work should include:
+Typical steps in the project include:
 
-- obtaining the data
+- understanding the available data
 - selecting relevant datasets
-- preparing the data (validation, labeling variables, interpreting medical codes, grouping rare categories, etc.)
-- deriving new variables (e.g., age at specific time points)
-- linking/merging datasets
-- investigating your research question
-- presenting your findings using figures, tables, and interpretation
+- cleaning and validating the data
+- standardising variables and labels where necessary
+- deriving new variables
+- linking datasets
+- analysing the research question
+- presenting results using figures and tables
 
-More information about the data can be found in [this GitHub wiki](https://github.com/synthetichealth/synthea/wiki).
+More technical information about the data can be found in  
+[this GitHub wiki](https://github.com/synthetichealth/synthea/wiki).  
+The variable lists and data scans introduced in ECS2 should already provide most of the information you need.
 
 ::: {.callout-note}
 # Statistical analysis
-You may use formal hypothesis tests, regression analysis or wahthever statistical method you might find relevant (as long as you motivate your choises). Note, however, that this is not a strict requirement. Descriptive statistcs (tables/figures) etc might be enough (it's your choice)!
+
+The main focus of this project is not advanced statistical modelling, but rather the earlier stages of the data analysis process: understanding the data, preparing and cleaning it, and organising it in a reproducible workflow.
+
+You may use hypothesis tests, regression models, machine learning methods, or other statistical techniques if they are relevant to your question. However, this is **not required**. Well-structured descriptive analyses (tables, figures, and clear interpretation) will be sufficient.
 :::
 
+# Group work
 
-## Some examples
+For this assignment you will collaborate through GitHub in **groups of two students**.
 
-Some example reports are provided below that illustrate possible analyses and research questions based on the available data. These examples are intended only as inspiration.
+When accepting the assignment in GitHub Classroom (using the link found in Canvas), you will either **create a team** or **join an existing team**.
 
-You have considerable freedom in how you choose to formulate your research question, structure your analysis, and present your results. You do not need to follow the same approach, methods, structure, or level of detail as in the example reports.
+Please follow **one of the two options below**.
 
-The examples should therefore not be seen as a standard to aim for, either in terms of content or presentation. They are merely provided to help generate ideas if you find it difficult to get started or are unsure about possible directions for the project.
+## If you already have a partner
+
+1. Decide who will create the team.
+2. That person accepts the assignment and chooses **Create a new team**.
+3. Choose any team name.
+4. The other student accepts the assignment and chooses **Join team**, selecting the same team.
+5. Both of you clone the repository locally.
+
+Important: **Only one person should create the team.**
+
+## If you do not yet have a partner
+
+1. Open the assignment link in Canvas.
+2. Check if there is a team whose name starts with `join-`.
+3. If such a team exists, **join that team**.
+4. If no such team exists, **create a team whose name starts with `join-`** (for example `join-1`, `join-2` etc).
+5. Clone the repository locally and wait for another student to join.
+
+If no one joins your team (for example because the number of students is odd), **please inform the teacher**.
+
+# Suggested workflow
+
+Before writing any code, discuss with your partner how you want to organise the project and what direction it should take.
+
+To help the project get started efficiently, each group may initially divide responsibilities between two roles.
+
+**Workflow Lead**
+
+Responsible for the technical setup:
+
+- creating the repository structure
+- setting up the computational workflow (for example a `{targets}` pipeline)
+- implementing the first steps such as loading the data
+
+**Project Lead**
+
+Responsible for planning and coordination:
+
+- clarifying the research question
+- outlining the analysis strategy
+- documenting the roadmap in `README.md`
+- creating GitHub issues to organise tasks
+
+These roles are mainly intended to help the project get started and may change later during the project.
+
+## Initial setup
+
+After agreeing on both the project direction and the technical structure:
+
+1. The Workflow Lead creates the basic repository structure.
+2. Add essential files such as `README.md` and `.gitignore`.
+3. Commit the structure and push it to GitHub.
+4. The other student pulls the repository so both work from the same structure.
+
+During this early stage it is often helpful if **one person manages structural changes** to reduce merge conflicts.
+
+## Collaborative development
+
+Once the structure is established, **both students should contribute actively to the analysis and code development**.
+
+To keep the collaboration organised:
+
+- discuss tasks using **GitHub issues**
+- assign issues where appropriate
+- commit small changes frequently
+- push updates regularly
+- pull the latest version before starting work
+
+## Draft scripts
+
+To experiment without disrupting the main workflow, you may create draft scripts such as
+`draft-your-name.R` within the repository (for both of you to see).
+
+These can be used to test ideas before integrating code into the main workflow.
+
+If you are using `{targets}`, place such files **outside the `R/` folder** so that they are not executed automatically.
+
+It might be easier if both students develop draft code in parallel and that you use pair programming (see below) to later copy and past different parts of your draft code into your formal pipeline. You may need to experiment and see what works best for you!
+
+## Working with workflows
+
+Using `{targets}` to organise the workflow is recommended but not required.
+
+If you want to ensure identical package versions, you may also use [`renv`](https://rstudio.github.io/renv/articles/renv.html).
+
+Otherwise, verify that you are using the same R version:
+
+```
+R.version.string # run it in your R console
+```
+
+and update packages if needed (in a fresh R sessin without any packages loaded):
+
+```r
+update.packages(ask = FALSE)
+```
+
+::: {.callout-tip}
+# Merge conflicts
+
+Since two people may modify the same files simultaneously, try to work from the **latest version of the repository** (sync often).
+
+If conflicting changes occur, you will need to resolve merge conflicts.
+
+[Instructions](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
+:::
+
+## Pair programming
+
+It can sometimes be useful to work together at the same computer. In such cases only one group member may commit the changes, even though both contributed.  
+Indicate in the commit message that the commit was made jointly.
+
+# Repository requirements
+
+The cloned assignment repository is initially empty. When the project is complete it should contain at least:
+
+- A project description (`README.md`)
+- Analysis code (typically in an `R/` folder)
+- A reproducible workflow (e.g. `{targets}` with `_targets.R`)
+- Quarto documents presenting the results (introduced in [EL9](EL9.qmd) so don't think about this yet)
+
+# Individual grading
+
+::: {.callout-important}
+
+Although this is a group project, the work will be graded **individually** (pass or fail).
+
+Individual assessment will be based on:
+
+- your contributions to the repository
+- your ability to explain the project during the final seminar
+
+During the seminar one student from each group will present during the first hour and the other during the second hour. You should therefore both be prepared to present the project independently.
+:::
+
+# Example projects
+
+The examples below illustrate possible research questions and analyses based on the data.  
+They are intended **only as inspiration**.
+
+You are free to choose your own research question and approach.
 
 - [Cardiovascular risk analysis](project_examples/cardiovascular_risk_analysis.html)
 - [Healthcare cost analysis](project_examples/healthcare_cost_analysis.html)
 - [Healthcare trends analysis](project_examples/healthcare_trends_analysis.html)
-- [social determinants](project_examples/social_determinants_health_cost_analysis.html)
-
-
-# Presentation
-
-After [EL10](EL10.qmd) you will prepare a presentation of your work.
-
-Think early about how to communicate your results through **figures and tables**, but allow your exploratory analysis to guide your decisions.
-
-Possible tools include:
-
-## Figures
-
-- [ggplot2](https://ggplot2.tidyverse.org)
-- [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
-- [plotly](https://github.com/plotly/plotly.R)
-- base graphics
-- any other tool that produces clear presentation-quality figures
-
-## Tables
-
-- [gt](https://gt.rstudio.com)
-- [gtsummary](https://www.danieldsjoberg.com/gtsummary/)
-- [flextable](https://davidgohel.github.io/flextable/)
-- [kableExtra](https://haozhu233.github.io/kableExtra/)
-
-## Interactive tools (optional)
-
-- [shiny](https://shiny.posit.co)
-- [shinydashboard](https://rstudio.github.io/shinydashboard/)
-- [htmlwidgets](https://www.htmlwidgets.org)
+- [Social determinants](project_examples/social_determinants_health_cost_analysis.html)

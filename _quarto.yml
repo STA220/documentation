@@ -29,9 +29,11 @@ website:
           - ECS2.qmd
           - ECS3.qmd
           - ECS4.qmd
+          - ECS5.qmd
       - text: Seminars
         menu:
           - ES1.qmd
+          - ES2.qmd
       - text: Handouts
         href: handouts.qmd
 format:

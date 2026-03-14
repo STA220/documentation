@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-10">
+<meta name="dcterms.date" content="2026-03-14">
 
 <title>ECS4: Data project – STA220</title>
 <style>
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -133,11 +168,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL9.html">
- <span class="dropdown-text">EL9: Big data</span></a>
+ <span class="dropdown-text">EL9: Documentation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL10.html">
- <span class="dropdown-text">EL10: Reporting, presentation</span></a>
+ <span class="dropdown-text">EL10: Big data</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL11.html">
@@ -166,6 +201,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./ECS4.html">
  <span class="dropdown-text">ECS4: Data project</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./ECS5.html">
+ <span class="dropdown-text">ECS5: Presentation</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -176,6 +215,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./ES1.html">
  <span class="dropdown-text">ES1: Ethics and Legality</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ES2.html">
+ <span class="dropdown-text">ES2: Project presentations</span></a>
   </li>  
     </ul>
   </li>
@@ -199,26 +242,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#group-work" id="toc-group-work" class="nav-link active" data-scroll-target="#group-work">Group work</a>
+  <li><a href="#the-project" id="toc-the-project" class="nav-link active" data-scroll-target="#the-project">The project</a></li>
+  <li><a href="#group-work" id="toc-group-work" class="nav-link" data-scroll-target="#group-work">Group work</a>
   <ul class="collapse">
-  <li><a href="#suggested-workflow" id="toc-suggested-workflow" class="nav-link" data-scroll-target="#suggested-workflow">Suggested workflow</a></li>
+  <li><a href="#if-you-already-have-a-partner" id="toc-if-you-already-have-a-partner" class="nav-link" data-scroll-target="#if-you-already-have-a-partner">If you already have a partner</a></li>
+  <li><a href="#if-you-do-not-yet-have-a-partner" id="toc-if-you-do-not-yet-have-a-partner" class="nav-link" data-scroll-target="#if-you-do-not-yet-have-a-partner">If you do not yet have a partner</a></li>
   </ul></li>
-  <li><a href="#git-repository" id="toc-git-repository" class="nav-link" data-scroll-target="#git-repository">Git repository</a>
+  <li><a href="#suggested-workflow" id="toc-suggested-workflow" class="nav-link" data-scroll-target="#suggested-workflow">Suggested workflow</a>
   <ul class="collapse">
-  <li><a href="#expected-repository-contents" id="toc-expected-repository-contents" class="nav-link" data-scroll-target="#expected-repository-contents">Expected repository contents</a></li>
+  <li><a href="#initial-setup" id="toc-initial-setup" class="nav-link" data-scroll-target="#initial-setup">Initial setup</a></li>
+  <li><a href="#collaborative-development" id="toc-collaborative-development" class="nav-link" data-scroll-target="#collaborative-development">Collaborative development</a></li>
+  <li><a href="#draft-scripts" id="toc-draft-scripts" class="nav-link" data-scroll-target="#draft-scripts">Draft scripts</a></li>
+  <li><a href="#working-with-workflows" id="toc-working-with-workflows" class="nav-link" data-scroll-target="#working-with-workflows">Working with workflows</a></li>
+  <li><a href="#pair-programming" id="toc-pair-programming" class="nav-link" data-scroll-target="#pair-programming">Pair programming</a></li>
   </ul></li>
-  <li><a href="#a-health-data-project" id="toc-a-health-data-project" class="nav-link" data-scroll-target="#a-health-data-project">A health data project</a>
-  <ul class="collapse">
-  <li><a href="#some-examples" id="toc-some-examples" class="nav-link" data-scroll-target="#some-examples">Some examples</a></li>
-  </ul></li>
-  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a>
-  <ul class="collapse">
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
-  <li><a href="#interactive-tools-optional" id="toc-interactive-tools-optional" class="nav-link" data-scroll-target="#interactive-tools-optional">Interactive tools (optional)</a></li>
-  </ul></li>
+  <li><a href="#repository-requirements" id="toc-repository-requirements" class="nav-link" data-scroll-target="#repository-requirements">Repository requirements</a></li>
+  <li><a href="#individual-grading" id="toc-individual-grading" class="nav-link" data-scroll-target="#individual-grading">Individual grading</a></li>
+  <li><a href="#example-projects" id="toc-example-projects" class="nav-link" data-scroll-target="#example-projects">Example projects</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS4.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS4.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ECS4.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -236,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 10, 2026</p>
+      <p class="date">March 14, 2026</p>
     </div>
   </div>
   
@@ -252,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The formal examination consists of:</p>
 <ul>
 <li>A presentation of your work during the final seminar</li>
-<li>A review of your group’s submitted Git repository</li>
+<li>A review of your Git repository</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -264,123 +306,38 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The GitHub repository itself constitutes the submission. No additional files need to be uploaded to Canvas. You should, however, indicate in the Canvas assignment submission when your work is ready for review.</p>
+<p>The GitHub repository itself constitutes the submission. No additional files need to be uploaded to Canvas.</p>
+<p>When your work is ready for review, first push all commits to GitHub and then submit the Canvas assignment.</p>
 </div>
 </div>
-<p>The scheduled computer sessions are intended for group work, during which the teacher will be available to help. You are of course also free to work on the project outside these hours.</p>
-<section id="group-work" class="level1">
-<h1>Group work</h1>
-<p>For this assignment you will collaborate through GitHub in <strong>groups of two students</strong>.</p>
-<ol type="1">
-<li>Find a partner.</li>
-<li>One of you should start the assignment from Canvas and create a new group (choose any group name).</li>
-<li>The other student should then join the same group using the same Canvas link.</li>
-<li>Both of you clone the group repository locally.</li>
-</ol>
-<p>Once the repository has been created, you should organize your project.</p>
-<section id="suggested-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-workflow">Suggested workflow</h2>
-<ol start="5" type="1">
-<li><p>Decide how you want to organize your work.</p>
-<ul>
-<li>I recommend using the <code>{targets}</code> package. You are not required to do so, but without a workflow tool your scripts can quickly become difficult to manage when collaborating.</li>
-<li>If you want to ensure that you are using exactly the same R version and packages, consider also using <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a>.</li>
-<li>Otherwise, check that you are using the same R version (<code>R.version.string</code>) and run <code>update.packages(ask = FALSE)</code> in a fresh R session.</li>
-</ul></li>
-<li><p>Create a basic folder and file structure for the project (you may reuse the example from ECS3).</p></li>
-<li><p>Add other necessary files such as <code>README.md</code> and <code>.gitignore</code>.</p></li>
-<li><p>The person creating the structure commits the changes and pushes them to GitHub.</p></li>
-<li><p>The other person pulls the changes to obtain the same structure locally.</p></li>
-<li><p>Discuss the direction of your project (see instructions below).</p></li>
-<li><p>Document your project decisions in the <code>README.md</code>.</p></li>
-<li><p>Use GitHub <strong>issues</strong> to discuss tasks and assign responsibilities.</p></li>
-<li><p>Work on the tasks, commit changes, push to GitHub, and repeat.</p></li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>Commit early and commit often. Do not wait until the last day to push your work to GitHub.</strong></p>
-</blockquote>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Individual grading
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Although this is group work, the project will be graded <strong>individually</strong> (pass or fail). Git makes it possible to identify which contributions were made by each individual. During the final seminar the class will be divided into two groups. One student from each group will present the project during the first hour, and the other student during the second hour. You should therefore both be prepared to present the project independently (although you are encouraged to collaborate closely beforehand).</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Merge conflicts
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Since two people may modify the same files simultaneously, you should try to work from the <strong>latest version of the repository</strong> (sync often). It is not necessary to work only one at a time, but if conflicting changes are made to the same file you will need to resolve merge conflicts. <a href="https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts">Instructions for resolving merge conflicts in VS Code / Positron</a></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Draft files
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You may create draft files (for example <code>R/draft-your-name.R</code>) where you experiment with code before integrating it into the main workflow or targets pipeline. You may also decide that one person primarily handles merge conflicts while the other focuses on preparing the presentation draft. <a href="https://r-cubed-intro.rostools.org/sessions/github#reading-task-collaborating-using-git-and-github">You may want to read this</a></p>
-</div>
-</div>
-</section>
-</section>
-<section id="git-repository" class="level1">
-<h1>Git repository</h1>
-<ul>
-<li>As for previous computer sessions, you will find the GitHub Classroom link in Canvas.</li>
-<li>This time the repository will initially be empty. It is up to you and your collaborator to organize the project and ensure that your analysis is <strong>reproducible</strong>.</li>
-<li>You should use the same data as in previous computer sessions, so feel free to reuse any relevant code from those exercises.</li>
-</ul>
-<section id="expected-repository-contents" class="level2">
-<h2 class="anchored" data-anchor-id="expected-repository-contents">Expected repository contents</h2>
-<p>Your repository should contain at least:</p>
-<ul>
-<li>reproducible analysis scripts</li>
-<li>a <code>README.md</code> describing the project</li>
-<li>code needed to reproduce the figures/tables used in the presentation</li>
-<li>a clear workflow (for example using <code>{targets}</code> or similar)</li>
-</ul>
-</section>
-</section>
-<section id="a-health-data-project" class="level1">
-<h1>A health data project</h1>
-<p>In the previous exercises you learned techniques for preparing and validating data before analysis.</p>
-<p>Now formulate a simple research question that can be explored using the available datasets (possibly through data linkage between them). The question does <strong>not</strong> need to be novel, but it should be interesting enough for you to investigate.</p>
+<p>The scheduled computer sessions are primarily intended to give groups an opportunity to work together in person and to allow the teacher to be available for questions and guidance.<br>
+You should expect that additional work on the project will be required outside these sessions.</p>
+<section id="the-project" class="level1">
+<h1>The project</h1>
+<p>Your task is to conduct a small <strong>health data project</strong> using the datasets from the previous computer exercises.</p>
+<p>You should formulate a research question that can be explored using the available datasets (for example through data linkage). The question does <strong>not</strong> need to be novel, but it should be clear and interesting enough to investigate.</p>
 <p>During the project it is perfectly acceptable to:</p>
 <ul>
 <li>refine your question</li>
 <li>narrow or broaden the scope</li>
-<li>adapt your approach based on intermediate findings</li>
+<li>adapt the analysis based on intermediate findings</li>
 </ul>
 <p>Exploratory analysis is also acceptable.</p>
-<p>Your project should involve <strong>more than one dataset</strong> and may include additional contextual data (for example aggregated state-level information, translations of medical codes, or other relevant sources). You may also use APIs such as <code>{pxweb}</code> or download external datasets if useful.</p>
-<p>Your work should include:</p>
+<p>Your project should involve <strong>more than one dataset</strong> and may include additional contextual data (for example aggregated state-level information, translations of medical codes, or other external sources).</p>
+<p>Typical steps in the project include:</p>
 <ul>
-<li>obtaining the data</li>
+<li>understanding the available data</li>
 <li>selecting relevant datasets</li>
-<li>preparing the data (validation, labeling variables, interpreting medical codes, grouping rare categories, etc.)</li>
-<li>deriving new variables (e.g., age at specific time points)</li>
-<li>linking/merging datasets</li>
-<li>investigating your research question</li>
-<li>presenting your findings using figures, tables, and interpretation</li>
+<li>cleaning and validating the data</li>
+<li>standardising variables and labels where necessary</li>
+<li>deriving new variables</li>
+<li>linking datasets</li>
+<li>analysing the research question</li>
+<li>presenting results using figures and tables</li>
 </ul>
-<p>More information about the data can be found in <a href="https://github.com/synthetichealth/synthea/wiki">this GitHub wiki</a>.</p>
+<p>More technical information about the data can be found in<br>
+<a href="https://github.com/synthetichealth/synthea/wiki">this GitHub wiki</a>.<br>
+The variable lists and data scans introduced in ECS2 should already provide most of the information you need.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -391,56 +348,164 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may use formal hypothesis tests, regression analysis or wahthever statistical method you might find relevant (as long as you motivate your choises). Note, however, that this is not a strict requirement. Descriptive statistcs (tables/figures) etc might be enough (it’s your choice)!</p>
+<p>The main focus of this project is not advanced statistical modelling, but rather the earlier stages of the data analysis process: understanding the data, preparing and cleaning it, and organising it in a reproducible workflow.</p>
+<p>You may use hypothesis tests, regression models, machine learning methods, or other statistical techniques if they are relevant to your question. However, this is <strong>not required</strong>. Well-structured descriptive analyses (tables, figures, and clear interpretation) will be sufficient.</p>
 </div>
 </div>
-<section id="some-examples" class="level2">
-<h2 class="anchored" data-anchor-id="some-examples">Some examples</h2>
-<p>Some example reports are provided below that illustrate possible analyses and research questions based on the available data. These examples are intended only as inspiration.</p>
-<p>You have considerable freedom in how you choose to formulate your research question, structure your analysis, and present your results. You do not need to follow the same approach, methods, structure, or level of detail as in the example reports.</p>
-<p>The examples should therefore not be seen as a standard to aim for, either in terms of content or presentation. They are merely provided to help generate ideas if you find it difficult to get started or are unsure about possible directions for the project.</p>
+</section>
+<section id="group-work" class="level1">
+<h1>Group work</h1>
+<p>For this assignment you will collaborate through GitHub in <strong>groups of two students</strong>.</p>
+<p>When accepting the assignment in GitHub Classroom (using the link found in Canvas), you will either <strong>create a team</strong> or <strong>join an existing team</strong>.</p>
+<p>Please follow <strong>one of the two options below</strong>.</p>
+<section id="if-you-already-have-a-partner" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-already-have-a-partner">If you already have a partner</h2>
+<ol type="1">
+<li>Decide who will create the team.</li>
+<li>That person accepts the assignment and chooses <strong>Create a new team</strong>.</li>
+<li>Choose any team name.</li>
+<li>The other student accepts the assignment and chooses <strong>Join team</strong>, selecting the same team.</li>
+<li>Both of you clone the repository locally.</li>
+</ol>
+<p>Important: <strong>Only one person should create the team.</strong></p>
+</section>
+<section id="if-you-do-not-yet-have-a-partner" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-do-not-yet-have-a-partner">If you do not yet have a partner</h2>
+<ol type="1">
+<li>Open the assignment link in Canvas.</li>
+<li>Check if there is a team whose name starts with <code>join-</code>.</li>
+<li>If such a team exists, <strong>join that team</strong>.</li>
+<li>If no such team exists, <strong>create a team whose name starts with <code>join-</code></strong> (for example <code>join-1</code>, <code>join-2</code> etc).</li>
+<li>Clone the repository locally and wait for another student to join.</li>
+</ol>
+<p>If no one joins your team (for example because the number of students is odd), <strong>please inform the teacher</strong>.</p>
+</section>
+</section>
+<section id="suggested-workflow" class="level1">
+<h1>Suggested workflow</h1>
+<p>Before writing any code, discuss with your partner how you want to organise the project and what direction it should take.</p>
+<p>To help the project get started efficiently, each group may initially divide responsibilities between two roles.</p>
+<p><strong>Workflow Lead</strong></p>
+<p>Responsible for the technical setup:</p>
+<ul>
+<li>creating the repository structure</li>
+<li>setting up the computational workflow (for example a <code>{targets}</code> pipeline)</li>
+<li>implementing the first steps such as loading the data</li>
+</ul>
+<p><strong>Project Lead</strong></p>
+<p>Responsible for planning and coordination:</p>
+<ul>
+<li>clarifying the research question</li>
+<li>outlining the analysis strategy</li>
+<li>documenting the roadmap in <code>README.md</code></li>
+<li>creating GitHub issues to organise tasks</li>
+</ul>
+<p>These roles are mainly intended to help the project get started and may change later during the project.</p>
+<section id="initial-setup" class="level2">
+<h2 class="anchored" data-anchor-id="initial-setup">Initial setup</h2>
+<p>After agreeing on both the project direction and the technical structure:</p>
+<ol type="1">
+<li>The Workflow Lead creates the basic repository structure.</li>
+<li>Add essential files such as <code>README.md</code> and <code>.gitignore</code>.</li>
+<li>Commit the structure and push it to GitHub.</li>
+<li>The other student pulls the repository so both work from the same structure.</li>
+</ol>
+<p>During this early stage it is often helpful if <strong>one person manages structural changes</strong> to reduce merge conflicts.</p>
+</section>
+<section id="collaborative-development" class="level2">
+<h2 class="anchored" data-anchor-id="collaborative-development">Collaborative development</h2>
+<p>Once the structure is established, <strong>both students should contribute actively to the analysis and code development</strong>.</p>
+<p>To keep the collaboration organised:</p>
+<ul>
+<li>discuss tasks using <strong>GitHub issues</strong></li>
+<li>assign issues where appropriate</li>
+<li>commit small changes frequently</li>
+<li>push updates regularly</li>
+<li>pull the latest version before starting work</li>
+</ul>
+</section>
+<section id="draft-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="draft-scripts">Draft scripts</h2>
+<p>To experiment without disrupting the main workflow, you may create draft scripts such as <code>draft-your-name.R</code> within the repository (for both of you to see).</p>
+<p>These can be used to test ideas before integrating code into the main workflow.</p>
+<p>If you are using <code>{targets}</code>, place such files <strong>outside the <code>R/</code> folder</strong> so that they are not executed automatically.</p>
+<p>It might be easier if both students develop draft code in parallel and that you use pair programming (see below) to later copy and past different parts of your draft code into your formal pipeline. You may need to experiment and see what works best for you!</p>
+</section>
+<section id="working-with-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-workflows">Working with workflows</h2>
+<p>Using <code>{targets}</code> to organise the workflow is recommended but not required.</p>
+<p>If you want to ensure identical package versions, you may also use <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code></a>.</p>
+<p>Otherwise, verify that you are using the same R version:</p>
+<pre><code>R.version.string # run it in your R console</code></pre>
+<p>and update packages if needed (in a fresh R sessin without any packages loaded):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Merge conflicts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since two people may modify the same files simultaneously, try to work from the <strong>latest version of the repository</strong> (sync often).</p>
+<p>If conflicting changes occur, you will need to resolve merge conflicts.</p>
+<p><a href="https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts">Instructions</a></p>
+</div>
+</div>
+</section>
+<section id="pair-programming" class="level2">
+<h2 class="anchored" data-anchor-id="pair-programming">Pair programming</h2>
+<p>It can sometimes be useful to work together at the same computer. In such cases only one group member may commit the changes, even though both contributed.<br>
+Indicate in the commit message that the commit was made jointly.</p>
+</section>
+</section>
+<section id="repository-requirements" class="level1">
+<h1>Repository requirements</h1>
+<p>The cloned assignment repository is initially empty. When the project is complete it should contain at least:</p>
+<ul>
+<li>A project description (<code>README.md</code>)</li>
+<li>Analysis code (typically in an <code>R/</code> folder)</li>
+<li>A reproducible workflow (e.g.&nbsp;<code>{targets}</code> with <code>_targets.R</code>)</li>
+<li>Quarto documents presenting the results (introduced in <a href="./EL9.html">EL9</a> so don’t think about this yet)</li>
+</ul>
+</section>
+<section id="individual-grading" class="level1">
+<h1>Individual grading</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Although this is a group project, the work will be graded <strong>individually</strong> (pass or fail).</p>
+<p>Individual assessment will be based on:</p>
+<ul>
+<li>your contributions to the repository</li>
+<li>your ability to explain the project during the final seminar</li>
+</ul>
+<p>During the seminar one student from each group will present during the first hour and the other during the second hour. You should therefore both be prepared to present the project independently.</p>
+</div>
+</div>
+</section>
+<section id="example-projects" class="level1">
+<h1>Example projects</h1>
+<p>The examples below illustrate possible research questions and analyses based on the data.<br>
+They are intended <strong>only as inspiration</strong>.</p>
+<p>You are free to choose your own research question and approach.</p>
 <ul>
 <li><a href="project_examples/cardiovascular_risk_analysis.html">Cardiovascular risk analysis</a></li>
 <li><a href="project_examples/healthcare_cost_analysis.html">Healthcare cost analysis</a></li>
 <li><a href="project_examples/healthcare_trends_analysis.html">Healthcare trends analysis</a></li>
-<li><a href="project_examples/social_determinants_health_cost_analysis.html">social determinants</a></li>
-</ul>
-</section>
-</section>
-<section id="presentation" class="level1">
-<h1>Presentation</h1>
-<p>After <a href="./EL10.html">EL10</a> you will prepare a presentation of your work.</p>
-<p>Think early about how to communicate your results through <strong>figures and tables</strong>, but allow your exploratory analysis to guide your decisions.</p>
-<p>Possible tools include:</p>
-<section id="figures" class="level2">
-<h2 class="anchored" data-anchor-id="figures">Figures</h2>
-<ul>
-<li><a href="https://ggplot2.tidyverse.org">ggplot2</a></li>
-<li><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></li>
-<li><a href="https://github.com/plotly/plotly.R">plotly</a></li>
-<li>base graphics</li>
-<li>any other tool that produces clear presentation-quality figures</li>
-</ul>
-</section>
-<section id="tables" class="level2">
-<h2 class="anchored" data-anchor-id="tables">Tables</h2>
-<ul>
-<li><a href="https://gt.rstudio.com">gt</a></li>
-<li><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary</a></li>
-<li><a href="https://davidgohel.github.io/flextable/">flextable</a></li>
-<li><a href="https://haozhu233.github.io/kableExtra/">kableExtra</a></li>
-</ul>
-</section>
-<section id="interactive-tools-optional" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-tools-optional">Interactive tools (optional)</h2>
-<ul>
-<li><a href="https://shiny.posit.co">shiny</a></li>
-<li><a href="https://rstudio.github.io/shinydashboard/">shinydashboard</a></li>
-<li><a href="https://www.htmlwidgets.org">htmlwidgets</a></li>
+<li><a href="project_examples/social_determinants_health_cost_analysis.html">Social determinants</a></li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
