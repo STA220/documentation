@@ -258,24 +258,22 @@ Important
 </div>
 <section id="presentation" class="level1">
 <h1>Presentation</h1>
-<p>The oral presentation in <a href="./ES2.html">ES2</a> should be around <strong>5 minutes</strong>.</p>
-<p>Your report or slides are intended to serve as <strong>visual support</strong> during the presentation. They therefore do not need to be extensive or cover more than what you plan to present orally.</p>
+<p>You will later present your project work orally as pasrt of <a href="./ES2.html">ES2</a>. That presentation should be around <strong>5 minutes</strong>.</p>
+<p>Before that, you should prepare your presentation using Quarto, as introduced in <a href="./EL9.html">EL9</a>.</p>
 <p>The presentation in <a href="./ES2.html">ES2</a> will be <strong>individual</strong>, but you are free to collaborate and use the <strong>same report or slides</strong> within your project group if you wish.</p>
-<p>Start thinking early about how you want to communicate your results through <strong>figures, tables, and text</strong>. However, let your exploratory analysis guide your decisions. For this reason, you should not prepare the actual presentation before <a href="./EL9.html">EL9</a>.</p>
-<p>Your group may choose one of the following Quarto formats:</p>
+<p>Your group may choose to produce either:</p>
 <ul>
-<li>a written report (<code>format: html</code> or <code>format: typst</code>)</li>
-<li>a slideshow (<code>format: revealjs</code>)</li>
-<li>both</li>
+<li>a written report (<code>format: html</code> or <code>format: typst</code>),</li>
+<li>or a slideshow (<code>format: revealjs</code>),</li>
+<li>or both</li>
 </ul>
 <p>If you choose to produce only a written report, you should still present it during <a href="./ES2.html">ES2</a> by showing it on screen and scrolling through the document while presenting.</p>
 <p>Keep in mind that producing polished figures and tables can be time-consuming. Aim for clear and self-explanatory results (e.g.&nbsp;informative labels, appropriate scales, and meaningful captions), but do not spend excessive time on perfect formatting or purely aesthetic details unless this is within your area of interest.</p>
 <section id="suggested-tools-for-presenting-results" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-tools-for-presenting-results">Suggested tools for presenting results</h2>
 <p>Figures and tables should be presented <strong>within your Quarto document</strong>, as introduced in <a href="./EL9.html">EL9</a>.</p>
-<p>The code that generates these figures and tables does not necessarily need to be written directly in the <code>.qmd</code> file. For example, the analysis may be organised in separate R scripts or in a workflow pipeline (e.g.&nbsp;using <code>{targets}</code>).</p>
-<p>However, the Quarto document should still <strong>load the results and present them</strong>, so that rendering the document produces the figures and tables shown in the report or presentation.</p>
-<p>The following packages are examples of tools that can help generate clear presentation-quality figures and tables.</p>
+<p>The code that generates the figures and tables does not necessarily need to be written directly in the <code>.qmd</code> file. For example, the analysis may be organised in separate R scripts or within a workflow pipeline. See this example on how to <a href="https://carpentries-incubator.github.io/targets-workshop/quarto.html">integrate <code>{targets}</code> and Quarto</a>.</p>
+<p>The following packages are examples of tools that can help generate clear presentation-quality figures and tables (but you are free to use others).</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -312,7 +310,7 @@ Important
 <li>Include the <strong>Quarto source file (<code>.qmd</code>)</strong> that generates the report or presentation in your <strong>GitHub repository</strong>.</li>
 </ol>
 <p>The repository should therefore contain the <code>.qmd</code> document and any files required to render the report or presentation, as well as the rendered output document.</p>
-<p>Both group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together).</p>
+<p>Both group members should contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together).</p>
 
 
 </section>
