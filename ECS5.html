@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-14">
+<meta name="dcterms.date" content="2026-03-16">
 
 <title>ECS5: Presentation – STA220</title>
 <style>
@@ -231,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2026</p>
+      <p class="date">March 16, 2026</p>
     </div>
   </div>
   
@@ -268,9 +268,13 @@ Important
 <li>both</li>
 </ul>
 <p>If you choose to produce only a written report, you may still present it during <a href="./ES2.html">ES2</a> by showing it on screen and scrolling through the document while presenting.</p>
-<p>Keep in mind that producing polished figures and tables can take time. Aim for <strong>clear and readable results</strong>, but do not spend excessive time on perfect formatting.</p>
+<p>Keep in mind that producing polished figures and tables can be time-consuming. Aim for clear and self-explanatory results (e.g.&nbsp;informative labels, appropriate scales, and meaningful captions), but do not spend excessive time on perfect formatting or purely aesthetic details unless this is within your area of interest.</p>
 <section id="suggested-tools-for-presenting-results" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-tools-for-presenting-results">Suggested tools for presenting results</h2>
+<p>Figures and tables should be presented <strong>within your Quarto document</strong>, as introduced in <a href="./EL9.html">EL9</a>.</p>
+<p>The code that generates these figures and tables does not necessarily need to be written directly in the <code>.qmd</code> file. For example, the analysis may be organised in separate R scripts or in a workflow pipeline (e.g.&nbsp;using <code>{targets}</code>).</p>
+<p>However, the Quarto document should still <strong>load the results and present them</strong>, so that rendering the document produces the figures and tables shown in the report or presentation.</p>
+<p>The following packages are examples of tools that can help generate clear presentation-quality figures and tables.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -306,8 +310,8 @@ Important
 <li>The report/presentation should include at least one figure and one table of relevance</li>
 <li>Include the <strong>Quarto source file (<code>.qmd</code>)</strong> that generates the report or presentation in your <strong>GitHub repository</strong>.</li>
 </ol>
-<p>The repository should therefore contain the <code>.qmd</code> document and any files required to render the report or presentation, as well as rendered output document.</p>
-<p>Both group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming).</p>
+<p>The repository should therefore contain the <code>.qmd</code> document and any files required to render the report or presentation, as well as the rendered output document.</p>
+<p>Both group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together).</p>
 
 
 </section>

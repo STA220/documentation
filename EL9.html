@@ -236,12 +236,13 @@
 <li><strong>Code level</strong>
 <ul>
 <li>scripts (comments, e.g.&nbsp;<code># clean data and merge cohorts</code>)</li>
-<li>functions (Roxygen2 documentation)</li>
+<li>functions (<a href="https://roxygen2.r-lib.org/index.html">Roxygen2</a> documentation)</li>
 <li>notes and reminders (e.g.&nbsp;<code># TODO:</code>)</li>
 </ul></li>
 <li><strong>Project level</strong>
 <ul>
 <li><code>README.md</code></li>
+<li>(GitHub repos may also have a wiki or a polished website)</li>
 </ul></li>
 <li><strong>Output level</strong>
 <ul>
@@ -251,15 +252,26 @@
 </ul></li>
 </ul>
 </section>
+<section>
+<section id="code-level" class="title-slide slide level1 center">
+<h1>Code level</h1>
+
+</section>
 <section id="documenting-r-scripts" class="slide level2">
 <h2>Documenting R scripts</h2>
 <ul>
-<li>Section labels by <code>Shift + Ctrl/Cmd + R</code> in Positron and RStudio</li>
-<li>Easiest way to aid navigation in R scripts</li>
+<li>Use <a href="https://posit-dev.github.io/air/editor-vscode.html">Air</a> for better formatting of the R code itself (will format the code according to best practice for readability and collaboration)</li>
+<li>Section labels by <code>Shift + Ctrl/Cmd + R</code> in Positron (and RStudio)</li>
+<li>Easiest way to aid navigation to R scripts</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># My section heading -----------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<img data-src="images/paste-43.png" class="r-stretch"></section>
+<section id="individual-scripts" class="slide level2">
+<h2>Individual scripts</h2>
 <ul>
-<li><a href="https://bitbucket.org/cancercentrum/commentr/src/master/">commentr package</a>
+<li>As soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.</li>
+<li>The <a href="https://bitbucket.org/cancercentrum/commentr/src/master/">commentr package</a> is designed to maintain such context
 <ul>
 <li><code>remotes::install_bitbucket("cancercentrum/commentr")</code></li>
 </ul></li>
@@ -282,8 +294,8 @@
 # Contact:       xxx@yyy.zzz                                              #
 # Client:        John Doe                                                 #
 #                                                                         #
-# Code created:  2026-03-15                                               #
-# Last updated:  2026-03-15                                               #
+# Code created:  2026-03-16                                               #
+# Last updated:  2026-03-16                                               #
 # Source:        /Users/xbuler/STA220/documentation                       #
 #                                                                         #
 # Comment:       Bla bla bla ...                                          #
@@ -302,25 +314,32 @@
 <h2>Documenting R functions</h2>
 <p>What does this function do?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(who) {</span>
-<span id="cb5-2"><a></a>  <span class="fu">sprintf</span>(<span class="st">"Hello %s!"</span>, <span class="cf">if</span> (<span class="fu">missing</span>(who)) <span class="st">"world"</span> <span class="cf">else</span> who)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">who =</span> <span class="st">"world"</span>) {</span>
+<span id="cb5-2"><a></a>  <span class="fu">sprintf</span>(<span class="st">"Hello %s!"</span>, who)</span>
 <span id="cb5-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co">#' Say hello!</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co">#' Say hello</span></span>
 <span id="cb6-2"><a></a><span class="co">#'</span></span>
-<span id="cb6-3"><a></a><span class="co">#' This function let's you greet someone or something</span></span>
-<span id="cb6-4"><a></a><span class="co">#' @param character vector. Someone or something to great. Will great the world if argumen is missing.</span></span>
-<span id="cb6-5"><a></a><span class="co">#' @return character vector of the same length as `character`</span></span>
-<span id="cb6-6"><a></a><span class="co">#' @examples</span></span>
-<span id="cb6-7"><a></a><span class="co">#' hello()</span></span>
-<span id="cb6-8"><a></a><span class="co">#' hello("you")</span></span>
-<span id="cb6-9"><a></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(who) {</span>
-<span id="cb6-10"><a></a>  <span class="fu">sprintf</span>(<span class="st">"Hello %s!"</span>, <span class="cf">if</span> (<span class="fu">missing</span>(who)) <span class="st">"world"</span> <span class="cf">else</span> who)</span>
-<span id="cb6-11"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a></a><span class="co">#' Create a simple greeting. If no name is provided, the function</span></span>
+<span id="cb6-4"><a></a><span class="co">#' returns a greeting to the world.</span></span>
+<span id="cb6-5"><a></a><span class="co">#'</span></span>
+<span id="cb6-6"><a></a><span class="co">#' @param who A character vector giving the name(s) of the person or</span></span>
+<span id="cb6-7"><a></a><span class="co">#'   object to greet. If missing, the greeting defaults to `"world"`.</span></span>
+<span id="cb6-8"><a></a><span class="co">#'</span></span>
+<span id="cb6-9"><a></a><span class="co">#' @return A character vector of the same length as `who` containing</span></span>
+<span id="cb6-10"><a></a><span class="co">#'   greeting messages.</span></span>
+<span id="cb6-11"><a></a><span class="co">#'</span></span>
+<span id="cb6-12"><a></a><span class="co">#' @examples</span></span>
+<span id="cb6-13"><a></a><span class="co">#' hello()</span></span>
+<span id="cb6-14"><a></a><span class="co">#' hello("you")</span></span>
+<span id="cb6-15"><a></a><span class="co">#' hello(c("Alice", "Bob"))</span></span>
+<span id="cb6-16"><a></a>hello <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">who =</span> <span class="st">"world"</span>) {</span>
+<span id="cb6-17"><a></a>  <span class="fu">sprintf</span>(<span class="st">"Hello %s!"</span>, who)</span>
+<span id="cb6-18"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>There is a standardized syntax to document R functions</li>
@@ -331,6 +350,11 @@
 </ul></li>
 <li><a href="https://roxygen2.r-lib.org/index.html">roxygen2</a> is a package used for package documentation but it also has a great <a href="https://roxygen2.r-lib.org/articles/rd.html">manual for documenteing functions in general</a></li>
 </ul>
+</section></section>
+<section>
+<section id="project-level" class="title-slide slide level1 center">
+<h1>Project level</h1>
+
 </section>
 <section id="documenting-a-project" class="slide level2">
 <h2>Documenting a project</h2>
@@ -404,9 +428,32 @@
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="visual-mode" class="title-slide slide level1 center">
+<h1>Visual mode</h1>
+<p>Instead of editing the source code, you may also use the “visual editor” in Positron:</p>
+<p><img data-src="images/paste-44.png"></p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p><img data-src="images/paste-45.png"></p>
+</div>
+</div>
+</div>
 </section>
-<section id="reproducible-workflows-in-biostatistics" class="slide level2">
-<h2>Reproducible Workflows in Biostatistics</h2>
+<section id="use-both" class="slide level2">
+<h2>Use both?</h2>
+<p>Personally, I do most editing in source mode (better for the R chunks), but I find it much easier to include references/citations and to paste in external figures in using the visual mode.</p>
+</section>
+<section id="reproducible-workflows" class="slide level2">
+<h2>Reproducible Workflows</h2>
 <p>Modern biostatistics projects rarely involve only statistics.</p>
 <ul>
 <li>data cleaning and preprocessing</li>
@@ -416,6 +463,11 @@
 <li>reporting and documentation</li>
 </ul>
 <p>A good workflow should make it possible to <strong>combine all of these steps in one place</strong>.</p>
+</section></section>
+<section>
+<section id="output-level" class="title-slide slide level1 center">
+<h1>Output level</h1>
+
 </section>
 <section id="what" class="slide level2">
 <h2>What?</h2>
@@ -434,20 +486,20 @@
 <h2>Why?</h2>
 <p>In many projects people work with:</p>
 <ul>
-<li>R scripts for analysis</li>
-<li>Word documents for reporting</li>
-<li>PowerPoint slides for presentations</li>
+<li>R scripts for analysis 🥳</li>
+<li>Word documents for reporting 😱</li>
+<li>PowerPoint slides for presentations 😱</li>
 </ul>
 <p>This separation often leads to:</p>
 <ul>
-<li>copy–paste errors</li>
-<li>outdated figures</li>
-<li>results that cannot easily be reproduced</li>
+<li>copy–paste errors 🥴</li>
+<li>outdated figures 👎</li>
+<li>results that cannot easily be reproduced 🤯</li>
 </ul>
-<p>Quarto helps avoid these problems.</p>
+<p><strong>Quarto helps avoid these problems!</strong></p>
 </section>
-<section id="a-reproducible-analysis-document" class="slide level2 scrollable">
-<h2>A reproducible analysis document</h2>
+<section id="reproducible-analysis" class="slide level2 scrollable">
+<h2>Reproducible analysis</h2>
 <p>In a Quarto document you can:</p>
 <ol type="1">
 <li>write the explanation of your analysis</li>
@@ -471,21 +523,18 @@
 </section>
 <section id="a-simple-report" class="slide level2">
 <h2>A simple report</h2>
-<ul>
-<li>When you chose “New &gt; New File …” in the upper left corner in Positron you may chose “Quarto document”</li>
-<li>The file will be almost empty but contains:</li>
-</ul>
+<p>When you chose <code>New &gt; New File ... &gt; Quarto document,</code> the file will contain:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="pp">---</span></span>
 <span id="cb7-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
 <span id="cb7-3"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb7-4"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>This is a YAML header (Yet Another Markup Language)</li>
-<li>Different formats available:
+<li>Different output formats are available:
 <ul>
-<li><strong>html:</strong> can also be published online</li>
-<li><strong>docx:</strong> for collaborating with non-statisticians etc</li>
-<li><strong>typst:</strong> Modern PDF rendering</li>
+<li><strong>html:</strong> can also be published online (<a href="https://quartopub.com">Quartopub</a> or <a href="https://quarto.org/docs/publishing/github-pages.html">GitHub pages</a>)</li>
+<li><strong>docx:</strong> Word document for collaborating with non-statisticians etc</li>
+<li><strong>typst:</strong> PDF rendering (ever heard of <span class="math inline">\(\LaTeX\)</span>? … This is the modern alternative!)</li>
 <li><strong>revealjs:</strong> slide decks (you are looking at one!)</li>
 </ul></li>
 <li>Can render to multiple formats at once!</li>
@@ -496,7 +545,7 @@
 <p>This is the yaml header for this presentation:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="pp">---</span></span>
 <span id="cb8-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"EL9: Documentation"</span></span>
-<span id="cb8-3"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto, roxygn2"</span></span>
+<span id="cb8-3"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto"</span></span>
 <span id="cb8-4"><a></a><span class="fu">reading</span><span class="kw">:</span><span class="at"> </span><span class="st">"[@wickham, ch. 28-29]"</span></span>
 <span id="cb8-5"><a></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb8-6"><a></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
@@ -528,7 +577,7 @@
 <pre><code>format
 └── html
     └── code-fold: true</code></pre>
-<h3 id="what-happens-if-indentation-is-wrong">What happens if indentation is wrong?</h3>
+<h3 id="if-indentation-is-wrong">If indentation is wrong?</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb11-2"><a></a><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb11-3"><a></a><span class="at">  </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -558,10 +607,38 @@ html
 <span id="cb13-2"><a></a>#| echo: false  ← options controlling the output</span>
 <span id="cb13-3"><a></a>summary(x)      ← R code</span>
 <span id="cb13-4"><a></a>```             ← end of chunk</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Keybindings: <code>Cmd + option + I</code> (Mac) or <code>Ctrl + Alt + I</code> (Windows)</p>
 <ol start="3" type="1">
 <li>Text with markdown format</li>
 </ol>
-<p>Where 1 (YAML header) comes first and where 2 and 3 are intermingled throughout the rest of the document.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Order</strong></p>
+</div>
+<div class="callout-content">
+<p>Part 1 (YAML header) always comes first but 2 (code block) and 3 (Markdown text) are usually intermingled throughout the rest of the document.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="inline-code" class="slide level2">
+<h2>Inline code</h2>
+<p>Sometimes we want to insert <strong>small pieces of R output directly in the text</strong>.</p>
+<p>This is called <strong>inline code</strong>.</p>
+<p>Inline code will always just show the result of the call (not the code itself in the rendered document):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a></a>Todays date is `r Sys.Date()` and it is `r format(Sys.time(), format = "%H")` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote>
+<p>Todys date is 2026-03-16 and it is 09 AM</p>
+</blockquote>
+<p>To higlight with bold and italic:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a></a>Todays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = "%I %p")`*</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote>
+<p>Todays date is <strong>2026-03-16</strong> and it is <em>09 AM</em></p>
+</blockquote>
 </section>
 <section class="slide level2">
 
@@ -571,21 +648,6 @@ html
 
 
 <img data-src="images/paste-36.png" class="r-stretch"></section>
-<section id="inline-code" class="slide level2">
-<h2>Inline code</h2>
-<p>Sometimes we want to insert <strong>small pieces of R output directly in the text</strong>.</p>
-<p>This is called <strong>inline code</strong>.</p>
-<p>Inline code will always just show the result of the call (not the code itself in the rendered document):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a></a>Todays date is `r Sys.Date()` and it is `r format(Sys.time(), format = "%H")` </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote>
-<p>Todys date is 2026-03-15 and it is 07 PM</p>
-</blockquote>
-<p>To higlight with bold and italic:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a></a>Todays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = "%I %p")`*</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote>
-<p>Todays date is <strong>2026-03-15</strong> and it is <em>07 PM</em></p>
-</blockquote>
-</section>
 <section id="to-publish" class="slide level2">
 <h2>To publish</h2>
 <p>Decision makers, stake holders, friends or the public might not care about R. Disable R code (echoing the code itself), warnings and messages:</p>
@@ -602,7 +664,8 @@ html
 <h2>For collaborators</h2>
 <ul>
 <li>Might still care less about verbose R messages and warnings (they trust that you have already considered those)</li>
-<li>May check the underlaying R code if relevant (use <code>code-fold</code>)</li>
+<li>May still need the underlaying R code for deeper understaing</li>
+<li>Use <code>code-fold</code></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a></a><span class="pp">---</span></span>
 <span id="cb17-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
@@ -613,6 +676,17 @@ html
 <span id="cb17-7"><a></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb17-8"><a></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb17-9"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-46.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-47.png" class="r-stretch"></section>
+<section class="slide level2">
+
 <p>This can also be set individually for each code chunk:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a></a>```{r}</span>
 <span id="cb18-2"><a></a>#| echo: false</span>
@@ -636,170 +710,31 @@ html
 <h2>Tables</h2>
 <p>Just printing the R output might not look very nice:</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">head</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-1            5.1         3.5          1.4         0.2     setosa
-2            4.9         3.0          1.4         0.2     setosa
-3            4.7         3.2          1.3         0.2     setosa
-4            4.6         3.1          1.5         0.2     setosa
-5            5.0         3.6          1.4         0.2     setosa
-6            5.4         3.9          1.7         0.4     setosa
-7            4.6         3.4          1.4         0.3     setosa
-8            5.0         3.4          1.5         0.2     setosa
-9            4.4         2.9          1.4         0.2     setosa
-10           4.9         3.1          1.5         0.1     setosa
-11           5.4         3.7          1.5         0.2     setosa
-12           4.8         3.4          1.6         0.2     setosa
-13           4.8         3.0          1.4         0.1     setosa
-14           4.3         3.0          1.1         0.1     setosa
-15           5.8         4.0          1.2         0.2     setosa
-16           5.7         4.4          1.5         0.4     setosa
-17           5.4         3.9          1.3         0.4     setosa
-18           5.1         3.5          1.4         0.3     setosa
-19           5.7         3.8          1.7         0.3     setosa
-20           5.1         3.8          1.5         0.3     setosa
-21           5.4         3.4          1.7         0.2     setosa
-22           5.1         3.7          1.5         0.4     setosa
-23           4.6         3.6          1.0         0.2     setosa
-24           5.1         3.3          1.7         0.5     setosa
-25           4.8         3.4          1.9         0.2     setosa
-26           5.0         3.0          1.6         0.2     setosa
-27           5.0         3.4          1.6         0.4     setosa
-28           5.2         3.5          1.5         0.2     setosa
-29           5.2         3.4          1.4         0.2     setosa
-30           4.7         3.2          1.6         0.2     setosa
-31           4.8         3.1          1.6         0.2     setosa
-32           5.4         3.4          1.5         0.4     setosa
-33           5.2         4.1          1.5         0.1     setosa
-34           5.5         4.2          1.4         0.2     setosa
-35           4.9         3.1          1.5         0.2     setosa
-36           5.0         3.2          1.2         0.2     setosa
-37           5.5         3.5          1.3         0.2     setosa
-38           4.9         3.6          1.4         0.1     setosa
-39           4.4         3.0          1.3         0.2     setosa
-40           5.1         3.4          1.5         0.2     setosa
-41           5.0         3.5          1.3         0.3     setosa
-42           4.5         2.3          1.3         0.3     setosa
-43           4.4         3.2          1.3         0.2     setosa
-44           5.0         3.5          1.6         0.6     setosa
-45           5.1         3.8          1.9         0.4     setosa
-46           4.8         3.0          1.4         0.3     setosa
-47           5.1         3.8          1.6         0.2     setosa
-48           4.6         3.2          1.4         0.2     setosa
-49           5.3         3.7          1.5         0.2     setosa
-50           5.0         3.3          1.4         0.2     setosa
-51           7.0         3.2          4.7         1.4 versicolor
-52           6.4         3.2          4.5         1.5 versicolor
-53           6.9         3.1          4.9         1.5 versicolor
-54           5.5         2.3          4.0         1.3 versicolor
-55           6.5         2.8          4.6         1.5 versicolor
-56           5.7         2.8          4.5         1.3 versicolor
-57           6.3         3.3          4.7         1.6 versicolor
-58           4.9         2.4          3.3         1.0 versicolor
-59           6.6         2.9          4.6         1.3 versicolor
-60           5.2         2.7          3.9         1.4 versicolor
-61           5.0         2.0          3.5         1.0 versicolor
-62           5.9         3.0          4.2         1.5 versicolor
-63           6.0         2.2          4.0         1.0 versicolor
-64           6.1         2.9          4.7         1.4 versicolor
-65           5.6         2.9          3.6         1.3 versicolor
-66           6.7         3.1          4.4         1.4 versicolor
-67           5.6         3.0          4.5         1.5 versicolor
-68           5.8         2.7          4.1         1.0 versicolor
-69           6.2         2.2          4.5         1.5 versicolor
-70           5.6         2.5          3.9         1.1 versicolor
-71           5.9         3.2          4.8         1.8 versicolor
-72           6.1         2.8          4.0         1.3 versicolor
-73           6.3         2.5          4.9         1.5 versicolor
-74           6.1         2.8          4.7         1.2 versicolor
-75           6.4         2.9          4.3         1.3 versicolor
-76           6.6         3.0          4.4         1.4 versicolor
-77           6.8         2.8          4.8         1.4 versicolor
-78           6.7         3.0          5.0         1.7 versicolor
-79           6.0         2.9          4.5         1.5 versicolor
-80           5.7         2.6          3.5         1.0 versicolor
-81           5.5         2.4          3.8         1.1 versicolor
-82           5.5         2.4          3.7         1.0 versicolor
-83           5.8         2.7          3.9         1.2 versicolor
-84           6.0         2.7          5.1         1.6 versicolor
-85           5.4         3.0          4.5         1.5 versicolor
-86           6.0         3.4          4.5         1.6 versicolor
-87           6.7         3.1          4.7         1.5 versicolor
-88           6.3         2.3          4.4         1.3 versicolor
-89           5.6         3.0          4.1         1.3 versicolor
-90           5.5         2.5          4.0         1.3 versicolor
-91           5.5         2.6          4.4         1.2 versicolor
-92           6.1         3.0          4.6         1.4 versicolor
-93           5.8         2.6          4.0         1.2 versicolor
-94           5.0         2.3          3.3         1.0 versicolor
-95           5.6         2.7          4.2         1.3 versicolor
-96           5.7         3.0          4.2         1.2 versicolor
-97           5.7         2.9          4.2         1.3 versicolor
-98           6.2         2.9          4.3         1.3 versicolor
-99           5.1         2.5          3.0         1.1 versicolor
-100          5.7         2.8          4.1         1.3 versicolor
-101          6.3         3.3          6.0         2.5  virginica
-102          5.8         2.7          5.1         1.9  virginica
-103          7.1         3.0          5.9         2.1  virginica
-104          6.3         2.9          5.6         1.8  virginica
-105          6.5         3.0          5.8         2.2  virginica
-106          7.6         3.0          6.6         2.1  virginica
-107          4.9         2.5          4.5         1.7  virginica
-108          7.3         2.9          6.3         1.8  virginica
-109          6.7         2.5          5.8         1.8  virginica
-110          7.2         3.6          6.1         2.5  virginica
-111          6.5         3.2          5.1         2.0  virginica
-112          6.4         2.7          5.3         1.9  virginica
-113          6.8         3.0          5.5         2.1  virginica
-114          5.7         2.5          5.0         2.0  virginica
-115          5.8         2.8          5.1         2.4  virginica
-116          6.4         3.2          5.3         2.3  virginica
-117          6.5         3.0          5.5         1.8  virginica
-118          7.7         3.8          6.7         2.2  virginica
-119          7.7         2.6          6.9         2.3  virginica
-120          6.0         2.2          5.0         1.5  virginica
-121          6.9         3.2          5.7         2.3  virginica
-122          5.6         2.8          4.9         2.0  virginica
-123          7.7         2.8          6.7         2.0  virginica
-124          6.3         2.7          4.9         1.8  virginica
-125          6.7         3.3          5.7         2.1  virginica
-126          7.2         3.2          6.0         1.8  virginica
-127          6.2         2.8          4.8         1.8  virginica
-128          6.1         3.0          4.9         1.8  virginica
-129          6.4         2.8          5.6         2.1  virginica
-130          7.2         3.0          5.8         1.6  virginica
-131          7.4         2.8          6.1         1.9  virginica
-132          7.9         3.8          6.4         2.0  virginica
-133          6.4         2.8          5.6         2.2  virginica
-134          6.3         2.8          5.1         1.5  virginica
-135          6.1         2.6          5.6         1.4  virginica
-136          7.7         3.0          6.1         2.3  virginica
-137          6.3         3.4          5.6         2.4  virginica
-138          6.4         3.1          5.5         1.8  virginica
-139          6.0         3.0          4.8         1.8  virginica
-140          6.9         3.1          5.4         2.1  virginica
-141          6.7         3.1          5.6         2.4  virginica
-142          6.9         3.1          5.1         2.3  virginica
-143          5.8         2.7          5.1         1.9  virginica
-144          6.8         3.2          5.9         2.3  virginica
-145          6.7         3.3          5.7         2.5  virginica
-146          6.7         3.0          5.2         2.3  virginica
-147          6.3         2.5          5.0         1.9  virginica
-148          6.5         3.0          5.2         2.0  virginica
-149          6.2         3.4          5.4         2.3  virginica
-150          5.9         3.0          5.1         1.8  virginica</code></pre>
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa</code></pre>
 </div>
 </div>
 </section>
 <section id="better-with-kable" class="slide level2">
 <h2>Better with kable</h2>
 <p>The easiest way to make tibbles/data.frames/data.tables look nicer is with <code>df-print: kable</code> in the yaml header.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a></a><span class="pp">---</span></span>
-<span id="cb21-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
-<span id="cb21-3"><a></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb21-4"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb21-5"><a></a><span class="at">    </span><span class="fu">df-print</span><span class="kw">:</span><span class="at"> kable</span></span>
-<span id="cb21-6"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a></a><span class="pp">---</span></span>
+<span id="cb22-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
+<span id="cb22-3"><a></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb22-4"><a></a><span class="fu">df-print</span><span class="kw">:</span><span class="at"> kable</span></span>
+<span id="cb22-5"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or manually for individual outputs:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a></a>```{r}</span>
+<span id="cb23-2"><a></a>#| tbl-cap: Some iris data</span>
+<span id="cb23-3"><a></a>knitr::kable(head(iris))</span>
+<span id="cb23-4"><a></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell" data-tbl-cap="Some iris data">
 <div class="cell-output-display">
 <table class="caption-top">
@@ -856,1014 +791,6 @@ html
 <td style="text-align: right;">0.4</td>
 <td style="text-align: left;">setosa</td>
 </tr>
-<tr class="odd">
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.1</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">3.7</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.1</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.3</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">0.1</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">3.9</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.7</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">3.6</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: right;">0.5</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.7</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">4.1</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.1</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">4.2</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">3.6</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.1</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.6</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: right;">0.4</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.3</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.3</td>
-<td style="text-align: right;">3.7</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: right;">0.2</td>
-<td style="text-align: left;">setosa</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7.0</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">4.7</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.9</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">4.7</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.6</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">3.9</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.9</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.2</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">4.7</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">3.6</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">4.1</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.2</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">3.9</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.9</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.7</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">4.3</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.6</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.8</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.6</td>
-<td style="text-align: right;">3.5</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: right;">3.7</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">3.9</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">4.7</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.1</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">2.6</td>
-<td style="text-align: right;">4.4</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.6</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.6</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">1.0</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">4.2</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.2</td>
-<td style="text-align: right;">1.2</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">4.2</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.2</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">4.3</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.1</td>
-<td style="text-align: right;">1.3</td>
-<td style="text-align: left;">versicolor</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7.1</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.9</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.6</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">6.6</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">1.7</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.3</td>
-<td style="text-align: right;">2.9</td>
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.2</td>
-<td style="text-align: right;">3.6</td>
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">5.3</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.8</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">5.3</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.7</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7.7</td>
-<td style="text-align: right;">2.6</td>
-<td style="text-align: right;">6.9</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.9</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7.7</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.2</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.2</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.9</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.2</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">1.6</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7.4</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.9</td>
-<td style="text-align: right;">3.8</td>
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">1.5</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">2.6</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">1.4</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7.7</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">6.1</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.4</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">5.5</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.0</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">4.8</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.9</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">2.1</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">5.6</td>
-<td style="text-align: right;">2.4</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.9</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5.8</td>
-<td style="text-align: right;">2.7</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.8</td>
-<td style="text-align: right;">3.2</td>
-<td style="text-align: right;">5.9</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.3</td>
-<td style="text-align: right;">5.7</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.7</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.3</td>
-<td style="text-align: right;">2.5</td>
-<td style="text-align: right;">5.0</td>
-<td style="text-align: right;">1.9</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6.5</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.2</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6.2</td>
-<td style="text-align: right;">3.4</td>
-<td style="text-align: right;">5.4</td>
-<td style="text-align: right;">2.3</td>
-<td style="text-align: left;">virginica</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5.9</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">5.1</td>
-<td style="text-align: right;">1.8</td>
-<td style="text-align: left;">virginica</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1875,7 +802,7 @@ html
 <li>Very flexible</li>
 <li>Publication ready</li>
 <li><a href="https://gt.rstudio.com">Package from Posit</a></li>
-<li>Sometimes <a href="https://ardata-fr.github.io/flextable-book/">flextable</a> if rendering MS Office documents (Word, PowerPoint)</li>
+<li><a href="https://ardata-fr.github.io/flextable-book/">flextable</a> may be preferred instead if rendering Office documents (Word, PowerPoint)</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -1889,28 +816,28 @@ html
 <section id="gtsummary" class="slide level2">
 <h2>gtsummary</h2>
 <p><a href="https://www.danieldsjoberg.com/gtsummary/">gtsummary package</a> build on top of <code>{gt}</code> to easily summarise datasets, regression models etc</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a></a>```{r}</span>
-<span id="cb22-2"><a></a>gtsummary::tbl_summary(iris, Species)</span>
-<span id="cb22-3"><a></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a></a>```{r}</span>
+<span id="cb24-2"><a></a>gtsummary::tbl_summary(iris, Species)</span>
+<span id="cb24-3"><a></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="prcfgydsso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#prcfgydsso table {
+<div id="wcfxtyfwuj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wcfxtyfwuj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#prcfgydsso thead, #prcfgydsso tbody, #prcfgydsso tfoot, #prcfgydsso tr, #prcfgydsso td, #prcfgydsso th {
+#wcfxtyfwuj thead, #wcfxtyfwuj tbody, #wcfxtyfwuj tfoot, #wcfxtyfwuj tr, #wcfxtyfwuj td, #wcfxtyfwuj th {
   border-style: none;
 }
 
-#prcfgydsso p {
+#wcfxtyfwuj p {
   margin: 0;
   padding: 0;
 }
 
-#prcfgydsso .gt_table {
+#wcfxtyfwuj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1936,12 +863,12 @@ html
   border-left-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_caption {
+#wcfxtyfwuj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#prcfgydsso .gt_title {
+#wcfxtyfwuj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1953,7 +880,7 @@ html
   border-bottom-width: 0;
 }
 
-#prcfgydsso .gt_subtitle {
+#wcfxtyfwuj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1965,7 +892,7 @@ html
   border-top-width: 0;
 }
 
-#prcfgydsso .gt_heading {
+#wcfxtyfwuj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1977,13 +904,13 @@ html
   border-right-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_bottom_border {
+#wcfxtyfwuj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_col_headings {
+#wcfxtyfwuj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1998,7 +925,7 @@ html
   border-right-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_col_heading {
+#wcfxtyfwuj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2018,7 +945,7 @@ html
   overflow-x: hidden;
 }
 
-#prcfgydsso .gt_column_spanner_outer {
+#wcfxtyfwuj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2030,15 +957,15 @@ html
   padding-right: 4px;
 }
 
-#prcfgydsso .gt_column_spanner_outer:first-child {
+#wcfxtyfwuj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#prcfgydsso .gt_column_spanner_outer:last-child {
+#wcfxtyfwuj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#prcfgydsso .gt_column_spanner {
+#wcfxtyfwuj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2050,11 +977,11 @@ html
   width: 100%;
 }
 
-#prcfgydsso .gt_spanner_row {
+#wcfxtyfwuj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#prcfgydsso .gt_group_heading {
+#wcfxtyfwuj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2080,7 +1007,7 @@ html
   text-align: left;
 }
 
-#prcfgydsso .gt_empty_group_heading {
+#wcfxtyfwuj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2095,15 +1022,15 @@ html
   vertical-align: middle;
 }
 
-#prcfgydsso .gt_from_md > :first-child {
+#wcfxtyfwuj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#prcfgydsso .gt_from_md > :last-child {
+#wcfxtyfwuj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#prcfgydsso .gt_row {
+#wcfxtyfwuj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2122,7 +1049,7 @@ html
   overflow-x: hidden;
 }
 
-#prcfgydsso .gt_stub {
+#wcfxtyfwuj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2135,7 +1062,7 @@ html
   padding-right: 5px;
 }
 
-#prcfgydsso .gt_stub_row_group {
+#wcfxtyfwuj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2149,15 +1076,15 @@ html
   vertical-align: top;
 }
 
-#prcfgydsso .gt_row_group_first td {
+#wcfxtyfwuj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#prcfgydsso .gt_row_group_first th {
+#wcfxtyfwuj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#prcfgydsso .gt_summary_row {
+#wcfxtyfwuj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2167,16 +1094,16 @@ html
   padding-right: 5px;
 }
 
-#prcfgydsso .gt_first_summary_row {
+#wcfxtyfwuj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_first_summary_row.thick {
+#wcfxtyfwuj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#prcfgydsso .gt_last_summary_row {
+#wcfxtyfwuj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2186,7 +1113,7 @@ html
   border-bottom-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_grand_summary_row {
+#wcfxtyfwuj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2196,7 +1123,7 @@ html
   padding-right: 5px;
 }
 
-#prcfgydsso .gt_first_grand_summary_row {
+#wcfxtyfwuj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2206,7 +1133,7 @@ html
   border-top-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_last_grand_summary_row_top {
+#wcfxtyfwuj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2216,11 +1143,11 @@ html
   border-bottom-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_striped {
+#wcfxtyfwuj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#prcfgydsso .gt_table_body {
+#wcfxtyfwuj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2229,7 +1156,7 @@ html
   border-bottom-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_footnotes {
+#wcfxtyfwuj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2243,7 +1170,7 @@ html
   border-right-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_footnote {
+#wcfxtyfwuj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2252,7 +1179,7 @@ html
   padding-right: 5px;
 }
 
-#prcfgydsso .gt_sourcenotes {
+#wcfxtyfwuj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2266,7 +1193,7 @@ html
   border-right-color: #D3D3D3;
 }
 
-#prcfgydsso .gt_sourcenote {
+#wcfxtyfwuj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2274,72 +1201,72 @@ html
   padding-right: 5px;
 }
 
-#prcfgydsso .gt_left {
+#wcfxtyfwuj .gt_left {
   text-align: left;
 }
 
-#prcfgydsso .gt_center {
+#wcfxtyfwuj .gt_center {
   text-align: center;
 }
 
-#prcfgydsso .gt_right {
+#wcfxtyfwuj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#prcfgydsso .gt_font_normal {
+#wcfxtyfwuj .gt_font_normal {
   font-weight: normal;
 }
 
-#prcfgydsso .gt_font_bold {
+#wcfxtyfwuj .gt_font_bold {
   font-weight: bold;
 }
 
-#prcfgydsso .gt_font_italic {
+#wcfxtyfwuj .gt_font_italic {
   font-style: italic;
 }
 
-#prcfgydsso .gt_super {
+#wcfxtyfwuj .gt_super {
   font-size: 65%;
 }
 
-#prcfgydsso .gt_footnote_marks {
+#wcfxtyfwuj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#prcfgydsso .gt_asterisk {
+#wcfxtyfwuj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#prcfgydsso .gt_indent_1 {
+#wcfxtyfwuj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#prcfgydsso .gt_indent_2 {
+#wcfxtyfwuj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#prcfgydsso .gt_indent_3 {
+#wcfxtyfwuj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#prcfgydsso .gt_indent_4 {
+#wcfxtyfwuj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#prcfgydsso .gt_indent_5 {
+#wcfxtyfwuj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#prcfgydsso .katex-display {
+#wcfxtyfwuj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#prcfgydsso div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wcfxtyfwuj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2411,87 +1338,16 @@ N = 50<span class="gt_footnote_marks" style="white-space:nowrap;font-style:itali
 </ul></li>
 <li><a href="https://quarto.org/docs/presentations/revealjs/">Info and examples</a></li>
 </ul>
-<p>For examplen (as used for those slides):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb23-2"><a></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb23-3"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> blood</span></span>
-<span id="cb23-4"><a></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
-<span id="cb23-5"><a></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb23-6"><a></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
-<span id="cb23-7"><a></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb23-8"><a></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb23-9"><a></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="manuscripts" class="slide level2">
-<h2>Manuscripts</h2>
-<ul>
-<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscript</a></li>
-<li>framework for writing and publishing scholarly articles</li>
-<li>Something for your later thesis work?</li>
-<li>Handles references</li>
-<li>Export to Word documents (<code>.docx</code>) etc
-<ul>
-<li>which is still the most common format for submission to medical/epidemiological journals</li>
-<li>Still used for collaborative work with non-statisticians etc</li>
-</ul></li>
-</ul>
-</section>
-<section id="use-references" class="slide level2">
-<h2>USe references</h2>
-<p>When writing scientific reports we need to:</p>
-<ul>
-<li>acknowledge previous research</li>
-<li>support claims with evidence</li>
-<li>allow readers to find the original sources</li>
-</ul>
-<p>This is done through <strong>citations</strong> and a <strong>reference list</strong>.</p>
-<p>Example:</p>
-<blockquote>
-<p>Don’t blame me, it was according to <span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span>.</p>
-</blockquote>
-<p>At the end of the document a <strong>bibliography</strong> is automatically generated.</p>
-</section>
-<section id="what-is-reference-management" class="slide level2">
-<h2>What is reference management?</h2>
-<p>Reference management means keeping track of:</p>
-<ul>
-<li>articles, books, reports, datasets</li>
-</ul>
-<p>including information such as:</p>
-<ul>
-<li>authors, title, journal, year</li>
-<li><a href="https://www.doi.org/the-identifier/what-is-a-doi/">DOI</a></li>
-</ul>
-<p>Instead of typing references manually, software can <strong>store and format them automatically</strong>.</p>
-</section>
-<section id="common-reference-management-tools" class="slide level2">
-<h2>Common reference management tools</h2>
-<p>Many researchers use tools such as:</p>
-<ul>
-<li><strong>Zotero</strong></li>
-<li><strong>Mendeley</strong></li>
-<li><strong>EndNote</strong></li>
-</ul>
-<p>These tools allow you to:</p>
-<ul>
-<li>collect references from databases (PubMed, Google Scholar, etc.)</li>
-<li>organise them in libraries</li>
-<li>export them to writing tools</li>
-</ul>
-<p>Quarto can work with references from these systems directly.</p>
-</section>
-<section id="how-quarto-handles-references" class="slide level2">
-<h2>How Quarto handles references</h2>
-<p>Quarto uses a <strong>bibliography file</strong>, usually in <code>.bib</code> format.</p>
-<p>Example in the document header:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then citations can be written directly in the text:</p>
-<pre><code>Several studies have examined this relationship @smith2020.</code></pre>
-<p>Quarto will render something like:</p>
-<blockquote>
-<p>Several studies have examined this relationship (Smith 2020).</p>
-</blockquote>
-<p>The full reference will appear automatically in the bibliography.</p>
+<p>For example (as used for these slides):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb25-2"><a></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb25-3"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> blood</span></span>
+<span id="cb25-4"><a></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
+<span id="cb25-5"><a></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb25-6"><a></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb25-7"><a></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb25-8"><a></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb25-9"><a></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="integrate-with-targets" class="slide level2">
 <h2>Integrate with <code>{targets}</code></h2>
@@ -2547,20 +1403,58 @@ N = 50<span class="gt_footnote_marks" style="white-space:nowrap;font-style:itali
 <span id="cb28-26"><a></a></span>
 <span id="cb28-27"><a></a><span class="st">## Here are some flowers!</span></span>
 <span id="cb28-28"><a></a></span>
-<span id="cb28-29"><a></a><span class="st">```{r}</span></span>
-<span id="cb28-30"><a></a><span class="st">gtsummary::tbl_summary(targets::tar_read(data))</span></span>
-<span id="cb28-31"><a></a><span class="st">```</span></span>
+<span id="cb28-29"><a></a><span class="st">gtsummary::tbl_summary(targets::tar_read(data))</span></span>
+<span id="cb28-30"><a></a></span>
+<span id="cb28-31"><a></a><span class="st">## And here is a model</span></span>
 <span id="cb28-32"><a></a></span>
-<span id="cb28-33"><a></a><span class="st">## And here is a model</span></span>
-<span id="cb28-34"><a></a></span>
-<span id="cb28-35"><a></a><span class="st">```{r}</span></span>
-<span id="cb28-36"><a></a><span class="st">gtsummary::tbl_regression(targets::tar_read(model))</span></span>
-<span id="cb28-37"><a></a><span class="st">```</span></span>
-<span id="cb28-38"><a></a><span class="op">EOF</span></span>
-<span id="cb28-39"><a></a></span>
-<span id="cb28-40"><a></a><span class="ex">positron</span> test_targets_quarto</span>
-<span id="cb28-41"><a></a><span class="co"># rm -r test_targets_quarto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-33"><a></a><span class="st">gtsummary::tbl_regression(targets::tar_read(model))</span></span>
+<span id="cb28-34"><a></a><span class="op">EOF</span></span>
+<span id="cb28-35"><a></a></span>
+<span id="cb28-36"><a></a><span class="ex">positron</span> test_targets_quarto</span>
+<span id="cb28-37"><a></a><span class="co"># rm -r test_targets_quarto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="manuscripts" class="slide level2">
+<h2>Manuscripts</h2>
+<ul>
+<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscript</a></li>
+<li>framework for writing and publishing scholarly articles</li>
+<li>Something for your later thesis work?</li>
+<li>Handles references</li>
+<li>Export to Word documents (<code>.docx</code>) etc
+<ul>
+<li>which is still the most common format for submission to medical/epidemiological journals</li>
+<li>Still used for collaborative work with non-statisticians etc</li>
+</ul></li>
+</ul>
+</section>
+<section id="use-references" class="slide level2">
+<h2>Use references</h2>
+<p>When writing scientific reports we need to:</p>
+<ul>
+<li>acknowledge previous research</li>
+<li>support claims with evidence</li>
+<li>allow readers to find the original sources</li>
+</ul>
+<p>This is done through <strong>citations</strong> and a <strong>reference list</strong>.</p>
+<p>Example:</p>
+<blockquote>
+<p>Don’t blame me, it was according to <span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span>.</p>
+</blockquote>
+<p>At the end of the document a <strong>bibliography</strong> is automatically generated.</p>
+</section>
+<section id="how-quarto-handles-references" class="slide level2">
+<h2>How Quarto handles references</h2>
+<p>Quarto uses a <strong>bibliography file</strong>, usually in <code>.bib</code> format.</p>
+<p>Example in the document header:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then citations can be written directly in the text:</p>
+<pre><code>Several studies have examined this relationship @smith2020.</code></pre>
+<p>Quarto will render something like:</p>
+<blockquote>
+<p>Several studies have examined this relationship (Smith 2020).</p>
+</blockquote>
+<p>The full reference will appear automatically in the bibliography.</p>
 </section>
 <section id="online-portfolio" class="slide level2">
 <h2>Online portfolio</h2>
@@ -2580,7 +1474,7 @@ N = 50<span class="gt_footnote_marks" style="white-space:nowrap;font-style:itali
 Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. n.d. <span>“R for Data Science (2e).”</span> <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div>
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

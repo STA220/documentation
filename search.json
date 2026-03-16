@@ -837,7 +837,7 @@
     "href": "exam/v2.html",
     "title": "Written Examination",
     "section": "",
-    "text": "Course: Health Data and Reproducible Research\nDuration: 95 minutes\nTotal marks: 40\n\n\n\nAnswer all questions.\nWrite your answers in English.\nIn Section A, keep your answers brief. In most cases, 1–3 sentences are sufficient.\nIn Section B, provide short but clear explanations. A good answer is typically 4–6 sentences.\nIn Section C, write a short essay of approximately half a page to one page.\nYou may use relevant terminology from the course, but make sure your reasoning is clear.\nWhere appropriate, motivate your answers briefly.\nThe exam is designed to assess both conceptual understanding and the ability to relate course concepts to practical work with health data.\n\n\n\n\n\nAnswer briefly.\n\n\nWhat was the original purpose of the International Classification of Diseases (ICD) when it was first introduced in the nineteenth century?\n\n\n\nBuckheit and Donoho argued that a scientific paper is merely advertising of the real scholarship.\nWhat did they mean by this?\n\n\n\nWhat problem does a workflow tool such as {targets} solve in a data analysis project?\n\n\n\nExplain one important advantage of using Git and GitHub when developing data analysis scripts.\n\n\n\nWhat role does Quarto play in a reproducible research workflow?\n\n\n\nWhat is meant by secondary use of health data?\n\n\n\n\n\nProvide a short explanation for each question.\n\n\nLarge health datasets are often stored as Parquet files rather than CSV files.\nExplain why querying data stored in Parquet format can be much faster than reading individual CSV files.\n\n\n\nThe transition from ICD-9 to ICD-10 greatly increased the number of diagnostic codes.\nExplain how this affects the granularity of clinical research and discuss one potential drawback for epidemiological studies.\n\n\n\nImagine a multicenter observational study based on hospital registry data.\nExplain how differences in coding practices between hospitals could influence the validity of the study results.\n\n\n\n\n\nWrite a short essay.\n\n\nTraditionally, a scientific study was often viewed as a final publication.\nToday, research is better understood as a dynamic workflow involving raw registry data, processing pipelines, documentation, and legal constraints.\nDiscuss how the following elements interact in modern health data research:\n\nlegal frameworks (for example GDPR)\ndata quality and registry data\nmedical coding systems such as ICD\nreproducible workflows and computational pipelines\n\nIn your answer, address the following question:\nHow can a researcher balance the need for transparency and reproducibility with practical limitations such as imperfect data quality and legal requirements for data privacy?\n\n\n\n\n\n\n:::"
+    "text": "Course: Health Data and Reproducible Research Duration: 95 minutes Total marks: 40\n\n\n\nAnswer all questions.\nWrite your answers in English.\nIn Section A, keep your answers brief. In most cases, 1–3 sentences are sufficient.\nIn Section B, provide short but clear explanations. A good answer is typically 4–6 sentences.\nIn Section C, write a short essay of approximately half a page to one page.\nYou may use relevant terminology from the course, but make sure your reasoning is clear.\nWhere appropriate, motivate your answers briefly.\nThe exam is designed to assess both conceptual understanding and the ability to relate course concepts to practical work with health data.\n\n\n\n\n\nAnswer briefly.\n\n\nWhat was the original purpose of the International Classification of Diseases (ICD) when it was first introduced in the nineteenth century?\n\n\n\nBuckheit and Donoho argued that a scientific paper is merely advertising of the real scholarship. What did they mean by this?\n\n\n\nWhat problem does a workflow tool such as {targets} solve in a data analysis project?\n\n\n\nExplain one important advantage of using Git and GitHub when developing data analysis scripts.\n\n\n\nWhat role does Quarto play in a reproducible research workflow?\n\n\n\nWhat is meant by secondary use of health data?\n\n\n\n\n\nProvide a short explanation for each question.\n\n\nLarge health datasets are often distributed as CSV files or SAS data (.sqs7bdat). Explain why this is not ideal and suggest better solutions (motivate why).\n\n\n\nThe transition from ICD-9 to ICD-10 greatly increased the number of diagnostic codes. Explain how this affects the granularity of clinical research and discuss one potential drawback for epidemiological studies.\n\n\n\nImagine a multicenter observational study based on hospital registry data. Explain how differences in coding practices between hospitals could influence the validity of the study results.\n\n\n\n\n\nWrite a short essay.\n\n\nTraditionally, a scientific study was often viewed as a final publication. Today, research is better understood as a dynamic workflow involving raw registry data, processing pipelines, documentation, and legal constraints.\nDiscuss how the following elements interact in modern health data research:\n\nlegal frameworks (GDPR)\ndata quality and registry data\nmedical coding systems such as ICD\nreproducible workflows and computational pipelines\n\nIn your answer, address the following question:\nHow can a researcher balance the need for transparency and reproducibility with practical limitations such as imperfect data quality and legal requirements for data privacy?\n\n\n\n\n\n\n:::"
   },
   {
     "objectID": "exam/v2.html#instructions-to-students",
@@ -851,21 +851,21 @@
     "href": "exam/v2.html#section-a.-conceptual-understanding-12-marks",
     "title": "Written Examination",
     "section": "",
-    "text": "Answer briefly.\n\n\nWhat was the original purpose of the International Classification of Diseases (ICD) when it was first introduced in the nineteenth century?\n\n\n\nBuckheit and Donoho argued that a scientific paper is merely advertising of the real scholarship.\nWhat did they mean by this?\n\n\n\nWhat problem does a workflow tool such as {targets} solve in a data analysis project?\n\n\n\nExplain one important advantage of using Git and GitHub when developing data analysis scripts.\n\n\n\nWhat role does Quarto play in a reproducible research workflow?\n\n\n\nWhat is meant by secondary use of health data?"
+    "text": "Answer briefly.\n\n\nWhat was the original purpose of the International Classification of Diseases (ICD) when it was first introduced in the nineteenth century?\n\n\n\nBuckheit and Donoho argued that a scientific paper is merely advertising of the real scholarship. What did they mean by this?\n\n\n\nWhat problem does a workflow tool such as {targets} solve in a data analysis project?\n\n\n\nExplain one important advantage of using Git and GitHub when developing data analysis scripts.\n\n\n\nWhat role does Quarto play in a reproducible research workflow?\n\n\n\nWhat is meant by secondary use of health data?"
   },
   {
     "objectID": "exam/v2.html#section-b.-applied-data-management-18-marks",
     "href": "exam/v2.html#section-b.-applied-data-management-18-marks",
     "title": "Written Examination",
     "section": "",
-    "text": "Provide a short explanation for each question.\n\n\nLarge health datasets are often stored as Parquet files rather than CSV files.\nExplain why querying data stored in Parquet format can be much faster than reading individual CSV files.\n\n\n\nThe transition from ICD-9 to ICD-10 greatly increased the number of diagnostic codes.\nExplain how this affects the granularity of clinical research and discuss one potential drawback for epidemiological studies.\n\n\n\nImagine a multicenter observational study based on hospital registry data.\nExplain how differences in coding practices between hospitals could influence the validity of the study results."
+    "text": "Provide a short explanation for each question.\n\n\nLarge health datasets are often distributed as CSV files or SAS data (.sqs7bdat). Explain why this is not ideal and suggest better solutions (motivate why).\n\n\n\nThe transition from ICD-9 to ICD-10 greatly increased the number of diagnostic codes. Explain how this affects the granularity of clinical research and discuss one potential drawback for epidemiological studies.\n\n\n\nImagine a multicenter observational study based on hospital registry data. Explain how differences in coding practices between hospitals could influence the validity of the study results."
   },
   {
     "objectID": "exam/v2.html#section-c.-critical-synthesis-10-marks",
     "href": "exam/v2.html#section-c.-critical-synthesis-10-marks",
     "title": "Written Examination",
     "section": "",
-    "text": "Write a short essay.\n\n\nTraditionally, a scientific study was often viewed as a final publication.\nToday, research is better understood as a dynamic workflow involving raw registry data, processing pipelines, documentation, and legal constraints.\nDiscuss how the following elements interact in modern health data research:\n\nlegal frameworks (for example GDPR)\ndata quality and registry data\nmedical coding systems such as ICD\nreproducible workflows and computational pipelines\n\nIn your answer, address the following question:\nHow can a researcher balance the need for transparency and reproducibility with practical limitations such as imperfect data quality and legal requirements for data privacy?"
+    "text": "Write a short essay.\n\n\nTraditionally, a scientific study was often viewed as a final publication. Today, research is better understood as a dynamic workflow involving raw registry data, processing pipelines, documentation, and legal constraints.\nDiscuss how the following elements interact in modern health data research:\n\nlegal frameworks (GDPR)\ndata quality and registry data\nmedical coding systems such as ICD\nreproducible workflows and computational pipelines\n\nIn your answer, address the following question:\nHow can a researcher balance the need for transparency and reproducibility with practical limitations such as imperfect data quality and legal requirements for data privacy?"
   },
   {
     "objectID": "exam/v2.html#end-of-exam",
@@ -886,14 +886,14 @@
     "href": "exam/v2.html#grade-boundaries",
     "title": "Written Examination",
     "section": "Grade boundaries",
-    "text": "Grade boundaries\n\n\n\n\n\n\n\nGrade\nRequirement\n\n\n\n\nPass (G)\nAt least 22/40\n\n\nPass with distinction (VG)\nAt least 32/40 and at least 6/10 in Section C"
+    "text": "Grade boundaries\n\n\n\n\n\n\n\nGrade\nRequirement\n\n\n\n\nPass (G)\nAt least22/40\n\n\nPass with distinction (VG)\nAt least32/40 and at least 6/10 in Section C"
   },
   {
     "objectID": "exam/v2.html#marking-guide",
     "href": "exam/v2.html#marking-guide",
     "title": "Written Examination",
     "section": "Marking guide",
-    "text": "Marking guide\n\nSection A (2 marks each)\n\nA1. ICD: historical purpose\nFull marks (2): - identifies the original purpose as classification of causes of death / mortality statistics - mentions standardisation or comparability across places or populations\nPartial marks (1): - mentions disease classification in general but not mortality statistics or comparability clearly\nNo marks (0): - incorrect or irrelevant answer\n\n\nA2. Scientific scholarship\nFull marks (2): - explains that the paper is only a summary or advertisement of the work - identifies code, data, and computational workflow as the real scholarship\nPartial marks (1): - captures only one of the two main points\n\n\nA3. Reproducible pipelines\nFull marks (2): - mentions automation of workflows, dependency tracking, or avoiding unnecessary reruns - links this to reproducibility or efficiency\nPartial marks (1): - vague but relevant description of organising analysis steps\n\n\nA4. Version control\nFull marks (2): - explains one clear benefit such as tracking changes, collaboration, rollback, transparency, or reproducibility\nPartial marks (1): - benefit mentioned but not clearly explained\n\n\nA5. Quarto\nFull marks (2): - explains that Quarto combines code, text, and results in one document - links this to reproducible reporting or communication\nPartial marks (1): - mentions reporting or documentation but not reproducibility clearly\n\n\nA6. Secondary use of health data\nFull marks (2): - explains that data originally collected for one purpose are reused for another purpose - relevant examples include research, quality improvement, planning, or surveillance\nPartial marks (1): - partially correct but vague\n\n\n\n\nSection B (6 marks each)\n\nB1. Parquet versus CSV\nExpected elements: - Parquet is column-oriented - only relevant columns need to be read - more efficient compression - reduced input/output - better suited for large-scale querying / analytics\nSuggested marking: - 6: clear explanation including columnar storage and at least two additional relevant points - 4: correct main idea but limited detail - 2: fragmented or partially correct - 0: incorrect\n\n\nB2. ICD revisions\nExpected elements: - ICD-10 has many more codes than ICD-9 - greater specificity / finer granularity - may improve precision in identifying diagnoses or subgroups - possible drawback: reduced comparability over time, mapping difficulties, changes in coding practice, risk of artefacts in trend analyses\nSuggested marking: - 6: clear discussion of both increased granularity and at least one substantial drawback - 4: correct but underdeveloped - 2: only one side addressed - 0: incorrect\n\n\nB3. Coding inconsistency\nExpected elements: - hospitals may code similar cases differently - can introduce systematic measurement error or misclassification - can bias comparisons between centres - may threaten internal validity and interpretation - can create apparent differences that are artefacts of coding rather than real clinical differences\nSuggested marking: - 6: clear explanation of mechanism and consequences for validity - 4: largely correct but limited depth - 2: partial recognition of the issue - 0: incorrect\n\n\n\n\nSection C (10 marks)\n\nC1. The evolving workflow of biostatistical research\nA strong answer should: - connect legal, technical, and methodological aspects rather than listing them separately - discuss GDPR or privacy constraints in relation to access, sharing, and transparency - address data quality problems such as missingness, coding error, or imperfect documentation - explain the role of coding systems such as ICD in standardisation and comparability - describe how reproducible workflows, version control, and computational documents support trust and longevity - recognise that full openness may not be possible with sensitive health data - propose realistic alternatives such as sharing code, metadata, synthetic data, documentation, or processing logic\nSuggested marking rubric:\n\n\n\n\n\n\n\nMarks\nDescription\n\n\n\n\n9–10\nExcellent synthesis; clear, well-structured, conceptually strong, and addresses the core tension in a nuanced way\n\n\n7–8\nGood analytical answer; connects several themes well, though with less depth or precision\n\n\n5–6\nReasonable discussion; covers relevant themes but mainly descriptively\n\n\n3–4\nLimited answer; some relevant points but weak structure or shallow reasoning\n\n\n0–2\nVery limited or largely irrelevant"
+    "text": "Marking guide\n\nSection A (2 marks each)\n\nA1. ICD: historical purpose\nFull marks (2):\n\nidentifies the original purpose as classification of causes of death / mortality statistics\nmentions standardisation or comparability across places or populations\n\nPartial marks (1):\n\nmentions disease classification in general but not mortality statistics or comparability clearly\n\nNo marks (0):\n\nincorrect or irrelevant answer\n\n\n\nA2. Scientific scholarship\nFull marks (2):\n\nexplains that the paper is only a summary or advertisement of the work\nidentifies code, data, and computational workflow as the real scholarship\n\nPartial marks (1):\n\ncaptures only one of the two main points\n\n\n\nA3. Reproducible pipelines\nFull marks (2):\n\nmentions automation of workflows, dependency tracking, or avoiding unnecessary reruns\nlinks this to reproducibility or efficiency\n\nPartial marks (1):\n\nvague but relevant description of organising analysis steps\n\n\n\nA4. Version control\nFull marks (2):\n\nexplains one clear benefit such as tracking changes, collaboration, rollback, transparency, or reproducibility\n\nPartial marks (1):\n\nbenefit mentioned but not clearly explained\n\n\n\nA5. Quarto\nFull marks (2):\n\nexplains that Quarto combines code, text, and results in one document\nlinks this to reproducible reporting or communication\n\nPartial marks (1):\n\nmentions reporting or documentation but not reproducibility clearly\n\n\n\nA6. Secondary use of health data\nFull marks (2):\n\nexplains that data originally collected for one purpose are reused for another purpose\nrelevant examples include research, quality improvement, planning, or surveillance\n\nPartial marks (1):\n\npartially correct but vague\n\n\n\n\n\nSection B (6 marks each)\n\nB1. Parquet versus CSV\nExpected elements:\n\nParquet is column-oriented\nonly relevant columns need to be read\nmore efficient compression\nreduced input/output\nbetter suited for large-scale querying / analytics\n\nSuggested marking:\n\n6: clear explanation including columnar storage and at least two additional relevant points\n4: correct main idea but limited detail\n2: fragmented or partially correct\n0: incorrect\n\n\n\nB2. ICD revisions\nExpected elements:\n\nICD-10 has many more codes than ICD-9\ngreater specificity / finer granularity\nmay improve precision in identifying diagnoses or subgroups\npossible drawback: reduced comparability over time, mapping difficulties, changes in coding practice, risk of artefacts in trend analyses\n\nSuggested marking:\n\n6: clear discussion of both increased granularity and at least one substantial drawback\n4: correct but underdeveloped\n2: only one side addressed\n0: incorrect\n\n\n\nB3. Coding inconsistency\nExpected elements:\n\nhospitals may code similar cases differently\ncan introduce systematic measurement error or misclassification\ncan bias comparisons between centres\nmay threaten internal validity and interpretation\ncan create apparent differences that are artefacts of coding rather than real clinical differences\n\nSuggested marking:\n\n6: clear explanation of mechanism and consequences for validity\n4: largely correct but limited depth\n2: partial recognition of the issue\n0: incorrect\n\n\n\n\n\nSection C (10 marks)\n\nC1. The evolving workflow of biostatistical research\nA strong answer should:\n\nconnect legal, technical, and methodological aspects rather than listing them separately\ndiscuss GDPR or privacy constraints in relation to access, sharing, and transparency\naddress data quality problems such as missingness, coding error, or imperfect documentation\nexplain the role of coding systems such as ICD in standardisation and comparability\ndescribe how reproducible workflows, version control, and computational documents support trust and longevity\nrecognise that full openness may not be possible with sensitive health data\npropose realistic alternatives such as sharing code, metadata, synthetic data, documentation, or processing logic\n\nSuggested marking rubric:\n\n\n\n\n\n\n\nMarks\nDescription\n\n\n\n\n9–10\nExcellent synthesis; clear, well-structured, conceptually strong, and addresses the core tension in a nuanced way\n\n\n7–8\nGood analytical answer; connects several themes well, though with less depth or precision\n\n\n5–6\nReasonable discussion; covers relevant themes but mainly descriptively\n\n\n3–4\nLimited answer; some relevant points but weak structure or shallow reasoning\n\n\n0–2\nVery limited or largely irrelevant"
   },
   {
     "objectID": "exam/v2.html#notes-for-examiner",
@@ -1334,14 +1334,14 @@
     "href": "ECS5.html#suggested-tools-for-presenting-results",
     "title": "ECS5: Presentation",
     "section": "Suggested tools for presenting results",
-    "text": "Suggested tools for presenting results\n\n\n\nPurpose\nExamples\nNotes\n\n\n\n\nFigures\nggplot2, ggpubr, plotly, base R graphics\nUse any tool that produces clear, presentation-quality figures.\n\n\nTables\ngt, gtsummary, flextable, kableExtra\nUse any tool that produces clear, presentation-quality tables.\n\n\nInteractive tools (optional)\nshiny, shinydashboard, htmlwidgets\nThese allow interactive presentations, but may be too ambitious unless you already have experience with them."
+    "text": "Suggested tools for presenting results\nFigures and tables should be presented within your Quarto document, as introduced in EL9.\nThe code that generates these figures and tables does not necessarily need to be written directly in the .qmd file. For example, the analysis may be organised in separate R scripts or in a workflow pipeline (e.g. using {targets}).\nHowever, the Quarto document should still load the results and present them, so that rendering the document produces the figures and tables shown in the report or presentation.\nThe following packages are examples of tools that can help generate clear presentation-quality figures and tables.\n\n\n\nPurpose\nExamples\nNotes\n\n\n\n\nFigures\nggplot2, ggpubr, plotly, base R graphics\nUse any tool that produces clear, presentation-quality figures.\n\n\nTables\ngt, gtsummary, flextable, kableExtra\nUse any tool that produces clear, presentation-quality tables.\n\n\nInteractive tools (optional)\nshiny, shinydashboard, htmlwidgets\nThese allow interactive presentations, but may be too ambitious unless you already have experience with them."
   },
   {
     "objectID": "ECS5.html#examination",
     "href": "ECS5.html#examination",
     "title": "ECS5: Presentation",
     "section": "Examination",
-    "text": "Examination\nFor the examination you are expected to:\n\nUse your report or presentation as the basis for your oral seminar presentation in ES2.\nThe report/presentation should include at least one figure and one table of relevance\nInclude the Quarto source file (.qmd) that generates the report or presentation in your GitHub repository.\n\nThe repository should therefore contain the .qmd document and any files required to render the report or presentation, as well as rendered output document.\nBoth group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming)."
+    "text": "Examination\nFor the examination you are expected to:\n\nUse your report or presentation as the basis for your oral seminar presentation in ES2.\nThe report/presentation should include at least one figure and one table of relevance\nInclude the Quarto source file (.qmd) that generates the report or presentation in your GitHub repository.\n\nThe repository should therefore contain the .qmd document and any files required to render the report or presentation, as well as the rendered output document.\nBoth group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together)."
   },
   {
     "objectID": "ECS3.html",
@@ -1362,21 +1362,28 @@
     "href": "EL9.html#levels-of-documentation",
     "title": "EL9: Documentation",
     "section": "Levels of documentation",
-    "text": "Levels of documentation\nDocumentation can exist at several levels in a project.\n\nCode level\n\nscripts (comments, e.g. # clean data and merge cohorts)\nfunctions (Roxygen2 documentation)\nnotes and reminders (e.g. # TODO:)\n\nProject level\n\nREADME.md\n\nOutput level\n\nfigures and tables\nreports (PDF / HTML)\npresentations (slides)"
+    "text": "Levels of documentation\nDocumentation can exist at several levels in a project.\n\nCode level\n\nscripts (comments, e.g. # clean data and merge cohorts)\nfunctions (Roxygen2 documentation)\nnotes and reminders (e.g. # TODO:)\n\nProject level\n\nREADME.md\n(GitHub repos may also have a wiki or a polished website)\n\nOutput level\n\nfigures and tables\nreports (PDF / HTML)\npresentations (slides)"
   },
   {
     "objectID": "EL9.html#documenting-r-scripts",
     "href": "EL9.html#documenting-r-scripts",
     "title": "EL9: Documentation",
     "section": "Documenting R scripts",
-    "text": "Documenting R scripts\n\nSection labels by Shift + Ctrl/Cmd + R in Positron and RStudio\nEasiest way to aid navigation in R scripts\n\n# My section heading -----------------------------------------------------\n\ncommentr package\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n###########################################################################\n#                                                                         #\n# Purpose:       My nice script                                           #\n#                                                                         #\n# Author:        Erik Bülow                                               #\n# Contact:       xxx@yyy.zzz                                              #\n# Client:        John Doe                                                 #\n#                                                                         #\n# Code created:  2026-03-15                                               #\n# Last updated:  2026-03-15                                               #\n# Source:        /Users/xbuler/STA220/documentation                       #\n#                                                                         #\n# Comment:       Bla bla bla ...                                          #\n#                                                                         #\n###########################################################################"
+    "text": "Documenting R scripts\n\nUse Air for better formatting of the R code itself (will format the code according to best practice for readability and collaboration)\nSection labels by Shift + Ctrl/Cmd + R in Positron (and RStudio)\nEasiest way to aid navigation to R scripts\n\n# My section heading -----------------------------------------------------"
+  },
+  {
+    "objectID": "EL9.html#individual-scripts",
+    "href": "EL9.html#individual-scripts",
+    "title": "EL9: Documentation",
+    "section": "Individual scripts",
+    "text": "Individual scripts\n\nAs soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.\nThe commentr package is designed to maintain such context\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n###########################################################################\n#                                                                         #\n# Purpose:       My nice script                                           #\n#                                                                         #\n# Author:        Erik Bülow                                               #\n# Contact:       xxx@yyy.zzz                                              #\n# Client:        John Doe                                                 #\n#                                                                         #\n# Code created:  2026-03-16                                               #\n# Last updated:  2026-03-16                                               #\n# Source:        /Users/xbuler/STA220/documentation                       #\n#                                                                         #\n# Comment:       Bla bla bla ...                                          #\n#                                                                         #\n###########################################################################"
   },
   {
     "objectID": "EL9.html#documenting-r-functions",
     "href": "EL9.html#documenting-r-functions",
     "title": "EL9: Documentation",
     "section": "Documenting R functions",
-    "text": "Documenting R functions\nWhat does this function do?\n\nhello &lt;- function(who) {\n  sprintf(\"Hello %s!\", if (missing(who)) \"world\" else who)\n}"
+    "text": "Documenting R functions\nWhat does this function do?\n\nhello &lt;- function(who = \"world\") {\n  sprintf(\"Hello %s!\", who)\n}"
   },
   {
     "objectID": "EL9.html#documenting-a-project",
@@ -1393,11 +1400,18 @@
     "text": "Basic formatting\n\n\n\nWhat you want\nMarkdown syntax\nResult\n\n\n\n\nHeading\n# Heading\nHeading\n\n\nItalic\n*text*\ntext\n\n\nBold\n**text**\ntext\n\n\nInline code\n`code`\ncode\n\n\nLink\n[text](https://example.com)\ntext\n\n\nBullet list\n- item\n• item\n\n\nNumbered list\n1. item\n1. item\n\n\n\n\n\n\n\n\n\nComment or heading\n\n\n# is used for comments in R files and within R blocks but for headings in .md and .qmd files!"
   },
   {
-    "objectID": "EL9.html#reproducible-workflows-in-biostatistics",
-    "href": "EL9.html#reproducible-workflows-in-biostatistics",
+    "objectID": "EL9.html#use-both",
+    "href": "EL9.html#use-both",
     "title": "EL9: Documentation",
-    "section": "Reproducible Workflows in Biostatistics",
-    "text": "Reproducible Workflows in Biostatistics\nModern biostatistics projects rarely involve only statistics.\n\ndata cleaning and preprocessing\nstatistical modelling\nvisualisation\ninterpretation of results\nreporting and documentation\n\nA good workflow should make it possible to combine all of these steps in one place."
+    "section": "Use both?",
+    "text": "Use both?\nPersonally, I do most editing in source mode (better for the R chunks), but I find it much easier to include references/citations and to paste in external figures in using the visual mode."
+  },
+  {
+    "objectID": "EL9.html#reproducible-workflows",
+    "href": "EL9.html#reproducible-workflows",
+    "title": "EL9: Documentation",
+    "section": "Reproducible Workflows",
+    "text": "Reproducible Workflows\nModern biostatistics projects rarely involve only statistics.\n\ndata cleaning and preprocessing\nstatistical modelling\nvisualisation\ninterpretation of results\nreporting and documentation\n\nA good workflow should make it possible to combine all of these steps in one place."
   },
   {
     "objectID": "EL9.html#what",
@@ -1411,14 +1425,14 @@
     "href": "EL9.html#why",
     "title": "EL9: Documentation",
     "section": "Why?",
-    "text": "Why?\nIn many projects people work with:\n\nR scripts for analysis\nWord documents for reporting\nPowerPoint slides for presentations\n\nThis separation often leads to:\n\ncopy–paste errors\noutdated figures\nresults that cannot easily be reproduced\n\nQuarto helps avoid these problems."
+    "text": "Why?\nIn many projects people work with:\n\nR scripts for analysis 🥳\nWord documents for reporting 😱\nPowerPoint slides for presentations 😱\n\nThis separation often leads to:\n\ncopy–paste errors 🥴\noutdated figures 👎\nresults that cannot easily be reproduced 🤯\n\nQuarto helps avoid these problems!"
   },
   {
-    "objectID": "EL9.html#a-reproducible-analysis-document",
-    "href": "EL9.html#a-reproducible-analysis-document",
+    "objectID": "EL9.html#reproducible-analysis",
+    "href": "EL9.html#reproducible-analysis",
     "title": "EL9: Documentation",
-    "section": "A reproducible analysis document",
-    "text": "A reproducible analysis document\nIn a Quarto document you can:\n\nwrite the explanation of your analysis\ninclude the R code used\ngenerate figures and tables automatically\nupdate everything by re-running the document\n\n\nIf the data or model changes, the entire report can be regenerated automatically.\nIt is widely used in data science, epidemiology and biostatistics.\nIntegrated in Positron and developed by Posit PBC"
+    "section": "Reproducible analysis",
+    "text": "Reproducible analysis\nIn a Quarto document you can:\n\nwrite the explanation of your analysis\ninclude the R code used\ngenerate figures and tables automatically\nupdate everything by re-running the document\n\n\nIf the data or model changes, the entire report can be regenerated automatically.\nIt is widely used in data science, epidemiology and biostatistics.\nIntegrated in Positron and developed by Posit PBC"
   },
   {
     "objectID": "EL9.html#used-in-three-ways",
@@ -1432,28 +1446,28 @@
     "href": "EL9.html#a-simple-report",
     "title": "EL9: Documentation",
     "section": "A simple report",
-    "text": "A simple report\n\nWhen you chose “New &gt; New File …” in the upper left corner in Positron you may chose “Quarto document”\nThe file will be almost empty but contains:\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\nThis is a YAML header (Yet Another Markup Language)\nDifferent formats available:\n\nhtml: can also be published online\ndocx: for collaborating with non-statisticians etc\ntypst: Modern PDF rendering\nrevealjs: slide decks (you are looking at one!)\n\nCan render to multiple formats at once!"
+    "text": "A simple report\nWhen you chose New &gt; New File ... &gt; Quarto document, the file will contain:\n---\ntitle: \"Untitled\"\nformat: html\n---\n\nThis is a YAML header (Yet Another Markup Language)\nDifferent output formats are available:\n\nhtml: can also be published online (Quartopub or GitHub pages)\ndocx: Word document for collaborating with non-statisticians etc\ntypst: PDF rendering (ever heard of \\(\\LaTeX\\)? … This is the modern alternative!)\nrevealjs: slide decks (you are looking at one!)\n\nCan render to multiple formats at once!"
   },
   {
     "objectID": "EL9.html#yaml-structure",
     "href": "EL9.html#yaml-structure",
     "title": "EL9: Documentation",
     "section": "YAML structure",
-    "text": "YAML structure\nYAML uses indentation to represent structure.\nThink of it like a tree.\nformat:\n  html:\n    code-fold: true\nThis corresponds to the structure:\nformat\n└── html\n    └── code-fold: true\nWhat happens if indentation is wrong?\nformat:\nhtml:\n  code-fold: true\nNow Quarto interprets this as:\nformat\nhtml\n└── code-fold: true\nThis is not the intended structure, and the document may fail to render."
+    "text": "YAML structure\nYAML uses indentation to represent structure.\nThink of it like a tree.\nformat:\n  html:\n    code-fold: true\nThis corresponds to the structure:\nformat\n└── html\n    └── code-fold: true\nIf indentation is wrong?\nformat:\nhtml:\n  code-fold: true\nNow Quarto interprets this as:\nformat\nhtml\n└── code-fold: true\nThis is not the intended structure, and the document may fail to render."
   },
   {
     "objectID": "EL9.html#three-parts",
     "href": "EL9.html#three-parts",
     "title": "EL9: Documentation",
     "section": "Three parts",
-    "text": "Three parts\nQuarto documents have three parts:\n\nAn (optional) YAML header surrounded by ---s.\nChunks of R code surrounded by ```{r} and ```.\n\n```{r}          ← chunk header\n#| echo: false  ← options controlling the output\nsummary(x)      ← R code\n```             ← end of chunk\n\nText with markdown format\n\nWhere 1 (YAML header) comes first and where 2 and 3 are intermingled throughout the rest of the document."
+    "text": "Three parts\nQuarto documents have three parts:\n\nAn (optional) YAML header surrounded by ---s.\nChunks of R code surrounded by ```{r} and ```.\n\n```{r}          ← chunk header\n#| echo: false  ← options controlling the output\nsummary(x)      ← R code\n```             ← end of chunk\nKeybindings: Cmd + option + I (Mac) or Ctrl + Alt + I (Windows)\n\nText with markdown format\n\n\n\n\n\n\n\nOrder\n\n\nPart 1 (YAML header) always comes first but 2 (code block) and 3 (Markdown text) are usually intermingled throughout the rest of the document."
   },
   {
     "objectID": "EL9.html#inline-code",
     "href": "EL9.html#inline-code",
     "title": "EL9: Documentation",
     "section": "Inline code",
-    "text": "Inline code\nSometimes we want to insert small pieces of R output directly in the text.\nThis is called inline code.\nInline code will always just show the result of the call (not the code itself in the rendered document):\nTodays date is `r Sys.Date()` and it is `r format(Sys.time(), format = \"%H\")` \n\nTodys date is 2026-03-15 and it is 07 PM\n\nTo higlight with bold and italic:\nTodays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = \"%I %p\")`*\n\nTodays date is 2026-03-15 and it is 07 PM"
+    "text": "Inline code\nSometimes we want to insert small pieces of R output directly in the text.\nThis is called inline code.\nInline code will always just show the result of the call (not the code itself in the rendered document):\nTodays date is `r Sys.Date()` and it is `r format(Sys.time(), format = \"%H\")` \n\nTodys date is 2026-03-16 and it is 09 AM\n\nTo higlight with bold and italic:\nTodays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = \"%I %p\")`*\n\nTodays date is 2026-03-16 and it is 09 AM"
   },
   {
     "objectID": "EL9.html#to-publish",
@@ -1467,7 +1481,7 @@
     "href": "EL9.html#for-collaborators",
     "title": "EL9: Documentation",
     "section": "For collaborators",
-    "text": "For collaborators\n\nMight still care less about verbose R messages and warnings (they trust that you have already considered those)\nMay check the underlaying R code if relevant (use code-fold)\n\n---\ntitle: \"Untitled\"\nformat:\n  html:\n    code-fold: true\nexecute:\n  warning: false\n  message: false\n---\nThis can also be set individually for each code chunk:\n```{r}\n#| echo: false\n#| warning: false\n#| message: true\nmessage(\"will be muted!\")\nwarning(\"will be ignored\")\nplot(something_beautiful, realy = TRUE)\n```"
+    "text": "For collaborators\n\nMight still care less about verbose R messages and warnings (they trust that you have already considered those)\nMay still need the underlaying R code for deeper understaing\nUse code-fold\n\n---\ntitle: \"Untitled\"\nformat:\n  html:\n    code-fold: true\nexecute:\n  warning: false\n  message: false\n---"
   },
   {
     "objectID": "EL9.html#figures",
@@ -1481,21 +1495,21 @@
     "href": "EL9.html#tables",
     "title": "EL9: Documentation",
     "section": "Tables",
-    "text": "Tables\nJust printing the R output might not look very nice:\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species\n1            5.1         3.5          1.4         0.2     setosa\n2            4.9         3.0          1.4         0.2     setosa\n3            4.7         3.2          1.3         0.2     setosa\n4            4.6         3.1          1.5         0.2     setosa\n5            5.0         3.6          1.4         0.2     setosa\n6            5.4         3.9          1.7         0.4     setosa\n7            4.6         3.4          1.4         0.3     setosa\n8            5.0         3.4          1.5         0.2     setosa\n9            4.4         2.9          1.4         0.2     setosa\n10           4.9         3.1          1.5         0.1     setosa\n11           5.4         3.7          1.5         0.2     setosa\n12           4.8         3.4          1.6         0.2     setosa\n13           4.8         3.0          1.4         0.1     setosa\n14           4.3         3.0          1.1         0.1     setosa\n15           5.8         4.0          1.2         0.2     setosa\n16           5.7         4.4          1.5         0.4     setosa\n17           5.4         3.9          1.3         0.4     setosa\n18           5.1         3.5          1.4         0.3     setosa\n19           5.7         3.8          1.7         0.3     setosa\n20           5.1         3.8          1.5         0.3     setosa\n21           5.4         3.4          1.7         0.2     setosa\n22           5.1         3.7          1.5         0.4     setosa\n23           4.6         3.6          1.0         0.2     setosa\n24           5.1         3.3          1.7         0.5     setosa\n25           4.8         3.4          1.9         0.2     setosa\n26           5.0         3.0          1.6         0.2     setosa\n27           5.0         3.4          1.6         0.4     setosa\n28           5.2         3.5          1.5         0.2     setosa\n29           5.2         3.4          1.4         0.2     setosa\n30           4.7         3.2          1.6         0.2     setosa\n31           4.8         3.1          1.6         0.2     setosa\n32           5.4         3.4          1.5         0.4     setosa\n33           5.2         4.1          1.5         0.1     setosa\n34           5.5         4.2          1.4         0.2     setosa\n35           4.9         3.1          1.5         0.2     setosa\n36           5.0         3.2          1.2         0.2     setosa\n37           5.5         3.5          1.3         0.2     setosa\n38           4.9         3.6          1.4         0.1     setosa\n39           4.4         3.0          1.3         0.2     setosa\n40           5.1         3.4          1.5         0.2     setosa\n41           5.0         3.5          1.3         0.3     setosa\n42           4.5         2.3          1.3         0.3     setosa\n43           4.4         3.2          1.3         0.2     setosa\n44           5.0         3.5          1.6         0.6     setosa\n45           5.1         3.8          1.9         0.4     setosa\n46           4.8         3.0          1.4         0.3     setosa\n47           5.1         3.8          1.6         0.2     setosa\n48           4.6         3.2          1.4         0.2     setosa\n49           5.3         3.7          1.5         0.2     setosa\n50           5.0         3.3          1.4         0.2     setosa\n51           7.0         3.2          4.7         1.4 versicolor\n52           6.4         3.2          4.5         1.5 versicolor\n53           6.9         3.1          4.9         1.5 versicolor\n54           5.5         2.3          4.0         1.3 versicolor\n55           6.5         2.8          4.6         1.5 versicolor\n56           5.7         2.8          4.5         1.3 versicolor\n57           6.3         3.3          4.7         1.6 versicolor\n58           4.9         2.4          3.3         1.0 versicolor\n59           6.6         2.9          4.6         1.3 versicolor\n60           5.2         2.7          3.9         1.4 versicolor\n61           5.0         2.0          3.5         1.0 versicolor\n62           5.9         3.0          4.2         1.5 versicolor\n63           6.0         2.2          4.0         1.0 versicolor\n64           6.1         2.9          4.7         1.4 versicolor\n65           5.6         2.9          3.6         1.3 versicolor\n66           6.7         3.1          4.4         1.4 versicolor\n67           5.6         3.0          4.5         1.5 versicolor\n68           5.8         2.7          4.1         1.0 versicolor\n69           6.2         2.2          4.5         1.5 versicolor\n70           5.6         2.5          3.9         1.1 versicolor\n71           5.9         3.2          4.8         1.8 versicolor\n72           6.1         2.8          4.0         1.3 versicolor\n73           6.3         2.5          4.9         1.5 versicolor\n74           6.1         2.8          4.7         1.2 versicolor\n75           6.4         2.9          4.3         1.3 versicolor\n76           6.6         3.0          4.4         1.4 versicolor\n77           6.8         2.8          4.8         1.4 versicolor\n78           6.7         3.0          5.0         1.7 versicolor\n79           6.0         2.9          4.5         1.5 versicolor\n80           5.7         2.6          3.5         1.0 versicolor\n81           5.5         2.4          3.8         1.1 versicolor\n82           5.5         2.4          3.7         1.0 versicolor\n83           5.8         2.7          3.9         1.2 versicolor\n84           6.0         2.7          5.1         1.6 versicolor\n85           5.4         3.0          4.5         1.5 versicolor\n86           6.0         3.4          4.5         1.6 versicolor\n87           6.7         3.1          4.7         1.5 versicolor\n88           6.3         2.3          4.4         1.3 versicolor\n89           5.6         3.0          4.1         1.3 versicolor\n90           5.5         2.5          4.0         1.3 versicolor\n91           5.5         2.6          4.4         1.2 versicolor\n92           6.1         3.0          4.6         1.4 versicolor\n93           5.8         2.6          4.0         1.2 versicolor\n94           5.0         2.3          3.3         1.0 versicolor\n95           5.6         2.7          4.2         1.3 versicolor\n96           5.7         3.0          4.2         1.2 versicolor\n97           5.7         2.9          4.2         1.3 versicolor\n98           6.2         2.9          4.3         1.3 versicolor\n99           5.1         2.5          3.0         1.1 versicolor\n100          5.7         2.8          4.1         1.3 versicolor\n101          6.3         3.3          6.0         2.5  virginica\n102          5.8         2.7          5.1         1.9  virginica\n103          7.1         3.0          5.9         2.1  virginica\n104          6.3         2.9          5.6         1.8  virginica\n105          6.5         3.0          5.8         2.2  virginica\n106          7.6         3.0          6.6         2.1  virginica\n107          4.9         2.5          4.5         1.7  virginica\n108          7.3         2.9          6.3         1.8  virginica\n109          6.7         2.5          5.8         1.8  virginica\n110          7.2         3.6          6.1         2.5  virginica\n111          6.5         3.2          5.1         2.0  virginica\n112          6.4         2.7          5.3         1.9  virginica\n113          6.8         3.0          5.5         2.1  virginica\n114          5.7         2.5          5.0         2.0  virginica\n115          5.8         2.8          5.1         2.4  virginica\n116          6.4         3.2          5.3         2.3  virginica\n117          6.5         3.0          5.5         1.8  virginica\n118          7.7         3.8          6.7         2.2  virginica\n119          7.7         2.6          6.9         2.3  virginica\n120          6.0         2.2          5.0         1.5  virginica\n121          6.9         3.2          5.7         2.3  virginica\n122          5.6         2.8          4.9         2.0  virginica\n123          7.7         2.8          6.7         2.0  virginica\n124          6.3         2.7          4.9         1.8  virginica\n125          6.7         3.3          5.7         2.1  virginica\n126          7.2         3.2          6.0         1.8  virginica\n127          6.2         2.8          4.8         1.8  virginica\n128          6.1         3.0          4.9         1.8  virginica\n129          6.4         2.8          5.6         2.1  virginica\n130          7.2         3.0          5.8         1.6  virginica\n131          7.4         2.8          6.1         1.9  virginica\n132          7.9         3.8          6.4         2.0  virginica\n133          6.4         2.8          5.6         2.2  virginica\n134          6.3         2.8          5.1         1.5  virginica\n135          6.1         2.6          5.6         1.4  virginica\n136          7.7         3.0          6.1         2.3  virginica\n137          6.3         3.4          5.6         2.4  virginica\n138          6.4         3.1          5.5         1.8  virginica\n139          6.0         3.0          4.8         1.8  virginica\n140          6.9         3.1          5.4         2.1  virginica\n141          6.7         3.1          5.6         2.4  virginica\n142          6.9         3.1          5.1         2.3  virginica\n143          5.8         2.7          5.1         1.9  virginica\n144          6.8         3.2          5.9         2.3  virginica\n145          6.7         3.3          5.7         2.5  virginica\n146          6.7         3.0          5.2         2.3  virginica\n147          6.3         2.5          5.0         1.9  virginica\n148          6.5         3.0          5.2         2.0  virginica\n149          6.2         3.4          5.4         2.3  virginica\n150          5.9         3.0          5.1         1.8  virginica"
+    "text": "Tables\nJust printing the R output might not look very nice:\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
   },
   {
     "objectID": "EL9.html#better-with-kable",
     "href": "EL9.html#better-with-kable",
     "title": "EL9: Documentation",
     "section": "Better with kable",
-    "text": "Better with kable\nThe easiest way to make tibbles/data.frames/data.tables look nicer is with df-print: kable in the yaml header.\n---\ntitle: \"Untitled\"\nformat:\n  html:\n    df-print: kable\n---\n\n\n\nSome iris data\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n4.6\n3.4\n1.4\n0.3\nsetosa\n\n\n5.0\n3.4\n1.5\n0.2\nsetosa\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n\n\n5.4\n3.7\n1.5\n0.2\nsetosa\n\n\n4.8\n3.4\n1.6\n0.2\nsetosa\n\n\n4.8\n3.0\n1.4\n0.1\nsetosa\n\n\n4.3\n3.0\n1.1\n0.1\nsetosa\n\n\n5.8\n4.0\n1.2\n0.2\nsetosa\n\n\n5.7\n4.4\n1.5\n0.4\nsetosa\n\n\n5.4\n3.9\n1.3\n0.4\nsetosa\n\n\n5.1\n3.5\n1.4\n0.3\nsetosa\n\n\n5.7\n3.8\n1.7\n0.3\nsetosa\n\n\n5.1\n3.8\n1.5\n0.3\nsetosa\n\n\n5.4\n3.4\n1.7\n0.2\nsetosa\n\n\n5.1\n3.7\n1.5\n0.4\nsetosa\n\n\n4.6\n3.6\n1.0\n0.2\nsetosa\n\n\n5.1\n3.3\n1.7\n0.5\nsetosa\n\n\n4.8\n3.4\n1.9\n0.2\nsetosa\n\n\n5.0\n3.0\n1.6\n0.2\nsetosa\n\n\n5.0\n3.4\n1.6\n0.4\nsetosa\n\n\n5.2\n3.5\n1.5\n0.2\nsetosa\n\n\n5.2\n3.4\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.6\n0.2\nsetosa\n\n\n4.8\n3.1\n1.6\n0.2\nsetosa\n\n\n5.4\n3.4\n1.5\n0.4\nsetosa\n\n\n5.2\n4.1\n1.5\n0.1\nsetosa\n\n\n5.5\n4.2\n1.4\n0.2\nsetosa\n\n\n4.9\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.2\n1.2\n0.2\nsetosa\n\n\n5.5\n3.5\n1.3\n0.2\nsetosa\n\n\n4.9\n3.6\n1.4\n0.1\nsetosa\n\n\n4.4\n3.0\n1.3\n0.2\nsetosa\n\n\n5.1\n3.4\n1.5\n0.2\nsetosa\n\n\n5.0\n3.5\n1.3\n0.3\nsetosa\n\n\n4.5\n2.3\n1.3\n0.3\nsetosa\n\n\n4.4\n3.2\n1.3\n0.2\nsetosa\n\n\n5.0\n3.5\n1.6\n0.6\nsetosa\n\n\n5.1\n3.8\n1.9\n0.4\nsetosa\n\n\n4.8\n3.0\n1.4\n0.3\nsetosa\n\n\n5.1\n3.8\n1.6\n0.2\nsetosa\n\n\n4.6\n3.2\n1.4\n0.2\nsetosa\n\n\n5.3\n3.7\n1.5\n0.2\nsetosa\n\n\n5.0\n3.3\n1.4\n0.2\nsetosa\n\n\n7.0\n3.2\n4.7\n1.4\nversicolor\n\n\n6.4\n3.2\n4.5\n1.5\nversicolor\n\n\n6.9\n3.1\n4.9\n1.5\nversicolor\n\n\n5.5\n2.3\n4.0\n1.3\nversicolor\n\n\n6.5\n2.8\n4.6\n1.5\nversicolor\n\n\n5.7\n2.8\n4.5\n1.3\nversicolor\n\n\n6.3\n3.3\n4.7\n1.6\nversicolor\n\n\n4.9\n2.4\n3.3\n1.0\nversicolor\n\n\n6.6\n2.9\n4.6\n1.3\nversicolor\n\n\n5.2\n2.7\n3.9\n1.4\nversicolor\n\n\n5.0\n2.0\n3.5\n1.0\nversicolor\n\n\n5.9\n3.0\n4.2\n1.5\nversicolor\n\n\n6.0\n2.2\n4.0\n1.0\nversicolor\n\n\n6.1\n2.9\n4.7\n1.4\nversicolor\n\n\n5.6\n2.9\n3.6\n1.3\nversicolor\n\n\n6.7\n3.1\n4.4\n1.4\nversicolor\n\n\n5.6\n3.0\n4.5\n1.5\nversicolor\n\n\n5.8\n2.7\n4.1\n1.0\nversicolor\n\n\n6.2\n2.2\n4.5\n1.5\nversicolor\n\n\n5.6\n2.5\n3.9\n1.1\nversicolor\n\n\n5.9\n3.2\n4.8\n1.8\nversicolor\n\n\n6.1\n2.8\n4.0\n1.3\nversicolor\n\n\n6.3\n2.5\n4.9\n1.5\nversicolor\n\n\n6.1\n2.8\n4.7\n1.2\nversicolor\n\n\n6.4\n2.9\n4.3\n1.3\nversicolor\n\n\n6.6\n3.0\n4.4\n1.4\nversicolor\n\n\n6.8\n2.8\n4.8\n1.4\nversicolor\n\n\n6.7\n3.0\n5.0\n1.7\nversicolor\n\n\n6.0\n2.9\n4.5\n1.5\nversicolor\n\n\n5.7\n2.6\n3.5\n1.0\nversicolor\n\n\n5.5\n2.4\n3.8\n1.1\nversicolor\n\n\n5.5\n2.4\n3.7\n1.0\nversicolor\n\n\n5.8\n2.7\n3.9\n1.2\nversicolor\n\n\n6.0\n2.7\n5.1\n1.6\nversicolor\n\n\n5.4\n3.0\n4.5\n1.5\nversicolor\n\n\n6.0\n3.4\n4.5\n1.6\nversicolor\n\n\n6.7\n3.1\n4.7\n1.5\nversicolor\n\n\n6.3\n2.3\n4.4\n1.3\nversicolor\n\n\n5.6\n3.0\n4.1\n1.3\nversicolor\n\n\n5.5\n2.5\n4.0\n1.3\nversicolor\n\n\n5.5\n2.6\n4.4\n1.2\nversicolor\n\n\n6.1\n3.0\n4.6\n1.4\nversicolor\n\n\n5.8\n2.6\n4.0\n1.2\nversicolor\n\n\n5.0\n2.3\n3.3\n1.0\nversicolor\n\n\n5.6\n2.7\n4.2\n1.3\nversicolor\n\n\n5.7\n3.0\n4.2\n1.2\nversicolor\n\n\n5.7\n2.9\n4.2\n1.3\nversicolor\n\n\n6.2\n2.9\n4.3\n1.3\nversicolor\n\n\n5.1\n2.5\n3.0\n1.1\nversicolor\n\n\n5.7\n2.8\n4.1\n1.3\nversicolor\n\n\n6.3\n3.3\n6.0\n2.5\nvirginica\n\n\n5.8\n2.7\n5.1\n1.9\nvirginica\n\n\n7.1\n3.0\n5.9\n2.1\nvirginica\n\n\n6.3\n2.9\n5.6\n1.8\nvirginica\n\n\n6.5\n3.0\n5.8\n2.2\nvirginica\n\n\n7.6\n3.0\n6.6\n2.1\nvirginica\n\n\n4.9\n2.5\n4.5\n1.7\nvirginica\n\n\n7.3\n2.9\n6.3\n1.8\nvirginica\n\n\n6.7\n2.5\n5.8\n1.8\nvirginica\n\n\n7.2\n3.6\n6.1\n2.5\nvirginica\n\n\n6.5\n3.2\n5.1\n2.0\nvirginica\n\n\n6.4\n2.7\n5.3\n1.9\nvirginica\n\n\n6.8\n3.0\n5.5\n2.1\nvirginica\n\n\n5.7\n2.5\n5.0\n2.0\nvirginica\n\n\n5.8\n2.8\n5.1\n2.4\nvirginica\n\n\n6.4\n3.2\n5.3\n2.3\nvirginica\n\n\n6.5\n3.0\n5.5\n1.8\nvirginica\n\n\n7.7\n3.8\n6.7\n2.2\nvirginica\n\n\n7.7\n2.6\n6.9\n2.3\nvirginica\n\n\n6.0\n2.2\n5.0\n1.5\nvirginica\n\n\n6.9\n3.2\n5.7\n2.3\nvirginica\n\n\n5.6\n2.8\n4.9\n2.0\nvirginica\n\n\n7.7\n2.8\n6.7\n2.0\nvirginica\n\n\n6.3\n2.7\n4.9\n1.8\nvirginica\n\n\n6.7\n3.3\n5.7\n2.1\nvirginica\n\n\n7.2\n3.2\n6.0\n1.8\nvirginica\n\n\n6.2\n2.8\n4.8\n1.8\nvirginica\n\n\n6.1\n3.0\n4.9\n1.8\nvirginica\n\n\n6.4\n2.8\n5.6\n2.1\nvirginica\n\n\n7.2\n3.0\n5.8\n1.6\nvirginica\n\n\n7.4\n2.8\n6.1\n1.9\nvirginica\n\n\n7.9\n3.8\n6.4\n2.0\nvirginica\n\n\n6.4\n2.8\n5.6\n2.2\nvirginica\n\n\n6.3\n2.8\n5.1\n1.5\nvirginica\n\n\n6.1\n2.6\n5.6\n1.4\nvirginica\n\n\n7.7\n3.0\n6.1\n2.3\nvirginica\n\n\n6.3\n3.4\n5.6\n2.4\nvirginica\n\n\n6.4\n3.1\n5.5\n1.8\nvirginica\n\n\n6.0\n3.0\n4.8\n1.8\nvirginica\n\n\n6.9\n3.1\n5.4\n2.1\nvirginica\n\n\n6.7\n3.1\n5.6\n2.4\nvirginica\n\n\n6.9\n3.1\n5.1\n2.3\nvirginica\n\n\n5.8\n2.7\n5.1\n1.9\nvirginica\n\n\n6.8\n3.2\n5.9\n2.3\nvirginica\n\n\n6.7\n3.3\n5.7\n2.5\nvirginica\n\n\n6.7\n3.0\n5.2\n2.3\nvirginica\n\n\n6.3\n2.5\n5.0\n1.9\nvirginica\n\n\n6.5\n3.0\n5.2\n2.0\nvirginica\n\n\n6.2\n3.4\n5.4\n2.3\nvirginica\n\n\n5.9\n3.0\n5.1\n1.8\nvirginica"
+    "text": "Better with kable\nThe easiest way to make tibbles/data.frames/data.tables look nicer is with df-print: kable in the yaml header.\n---\ntitle: \"Untitled\"\nformat: html\ndf-print: kable\n---\nOr manually for individual outputs:\n```{r}\n#| tbl-cap: Some iris data\nknitr::kable(head(iris))\n```\n\n\n\nSome iris data\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa"
   },
   {
     "objectID": "EL9.html#best-with-gt",
     "href": "EL9.html#best-with-gt",
     "title": "EL9: Documentation",
     "section": "Best with gt",
-    "text": "Best with gt\n\nVery flexible\nPublication ready\nPackage from Posit\nSometimes flextable if rendering MS Office documents (Word, PowerPoint)"
+    "text": "Best with gt\n\nVery flexible\nPublication ready\nPackage from Posit\nflextable may be preferred instead if rendering Office documents (Word, PowerPoint)"
   },
   {
     "objectID": "EL9.html#gtsummary",
@@ -1509,42 +1523,7 @@
     "href": "EL9.html#presentations",
     "title": "EL9: Documentation",
     "section": "Presentations",
-    "text": "Presentations\n\nQuarto can export to PowerPoint\nAnd to the older Beamer format\nBut I recommend revealjs\n\nformat: revealjs\ncan also be modified with speaker notes, laser pointer etc\n\nInfo and examples\n\nFor examplen (as used for those slides):\nformat:\n  revealjs:\n    theme: blood\n    transition: fade\n    slide-number: true\n    css: styles.css\n    smaller: true\n    scrollable: true\n    incremental: false"
-  },
-  {
-    "objectID": "EL9.html#manuscripts",
-    "href": "EL9.html#manuscripts",
-    "title": "EL9: Documentation",
-    "section": "Manuscripts",
-    "text": "Manuscripts\n\nQuarto Manuscript\nframework for writing and publishing scholarly articles\nSomething for your later thesis work?\nHandles references\nExport to Word documents (.docx) etc\n\nwhich is still the most common format for submission to medical/epidemiological journals\nStill used for collaborative work with non-statisticians etc"
-  },
-  {
-    "objectID": "EL9.html#use-references",
-    "href": "EL9.html#use-references",
-    "title": "EL9: Documentation",
-    "section": "USe references",
-    "text": "USe references\nWhen writing scientific reports we need to:\n\nacknowledge previous research\nsupport claims with evidence\nallow readers to find the original sources\n\nThis is done through citations and a reference list.\nExample:\n\nDon’t blame me, it was according to Wickham, Çetinkaya-Rundel, and Grolemund (n.d.).\n\nAt the end of the document a bibliography is automatically generated."
-  },
-  {
-    "objectID": "EL9.html#what-is-reference-management",
-    "href": "EL9.html#what-is-reference-management",
-    "title": "EL9: Documentation",
-    "section": "What is reference management?",
-    "text": "What is reference management?\nReference management means keeping track of:\n\narticles, books, reports, datasets\n\nincluding information such as:\n\nauthors, title, journal, year\nDOI\n\nInstead of typing references manually, software can store and format them automatically."
-  },
-  {
-    "objectID": "EL9.html#common-reference-management-tools",
-    "href": "EL9.html#common-reference-management-tools",
-    "title": "EL9: Documentation",
-    "section": "Common reference management tools",
-    "text": "Common reference management tools\nMany researchers use tools such as:\n\nZotero\nMendeley\nEndNote\n\nThese tools allow you to:\n\ncollect references from databases (PubMed, Google Scholar, etc.)\norganise them in libraries\nexport them to writing tools\n\nQuarto can work with references from these systems directly."
-  },
-  {
-    "objectID": "EL9.html#how-quarto-handles-references",
-    "href": "EL9.html#how-quarto-handles-references",
-    "title": "EL9: Documentation",
-    "section": "How Quarto handles references",
-    "text": "How Quarto handles references\nQuarto uses a bibliography file, usually in .bib format.\nExample in the document header:\nbibliography: references.bib\nThen citations can be written directly in the text:\nSeveral studies have examined this relationship @smith2020.\nQuarto will render something like:\n\nSeveral studies have examined this relationship (Smith 2020).\n\nThe full reference will appear automatically in the bibliography."
+    "text": "Presentations\n\nQuarto can export to PowerPoint\nAnd to the older Beamer format\nBut I recommend revealjs\n\nformat: revealjs\ncan also be modified with speaker notes, laser pointer etc\n\nInfo and examples\n\nFor example (as used for these slides):\nformat:\n  revealjs:\n    theme: blood\n    transition: fade\n    slide-number: true\n    css: styles.css\n    smaller: true\n    scrollable: true\n    incremental: false"
   },
   {
     "objectID": "EL9.html#integrate-with-targets",
@@ -1558,7 +1537,28 @@
     "href": "EL9.html#try-it",
     "title": "EL9: Documentation",
     "section": "Try it",
-    "text": "Try it\nCopy this code to the terminal (not the console!) and try targets::tar_make() in the console!\n\ncd\nmkdir test_targets_quarto\ncat &gt; test_targets_quarto/_targets.R &lt;&lt;'EOF'\nlibrary(targets)\nlibrary(tarchetypes) # Lets you integrate a quarto report/presentation\n\nlist(\n  tar_target(data, iris),\n  tar_target(model, lm(Sepal.Length ~ ., data)),\n  tar_quarto(report, \"report.qmd\") # Make presentation\n)\nEOF\n\ncat &gt; test_targets_quarto/report.qmd &lt;&lt;'EOF'\n---\ntitle: My project\nauthor: My name\ndate: today\nformat:\n  typst: default\n  docx: default\n  html: default\n  revealjs:\n    output-file: slides.html\n---\n\n## Here are some flowers!\n\n```{r}\ngtsummary::tbl_summary(targets::tar_read(data))\n```\n\n## And here is a model\n\n```{r}\ngtsummary::tbl_regression(targets::tar_read(model))\n```\nEOF\n\npositron test_targets_quarto\n# rm -r test_targets_quarto"
+    "text": "Try it\nCopy this code to the terminal (not the console!) and try targets::tar_make() in the console!\n\ncd\nmkdir test_targets_quarto\ncat &gt; test_targets_quarto/_targets.R &lt;&lt;'EOF'\nlibrary(targets)\nlibrary(tarchetypes) # Lets you integrate a quarto report/presentation\n\nlist(\n  tar_target(data, iris),\n  tar_target(model, lm(Sepal.Length ~ ., data)),\n  tar_quarto(report, \"report.qmd\") # Make presentation\n)\nEOF\n\ncat &gt; test_targets_quarto/report.qmd &lt;&lt;'EOF'\n---\ntitle: My project\nauthor: My name\ndate: today\nformat:\n  typst: default\n  docx: default\n  html: default\n  revealjs:\n    output-file: slides.html\n---\n\n## Here are some flowers!\n\ngtsummary::tbl_summary(targets::tar_read(data))\n\n## And here is a model\n\ngtsummary::tbl_regression(targets::tar_read(model))\nEOF\n\npositron test_targets_quarto\n# rm -r test_targets_quarto"
+  },
+  {
+    "objectID": "EL9.html#manuscripts",
+    "href": "EL9.html#manuscripts",
+    "title": "EL9: Documentation",
+    "section": "Manuscripts",
+    "text": "Manuscripts\n\nQuarto Manuscript\nframework for writing and publishing scholarly articles\nSomething for your later thesis work?\nHandles references\nExport to Word documents (.docx) etc\n\nwhich is still the most common format for submission to medical/epidemiological journals\nStill used for collaborative work with non-statisticians etc"
+  },
+  {
+    "objectID": "EL9.html#use-references",
+    "href": "EL9.html#use-references",
+    "title": "EL9: Documentation",
+    "section": "Use references",
+    "text": "Use references\nWhen writing scientific reports we need to:\n\nacknowledge previous research\nsupport claims with evidence\nallow readers to find the original sources\n\nThis is done through citations and a reference list.\nExample:\n\nDon’t blame me, it was according to Wickham, Çetinkaya-Rundel, and Grolemund (n.d.).\n\nAt the end of the document a bibliography is automatically generated."
+  },
+  {
+    "objectID": "EL9.html#how-quarto-handles-references",
+    "href": "EL9.html#how-quarto-handles-references",
+    "title": "EL9: Documentation",
+    "section": "How Quarto handles references",
+    "text": "How Quarto handles references\nQuarto uses a bibliography file, usually in .bib format.\nExample in the document header:\nbibliography: references.bib\nThen citations can be written directly in the text:\nSeveral studies have examined this relationship @smith2020.\nQuarto will render something like:\n\nSeveral studies have examined this relationship (Smith 2020).\n\nThe full reference will appear automatically in the bibliography."
   },
   {
     "objectID": "EL9.html#online-portfolio",
@@ -1600,7 +1600,7 @@
     "href": "index.html#disa-exam",
     "title": "Health data",
     "section": "DISA exam",
-    "text": "DISA exam\n\nThe literature listed in the table above (literature column) is used for examination.\nSome references, however, are only partially used (see handouts and lecture slides).\nSome of the literature is examined implicitly as part of the project part of the course.\n\nThe DISA exam will examine:\n\nThe course book N. T. B. Nguyen and Mushin (2022) (selected parts of chapter 1-4)\nAll PDF:s found in the Canvas module\n\nMost tables and detailed methods sections can be skipped\n\nLecture handouts, excluding:\n\nEL3 (examied only as part of ES1)\nEL8 where Hiyoshi (2026) (one of the PDF:s) is a sufficient reference\nEL10 which is formarly not examined but which might might be useful for the project component of the course.\n\n\nThe written examination will assess your understanding of the main themes covered in the the course. The purpose of the exam is not to test memorisation of details, but your ability to explain concepts, interpret practical situations, and reflect on methodological issues in health data research.\n\nStructure of the exam\n\nSection A – Conceptual understanding\n\nIn this section you will answer a number of short questions about key concepts from the course. Your answers should be brief (usually 1–3 sentences). The goal is to demonstrate that you understand the terminology and the purpose of the concepts discussed in the course.\n\nSection B – Applied understanding\n\nIn this section you will be asked to explain or interpret practical situations related to health data analysis. Your answers should be somewhat longer (typically 4–6 sentences) and demonstrate that you understand how the concepts from the course apply in real research settings. The goal here is to show that you can connect course concepts to practical research situations.\n\nSection C – Reflection and synthesis\n\nThe final question asks you to reflect on the broader research workflow in modern health data analysis. This part of the exam focuses on your ability to combine ideas from several parts of the course. A good answer should show that you can reason about how these elements interact in real research projects."
+    "text": "DISA exam\n\nThe literature listed in the table above (literature column) is used for examination.\nSome references, however, are only partially used (see handouts and lecture slides).\nSome of the literature is examined implicitly as part of the project part of the course.\n\nThe DISA exam will examine:\n\nThe course book Nguyen (2022) (selected parts of chapter 1-4)\nAll PDF:s found in the Canvas module\n\nMost tables and detailed methods sections can be skipped\n\nLecture handouts, excluding:\n\nEL3 (examined only as part of ES1)\nEL8 where Hiyoshi (2026) (one of the PDF:s) is a sufficient reference\nEL10 which is formally not examined but which might be useful for the project component of the course.\n\n\nThe written examination will assess your understanding of the main themes covered in the course. The purpose of the exam is not to test memorization of details, but your ability to explain concepts and reflect on methodological issues in health data research.\n\nStructure of the exam\n\nSection A – Conceptual understanding\n\nIn this section you will answer a number of short questions about key concepts from the course. Your answers should be brief (usually 1–3 sentences). The goal is to demonstrate that you understand the terminology and the purpose of the concepts discussed in the course.\n\nSection B – Applied understanding\n\nIn this section you will be asked to explain or interpret practical situations related to health data analysis. Your answers should be somewhat longer (typically 4–6 sentences) and demonstrate that you understand how the concepts from the course apply in real research settings. The goal here is to show that you can connect course concepts to practical research situations.\n\nSection C – Reflection and synthesis\n\nThe final question asks you to reflect on the broader research workflow in modern health data analysis. This part of the exam focuses on your ability to combine ideas from several parts of the course. A good answer should show that you can reason about how these elements interact in real research projects."
   },
   {
     "objectID": "index.html#podcast-episode",
@@ -2503,7 +2503,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-15."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-16."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -3896,7 +3896,7 @@
     "href": "handouts.html#example-5",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nfcc #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nzdzlbm { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nfcc #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nmwz #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nvpnhaw { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nmwz #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
   },
   {
     "objectID": "handouts.html#flattening",
@@ -4470,21 +4470,42 @@
     "href": "handouts.html#levels-of-documentation",
     "title": "Handouts",
     "section": "Levels of documentation",
-    "text": "Levels of documentation\nDocumentation can exist at several levels in a project.\n\nCode level\n\nscripts (comments, e.g. # clean data and merge cohorts)\nfunctions (Roxygen2 documentation)\nnotes and reminders (e.g. # TODO:)\n\nProject level\n\nREADME.md\n\nOutput level\n\nfigures and tables\nreports (PDF / HTML)\npresentations (slides)"
+    "text": "Levels of documentation\nDocumentation can exist at several levels in a project.\n\nCode level\n\nscripts (comments, e.g. # clean data and merge cohorts)\nfunctions (Roxygen2 documentation)\nnotes and reminders (e.g. # TODO:)\n\nProject level\n\nREADME.md\n(GitHub repos may also have a wiki or a polished website)\n\nOutput level\n\nfigures and tables\nreports (PDF / HTML)\npresentations (slides)"
+  },
+  {
+    "objectID": "handouts.html#code-level",
+    "href": "handouts.html#code-level",
+    "title": "Handouts",
+    "section": "Code level",
+    "text": "Code level"
   },
   {
     "objectID": "handouts.html#documenting-r-scripts",
     "href": "handouts.html#documenting-r-scripts",
     "title": "Handouts",
     "section": "Documenting R scripts",
-    "text": "Documenting R scripts\n\nSection labels by Shift + Ctrl/Cmd + R in Positron and RStudio\nEasiest way to aid navigation in R scripts\n\n## My section heading -----------------------------------------------------\n\ncommentr package\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n#| echo: true\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n## TODO: Change this to something better:\n1 + 2"
+    "text": "Documenting R scripts\n\nUse Air for better formatting of the R code itself (will format the code according to best practice for readability and collaboration)\nSection labels by Shift + Ctrl/Cmd + R in Positron (and RStudio)\nEasiest way to aid navigation to R scripts\n\n## My section heading -----------------------------------------------------"
+  },
+  {
+    "objectID": "handouts.html#individual-scripts",
+    "href": "handouts.html#individual-scripts",
+    "title": "Handouts",
+    "section": "Individual scripts",
+    "text": "Individual scripts\n\nAs soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.\nThe commentr package is designed to maintain such context\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n#| echo: true\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n## TODO: Change this to something better:\n1 + 2"
   },
   {
     "objectID": "handouts.html#documenting-r-functions",
     "href": "handouts.html#documenting-r-functions",
     "title": "Handouts",
     "section": "Documenting R functions",
-    "text": "Documenting R functions\nWhat does this function do?\n#| echo: true\nhello &lt;- function(who) {\n  sprintf(\"Hello %s!\", if (missing(who)) \"world\" else who)\n}\n\n#| echo: true\n#' Say hello!\n#'\n#' This function let's you greet someone or something\n#' @param character vector. Someone or something to great. Will great the world if argumen is missing.\n#' @return character vector of the same length as `character`\n#' @examples\n#' hello()\n#' hello(\"you\")\nhello &lt;- function(who) {\n  sprintf(\"Hello %s!\", if (missing(who)) \"world\" else who)\n}\n\nThere is a standardized syntax to document R functions\nYou should be able to click a small light bulb (💡) to insert a sceleton when writing your function\nThe same syntax is used within modern R packages\n\nbut it is useful even within your own projects\n\nroxygen2 is a package used for package documentation but it also has a great manual for documenteing functions in general"
+    "text": "Documenting R functions\nWhat does this function do?\n#| echo: true\nhello &lt;- function(who = \"world\") {\n  sprintf(\"Hello %s!\", who)\n}\n\n#| echo: true\n#' Say hello\n#'\n#' Create a simple greeting. If no name is provided, the function\n#' returns a greeting to the world.\n#'\n#' @param who A character vector giving the name(s) of the person or\n#'   object to greet. If missing, the greeting defaults to `\"world\"`.\n#'\n#' @return A character vector of the same length as `who` containing\n#'   greeting messages.\n#'\n#' @examples\n#' hello()\n#' hello(\"you\")\n#' hello(c(\"Alice\", \"Bob\"))\nhello &lt;- function(who = \"world\") {\n  sprintf(\"Hello %s!\", who)\n}\n\nThere is a standardized syntax to document R functions\nYou should be able to click a small light bulb (💡) to insert a sceleton when writing your function\nThe same syntax is used within modern R packages\n\nbut it is useful even within your own projects\n\nroxygen2 is a package used for package documentation but it also has a great manual for documenteing functions in general"
+  },
+  {
+    "objectID": "handouts.html#project-level",
+    "href": "handouts.html#project-level",
+    "title": "Handouts",
+    "section": "Project level",
+    "text": "Project level"
   },
   {
     "objectID": "handouts.html#documenting-a-project",
@@ -4501,11 +4522,32 @@
     "text": "Basic formatting\n\n\n\nWhat you want\nMarkdown syntax\nResult\n\n\n\n\nHeading\n# Heading\nHeading\n\n\nItalic\n*text*\ntext\n\n\nBold\n**text**\ntext\n\n\nInline code\n`code`\ncode\n\n\nLink\n[text](https://example.com)\ntext\n\n\nBullet list\n- item\n• item\n\n\nNumbered list\n1. item\n1. item\n\n\n\n\n\n\n\n\n\nNoteComment or heading\n\n\n\n# is used for comments in R files and within R blocks but for headings in .md and .qmd files!"
   },
   {
-    "objectID": "handouts.html#reproducible-workflows-in-biostatistics",
-    "href": "handouts.html#reproducible-workflows-in-biostatistics",
+    "objectID": "handouts.html#visual-mode",
+    "href": "handouts.html#visual-mode",
     "title": "Handouts",
-    "section": "Reproducible Workflows in Biostatistics",
-    "text": "Reproducible Workflows in Biostatistics\nModern biostatistics projects rarely involve only statistics.\n\ndata cleaning and preprocessing\nstatistical modelling\nvisualisation\ninterpretation of results\nreporting and documentation\n\nA good workflow should make it possible to combine all of these steps in one place."
+    "section": "Visual mode",
+    "text": "Visual mode\nInstead of editing the source code, you may also use the “visual editor” in Positron:\n\n\n\n\n\n\n\nWarning"
+  },
+  {
+    "objectID": "handouts.html#use-both",
+    "href": "handouts.html#use-both",
+    "title": "Handouts",
+    "section": "Use both?",
+    "text": "Use both?\nPersonally, I do most editing in source mode (better for the R chunks), but I find it much easier to include references/citations and to paste in external figures in using the visual mode."
+  },
+  {
+    "objectID": "handouts.html#reproducible-workflows",
+    "href": "handouts.html#reproducible-workflows",
+    "title": "Handouts",
+    "section": "Reproducible Workflows",
+    "text": "Reproducible Workflows\nModern biostatistics projects rarely involve only statistics.\n\ndata cleaning and preprocessing\nstatistical modelling\nvisualisation\ninterpretation of results\nreporting and documentation\n\nA good workflow should make it possible to combine all of these steps in one place."
+  },
+  {
+    "objectID": "handouts.html#output-level",
+    "href": "handouts.html#output-level",
+    "title": "Handouts",
+    "section": "Output level",
+    "text": "Output level"
   },
   {
     "objectID": "handouts.html#what",
@@ -4519,14 +4561,14 @@
     "href": "handouts.html#why-1",
     "title": "Handouts",
     "section": "Why?",
-    "text": "Why?\nIn many projects people work with:\n\nR scripts for analysis\nWord documents for reporting\nPowerPoint slides for presentations\n\nThis separation often leads to:\n\ncopy–paste errors\noutdated figures\nresults that cannot easily be reproduced\n\nQuarto helps avoid these problems."
+    "text": "Why?\nIn many projects people work with:\n\nR scripts for analysis 🥳\nWord documents for reporting 😱\nPowerPoint slides for presentations 😱\n\nThis separation often leads to:\n\ncopy–paste errors 🥴\noutdated figures 👎\nresults that cannot easily be reproduced 🤯\n\nQuarto helps avoid these problems!"
   },
   {
-    "objectID": "handouts.html#a-reproducible-analysis-document",
-    "href": "handouts.html#a-reproducible-analysis-document",
+    "objectID": "handouts.html#reproducible-analysis-1",
+    "href": "handouts.html#reproducible-analysis-1",
     "title": "Handouts",
-    "section": "A reproducible analysis document",
-    "text": "A reproducible analysis document\nIn a Quarto document you can:\n\nwrite the explanation of your analysis\ninclude the R code used\ngenerate figures and tables automatically\nupdate everything by re-running the document\n\n\nIf the data or model changes, the entire report can be regenerated automatically.\nIt is widely used in data science, epidemiology and biostatistics.\nIntegrated in Positron and developed by Posit PBC"
+    "section": "Reproducible analysis",
+    "text": "Reproducible analysis\nIn a Quarto document you can:\n\nwrite the explanation of your analysis\ninclude the R code used\ngenerate figures and tables automatically\nupdate everything by re-running the document\n\n\nIf the data or model changes, the entire report can be regenerated automatically.\nIt is widely used in data science, epidemiology and biostatistics.\nIntegrated in Positron and developed by Posit PBC"
   },
   {
     "objectID": "handouts.html#used-in-three-ways",
@@ -4540,21 +4582,21 @@
     "href": "handouts.html#a-simple-report",
     "title": "Handouts",
     "section": "A simple report",
-    "text": "A simple report\n\nWhen you chose “New &gt; New File …” in the upper left corner in Positron you may chose “Quarto document”\nThe file will be almost empty but contains:\n\n---\ntitle: \"Untitled\"\nformat: html\n---\n\nThis is a YAML header (Yet Another Markup Language)\nDifferent formats available:\n\nhtml: can also be published online\ndocx: for collaborating with non-statisticians etc\ntypst: Modern PDF rendering\nrevealjs: slide decks (you are looking at one!)\n\nCan render to multiple formats at once!\n\n\nThis is the yaml header for this presentation:\n---\ntitle: \"EL9: Documentation\"\nsubtitle: \"Quarto, roxygn2\"\nreading: \"[@wickham, ch. 28-29]\"\nformat:\n  revealjs:\n    theme: blood\n    transition: fade\n    slide-number: true\n    css: styles.css\n    smaller: true\n    scrollable: true\n    incremental: false\n  typst:\n    include-before-body:\n      - text: |\n          // Gör alla länkar tydliga i PDF: blå + understrukna\n          #show link: set text(fill: rgb(\"1a5fb4\"))\n          #show link: underline\n  docx: default\nbibliography: references.bib\n---"
+    "text": "A simple report\nWhen you chose New &gt; New File ... &gt; Quarto document, the file will contain:\n---\ntitle: \"Untitled\"\nformat: html\n---\n\nThis is a YAML header (Yet Another Markup Language)\nDifferent output formats are available:\n\nhtml: can also be published online (Quartopub or GitHub pages)\ndocx: Word document for collaborating with non-statisticians etc\ntypst: PDF rendering (ever heard of \\(\\LaTeX\\)? … This is the modern alternative!)\nrevealjs: slide decks (you are looking at one!)\n\nCan render to multiple formats at once!\n\n\nThis is the yaml header for this presentation:\n---\ntitle: \"EL9: Documentation\"\nsubtitle: \"Quarto\"\nreading: \"[@wickham, ch. 28-29]\"\nformat:\n  revealjs:\n    theme: blood\n    transition: fade\n    slide-number: true\n    css: styles.css\n    smaller: true\n    scrollable: true\n    incremental: false\n  typst:\n    include-before-body:\n      - text: |\n          // Gör alla länkar tydliga i PDF: blå + understrukna\n          #show link: set text(fill: rgb(\"1a5fb4\"))\n          #show link: underline\n  docx: default\nbibliography: references.bib\n---"
   },
   {
     "objectID": "handouts.html#yaml-structure",
     "href": "handouts.html#yaml-structure",
     "title": "Handouts",
     "section": "YAML structure",
-    "text": "YAML structure\nYAML uses indentation to represent structure.\nThink of it like a tree.\nformat:\n  html:\n    code-fold: true\nThis corresponds to the structure:\nformat\n└── html\n    └── code-fold: true\n\nWhat happens if indentation is wrong?\nformat:\nhtml:\n  code-fold: true\nNow Quarto interprets this as:\nformat\nhtml\n└── code-fold: true\nThis is not the intended structure, and the document may fail to render.\n\n💡 Rule of thumb\n\nuse two spaces per level\nnever use tabs\nwhen something fails, check indentation first"
+    "text": "YAML structure\nYAML uses indentation to represent structure.\nThink of it like a tree.\nformat:\n  html:\n    code-fold: true\nThis corresponds to the structure:\nformat\n└── html\n    └── code-fold: true\n\nIf indentation is wrong?\nformat:\nhtml:\n  code-fold: true\nNow Quarto interprets this as:\nformat\nhtml\n└── code-fold: true\nThis is not the intended structure, and the document may fail to render.\n\n💡 Rule of thumb\n\nuse two spaces per level\nnever use tabs\nwhen something fails, check indentation first"
   },
   {
     "objectID": "handouts.html#three-parts",
     "href": "handouts.html#three-parts",
     "title": "Handouts",
     "section": "Three parts",
-    "text": "Three parts\nQuarto documents have three parts:\n\nAn (optional) YAML header surrounded by ---s.\nChunks of R code surrounded by ```{r} and ```.\n\n```{r}          ← chunk header\n#| echo: false  ← options controlling the output\nsummary(x)      ← R code\n```             ← end of chunk\n\nText with markdown format\n\nWhere 1 (YAML header) comes first and where 2 and 3 are intermingled throughout the rest of the document."
+    "text": "Three parts\nQuarto documents have three parts:\n\nAn (optional) YAML header surrounded by ---s.\nChunks of R code surrounded by ```{r} and ```.\n\n```{r}          ← chunk header\n#| echo: false  ← options controlling the output\nsummary(x)      ← R code\n```             ← end of chunk\nKeybindings: Cmd + option + I (Mac) or Ctrl + Alt + I (Windows)\n\nText with markdown format\n\n\n\n\n\n\n\nTipOrder\n\n\n\nPart 1 (YAML header) always comes first but 2 (code block) and 3 (Markdown text) are usually intermingled throughout the rest of the document."
   },
   {
     "objectID": "handouts.html#inline-code",
@@ -4575,7 +4617,7 @@
     "href": "handouts.html#for-collaborators",
     "title": "Handouts",
     "section": "For collaborators",
-    "text": "For collaborators\n\nMight still care less about verbose R messages and warnings (they trust that you have already considered those)\nMay check the underlaying R code if relevant (use code-fold)\n\n---\ntitle: \"Untitled\"\nformat:\n  html:\n    code-fold: true\nexecute:\n  warning: false\n  message: false\n---\nThis can also be set individually for each code chunk:\n```{r}\n#| echo: false\n#| warning: false\n#| message: true\nmessage(\"will be muted!\")\nwarning(\"will be ignored\")\nplot(something_beautiful, realy = TRUE)\n```"
+    "text": "For collaborators\n\nMight still care less about verbose R messages and warnings (they trust that you have already considered those)\nMay still need the underlaying R code for deeper understaing\nUse code-fold\n\n---\ntitle: \"Untitled\"\nformat:\n  html:\n    code-fold: true\nexecute:\n  warning: false\n  message: false\n---\n\n\n\n\n\nThis can also be set individually for each code chunk:\n```{r}\n#| echo: false\n#| warning: false\n#| message: true\nmessage(\"will be muted!\")\nwarning(\"will be ignored\")\nplot(something_beautiful, realy = TRUE)\n```"
   },
   {
     "objectID": "handouts.html#figures",
@@ -4589,21 +4631,21 @@
     "href": "handouts.html#tables",
     "title": "Handouts",
     "section": "Tables",
-    "text": "Tables\nJust printing the R output might not look very nice:\niris"
+    "text": "Tables\nJust printing the R output might not look very nice:\n#| echo: true\nhead(iris)"
   },
   {
     "objectID": "handouts.html#better-with-kable",
     "href": "handouts.html#better-with-kable",
     "title": "Handouts",
     "section": "Better with kable",
-    "text": "Better with kable\nThe easiest way to make tibbles/data.frames/data.tables look nicer is with df-print: kable in the yaml header.\n---\ntitle: \"Untitled\"\nformat:\n  html:\n    df-print: kable\n---\n#| tbl-cap: Some iris data\nknitr::kable(iris)"
+    "text": "Better with kable\nThe easiest way to make tibbles/data.frames/data.tables look nicer is with df-print: kable in the yaml header.\n---\ntitle: \"Untitled\"\nformat: html\ndf-print: kable\n---\nOr manually for individual outputs:\n```{r}\n#| tbl-cap: Some iris data\nknitr::kable(head(iris))\n```\n#| tbl-cap: Some iris data\nknitr::kable(head(iris))"
   },
   {
     "objectID": "handouts.html#best-with-gt",
     "href": "handouts.html#best-with-gt",
     "title": "Handouts",
     "section": "Best with gt",
-    "text": "Best with gt\n\nVery flexible\nPublication ready\nPackage from Posit\nSometimes flextable if rendering MS Office documents (Word, PowerPoint)"
+    "text": "Best with gt\n\nVery flexible\nPublication ready\nPackage from Posit\nflextable may be preferred instead if rendering Office documents (Word, PowerPoint)"
   },
   {
     "objectID": "handouts.html#gtsummary",
@@ -4617,42 +4659,7 @@
     "href": "handouts.html#presentations",
     "title": "Handouts",
     "section": "Presentations",
-    "text": "Presentations\n\nQuarto can export to PowerPoint\nAnd to the older Beamer format\nBut I recommend revealjs\n\nformat: revealjs\ncan also be modified with speaker notes, laser pointer etc\n\nInfo and examples\n\nFor examplen (as used for those slides):\nformat:\n  revealjs:\n    theme: blood\n    transition: fade\n    slide-number: true\n    css: styles.css\n    smaller: true\n    scrollable: true\n    incremental: false"
-  },
-  {
-    "objectID": "handouts.html#manuscripts",
-    "href": "handouts.html#manuscripts",
-    "title": "Handouts",
-    "section": "Manuscripts",
-    "text": "Manuscripts\n\nQuarto Manuscript\nframework for writing and publishing scholarly articles\nSomething for your later thesis work?\nHandles references\nExport to Word documents (.docx) etc\n\nwhich is still the most common format for submission to medical/epidemiological journals\nStill used for collaborative work with non-statisticians etc"
-  },
-  {
-    "objectID": "handouts.html#use-references",
-    "href": "handouts.html#use-references",
-    "title": "Handouts",
-    "section": "USe references",
-    "text": "USe references\nWhen writing scientific reports we need to:\n\nacknowledge previous research\nsupport claims with evidence\nallow readers to find the original sources\n\nThis is done through citations and a reference list.\nExample:\n\nDon’t blame me, it was according to Wickham, Çetinkaya-Rundel, and Grolemund (n.d.).\n\nAt the end of the document a bibliography is automatically generated."
-  },
-  {
-    "objectID": "handouts.html#what-is-reference-management",
-    "href": "handouts.html#what-is-reference-management",
-    "title": "Handouts",
-    "section": "What is reference management?",
-    "text": "What is reference management?\nReference management means keeping track of:\n\narticles, books, reports, datasets\n\nincluding information such as:\n\nauthors, title, journal, year\nDOI\n\nInstead of typing references manually, software can store and format them automatically."
-  },
-  {
-    "objectID": "handouts.html#common-reference-management-tools",
-    "href": "handouts.html#common-reference-management-tools",
-    "title": "Handouts",
-    "section": "Common reference management tools",
-    "text": "Common reference management tools\nMany researchers use tools such as:\n\nZotero\nMendeley\nEndNote\n\nThese tools allow you to:\n\ncollect references from databases (PubMed, Google Scholar, etc.)\norganise them in libraries\nexport them to writing tools\n\nQuarto can work with references from these systems directly."
-  },
-  {
-    "objectID": "handouts.html#how-quarto-handles-references",
-    "href": "handouts.html#how-quarto-handles-references",
-    "title": "Handouts",
-    "section": "How Quarto handles references",
-    "text": "How Quarto handles references\nQuarto uses a bibliography file, usually in .bib format.\nExample in the document header:\nbibliography: references.bib\nThen citations can be written directly in the text:\nSeveral studies have examined this relationship @smith2020.\nQuarto will render something like:\n\nSeveral studies have examined this relationship (Smith 2020).\n\nThe full reference will appear automatically in the bibliography."
+    "text": "Presentations\n\nQuarto can export to PowerPoint\nAnd to the older Beamer format\nBut I recommend revealjs\n\nformat: revealjs\ncan also be modified with speaker notes, laser pointer etc\n\nInfo and examples\n\nFor example (as used for these slides):\nformat:\n  revealjs:\n    theme: blood\n    transition: fade\n    slide-number: true\n    css: styles.css\n    smaller: true\n    scrollable: true\n    incremental: false"
   },
   {
     "objectID": "handouts.html#integrate-with-targets",
@@ -4666,7 +4673,28 @@
     "href": "handouts.html#try-it",
     "title": "Handouts",
     "section": "Try it",
-    "text": "Try it\nCopy this code to the terminal (not the console!) and try targets::tar_make() in the console!\n#| eval: false\n#| echo: true\ncd\nmkdir test_targets_quarto\ncat &gt; test_targets_quarto/_targets.R &lt;&lt;'EOF'\nlibrary(targets)\nlibrary(tarchetypes) # Lets you integrate a quarto report/presentation\n\nlist(\n  tar_target(data, iris),\n  tar_target(model, lm(Sepal.Length ~ ., data)),\n  tar_quarto(report, \"report.qmd\") # Make presentation\n)\nEOF\n\ncat &gt; test_targets_quarto/report.qmd &lt;&lt;'EOF'\n---\ntitle: My project\nauthor: My name\ndate: today\nformat:\n  typst: default\n  docx: default\n  html: default\n  revealjs:\n    output-file: slides.html\n---\n\n## Here are some flowers!\n\n```{r}\ngtsummary::tbl_summary(targets::tar_read(data))\n```\n\n## And here is a model\n\n```{r}\ngtsummary::tbl_regression(targets::tar_read(model))\n```\nEOF\n\npositron test_targets_quarto\n## rm -r test_targets_quarto"
+    "text": "Try it\nCopy this code to the terminal (not the console!) and try targets::tar_make() in the console!\n#| eval: false\n#| echo: true\ncd\nmkdir test_targets_quarto\ncat &gt; test_targets_quarto/_targets.R &lt;&lt;'EOF'\nlibrary(targets)\nlibrary(tarchetypes) # Lets you integrate a quarto report/presentation\n\nlist(\n  tar_target(data, iris),\n  tar_target(model, lm(Sepal.Length ~ ., data)),\n  tar_quarto(report, \"report.qmd\") # Make presentation\n)\nEOF\n\ncat &gt; test_targets_quarto/report.qmd &lt;&lt;'EOF'\n---\ntitle: My project\nauthor: My name\ndate: today\nformat:\n  typst: default\n  docx: default\n  html: default\n  revealjs:\n    output-file: slides.html\n---\n\n## Here are some flowers!\n\ngtsummary::tbl_summary(targets::tar_read(data))\n\n## And here is a model\n\ngtsummary::tbl_regression(targets::tar_read(model))\nEOF\n\npositron test_targets_quarto\n## rm -r test_targets_quarto"
+  },
+  {
+    "objectID": "handouts.html#manuscripts",
+    "href": "handouts.html#manuscripts",
+    "title": "Handouts",
+    "section": "Manuscripts",
+    "text": "Manuscripts\n\nQuarto Manuscript\nframework for writing and publishing scholarly articles\nSomething for your later thesis work?\nHandles references\nExport to Word documents (.docx) etc\n\nwhich is still the most common format for submission to medical/epidemiological journals\nStill used for collaborative work with non-statisticians etc"
+  },
+  {
+    "objectID": "handouts.html#use-references",
+    "href": "handouts.html#use-references",
+    "title": "Handouts",
+    "section": "Use references",
+    "text": "Use references\nWhen writing scientific reports we need to:\n\nacknowledge previous research\nsupport claims with evidence\nallow readers to find the original sources\n\nThis is done through citations and a reference list.\nExample:\n\nDon’t blame me, it was according to Wickham, Çetinkaya-Rundel, and Grolemund (n.d.).\n\nAt the end of the document a bibliography is automatically generated."
+  },
+  {
+    "objectID": "handouts.html#how-quarto-handles-references",
+    "href": "handouts.html#how-quarto-handles-references",
+    "title": "Handouts",
+    "section": "How Quarto handles references",
+    "text": "How Quarto handles references\nQuarto uses a bibliography file, usually in .bib format.\nExample in the document header:\nbibliography: references.bib\nThen citations can be written directly in the text:\nSeveral studies have examined this relationship @smith2020.\nQuarto will render something like:\n\nSeveral studies have examined this relationship (Smith 2020).\n\nThe full reference will appear automatically in the bibliography."
   },
   {
     "objectID": "handouts.html#online-portfolio",
