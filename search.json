@@ -833,76 +833,6 @@
     "text": "Baker, Monya. 2016. “1,500 Scientists Lift the Lid on Reproducibility.” Nature 533 (7604): 452–54. https://doi.org/10.1038/533452a.\n\n\nKavianpour, Sanaz, James Sutherland, Esma Mansouri-Benssassi, Natalie Coull, and Emily Jefferson. 2022. “Next-Generation Capabilities in Trusted Research Environments: Interview Study.” Journal of Medical Internet Research 24 (9): e33720. https://doi.org/10.2196/33720.\n\n\nNguyen, Andrew. 2022. Hands-on healthcare data: taming the complexity of real-world data. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly.\n\n\nOliveira Andrade, Rodrigo de. 2025. “Huge Reproducibility Project Fails to Validate Dozens of Biomedical Studies.” Nature 641 (8062): 293–94. https://doi.org/10.1038/d41586-025-01266-x.\n\n\nPeng, Roger D., and Stephanie C. Hicks. 2021. “Reproducible Research: A Retrospective.” Annual Review of Public Health 42 (Volume 42, 2021): 79–93. https://doi.org/10.1146/annurev-publhealth-012420-105110."
   },
   {
-    "objectID": "exam/v2.html",
-    "href": "exam/v2.html",
-    "title": "Written Examination",
-    "section": "",
-    "text": "Course: Health Data and Reproducible Research Duration: 95 minutes Total marks: 40\n\n\n\nAnswer all questions.\nWrite your answers in English.\nIn Section A, keep your answers brief. In most cases, 1–3 sentences are sufficient.\nIn Section B, provide short but clear explanations. A good answer is typically 4–6 sentences.\nIn Section C, write a short essay of approximately half a page to one page.\nYou may use relevant terminology from the course, but make sure your reasoning is clear.\nWhere appropriate, motivate your answers briefly.\nThe exam is designed to assess both conceptual understanding and the ability to relate course concepts to practical work with health data.\n\n\n\n\n\nAnswer briefly.\n\n\nWhat was the original purpose of the International Classification of Diseases (ICD) when it was first introduced in the nineteenth century?\n\n\n\nBuckheit and Donoho argued that a scientific paper is merely advertising of the real scholarship. What did they mean by this?\n\n\n\nWhat problem does a workflow tool such as {targets} solve in a data analysis project?\n\n\n\nExplain one important advantage of using Git and GitHub when developing data analysis scripts.\n\n\n\nWhat role does Quarto play in a reproducible research workflow?\n\n\n\nWhat is meant by secondary use of health data?\n\n\n\n\n\nProvide a short explanation for each question.\n\n\nLarge health datasets are often distributed as CSV files or SAS data (.sqs7bdat). Explain why this is not ideal and suggest better solutions (motivate why).\n\n\n\nThe transition from ICD-9 to ICD-10 greatly increased the number of diagnostic codes. Explain how this affects the granularity of clinical research and discuss one potential drawback for epidemiological studies.\n\n\n\nImagine a multicenter observational study based on hospital registry data. Explain how differences in coding practices between hospitals could influence the validity of the study results.\n\n\n\n\n\nWrite a short essay.\n\n\nTraditionally, a scientific study was often viewed as a final publication. Today, research is better understood as a dynamic workflow involving raw registry data, processing pipelines, documentation, and legal constraints.\nDiscuss how the following elements interact in modern health data research:\n\nlegal frameworks (GDPR)\ndata quality and registry data\nmedical coding systems such as ICD\nreproducible workflows and computational pipelines\n\nIn your answer, address the following question:\nHow can a researcher balance the need for transparency and reproducibility with practical limitations such as imperfect data quality and legal requirements for data privacy?\n\n\n\n\n\n\n:::"
-  },
-  {
-    "objectID": "exam/v2.html#instructions-to-students",
-    "href": "exam/v2.html#instructions-to-students",
-    "title": "Written Examination",
-    "section": "",
-    "text": "Answer all questions.\nWrite your answers in English.\nIn Section A, keep your answers brief. In most cases, 1–3 sentences are sufficient.\nIn Section B, provide short but clear explanations. A good answer is typically 4–6 sentences.\nIn Section C, write a short essay of approximately half a page to one page.\nYou may use relevant terminology from the course, but make sure your reasoning is clear.\nWhere appropriate, motivate your answers briefly.\nThe exam is designed to assess both conceptual understanding and the ability to relate course concepts to practical work with health data."
-  },
-  {
-    "objectID": "exam/v2.html#section-a.-conceptual-understanding-12-marks",
-    "href": "exam/v2.html#section-a.-conceptual-understanding-12-marks",
-    "title": "Written Examination",
-    "section": "",
-    "text": "Answer briefly.\n\n\nWhat was the original purpose of the International Classification of Diseases (ICD) when it was first introduced in the nineteenth century?\n\n\n\nBuckheit and Donoho argued that a scientific paper is merely advertising of the real scholarship. What did they mean by this?\n\n\n\nWhat problem does a workflow tool such as {targets} solve in a data analysis project?\n\n\n\nExplain one important advantage of using Git and GitHub when developing data analysis scripts.\n\n\n\nWhat role does Quarto play in a reproducible research workflow?\n\n\n\nWhat is meant by secondary use of health data?"
-  },
-  {
-    "objectID": "exam/v2.html#section-b.-applied-data-management-18-marks",
-    "href": "exam/v2.html#section-b.-applied-data-management-18-marks",
-    "title": "Written Examination",
-    "section": "",
-    "text": "Provide a short explanation for each question.\n\n\nLarge health datasets are often distributed as CSV files or SAS data (.sqs7bdat). Explain why this is not ideal and suggest better solutions (motivate why).\n\n\n\nThe transition from ICD-9 to ICD-10 greatly increased the number of diagnostic codes. Explain how this affects the granularity of clinical research and discuss one potential drawback for epidemiological studies.\n\n\n\nImagine a multicenter observational study based on hospital registry data. Explain how differences in coding practices between hospitals could influence the validity of the study results."
-  },
-  {
-    "objectID": "exam/v2.html#section-c.-critical-synthesis-10-marks",
-    "href": "exam/v2.html#section-c.-critical-synthesis-10-marks",
-    "title": "Written Examination",
-    "section": "",
-    "text": "Write a short essay.\n\n\nTraditionally, a scientific study was often viewed as a final publication. Today, research is better understood as a dynamic workflow involving raw registry data, processing pipelines, documentation, and legal constraints.\nDiscuss how the following elements interact in modern health data research:\n\nlegal frameworks (GDPR)\ndata quality and registry data\nmedical coding systems such as ICD\nreproducible workflows and computational pipelines\n\nIn your answer, address the following question:\nHow can a researcher balance the need for transparency and reproducibility with practical limitations such as imperfect data quality and legal requirements for data privacy?"
-  },
-  {
-    "objectID": "exam/v2.html#end-of-exam",
-    "href": "exam/v2.html#end-of-exam",
-    "title": "Written Examination",
-    "section": "",
-    "text": ":::"
-  },
-  {
-    "objectID": "exam/v2.html#mark-distribution",
-    "href": "exam/v2.html#mark-distribution",
-    "title": "Written Examination",
-    "section": "Mark distribution",
-    "text": "Mark distribution\n\n\n\nSection\nMaximum marks\n\n\n\n\nA\n12\n\n\nB\n18\n\n\nC\n10\n\n\nTotal\n40"
-  },
-  {
-    "objectID": "exam/v2.html#grade-boundaries",
-    "href": "exam/v2.html#grade-boundaries",
-    "title": "Written Examination",
-    "section": "Grade boundaries",
-    "text": "Grade boundaries\n\n\n\n\n\n\n\nGrade\nRequirement\n\n\n\n\nPass (G)\nAt least22/40\n\n\nPass with distinction (VG)\nAt least32/40 and at least 6/10 in Section C"
-  },
-  {
-    "objectID": "exam/v2.html#marking-guide",
-    "href": "exam/v2.html#marking-guide",
-    "title": "Written Examination",
-    "section": "Marking guide",
-    "text": "Marking guide\n\nSection A (2 marks each)\n\nA1. ICD: historical purpose\nFull marks (2):\n\nidentifies the original purpose as classification of causes of death / mortality statistics\nmentions standardisation or comparability across places or populations\n\nPartial marks (1):\n\nmentions disease classification in general but not mortality statistics or comparability clearly\n\nNo marks (0):\n\nincorrect or irrelevant answer\n\n\n\nA2. Scientific scholarship\nFull marks (2):\n\nexplains that the paper is only a summary or advertisement of the work\nidentifies code, data, and computational workflow as the real scholarship\n\nPartial marks (1):\n\ncaptures only one of the two main points\n\n\n\nA3. Reproducible pipelines\nFull marks (2):\n\nmentions automation of workflows, dependency tracking, or avoiding unnecessary reruns\nlinks this to reproducibility or efficiency\n\nPartial marks (1):\n\nvague but relevant description of organising analysis steps\n\n\n\nA4. Version control\nFull marks (2):\n\nexplains one clear benefit such as tracking changes, collaboration, rollback, transparency, or reproducibility\n\nPartial marks (1):\n\nbenefit mentioned but not clearly explained\n\n\n\nA5. Quarto\nFull marks (2):\n\nexplains that Quarto combines code, text, and results in one document\nlinks this to reproducible reporting or communication\n\nPartial marks (1):\n\nmentions reporting or documentation but not reproducibility clearly\n\n\n\nA6. Secondary use of health data\nFull marks (2):\n\nexplains that data originally collected for one purpose are reused for another purpose\nrelevant examples include research, quality improvement, planning, or surveillance\n\nPartial marks (1):\n\npartially correct but vague\n\n\n\n\n\nSection B (6 marks each)\n\nB1. Parquet versus CSV\nExpected elements:\n\nParquet is column-oriented\nonly relevant columns need to be read\nmore efficient compression\nreduced input/output\nbetter suited for large-scale querying / analytics\n\nSuggested marking:\n\n6: clear explanation including columnar storage and at least two additional relevant points\n4: correct main idea but limited detail\n2: fragmented or partially correct\n0: incorrect\n\n\n\nB2. ICD revisions\nExpected elements:\n\nICD-10 has many more codes than ICD-9\ngreater specificity / finer granularity\nmay improve precision in identifying diagnoses or subgroups\npossible drawback: reduced comparability over time, mapping difficulties, changes in coding practice, risk of artefacts in trend analyses\n\nSuggested marking:\n\n6: clear discussion of both increased granularity and at least one substantial drawback\n4: correct but underdeveloped\n2: only one side addressed\n0: incorrect\n\n\n\nB3. Coding inconsistency\nExpected elements:\n\nhospitals may code similar cases differently\ncan introduce systematic measurement error or misclassification\ncan bias comparisons between centres\nmay threaten internal validity and interpretation\ncan create apparent differences that are artefacts of coding rather than real clinical differences\n\nSuggested marking:\n\n6: clear explanation of mechanism and consequences for validity\n4: largely correct but limited depth\n2: partial recognition of the issue\n0: incorrect\n\n\n\n\n\nSection C (10 marks)\n\nC1. The evolving workflow of biostatistical research\nA strong answer should:\n\nconnect legal, technical, and methodological aspects rather than listing them separately\ndiscuss GDPR or privacy constraints in relation to access, sharing, and transparency\naddress data quality problems such as missingness, coding error, or imperfect documentation\nexplain the role of coding systems such as ICD in standardisation and comparability\ndescribe how reproducible workflows, version control, and computational documents support trust and longevity\nrecognise that full openness may not be possible with sensitive health data\npropose realistic alternatives such as sharing code, metadata, synthetic data, documentation, or processing logic\n\nSuggested marking rubric:\n\n\n\n\n\n\n\nMarks\nDescription\n\n\n\n\n9–10\nExcellent synthesis; clear, well-structured, conceptually strong, and addresses the core tension in a nuanced way\n\n\n7–8\nGood analytical answer; connects several themes well, though with less depth or precision\n\n\n5–6\nReasonable discussion; covers relevant themes but mainly descriptively\n\n\n3–4\nLimited answer; some relevant points but weak structure or shallow reasoning\n\n\n0–2\nVery limited or largely irrelevant"
-  },
-  {
-    "objectID": "exam/v2.html#notes-for-examiner",
-    "href": "exam/v2.html#notes-for-examiner",
-    "title": "Written Examination",
-    "section": "Notes for examiner",
-    "text": "Notes for examiner\n\nSection A is intended to test breadth and terminology.\nSection B is intended to test applied understanding and the ability to explain mechanisms.\nSection C should carry the main weight for VG, since it tests synthesis, judgment, and reflection.\nIf desired, minor language errors should not reduce marks as long as the intended meaning is clear."
-  },
-  {
     "objectID": "ES2.html",
     "href": "ES2.html",
     "title": "ES2: Project presentations",
@@ -924,60 +854,235 @@
     "text": "Biggish data\nOur focus:\n\nOnly tabular data\nOriginal data might fit into physical RAM but …\nmight be multiplied due to temporary necessity\nphysical RAM might be constrained due to other processes/settings\nthings might just take too much time … and life is short …"
   },
   {
-    "objectID": "EL10.html#software",
-    "href": "EL10.html#software",
+    "objectID": "EL10.html#reading-large-datasets",
+    "href": "EL10.html#reading-large-datasets",
     "title": "EL10: Biggish data",
-    "section": "Software",
-    "text": "Software\n\nSAS for big data files from register holders\nR for everything else\nDatabase?"
+    "section": "Reading large datasets",
+    "text": "Reading large datasets\nWhen working with large datasets, where the data is stored matters.\nNetwork storage (e.g. shared drives)\n\nslower data transfer (limited bandwidth)\nhigher latency (delay before data starts loading)\nmultiple users may compete for resources\nrepeated reads can be very inefficient\n\nLocal storage\n\nmuch faster read/write speeds\nlow latency\nmore stable and predictable performance\nbetter suited for iterative data analysis"
   },
   {
-    "objectID": "EL10.html#file-storage",
-    "href": "EL10.html#file-storage",
+    "objectID": "EL10.html#secure-environment",
+    "href": "EL10.html#secure-environment",
     "title": "EL10: Biggish data",
-    "section": "File storage",
-    "text": "File storage\n\nAvoid reading big files over ethernet connection\n\ndata stored on network drive\n\nUsually faster to first copy file to local SSD drive\n\nfs::file_copy(path, new_path)\n(“libuv provides a wide variety of cross-platform sync and async file system operations.”)\nobviously only if “local drive” is also in the (same) secure environment\n\nwork with the project on disk\nmove back\nAlthough not always possble with very large files it seems"
+    "section": "Secure environment",
+    "text": "Secure environment\nIn secure environments, both types of storage may look local, but they behave differently.\n\n“Local” disk (e.g. SSD on the server/VM)\n\nattached directly to the machine you are working on\n\nhigh bandwidth, low latency\n\nbehaves like true local storage\n\ntypically much faster for data analysis\n\nMapped network folder\n\naccessed over the network (even if it looks like a normal folder)\n\nlower bandwidth and higher latency\n\nshared with other users\n\nslower, especially for repeated reads\n\n\n💡 Key difference:\nNot where the data is stored, but how it is accessed (direct disk vs network).\n💡 Practical advice:\nUse “local” disk (SSD on the environment) for active analysis, and network storage for long-term storage."
   },
   {
-    "objectID": "EL10.html#altrep",
-    "href": "EL10.html#altrep",
+    "objectID": "EL10.html#practical-implication",
+    "href": "EL10.html#practical-implication",
     "title": "EL10: Biggish data",
-    "section": "ALTREP",
-    "text": "ALTREP\n\nALTernative REPresentation of R Objects\nSince R version 3.5.0\nApplies to the C-level representation of R objects under the hood\nUsed by some base R packages/functions + specialized packages\n\n\nallow vector data to be in a memory-mapped file; distributed, e.g. within Apache Spark or Hadoop; shared with other applications, e.g. with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments."
+    "section": "Practical implication",
+    "text": "Practical implication\nFor large datasets:\n\navoid repeatedly reading data directly from network drives\ncopy data locally when possible\n\nfs::file_copy(path, new_path)\n(“libuv provides a wide variety of cross-platform sync and async file system operations.”)\nobviously only if “local drive” is also in the (same) secure environment!\n\n\n💡 Key message:\nData access can easily become the main bottleneck — not your code."
   },
   {
-    "objectID": "EL10.html#dates",
-    "href": "EL10.html#dates",
+    "objectID": "EL10.html#hdd-hard-disk-drive",
+    "href": "EL10.html#hdd-hard-disk-drive",
     "title": "EL10: Biggish data",
-    "section": "Dates",
-    "text": "Dates\n\nUse as.IDate() instead of as.Date() if using {data.table}. Integer based.\nUse {anytime} (or maybe {fasttime}) if conversion is needed (ALTREP)"
+    "section": "HDD (Hard Disk Drive)",
+    "text": "HDD (Hard Disk Drive)\n\nmechanical (spinning disks)\nslower, especially for random access\ntypical speeds:\n\n~50–150 MB/s (sequential read)\n\nlarger capacity at lower cost\noften used in older systems or for backups"
   },
   {
-    "objectID": "EL10.html#paralellization-1",
-    "href": "EL10.html#paralellization-1",
+    "objectID": "EL10.html#ssd-solid-state-drive",
+    "href": "EL10.html#ssd-solid-state-drive",
+    "title": "EL10: Biggish data",
+    "section": "SSD (Solid State Drive)",
+    "text": "SSD (Solid State Drive)\n\nno moving parts\nmuch faster and more reliable\ntypical speeds:\n\n~500 MB/s (SATA SSD)\n~2000–7000 MB/s (NVMe SSD)\n\nstandard in most modern laptops"
+  },
+  {
+    "objectID": "EL10.html#typical-sizes",
+    "href": "EL10.html#typical-sizes",
+    "title": "EL10: Biggish data",
+    "section": "Typical sizes",
+    "text": "Typical sizes\n\nlaptops: 256 GB – 1 TB SSD\ndesktops / servers: 1–4 TB SSD + optional HDD storage\nnetwork drives: often very large but slower"
+  },
+  {
+    "objectID": "EL10.html#ram-and-data-analysis-in-r",
+    "href": "EL10.html#ram-and-data-analysis-in-r",
+    "title": "EL10: Biggish data",
+    "section": "RAM and data analysis in R",
+    "text": "RAM and data analysis in R\nWhen working in R, available RAM (memory) is often the main limiting factor.\n\nR can typically use most of the available RAM on your machine\nsome memory is needed by:\n\nthe operating system\nother applications\n\na safe rule of thumb is to assume ~50–75% of total RAM is available for R"
+  },
+  {
+    "objectID": "EL10.html#how-large-datasets-can-you-work-with",
+    "href": "EL10.html#how-large-datasets-can-you-work-with",
+    "title": "EL10: Biggish data",
+    "section": "How large datasets can you work with?",
+    "text": "How large datasets can you work with?\n\ndatasets must fit in memory (unless using special tools)\nbut you also need memory for:\n\nintermediate objects\ncopies created during transformations\nmodel objects\n\nmany R operations create temporary copies of data\nmemory usage can double or triple during processing\nrunning out of RAM leads to:\n\nslow performance\ncrashes"
+  },
+  {
+    "objectID": "EL10.html#example",
+    "href": "EL10.html#example",
+    "title": "EL10: Biggish data",
+    "section": "Example",
+    "text": "Example\nIf you have:\n\n\n\n\n\n\nTip\n\n\nRule of thumb: you can usually work comfortably with data that is at most ~1/3 to 1/2 of your available RAM\n\n\n\n\n16 GB RAM → usable ≈ 8–12 GB\n→ practical dataset size ≈ 3–6 GB\n\nModern R is 64-bit → can use large amounts of memory\n\n(32-bit R was limited to ~4 GB — mostly obsolete today)"
+  },
+  {
+    "objectID": "EL10.html#practical-advice",
+    "href": "EL10.html#practical-advice",
+    "title": "EL10: Biggish data",
+    "section": "Practical advice",
+    "text": "Practical advice\n\ncheck memory: ps::ps_system_memory()\navoid unnecessary copies of large objects\n\nUse {data.table} for reference semantics\nor Parquet files to read only the necessary data\n\nconsider pipelines (targets) or chunked processing"
+  },
+  {
+    "objectID": "EL10.html#numeric-vs-integer-in-r",
+    "href": "EL10.html#numeric-vs-integer-in-r",
+    "title": "EL10: Biggish data",
+    "section": "Numeric vs integer in R",
+    "text": "Numeric vs integer in R\nR’s default numeric type is double precision (numeric).\nx &lt;- 1\ntypeof(1) # \"double\"\ntypeof(1L) # weird syntax to get \"integer\"\nWhy this matters\n\nintegers use less memory (4 bytes vs 8 bytes)\n\ncan be important for large datasets\n\n100 million values:\n\nnumeric ≈ 800 MB\n\ninteger ≈ 400 MB"
+  },
+  {
+    "objectID": "EL10.html#altrep-alternative-representation",
+    "href": "EL10.html#altrep-alternative-representation",
+    "title": "EL10: Biggish data",
+    "section": "ALTREP (Alternative Representation)",
+    "text": "ALTREP (Alternative Representation)\nR can represent some objects in a compact or lazy way.\n\nintroduced in R 3.5.0\n\navoids allocating full memory immediately\n\n\nx &lt;- 1:1e9\nobject.size(x)\n\n4000000048 bytes\n\n\n→ much smaller than expected"
+  },
+  {
+    "objectID": "EL10.html#what-happens",
+    "href": "EL10.html#what-happens",
+    "title": "EL10: Biggish data",
+    "section": "What happens?",
+    "text": "What happens?\n\ndata is generated on demand\n\nnot all values are stored in memory\n\n💡 Key message:\nNot all objects in R are fully materialised — some are computed when needed."
+  },
+  {
+    "objectID": "EL10.html#other-memory-optimisations-in-r",
+    "href": "EL10.html#other-memory-optimisations-in-r",
+    "title": "EL10: Biggish data",
+    "section": "Other memory optimisations in R",
+    "text": "Other memory optimisations in R\nR uses several mechanisms to reduce memory usage (not only ALTREP).\n\nShared strings (string interning)\n\nidentical strings may be stored only once\n\nreduces memory when many values are repeated"
+  },
+  {
+    "objectID": "EL10.html#but-memory-still-fills-up",
+    "href": "EL10.html#but-memory-still-fills-up",
+    "title": "EL10: Biggish data",
+    "section": "But memory still fills up…",
+    "text": "But memory still fills up…\nEven with smart representations:\n\nmany operations still create real objects\n\ntemporary objects accumulate\n\n👉 R still needs to free memory"
+  },
+  {
+    "objectID": "EL10.html#garbage-collection",
+    "href": "EL10.html#garbage-collection",
+    "title": "EL10: Biggish data",
+    "section": "Garbage collection",
+    "text": "Garbage collection\nWhen you work in R, memory is constantly used for intermediate objects.\n\nmany operations create temporary results\n\nthese objects are no longer needed after a step is completed\n\nbut R does not always remove them immediately"
+  },
+  {
+    "objectID": "EL10.html#what-is-the-problem",
+    "href": "EL10.html#what-is-the-problem",
+    "title": "EL10: Biggish data",
+    "section": "What is the problem?",
+    "text": "What is the problem?\n\nmemory can fill up with objects that are no longer used\n\nthere are no active references (“pointers”) to these objects\n\nbut they still occupy memory"
+  },
+  {
+    "objectID": "EL10.html#solution-garbage-collection",
+    "href": "EL10.html#solution-garbage-collection",
+    "title": "EL10: Biggish data",
+    "section": "Solution: garbage collection",
+    "text": "Solution: garbage collection\n\nR periodically identifies objects that are no longer reachable\n\nthese are removed, and memory is freed\n\nGC is triggered when R needs more memory\n\nmay cause short pauses during execution"
+  },
+  {
+    "objectID": "EL10.html#practical-advice-1",
+    "href": "EL10.html#practical-advice-1",
+    "title": "EL10: Biggish data",
+    "section": "Practical advice",
+    "text": "Practical advice\nrm(large_object) # Remove objects you no longer need\ngc() # manual garbage collection\ndt[, new := f(old)] # eference semantics by `{data.table}`\n💡 Key message:\nYou rarely need to manage memory explicitly — but inefficient code can still use too much of it."
+  },
+  {
+    "objectID": "EL10.html#unnecassary-computations-for-large-objects",
+    "href": "EL10.html#unnecassary-computations-for-large-objects",
+    "title": "EL10: Biggish data",
+    "section": "Unnecassary computations for large objects",
+    "text": "Unnecassary computations for large objects\n\nSometimes R (or the computer hardware) is not the problem, but the IDE might be.\nCommon for RStudio (RSTudio and R both run in the same process)\n\nMemory problems might make RSTudio crash\n\nPositron separates the R process from the IDE\n\nBetter, but still not perfect\n\n\n\nStill open?"
+  },
+  {
+    "objectID": "EL10.html#cpu",
+    "href": "EL10.html#cpu",
+    "title": "EL10: Biggish data",
+    "section": "CPU",
+    "text": "CPU\nThe Central Processing Unit (CPU) determines how fast computations are performed.\n\nCPUs work in clock cycles (e.g. 3 GHz ≈ 3 billion cycles per second)\n\nCPU matters most when:\n\nrunning models (e.g. regression, mixed models)\n\nperforming simulations\n\nusing loops or inefficient code\n\n\nCPU matters less when:\n\nreading data (disk/network bottleneck)\n\nworking with very large objects (RAM bottleneck)\n\n\n\n\n\n\n\n\nNote\n\n\nWriting efficient code (vectorisation) often matters more than CPU speed!"
+  },
+  {
+    "objectID": "EL10.html#how-r-uses-the-cpu",
+    "href": "EL10.html#how-r-uses-the-cpu",
+    "title": "EL10: Biggish data",
+    "section": "How R uses the CPU",
+    "text": "How R uses the CPU\n\nR is often single-threaded\n\nmany operations use only one core\n\nsome libraries can use multiple cores (parallel computing)\n\nHow many cores do you have?\n\nbenchmarkme::get_cpu()\n\n$vendor_id\ncharacter(0)\n\n$model_name\n[1] \"Apple M2 Max\"\n\n$no_of_cores\n[1] 12"
+  },
+  {
+    "objectID": "EL10.html#vectorization-in-r",
+    "href": "EL10.html#vectorization-in-r",
+    "title": "EL10: Biggish data",
+    "section": "Vectorization in R",
+    "text": "Vectorization in R\n\nR is designed to work efficiently with vectors, not loops.\nIn R, what looks like a scalar is actually a vector of length 1\nvectorized operations apply to whole objects at once\n\nloops process one element at a time (often slower)\n\n# slow\nresult &lt;- numeric(length(x))\nfor (i in seq_along(x)) {\n  result[i] &lt;- x[i] + y[i]\n}\n\n# fast\nresult &lt;- x + y"
+  },
+  {
+    "objectID": "EL10.html#why-is-vectorization-faster",
+    "href": "EL10.html#why-is-vectorization-faster",
+    "title": "EL10: Biggish data",
+    "section": "Why is vectorization faster?",
+    "text": "Why is vectorization faster?\nVectorized operations in R are usually implemented in compiled C code.\n\nR code (e.g. for loops) is interpreted → each step has overhead\nvectorized operations (e.g. x + y) are:\n\nimplemented in C\n\nrun as tight, optimized loops"
+  },
+  {
+    "objectID": "EL10.html#parallel-computing",
+    "href": "EL10.html#parallel-computing",
+    "title": "EL10: Biggish data",
+    "section": "Parallel computing",
+    "text": "Parallel computing\nParallel computing means using multiple CPU cores at the same time.\n\nmost R code runs on a single core\n\nyour computer may have many cores (e.g. 4–16)\na shared server such as TRE might have several hundreds!\n\nWhy use parallel computing?\n\nto speed up computationally intensive tasks\n\nespecially when tasks can be done independently\n\n💡 Key message:\nParallel computing allows you to do multiple computations at once — but only if the problem can be split."
+  },
+  {
+    "objectID": "EL10.html#paralellization",
+    "href": "EL10.html#paralellization",
     "title": "EL10: Biggish data",
     "section": "Paralellization",
-    "text": "Paralellization\n\nR is single threaded by default\nSome packages and functions may use multithreading by default\nSome functions might have arguments such as nthreads, ncores etc\nTo handle multicore/thread computations can be (very) difficult (I’ve heard)\nEasy if data can be divided and conquered (split-apply-combine)\n{futureverse} is my favorite (Henrik Bengtsson)\n\n{furrr} is a a drop-in replacement for {purrr}"
+    "text": "Paralellization\n\nSome packages and functions may use multithreading by default\n\nBut this is unusual\n\nSome functions might have arguments such as nthreads, ncores etc\n\nYou may want to use them\n\nTo handle multicore/thread computations in general can be (very) difficult (I’ve heard)"
   },
   {
-    "objectID": "EL10.html#furrr",
-    "href": "EL10.html#furrr",
+    "objectID": "EL10.html#split-apply-combine",
+    "href": "EL10.html#split-apply-combine",
     "title": "EL10: Biggish data",
-    "section": "{furrr}",
-    "text": "{furrr}\n\n# How many cores do we have?\nparallel::detectCores()\n\n[1] 12\n\nlibrary(furrr)\n# Save at least one for OS etc\nplan(multisession, workers = parallel::detectCores() - 1)\n\n1:10 |&gt;\n  future_map(rnorm, n = 10, .options = furrr_options(seed = 123)) |&gt;\n  future_map_dbl(mean)\n\n [1] 1.180279 2.140442 2.909823 3.692207 5.058100 6.653926 7.065630 7.960713\n [9] 9.105674 9.766827"
+    "section": "Split-apply-combine",
+    "text": "Split-apply-combine\nParallel computing works best when:\n\ntasks are independent\ntasks are computationally heavy\ntasks can be repeated many times\n\nExamples\n\nsimulations\n\nbootstrapping\n\ncross-validation\n\napplying a function many times\n\n💡 If tasks depend on each other, parallelisation will not help."
+  },
+  {
+    "objectID": "EL10.html#when-parallel-computing-does-not-help",
+    "href": "EL10.html#when-parallel-computing-does-not-help",
+    "title": "EL10: Biggish data",
+    "section": "When parallel computing does NOT help",
+    "text": "When parallel computing does NOT help\nParallel computing is often not the solution.\n\nreading data → bottleneck is disk/network\n\nlarge objects → bottleneck is RAM\n\ninefficient code → vectorization is better"
+  },
+  {
+    "objectID": "EL10.html#example-in-r",
+    "href": "EL10.html#example-in-r",
+    "title": "EL10: Biggish data",
+    "section": "Example in R",
+    "text": "Example in R\nlapply(1:100, function(i) slow_function(i)) # Sequential\nparallel::mclapply(1:100, slow_function, mc.cores = 4) # Parallel\nWhat happens?\n\neach core processes part of the work\n\nresults are combined at the end\n\n💡 More cores ≠ always faster"
+  },
+  {
+    "objectID": "EL10.html#limitations-of-parallel-computing",
+    "href": "EL10.html#limitations-of-parallel-computing",
+    "title": "EL10: Biggish data",
+    "section": "Limitations of parallel computing",
+    "text": "Limitations of parallel computing\n\noverhead (starting processes takes time)\n\ncopying data between processes\n\nlimited by number of cores\n\nnot all functions are parallel-friendly"
   },
   {
     "objectID": "EL10.html#mirai",
     "href": "EL10.html#mirai",
     "title": "EL10: Biggish data",
     "section": "{mirai}",
-    "text": "{mirai}\n\nSuposed to be up to 1,000 times “faster” compared to {furrr} (according to some metric …)\nshould not block the main process while executing (haven’t tried)\n\n\nDesigned for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.\n\n\nlibrary(mirai)\nlibrary(data.table)\ndaemons(11)\n\n# data.table with 1 billion rows:\ndt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))\n# row sums (row wise )\nmirai_map(dt, sum)[.flat]"
+    "text": "{mirai}\n\nSuposed to be up to 1,000 times “faster” compared to earlier methods\n\n(according to some metric …)\n\nshould not block the main process while executing (haven’t tried)\n\n\nDesigned for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.\n\n\nlibrary(mirai)\nlibrary(data.table)\ndaemons(11)\n\n# data.table with 1 billion rows:\ndt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))\n# row sums (row wise )\nmirai_map(dt, sum)[.flat]"
   },
   {
     "objectID": "EL10.html#purrr",
     "href": "EL10.html#purrr",
     "title": "EL10: Biggish data",
     "section": "{purrr}",
-    "text": "{purrr}\n\nIntroduced in_paralell() in 2025\nBased on mirai but without the specialised syntax\nNeeds to be explicit on which objects/functions to export to each worker/daemon\n\n\nlibrary(purrr)\nlibrary(mirai)\n\n# Set up parallel processing (6 background processes)\ndaemons(6)\n\n# Sequential version\nmtcars |&gt; map_dbl(\\(x) mean(x))\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb \n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n# Parallel version - just wrap your function with in_parallel()\nmtcars |&gt; map_dbl(in_parallel(\\(x) mean(x)))\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb \n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n# Don't forget to clean up when done\ndaemons(0)"
+    "text": "{purrr}\n\nIntroduced in_paralell() in 2025\nBased on mirai but without the specialised syntax\nNeeds to be explicit on which objects/functions to export to each worker/daemon\n\n\nlibrary(purrr)\nlibrary(mirai)\n\n# Set up parallel processing (6 background processes)\ndaemons(6)\n\n# Sequential version\nmtcars |&gt; map_dbl(\\(x) mean(x))\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb\n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n# Parallel version - just wrap your function with in_parallel()\nmtcars |&gt; map_dbl(in_parallel(\\(x) mean(x)))\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb\n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n# Don't forget to clean up when done\ndaemons(0)"
+  },
+  {
+    "objectID": "EL10.html#targets",
+    "href": "EL10.html#targets",
+    "title": "EL10: Biggish data",
+    "section": "{targets}",
+    "text": "{targets}\n\nThe targets package does implement parallel processing efficiently (based on {mirai} via {crew})\ncovered in the R medecine workshop (see EL5)"
   },
   {
     "objectID": "EL10.html#note",
@@ -1376,7 +1481,7 @@
     "href": "EL9.html#individual-scripts",
     "title": "EL9: Documentation",
     "section": "Individual scripts",
-    "text": "Individual scripts\n\nAs soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.\nThe commentr package is designed to maintain such context\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n###########################################################################\n#                                                                         #\n# Purpose:       My nice script                                           #\n#                                                                         #\n# Author:        Erik Bülow                                               #\n# Contact:       xxx@yyy.zzz                                              #\n# Client:        John Doe                                                 #\n#                                                                         #\n# Code created:  2026-03-16                                               #\n# Last updated:  2026-03-16                                               #\n# Source:        /Users/xbuler/STA220/documentation                       #\n#                                                                         #\n# Comment:       Bla bla bla ...                                          #\n#                                                                         #\n###########################################################################"
+    "text": "Individual scripts\n\nAs soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.\nThe commentr package is designed to maintain such context\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n###########################################################################\n#                                                                         #\n# Purpose:       My nice script                                           #\n#                                                                         #\n# Author:        Erik Bülow                                               #\n# Contact:       xxx@yyy.zzz                                              #\n# Client:        John Doe                                                 #\n#                                                                         #\n# Code created:  2026-03-17                                               #\n# Last updated:  2026-03-17                                               #\n# Source:        /Users/xbuler/STA220/documentation                       #\n#                                                                         #\n# Comment:       Bla bla bla ...                                          #\n#                                                                         #\n###########################################################################"
   },
   {
     "objectID": "EL9.html#documenting-r-functions",
@@ -1467,7 +1572,7 @@
     "href": "EL9.html#inline-code",
     "title": "EL9: Documentation",
     "section": "Inline code",
-    "text": "Inline code\nSometimes we want to insert small pieces of R output directly in the text.\nThis is called inline code.\nInline code will always just show the result of the call (not the code itself in the rendered document):\nTodays date is `r Sys.Date()` and it is `r format(Sys.time(), format = \"%H\")` \n\nTodys date is 2026-03-16 and it is 01 PM\n\nTo higlight with bold and italic:\nTodays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = \"%I %p\")`*\n\nTodays date is 2026-03-16 and it is 01 PM"
+    "text": "Inline code\nSometimes we want to insert small pieces of R output directly in the text.\nThis is called inline code.\nInline code will always just show the result of the call (not the code itself in the rendered document):\nTodays date is `r Sys.Date()` and it is `r format(Sys.time(), format = \"%H\")` \n\nTodys date is 2026-03-17 and it is 03 PM\n\nTo higlight with bold and italic:\nTodays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = \"%I %p\")`*\n\nTodays date is 2026-03-17 and it is 03 PM"
   },
   {
     "objectID": "EL9.html#to-publish",
@@ -2503,7 +2608,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-16."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-17."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -3896,7 +4001,7 @@
     "href": "handouts.html#example-5",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nhnr #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\npmaglk { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nhnr #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\ntmz #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nogshym { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\ntmz #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
   },
   {
     "objectID": "handouts.html#flattening",
@@ -4718,67 +4823,235 @@
     "text": "Biggish data\nOur focus:\n\nOnly tabular data\nOriginal data might fit into physical RAM but …\nmight be multiplied due to temporary necessity\nphysical RAM might be constrained due to other processes/settings\nthings might just take too much time … and life is short …"
   },
   {
-    "objectID": "handouts.html#software",
-    "href": "handouts.html#software",
+    "objectID": "handouts.html#reading-large-datasets",
+    "href": "handouts.html#reading-large-datasets",
     "title": "Handouts",
-    "section": "Software",
-    "text": "Software\n\nSAS for big data files from register holders\nR for everything else\nDatabase?"
+    "section": "Reading large datasets",
+    "text": "Reading large datasets\nWhen working with large datasets, where the data is stored matters.\n\nNetwork storage (e.g. shared drives)\n\nslower data transfer (limited bandwidth)\nhigher latency (delay before data starts loading)\nmultiple users may compete for resources\nrepeated reads can be very inefficient\n\n\n\nLocal storage\n\nmuch faster read/write speeds\nlow latency\nmore stable and predictable performance\nbetter suited for iterative data analysis"
   },
   {
-    "objectID": "handouts.html#file-storage",
-    "href": "handouts.html#file-storage",
+    "objectID": "handouts.html#secure-environment",
+    "href": "handouts.html#secure-environment",
     "title": "Handouts",
-    "section": "File storage",
-    "text": "File storage\n\nAvoid reading big files over ethernet connection\n\ndata stored on network drive\n\nUsually faster to first copy file to local SSD drive\n\nfs::file_copy(path, new_path)\n(“libuv provides a wide variety of cross-platform sync and async file system operations.”)\nobviously only if “local drive” is also in the (same) secure environment\n\nwork with the project on disk\nmove back\nAlthough not always possble with very large files it seems\n\n\n\n\n\n\n\n\n\nStill open?"
+    "section": "Secure environment",
+    "text": "Secure environment\nIn secure environments, both types of storage may look local, but they behave differently.\n\n“Local” disk (e.g. SSD on the server/VM)\n\nattached directly to the machine you are working on\n\nhigh bandwidth, low latency\n\nbehaves like true local storage\n\ntypically much faster for data analysis\n\nMapped network folder\n\naccessed over the network (even if it looks like a normal folder)\n\nlower bandwidth and higher latency\n\nshared with other users\n\nslower, especially for repeated reads\n\n\n💡 Key difference:\nNot where the data is stored, but how it is accessed (direct disk vs network).\n💡 Practical advice:\nUse “local” disk (SSD on the environment) for active analysis, and network storage for long-term storage."
   },
   {
-    "objectID": "handouts.html#altrep",
-    "href": "handouts.html#altrep",
+    "objectID": "handouts.html#practical-implication",
+    "href": "handouts.html#practical-implication",
     "title": "Handouts",
-    "section": "ALTREP",
-    "text": "ALTREP\n\nALTernative REPresentation of R Objects\nSince R version 3.5.0\nApplies to the C-level representation of R objects under the hood\nUsed by some base R packages/functions + specialized packages\n\n\nallow vector data to be in a memory-mapped file; distributed, e.g. within Apache Spark or Hadoop; shared with other applications, e.g. with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments."
+    "section": "Practical implication",
+    "text": "Practical implication\nFor large datasets:\n\navoid repeatedly reading data directly from network drives\ncopy data locally when possible\n\nfs::file_copy(path, new_path)\n(“libuv provides a wide variety of cross-platform sync and async file system operations.”)\nobviously only if “local drive” is also in the (same) secure environment!\n\n\n💡 Key message:\nData access can easily become the main bottleneck — not your code."
   },
   {
-    "objectID": "handouts.html#dates",
-    "href": "handouts.html#dates",
+    "objectID": "handouts.html#hdd-hard-disk-drive",
+    "href": "handouts.html#hdd-hard-disk-drive",
     "title": "Handouts",
-    "section": "Dates",
-    "text": "Dates\n\nUse as.IDate() instead of as.Date() if using {data.table}. Integer based.\nUse {anytime} (or maybe {fasttime}) if conversion is needed (ALTREP)"
+    "section": "HDD (Hard Disk Drive)",
+    "text": "HDD (Hard Disk Drive)\n\nmechanical (spinning disks)\nslower, especially for random access\ntypical speeds:\n\n~50–150 MB/s (sequential read)\n\nlarger capacity at lower cost\noften used in older systems or for backups"
+  },
+  {
+    "objectID": "handouts.html#ssd-solid-state-drive",
+    "href": "handouts.html#ssd-solid-state-drive",
+    "title": "Handouts",
+    "section": "SSD (Solid State Drive)",
+    "text": "SSD (Solid State Drive)\n\nno moving parts\nmuch faster and more reliable\ntypical speeds:\n\n~500 MB/s (SATA SSD)\n~2000–7000 MB/s (NVMe SSD)\n\nstandard in most modern laptops"
+  },
+  {
+    "objectID": "handouts.html#typical-sizes",
+    "href": "handouts.html#typical-sizes",
+    "title": "Handouts",
+    "section": "Typical sizes",
+    "text": "Typical sizes\n\nlaptops: 256 GB – 1 TB SSD\ndesktops / servers: 1–4 TB SSD + optional HDD storage\nnetwork drives: often very large but slower"
+  },
+  {
+    "objectID": "handouts.html#ram-and-data-analysis-in-r",
+    "href": "handouts.html#ram-and-data-analysis-in-r",
+    "title": "Handouts",
+    "section": "RAM and data analysis in R",
+    "text": "RAM and data analysis in R\nWhen working in R, available RAM (memory) is often the main limiting factor.\n\nR can typically use most of the available RAM on your machine\nsome memory is needed by:\n\nthe operating system\nother applications\n\na safe rule of thumb is to assume ~50–75% of total RAM is available for R"
+  },
+  {
+    "objectID": "handouts.html#how-large-datasets-can-you-work-with",
+    "href": "handouts.html#how-large-datasets-can-you-work-with",
+    "title": "Handouts",
+    "section": "How large datasets can you work with?",
+    "text": "How large datasets can you work with?\n\ndatasets must fit in memory (unless using special tools)\nbut you also need memory for:\n\nintermediate objects\ncopies created during transformations\nmodel objects\n\nmany R operations create temporary copies of data\nmemory usage can double or triple during processing\nrunning out of RAM leads to:\n\nslow performance\ncrashes"
+  },
+  {
+    "objectID": "handouts.html#example-7",
+    "href": "handouts.html#example-7",
+    "title": "Handouts",
+    "section": "Example",
+    "text": "Example\nIf you have:\n\n\n\n\n\n\nTip\n\n\n\nRule of thumb: you can usually work comfortably with data that is at most ~1/3 to 1/2 of your available RAM\n\n\n\n16 GB RAM → usable ≈ 8–12 GB\n→ practical dataset size ≈ 3–6 GB\n\nModern R is 64-bit → can use large amounts of memory\n\n(32-bit R was limited to ~4 GB — mostly obsolete today)"
+  },
+  {
+    "objectID": "handouts.html#practical-advice",
+    "href": "handouts.html#practical-advice",
+    "title": "Handouts",
+    "section": "Practical advice",
+    "text": "Practical advice\n\ncheck memory: ps::ps_system_memory()\navoid unnecessary copies of large objects\n\nUse {data.table} for reference semantics\nor Parquet files to read only the necessary data\n\nconsider pipelines (targets) or chunked processing"
+  },
+  {
+    "objectID": "handouts.html#numeric-vs-integer-in-r",
+    "href": "handouts.html#numeric-vs-integer-in-r",
+    "title": "Handouts",
+    "section": "Numeric vs integer in R",
+    "text": "Numeric vs integer in R\nR’s default numeric type is double precision (numeric).\nx &lt;- 1\ntypeof(1) # \"double\"\ntypeof(1L) # weird syntax to get \"integer\"\n\nWhy this matters\n\nintegers use less memory (4 bytes vs 8 bytes)\n\ncan be important for large datasets\n\n100 million values:\n\nnumeric ≈ 800 MB\n\ninteger ≈ 400 MB\n\n\n\n\n\nIn practice\n\nR often converts to numeric automatically\n\nsome tools (e.g. data.table) use integers efficiently\n\ncompare as.IDate() vs as.Date()\n\nuseful when working with:\n\nIDs\n\ncategories\n\ncounts\n\n\n💡 Key message:\nChoosing the right data type can significantly reduce memory usage."
+  },
+  {
+    "objectID": "handouts.html#altrep-alternative-representation",
+    "href": "handouts.html#altrep-alternative-representation",
+    "title": "Handouts",
+    "section": "ALTREP (Alternative Representation)",
+    "text": "ALTREP (Alternative Representation)\nR can represent some objects in a compact or lazy way.\n\nintroduced in R 3.5.0\n\navoids allocating full memory immediately\n\n#| echo: true\nx &lt;- 1:1e9\nobject.size(x)\n→ much smaller than expected"
+  },
+  {
+    "objectID": "handouts.html#what-happens",
+    "href": "handouts.html#what-happens",
+    "title": "Handouts",
+    "section": "What happens?",
+    "text": "What happens?\n\ndata is generated on demand\n\nnot all values are stored in memory\n\n💡 Key message:\nNot all objects in R are fully materialised — some are computed when needed."
+  },
+  {
+    "objectID": "handouts.html#other-memory-optimisations-in-r",
+    "href": "handouts.html#other-memory-optimisations-in-r",
+    "title": "Handouts",
+    "section": "Other memory optimisations in R",
+    "text": "Other memory optimisations in R\nR uses several mechanisms to reduce memory usage (not only ALTREP).\n\nShared strings (string interning)\n\nidentical strings may be stored only once\n\nreduces memory when many values are repeated"
+  },
+  {
+    "objectID": "handouts.html#but-memory-still-fills-up",
+    "href": "handouts.html#but-memory-still-fills-up",
+    "title": "Handouts",
+    "section": "But memory still fills up…",
+    "text": "But memory still fills up…\nEven with smart representations:\n\nmany operations still create real objects\n\ntemporary objects accumulate\n\n👉 R still needs to free memory"
+  },
+  {
+    "objectID": "handouts.html#garbage-collection",
+    "href": "handouts.html#garbage-collection",
+    "title": "Handouts",
+    "section": "Garbage collection",
+    "text": "Garbage collection\nWhen you work in R, memory is constantly used for intermediate objects.\n\nmany operations create temporary results\n\nthese objects are no longer needed after a step is completed\n\nbut R does not always remove them immediately"
+  },
+  {
+    "objectID": "handouts.html#what-is-the-problem",
+    "href": "handouts.html#what-is-the-problem",
+    "title": "Handouts",
+    "section": "What is the problem?",
+    "text": "What is the problem?\n\nmemory can fill up with objects that are no longer used\n\nthere are no active references (“pointers”) to these objects\n\nbut they still occupy memory"
+  },
+  {
+    "objectID": "handouts.html#solution-garbage-collection",
+    "href": "handouts.html#solution-garbage-collection",
+    "title": "Handouts",
+    "section": "Solution: garbage collection",
+    "text": "Solution: garbage collection\n\nR periodically identifies objects that are no longer reachable\n\nthese are removed, and memory is freed\n\nGC is triggered when R needs more memory\n\nmay cause short pauses during execution"
+  },
+  {
+    "objectID": "handouts.html#practical-advice-1",
+    "href": "handouts.html#practical-advice-1",
+    "title": "Handouts",
+    "section": "Practical advice",
+    "text": "Practical advice\nrm(large_object) # Remove objects you no longer need\ngc() # manual garbage collection\ndt[, new := f(old)] # eference semantics by `{data.table}`\n💡 Key message:\nYou rarely need to manage memory explicitly — but inefficient code can still use too much of it."
+  },
+  {
+    "objectID": "handouts.html#unnecassary-computations-for-large-objects",
+    "href": "handouts.html#unnecassary-computations-for-large-objects",
+    "title": "Handouts",
+    "section": "Unnecassary computations for large objects",
+    "text": "Unnecassary computations for large objects\n\nSometimes R (or the computer hardware) is not the problem, but the IDE might be.\nCommon for RStudio (RSTudio and R both run in the same process)\n\nMemory problems might make RSTudio crash\n\nPositron separates the R process from the IDE\n\nBetter, but still not perfect\n\n\n\nStill open?"
+  },
+  {
+    "objectID": "handouts.html#cpu",
+    "href": "handouts.html#cpu",
+    "title": "Handouts",
+    "section": "CPU",
+    "text": "CPU\nThe Central Processing Unit (CPU) determines how fast computations are performed.\n\nCPUs work in clock cycles (e.g. 3 GHz ≈ 3 billion cycles per second)\n\nCPU matters most when:\n\nrunning models (e.g. regression, mixed models)\n\nperforming simulations\n\nusing loops or inefficient code\n\n\nCPU matters less when:\n\nreading data (disk/network bottleneck)\n\nworking with very large objects (RAM bottleneck)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWriting efficient code (vectorisation) often matters more than CPU speed!"
+  },
+  {
+    "objectID": "handouts.html#how-r-uses-the-cpu",
+    "href": "handouts.html#how-r-uses-the-cpu",
+    "title": "Handouts",
+    "section": "How R uses the CPU",
+    "text": "How R uses the CPU\n\nR is often single-threaded\n\nmany operations use only one core\n\nsome libraries can use multiple cores (parallel computing)\n\nHow many cores do you have?\n#| echo: true\nbenchmarkme::get_cpu()"
+  },
+  {
+    "objectID": "handouts.html#vectorization-in-r",
+    "href": "handouts.html#vectorization-in-r",
+    "title": "Handouts",
+    "section": "Vectorization in R",
+    "text": "Vectorization in R\n\nR is designed to work efficiently with vectors, not loops.\nIn R, what looks like a scalar is actually a vector of length 1\nvectorized operations apply to whole objects at once\n\nloops process one element at a time (often slower)\n\n## slow\nresult &lt;- numeric(length(x))\nfor (i in seq_along(x)) {\n  result[i] &lt;- x[i] + y[i]\n}\n\n## fast\nresult &lt;- x + y"
+  },
+  {
+    "objectID": "handouts.html#why-is-vectorization-faster",
+    "href": "handouts.html#why-is-vectorization-faster",
+    "title": "Handouts",
+    "section": "Why is vectorization faster?",
+    "text": "Why is vectorization faster?\nVectorized operations in R are usually implemented in compiled C code.\n\nR code (e.g. for loops) is interpreted → each step has overhead\nvectorized operations (e.g. x + y) are:\n\nimplemented in C\n\nrun as tight, optimized loops"
+  },
+  {
+    "objectID": "handouts.html#parallel-computing",
+    "href": "handouts.html#parallel-computing",
+    "title": "Handouts",
+    "section": "Parallel computing",
+    "text": "Parallel computing\nParallel computing means using multiple CPU cores at the same time.\n\nmost R code runs on a single core\n\nyour computer may have many cores (e.g. 4–16)\na shared server such as TRE might have several hundreds!\n\n\nWhy use parallel computing?\n\nto speed up computationally intensive tasks\n\nespecially when tasks can be done independently\n\n💡 Key message:\nParallel computing allows you to do multiple computations at once — but only if the problem can be split."
   },
   {
     "objectID": "handouts.html#paralellization",
     "href": "handouts.html#paralellization",
     "title": "Handouts",
     "section": "Paralellization",
-    "text": "Paralellization"
+    "text": "Paralellization\n\nSome packages and functions may use multithreading by default\n\nBut this is unusual\n\nSome functions might have arguments such as nthreads, ncores etc\n\nYou may want to use them\n\nTo handle multicore/thread computations in general can be (very) difficult (I’ve heard)"
   },
   {
-    "objectID": "handouts.html#paralellization-1",
-    "href": "handouts.html#paralellization-1",
+    "objectID": "handouts.html#split-apply-combine",
+    "href": "handouts.html#split-apply-combine",
     "title": "Handouts",
-    "section": "Paralellization",
-    "text": "Paralellization\n\nR is single threaded by default\nSome packages and functions may use multithreading by default\nSome functions might have arguments such as nthreads, ncores etc\nTo handle multicore/thread computations can be (very) difficult (I’ve heard)\nEasy if data can be divided and conquered (split-apply-combine)\n{futureverse} is my favorite (Henrik Bengtsson)\n\n{furrr} is a a drop-in replacement for {purrr}"
+    "section": "Split-apply-combine",
+    "text": "Split-apply-combine\nParallel computing works best when:\n\ntasks are independent\ntasks are computationally heavy\ntasks can be repeated many times\n\n\nExamples\n\nsimulations\n\nbootstrapping\n\ncross-validation\n\napplying a function many times\n\n💡 If tasks depend on each other, parallelisation will not help."
   },
   {
-    "objectID": "handouts.html#furrr",
-    "href": "handouts.html#furrr",
+    "objectID": "handouts.html#when-parallel-computing-does-not-help",
+    "href": "handouts.html#when-parallel-computing-does-not-help",
     "title": "Handouts",
-    "section": "{furrr}",
-    "text": "{furrr}\n#| echo: true\n## How many cores do we have?\nparallel::detectCores()\nlibrary(furrr)\n## Save at least one for OS etc\nplan(multisession, workers = parallel::detectCores() - 1)\n\n1:10 |&gt;\n  future_map(rnorm, n = 10, .options = furrr_options(seed = 123)) |&gt;\n  future_map_dbl(mean)"
+    "section": "When parallel computing does NOT help",
+    "text": "When parallel computing does NOT help\nParallel computing is often not the solution.\n\nreading data → bottleneck is disk/network\n\nlarge objects → bottleneck is RAM\n\ninefficient code → vectorization is better"
+  },
+  {
+    "objectID": "handouts.html#example-in-r",
+    "href": "handouts.html#example-in-r",
+    "title": "Handouts",
+    "section": "Example in R",
+    "text": "Example in R\nlapply(1:100, function(i) slow_function(i)) # Sequential\nparallel::mclapply(1:100, slow_function, mc.cores = 4) # Parallel\n\nWhat happens?\n\neach core processes part of the work\n\nresults are combined at the end\n\n💡 More cores ≠ always faster"
+  },
+  {
+    "objectID": "handouts.html#limitations-of-parallel-computing",
+    "href": "handouts.html#limitations-of-parallel-computing",
+    "title": "Handouts",
+    "section": "Limitations of parallel computing",
+    "text": "Limitations of parallel computing\n\noverhead (starting processes takes time)\n\ncopying data between processes\n\nlimited by number of cores\n\nnot all functions are parallel-friendly"
   },
   {
     "objectID": "handouts.html#mirai",
     "href": "handouts.html#mirai",
     "title": "Handouts",
     "section": "{mirai}",
-    "text": "{mirai}\n\nSuposed to be up to 1,000 times “faster” compared to {furrr} (according to some metric …)\nshould not block the main process while executing (haven’t tried)\n\n\nDesigned for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.\n\n#| eval: false\n#| echo: true\n\nlibrary(mirai)\nlibrary(data.table)\ndaemons(11)\n\n## data.table with 1 billion rows:\ndt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))\n## row sums (row wise )\nmirai_map(dt, sum)[.flat]"
+    "text": "{mirai}\n\nSuposed to be up to 1,000 times “faster” compared to earlier methods\n\n(according to some metric …)\n\nshould not block the main process while executing (haven’t tried)\n\n\nDesigned for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.\n\n#| eval: false\n#| echo: true\n\nlibrary(mirai)\nlibrary(data.table)\ndaemons(11)\n\n## data.table with 1 billion rows:\ndt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))\n## row sums (row wise )\nmirai_map(dt, sum)[.flat]"
   },
   {
     "objectID": "handouts.html#purrr",
     "href": "handouts.html#purrr",
     "title": "Handouts",
     "section": "{purrr}",
-    "text": "{purrr}\n\nIntroduced in_paralell() in 2025\nBased on mirai but without the specialised syntax\nNeeds to be explicit on which objects/functions to export to each worker/daemon\n\n#| echo: true\nlibrary(purrr)\nlibrary(mirai)\n\n## Set up parallel processing (6 background processes)\ndaemons(6)\n\n## Sequential version\nmtcars |&gt; map_dbl(\\(x) mean(x))\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb \n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n## Parallel version - just wrap your function with in_parallel()\nmtcars |&gt; map_dbl(in_parallel(\\(x) mean(x)))\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb \n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n## Don't forget to clean up when done\ndaemons(0)"
+    "text": "{purrr}\n\nIntroduced in_paralell() in 2025\nBased on mirai but without the specialised syntax\nNeeds to be explicit on which objects/functions to export to each worker/daemon\n\n#| echo: true\nlibrary(purrr)\nlibrary(mirai)\n\n## Set up parallel processing (6 background processes)\ndaemons(6)\n\n## Sequential version\nmtcars |&gt; map_dbl(\\(x) mean(x))\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb\n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n## Parallel version - just wrap your function with in_parallel()\nmtcars |&gt; map_dbl(in_parallel(\\(x) mean(x)))\n#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb\n#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81\n\n## Don't forget to clean up when done\ndaemons(0)"
+  },
+  {
+    "objectID": "handouts.html#targets-1",
+    "href": "handouts.html#targets-1",
+    "title": "Handouts",
+    "section": "{targets}",
+    "text": "{targets}\n\nThe targets package does implement parallel processing efficiently (based on {mirai} via {crew})\ncovered in the R medecine workshop (see EL5)"
   },
   {
     "objectID": "handouts.html#note",

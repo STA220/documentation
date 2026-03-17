@@ -703,15 +703,56 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big data</a></li>
   <li><a href="#biggish-data" id="toc-biggish-data" class="nav-link" data-scroll-target="#biggish-data">Biggish data</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
-  <li><a href="#file-storage" id="toc-file-storage" class="nav-link" data-scroll-target="#file-storage">File storage</a></li>
-  <li><a href="#altrep" id="toc-altrep" class="nav-link" data-scroll-target="#altrep"><code>ALTREP</code></a></li>
-  <li><a href="#dates" id="toc-dates" class="nav-link" data-scroll-target="#dates">Dates</a></li>
+  <li><a href="#reading-large-datasets" id="toc-reading-large-datasets" class="nav-link" data-scroll-target="#reading-large-datasets">Reading large datasets</a>
+  <ul class="collapse">
+  <li><a href="#network-storage-e.g.-shared-drives" id="toc-network-storage-e.g.-shared-drives" class="nav-link" data-scroll-target="#network-storage-e.g.-shared-drives">Network storage (e.g.&nbsp;shared drives)</a></li>
+  <li><a href="#local-storage" id="toc-local-storage" class="nav-link" data-scroll-target="#local-storage">Local storage</a></li>
+  </ul></li>
+  <li><a href="#secure-environment" id="toc-secure-environment" class="nav-link" data-scroll-target="#secure-environment">Secure environment</a></li>
+  <li><a href="#practical-implication" id="toc-practical-implication" class="nav-link" data-scroll-target="#practical-implication">Practical implication</a></li>
+  <li><a href="#hdd-hard-disk-drive" id="toc-hdd-hard-disk-drive" class="nav-link" data-scroll-target="#hdd-hard-disk-drive">HDD (Hard Disk Drive)</a></li>
+  <li><a href="#ssd-solid-state-drive" id="toc-ssd-solid-state-drive" class="nav-link" data-scroll-target="#ssd-solid-state-drive">SSD (Solid State Drive)</a></li>
+  <li><a href="#typical-sizes" id="toc-typical-sizes" class="nav-link" data-scroll-target="#typical-sizes">Typical sizes</a></li>
+  <li><a href="#ram-and-data-analysis-in-r" id="toc-ram-and-data-analysis-in-r" class="nav-link" data-scroll-target="#ram-and-data-analysis-in-r">RAM and data analysis in R</a></li>
+  <li><a href="#how-large-datasets-can-you-work-with" id="toc-how-large-datasets-can-you-work-with" class="nav-link" data-scroll-target="#how-large-datasets-can-you-work-with">How large datasets can you work with?</a></li>
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
+  <li><a href="#practical-advice" id="toc-practical-advice" class="nav-link" data-scroll-target="#practical-advice">Practical advice</a></li>
+  <li><a href="#numeric-vs-integer-in-r" id="toc-numeric-vs-integer-in-r" class="nav-link" data-scroll-target="#numeric-vs-integer-in-r">Numeric vs integer in R</a>
+  <ul class="collapse">
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
+  <li><a href="#in-practice-1" id="toc-in-practice-1" class="nav-link" data-scroll-target="#in-practice-1">In practice</a></li>
+  </ul></li>
+  <li><a href="#altrep-alternative-representation" id="toc-altrep-alternative-representation" class="nav-link" data-scroll-target="#altrep-alternative-representation">ALTREP (Alternative Representation)</a></li>
+  <li><a href="#what-happens" id="toc-what-happens" class="nav-link" data-scroll-target="#what-happens">What happens?</a></li>
+  <li><a href="#other-memory-optimisations-in-r" id="toc-other-memory-optimisations-in-r" class="nav-link" data-scroll-target="#other-memory-optimisations-in-r">Other memory optimisations in R</a></li>
+  <li><a href="#but-memory-still-fills-up" id="toc-but-memory-still-fills-up" class="nav-link" data-scroll-target="#but-memory-still-fills-up">But memory still fills up…</a></li>
+  <li><a href="#garbage-collection" id="toc-garbage-collection" class="nav-link" data-scroll-target="#garbage-collection">Garbage collection</a></li>
+  <li><a href="#what-is-the-problem" id="toc-what-is-the-problem" class="nav-link" data-scroll-target="#what-is-the-problem">What is the problem?</a></li>
+  <li><a href="#solution-garbage-collection" id="toc-solution-garbage-collection" class="nav-link" data-scroll-target="#solution-garbage-collection">Solution: garbage collection</a></li>
+  <li><a href="#practical-advice-1" id="toc-practical-advice-1" class="nav-link" data-scroll-target="#practical-advice-1">Practical advice</a></li>
+  <li><a href="#unnecassary-computations-for-large-objects" id="toc-unnecassary-computations-for-large-objects" class="nav-link" data-scroll-target="#unnecassary-computations-for-large-objects">Unnecassary computations for large objects</a></li>
+  <li><a href="#cpu" id="toc-cpu" class="nav-link" data-scroll-target="#cpu">CPU</a></li>
+  <li><a href="#how-r-uses-the-cpu" id="toc-how-r-uses-the-cpu" class="nav-link" data-scroll-target="#how-r-uses-the-cpu">How R uses the CPU</a></li>
+  <li><a href="#vectorization-in-r" id="toc-vectorization-in-r" class="nav-link" data-scroll-target="#vectorization-in-r">Vectorization in R</a></li>
+  <li><a href="#why-is-vectorization-faster" id="toc-why-is-vectorization-faster" class="nav-link" data-scroll-target="#why-is-vectorization-faster">Why is vectorization faster?</a></li>
+  <li><a href="#parallel-computing" id="toc-parallel-computing" class="nav-link" data-scroll-target="#parallel-computing">Parallel computing</a>
+  <ul class="collapse">
+  <li><a href="#why-use-parallel-computing" id="toc-why-use-parallel-computing" class="nav-link" data-scroll-target="#why-use-parallel-computing">Why use parallel computing?</a></li>
+  </ul></li>
   <li><a href="#paralellization" id="toc-paralellization" class="nav-link" data-scroll-target="#paralellization">Paralellization</a></li>
-  <li><a href="#paralellization-1" id="toc-paralellization-1" class="nav-link" data-scroll-target="#paralellization-1">Paralellization</a></li>
-  <li><a href="#furrr" id="toc-furrr" class="nav-link" data-scroll-target="#furrr"><code>{furrr}</code></a></li>
+  <li><a href="#split-apply-combine" id="toc-split-apply-combine" class="nav-link" data-scroll-target="#split-apply-combine">Split-apply-combine</a>
+  <ul class="collapse">
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3">Examples</a></li>
+  </ul></li>
+  <li><a href="#when-parallel-computing-does-not-help" id="toc-when-parallel-computing-does-not-help" class="nav-link" data-scroll-target="#when-parallel-computing-does-not-help">When parallel computing does NOT help</a></li>
+  <li><a href="#example-in-r" id="toc-example-in-r" class="nav-link" data-scroll-target="#example-in-r">Example in R</a>
+  <ul class="collapse">
+  <li><a href="#what-happens-1" id="toc-what-happens-1" class="nav-link" data-scroll-target="#what-happens-1">What happens?</a></li>
+  </ul></li>
+  <li><a href="#limitations-of-parallel-computing" id="toc-limitations-of-parallel-computing" class="nav-link" data-scroll-target="#limitations-of-parallel-computing">Limitations of parallel computing</a></li>
   <li><a href="#mirai" id="toc-mirai" class="nav-link" data-scroll-target="#mirai">{mirai}</a></li>
   <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr">{purrr}</a></li>
+  <li><a href="#targets-1" id="toc-targets-1" class="nav-link" data-scroll-target="#targets-1"><code>{targets}</code></a></li>
   <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note">Note</a></li>
   <li><a href="#profiling" id="toc-profiling" class="nav-link" data-scroll-target="#profiling">Profiling</a></li>
   <li><a href="#modify-packages" id="toc-modify-packages" class="nav-link" data-scroll-target="#modify-packages">Modify packages</a></li>
@@ -764,28 +805,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-03-16</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-03-17</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="hgmowpyubk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hgmowpyubk table {
+<div id="qarqyqdlja" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qarqyqdlja table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hgmowpyubk thead, #hgmowpyubk tbody, #hgmowpyubk tfoot, #hgmowpyubk tr, #hgmowpyubk td, #hgmowpyubk th {
+#qarqyqdlja thead, #qarqyqdlja tbody, #qarqyqdlja tfoot, #qarqyqdlja tr, #qarqyqdlja td, #qarqyqdlja th {
   border-style: none;
 }
 
-#hgmowpyubk p {
+#qarqyqdlja p {
   margin: 0;
   padding: 0;
 }
 
-#hgmowpyubk .gt_table {
+#qarqyqdlja .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -811,12 +852,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_caption {
+#qarqyqdlja .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hgmowpyubk .gt_title {
+#qarqyqdlja .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -828,7 +869,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#hgmowpyubk .gt_subtitle {
+#qarqyqdlja .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -840,7 +881,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#hgmowpyubk .gt_heading {
+#qarqyqdlja .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -852,13 +893,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_bottom_border {
+#qarqyqdlja .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_col_headings {
+#qarqyqdlja .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -873,7 +914,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_col_heading {
+#qarqyqdlja .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -893,7 +934,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#hgmowpyubk .gt_column_spanner_outer {
+#qarqyqdlja .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -905,15 +946,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#hgmowpyubk .gt_column_spanner_outer:first-child {
+#qarqyqdlja .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hgmowpyubk .gt_column_spanner_outer:last-child {
+#qarqyqdlja .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hgmowpyubk .gt_column_spanner {
+#qarqyqdlja .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -925,11 +966,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#hgmowpyubk .gt_spanner_row {
+#qarqyqdlja .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hgmowpyubk .gt_group_heading {
+#qarqyqdlja .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -955,7 +996,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#hgmowpyubk .gt_empty_group_heading {
+#qarqyqdlja .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -970,15 +1011,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#hgmowpyubk .gt_from_md > :first-child {
+#qarqyqdlja .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hgmowpyubk .gt_from_md > :last-child {
+#qarqyqdlja .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hgmowpyubk .gt_row {
+#qarqyqdlja .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -997,7 +1038,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#hgmowpyubk .gt_stub {
+#qarqyqdlja .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1010,7 +1051,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hgmowpyubk .gt_stub_row_group {
+#qarqyqdlja .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1024,15 +1065,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#hgmowpyubk .gt_row_group_first td {
+#qarqyqdlja .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hgmowpyubk .gt_row_group_first th {
+#qarqyqdlja .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hgmowpyubk .gt_summary_row {
+#qarqyqdlja .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1042,16 +1083,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hgmowpyubk .gt_first_summary_row {
+#qarqyqdlja .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_first_summary_row.thick {
+#qarqyqdlja .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hgmowpyubk .gt_last_summary_row {
+#qarqyqdlja .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1061,7 +1102,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_grand_summary_row {
+#qarqyqdlja .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1071,7 +1112,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hgmowpyubk .gt_first_grand_summary_row {
+#qarqyqdlja .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1081,7 +1122,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_last_grand_summary_row_top {
+#qarqyqdlja .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1091,11 +1132,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_striped {
+#qarqyqdlja .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hgmowpyubk .gt_table_body {
+#qarqyqdlja .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1104,7 +1145,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_footnotes {
+#qarqyqdlja .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1118,7 +1159,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_footnote {
+#qarqyqdlja .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1127,7 +1168,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hgmowpyubk .gt_sourcenotes {
+#qarqyqdlja .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1141,7 +1182,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hgmowpyubk .gt_sourcenote {
+#qarqyqdlja .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1149,72 +1190,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hgmowpyubk .gt_left {
+#qarqyqdlja .gt_left {
   text-align: left;
 }
 
-#hgmowpyubk .gt_center {
+#qarqyqdlja .gt_center {
   text-align: center;
 }
 
-#hgmowpyubk .gt_right {
+#qarqyqdlja .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hgmowpyubk .gt_font_normal {
+#qarqyqdlja .gt_font_normal {
   font-weight: normal;
 }
 
-#hgmowpyubk .gt_font_bold {
+#qarqyqdlja .gt_font_bold {
   font-weight: bold;
 }
 
-#hgmowpyubk .gt_font_italic {
+#qarqyqdlja .gt_font_italic {
   font-style: italic;
 }
 
-#hgmowpyubk .gt_super {
+#qarqyqdlja .gt_super {
   font-size: 65%;
 }
 
-#hgmowpyubk .gt_footnote_marks {
+#qarqyqdlja .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hgmowpyubk .gt_asterisk {
+#qarqyqdlja .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hgmowpyubk .gt_indent_1 {
+#qarqyqdlja .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hgmowpyubk .gt_indent_2 {
+#qarqyqdlja .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hgmowpyubk .gt_indent_3 {
+#qarqyqdlja .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hgmowpyubk .gt_indent_4 {
+#qarqyqdlja .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hgmowpyubk .gt_indent_5 {
+#qarqyqdlja .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hgmowpyubk .katex-display {
+#qarqyqdlja .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hgmowpyubk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qarqyqdlja div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4475,7 +4516,7 @@ gg &lt;- bef_ag |&gt;
 </colgroup>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>hnr #| echo: false gg</code></td>
+<td style="text-align: left;"><code>tmz #| echo: false gg</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">## Hierachical data</td>
@@ -4484,13 +4525,13 @@ gg &lt;- bef_ag |&gt;
 <td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>pmaglk { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+<td style="text-align: left;"><code>ogshym { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">## Example</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>hnr #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
+<td style="text-align: left;"><code>tmz #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
 </tr>
 </tbody>
 </table>
@@ -6971,6 +7012,19 @@ positron test_targets_quarto
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Examination
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lecture will not be examined. You are encouraged to experiment with the concepts in your project work if you find them useful, but this is not required.</p>
+</div>
+</div>
 <section id="big-data" class="level2">
 <h2 class="anchored" data-anchor-id="big-data">Big data</h2>
 <p><img src="images/bigdata/paste-1.png" class="img-fluid"></p>
@@ -6985,101 +7039,516 @@ positron test_targets_quarto
 <li>physical RAM might be constrained due to other processes/settings</li>
 <li>things might just take too much time … and life is short …</li>
 </ul>
+<hr>
+<p><img src="images/paste-48.png" class="img-fluid"></p>
 </section>
-<section id="software" class="level2">
-<h2 class="anchored" data-anchor-id="software">Software</h2>
+<section id="reading-large-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="reading-large-datasets">Reading large datasets</h2>
+<p>When working with large datasets, where the data is stored matters.</p>
+<section id="network-storage-e.g.-shared-drives" class="level3">
+<h3 class="anchored" data-anchor-id="network-storage-e.g.-shared-drives">Network storage (e.g.&nbsp;shared drives)</h3>
 <ul>
-<li>SAS for big data files from register holders</li>
-<li>R for everything else</li>
-<li>Database?</li>
+<li>slower data transfer (limited bandwidth)</li>
+<li>higher latency (delay before data starts loading)</li>
+<li>multiple users may compete for resources</li>
+<li>repeated reads can be very inefficient</li>
 </ul>
 </section>
-<section id="file-storage" class="level2">
-<h2 class="anchored" data-anchor-id="file-storage">File storage</h2>
+<section id="local-storage" class="level3">
+<h3 class="anchored" data-anchor-id="local-storage">Local storage</h3>
 <ul>
-<li>Avoid reading big files over ethernet connection
-<ul>
-<li>data stored on network drive</li>
-</ul></li>
-<li>Usually faster to first copy file to local SSD drive
-<ul>
-<li><code>fs::file_copy(path, new_path)</code></li>
-<li>(<em>“libuv provides a wide variety of cross-platform sync and async file system operations.”</em>)</li>
-<li>obviously only if “local drive” is also in the (same) secure environment</li>
-</ul></li>
-<li>work with the project on disk</li>
-<li>move back</li>
-<li>Although not always possble with very large files it seems</li>
+<li>much faster read/write speeds</li>
+<li>low latency</li>
+<li>more stable and predictable performance</li>
+<li>better suited for iterative data analysis</li>
 </ul>
 <hr>
 <p><img src="images/bigdata/paste-6.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="secure-environment" class="level2">
+<h2 class="anchored" data-anchor-id="secure-environment">Secure environment</h2>
+<p>In secure environments, both types of storage may <em>look local</em>, but they behave differently.</p>
+<ul>
+<li><strong>“Local” disk (e.g.&nbsp;SSD on the server/VM)</strong>
+<ul>
+<li>attached directly to the machine you are working on<br>
+</li>
+<li>high bandwidth, low latency<br>
+</li>
+<li>behaves like true local storage<br>
+</li>
+<li>typically much faster for data analysis</li>
+</ul></li>
+<li><strong>Mapped network folder</strong>
+<ul>
+<li>accessed over the network (even if it looks like a normal folder)<br>
+</li>
+<li>lower bandwidth and higher latency<br>
+</li>
+<li>shared with other users<br>
+</li>
+<li>slower, especially for repeated reads</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key difference:</strong><br>
+Not where the data is stored, but <strong>how it is accessed</strong> (direct disk vs network).</p>
+<p>💡 <strong>Practical advice:</strong><br>
+Use “local” disk (SSD on the environment) for active analysis, and network storage for long-term storage.</p>
 <hr>
 <p><img src="images/bigdata/paste-8.png" class="img-fluid"></p>
+</section>
+<section id="practical-implication" class="level2">
+<h2 class="anchored" data-anchor-id="practical-implication">Practical implication</h2>
+<p>For large datasets:</p>
+<ul>
+<li>avoid repeatedly reading data directly from network drives</li>
+<li>copy data locally when possible
+<ul>
+<li><code>fs::file_copy(path, new_path)</code></li>
+<li>(<em>“libuv provides a wide variety of cross-platform sync and async file system operations.”</em>)</li>
+<li>obviously only if “local drive” is also in the (same) secure environment!</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Data access can easily become the main bottleneck — not your code.</p>
 <hr>
 <p><img src="images/bigdata/paste-7.png" class="img-fluid"></p>
+</section>
+<section id="hdd-hard-disk-drive" class="level2">
+<h2 class="anchored" data-anchor-id="hdd-hard-disk-drive">HDD (Hard Disk Drive)</h2>
+<ul>
+<li>mechanical (spinning disks)</li>
+<li>slower, especially for random access</li>
+<li>typical speeds:
+<ul>
+<li>~50–150 MB/s (sequential read)</li>
+</ul></li>
+<li>larger capacity at lower cost</li>
+<li>often used in older systems or for backups</li>
+</ul>
+</section>
+<section id="ssd-solid-state-drive" class="level2">
+<h2 class="anchored" data-anchor-id="ssd-solid-state-drive">SSD (Solid State Drive)</h2>
+<ul>
+<li>no moving parts</li>
+<li>much faster and more reliable</li>
+<li>typical speeds:
+<ul>
+<li>~500 MB/s (SATA SSD)</li>
+<li>~2000–7000 MB/s (NVMe SSD)</li>
+</ul></li>
+<li>standard in most modern laptops</li>
+</ul>
+</section>
+<section id="typical-sizes" class="level2">
+<h2 class="anchored" data-anchor-id="typical-sizes">Typical sizes</h2>
+<ul>
+<li>laptops: <strong>256 GB – 1 TB SSD</strong></li>
+<li>desktops / servers: <strong>1–4 TB SSD + optional HDD storage</strong></li>
+<li>network drives: often very large but slower</li>
+</ul>
+</section>
+<section id="ram-and-data-analysis-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="ram-and-data-analysis-in-r">RAM and data analysis in R</h2>
+<p>When working in R, available <strong>RAM (memory)</strong> is often the main limiting factor.</p>
+<ul>
+<li>R can typically use <strong>most of the available RAM</strong> on your machine</li>
+<li>some memory is needed by:
+<ul>
+<li>the operating system</li>
+<li>other applications</li>
+</ul></li>
+<li>a safe rule of thumb is to assume <strong>~50–75% of total RAM</strong> is available for R</li>
+</ul>
+</section>
+<section id="how-large-datasets-can-you-work-with" class="level2">
+<h2 class="anchored" data-anchor-id="how-large-datasets-can-you-work-with">How large datasets can you work with?</h2>
+<ul>
+<li>datasets must fit <strong>in memory</strong> (unless using special tools)</li>
+<li>but you also need memory for:
+<ul>
+<li>intermediate objects</li>
+<li>copies created during transformations</li>
+<li>model objects</li>
+</ul></li>
+<li>many R operations create <strong>temporary copies of data</strong></li>
+<li>memory usage can <strong>double or triple</strong> during processing</li>
+<li>running out of RAM leads to:
+<ul>
+<li>slow performance</li>
+<li>crashes</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-7" class="level2">
+<h2 class="anchored" data-anchor-id="example-7">Example</h2>
+<p>If you have:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Rule of thumb: you can usually work comfortably with data that is <strong>at most ~1/3 to 1/2 of your available RAM</strong></p>
+</div>
+</div>
+<ul>
+<li><strong>16 GB RAM</strong> → usable ≈ 8–12 GB<br>
+→ practical dataset size ≈ 3–6 GB<br>
+</li>
+<li>Modern R is <strong>64-bit</strong> → can use large amounts of memory
+<ul>
+<li>(32-bit R was limited to ~4 GB — mostly obsolete today)</li>
+</ul></li>
+</ul>
+</section>
+<section id="practical-advice" class="level2">
+<h2 class="anchored" data-anchor-id="practical-advice">Practical advice</h2>
+<ul>
+<li>check memory: <code>ps::ps_system_memory()</code></li>
+<li>avoid unnecessary copies of large objects
+<ul>
+<li>Use <code>{data.table}</code> for reference semantics</li>
+<li>or Parquet files to read only the necessary data</li>
+</ul></li>
+<li>consider pipelines (<code>targets</code>) or chunked processing</li>
+</ul>
+</section>
+<section id="numeric-vs-integer-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="numeric-vs-integer-in-r">Numeric vs integer in R</h2>
+<p>R’s default numeric type is <strong>double precision (numeric)</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">1</span>) <span class="co"># "double"</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">1</span>L) <span class="co"># weird syntax to get "integer"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-this-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
+<ul>
+<li>integers use <strong>less memory</strong> (4 bytes vs 8 bytes)<br>
+</li>
+<li>can be important for large datasets<br>
+</li>
+<li>100 million values:
+<ul>
+<li>numeric ≈ 800 MB<br>
+</li>
+<li>integer ≈ 400 MB</li>
+</ul></li>
+</ul>
 <hr>
+</section>
+<section id="in-practice-1" class="level3">
+<h3 class="anchored" data-anchor-id="in-practice-1">In practice</h3>
+<ul>
+<li>R often converts to numeric automatically<br>
+</li>
+<li>some tools (e.g.&nbsp;<code>data.table</code>) use integers efficiently
+<ul>
+<li>compare <code>as.IDate()</code> vs <code>as.Date()</code></li>
+</ul></li>
+<li>useful when working with:
+<ul>
+<li>IDs<br>
+</li>
+<li>categories<br>
+</li>
+<li>counts</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Choosing the right data type can significantly reduce memory usage.</p>
+</section>
+</section>
+<section id="altrep-alternative-representation" class="level2">
+<h2 class="anchored" data-anchor-id="altrep-alternative-representation">ALTREP (Alternative Representation)</h2>
+<p>R can represent some objects in a <strong>compact or lazy way</strong>.</p>
+<ul>
+<li>introduced in R 3.5.0<br>
+</li>
+<li>avoids allocating full memory immediately</li>
+</ul>
+<pre class="{r}"><code>#| echo: true
+x &lt;- 1:1e9
+object.size(x)</code></pre>
+<p>→ much smaller than expected</p>
+</section>
+<section id="what-happens" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens">What happens?</h2>
+<ul>
+<li>data is generated <strong>on demand</strong><br>
+</li>
+<li>not all values are stored in memory</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Not all objects in R are fully materialised — some are computed when needed.</p>
+</section>
+<section id="other-memory-optimisations-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="other-memory-optimisations-in-r">Other memory optimisations in R</h2>
+<p>R uses several mechanisms to reduce memory usage (not only ALTREP).</p>
+<ul>
+<li><strong>Shared strings (string interning)</strong>
+<ul>
+<li>identical strings may be stored only once<br>
+</li>
+<li>reduces memory when many values are repeated</li>
+</ul></li>
+</ul>
+</section>
+<section id="but-memory-still-fills-up" class="level2">
+<h2 class="anchored" data-anchor-id="but-memory-still-fills-up">But memory still fills up…</h2>
+<p>Even with smart representations:</p>
+<ul>
+<li>many operations still create real objects<br>
+</li>
+<li>temporary objects accumulate</li>
+</ul>
+<p>👉 R still needs to <strong>free memory</strong></p>
+</section>
+<section id="garbage-collection" class="level2">
+<h2 class="anchored" data-anchor-id="garbage-collection">Garbage collection</h2>
+<p>When you work in R, memory is constantly used for <strong>intermediate objects</strong>.</p>
+<ul>
+<li>many operations create temporary results<br>
+</li>
+<li>these objects are no longer needed after a step is completed<br>
+</li>
+<li>but R does not always remove them immediately</li>
+</ul>
+</section>
+<section id="what-is-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-problem">What is the problem?</h2>
+<ul>
+<li>memory can fill up with <strong>objects that are no longer used</strong><br>
+</li>
+<li>there are no active references (“pointers”) to these objects<br>
+</li>
+<li>but they still occupy memory</li>
+</ul>
+</section>
+<section id="solution-garbage-collection" class="level2">
+<h2 class="anchored" data-anchor-id="solution-garbage-collection">Solution: garbage collection</h2>
+<ul>
+<li>R periodically identifies objects that are no longer reachable<br>
+</li>
+<li>these are removed, and memory is freed<br>
+</li>
+<li>GC is triggered when R needs more memory<br>
+</li>
+<li>may cause short pauses during execution</li>
+</ul>
+</section>
+<section id="practical-advice-1" class="level2">
+<h2 class="anchored" data-anchor-id="practical-advice-1">Practical advice</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>() <span class="co"># manual garbage collection</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># eference semantics by `{data.table}`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>💡 <strong>Key message:</strong><br>
+You rarely need to manage memory explicitly — but inefficient code can still use too much of it.</p>
+</section>
+<section id="unnecassary-computations-for-large-objects" class="level2">
+<h2 class="anchored" data-anchor-id="unnecassary-computations-for-large-objects">Unnecassary computations for large objects</h2>
+<ul>
+<li>Sometimes R (or the computer hardware) is not the problem, but the IDE might be.</li>
+<li>Common for RStudio (RSTudio and R both run in the same process)
+<ul>
+<li>Memory problems might make RSTudio crash</li>
+</ul></li>
+<li>Positron separates the R process from the IDE
+<ul>
+<li>Better, but still not perfect</li>
+</ul></li>
+</ul>
 <p><img src="images/paste-40.png" class="img-fluid"></p>
 <p><a href="https://github.com/posit-dev/positron/issues/12043">Still open?</a></p>
 <hr>
 <p><img src="images/bigdata/paste-9.png" class="img-fluid"></p>
 </section>
-<section id="altrep" class="level2">
-<h2 class="anchored" data-anchor-id="altrep"><code>ALTREP</code></h2>
+<section id="cpu" class="level2">
+<h2 class="anchored" data-anchor-id="cpu">CPU</h2>
+<p>The <strong>Central Processing Unit (CPU)</strong> determines how fast computations are performed.</p>
 <ul>
-<li><strong>ALT</strong>ernative <strong>REP</strong>resentation of R Objects</li>
-<li>Since R version 3.5.0</li>
-<li>Applies to the C-level representation of R objects under the hood</li>
-<li>Used by some base R packages/functions + specialized packages</li>
+<li>CPUs work in <strong>clock cycles</strong> (e.g.&nbsp;3 GHz ≈ 3 billion cycles per second)<br>
+</li>
+<li>CPU matters most when:
+<ul>
+<li>running models (e.g.&nbsp;regression, mixed models)<br>
+</li>
+<li>performing simulations<br>
+</li>
+<li>using loops or inefficient code<br>
+</li>
+</ul></li>
+<li>CPU matters less when:
+<ul>
+<li>reading data (disk/network bottleneck)<br>
+</li>
+<li>working with very large objects (RAM bottleneck)</li>
+</ul></li>
 </ul>
-<blockquote class="blockquote">
-<p>allow vector data to be in a memory-mapped file; distributed, e.g.&nbsp;within Apache Spark or Hadoop; shared with other applications, e.g.&nbsp;with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments.</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Writing efficient code (vectorisation) often matters more than CPU speed!</p>
+</div>
+</div>
 </section>
-<section id="dates" class="level2">
-<h2 class="anchored" data-anchor-id="dates">Dates</h2>
+<section id="how-r-uses-the-cpu" class="level2">
+<h2 class="anchored" data-anchor-id="how-r-uses-the-cpu">How R uses the CPU</h2>
 <ul>
-<li>Use <code>as.IDate()</code> instead of <code>as.Date()</code> if using <code>{data.table}</code>. Integer based.</li>
-<li>Use <code>{anytime}</code> (or maybe <code>{fasttime}</code>) if conversion is needed (<code>ALTREP</code>)</li>
+<li>R is often <strong>single-threaded</strong><br>
+</li>
+<li>many operations use only <strong>one core</strong><br>
+</li>
+<li>some libraries can use multiple cores (parallel computing)</li>
 </ul>
+<p>How many cores do you have?</p>
+<pre class="{r}"><code>#| echo: true
+benchmarkme::get_cpu()</code></pre>
 </section>
-<section id="paralellization" class="level2">
-<h2 class="anchored" data-anchor-id="paralellization">Paralellization</h2>
-<p><img src="images/bigdata/paste-22.png" class="img-fluid"></p>
-<p><img src="images/paste-41.png" class="img-fluid"></p>
-<hr>
-<p><img src="images/paste-42.png" class="img-fluid"></p>
+<section id="vectorization-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="vectorization-in-r">Vectorization in R</h2>
+<ul>
+<li>R is designed to work efficiently with <strong>vectors</strong>, not loops.</li>
+<li>In R, what looks like a scalar is actually a vector of length 1</li>
+<li>vectorized operations apply to whole objects at once<br>
+</li>
+<li>loops process one element at a time (often slower)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="do">## slow</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(x))</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="do">## fast</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="paralellization-1" class="level2">
-<h2 class="anchored" data-anchor-id="paralellization-1">Paralellization</h2>
+<section id="why-is-vectorization-faster" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-vectorization-faster">Why is vectorization faster?</h2>
+<p>Vectorized operations in R are usually implemented in <strong>compiled C code</strong>.</p>
 <ul>
-<li>R is single threaded by default</li>
-<li>Some packages and functions may use multithreading by default</li>
-<li>Some functions might have arguments such as <code>nthreads</code>, <code>ncores</code> etc</li>
-<li>To handle multicore/thread computations can be (very) difficult (I’ve heard)</li>
-<li>Easy if data can be divided and conquered (split-apply-combine)</li>
-<li><code>{futureverse}</code> is my favorite (Henrik Bengtsson)
+<li><p>R code (e.g.&nbsp;<code>for</code> loops) is <strong>interpreted</strong> → each step has overhead</p></li>
+<li><p>vectorized operations (e.g.&nbsp;<code>x + y</code>) are:</p>
 <ul>
-<li><code>{furrr}</code> is a a drop-in replacement for <code>{purrr}</code></li>
+<li>implemented in C<br>
+</li>
+<li>run as tight, optimized loops</li>
 </ul></li>
 </ul>
 </section>
-<section id="furrr" class="level2">
-<h2 class="anchored" data-anchor-id="furrr"><code>{furrr}</code></h2>
-<pre class="{r}"><code>#| echo: true
-## How many cores do we have?
-parallel::detectCores()
-library(furrr)
-## Save at least one for OS etc
-plan(multisession, workers = parallel::detectCores() - 1)
-
-1:10 |&gt;
-  future_map(rnorm, n = 10, .options = furrr_options(seed = 123)) |&gt;
-  future_map_dbl(mean)</code></pre>
+<section id="parallel-computing" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-computing">Parallel computing</h2>
+<p>Parallel computing means using <strong>multiple CPU cores at the same time</strong>.</p>
+<ul>
+<li>most R code runs on a <strong>single core</strong><br>
+</li>
+<li>your computer may have many cores (e.g.&nbsp;4–16)</li>
+<li>a shared server such as TRE might have several hundreds!</li>
+</ul>
+<section id="why-use-parallel-computing" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-parallel-computing">Why use parallel computing?</h3>
+<ul>
+<li>to speed up <strong>computationally intensive tasks</strong><br>
+</li>
+<li>especially when tasks can be done independently</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Parallel computing allows you to do multiple computations at once — but only if the problem can be split.</p>
+<hr>
+<p><img src="images/bigdata/paste-22.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="paralellization" class="level2">
+<h2 class="anchored" data-anchor-id="paralellization">Paralellization</h2>
+<ul>
+<li>Some packages and functions may use multithreading by default
+<ul>
+<li>But this is unusual</li>
+</ul></li>
+<li>Some functions might have arguments such as <code>nthreads</code>, <code>ncores</code> etc
+<ul>
+<li>You may want to use them</li>
+</ul></li>
+<li>To handle multicore/thread computations in general can be (very) difficult (I’ve heard)</li>
+</ul>
+</section>
+<section id="split-apply-combine" class="level2">
+<h2 class="anchored" data-anchor-id="split-apply-combine">Split-apply-combine</h2>
+<p>Parallel computing works best when:</p>
+<ul>
+<li>tasks are <strong>independent</strong></li>
+<li>tasks are <strong>computationally heavy</strong></li>
+<li>tasks can be repeated many times</li>
+</ul>
+<section id="examples-3" class="level3">
+<h3 class="anchored" data-anchor-id="examples-3">Examples</h3>
+<ul>
+<li>simulations<br>
+</li>
+<li>bootstrapping<br>
+</li>
+<li>cross-validation<br>
+</li>
+<li>applying a function many times</li>
+</ul>
+<p>💡 If tasks depend on each other, parallelisation will not help.</p>
+</section>
+</section>
+<section id="when-parallel-computing-does-not-help" class="level2">
+<h2 class="anchored" data-anchor-id="when-parallel-computing-does-not-help">When parallel computing does NOT help</h2>
+<p>Parallel computing is often not the solution.</p>
+<ul>
+<li>reading data → bottleneck is disk/network<br>
+</li>
+<li>large objects → bottleneck is RAM<br>
+</li>
+<li>inefficient code → vectorization is better</li>
+</ul>
+</section>
+<section id="example-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="example-in-r">Example in R</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) <span class="fu">slow_function</span>(i)) <span class="co"># Sequential</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>parallel<span class="sc">::</span><span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, slow_function, <span class="at">mc.cores =</span> <span class="dv">4</span>) <span class="co"># Parallel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="what-happens-1" class="level3">
+<h3 class="anchored" data-anchor-id="what-happens-1">What happens?</h3>
+<ul>
+<li>each core processes part of the work<br>
+</li>
+<li>results are combined at the end</li>
+</ul>
+<p>💡 More cores ≠ always faster</p>
+</section>
+</section>
+<section id="limitations-of-parallel-computing" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-parallel-computing">Limitations of parallel computing</h2>
+<ul>
+<li>overhead (starting processes takes time)<br>
+</li>
+<li>copying data between processes<br>
+</li>
+<li>limited by number of cores<br>
+</li>
+<li>not all functions are parallel-friendly</li>
+</ul>
 </section>
 <section id="mirai" class="level2">
 <h2 class="anchored" data-anchor-id="mirai">{mirai}</h2>
 <ul>
-<li>Suposed to be up to 1,000 times “faster” compared to <code>{furrr}</code> (according to some metric …)</li>
+<li>Suposed to be up to 1,000 times “faster” compared to earlier methods
+<ul>
+<li>(according to some metric …)</li>
+</ul></li>
 <li>should not block the main process while executing (haven’t tried)</li>
 </ul>
 <blockquote class="blockquote">
@@ -7114,17 +7583,23 @@ daemons(6)
 
 ## Sequential version
 mtcars |&gt; map_dbl(\(x) mean(x))
-#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb 
+#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb
 #&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81
 
 ## Parallel version - just wrap your function with in_parallel()
 mtcars |&gt; map_dbl(in_parallel(\(x) mean(x)))
-#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb 
+#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb
 #&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81
 
 ## Don't forget to clean up when done
-daemons(0)
-</code></pre>
+daemons(0)</code></pre>
+</section>
+<section id="targets-1" class="level2">
+<h2 class="anchored" data-anchor-id="targets-1"><code>{targets}</code></h2>
+<ul>
+<li>The targets package does implement parallel processing efficiently (based on <code>{mirai}</code> via <code>{crew}</code>)</li>
+<li>covered in the R medecine workshop (see <a href="./EL5.html">EL5</a>)</li>
+</ul>
 </section>
 <section id="note" class="level2">
 <h2 class="anchored" data-anchor-id="note">Note</h2>

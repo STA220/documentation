@@ -200,6 +200,22 @@
 </div>
 
 </section>
+<section class="slide level2">
+
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Examination</strong></p>
+</div>
+<div class="callout-content">
+<p>This lecture will not be examined. You are encouraged to experiment with the concepts in your project work if you find them useful, but this is not required.</p>
+</div>
+</div>
+</div>
+</section>
 <section id="big-data" class="slide level2">
 <h2>Big data</h2>
 
@@ -215,46 +231,334 @@
 <li>things might just take too much time … and life is short …</li>
 </ul>
 </section>
-<section id="software" class="slide level2">
-<h2>Software</h2>
+<section class="slide level2">
+
+
+<img data-src="images/paste-48.png" class="r-stretch"></section>
+<section id="reading-large-datasets" class="slide level2">
+<h2>Reading large datasets</h2>
+<p>When working with large datasets, where the data is stored matters.</p>
+<h3 id="network-storage-e.g.-shared-drives">Network storage (e.g.&nbsp;shared drives)</h3>
 <ul>
-<li>SAS for big data files from register holders</li>
-<li>R for everything else</li>
-<li>Database?</li>
+<li>slower data transfer (limited bandwidth)</li>
+<li>higher latency (delay before data starts loading)</li>
+<li>multiple users may compete for resources</li>
+<li>repeated reads can be very inefficient</li>
 </ul>
-</section>
-<section id="file-storage" class="slide level2">
-<h2>File storage</h2>
+<h3 id="local-storage">Local storage</h3>
 <ul>
-<li>Avoid reading big files over ethernet connection
-<ul>
-<li>data stored on network drive</li>
-</ul></li>
-<li>Usually faster to first copy file to local SSD drive
-<ul>
-<li><code>fs::file_copy(path, new_path)</code></li>
-<li>(<em>“libuv provides a wide variety of cross-platform sync and async file system operations.”</em>)</li>
-<li>obviously only if “local drive” is also in the (same) secure environment</li>
-</ul></li>
-<li>work with the project on disk</li>
-<li>move back</li>
-<li>Although not always possble with very large files it seems</li>
+<li>much faster read/write speeds</li>
+<li>low latency</li>
+<li>more stable and predictable performance</li>
+<li>better suited for iterative data analysis</li>
 </ul>
 </section>
 <section class="slide level2">
 
 
 <img data-src="images/bigdata/paste-6.png" class="r-stretch"></section>
+<section id="secure-environment" class="slide level2">
+<h2>Secure environment</h2>
+<p>In secure environments, both types of storage may <em>look local</em>, but they behave differently.</p>
+<ul>
+<li><strong>“Local” disk (e.g.&nbsp;SSD on the server/VM)</strong>
+<ul>
+<li>attached directly to the machine you are working on<br>
+</li>
+<li>high bandwidth, low latency<br>
+</li>
+<li>behaves like true local storage<br>
+</li>
+<li>typically much faster for data analysis</li>
+</ul></li>
+<li><strong>Mapped network folder</strong>
+<ul>
+<li>accessed over the network (even if it looks like a normal folder)<br>
+</li>
+<li>lower bandwidth and higher latency<br>
+</li>
+<li>shared with other users<br>
+</li>
+<li>slower, especially for repeated reads</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key difference:</strong><br>
+Not where the data is stored, but <strong>how it is accessed</strong> (direct disk vs network).</p>
+<p>💡 <strong>Practical advice:</strong><br>
+Use “local” disk (SSD on the environment) for active analysis, and network storage for long-term storage.</p>
+</section>
 <section class="slide level2">
 
 
 <img data-src="images/bigdata/paste-8.png" class="r-stretch"></section>
+<section id="practical-implication" class="slide level2">
+<h2>Practical implication</h2>
+<p>For large datasets:</p>
+<ul>
+<li>avoid repeatedly reading data directly from network drives</li>
+<li>copy data locally when possible
+<ul>
+<li><code>fs::file_copy(path, new_path)</code></li>
+<li>(<em>“libuv provides a wide variety of cross-platform sync and async file system operations.”</em>)</li>
+<li>obviously only if “local drive” is also in the (same) secure environment!</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Data access can easily become the main bottleneck — not your code.</p>
+</section>
 <section class="slide level2">
 
 
 <img data-src="images/bigdata/paste-7.png" class="r-stretch"></section>
+<section id="hdd-hard-disk-drive" class="slide level2">
+<h2>HDD (Hard Disk Drive)</h2>
+<ul>
+<li>mechanical (spinning disks)</li>
+<li>slower, especially for random access</li>
+<li>typical speeds:
+<ul>
+<li>~50–150 MB/s (sequential read)</li>
+</ul></li>
+<li>larger capacity at lower cost</li>
+<li>often used in older systems or for backups</li>
+</ul>
+</section>
+<section id="ssd-solid-state-drive" class="slide level2">
+<h2>SSD (Solid State Drive)</h2>
+<ul>
+<li>no moving parts</li>
+<li>much faster and more reliable</li>
+<li>typical speeds:
+<ul>
+<li>~500 MB/s (SATA SSD)</li>
+<li>~2000–7000 MB/s (NVMe SSD)</li>
+</ul></li>
+<li>standard in most modern laptops</li>
+</ul>
+</section>
+<section id="typical-sizes" class="slide level2">
+<h2>Typical sizes</h2>
+<ul>
+<li>laptops: <strong>256 GB – 1 TB SSD</strong></li>
+<li>desktops / servers: <strong>1–4 TB SSD + optional HDD storage</strong></li>
+<li>network drives: often very large but slower</li>
+</ul>
+</section>
+<section id="ram-and-data-analysis-in-r" class="slide level2">
+<h2>RAM and data analysis in R</h2>
+<p>When working in R, available <strong>RAM (memory)</strong> is often the main limiting factor.</p>
+<ul>
+<li>R can typically use <strong>most of the available RAM</strong> on your machine</li>
+<li>some memory is needed by:
+<ul>
+<li>the operating system</li>
+<li>other applications</li>
+</ul></li>
+<li>a safe rule of thumb is to assume <strong>~50–75% of total RAM</strong> is available for R</li>
+</ul>
+</section>
+<section id="how-large-datasets-can-you-work-with" class="slide level2">
+<h2>How large datasets can you work with?</h2>
+<ul>
+<li>datasets must fit <strong>in memory</strong> (unless using special tools)</li>
+<li>but you also need memory for:
+<ul>
+<li>intermediate objects</li>
+<li>copies created during transformations</li>
+<li>model objects</li>
+</ul></li>
+<li>many R operations create <strong>temporary copies of data</strong></li>
+<li>memory usage can <strong>double or triple</strong> during processing</li>
+<li>running out of RAM leads to:
+<ul>
+<li>slow performance</li>
+<li>crashes</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>If you have:</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Rule of thumb: you can usually work comfortably with data that is <strong>at most ~1/3 to 1/2 of your available RAM</strong></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>16 GB RAM</strong> → usable ≈ 8–12 GB<br>
+→ practical dataset size ≈ 3–6 GB<br>
+</li>
+<li>Modern R is <strong>64-bit</strong> → can use large amounts of memory
+<ul>
+<li>(32-bit R was limited to ~4 GB — mostly obsolete today)</li>
+</ul></li>
+</ul>
+</section>
+<section id="practical-advice" class="slide level2">
+<h2>Practical advice</h2>
+<ul>
+<li>check memory: <code>ps::ps_system_memory()</code></li>
+<li>avoid unnecessary copies of large objects
+<ul>
+<li>Use <code>{data.table}</code> for reference semantics</li>
+<li>or Parquet files to read only the necessary data</li>
+</ul></li>
+<li>consider pipelines (<code>targets</code>) or chunked processing</li>
+</ul>
+</section>
+<section id="numeric-vs-integer-in-r" class="slide level2">
+<h2>Numeric vs integer in R</h2>
+<p>R’s default numeric type is <strong>double precision (numeric)</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-2"><a></a><span class="fu">typeof</span>(<span class="dv">1</span>) <span class="co"># "double"</span></span>
+<span id="cb1-3"><a></a><span class="fu">typeof</span>(<span class="dv">1</span>L) <span class="co"># weird syntax to get "integer"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="why-this-matters">Why this matters</h3>
+<ul>
+<li>integers use <strong>less memory</strong> (4 bytes vs 8 bytes)<br>
+</li>
+<li>can be important for large datasets<br>
+</li>
+<li>100 million values:
+<ul>
+<li>numeric ≈ 800 MB<br>
+</li>
+<li>integer ≈ 400 MB</li>
+</ul></li>
+</ul>
+</section>
 <section class="slide level2">
 
+<h3 id="in-practice">In practice</h3>
+<ul>
+<li>R often converts to numeric automatically<br>
+</li>
+<li>some tools (e.g.&nbsp;<code>data.table</code>) use integers efficiently
+<ul>
+<li>compare <code>as.IDate()</code> vs <code>as.Date()</code></li>
+</ul></li>
+<li>useful when working with:
+<ul>
+<li>IDs<br>
+</li>
+<li>categories<br>
+</li>
+<li>counts</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Choosing the right data type can significantly reduce memory usage.</p>
+</section>
+<section id="altrep-alternative-representation" class="slide level2">
+<h2>ALTREP (Alternative Representation)</h2>
+<p>R can represent some objects in a <strong>compact or lazy way</strong>.</p>
+<ul>
+<li>introduced in R 3.5.0<br>
+</li>
+<li>avoids allocating full memory immediately</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fl">1e9</span></span>
+<span id="cb2-2"><a></a><span class="fu">object.size</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4000000048 bytes</code></pre>
+</div>
+</div>
+<p>→ much smaller than expected</p>
+</section>
+<section id="what-happens" class="slide level2">
+<h2>What happens?</h2>
+<ul>
+<li>data is generated <strong>on demand</strong><br>
+</li>
+<li>not all values are stored in memory</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Not all objects in R are fully materialised — some are computed when needed.</p>
+</section>
+<section id="other-memory-optimisations-in-r" class="slide level2">
+<h2>Other memory optimisations in R</h2>
+<p>R uses several mechanisms to reduce memory usage (not only ALTREP).</p>
+<ul>
+<li><strong>Shared strings (string interning)</strong>
+<ul>
+<li>identical strings may be stored only once<br>
+</li>
+<li>reduces memory when many values are repeated</li>
+</ul></li>
+</ul>
+</section>
+<section id="but-memory-still-fills-up" class="slide level2">
+<h2>But memory still fills up…</h2>
+<p>Even with smart representations:</p>
+<ul>
+<li>many operations still create real objects<br>
+</li>
+<li>temporary objects accumulate</li>
+</ul>
+<p>👉 R still needs to <strong>free memory</strong></p>
+</section>
+<section id="garbage-collection" class="slide level2">
+<h2>Garbage collection</h2>
+<p>When you work in R, memory is constantly used for <strong>intermediate objects</strong>.</p>
+<ul>
+<li>many operations create temporary results<br>
+</li>
+<li>these objects are no longer needed after a step is completed<br>
+</li>
+<li>but R does not always remove them immediately</li>
+</ul>
+</section>
+<section id="what-is-the-problem" class="slide level2">
+<h2>What is the problem?</h2>
+<ul>
+<li>memory can fill up with <strong>objects that are no longer used</strong><br>
+</li>
+<li>there are no active references (“pointers”) to these objects<br>
+</li>
+<li>but they still occupy memory</li>
+</ul>
+</section>
+<section id="solution-garbage-collection" class="slide level2">
+<h2>Solution: garbage collection</h2>
+<ul>
+<li>R periodically identifies objects that are no longer reachable<br>
+</li>
+<li>these are removed, and memory is freed<br>
+</li>
+<li>GC is triggered when R needs more memory<br>
+</li>
+<li>may cause short pauses during execution</li>
+</ul>
+</section>
+<section id="practical-advice-1" class="slide level2">
+<h2>Practical advice</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need</span></span>
+<span id="cb4-2"><a></a><span class="fu">gc</span>() <span class="co"># manual garbage collection</span></span>
+<span id="cb4-3"><a></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># eference semantics by `{data.table}`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>💡 <strong>Key message:</strong><br>
+You rarely need to manage memory explicitly — but inefficient code can still use too much of it.</p>
+</section>
+<section id="unnecassary-computations-for-large-objects" class="slide level2">
+<h2>Unnecassary computations for large objects</h2>
+<ul>
+<li>Sometimes R (or the computer hardware) is not the problem, but the IDE might be.</li>
+<li>Common for RStudio (RSTudio and R both run in the same process)
+<ul>
+<li>Memory problems might make RSTudio crash</li>
+</ul></li>
+<li>Positron separates the R process from the IDE
+<ul>
+<li>Better, but still not perfect</li>
+</ul></li>
+</ul>
 
 <img data-src="images/paste-40.png" class="r-stretch"><p><a href="https://github.com/posit-dev/positron/issues/12043">Still open?</a></p>
 </section>
@@ -262,88 +566,209 @@
 
 
 <img data-src="images/bigdata/paste-9.png" class="r-stretch"></section>
-<section id="altrep" class="slide level2">
-<h2><code>ALTREP</code></h2>
+<section id="cpu" class="slide level2">
+<h2>CPU</h2>
+<p>The <strong>Central Processing Unit (CPU)</strong> determines how fast computations are performed.</p>
 <ul>
-<li><strong>ALT</strong>ernative <strong>REP</strong>resentation of R Objects</li>
-<li>Since R version 3.5.0</li>
-<li>Applies to the C-level representation of R objects under the hood</li>
-<li>Used by some base R packages/functions + specialized packages</li>
-</ul>
-<blockquote>
-<p>allow vector data to be in a memory-mapped file; distributed, e.g.&nbsp;within Apache Spark or Hadoop; shared with other applications, e.g.&nbsp;with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments.</p>
-</blockquote>
-</section>
-<section id="dates" class="slide level2">
-<h2>Dates</h2>
+<li>CPUs work in <strong>clock cycles</strong> (e.g.&nbsp;3 GHz ≈ 3 billion cycles per second)<br>
+</li>
+<li>CPU matters most when:
 <ul>
-<li>Use <code>as.IDate()</code> instead of <code>as.Date()</code> if using <code>{data.table}</code>. Integer based.</li>
-<li>Use <code>{anytime}</code> (or maybe <code>{fasttime}</code>) if conversion is needed (<code>ALTREP</code>)</li>
+<li>running models (e.g.&nbsp;regression, mixed models)<br>
+</li>
+<li>performing simulations<br>
+</li>
+<li>using loops or inefficient code<br>
+</li>
+</ul></li>
+<li>CPU matters less when:
+<ul>
+<li>reading data (disk/network bottleneck)<br>
+</li>
+<li>working with very large objects (RAM bottleneck)</li>
+</ul></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Writing efficient code (vectorisation) often matters more than CPU speed!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="how-r-uses-the-cpu" class="slide level2">
+<h2>How R uses the CPU</h2>
+<ul>
+<li>R is often <strong>single-threaded</strong><br>
+</li>
+<li>many operations use only <strong>one core</strong><br>
+</li>
+<li>some libraries can use multiple cores (parallel computing)</li>
+</ul>
+<p>How many cores do you have?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>benchmarkme<span class="sc">::</span><span class="fu">get_cpu</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$vendor_id
+character(0)
+
+$model_name
+[1] "Apple M2 Max"
+
+$no_of_cores
+[1] 12</code></pre>
+</div>
+</div>
+</section>
+<section id="vectorization-in-r" class="slide level2">
+<h2>Vectorization in R</h2>
+<ul>
+<li>R is designed to work efficiently with <strong>vectors</strong>, not loops.</li>
+<li>In R, what looks like a scalar is actually a vector of length 1</li>
+<li>vectorized operations apply to whole objects at once<br>
+</li>
+<li>loops process one element at a time (often slower)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># slow</span></span>
+<span id="cb7-2"><a></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(x))</span>
+<span id="cb7-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb7-4"><a></a>  result[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
+<span id="cb7-5"><a></a>}</span>
+<span id="cb7-6"><a></a></span>
+<span id="cb7-7"><a></a><span class="co"># fast</span></span>
+<span id="cb7-8"><a></a>result <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="why-is-vectorization-faster" class="slide level2">
+<h2>Why is vectorization faster?</h2>
+<p>Vectorized operations in R are usually implemented in <strong>compiled C code</strong>.</p>
+<ul>
+<li><p>R code (e.g.&nbsp;<code>for</code> loops) is <strong>interpreted</strong> → each step has overhead</p></li>
+<li><p>vectorized operations (e.g.&nbsp;<code>x + y</code>) are:</p>
+<ul>
+<li>implemented in C<br>
+</li>
+<li>run as tight, optimized loops</li>
+</ul></li>
 </ul>
 </section>
-<section>
-<section id="paralellization" class="title-slide slide level1 center">
-<h1>Paralellization</h1>
-<p><img data-src="images/bigdata/paste-22.png"></p>
-<p><img data-src="images/paste-41.png"></p>
+<section id="parallel-computing" class="slide level2">
+<h2>Parallel computing</h2>
+<p>Parallel computing means using <strong>multiple CPU cores at the same time</strong>.</p>
+<ul>
+<li>most R code runs on a <strong>single core</strong><br>
+</li>
+<li>your computer may have many cores (e.g.&nbsp;4–16)</li>
+<li>a shared server such as TRE might have several hundreds!</li>
+</ul>
+<h3 id="why-use-parallel-computing">Why use parallel computing?</h3>
+<ul>
+<li>to speed up <strong>computationally intensive tasks</strong><br>
+</li>
+<li>especially when tasks can be done independently</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Parallel computing allows you to do multiple computations at once — but only if the problem can be split.</p>
 </section>
 <section class="slide level2">
 
 
-<img data-src="images/paste-42.png" class="r-stretch"></section>
-<section id="paralellization-1" class="slide level2">
+<img data-src="images/bigdata/paste-22.png" class="r-stretch"></section>
+<section id="paralellization" class="slide level2">
 <h2>Paralellization</h2>
 <ul>
-<li>R is single threaded by default</li>
-<li>Some packages and functions may use multithreading by default</li>
-<li>Some functions might have arguments such as <code>nthreads</code>, <code>ncores</code> etc</li>
-<li>To handle multicore/thread computations can be (very) difficult (I’ve heard)</li>
-<li>Easy if data can be divided and conquered (split-apply-combine)</li>
-<li><code>{futureverse}</code> is my favorite (Henrik Bengtsson)
+<li>Some packages and functions may use multithreading by default
 <ul>
-<li><code>{furrr}</code> is a a drop-in replacement for <code>{purrr}</code></li>
+<li>But this is unusual</li>
 </ul></li>
+<li>Some functions might have arguments such as <code>nthreads</code>, <code>ncores</code> etc
+<ul>
+<li>You may want to use them</li>
+</ul></li>
+<li>To handle multicore/thread computations in general can be (very) difficult (I’ve heard)</li>
 </ul>
 </section>
-<section id="furrr" class="slide level2">
-<h2><code>{furrr}</code></h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># How many cores do we have?</span></span>
-<span id="cb1-2"><a></a>parallel<span class="sc">::</span><span class="fu">detectCores</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(furrr)</span>
-<span id="cb3-2"><a></a><span class="co"># Save at least one for OS etc</span></span>
-<span id="cb3-3"><a></a><span class="fu">plan</span>(multisession, <span class="at">workers =</span> parallel<span class="sc">::</span><span class="fu">detectCores</span>() <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a></a>  <span class="fu">future_map</span>(rnorm, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">.options =</span> <span class="fu">furrr_options</span>(<span class="at">seed =</span> <span class="dv">123</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb3-7"><a></a>  <span class="fu">future_map_dbl</span>(mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 1.180279 2.140442 2.909823 3.692207 5.058100 6.653926 7.065630 7.960713
- [9] 9.105674 9.766827</code></pre>
-</div>
-</div>
+<section id="split-apply-combine" class="slide level2">
+<h2>Split-apply-combine</h2>
+<p>Parallel computing works best when:</p>
+<ul>
+<li>tasks are <strong>independent</strong></li>
+<li>tasks are <strong>computationally heavy</strong></li>
+<li>tasks can be repeated many times</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>simulations<br>
+</li>
+<li>bootstrapping<br>
+</li>
+<li>cross-validation<br>
+</li>
+<li>applying a function many times</li>
+</ul>
+<p>💡 If tasks depend on each other, parallelisation will not help.</p>
+</section>
+<section id="when-parallel-computing-does-not-help" class="slide level2">
+<h2>When parallel computing does NOT help</h2>
+<p>Parallel computing is often not the solution.</p>
+<ul>
+<li>reading data → bottleneck is disk/network<br>
+</li>
+<li>large objects → bottleneck is RAM<br>
+</li>
+<li>inefficient code → vectorization is better</li>
+</ul>
+</section>
+<section id="example-in-r" class="slide level2">
+<h2>Example in R</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) <span class="fu">slow_function</span>(i)) <span class="co"># Sequential</span></span>
+<span id="cb8-2"><a></a>parallel<span class="sc">::</span><span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, slow_function, <span class="at">mc.cores =</span> <span class="dv">4</span>) <span class="co"># Parallel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="what-happens-1">What happens?</h3>
+<ul>
+<li>each core processes part of the work<br>
+</li>
+<li>results are combined at the end</li>
+</ul>
+<p>💡 More cores ≠ always faster</p>
+</section>
+<section id="limitations-of-parallel-computing" class="slide level2">
+<h2>Limitations of parallel computing</h2>
+<ul>
+<li>overhead (starting processes takes time)<br>
+</li>
+<li>copying data between processes<br>
+</li>
+<li>limited by number of cores<br>
+</li>
+<li>not all functions are parallel-friendly</li>
+</ul>
 </section>
 <section id="mirai" class="slide level2">
 <h2>{mirai}</h2>
 <ul>
-<li>Suposed to be up to 1,000 times “faster” compared to <code>{furrr}</code> (according to some metric …)</li>
+<li>Suposed to be up to 1,000 times “faster” compared to earlier methods
+<ul>
+<li>(according to some metric …)</li>
+</ul></li>
 <li>should not block the main process while executing (haven’t tried)</li>
 </ul>
 <blockquote>
 <p>Designed for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.</p>
 </blockquote>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(mirai)</span>
-<span id="cb5-2"><a></a><span class="fu">library</span>(data.table)</span>
-<span id="cb5-3"><a></a><span class="fu">daemons</span>(<span class="dv">11</span>)</span>
-<span id="cb5-4"><a></a></span>
-<span id="cb5-5"><a></a><span class="co"># data.table with 1 billion rows:</span></span>
-<span id="cb5-6"><a></a>dt <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="fl">1e9</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="fl">1e9</span>))</span>
-<span id="cb5-7"><a></a><span class="co"># row sums (row wise )</span></span>
-<span id="cb5-8"><a></a><span class="fu">mirai_map</span>(dt, sum)[.flat]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(mirai)</span>
+<span id="cb9-2"><a></a><span class="fu">library</span>(data.table)</span>
+<span id="cb9-3"><a></a><span class="fu">daemons</span>(<span class="dv">11</span>)</span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a><span class="co"># data.table with 1 billion rows:</span></span>
+<span id="cb9-6"><a></a>dt <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="fl">1e9</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="fl">1e9</span>))</span>
+<span id="cb9-7"><a></a><span class="co"># row sums (row wise )</span></span>
+<span id="cb9-8"><a></a><span class="fu">mirai_map</span>(dt, sum)[.flat]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <img data-src="images/bigdata/paste-24.png" class="r-stretch"></section>
@@ -355,37 +780,44 @@
 <li>Needs to be explicit on which objects/functions to export to each worker/daemon</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(purrr)</span>
-<span id="cb6-2"><a></a><span class="fu">library</span>(mirai)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># Set up parallel processing (6 background processes)</span></span>
-<span id="cb6-5"><a></a><span class="fu">daemons</span>(<span class="dv">6</span>)</span>
-<span id="cb6-6"><a></a></span>
-<span id="cb6-7"><a></a><span class="co"># Sequential version</span></span>
-<span id="cb6-8"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(\(x) <span class="fu">mean</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
- 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
-        vs         am       gear       carb 
-  0.437500   0.406250   3.687500   2.812500 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb </span></span>
-<span id="cb8-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="co"># Parallel version - just wrap your function with in_parallel()</span></span>
-<span id="cb8-5"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(<span class="fu">in_parallel</span>(\(x) <span class="fu">mean</span>(x)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
- 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
-        vs         am       gear       carb 
-  0.437500   0.406250   3.687500   2.812500 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb </span></span>
-<span id="cb10-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(purrr)</span>
+<span id="cb10-2"><a></a><span class="fu">library</span>(mirai)</span>
 <span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a><span class="co"># Don't forget to clean up when done</span></span>
-<span id="cb10-5"><a></a><span class="fu">daemons</span>(<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-4"><a></a><span class="co"># Set up parallel processing (6 background processes)</span></span>
+<span id="cb10-5"><a></a><span class="fu">daemons</span>(<span class="dv">6</span>)</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a><span class="co"># Sequential version</span></span>
+<span id="cb10-8"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(\(x) <span class="fu">mean</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
+ 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+        vs         am       gear       carb 
+  0.437500   0.406250   3.687500   2.812500 </code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb</span></span>
+<span id="cb12-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
+<span id="cb12-3"><a></a></span>
+<span id="cb12-4"><a></a><span class="co"># Parallel version - just wrap your function with in_parallel()</span></span>
+<span id="cb12-5"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(<span class="fu">in_parallel</span>(\(x) <span class="fu">mean</span>(x)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
+ 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+        vs         am       gear       carb 
+  0.437500   0.406250   3.687500   2.812500 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb</span></span>
+<span id="cb14-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
+<span id="cb14-3"><a></a></span>
+<span id="cb14-4"><a></a><span class="co"># Don't forget to clean up when done</span></span>
+<span id="cb14-5"><a></a><span class="fu">daemons</span>(<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="targets" class="slide level2">
+<h2><code>{targets}</code></h2>
+<ul>
+<li>The targets package does implement parallel processing efficiently (based on <code>{mirai}</code> via <code>{crew}</code>)</li>
+<li>covered in the R medecine workshop (see <a href="./EL5.html">EL5</a>)</li>
+</ul>
 </section>
 <section id="note" class="slide level2">
 <h2>Note</h2>
@@ -422,7 +854,7 @@
 <section class="slide level2">
 
 
-<img data-src="images/bigdata/paste-25.png" class="r-stretch"></section></section>
+<img data-src="images/bigdata/paste-25.png" class="r-stretch"></section>
 <section>
 <section id="modify-packages" class="title-slide slide level1 center">
 <h1>Modify packages</h1>
