@@ -1,0 +1,21 @@
+---
+title: "ECS6: Project"
+subtitle: "Quarto"
+reading: ""
+format: 
+  html: default
+  typst:
+    toc: true
+date: last-modified
+---
+
+::: {.callout-note}
+This session is scheduled to support your ongoing project work. No new material will be introduced; instead, it provides an opportunity for in-person collaboration with your group and for asking questions to the instructor.
+:::
+
+- Instructions for the project can be found in [ECS4](ECS4.qmd) and [ECS5](ECS5.qmd).
+- Please note that you will later present your project in accordance with [ES2](ES2.qmd).
+
+::: {.callout-tip}
+The material presented in [EL10](EL10.qmd) may serve as inspiration for ideas you may wish to explore within your project, but this is optional and not required for the examination.
+:::

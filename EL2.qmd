@@ -27,7 +27,7 @@ execute:
 
 -   Today: European legislation (mainly GDPR!)
     -   Lecture handouts main source for examination (seminar [ES1](ES1.qmd) and possibly DISA exam).
-    -   Article [@vukovic2022]. Focus on the introduction, the section "GDPR‐related enablers and barriers to cross‐country health data exchange in Europe" (in the results section incl. figures and tables), discussion and conclusions. Examined as part of seminar [ES1](ES1.qmd) (not the DISA exam).
+    -   Article [@vukovic2022]. Focus on the introduction, the section "GDPR‐related enablers and barriers to cross‐country health data exchange in Europe" (in the results section incl. figures and tables), discussion and conclusions.
 -   Next lecture: Swedish legislation (including associated reading). Examined as part of seminar [ES1](ES1.qmd) (not the DISA exam).
 -   Consequence: [@nguyen2022a, ch. 4]. Read the beginning. Skip "Medical Information Mart for Intensive Care". Read the "Synthea" section. The "Synthea" section does not have a legal focus but the legal parts explains why we use this data. Read for your own understanding (not examined).
 

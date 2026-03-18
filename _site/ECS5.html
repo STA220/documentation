@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-03-14">
+<meta name="dcterms.date" content="2026-03-18">
 
 <title>ECS5: Presentation – STA220</title>
 <style>
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL10.html">
- <span class="dropdown-text">EL10: Big data</span></a>
+ <span class="dropdown-text">EL10: Biggish data</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL11.html">
@@ -169,6 +169,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./ECS5.html">
  <span class="dropdown-text">ECS5: Presentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ECS6.html">
+ <span class="dropdown-text">ECS6: Project</span></a>
   </li>  
     </ul>
   </li>
@@ -213,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#examination" id="toc-examination" class="nav-link" data-scroll-target="#examination">Examination</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS5.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/sta220/documentation/blob/main/ECS5.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/sta220/documentation/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="ECS5.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -221,6 +225,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">ECS5: Presentation</h1>
+<p class="subtitle lead">Quarto</p>
 </div>
 
 
@@ -231,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 14, 2026</p>
+      <p class="date">March 18, 2026</p>
     </div>
   </div>
   
@@ -258,19 +263,22 @@ Important
 </div>
 <section id="presentation" class="level1">
 <h1>Presentation</h1>
-<p>After <a href="./EL9.html">EL9</a> you will prepare a presentation of your work using <strong>Quarto</strong>.</p>
-<p>The length of that presentation will be around 5 minutes.</p>
-<p>Start thinking early about how you want to communicate your results through <strong>figures, tables, and text</strong>. However, let your exploratory analysis guide your decisions. For this reason, you should not prepare the actual presentation before <a href="./EL9.html">EL9</a>.</p>
-<p>Your group may choose one of the following formats:</p>
+<p>You will later present your project work orally as pasrt of <a href="./ES2.html">ES2</a>. That presentation should be around <strong>5 minutes</strong>.</p>
+<p>Before that, you should prepare your presentation using Quarto, as introduced in <a href="./EL9.html">EL9</a>.</p>
+<p>The presentation in <a href="./ES2.html">ES2</a> will be <strong>individual</strong>, but you are free to collaborate and use the <strong>same report or slides</strong> within your project group if you wish.</p>
+<p>Your group may choose to produce either:</p>
 <ul>
-<li>a written report (<code>format: html</code> or <code>format: typst</code>)</li>
-<li>a slideshow (<code>format: revealjs</code>)</li>
-<li>both</li>
+<li>a written report (<code>format: html</code> or <code>format: typst</code>),</li>
+<li>or a slideshow (<code>format: revealjs</code>),</li>
+<li>or both</li>
 </ul>
-<p>If you choose to produce only a written report, you may still present it during <a href="./ES2.html">ES2</a> by showing it on screen and scrolling through the document while presenting.</p>
-<p>Keep in mind that producing polished figures and tables can take time. Aim for <strong>clear and readable results</strong>, but do not spend excessive time on perfect formatting.</p>
+<p>If you choose to produce only a written report, you should still present it during <a href="./ES2.html">ES2</a> by showing it on screen and scrolling through the document while presenting.</p>
+<p>Keep in mind that producing polished figures and tables can be time-consuming. Aim for clear and self-explanatory results (e.g.&nbsp;informative labels, appropriate scales, and meaningful captions), but do not spend excessive time on perfect formatting or purely aesthetic details unless this is within your area of interest.</p>
 <section id="suggested-tools-for-presenting-results" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-tools-for-presenting-results">Suggested tools for presenting results</h2>
+<p>Figures and tables should be presented <strong>within your Quarto document</strong>, as introduced in <a href="./EL9.html">EL9</a>.</p>
+<p>The code that generates the figures and tables does not necessarily need to be written directly in the <code>.qmd</code> file. For example, the analysis may be organised in separate R scripts or within a workflow pipeline. See this example on how to <a href="https://carpentries-incubator.github.io/targets-workshop/quarto.html">integrate <code>{targets}</code> and Quarto</a>.</p>
+<p>The following packages are examples of tools that can help generate clear presentation-quality figures and tables (but you are free to use others).</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -303,11 +311,11 @@ Important
 <p>For the examination you are expected to:</p>
 <ol type="1">
 <li>Use your report or presentation as the basis for your <strong>oral seminar presentation</strong> in <a href="./ES2.html">ES2</a>.</li>
-<li>The report/presentation should include at least one figure and one table of relevance</li>
+<li>The report/presentation should include <strong>at least one figure and one table of relevance</strong></li>
 <li>Include the <strong>Quarto source file (<code>.qmd</code>)</strong> that generates the report or presentation in your <strong>GitHub repository</strong>.</li>
 </ol>
-<p>The repository should therefore contain the <code>.qmd</code> document and any files required to render the report or presentation, as well as rendered output document.</p>
-<p>Both group members are expected to contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming).</p>
+<p>The repository should therefore contain the <code>.qmd</code> document and any files required to render the report or presentation, as well as the rendered output document.</p>
+<p>Both group members should contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together).</p>
 
 
 </section>

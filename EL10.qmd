@@ -1,5 +1,5 @@
 ---
-title: "EL10: Big data"
+title: "EL10: Biggish data"
 subtitle: ""
 reading: ""
 format:
@@ -21,13 +21,18 @@ format:
 bibliography: references.bib
 ---
 
+::: {.callout-important}
+# Examination
+This lecture will not be examined. You are encouraged to experiment with the concepts in your project work if you find them useful, but this is not required.
+:::
+
 ## Big data
 
 ![](images/bigdata/paste-1.png)
 
 ## Biggish data
 
-My definition:
+Our focus:
 
 -   Only tabular data
 -   Original data might fit into physical RAM but ...
@@ -35,594 +40,425 @@ My definition:
 -   physical RAM might be constrained due to other processes/settings
 -   things might just take too much time ... and life is short ...
 
-## Software
+-----------
 
--   SAS for big data files from register holders
--   R for everything else
--   Database?
+![](images/paste-48.png)
 
-# File format
+## Reading large datasets
 
-## File storage
+When working with large datasets, where the data is stored matters.
 
--   Avoid reading big files over ethernet connection
-    -   data stored on network drive
--   Usually faster to first copy file to local SSD drive
-    -   `fs::file_copy(path, new_path)`
-    -   (*"libuv provides a wide variety of cross-platform sync and async file system operations."*)
-    -   obviously only if "local drive" is also in the (same) secure environment
--   work with the project on disk
--   move back
--   Although not always possble with very large files it seems
+### Network storage (e.g. shared drives)
 
-------------------------------------------------------------
+- slower data transfer (limited bandwidth)
+- higher latency (delay before data starts loading)
+- multiple users may compete for resources
+- repeated reads can be very inefficient
+
+### Local storage
+
+- much faster read/write speeds
+- low latency
+- more stable and predictable performance
+- better suited for iterative data analysis
+
+------------------------------------------------------------------------
 
 ![](images/bigdata/paste-6.png)
 
--------------------------------------------------------------
+
+## Secure environment
+
+In secure environments, both types of storage may *look local*, but they behave differently.
+
+- **“Local” disk (e.g. SSD on the server/VM)**
+  - attached directly to the machine you are working on  
+  - high bandwidth, low latency  
+  - behaves like true local storage  
+  - typically much faster for data analysis  
+
+- **Mapped network folder**
+  - accessed over the network (even if it looks like a normal folder)  
+  - lower bandwidth and higher latency  
+  - shared with other users  
+  - slower, especially for repeated reads  
+
+💡 **Key difference:**  
+Not where the data is stored, but **how it is accessed** (direct disk vs network).
+
+
+💡 **Practical advice:**  
+Use “local” disk (SSD on the environment) for active analysis, and network storage for long-term storage.
+
+------------------------------------------------------------------------
 
 ![](images/bigdata/paste-8.png)
 
-------------------------------------------------------------
+## Practical implication
+
+For large datasets:
+
+- avoid repeatedly reading data directly from network drives
+- copy data locally when possible
+    -   `fs::file_copy(path, new_path)`
+    -   (*"libuv provides a wide variety of cross-platform sync and async file system operations."*)
+    -   obviously only if "local drive" is also in the (same) secure environment!
+
+💡 **Key message:**  
+Data access can easily become the main bottleneck — not your code.
+
+
+------------------------------------------------------------------------
 
 ![](images/bigdata/paste-7.png)
 
-## `sync_project()`
 
--   I have a function `sync_project()` in my `.Rprofile`
-    -   `usethis::edit_r_profile()`
--   However, I don't include all data files in each individual project
--   "Chek out" all files from network storage to disk
--   Work with it
--   Sync back to allow back-ups and common folder structure
--   Git-repo kept for the network storage
 
-------------------------------------------------------------
+## HDD (Hard Disk Drive)
+
+- mechanical (spinning disks)
+- slower, especially for random access
+- typical speeds:
+  - ~50–150 MB/s (sequential read)
+- larger capacity at lower cost
+- often used in older systems or for backups
+
+
+## SSD (Solid State Drive)
+
+- no moving parts
+- much faster and more reliable
+- typical speeds:
+  - ~500 MB/s (SATA SSD)
+  - ~2000–7000 MB/s (NVMe SSD)
+- standard in most modern laptops
+
+
+## Typical sizes
+
+- laptops: **256 GB – 1 TB SSD**
+- desktops / servers: **1–4 TB SSD + optional HDD storage**
+- network drives: often very large but slower
+
+
+
+## RAM and data analysis in R
+
+When working in R, available **RAM (memory)** is often the main limiting factor.
+
+- R can typically use **most of the available RAM** on your machine
+- some memory is needed by:
+    - the operating system
+    - other applications
+- a safe rule of thumb is to assume **~50–75% of total RAM** is available for R
+
+
+## How large datasets can you work with?
+
+- datasets must fit **in memory** (unless using special tools)
+- but you also need memory for:
+  - intermediate objects
+  - copies created during transformations
+  - model objects
+- many R operations create **temporary copies of data**
+- memory usage can **double or triple** during processing
+- running out of RAM leads to:
+  - slow performance
+  - crashes
+
+
+## Example
+
+::: {.callout-tip}
+Rule of thumb: you can usually work comfortably with data that is **at most ~1/3 to 1/2 of your available RAM**
+:::
+
+If you have:
+
+- **16 GB RAM** → usable ≈ 8–12 GB  
+→ practical dataset size ≈ 3–6 GB  
+- Modern R is **64-bit** → can use large amounts of memory  
+  - (32-bit R was limited to ~4 GB — mostly obsolete today)
+
+## Practical advice
+
+- check memory: `ps::ps_system_memory()`
+- avoid unnecessary copies of large objects
+    - Use `{data.table}` for reference semantics
+    - or Parquet files to read only the necessary data
+- consider pipelines (`targets`) or chunked processing
+
+## Numeric vs integer in R
+
+R’s default numeric type is **double precision (numeric)**.
+
+```r
+x <- 1
+typeof(1) # "double"
+typeof(1L) # weird syntax to get "integer"
+```
+
+### Why this matters
+
+- integers use **less memory** (4 bytes vs 8 bytes)  
+- can be important for large datasets  
+- 100 million values:
+  - numeric ≈ 800 MB  
+  - integer ≈ 400 MB  
+
+---
+
+### In practice
+
+- R often converts to numeric automatically  
+- some tools (e.g. `data.table`) use integers efficiently
+    - compare `as.IDate()` vs `as.Date()`
+- useful when working with:
+  - IDs  
+  - categories  
+  - counts  
+
+💡 **Key message:**  
+Choosing the right data type can significantly reduce memory usage.
+
+
+## ALTREP (Alternative Representation)
+
+R can represent some objects in a **compact or lazy way**.
+
+- introduced in R 3.5.0  
+- avoids allocating full memory immediately  
 
 ```{r}
-#| eval: false
 #| echo: true
-#| class-output: r
-sync_project <- function (from, to) 
-{
-    loc_dirs <- c("S:/Projects/", "F:/xbuler/")
-    loc_dirs_exp <- paste(loc_dirs, collapse = "|")
-    proj <- gsub(loc_dirs_exp, "", getwd())
-    locations <- paste0(loc_dirs, proj)
-    locations_exp <- paste(paste0(locations, "/"), collapse = "|")
-    stopifnot(getwd() %in% locations)
-    from <- if (missing(from)) 
-        getwd()
-    to <- if (missing(to)) 
-        setdiff(locations, from)
-    ans <- askYesNo(paste("Sync from:\n ", from, "\n To: \n", 
-        to))
-    stopifnot(ans)
-    if (!fs::dir_exists(to)) {
-        fs::dir_create(to)
-        message("Target folder did not exist but has been created!")
-    }
-    fr <- dplyr::mutate(dplyr::select(fs::dir_info(from, all = TRUE, 
-        recurse = TRUE, regexp = ".git", invert = TRUE), path, 
-        type, size, modification_time), file = gsub(locations_exp, 
-        "", path), path_to = paste(to, file, sep = "/"))
-    t <- dplyr::mutate(dplyr::select(fs::dir_info(to, all = TRUE, 
-        recurse = TRUE), path, type, size, modification_time), 
-        file = gsub(locations_exp, "", path))
-    new <- dplyr::anti_join(fr, t, "file")
-    new_dirs <- dplyr::filter(new, type == "directory")
-    if (nrow(new_dirs)) {
-        print(dplyr::select(new_dirs, file), n = Inf)
-        ans <- askYesNo(paste(nrow(new_dirs), " dir(s) not in 'to'. Should I create these?"))
-        if (ans) 
-            fs::dir_create(new_dirs$path_to)
-    }
-    new_files <- dplyr::filter(new, type == "file")
-    if (nrow(new_files)) {
-        print(dplyr::select(new_files, file), n = Inf)
-        ans <- askYesNo(paste(nrow(new_files), " file(s) not in 'to'. Should I copy them?"))
-        if (ans) 
-            purrr::walk2(new_files$path, new_files$path_to, fs::file_copy, 
-                .progress = TRUE)
-    }
-    diff_mod <- dplyr::filter(dplyr::left_join(fr, t, "file", 
-        suffix = c("_from", "_to")), type_from == "file", modification_time_to != 
-        modification_time_from)
-    if (nrow(diff_mod)) {
-        print(dplyr::select(diff_mod, file, tidyselect::matches("modification_time|size")), 
-            n = Inf)
-        ans <- askYesNo(paste(nrow(diff_mod), " file(s) have been updated. Should I replace the older version?"))
-        if (ans) {
-            purrr::walk2(diff_mod$file, diff_mod$path_to, fs::file_copy, 
-                overwrite = TRUE, .progress = TRUE)
-        }
-    }
-    dlt <- dplyr::filter(dplyr::anti_join(t, fr, "file"), !startsWith(file, 
-        ".git"))
-    if (nrow(dlt)) {
-        print(dlt, n = Inf)
-        ans <- askYesNo(paste(nrow(dlt), " file(s) have been deleted in 'from'. Should I delete them in 'to'?"))
-        if (ans) {
-            purrr::walk(dlt$path, fs::file_delete, .progress = TRUE)
-        }
-    }
-}
+x <- 1:1e9
+lobstr::obj_size(x) # actual memory used
+format(object.size(x), units = "GB") # reserved memory
+# as.numeric(x) # will use the reserved memory
 ```
 
-## 👎 Reading SAS files in R
 
--   Common to get large register files in SAS-format (SoS, SCB)
--   👍 SAS can handle that (files on disk) 😀
--   👎 I am a terrible SAS user 🙁
--   👎 Seems to be no easy way to read only parts of SAS-files into R directly
--   `haven::read_sas()`?
+## What happens?
 
-## `haven::read_sas()`
+- data is generated **on demand**  
+- not all values are stored in memory  
 
--   👍 May work if big enough RAM ...
--   👎 Whole file is first read into RAM (`readr::datasource(data_file)`)
--   👎 Most time spent on `df_parse_sas_file()`
--   (Same for .dta-files \[Stata\])
+💡 **Key message:**  
+Not all objects in R are fully materialised — some are computed when needed.
 
-```{r}
-#| class-output: r
-haven::read_sas
-```
+## Other memory optimisations in R
 
-## 👍 Export from SAS to csv
+R uses several mechanisms to reduce memory usage (not only ALTREP).
 
--   I use SAS code to export only nececary data to csv
--   I might use a prefiltering list exported from R to limit the data
--   SAS Viya more flexible (I've heard) but not SAS 9.4
--   Use `(set=1000)` etc for tests and then run over night
--   csv-files exported to local SSD drive (and then synced back to storage folder)
+- **Shared strings (string interning)**  
+  - identical strings may be stored only once  
+  - reduces memory when many values are repeated  
 
-## ChatGPT
 
-> Jag har exporterat en **csv-fil från R** som innehåller en lista med **löpnummer** på individer. Jag vill nu använda **SAS**. Först vill jag läsa in CSV-filen. Sedan vill jag **filtrera** ett dataset i SAS (vi kan kalla det pelle) som har en kolumn med samma löpnummer som i CSV-filen (jag vill bara ha med de fall där det finns en match). Därefter vill jag **exportera** resultatet till en **ny csv-fil**. Jag vill att detta ska ske på ett **effektivt och snabbt** sätt. Hjälp med med **SAS-syntax** för detta
+## But memory still fills up...
 
-------------------------------------------------------------
+Even with smart representations:
 
-```{r}
-#| classes: output-highlight
-#| class-output: sas
-#| echo: true
-#| eval: false
+- many operations still create real objects  
+- temporary objects accumulate  
 
-/* Läs in CSV-filen i SAS */
+👉 R still needs to **free memory**
 
-/* Läs in filen med löpnummer till ett SAS-dataset (vi kallar det `individer`) */
-proc import datafile="din_sökväg_till_csv_filen.csv"
-    out=individer>
-    dbms=csv
-    replace;
-    getnames=yes; /* Sätt till no om csv-filen saknar rubriker */
-run;
+## Garbage collection
 
-/* Om CSV-filen saknar rubrik kan du lägga till följande steg för att namnge kolumnen manuellt */
-data individer;
-    set individer(rename=(var1=löpnummer)); /* Byt "var1" till korrekt variabelnamn */
-run;
+When you work in R, memory is constantly used for **intermediate objects**.
 
-/* Filtrera datasetet `pelle` baserat på löpnummer */
+- many operations create temporary results  
+- these objects are no longer needed after a step is completed  
+- but R does not always remove them immediately  
 
-/* Vi använder en hash-lookup för att göra filtreringen effektiv. Hash-lookup är snabbare än traditionella merge-metoder. */
-data pelle_filtered;
-    if _n_ = 1 then do;
-        declare hash h(dataset: "individer");
-        h.definekey("löpnummer");
-        h.definedone();
-    end;
-    set pelle;
-    if h.find() = 0; /* Endast matchande löpnummer */
-run;
 
-/* Exportera det filtrerade datasetet till en ny CSV-fil */
+## What is the problem?
 
-/* Använd proc export för att spara resultatet */
-proc export data=pelle_filtered
-    outfile="din_sökväg_till_ny_csv_fil.csv"
-    dbms=csv
-    replace;
-run;
+- memory can fill up with **objects that are no longer used**  
+- there are no active references (“pointers”) to these objects  
+- but they still occupy memory  
 
-/* Effektivitetsoptimering:
-Om både `individer` och `pelle` är mycket stora, 
-kan du sortera båda och använda data step merge
-istället för hash-lookup. Hash-metoden är dock 
-generellt snabbare om det är många rader i båda 
-tabellerna. */
-```
 
-## IDE
+## Solution: garbage collection
 
--   RStudio displays object info from the global environment
--   This is inefficient for big data
--   Whole session can hang and/or crash
--   I recommend [Positron](https://positron.posit.co/)
-    -   Optimezed `View()` pane etc
-    -   Active and enthusiastic development
--   Sometimes needed to ditch the IDE completely (even RGui)
-    -   Run R from the terminal
+- R periodically identifies objects that are no longer reachable  
+- these are removed, and memory is freed  
+- GC is triggered when R needs more memory  
+- may cause short pauses during execution  
 
-------------------------------------------------------------------------
 
-![](images/bigdata/paste-4.png)
+## Practical advice
 
-------------------------------------------------------------------------
+  ```r
+  rm(large_object) # Remove objects you no longer need (still takes up memory)
+  gc() # manual garbage collection (free the memory)
+  dt[, new := f(old)] # reference semantics by `{data.table}` avoids "hidden" objects
+  ```
 
-![](images/bigdata/paste-5.png)
 
-------------------------------------------------------------------------
+💡 **Key message:**  
+You rarely need to manage memory explicitly — but inefficient code can still use too much of it.
+
+## Unnecassary computations for large objects
+
+- Sometimes R (or the computer hardware) is not the problem, but the IDE might be.
+- Common for RStudio (RStudio and R both run in the same process)
+    - Memory problems might make RSTudio crash
+- Positron separates the R process from the IDE
+    - Better, but still not perfect
+
+![](images/paste-40.png)
+
+[Still open?](https://github.com/posit-dev/positron/issues/12043)
+
+-----------
 
 ![](images/bigdata/paste-9.png)
 
-## From csv to R
+## CPU
 
--   `data.table::fread()` is super good as long as the data can fit into RAM
-    -   If necessary pre-process by `awk`
--   `{vroom}` use `ALTREP` and might be faster for character data
--   Both `data.table::fread()` and `{vroom}` are multithreaded but `vroom` has lazy evaluation (good and bad)
--   `arrow::open_csv_dataset()` can be good (if data does not fit into RAM but I prefer `.parquette` if so)
+The **Central Processing Unit (CPU)** determines how fast computations are performed.
 
-------------------------------------------------------------------------
+- CPUs work in **clock cycles** (e.g. 3 GHz ≈ 3 billion cycles per second)  
+- CPU matters most when:
+    - running models (e.g. regression, mixed models)  
+    - performing simulations  
+    - using loops or inefficient code  
+- CPU matters less when:
+    - reading data (disk/network bottleneck)  
+    - working with very large objects (RAM bottleneck)  
 
-![](images/bigdata/paste-11.png)
-
-------------------------------------------------------------------------
-
-![](images/bigdata/paste-10.png)
-
-## `ALTREP`?
-
--   **ALT**ernative **REP**resentation of R Objects
--   Since R version 3.5.0
--   Applies to the C-level representation of R objects under the hood
--   Used by some base R packages/functions + specialized packages
-
-> allow vector data to be in a memory-mapped file; distributed, e.g. within Apache Spark or Hadoop; shared with other applications, e.g. with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments.
-
-# Database?
-
-## Database?
-
--   I don't want to administer Microsoft SQL Server myself!
-    -   (They had R support for a couple of years but not any more)
--   SQLight is easy to use ...
--   but (as SQL server) it is row based 🙁
--   Some complicated ones are column based 😀 (Snowflake, Google Big Query)
-    -   ... but I don't want to administer those either ...
--   DuckDB comes for rescue!
-
-::: callout-important
-# Indices
-
-Never forget to set proper indices if needed!
+::: {.callout-note}
+Writing efficient code (vectorisation) often matters more than CPU speed.
+Applies also to R packages on CRAN!
 :::
 
-------------------------------------------------------------------------
+## How R uses the CPU
 
-![](images/bigdata/paste-12.png)
+- R is often **single-threaded**  
+- many operations use only **one core**  
+- some libraries can use multiple cores (parallel computing)
 
-## DuckDB
-
--   Free and open source (backed by foundation)
--   Column based
--   Very easy to set up
--   Very efficient!
--   Integration with tidyverse in R
--   Can be used both with disk data and data in RAM
--   ... but I had some bad experience and now I am scared 😢
-
-## From CSV to Parquet
-
--   CSV is not very nice 🙁
-    -   No meta data
-    -   Sensitive to errors (missing values, decimal point, numbers with leading 0 etc, although `fread` can take care of this)
-    -   Encoding, BOM, whatever ...
--   Write to Parquet files
--   I don't think it is possible to convert csv to parquett on disk (first read csv, then write parquette)
-    -   But it can be done in chunks (read portion of csv and write to individual parquet file which are later "combined")
-
-------------------------------------------------------------------------
-
-![](images/bigdata/paste-13.png)
-
-## Parquet
-
--   From Apache Arrow
--   Open format
--   flat files with possible hierarchical structure by transparent structure of folders and filenames
--   Integrates with DuckDB (which integrates with R/tidyverse)
--   See example later!
-
-## R specific data files?
-
--   I use `.qd`-files (previously `.qs`) to cache non-tabular or intermediate data objects
-
-> {qs2}: a framework for efficient serialization ... The qs2 format directly uses R serialization (via the R_Serialize/R_Unserialize C API) while improving underlying compression and disk IO patterns.
-
--   `.RData` is terribly slow!
--   `.rds` should now be much faster than before (serialized)
--   `.fst` might be better in some cases but `.qd/.qs` is more generic (I think)
-
-------------------------------------------------------------------------
-
-![](images/bigdata/paste-14.png)
-
-# Data management
-
-![](images/bigdata/paste-16.png)
-
-------------------------------------------------------------------------
-
--   Let's say data fits into RAM
--   base R and tidyverse works ... but might be terribly slow ...
--   `{data.table}`! 😀
-
-------------------------------------------------------------------------
-
-![](images/bigdata/paste-15.png)
-
-## {data.table}
-
--   Share basic properties with data frames (`dt[i, j]; merge()`)
--   Print method inspired by `{tibble}`
--   Some old friends from `{reshape2}: melt(), dcast()`
--   Has been around since 2006 (stable and well used, older than tidyverse)
--   faster alternatives to base: `fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%`
--   C and GForce (some difficulties on Mac ...)
--   integer based keys and indices (compare data bases)
--   Reference semantics (no need to copy on modification)
--   Very flexible and compact (but perhaps unusual) syntax
-
-## Example
+How many cores do you have?
 
 ```{r}
 #| echo: true
-library(data.table)
-dt <- iris
-setDT(dt)
-setkey(iris)
-iris
-dt[, .N, Species]
-dt[, date := as.IDate(Sys.Date()) + .GRP, Species][]
-dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]
+benchmarkme::get_cpu()
 ```
 
-------------------------------------------------------------------------
+## Vectorization in R
 
-![](images/bigdata/paste-21.png)
+- R is designed to work efficiently with **vectors**, not loops.
+- In R, what looks like a scalar is actually a vector of length 1
+- vectorized operations apply to whole objects at once  
+- loops process one element at a time (often slower)  
 
-## If it doesn't fit?
+```r
+# slow
+result <- numeric(length(x))
+for (i in seq_along(x)) {
+  result[i] <- x[i] + y[i]
+}
 
--   Connect to parquet file.
--   Use DuckDB to process the data (while still on disk)
--   Use `{dplyr}` to translate its syntax into SQL code
--   Process data on disk
--   Only read the results into memory
-
-## Example
-
-```{r}
-#| echo: true
-#| eval: false
-library(tidyverse)
-db1 <-
-  arrow::open_dataset("file1.parquet") |>
-  arrow::to_duckdb() |>
-  select(col1:col3) |>
-  filter(...) |>
-  pivot_wider(..) 
-
-db2 <-
-  arrow::open_dataset("file2.parquet") |>
-  arrow::to_duckdb() |>
-  count(x, y) |>
-  filter(...)
-
-df <- 
-  db1 |>  
-  left_join(db2) |>
-  collect() # Only the resulting part should be collected!
-  
+# fast
+result <- x + y
 ```
 
-------------------------------------------------------------------------
 
-### Pros 👍
+## Why is vectorization faster?
 
--   Lazy: nothing evaluated until it is actually needed (collected)
--   Many basic functions are translated from R to SQL
--   DuckDB is parallelized (`{data.table}` is mostly sequential)
--   Familiar syntax from tidyverse
+Vectorized operations in R are usually implemented in **compiled C code**.
 
-### Cons 👎
+- R code (e.g. `for` loops) is **interpreted**
+  → each step has overhead  
 
--   tidyverse -\> SQL translation not perfect (non optimized)
--   might be relatively slow if intermediate steps are not cached and needs to be performed repeatedly
+- vectorized operations (e.g. `x + y`) are:
+  - implemented in C  
+  - run as tight, optimized loops  
 
-------------------------------------------------------------------------
 
-![](images/bigdata/paste-17.png)
+## Parallel computing
 
-## DuckPlyr
+Parallel computing means using **multiple CPU cores at the same time**.
 
--   New package with API-calls to DuckDB (no standard SQL code in between ... I think)
--   Drop-in-replacement of {dplyr}
--   Automatically fail-safe to collect and use standard {dplyr} if needed
--   Uptimized engine to not touch more data than necessary!
--   Although very limited functionality so far (but wait and see!)
+- most R code runs on a **single core**  
+- your computer may have many cores (e.g. 4–16)
+- a shared server such as TRE might have several hundreds!
 
-------------------------------------------------------------------------
+### Why use parallel computing?
 
-```{r}
-#| eval: false
-#| echo: true
-out <-
-  palmerpenguins::penguins %>%
-  # CAVEAT: factor columns are not supported yet
-  mutate(across(where(is.factor), as.character)) %>%
-  duckplyr::as_duckplyr_tibble() %>%
-  mutate(bill_area = bill_length_mm * bill_depth_mm) %>%
-  summarize(.by = c(species, sex), mean_bill_area = mean(bill_area)) %>%
-  filter(species != "Gentoo")
+- to speed up **computationally intensive tasks**  
+- especially when tasks can be done independently  
 
-out %>%
-  explain()
-```
 
-```{verbatim}
-#> ┌---------------------------┐
-#> │          ORDER_BY         │
-#> │    --------------------   │
-#> │      dataframe_42_42      │
-#> │    42.___row_number ASC   │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │           FILTER          │
-#> │    --------------------   │
-#> │   "r_base::!="(species,   │
-#> │         'Gentoo')         │
-#> │                           │
-#> │          ~34 Rows         │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │         PROJECTION        │
-#> │    --------------------   │
-#> │             #0            │
-#> │             #1            │
-#> │             #2            │
-#> │             #3            │
-#> │                           │
-#> │         ~172 Rows         │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │      STREAMING_WINDOW     │
-#> │    --------------------   │
-#> │        Projections:       │
-#> │    ROW_NUMBER() OVER ()   │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │          ORDER_BY         │
-#> │    --------------------   │
-#> │      dataframe_42_42      │
-#> │    42.___row_number ASC   │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │       HASH_GROUP_BY       │
-#> │    --------------------   │
-#> │          Groups:          │
-#> │             #0            │
-#> │             #1            │
-#> │                           │
-#> │        Aggregates:        │
-#> │          min(#2)          │
-#> │          mean(#3)         │
-#> │                           │
-#> │         ~172 Rows         │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │         PROJECTION        │
-#> │    --------------------   │
-#> │          species          │
-#> │            sex            │
-#> │       ___row_number       │
-#> │         bill_area         │
-#> │                           │
-#> │         ~344 Rows         │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │         PROJECTION        │
-#> │    --------------------   │
-#> │             #0            │
-#> │             #1            │
-#> │             #2            │
-#> │             #3            │
-#> │                           │
-#> │         ~344 Rows         │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │      STREAMING_WINDOW     │
-#> │    --------------------   │
-#> │        Projections:       │
-#> │    ROW_NUMBER() OVER ()   │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │         PROJECTION        │
-#> │    --------------------   │
-#> │          species          │
-#> │            sex            │
-#> │         bill_area         │
-#> │                           │
-#> │         ~344 Rows         │
-#> └-------------┬-------------┘
-#> ┌-------------┴-------------┐
-#> │     R_DATAFRAME_SCAN      │
-#> │    --------------------   │
-#> │         data.frame        │
-#> │                           │
-#> │        Projections:       │
-#> │          species          │
-#> │       bill_length_mm      │
-#> │       bill_depth_mm       │
-#> │            sex            │
-#> │                           │
-#> │         ~344 Rows         │
-#> └---------------------------┘
-```
+💡 **Key message:**  
+Parallel computing allows you to do multiple computations at once — but only if the problem can be split.
 
-------------------------------------------------------------------------
-
-![](images/bigdata/paste-19.png)
-
-## Dates
-
--   Use `as.IDate()` instead of `as.Date()` if using `{data.table}`. Integer based.
--   Use `{anytime}` (or maybe `{fasttime}`) if conversion is needed (`ALTREP`)
-
-## String manipulation
-
--   Character manipulation in base R can be quite slow (does not use `ALTREP` and only single core by default)
-    -   For example regular expressions (`grep()`, `gsub()` etc)
--   `{stringfish}` use multithreads and ALTREP - much faster!
-
-------------------------------------------------------------------------
-
-![](images/bigdata/paste-20.png)
-
-# Paralellization
+------
 
 ![](images/bigdata/paste-22.png)
 
+
+
 ## Paralellization
 
--   R is single threaded by default
 -   Some packages and functions may use multithreading by default
+    - But this is unusual
 -   Some functions might have arguments such as `nthreads`, `ncores` etc
--   To handle multicore/thread computations can be (very) difficult (I've heard)
--   Easy if data can be divided and conquered (split-apply-combine)
--   `{futureverse}` is my favorite (Henrik Bengtsson)
-    -   `{furrr}` is a a drop-in replacement for `{purrr}`
+    - You may want to use them
+-   To handle multicore/thread computations in general can be (very) difficult (I've heard)
 
-## `{furrr}`
+## Split-apply-combine
 
-```{r}
-#| echo: true
-# How many cores do we have?
-parallel::detectCores()
-library(furrr)
-# Save at least one for OS etc
-plan(multisession, workers = parallel::detectCores() - 1)
+Parallel computing works best when:
 
-1:10 |> 
-  future_map(rnorm, n = 10, .options = furrr_options(seed = 123)) |> 
-  future_map_dbl(mean)
+- tasks are **independent**
+- tasks are **computationally heavy**
+- tasks can be repeated many times  
+
+### Examples
+
+- simulations  
+- bootstrapping  
+- cross-validation  
+- applying a function many times  
+
+💡 If tasks depend on each other, parallelisation will not help.
+
+## When parallel computing does NOT help
+
+Parallel computing is often not the solution.
+
+- reading data → bottleneck is disk/network  
+- large objects → bottleneck is RAM  
+- inefficient code → vectorization is better  
+
+## Example in R
+
+```r
+lapply(1:100, function(i) slow_function(i)) # Sequential
+parallel::mclapply(1:100, slow_function, mc.cores = 4) # Parallel
 ```
 
-## {mirai}
+### What happens?
 
--   Suposed to be up to 1,000 times "faster" compared to `{furrr}`(according to some metric ...)
+- each core processes part of the work  
+- results are combined at the end  
+
+💡 More cores ≠ always faster
+
+## Limitations of parallel computing
+
+- overhead (starting processes takes time)  
+- copying data between processes  
+- limited by number of cores  
+- not all functions are parallel-friendly  
+
+## `{mirai}`
+
+-   Suposed to be up to 1,000 times "faster" compared to earlier methods 
+    - (according to some metric ...)
 -   should not block the main process while executing (haven't tried)
 
 > Designed for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.
@@ -632,7 +468,8 @@ plan(multisession, workers = parallel::detectCores() - 1)
 #| echo: true
 
 library(mirai)
-daemons(11, dispatcher = "thread") # "thread" still experimental
+library(data.table)
+daemons(11)
 
 # data.table with 1 billion rows:
 dt <- data.table(x = seq_len(1e9), y = rnorm(1e9))
@@ -640,7 +477,42 @@ dt <- data.table(x = seq_len(1e9), y = rnorm(1e9))
 mirai_map(dt, sum)[.flat]
 ```
 
+-----------
+
 ![](images/bigdata/paste-24.png)
+
+## `{purrr}`
+
+-   Introduced `in_paralell()` in 2025
+-   Based on mirai but without the specialised syntax
+-   Needs to be explicit on which objects/functions to export to each worker/daemon
+
+```{r}
+#| echo: true
+library(purrr)
+library(mirai)
+
+# Set up parallel processing (6 background processes)
+daemons(6)
+
+# Sequential version
+mtcars |> map_dbl(\(x) mean(x))
+#>    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb
+#>  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81
+
+# Parallel version - just wrap your function with in_parallel()
+mtcars |> map_dbl(in_parallel(\(x) mean(x)))
+#>    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb
+#>  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81
+
+# Don't forget to clean up when done
+daemons(0)
+```
+
+## `{targets}`
+
+- The targets package does implement parallel processing efficiently (based on `{mirai}` via `{crew}`)
+- covered in the R medecine workshop (see [EL5](EL5.qmd))
 
 ## Note
 
@@ -652,58 +524,41 @@ mirai_map(dt, sum)[.flat]
 -   Often a tradeof between no of workers/threads/deamons/cores and efficiency etc
 -   "Standard" computations in `{data.table}` is optimized for single core
 -   Message handling and progress bar etc is complicated
+    - So is random number generation
 
-## Caching
+## GPU
 
--   I use `{ProjectTemplate}` to organize R projects into different steps
+A Graphics Processing Unit (GPU) is designed for **massively parallel computations**.
 
--   It has an inbuilt cache mechanism through `ProjectTemplate::cache()`
+- many simple cores (thousands)  
+- optimized for performing the same operation many times  
+- originally developed for graphics  
 
--   I have my own cache-functions in my `.Rprofile`
 
-```{r}
-#| echo: true
-# OBS kollar inte att det verkligen finns cache-folder etc
-cache_dt <- function(x, name = deparse(substitute(x)), nthreads = 5) {
-  qs2::qd_save(x, glue::glue("cache/{name}.qd"), nthreads = nthreads)
-  invisible(x)
-}
 
-decache_dt <- function(name, nthreads = 5) {
-  x <- qs2::qd_read(glue::glue("cache/{name}.qd"), TRUE, nthreads = nthreads)
-  if (data.table::is.data.table(x)) {
-    data.table::setDT(x)
-  }
-  assign(name, x, envir = .GlobalEnv)
-  invisible(x)
-}
+## How is it different from a CPU?
 
-```
+- CPU: few powerful cores → general-purpose tasks  
+- GPU: many simple cores → parallel tasks  
 
-## Intermediate caching
+### When are GPUs useful?
 
--   For long running function calls (hours, days)
+- machine learning / deep learning  
+- large matrix operations  
+- simulations that can be parallelised  
 
--   Divide task into smaller pieces and execute each part in paralell if feasable
 
--   Use wrapper function with some index/grouping variable to indicate which part is currently processed
+## In R
 
--   Cache intermediate object as soon as possible (with name based on the grouping variable)
+- most R code does **not use the GPU**
+- standard packages are **CPU-based**
+- GPU requires specialized tools (e.g. `torch`, `tensorflow`, `gpuR`)
 
--   If process is disrupted and must be restarted, parts which are already executed are just retrieved from from cache
 
-```{r}
-#| echo: true
-cache_wrapper <- function(dt_part, name, ...) {
-  if (fs::file_exists(glue::glue("cache/{name}.qd"))) {
-    decache_dt(name)
-  } else {
-    x <- do_what_should_be_done()
-    cache_dt(x, name, ...)
-    x
-  }
-}
-```
+💡 **Key message:**  
+GPUs can be extremely powerful — but only for specific types of problems.
+
+In most R workflows, **CPU, RAM, and data access matter much more**.
 
 ## Profiling
 
@@ -716,7 +571,7 @@ cache_wrapper <- function(dt_part, name, ...) {
     -   set keys
     -   Efficient handling of dates and strings
 -   itterate
--   Integrated in RStudio (but not yet Positron)
+-   Integrated in RStudio (works in Positron to)
 
 ------------------------------------------------------------------------
 
@@ -745,14 +600,12 @@ If you find ways to improve a package, the maintainer might be eager to hear! Su
 -   If the package use C-code it is probably already very fast
 -   If not, and you can fix it, the package must be re-compiled
 -   OS dependent
--   Might be tricky if using restricted environments (TRE?)
+-   Might be tricky if using restricted environments (TRE)
 -   Can still be done by rhub (might need to change maintainer-e-mail temporarily)
 
 ------------------------------------------------------------------------
 
 ![](images/bigdata/paste-3.png)
-
-------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 

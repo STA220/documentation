@@ -23,39 +23,47 @@ bibliography: references.bib
 
 ## Reading
 
-- [@wickham, ch. 28-29] introduces Quarto with good examples
+-   [@wickham, ch. 28-29] introduces Quarto with good examples
 
 **For reference**
 
 [quarto.org](https://quarto.org)
 
+
 ## Levels of documentation
 
 Documentation can exist at several levels in a project.
 
-- **Code level**
-  - scripts (comments, e.g. `# clean data and merge cohorts`)
-  - functions (Roxygen2 documentation)
-  - notes and reminders (e.g. `# TODO:`)
+-   **Code level**
+    -   scripts (comments, e.g. `# clean data and merge cohorts`)
+    -   functions ([Roxygen2](https://roxygen2.r-lib.org/index.html) documentation)
+    -   notes and reminders (e.g. `# TODO:`)
+-   **Project level**
+    -   `README.md`
+    -   (GitHub repos may also have a wiki or a polished website)
+-   **Output level**
+    -   figures and tables
+    -   reports (PDF / HTML)
+    -   presentations (slides)
 
-- **Project level**
-  - `README.md`
-
-- **Output level**
-  - figures and tables
-  - reports (PDF / HTML)
-  - presentations (slides)
+# Code level
 
 ## Documenting R scripts
 
-- Section labels by `Shift + Ctrl/Cmd + R` in Positron and RStudio
--   Easiest way to aid navigation in R scripts
+-   Use [Air](https://posit-dev.github.io/air/editor-vscode.html) for better formatting of the R code itself (will format the code according to best practice for readability and collaboration)
+-   Section labels by `Shift + Ctrl/Cmd + R` in Positron (and RStudio)
+-   Easiest way to aid navigation to R scripts
 
-```r
+``` r
 # My section heading -----------------------------------------------------
 ```
 
--   [commentr package](https://bitbucket.org/cancercentrum/commentr/src/master/)
+![](images/paste-43.png)
+
+## Individual scripts
+
+-   As soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.
+-   The [commentr package](https://bitbucket.org/cancercentrum/commentr/src/master/) is designed to maintain such context
     -   `remotes::install_bitbucket("cancercentrum/commentr")`
 
 ```{r}
@@ -84,8 +92,8 @@ What does this function do?
 
 ```{r}
 #| echo: true
-hello <- function(who) {
-  sprintf("Hello %s!", if (missing(who)) "world" else who)
+hello <- function(who = "world") {
+  sprintf("Hello %s!", who)
 }
 ```
 
@@ -93,16 +101,23 @@ hello <- function(who) {
 
 ```{r}
 #| echo: true
-#' Say hello!
+#' Say hello
 #'
-#' This function let's you greet someone or something
-#' @param character vector. Someone or something to great. Will great the world if argumen is missing.
-#' @return character vector of the same length as `character`
+#' Create a simple greeting. If no name is provided, the function
+#' returns a greeting to the world.
+#'
+#' @param who A character vector giving the name(s) of the person or
+#'   object to greet. If missing, the greeting defaults to `"world"`.
+#'
+#' @return A character vector of the same length as `who` containing
+#'   greeting messages.
+#'
 #' @examples
 #' hello()
 #' hello("you")
-hello <- function(who) {
-  sprintf("Hello %s!", if (missing(who)) "world" else who)
+#' hello(c("Alice", "Bob"))
+hello <- function(who = "world") {
+  sprintf("Hello %s!", who)
 }
 ```
 
@@ -111,6 +126,8 @@ hello <- function(who) {
 -   The same syntax is used within modern R packages
     -   but it is useful even within your own projects
 -   [roxygen2](https://roxygen2.r-lib.org/index.html) is a package used for package documentation but it also has a great [manual for documenteing functions in general](https://roxygen2.r-lib.org/articles/rd.html)
+
+# Project level
 
 ## Documenting a project
 
@@ -122,26 +139,41 @@ hello <- function(who) {
 
 ![](images/paste-34.png)
 
------------
+------------------------------------------------------------------------
 
 ## Basic formatting
 
-| What you want | Markdown syntax | Result |
-|---|---|---|
-| Heading | `# Heading` | Heading |
-| Italic | `*text*` | *text* |
-| Bold | `**text**` | **text** |
-| Inline code | `` `code` `` | `code` |
-| Link | `[text](https://example.com)` | [text](https://example.com) |
-| Bullet list | `- item` | • item |
-| Numbered list | `1. item` | 1. item |
+| What you want | Markdown syntax               | Result                      |
+|------------------|---------------------------|---------------------------|
+| Heading       | `# Heading`                   | Heading                     |
+| Italic        | `*text*`                      | *text*                      |
+| Bold          | `**text**`                    | **text**                    |
+| Inline code   | `` `code` ``                  | `code`                      |
+| Link          | `[text](https://example.com)` | [text](https://example.com) |
+| Bullet list   | `- item`                      | • item                      |
+| Numbered list | `1. item`                     | 1\. item                    |
 
-::: {.callout-note}
+::: callout-note
 # Comment or heading
+
 `#` is used for comments in R files and within R blocks but for headings in `.md` and `.qmd` files!
 :::
 
-## Reproducible Workflows in Biostatistics
+# Visual mode
+
+Instead of editing the source code, you may also use the "visual editor" in Positron:
+
+![](images/paste-44.png)
+
+::: callout-warning
+![](images/paste-45.png)
+:::
+
+## Use both?
+
+Personally, I do most editing in source mode (better for the R chunks), but I find it much easier to include references/citations and to paste in external figures in using the visual mode.
+
+## Reproducible Workflows
 
 Modern biostatistics projects rarely involve only statistics.
 
@@ -152,6 +184,8 @@ Modern biostatistics projects rarely involve only statistics.
 -   reporting and documentation
 
 A good workflow should make it possible to **combine all of these steps in one place**.
+
+# Output level
 
 ## What?
 
@@ -172,19 +206,19 @@ This makes it easier to create **reproducible statistical reports**.
 
 In many projects people work with:
 
--   R scripts for analysis
--   Word documents for reporting
--   PowerPoint slides for presentations
+-   R scripts for analysis 🥳
+-   Word documents for reporting 😱
+-   PowerPoint slides for presentations 😱
 
 This separation often leads to:
 
--   copy–paste errors
--   outdated figures
--   results that cannot easily be reproduced
+-   copy–paste errors 🥴
+-   outdated figures 👎
+-   results that cannot easily be reproduced 🤯
 
-Quarto helps avoid these problems.
+**Quarto helps avoid these problems!**
 
-## A reproducible analysis document
+## Reproducible analysis
 
 In a Quarto document you can:
 
@@ -205,8 +239,7 @@ In a Quarto document you can:
 
 ## A simple report
 
--   When you chose "New \> New File ..." in the upper left corner in Positron you may chose "Quarto document"
--   The file will be almost empty but contains:
+When you chose `New > New File ... > Quarto document,` the file will contain:
 
 ``` yaml
 ---
@@ -216,10 +249,10 @@ format: html
 ```
 
 -   This is a YAML header (Yet Another Markup Language)
--   Different formats available:
-    -   **html:** can also be published online
-    -   **docx:** for collaborating with non-statisticians etc
-    -   **typst:** Modern PDF rendering
+-   Different output formats are available:
+    -   **html:** can also be published online ([Quartopub](https://quartopub.com) or [GitHub pages](https://quarto.org/docs/publishing/github-pages.html))
+    -   **docx:** Word document for collaborating with non-statisticians etc
+    -   **typst:** PDF rendering (ever heard of $\LaTeX$? ... This is the modern alternative!)
     -   **revealjs:** slide decks (you are looking at one!)
 -   Can render to multiple formats at once!
 
@@ -230,7 +263,7 @@ This is the yaml header for this presentation:
 ``` yaml
 ---
 title: "EL9: Documentation"
-subtitle: "Quarto, roxygn2"
+subtitle: "Quarto"
 reading: "[@wickham, ch. 28-29]"
 format:
   revealjs:
@@ -258,7 +291,7 @@ YAML uses **indentation to represent structure**.
 
 Think of it like a tree.
 
-```yaml
+``` yaml
 format:
   html:
     code-fold: true
@@ -266,15 +299,15 @@ format:
 
 This corresponds to the structure:
 
-```
+```         
 format
 └── html
     └── code-fold: true
 ```
 
-### What happens if indentation is wrong?
+### If indentation is wrong?
 
-```yaml
+``` yaml
 format:
 html:
   code-fold: true
@@ -282,7 +315,7 @@ html:
 
 Now Quarto interprets this as:
 
-```
+```         
 format
 html
 └── code-fold: true
@@ -290,42 +323,37 @@ html
 
 This is **not the intended structure**, and the document may fail to render.
 
----
+------------------------------------------------------------------------
 
 💡 **Rule of thumb**
 
-- use **two spaces per level**
-- never use **tabs**
-- when something fails, **check indentation first**
+-   use **two spaces per level**
+-   never use **tabs**
+-   when something fails, **check indentation first**
 
 ## Three parts
 
 Quarto documents have three parts:
 
 1.  An (optional) YAML header surrounded by `---`s.
-2.  Chunks of R code surrounded by `` ```{r} `` and `` ``` ``.
+2.  Chunks of R code surrounded by ```` ```{r} ```` and ```` ``` ````.
 
-````verbatim
+``` verbatim
 ```{r}          ← chunk header
 #| echo: false  ← options controlling the output
 summary(x)      ← R code
 ```             ← end of chunk
-````
+```
+
+Keybindings: `Cmd + option + I` (Mac) or `Ctrl + Alt + I` (Windows)
 
 3.  Text with markdown format
 
-Where 1 (YAML header) comes first and where 2 and 3 are intermingled throughout the rest of the document.
+::: callout-tip
+# Order
 
-------------------------------------------------------------------------
-
-![](images/paste-35.png)
-
-------------------------------------------------------------------------
-
-![](images/paste-36.png)
-
-------------------------------------------------------------------------
-
+Part 1 (YAML header) always comes first but 2 (code block) and 3 (Markdown text) are usually intermingled throughout the rest of the document.
+:::
 
 ## Inline code
 
@@ -349,11 +377,19 @@ Todays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = "%I 
 
 > Todays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = "%I %p")`*
 
+
+------------------------------------------------------------------------
+
+![](images/paste-35.png)
+
+------------------------------------------------------------------------
+
+![](images/paste-36.png)
+
+
 ## To publish
 
-Decision makers, stake holders, friends or the public might not care about R.
-Disable R code (echoing the code itself), warnings and messages:
-
+Decision makers, stake holders, friends or the public might not care about R. Disable R code (echoing the code itself), warnings and messages:
 
 ``` yaml
 ---
@@ -369,7 +405,8 @@ execute:
 ## For collaborators
 
 -   Might still care less about verbose R messages and warnings (they trust that you have already considered those)
--   May check the underlaying R code if relevant (use `code-fold`)
+-   May still need the underlaying R code for deeper understaing
+-   Use `code-fold`
 
 ``` yaml
 ---
@@ -382,6 +419,17 @@ execute:
   message: false
 ---
 ```
+
+------------------------------------------------------------------------
+
+![](images/paste-46.png)
+
+------------------------------------------------------------------------
+
+
+![](images/paste-47.png)
+
+------------------------------------------------------------------------
 
 This can also be set individually for each code chunk:
 
@@ -417,7 +465,8 @@ plot(0, 0)
 Just printing the R output might not look very nice:
 
 ```{r}
-iris
+#| echo: true
+head(iris)
 ```
 
 ------------------------------------------------------------------------
@@ -429,15 +478,23 @@ The easiest way to make tibbles/data.frames/data.tables look nicer is with `df-p
 ``` yaml
 ---
 title: "Untitled"
-format:
-  html:
-    df-print: kable
+format: html
+df-print: kable
 ---
 ```
 
+Or manually for individual outputs:
+
+````{verbatim}
 ```{r}
 #| tbl-cap: Some iris data
-knitr::kable(iris)
+knitr::kable(head(iris))
+```
+````
+
+```{r}
+#| tbl-cap: Some iris data
+knitr::kable(head(iris))
 ```
 
 ## Best with gt
@@ -445,7 +502,7 @@ knitr::kable(iris)
 -   Very flexible
 -   Publication ready
 -   [Package from Posit](https://gt.rstudio.com)
-- Sometimes [flextable](https://ardata-fr.github.io/flextable-book/) if rendering MS Office documents (Word, PowerPoint)
+-   [flextable](https://ardata-fr.github.io/flextable-book/) may be preferred instead if rendering Office documents (Word, PowerPoint)
 
 ------------------------------------------------------------------------
 
@@ -471,15 +528,16 @@ gtsummary::tbl_summary(iris, Species)
 
 ## Presentations
 
-- Quarto can export to PowerPoint
-- And to the older Beamer format
-- But I recommend [revealjs](https://revealjs.com)
-  - `format: revealjs`
-  - can also be modified with speaker notes, laser pointer etc
-- [Info and examples](https://quarto.org/docs/presentations/revealjs/)
+-   Quarto can export to PowerPoint
+-   And to the older Beamer format
+-   But I recommend [revealjs](https://revealjs.com)
+    -   `format: revealjs`
+    -   can also be modified with speaker notes, laser pointer etc
+-   [Info and examples](https://quarto.org/docs/presentations/revealjs/)
 
-For examplen (as used for those slides):
-```yaml
+For example (as used for these slides):
+
+``` yaml
 format:
   revealjs:
     theme: blood
@@ -491,96 +549,13 @@ format:
     incremental: false
 ```
 
-## Manuscripts
-
-- [Quarto Manuscript](https://quarto.org/docs/manuscripts/)
-- framework for writing and publishing scholarly articles
-- Something for your later thesis work?
-- Handles references
-- Export to Word documents (`.docx`) etc 
-  - which is still the most common format for submission to medical/epidemiological journals
-  - Still used for collaborative work with non-statisticians etc
-
-## USe references
-
-When writing scientific reports we need to:
-
-- acknowledge previous research
-- support claims with evidence
-- allow readers to find the original sources
-
-This is done through **citations** and a **reference list**.
-
-Example:
-
-> Don't blame me, it was according to @wickham.
-
-At the end of the document a **bibliography** is automatically generated.
-
----
-
-## What is reference management?
-
-Reference management means keeping track of:
-
-- articles, books, reports, datasets
-
-including information such as:
-
-- authors, title, journal, year
-- [DOI](https://www.doi.org/the-identifier/what-is-a-doi/)
-
-Instead of typing references manually, software can **store and format them automatically**.
-
----
-
-## Common reference management tools
-
-Many researchers use tools such as:
-
-- **Zotero**
-- **Mendeley**
-- **EndNote**
-
-These tools allow you to:
-
-- collect references from databases (PubMed, Google Scholar, etc.)
-- organise them in libraries
-- export them to writing tools
-
-Quarto can work with references from these systems directly.
-
----
-
-## How Quarto handles references
-
-Quarto uses a **bibliography file**, usually in `.bib` format.
-
-Example in the document header:
-
-```yaml
-bibliography: references.bib
-```
-
-Then citations can be written directly in the text:
-
-```
-Several studies have examined this relationship @smith2020.
-```
-
-Quarto will render something like:
-
-> Several studies have examined this relationship (Smith 2020).
-
-The full reference will appear automatically in the bibliography.
-
-
 ## Integrate with `{targets}`
 
 [`tarchetypes::tar_quarto()`](https://docs.ropensci.org/tarchetypes/reference/tar_quarto.html)
 
 ### in `_targets.R`
-```r
+
+``` r
 library(targets)
 library(tarchetypes) # Let you integrate a quarto report/presentation
 list(
@@ -608,7 +583,7 @@ gt::gt(tar_read(data))
 
 Copy this code to the terminal (not the console!) and try `targets::tar_make()` in the console!
 
-````{bash}
+```{bash}
 #| eval: false
 #| echo: true
 cd
@@ -639,28 +614,72 @@ format:
 
 ## Here are some flowers!
 
-```{r}
 gtsummary::tbl_summary(targets::tar_read(data))
-```
 
 ## And here is a model
 
-```{r}
 gtsummary::tbl_regression(targets::tar_read(model))
-```
 EOF
 
 positron test_targets_quarto
 # rm -r test_targets_quarto
-````
+```
+
+## Manuscripts
+
+-   [Quarto Manuscript](https://quarto.org/docs/manuscripts/)
+-   framework for writing and publishing scholarly articles
+-   Something for your later thesis work?
+-   Handles references
+-   Export to Word documents (`.docx`) etc
+    -   which is still the most common format for submission to medical/epidemiological journals
+    -   Still used for collaborative work with non-statisticians etc
+
+## Use references
+
+When writing scientific reports we need to:
+
+-   acknowledge previous research
+-   support claims with evidence
+-   allow readers to find the original sources
+
+This is done through **citations** and a **reference list**.
+
+Example:
+
+> Don't blame me, it was according to @wickham.
+
+At the end of the document a **bibliography** is automatically generated.
+
+
+## How Quarto handles references
+
+Quarto uses a **bibliography file**, usually in `.bib` format.
+
+Example in the document header:
+
+``` yaml
+bibliography: references.bib
+```
+
+Then citations can be written directly in the text:
+
+```         
+Several studies have examined this relationship @smith2020.
+```
+
+Quarto will render something like:
+
+> Several studies have examined this relationship (Smith 2020).
+
+The full reference will appear automatically in the bibliography.
+
 
 ## Online portfolio
 
-- Looking for a job after you fininsh the master program?
-- An online portfolia might increase your visability!
-- Perhaps add your course project to such portfolio?
-- [Demo](https://deepshamenghani.quarto.pub/portfolio-with-quarto-workshop/#/title-slide)
-
-
+-   Looking for a job after you fininsh the master program?
+-   An online portfolia might increase your visability!
+-   Perhaps add your course project to such portfolio?
+-   [Demo](https://deepshamenghani.quarto.pub/portfolio-with-quarto-workshop/#/title-slide)
 
 ------------------------------------------------------------------------

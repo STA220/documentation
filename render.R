@@ -54,7 +54,7 @@ pdfs <-
     upload_from = paste0("articles/", literature, ".pdf")
   ) |>
   filter(
-    upload_from %in% dir("articles", full.names = TRUE)
+    upload_from %in% dir("articles", ".pdf", full.names = TRUE)
   ) |>
   left_join(canvas_pdfs)
 
@@ -82,6 +82,10 @@ if (length(pdfs_to_upload) == 0) {
     )
   })
 
+  # Läsinstruktioner
+  article_read <-
+    readr::read_csv("articles/article_read.csv") |>
+    mutate(read = na_if(read, "all"))
   # tabell att presentera
   html_table <-
     pdfs |>
@@ -90,20 +94,23 @@ if (length(pdfs_to_upload) == 0) {
       Session,
       download = glue::glue("<a href='{url}'>{literature}</a>")
     ) |>
+    left_join(article_read, c(literature = "article")) |>
     arrange(Session) |>
     mutate(Session = if_else(duplicated(Session), "", Session)) |>
-    select(Session, download) |>
+    transmute(Session, download, comment = coalesce(read, "")) |>
     knitr::kable(format = "html", escape = FALSE)
 
   # HTML body att lägga in
 
   body <- '
-Note that some required reading consints of web pages. 
-Check the full reading list in the
-<a href="https://sta220.github.io/documentation/">course plan</a>
+Only some parts from the course book (Nguyen) are required:
+<ul>
+  <li><strong>Chapter 1:</strong> Whole</li>
+  <li><strong>Chapter 2:</strong> Skip the last three sections concerning (hyper)graph databases and RDF</li>
+  <li><strong>Chapter 3:</strong> Skip subsections "CPT" and "LOINC" as well as the full section "Using the Unified Medical Language System"</li>
+</ul>
 <p>
-You may also acces the referenced articles by links provided in the reference list.
-If you are not able to do that, static PDF:s are found below.
+Addional required articles:
 ' |>
     paste(html_table, sep = "\n\n")
 
@@ -113,7 +120,7 @@ If you are not able to do that, static PDF:s are found below.
     sta220$id,
     "851450",
     page_params = list(
-      title = "PDF:s to read",
+      title = "Reading for the DISA exam",
       body = body
     )
   )

@@ -18,7 +18,9 @@ The class will be divided into two seminar groups.
 For projects with two students, one student should sign up for **Group 1** and the other for **Group 2** using  
 **Canvas → People → "ES2 Project Seminar"**.
 
+::: {.callout-important}
 Please coordinate within your project group so that you **do not sign up for the same seminar group**.
+:::
 
 # Preparation
 
@@ -26,19 +28,25 @@ Prepare a short presentation of your project.
 
 You may prepare the presentation together with your project partner, although each of you will give the presentation **individually** in different seminar groups. You may also choose to prepare your presentation independently.
 
-The presentation should use the report or revealjs slides you prepared earlier, as described in [ECS5](ECS5.qmd). If you produced a written report, you may simply display it on screen and scroll through the document while presenting.
+The presentation should use the report or revealjs slides you prepared earlier, as described in [ECS5](ECS5.qmd). If you produced a written report, you may simply display it on screen and scroll through the document while presenting. 
 
+You are also welcome to show your GitHub repository if you wish. Some of you have developed very well-organised workflows and clear README files, which could be inspiring for others to see. Others may have encountered challenges and may find it useful to ask for input or feedback from the group.
+
+::: {.callout-tip}
 Aim for a **5 minute presentation**.
+:::
 
-Present:
+### Your presentation should briefly cover:
 
-- the **research question** of your project
-- the **data and analysis**
-- any **insights or results** you obtained
+- the **research question** of your project  
+- the **data and analysis**  
+  - All groups worked from the same overall data collection, so there is no need to describe it in general terms  
+  - However, you may have chosen different subsets and variables, which should be briefly explained
+  - any **insights or results** you obtained
 
 If you were able to obtain meaningful results, present these together with your **interpretation and conclusions**.
 
-If you were not able to obtain clear results, instead focus on:
+If you did not obtain clear results, instead focus on:
 
 - challenges you encountered during the project
 - how you tried to address these challenges
@@ -46,6 +54,12 @@ If you were not able to obtain clear results, instead focus on:
 
 # The seminar
 
-Each student will present their project work according to the instructions above.
+Each student will present their project according to the instructions above.
 
 After the presentations, we will conclude with a **short discussion and reflection** about the projects, including experiences from working with the data, the analysis, and the collaboration process.
+
+::: {.callout-note}
+During this part of the seminar, any questions and reflections are welcome. The purpose is not to assess the quality of your answers, but to create space for honest discussion and reflection.
+
+Think of this as an opportunity to explore challenges and uncertainties — and to prepare for a reality where working with data is rarely straightforward!
+:::

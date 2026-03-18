@@ -30,6 +30,7 @@ website:
           - ECS3.qmd
           - ECS4.qmd
           - ECS5.qmd
+          - ECS6.qmd
       - text: Seminars
         menu:
           - ES1.qmd

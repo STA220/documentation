@@ -1,7 +1,7 @@
 ---
 title: "EL3: Swedish legislation"
 subtitle: "Laws and regulation"
-reading: "[@publica2025, [@görman2024]"
+reading: "[@publica2025], [@görman2024]"
 format:
   revealjs:
     theme: blood

@@ -220,7 +220,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="./EL10.html">
- <span class="dropdown-text">EL10: Big data</span></a>
+ <span class="dropdown-text">EL10: Biggish data</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./EL11.html">
@@ -252,6 +252,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./ECS5.html">
  <span class="dropdown-text">ECS5: Presentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ECS6.html">
+ <span class="dropdown-text">ECS6: Project</span></a>
   </li>  
     </ul>
   </li>
@@ -658,19 +662,25 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#reading-4" id="toc-reading-4" class="nav-link" data-scroll-target="#reading-4">Reading</a></li>
   <li><a href="#levels-of-documentation" id="toc-levels-of-documentation" class="nav-link" data-scroll-target="#levels-of-documentation">Levels of documentation</a></li>
+  <li><a href="#code-level" id="toc-code-level" class="nav-link" data-scroll-target="#code-level">Code level</a></li>
   <li><a href="#documenting-r-scripts" id="toc-documenting-r-scripts" class="nav-link" data-scroll-target="#documenting-r-scripts">Documenting R scripts</a></li>
+  <li><a href="#individual-scripts" id="toc-individual-scripts" class="nav-link" data-scroll-target="#individual-scripts">Individual scripts</a></li>
   <li><a href="#documenting-r-functions" id="toc-documenting-r-functions" class="nav-link" data-scroll-target="#documenting-r-functions">Documenting R functions</a></li>
+  <li><a href="#project-level" id="toc-project-level" class="nav-link" data-scroll-target="#project-level">Project level</a></li>
   <li><a href="#documenting-a-project" id="toc-documenting-a-project" class="nav-link" data-scroll-target="#documenting-a-project">Documenting a project</a></li>
   <li><a href="#basic-formatting" id="toc-basic-formatting" class="nav-link" data-scroll-target="#basic-formatting">Basic formatting</a></li>
-  <li><a href="#reproducible-workflows-in-biostatistics" id="toc-reproducible-workflows-in-biostatistics" class="nav-link" data-scroll-target="#reproducible-workflows-in-biostatistics">Reproducible Workflows in Biostatistics</a></li>
+  <li><a href="#visual-mode" id="toc-visual-mode" class="nav-link" data-scroll-target="#visual-mode">Visual mode</a></li>
+  <li><a href="#use-both" id="toc-use-both" class="nav-link" data-scroll-target="#use-both">Use both?</a></li>
+  <li><a href="#reproducible-workflows" id="toc-reproducible-workflows" class="nav-link" data-scroll-target="#reproducible-workflows">Reproducible Workflows</a></li>
+  <li><a href="#output-level" id="toc-output-level" class="nav-link" data-scroll-target="#output-level">Output level</a></li>
   <li><a href="#what" id="toc-what" class="nav-link" data-scroll-target="#what">What?</a></li>
   <li><a href="#why-1" id="toc-why-1" class="nav-link" data-scroll-target="#why-1">Why?</a></li>
-  <li><a href="#a-reproducible-analysis-document" id="toc-a-reproducible-analysis-document" class="nav-link" data-scroll-target="#a-reproducible-analysis-document">A reproducible analysis document</a></li>
+  <li><a href="#reproducible-analysis-1" id="toc-reproducible-analysis-1" class="nav-link" data-scroll-target="#reproducible-analysis-1">Reproducible analysis</a></li>
   <li><a href="#used-in-three-ways" id="toc-used-in-three-ways" class="nav-link" data-scroll-target="#used-in-three-ways">Used in three ways</a></li>
   <li><a href="#a-simple-report" id="toc-a-simple-report" class="nav-link" data-scroll-target="#a-simple-report">A simple report</a></li>
   <li><a href="#yaml-structure" id="toc-yaml-structure" class="nav-link" data-scroll-target="#yaml-structure">YAML structure</a>
   <ul class="collapse">
-  <li><a href="#what-happens-if-indentation-is-wrong" id="toc-what-happens-if-indentation-is-wrong" class="nav-link" data-scroll-target="#what-happens-if-indentation-is-wrong">What happens if indentation is wrong?</a></li>
+  <li><a href="#if-indentation-is-wrong" id="toc-if-indentation-is-wrong" class="nav-link" data-scroll-target="#if-indentation-is-wrong">If indentation is wrong?</a></li>
   </ul></li>
   <li><a href="#three-parts" id="toc-three-parts" class="nav-link" data-scroll-target="#three-parts">Three parts</a></li>
   <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code">Inline code</a></li>
@@ -682,59 +692,78 @@ window.Quarto = {
   <li><a href="#best-with-gt" id="toc-best-with-gt" class="nav-link" data-scroll-target="#best-with-gt">Best with gt</a></li>
   <li><a href="#gtsummary" id="toc-gtsummary" class="nav-link" data-scroll-target="#gtsummary">gtsummary</a></li>
   <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations">Presentations</a></li>
-  <li><a href="#manuscripts" id="toc-manuscripts" class="nav-link" data-scroll-target="#manuscripts">Manuscripts</a></li>
-  <li><a href="#use-references" id="toc-use-references" class="nav-link" data-scroll-target="#use-references">USe references</a></li>
-  <li><a href="#what-is-reference-management" id="toc-what-is-reference-management" class="nav-link" data-scroll-target="#what-is-reference-management">What is reference management?</a></li>
-  <li><a href="#common-reference-management-tools" id="toc-common-reference-management-tools" class="nav-link" data-scroll-target="#common-reference-management-tools">Common reference management tools</a></li>
-  <li><a href="#how-quarto-handles-references" id="toc-how-quarto-handles-references" class="nav-link" data-scroll-target="#how-quarto-handles-references">How Quarto handles references</a></li>
   <li><a href="#integrate-with-targets" id="toc-integrate-with-targets" class="nav-link" data-scroll-target="#integrate-with-targets">Integrate with <code>{targets}</code></a>
   <ul class="collapse">
   <li><a href="#in-_targets.r" id="toc-in-_targets.r" class="nav-link" data-scroll-target="#in-_targets.r">in <code>_targets.R</code></a></li>
   <li><a href="#in-report.qmd" id="toc-in-report.qmd" class="nav-link" data-scroll-target="#in-report.qmd">In <code>report.qmd</code></a></li>
   </ul></li>
   <li><a href="#try-it" id="toc-try-it" class="nav-link" data-scroll-target="#try-it">Try it</a></li>
+  <li><a href="#manuscripts" id="toc-manuscripts" class="nav-link" data-scroll-target="#manuscripts">Manuscripts</a></li>
+  <li><a href="#use-references" id="toc-use-references" class="nav-link" data-scroll-target="#use-references">Use references</a></li>
+  <li><a href="#how-quarto-handles-references" id="toc-how-quarto-handles-references" class="nav-link" data-scroll-target="#how-quarto-handles-references">How Quarto handles references</a></li>
   <li><a href="#online-portfolio" id="toc-online-portfolio" class="nav-link" data-scroll-target="#online-portfolio">Online portfolio</a></li>
   </ul></li>
-  <li><a href="#el10-big-data" id="toc-el10-big-data" class="nav-link" data-scroll-target="#el10-big-data">EL10: Big data</a>
+  <li><a href="#el10-biggish-data" id="toc-el10-biggish-data" class="nav-link" data-scroll-target="#el10-biggish-data">EL10: Biggish data</a>
   <ul class="collapse">
   <li><a href="#big-data" id="toc-big-data" class="nav-link" data-scroll-target="#big-data">Big data</a></li>
   <li><a href="#biggish-data" id="toc-biggish-data" class="nav-link" data-scroll-target="#biggish-data">Biggish data</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
-  <li><a href="#file-format" id="toc-file-format" class="nav-link" data-scroll-target="#file-format">File format</a></li>
-  <li><a href="#file-storage" id="toc-file-storage" class="nav-link" data-scroll-target="#file-storage">File storage</a></li>
-  <li><a href="#sync_project" id="toc-sync_project" class="nav-link" data-scroll-target="#sync_project"><code>sync_project()</code></a></li>
-  <li><a href="#reading-sas-files-in-r" id="toc-reading-sas-files-in-r" class="nav-link" data-scroll-target="#reading-sas-files-in-r">👎 Reading SAS files in R</a></li>
-  <li><a href="#havenread_sas" id="toc-havenread_sas" class="nav-link" data-scroll-target="#havenread_sas"><code>haven::read_sas()</code></a></li>
-  <li><a href="#export-from-sas-to-csv" id="toc-export-from-sas-to-csv" class="nav-link" data-scroll-target="#export-from-sas-to-csv">👍 Export from SAS to csv</a></li>
-  <li><a href="#chatgpt" id="toc-chatgpt" class="nav-link" data-scroll-target="#chatgpt">ChatGPT</a></li>
-  <li><a href="#ide" id="toc-ide" class="nav-link" data-scroll-target="#ide">IDE</a></li>
-  <li><a href="#from-csv-to-r" id="toc-from-csv-to-r" class="nav-link" data-scroll-target="#from-csv-to-r">From csv to R</a></li>
-  <li><a href="#altrep" id="toc-altrep" class="nav-link" data-scroll-target="#altrep"><code>ALTREP</code>?</a></li>
-  <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database">Database?</a></li>
-  <li><a href="#database-1" id="toc-database-1" class="nav-link" data-scroll-target="#database-1">Database?</a></li>
-  <li><a href="#duckdb-1" id="toc-duckdb-1" class="nav-link" data-scroll-target="#duckdb-1">DuckDB</a></li>
-  <li><a href="#from-csv-to-parquet" id="toc-from-csv-to-parquet" class="nav-link" data-scroll-target="#from-csv-to-parquet">From CSV to Parquet</a></li>
-  <li><a href="#parquet-1" id="toc-parquet-1" class="nav-link" data-scroll-target="#parquet-1">Parquet</a></li>
-  <li><a href="#r-specific-data-files" id="toc-r-specific-data-files" class="nav-link" data-scroll-target="#r-specific-data-files">R specific data files?</a></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management">Data management</a></li>
-  <li><a href="#data.table-1" id="toc-data.table-1" class="nav-link" data-scroll-target="#data.table-1">{data.table}</a></li>
-  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
-  <li><a href="#if-it-doesnt-fit" id="toc-if-it-doesnt-fit" class="nav-link" data-scroll-target="#if-it-doesnt-fit">If it doesn’t fit?</a></li>
-  <li><a href="#example-8" id="toc-example-8" class="nav-link" data-scroll-target="#example-8">Example</a>
+  <li><a href="#reading-large-datasets" id="toc-reading-large-datasets" class="nav-link" data-scroll-target="#reading-large-datasets">Reading large datasets</a>
   <ul class="collapse">
-  <li><a href="#pros" id="toc-pros" class="nav-link" data-scroll-target="#pros">Pros 👍</a></li>
-  <li><a href="#cons" id="toc-cons" class="nav-link" data-scroll-target="#cons">Cons 👎</a></li>
+  <li><a href="#network-storage-e.g.-shared-drives" id="toc-network-storage-e.g.-shared-drives" class="nav-link" data-scroll-target="#network-storage-e.g.-shared-drives">Network storage (e.g.&nbsp;shared drives)</a></li>
+  <li><a href="#local-storage" id="toc-local-storage" class="nav-link" data-scroll-target="#local-storage">Local storage</a></li>
   </ul></li>
-  <li><a href="#duckplyr" id="toc-duckplyr" class="nav-link" data-scroll-target="#duckplyr">DuckPlyr</a></li>
-  <li><a href="#dates" id="toc-dates" class="nav-link" data-scroll-target="#dates">Dates</a></li>
-  <li><a href="#string-manipulation" id="toc-string-manipulation" class="nav-link" data-scroll-target="#string-manipulation">String manipulation</a></li>
+  <li><a href="#secure-environment" id="toc-secure-environment" class="nav-link" data-scroll-target="#secure-environment">Secure environment</a></li>
+  <li><a href="#practical-implication" id="toc-practical-implication" class="nav-link" data-scroll-target="#practical-implication">Practical implication</a></li>
+  <li><a href="#hdd-hard-disk-drive" id="toc-hdd-hard-disk-drive" class="nav-link" data-scroll-target="#hdd-hard-disk-drive">HDD (Hard Disk Drive)</a></li>
+  <li><a href="#ssd-solid-state-drive" id="toc-ssd-solid-state-drive" class="nav-link" data-scroll-target="#ssd-solid-state-drive">SSD (Solid State Drive)</a></li>
+  <li><a href="#typical-sizes" id="toc-typical-sizes" class="nav-link" data-scroll-target="#typical-sizes">Typical sizes</a></li>
+  <li><a href="#ram-and-data-analysis-in-r" id="toc-ram-and-data-analysis-in-r" class="nav-link" data-scroll-target="#ram-and-data-analysis-in-r">RAM and data analysis in R</a></li>
+  <li><a href="#how-large-datasets-can-you-work-with" id="toc-how-large-datasets-can-you-work-with" class="nav-link" data-scroll-target="#how-large-datasets-can-you-work-with">How large datasets can you work with?</a></li>
+  <li><a href="#example-7" id="toc-example-7" class="nav-link" data-scroll-target="#example-7">Example</a></li>
+  <li><a href="#practical-advice" id="toc-practical-advice" class="nav-link" data-scroll-target="#practical-advice">Practical advice</a></li>
+  <li><a href="#numeric-vs-integer-in-r" id="toc-numeric-vs-integer-in-r" class="nav-link" data-scroll-target="#numeric-vs-integer-in-r">Numeric vs integer in R</a>
+  <ul class="collapse">
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
+  <li><a href="#in-practice-1" id="toc-in-practice-1" class="nav-link" data-scroll-target="#in-practice-1">In practice</a></li>
+  </ul></li>
+  <li><a href="#altrep-alternative-representation" id="toc-altrep-alternative-representation" class="nav-link" data-scroll-target="#altrep-alternative-representation">ALTREP (Alternative Representation)</a></li>
+  <li><a href="#what-happens" id="toc-what-happens" class="nav-link" data-scroll-target="#what-happens">What happens?</a></li>
+  <li><a href="#other-memory-optimisations-in-r" id="toc-other-memory-optimisations-in-r" class="nav-link" data-scroll-target="#other-memory-optimisations-in-r">Other memory optimisations in R</a></li>
+  <li><a href="#but-memory-still-fills-up" id="toc-but-memory-still-fills-up" class="nav-link" data-scroll-target="#but-memory-still-fills-up">But memory still fills up…</a></li>
+  <li><a href="#garbage-collection" id="toc-garbage-collection" class="nav-link" data-scroll-target="#garbage-collection">Garbage collection</a></li>
+  <li><a href="#what-is-the-problem" id="toc-what-is-the-problem" class="nav-link" data-scroll-target="#what-is-the-problem">What is the problem?</a></li>
+  <li><a href="#solution-garbage-collection" id="toc-solution-garbage-collection" class="nav-link" data-scroll-target="#solution-garbage-collection">Solution: garbage collection</a></li>
+  <li><a href="#practical-advice-1" id="toc-practical-advice-1" class="nav-link" data-scroll-target="#practical-advice-1">Practical advice</a></li>
+  <li><a href="#unnecassary-computations-for-large-objects" id="toc-unnecassary-computations-for-large-objects" class="nav-link" data-scroll-target="#unnecassary-computations-for-large-objects">Unnecassary computations for large objects</a></li>
+  <li><a href="#cpu" id="toc-cpu" class="nav-link" data-scroll-target="#cpu">CPU</a></li>
+  <li><a href="#how-r-uses-the-cpu" id="toc-how-r-uses-the-cpu" class="nav-link" data-scroll-target="#how-r-uses-the-cpu">How R uses the CPU</a></li>
+  <li><a href="#vectorization-in-r" id="toc-vectorization-in-r" class="nav-link" data-scroll-target="#vectorization-in-r">Vectorization in R</a></li>
+  <li><a href="#why-is-vectorization-faster" id="toc-why-is-vectorization-faster" class="nav-link" data-scroll-target="#why-is-vectorization-faster">Why is vectorization faster?</a></li>
+  <li><a href="#parallel-computing" id="toc-parallel-computing" class="nav-link" data-scroll-target="#parallel-computing">Parallel computing</a>
+  <ul class="collapse">
+  <li><a href="#why-use-parallel-computing" id="toc-why-use-parallel-computing" class="nav-link" data-scroll-target="#why-use-parallel-computing">Why use parallel computing?</a></li>
+  </ul></li>
   <li><a href="#paralellization" id="toc-paralellization" class="nav-link" data-scroll-target="#paralellization">Paralellization</a></li>
-  <li><a href="#paralellization-1" id="toc-paralellization-1" class="nav-link" data-scroll-target="#paralellization-1">Paralellization</a></li>
-  <li><a href="#furrr" id="toc-furrr" class="nav-link" data-scroll-target="#furrr"><code>{furrr}</code></a></li>
-  <li><a href="#mirai" id="toc-mirai" class="nav-link" data-scroll-target="#mirai">{mirai}</a></li>
+  <li><a href="#split-apply-combine" id="toc-split-apply-combine" class="nav-link" data-scroll-target="#split-apply-combine">Split-apply-combine</a>
+  <ul class="collapse">
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3">Examples</a></li>
+  </ul></li>
+  <li><a href="#when-parallel-computing-does-not-help" id="toc-when-parallel-computing-does-not-help" class="nav-link" data-scroll-target="#when-parallel-computing-does-not-help">When parallel computing does NOT help</a></li>
+  <li><a href="#example-in-r" id="toc-example-in-r" class="nav-link" data-scroll-target="#example-in-r">Example in R</a>
+  <ul class="collapse">
+  <li><a href="#what-happens-1" id="toc-what-happens-1" class="nav-link" data-scroll-target="#what-happens-1">What happens?</a></li>
+  </ul></li>
+  <li><a href="#limitations-of-parallel-computing" id="toc-limitations-of-parallel-computing" class="nav-link" data-scroll-target="#limitations-of-parallel-computing">Limitations of parallel computing</a></li>
+  <li><a href="#mirai" id="toc-mirai" class="nav-link" data-scroll-target="#mirai"><code>{mirai}</code></a></li>
+  <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr"><code>{purrr}</code></a></li>
+  <li><a href="#targets-1" id="toc-targets-1" class="nav-link" data-scroll-target="#targets-1"><code>{targets}</code></a></li>
   <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note">Note</a></li>
-  <li><a href="#caching-1" id="toc-caching-1" class="nav-link" data-scroll-target="#caching-1">Caching</a></li>
-  <li><a href="#intermediate-caching" id="toc-intermediate-caching" class="nav-link" data-scroll-target="#intermediate-caching">Intermediate caching</a></li>
+  <li><a href="#gpu" id="toc-gpu" class="nav-link" data-scroll-target="#gpu">GPU</a></li>
+  <li><a href="#how-is-it-different-from-a-cpu" id="toc-how-is-it-different-from-a-cpu" class="nav-link" data-scroll-target="#how-is-it-different-from-a-cpu">How is it different from a CPU?</a>
+  <ul class="collapse">
+  <li><a href="#when-are-gpus-useful" id="toc-when-are-gpus-useful" class="nav-link" data-scroll-target="#when-are-gpus-useful">When are GPUs useful?</a></li>
+  </ul></li>
+  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r">In R</a></li>
   <li><a href="#profiling" id="toc-profiling" class="nav-link" data-scroll-target="#profiling">Profiling</a></li>
   <li><a href="#modify-packages" id="toc-modify-packages" class="nav-link" data-scroll-target="#modify-packages">Modify packages</a></li>
   <li><a href="#modify-packages-1" id="toc-modify-packages-1" class="nav-link" data-scroll-target="#modify-packages-1">Modify packages</a></li>
@@ -786,28 +815,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-03-14</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-03-18</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="aupwpdxvyo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#aupwpdxvyo table {
+<div id="wbtwawyuuf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wbtwawyuuf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#aupwpdxvyo thead, #aupwpdxvyo tbody, #aupwpdxvyo tfoot, #aupwpdxvyo tr, #aupwpdxvyo td, #aupwpdxvyo th {
+#wbtwawyuuf thead, #wbtwawyuuf tbody, #wbtwawyuuf tfoot, #wbtwawyuuf tr, #wbtwawyuuf td, #wbtwawyuuf th {
   border-style: none;
 }
 
-#aupwpdxvyo p {
+#wbtwawyuuf p {
   margin: 0;
   padding: 0;
 }
 
-#aupwpdxvyo .gt_table {
+#wbtwawyuuf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -833,12 +862,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_caption {
+#wbtwawyuuf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#aupwpdxvyo .gt_title {
+#wbtwawyuuf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -850,7 +879,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#aupwpdxvyo .gt_subtitle {
+#wbtwawyuuf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -862,7 +891,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#aupwpdxvyo .gt_heading {
+#wbtwawyuuf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -874,13 +903,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_bottom_border {
+#wbtwawyuuf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_col_headings {
+#wbtwawyuuf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -895,7 +924,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_col_heading {
+#wbtwawyuuf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -915,7 +944,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#aupwpdxvyo .gt_column_spanner_outer {
+#wbtwawyuuf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -927,15 +956,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#aupwpdxvyo .gt_column_spanner_outer:first-child {
+#wbtwawyuuf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#aupwpdxvyo .gt_column_spanner_outer:last-child {
+#wbtwawyuuf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#aupwpdxvyo .gt_column_spanner {
+#wbtwawyuuf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -947,11 +976,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#aupwpdxvyo .gt_spanner_row {
+#wbtwawyuuf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#aupwpdxvyo .gt_group_heading {
+#wbtwawyuuf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -977,7 +1006,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#aupwpdxvyo .gt_empty_group_heading {
+#wbtwawyuuf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -992,15 +1021,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#aupwpdxvyo .gt_from_md > :first-child {
+#wbtwawyuuf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#aupwpdxvyo .gt_from_md > :last-child {
+#wbtwawyuuf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#aupwpdxvyo .gt_row {
+#wbtwawyuuf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1019,7 +1048,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#aupwpdxvyo .gt_stub {
+#wbtwawyuuf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1032,7 +1061,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#aupwpdxvyo .gt_stub_row_group {
+#wbtwawyuuf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1046,15 +1075,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#aupwpdxvyo .gt_row_group_first td {
+#wbtwawyuuf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#aupwpdxvyo .gt_row_group_first th {
+#wbtwawyuuf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#aupwpdxvyo .gt_summary_row {
+#wbtwawyuuf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1064,16 +1093,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#aupwpdxvyo .gt_first_summary_row {
+#wbtwawyuuf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_first_summary_row.thick {
+#wbtwawyuuf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#aupwpdxvyo .gt_last_summary_row {
+#wbtwawyuuf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1083,7 +1112,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_grand_summary_row {
+#wbtwawyuuf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1093,7 +1122,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#aupwpdxvyo .gt_first_grand_summary_row {
+#wbtwawyuuf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1103,7 +1132,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_last_grand_summary_row_top {
+#wbtwawyuuf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1113,11 +1142,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_striped {
+#wbtwawyuuf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#aupwpdxvyo .gt_table_body {
+#wbtwawyuuf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1126,7 +1155,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_footnotes {
+#wbtwawyuuf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1140,7 +1169,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_footnote {
+#wbtwawyuuf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1149,7 +1178,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#aupwpdxvyo .gt_sourcenotes {
+#wbtwawyuuf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1163,7 +1192,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#aupwpdxvyo .gt_sourcenote {
+#wbtwawyuuf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1171,72 +1200,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#aupwpdxvyo .gt_left {
+#wbtwawyuuf .gt_left {
   text-align: left;
 }
 
-#aupwpdxvyo .gt_center {
+#wbtwawyuuf .gt_center {
   text-align: center;
 }
 
-#aupwpdxvyo .gt_right {
+#wbtwawyuuf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#aupwpdxvyo .gt_font_normal {
+#wbtwawyuuf .gt_font_normal {
   font-weight: normal;
 }
 
-#aupwpdxvyo .gt_font_bold {
+#wbtwawyuuf .gt_font_bold {
   font-weight: bold;
 }
 
-#aupwpdxvyo .gt_font_italic {
+#wbtwawyuuf .gt_font_italic {
   font-style: italic;
 }
 
-#aupwpdxvyo .gt_super {
+#wbtwawyuuf .gt_super {
   font-size: 65%;
 }
 
-#aupwpdxvyo .gt_footnote_marks {
+#wbtwawyuuf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#aupwpdxvyo .gt_asterisk {
+#wbtwawyuuf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#aupwpdxvyo .gt_indent_1 {
+#wbtwawyuuf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#aupwpdxvyo .gt_indent_2 {
+#wbtwawyuuf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#aupwpdxvyo .gt_indent_3 {
+#wbtwawyuuf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#aupwpdxvyo .gt_indent_4 {
+#wbtwawyuuf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#aupwpdxvyo .gt_indent_5 {
+#wbtwawyuuf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#aupwpdxvyo .katex-display {
+#wbtwawyuuf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#aupwpdxvyo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wbtwawyuuf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1727,7 +1756,7 @@ Morphology codes according to ICD-O/2 in the intervals <strong>≥90500 and &lt;
 <li>Today: European legislation (mainly GDPR!)
 <ul>
 <li>Lecture handouts main source for examination (seminar <a href="./ES1.html">ES1</a> and possibly DISA exam).</li>
-<li>Article <span class="citation" data-cites="vukovic2022">(<a href="#ref-vukovic2022" role="doc-biblioref">Vukovic et al. 2022</a>)</span>. Focus on the introduction, the section “GDPR‐related enablers and barriers to cross‐country health data exchange in Europe” (in the results section incl.&nbsp;figures and tables), discussion and conclusions. Examined as part of seminar <a href="./ES1.html">ES1</a> (not the DISA exam).</li>
+<li>Article <span class="citation" data-cites="vukovic2022">(<a href="#ref-vukovic2022" role="doc-biblioref">Vukovic et al. 2022</a>)</span>. Focus on the introduction, the section “GDPR‐related enablers and barriers to cross‐country health data exchange in Europe” (in the results section incl.&nbsp;figures and tables), discussion and conclusions.</li>
 </ul></li>
 <li>Next lecture: Swedish legislation (including associated reading). Examined as part of seminar <a href="./ES1.html">ES1</a> (not the DISA exam).</li>
 <li>Consequence: <span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;4)</span>. Read the beginning. Skip “Medical Information Mart for Intensive Care”. Read the “Synthea” section. The “Synthea” section does not have a legal focus but the legal parts explains why we use this data. Read for your own understanding (not examined).</li>
@@ -2214,7 +2243,6 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>[<span class="citation" data-cites="publica2025"><span>“Public Access and Secrecy | Swedish National Data Service”</span> (<a href="#ref-publica2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="görman2024">(<a href="#ref-görman2024" role="doc-biblioref">Görman 2024</a>)</span></li>
 <li><span class="citation" data-cites="publica2025">(<a href="#ref-publica2025" role="doc-biblioref"><span>“Public Access and Secrecy | Swedish National Data Service”</span> 2025</a>)</span></li>
 <li><span class="citation" data-cites="görman2024">(<a href="#ref-görman2024" role="doc-biblioref">Görman 2024</a>)</span></li>
 </ul>
@@ -3878,7 +3906,7 @@ positron .</code></pre>
 <div class="callout-body-container callout-body">
 <ul>
 <li><span class="citation" data-cites="nguyen2022a">(<a href="#ref-nguyen2022a" role="doc-biblioref">Nguyen 2022</a>, ch.&nbsp;2)</span></li>
-<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch 21)</span></li>
+<li><span class="citation" data-cites="wickham">(<a href="#ref-wickham" role="doc-biblioref">Wickham, Çetinkaya-Rundel, and Grolemund, n.d.</a>, ch.&nbsp;21)</span></li>
 <li><span class="citation" data-cites="fenk">(<a href="#ref-fenk" role="doc-biblioref">Fenk, Furu, and Bakken, n.d.</a>)</span></li>
 <li><span class="citation" data-cites="dataana">(<a href="#ref-dataana" role="doc-biblioref"><em>Data Analysis Using Data.table</em>, n.d.</a>)</span></li>
 </ul>
@@ -4498,7 +4526,7 @@ gg &lt;- bef_ag |&gt;
 </colgroup>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>mku #| echo: false gg</code></td>
+<td style="text-align: left;"><code>xnx #| echo: false gg</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">## Hierachical data</td>
@@ -4507,13 +4535,13 @@ gg &lt;- bef_ag |&gt;
 <td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>qqdbqa { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+<td style="text-align: left;"><code>sqanwv { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">## Example</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>mku #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
+<td style="text-align: left;"><code>xnx #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
 </tr>
 </tbody>
 </table>
@@ -6359,12 +6387,13 @@ Note
 <li><strong>Code level</strong>
 <ul>
 <li>scripts (comments, e.g.&nbsp;<code># clean data and merge cohorts</code>)</li>
-<li>functions (Roxygen2 documentation)</li>
+<li>functions (<a href="https://roxygen2.r-lib.org/index.html">Roxygen2</a> documentation)</li>
 <li>notes and reminders (e.g.&nbsp;<code># TODO:</code>)</li>
 </ul></li>
 <li><strong>Project level</strong>
 <ul>
 <li><code>README.md</code></li>
+<li>(GitHub repos may also have a wiki or a polished website)</li>
 </ul></li>
 <li><strong>Output level</strong>
 <ul>
@@ -6374,15 +6403,24 @@ Note
 </ul></li>
 </ul>
 </section>
+<section id="code-level" class="level2">
+<h2 class="anchored" data-anchor-id="code-level">Code level</h2>
+</section>
 <section id="documenting-r-scripts" class="level2">
 <h2 class="anchored" data-anchor-id="documenting-r-scripts">Documenting R scripts</h2>
 <ul>
-<li>Section labels by <code>Shift + Ctrl/Cmd + R</code> in Positron and RStudio</li>
-<li>Easiest way to aid navigation in R scripts</li>
+<li>Use <a href="https://posit-dev.github.io/air/editor-vscode.html">Air</a> for better formatting of the R code itself (will format the code according to best practice for readability and collaboration)</li>
+<li>Section labels by <code>Shift + Ctrl/Cmd + R</code> in Positron (and RStudio)</li>
+<li>Easiest way to aid navigation to R scripts</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## My section heading -----------------------------------------------------</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/paste-43.png" class="img-fluid"></p>
+</section>
+<section id="individual-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="individual-scripts">Individual scripts</h2>
 <ul>
-<li><a href="https://bitbucket.org/cancercentrum/commentr/src/master/">commentr package</a>
+<li>As soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.</li>
+<li>The <a href="https://bitbucket.org/cancercentrum/commentr/src/master/">commentr package</a> is designed to maintain such context
 <ul>
 <li><code>remotes::install_bitbucket("cancercentrum/commentr")</code></li>
 </ul></li>
@@ -6404,21 +6442,28 @@ commentr::header_comment(
 <h2 class="anchored" data-anchor-id="documenting-r-functions">Documenting R functions</h2>
 <p>What does this function do?</p>
 <pre class="{r}"><code>#| echo: true
-hello &lt;- function(who) {
-  sprintf("Hello %s!", if (missing(who)) "world" else who)
+hello &lt;- function(who = "world") {
+  sprintf("Hello %s!", who)
 }</code></pre>
 <hr>
 <pre class="{r}"><code>#| echo: true
-#' Say hello!
+#' Say hello
 #'
-#' This function let's you greet someone or something
-#' @param character vector. Someone or something to great. Will great the world if argumen is missing.
-#' @return character vector of the same length as `character`
+#' Create a simple greeting. If no name is provided, the function
+#' returns a greeting to the world.
+#'
+#' @param who A character vector giving the name(s) of the person or
+#'   object to greet. If missing, the greeting defaults to `"world"`.
+#'
+#' @return A character vector of the same length as `who` containing
+#'   greeting messages.
+#'
 #' @examples
 #' hello()
 #' hello("you")
-hello &lt;- function(who) {
-  sprintf("Hello %s!", if (missing(who)) "world" else who)
+#' hello(c("Alice", "Bob"))
+hello &lt;- function(who = "world") {
+  sprintf("Hello %s!", who)
 }</code></pre>
 <ul>
 <li>There is a standardized syntax to document R functions</li>
@@ -6429,6 +6474,9 @@ hello &lt;- function(who) {
 </ul></li>
 <li><a href="https://roxygen2.r-lib.org/index.html">roxygen2</a> is a package used for package documentation but it also has a great <a href="https://roxygen2.r-lib.org/articles/rd.html">manual for documenteing functions in general</a></li>
 </ul>
+</section>
+<section id="project-level" class="level2">
+<h2 class="anchored" data-anchor-id="project-level">Project level</h2>
 </section>
 <section id="documenting-a-project" class="level2">
 <h2 class="anchored" data-anchor-id="documenting-a-project">Documenting a project</h2>
@@ -6504,8 +6552,30 @@ hello &lt;- function(who) {
 </div>
 </div>
 </section>
-<section id="reproducible-workflows-in-biostatistics" class="level2">
-<h2 class="anchored" data-anchor-id="reproducible-workflows-in-biostatistics">Reproducible Workflows in Biostatistics</h2>
+<section id="visual-mode" class="level2">
+<h2 class="anchored" data-anchor-id="visual-mode">Visual mode</h2>
+<p>Instead of editing the source code, you may also use the “visual editor” in Positron:</p>
+<p><img src="images/paste-44.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/paste-45.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="use-both" class="level2">
+<h2 class="anchored" data-anchor-id="use-both">Use both?</h2>
+<p>Personally, I do most editing in source mode (better for the R chunks), but I find it much easier to include references/citations and to paste in external figures in using the visual mode.</p>
+</section>
+<section id="reproducible-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-workflows">Reproducible Workflows</h2>
 <p>Modern biostatistics projects rarely involve only statistics.</p>
 <ul>
 <li>data cleaning and preprocessing</li>
@@ -6515,6 +6585,9 @@ hello &lt;- function(who) {
 <li>reporting and documentation</li>
 </ul>
 <p>A good workflow should make it possible to <strong>combine all of these steps in one place</strong>.</p>
+</section>
+<section id="output-level" class="level2">
+<h2 class="anchored" data-anchor-id="output-level">Output level</h2>
 </section>
 <section id="what" class="level2">
 <h2 class="anchored" data-anchor-id="what">What?</h2>
@@ -6533,20 +6606,20 @@ hello &lt;- function(who) {
 <h2 class="anchored" data-anchor-id="why-1">Why?</h2>
 <p>In many projects people work with:</p>
 <ul>
-<li>R scripts for analysis</li>
-<li>Word documents for reporting</li>
-<li>PowerPoint slides for presentations</li>
+<li>R scripts for analysis 🥳</li>
+<li>Word documents for reporting 😱</li>
+<li>PowerPoint slides for presentations 😱</li>
 </ul>
 <p>This separation often leads to:</p>
 <ul>
-<li>copy–paste errors</li>
-<li>outdated figures</li>
-<li>results that cannot easily be reproduced</li>
+<li>copy–paste errors 🥴</li>
+<li>outdated figures 👎</li>
+<li>results that cannot easily be reproduced 🤯</li>
 </ul>
-<p>Quarto helps avoid these problems.</p>
+<p><strong>Quarto helps avoid these problems!</strong></p>
 </section>
-<section id="a-reproducible-analysis-document" class="level2">
-<h2 class="anchored" data-anchor-id="a-reproducible-analysis-document">A reproducible analysis document</h2>
+<section id="reproducible-analysis-1" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-analysis-1">Reproducible analysis</h2>
 <p>In a Quarto document you can:</p>
 <ol type="1">
 <li>write the explanation of your analysis</li>
@@ -6570,21 +6643,18 @@ hello &lt;- function(who) {
 </section>
 <section id="a-simple-report" class="level2">
 <h2 class="anchored" data-anchor-id="a-simple-report">A simple report</h2>
-<ul>
-<li>When you chose “New &gt; New File …” in the upper left corner in Positron you may chose “Quarto document”</li>
-<li>The file will be almost empty but contains:</li>
-</ul>
+<p>When you chose <code>New &gt; New File ... &gt; Quarto document,</code> the file will contain:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>This is a YAML header (Yet Another Markup Language)</li>
-<li>Different formats available:
+<li>Different output formats are available:
 <ul>
-<li><strong>html:</strong> can also be published online</li>
-<li><strong>docx:</strong> for collaborating with non-statisticians etc</li>
-<li><strong>typst:</strong> Modern PDF rendering</li>
+<li><strong>html:</strong> can also be published online (<a href="https://quartopub.com">Quartopub</a> or <a href="https://quarto.org/docs/publishing/github-pages.html">GitHub pages</a>)</li>
+<li><strong>docx:</strong> Word document for collaborating with non-statisticians etc</li>
+<li><strong>typst:</strong> PDF rendering (ever heard of <span class="math inline">\(\LaTeX\)</span>? … This is the modern alternative!)</li>
 <li><strong>revealjs:</strong> slide decks (you are looking at one!)</li>
 </ul></li>
 <li>Can render to multiple formats at once!</li>
@@ -6593,7 +6663,7 @@ hello &lt;- function(who) {
 <p>This is the yaml header for this presentation:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"EL9: Documentation"</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto, roxygn2"</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto"</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">reading</span><span class="kw">:</span><span class="at"> </span><span class="st">"[@wickham, ch. 28-29]"</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
@@ -6625,8 +6695,8 @@ hello &lt;- function(who) {
 <pre><code>format
 └── html
     └── code-fold: true</code></pre>
-<section id="what-happens-if-indentation-is-wrong" class="level3">
-<h3 class="anchored" data-anchor-id="what-happens-if-indentation-is-wrong">What happens if indentation is wrong?</h3>
+<section id="if-indentation-is-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="if-indentation-is-wrong">If indentation is wrong?</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -6655,15 +6725,23 @@ html
 #| echo: false  ← options controlling the output
 summary(x)      ← R code
 ```             ← end of chunk</code></pre>
+<p>Keybindings: <code>Cmd + option + I</code> (Mac) or <code>Ctrl + Alt + I</code> (Windows)</p>
 <ol start="3" type="1">
 <li>Text with markdown format</li>
 </ol>
-<p>Where 1 (YAML header) comes first and where 2 and 3 are intermingled throughout the rest of the document.</p>
-<hr>
-<p><img src="images/paste-35.png" class="img-fluid"></p>
-<hr>
-<p><img src="images/paste-36.png" class="img-fluid"></p>
-<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Order
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Part 1 (YAML header) always comes first but 2 (code block) and 3 (Markdown text) are usually intermingled throughout the rest of the document.</p>
+</div>
+</div>
 </section>
 <section id="inline-code" class="level2">
 <h2 class="anchored" data-anchor-id="inline-code">Inline code</h2>
@@ -6679,6 +6757,10 @@ summary(x)      ← R code
 <blockquote class="blockquote">
 <p>Todays date is <strong><code>r Sys.Date()</code></strong> and it is <em><code>r format(Sys.time(), format = "%I %p")</code></em></p>
 </blockquote>
+<hr>
+<p><img src="images/paste-35.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/paste-36.png" class="img-fluid"></p>
 </section>
 <section id="to-publish" class="level2">
 <h2 class="anchored" data-anchor-id="to-publish">To publish</h2>
@@ -6696,7 +6778,8 @@ summary(x)      ← R code
 <h2 class="anchored" data-anchor-id="for-collaborators">For collaborators</h2>
 <ul>
 <li>Might still care less about verbose R messages and warnings (they trust that you have already considered those)</li>
-<li>May check the underlaying R code if relevant (use <code>code-fold</code>)</li>
+<li>May still need the underlaying R code for deeper understaing</li>
+<li>Use <code>code-fold</code></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
@@ -6707,6 +6790,11 @@ summary(x)      ← R code
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+<p><img src="images/paste-46.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/paste-47.png" class="img-fluid"></p>
+<hr>
 <p>This can also be set individually for each code chunk:</p>
 <pre class="{verbatim}"><code>```{r}
 #| echo: false
@@ -6730,7 +6818,8 @@ plot(0, 0)</code></pre>
 <section id="tables" class="level2">
 <h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <p>Just printing the R output might not look very nice:</p>
-<pre class="{r}"><code>iris</code></pre>
+<pre class="{r}"><code>#| echo: true
+head(iris)</code></pre>
 <hr>
 </section>
 <section id="better-with-kable" class="level2">
@@ -6738,12 +6827,16 @@ plot(0, 0)</code></pre>
 <p>The easiest way to make tibbles/data.frames/data.tables look nicer is with <code>df-print: kable</code> in the yaml header.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Untitled"</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">df-print</span><span class="kw">:</span><span class="at"> kable</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">df-print</span><span class="kw">:</span><span class="at"> kable</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or manually for individual outputs:</p>
+<pre class="{verbatim}"><code>```{r}
+#| tbl-cap: Some iris data
+knitr::kable(head(iris))
+```</code></pre>
 <pre class="{r}"><code>#| tbl-cap: Some iris data
-knitr::kable(iris)</code></pre>
+knitr::kable(head(iris))</code></pre>
 </section>
 <section id="best-with-gt" class="level2">
 <h2 class="anchored" data-anchor-id="best-with-gt">Best with gt</h2>
@@ -6751,7 +6844,7 @@ knitr::kable(iris)</code></pre>
 <li>Very flexible</li>
 <li>Publication ready</li>
 <li><a href="https://gt.rstudio.com">Package from Posit</a></li>
-<li>Sometimes <a href="https://ardata-fr.github.io/flextable-book/">flextable</a> if rendering MS Office documents (Word, PowerPoint)</li>
+<li><a href="https://ardata-fr.github.io/flextable-book/">flextable</a> may be preferred instead if rendering Office documents (Word, PowerPoint)</li>
 </ul>
 <hr>
 <p><img src="images/paste-37.png" class="img-fluid"></p>
@@ -6778,102 +6871,28 @@ gtsummary::tbl_summary(iris, Species)
 </ul></li>
 <li><a href="https://quarto.org/docs/presentations/revealjs/">Info and examples</a></li>
 </ul>
-<p>For examplen (as used for those slides):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> blood</span></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="manuscripts" class="level2">
-<h2 class="anchored" data-anchor-id="manuscripts">Manuscripts</h2>
-<ul>
-<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscript</a></li>
-<li>framework for writing and publishing scholarly articles</li>
-<li>Something for your later thesis work?</li>
-<li>Handles references</li>
-<li>Export to Word documents (<code>.docx</code>) etc
-<ul>
-<li>which is still the most common format for submission to medical/epidemiological journals</li>
-<li>Still used for collaborative work with non-statisticians etc</li>
-</ul></li>
-</ul>
-</section>
-<section id="use-references" class="level2">
-<h2 class="anchored" data-anchor-id="use-references">USe references</h2>
-<p>When writing scientific reports we need to:</p>
-<ul>
-<li>acknowledge previous research</li>
-<li>support claims with evidence</li>
-<li>allow readers to find the original sources</li>
-</ul>
-<p>This is done through <strong>citations</strong> and a <strong>reference list</strong>.</p>
-<p>Example:</p>
-<blockquote class="blockquote">
-<p>Don’t blame me, it was according to <span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#ref-wickham" role="doc-biblioref">n.d.</a>)</span>.</p>
-</blockquote>
-<p>At the end of the document a <strong>bibliography</strong> is automatically generated.</p>
-<hr>
-</section>
-<section id="what-is-reference-management" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-reference-management">What is reference management?</h2>
-<p>Reference management means keeping track of:</p>
-<ul>
-<li>articles, books, reports, datasets</li>
-</ul>
-<p>including information such as:</p>
-<ul>
-<li>authors, title, journal, year</li>
-<li><a href="https://www.doi.org/the-identifier/what-is-a-doi/">DOI</a></li>
-</ul>
-<p>Instead of typing references manually, software can <strong>store and format them automatically</strong>.</p>
-<hr>
-</section>
-<section id="common-reference-management-tools" class="level2">
-<h2 class="anchored" data-anchor-id="common-reference-management-tools">Common reference management tools</h2>
-<p>Many researchers use tools such as:</p>
-<ul>
-<li><strong>Zotero</strong></li>
-<li><strong>Mendeley</strong></li>
-<li><strong>EndNote</strong></li>
-</ul>
-<p>These tools allow you to:</p>
-<ul>
-<li>collect references from databases (PubMed, Google Scholar, etc.)</li>
-<li>organise them in libraries</li>
-<li>export them to writing tools</li>
-</ul>
-<p>Quarto can work with references from these systems directly.</p>
-<hr>
-</section>
-<section id="how-quarto-handles-references" class="level2">
-<h2 class="anchored" data-anchor-id="how-quarto-handles-references">How Quarto handles references</h2>
-<p>Quarto uses a <strong>bibliography file</strong>, usually in <code>.bib</code> format.</p>
-<p>Example in the document header:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then citations can be written directly in the text:</p>
-<pre><code>Several studies have examined this relationship @smith2020.</code></pre>
-<p>Quarto will render something like:</p>
-<blockquote class="blockquote">
-<p>Several studies have examined this relationship (Smith 2020).</p>
-</blockquote>
-<p>The full reference will appear automatically in the bibliography.</p>
+<p>For example (as used for these slides):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> blood</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">transition</span><span class="kw">:</span><span class="at"> fade</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">smaller</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">scrollable</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">incremental</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="integrate-with-targets" class="level2">
 <h2 class="anchored" data-anchor-id="integrate-with-targets">Integrate with <code>{targets}</code></h2>
 <p><a href="https://docs.ropensci.org/tarchetypes/reference/tar_quarto.html"><code>tarchetypes::tar_quarto()</code></a></p>
 <section id="in-_targets.r" class="level3">
 <h3 class="anchored" data-anchor-id="in-_targets.r">in <code>_targets.R</code></h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tarchetypes) <span class="co"># Let you integrate a quarto report/presentation</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(data, <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="dv">26</span>), <span class="at">y =</span> letters))</span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_quarto</span>(report, <span class="st">"report.qmd"</span>) <span class="co"># Make presentation</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tarchetypes) <span class="co"># Let you integrate a quarto report/presentation</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_target</span>(data, <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="dv">26</span>), <span class="at">y =</span> letters))</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tar_quarto</span>(report, <span class="st">"report.qmd"</span>) <span class="co"># Make presentation</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="in-report.qmd" class="level3">
 <h3 class="anchored" data-anchor-id="in-report.qmd">In <code>report.qmd</code></h3>
@@ -6922,19 +6941,57 @@ format:
 
 ## Here are some flowers!
 
-```{r}
 gtsummary::tbl_summary(targets::tar_read(data))
-```
 
 ## And here is a model
 
-```{r}
 gtsummary::tbl_regression(targets::tar_read(model))
-```
 EOF
 
 positron test_targets_quarto
 ## rm -r test_targets_quarto</code></pre>
+</section>
+<section id="manuscripts" class="level2">
+<h2 class="anchored" data-anchor-id="manuscripts">Manuscripts</h2>
+<ul>
+<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscript</a></li>
+<li>framework for writing and publishing scholarly articles</li>
+<li>Something for your later thesis work?</li>
+<li>Handles references</li>
+<li>Export to Word documents (<code>.docx</code>) etc
+<ul>
+<li>which is still the most common format for submission to medical/epidemiological journals</li>
+<li>Still used for collaborative work with non-statisticians etc</li>
+</ul></li>
+</ul>
+</section>
+<section id="use-references" class="level2">
+<h2 class="anchored" data-anchor-id="use-references">Use references</h2>
+<p>When writing scientific reports we need to:</p>
+<ul>
+<li>acknowledge previous research</li>
+<li>support claims with evidence</li>
+<li>allow readers to find the original sources</li>
+</ul>
+<p>This is done through <strong>citations</strong> and a <strong>reference list</strong>.</p>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>Don’t blame me, it was according to <span class="citation" data-cites="wickham">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="#ref-wickham" role="doc-biblioref">n.d.</a>)</span>.</p>
+</blockquote>
+<p>At the end of the document a <strong>bibliography</strong> is automatically generated.</p>
+</section>
+<section id="how-quarto-handles-references" class="level2">
+<h2 class="anchored" data-anchor-id="how-quarto-handles-references">How Quarto handles references</h2>
+<p>Quarto uses a <strong>bibliography file</strong>, usually in <code>.bib</code> format.</p>
+<p>Example in the document header:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then citations can be written directly in the text:</p>
+<pre><code>Several studies have examined this relationship @smith2020.</code></pre>
+<p>Quarto will render something like:</p>
+<blockquote class="blockquote">
+<p>Several studies have examined this relationship (Smith 2020).</p>
+</blockquote>
+<p>The full reference will appear automatically in the bibliography.</p>
 </section>
 <section id="online-portfolio" class="level2">
 <h2 class="anchored" data-anchor-id="online-portfolio">Online portfolio</h2>
@@ -6947,8 +7004,8 @@ positron test_targets_quarto
 <hr>
 </section>
 </section>
-<section id="el10-big-data" class="level1">
-<h1>EL10: Big data</h1>
+<section id="el10-biggish-data" class="level1">
+<h1>EL10: Biggish data</h1>
 <p><a href="https://sta220.github.io/documentation/EL10.html">Lecture Slides</a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -6965,13 +7022,26 @@ positron test_targets_quarto
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Examination
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lecture will not be examined. You are encouraged to experiment with the concepts in your project work if you find them useful, but this is not required.</p>
+</div>
+</div>
 <section id="big-data" class="level2">
 <h2 class="anchored" data-anchor-id="big-data">Big data</h2>
 <p><img src="images/bigdata/paste-1.png" class="img-fluid"></p>
 </section>
 <section id="biggish-data" class="level2">
 <h2 class="anchored" data-anchor-id="biggish-data">Biggish data</h2>
-<p>My definition:</p>
+<p>Our focus:</p>
 <ul>
 <li>Only tabular data</li>
 <li>Original data might fit into physical RAM but …</li>
@@ -6979,621 +7049,517 @@ positron test_targets_quarto
 <li>physical RAM might be constrained due to other processes/settings</li>
 <li>things might just take too much time … and life is short …</li>
 </ul>
+<hr>
+<p><img src="images/paste-48.png" class="img-fluid"></p>
 </section>
-<section id="software" class="level2">
-<h2 class="anchored" data-anchor-id="software">Software</h2>
+<section id="reading-large-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="reading-large-datasets">Reading large datasets</h2>
+<p>When working with large datasets, where the data is stored matters.</p>
+<section id="network-storage-e.g.-shared-drives" class="level3">
+<h3 class="anchored" data-anchor-id="network-storage-e.g.-shared-drives">Network storage (e.g.&nbsp;shared drives)</h3>
 <ul>
-<li>SAS for big data files from register holders</li>
-<li>R for everything else</li>
-<li>Database?</li>
+<li>slower data transfer (limited bandwidth)</li>
+<li>higher latency (delay before data starts loading)</li>
+<li>multiple users may compete for resources</li>
+<li>repeated reads can be very inefficient</li>
 </ul>
 </section>
-<section id="file-format" class="level2">
-<h2 class="anchored" data-anchor-id="file-format">File format</h2>
-</section>
-<section id="file-storage" class="level2">
-<h2 class="anchored" data-anchor-id="file-storage">File storage</h2>
+<section id="local-storage" class="level3">
+<h3 class="anchored" data-anchor-id="local-storage">Local storage</h3>
 <ul>
-<li>Avoid reading big files over ethernet connection
-<ul>
-<li>data stored on network drive</li>
-</ul></li>
-<li>Usually faster to first copy file to local SSD drive
-<ul>
-<li><code>fs::file_copy(path, new_path)</code></li>
-<li>(<em>“libuv provides a wide variety of cross-platform sync and async file system operations.”</em>)</li>
-<li>obviously only if “local drive” is also in the (same) secure environment</li>
-</ul></li>
-<li>work with the project on disk</li>
-<li>move back</li>
-<li>Although not always possble with very large files it seems</li>
+<li>much faster read/write speeds</li>
+<li>low latency</li>
+<li>more stable and predictable performance</li>
+<li>better suited for iterative data analysis</li>
 </ul>
 <hr>
 <p><img src="images/bigdata/paste-6.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="secure-environment" class="level2">
+<h2 class="anchored" data-anchor-id="secure-environment">Secure environment</h2>
+<p>In secure environments, both types of storage may <em>look local</em>, but they behave differently.</p>
+<ul>
+<li><strong>“Local” disk (e.g.&nbsp;SSD on the server/VM)</strong>
+<ul>
+<li>attached directly to the machine you are working on<br>
+</li>
+<li>high bandwidth, low latency<br>
+</li>
+<li>behaves like true local storage<br>
+</li>
+<li>typically much faster for data analysis</li>
+</ul></li>
+<li><strong>Mapped network folder</strong>
+<ul>
+<li>accessed over the network (even if it looks like a normal folder)<br>
+</li>
+<li>lower bandwidth and higher latency<br>
+</li>
+<li>shared with other users<br>
+</li>
+<li>slower, especially for repeated reads</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key difference:</strong><br>
+Not where the data is stored, but <strong>how it is accessed</strong> (direct disk vs network).</p>
+<p>💡 <strong>Practical advice:</strong><br>
+Use “local” disk (SSD on the environment) for active analysis, and network storage for long-term storage.</p>
 <hr>
 <p><img src="images/bigdata/paste-8.png" class="img-fluid"></p>
+</section>
+<section id="practical-implication" class="level2">
+<h2 class="anchored" data-anchor-id="practical-implication">Practical implication</h2>
+<p>For large datasets:</p>
+<ul>
+<li>avoid repeatedly reading data directly from network drives</li>
+<li>copy data locally when possible
+<ul>
+<li><code>fs::file_copy(path, new_path)</code></li>
+<li>(<em>“libuv provides a wide variety of cross-platform sync and async file system operations.”</em>)</li>
+<li>obviously only if “local drive” is also in the (same) secure environment!</li>
+</ul></li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Data access can easily become the main bottleneck — not your code.</p>
 <hr>
 <p><img src="images/bigdata/paste-7.png" class="img-fluid"></p>
 </section>
-<section id="sync_project" class="level2">
-<h2 class="anchored" data-anchor-id="sync_project"><code>sync_project()</code></h2>
+<section id="hdd-hard-disk-drive" class="level2">
+<h2 class="anchored" data-anchor-id="hdd-hard-disk-drive">HDD (Hard Disk Drive)</h2>
 <ul>
-<li>I have a function <code>sync_project()</code> in my <code>.Rprofile</code>
+<li>mechanical (spinning disks)</li>
+<li>slower, especially for random access</li>
+<li>typical speeds:
 <ul>
-<li><code>usethis::edit_r_profile()</code></li>
+<li>~50–150 MB/s (sequential read)</li>
 </ul></li>
-<li>However, I don’t include all data files in each individual project</li>
-<li>“Chek out” all files from network storage to disk</li>
-<li>Work with it</li>
-<li>Sync back to allow back-ups and common folder structure</li>
-<li>Git-repo kept for the network storage</li>
-</ul>
-<hr>
-<pre class="{r}"><code>#| eval: false
-#| echo: true
-#| class-output: r
-sync_project &lt;- function (from, to) 
-{
-    loc_dirs &lt;- c("S:/Projects/", "F:/xbuler/")
-    loc_dirs_exp &lt;- paste(loc_dirs, collapse = "|")
-    proj &lt;- gsub(loc_dirs_exp, "", getwd())
-    locations &lt;- paste0(loc_dirs, proj)
-    locations_exp &lt;- paste(paste0(locations, "/"), collapse = "|")
-    stopifnot(getwd() %in% locations)
-    from &lt;- if (missing(from)) 
-        getwd()
-    to &lt;- if (missing(to)) 
-        setdiff(locations, from)
-    ans &lt;- askYesNo(paste("Sync from:\n ", from, "\n To: \n", 
-        to))
-    stopifnot(ans)
-    if (!fs::dir_exists(to)) {
-        fs::dir_create(to)
-        message("Target folder did not exist but has been created!")
-    }
-    fr &lt;- dplyr::mutate(dplyr::select(fs::dir_info(from, all = TRUE, 
-        recurse = TRUE, regexp = ".git", invert = TRUE), path, 
-        type, size, modification_time), file = gsub(locations_exp, 
-        "", path), path_to = paste(to, file, sep = "/"))
-    t &lt;- dplyr::mutate(dplyr::select(fs::dir_info(to, all = TRUE, 
-        recurse = TRUE), path, type, size, modification_time), 
-        file = gsub(locations_exp, "", path))
-    new &lt;- dplyr::anti_join(fr, t, "file")
-    new_dirs &lt;- dplyr::filter(new, type == "directory")
-    if (nrow(new_dirs)) {
-        print(dplyr::select(new_dirs, file), n = Inf)
-        ans &lt;- askYesNo(paste(nrow(new_dirs), " dir(s) not in 'to'. Should I create these?"))
-        if (ans) 
-            fs::dir_create(new_dirs$path_to)
-    }
-    new_files &lt;- dplyr::filter(new, type == "file")
-    if (nrow(new_files)) {
-        print(dplyr::select(new_files, file), n = Inf)
-        ans &lt;- askYesNo(paste(nrow(new_files), " file(s) not in 'to'. Should I copy them?"))
-        if (ans) 
-            purrr::walk2(new_files$path, new_files$path_to, fs::file_copy, 
-                .progress = TRUE)
-    }
-    diff_mod &lt;- dplyr::filter(dplyr::left_join(fr, t, "file", 
-        suffix = c("_from", "_to")), type_from == "file", modification_time_to != 
-        modification_time_from)
-    if (nrow(diff_mod)) {
-        print(dplyr::select(diff_mod, file, tidyselect::matches("modification_time|size")), 
-            n = Inf)
-        ans &lt;- askYesNo(paste(nrow(diff_mod), " file(s) have been updated. Should I replace the older version?"))
-        if (ans) {
-            purrr::walk2(diff_mod$file, diff_mod$path_to, fs::file_copy, 
-                overwrite = TRUE, .progress = TRUE)
-        }
-    }
-    dlt &lt;- dplyr::filter(dplyr::anti_join(t, fr, "file"), !startsWith(file, 
-        ".git"))
-    if (nrow(dlt)) {
-        print(dlt, n = Inf)
-        ans &lt;- askYesNo(paste(nrow(dlt), " file(s) have been deleted in 'from'. Should I delete them in 'to'?"))
-        if (ans) {
-            purrr::walk(dlt$path, fs::file_delete, .progress = TRUE)
-        }
-    }
-}</code></pre>
-</section>
-<section id="reading-sas-files-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="reading-sas-files-in-r">👎 Reading SAS files in R</h2>
-<ul>
-<li>Common to get large register files in SAS-format (SoS, SCB)</li>
-<li>👍 SAS can handle that (files on disk) 😀</li>
-<li>👎 I am a terrible SAS user 🙁</li>
-<li>👎 Seems to be no easy way to read only parts of SAS-files into R directly</li>
-<li><code>haven::read_sas()</code>?</li>
+<li>larger capacity at lower cost</li>
+<li>often used in older systems or for backups</li>
 </ul>
 </section>
-<section id="havenread_sas" class="level2">
-<h2 class="anchored" data-anchor-id="havenread_sas"><code>haven::read_sas()</code></h2>
+<section id="ssd-solid-state-drive" class="level2">
+<h2 class="anchored" data-anchor-id="ssd-solid-state-drive">SSD (Solid State Drive)</h2>
 <ul>
-<li>👍 May work if big enough RAM …</li>
-<li>👎 Whole file is first read into RAM (<code>readr::datasource(data_file)</code>)</li>
-<li>👎 Most time spent on <code>df_parse_sas_file()</code></li>
-<li>(Same for .dta-files [Stata])</li>
-</ul>
-<pre class="{r}"><code>#| class-output: r
-haven::read_sas</code></pre>
-</section>
-<section id="export-from-sas-to-csv" class="level2">
-<h2 class="anchored" data-anchor-id="export-from-sas-to-csv">👍 Export from SAS to csv</h2>
+<li>no moving parts</li>
+<li>much faster and more reliable</li>
+<li>typical speeds:
 <ul>
-<li>I use SAS code to export only nececary data to csv</li>
-<li>I might use a prefiltering list exported from R to limit the data</li>
-<li>SAS Viya more flexible (I’ve heard) but not SAS 9.4</li>
-<li>Use <code>(set=1000)</code> etc for tests and then run over night</li>
-<li>csv-files exported to local SSD drive (and then synced back to storage folder)</li>
-</ul>
-</section>
-<section id="chatgpt" class="level2">
-<h2 class="anchored" data-anchor-id="chatgpt">ChatGPT</h2>
-<blockquote class="blockquote">
-<p>Jag har exporterat en <strong>csv-fil från R</strong> som innehåller en lista med <strong>löpnummer</strong> på individer. Jag vill nu använda <strong>SAS</strong>. Först vill jag läsa in CSV-filen. Sedan vill jag <strong>filtrera</strong> ett dataset i SAS (vi kan kalla det pelle) som har en kolumn med samma löpnummer som i CSV-filen (jag vill bara ha med de fall där det finns en match). Därefter vill jag <strong>exportera</strong> resultatet till en <strong>ny csv-fil</strong>. Jag vill att detta ska ske på ett <strong>effektivt och snabbt</strong> sätt. Hjälp med med <strong>SAS-syntax</strong> för detta</p>
-</blockquote>
-<hr>
-<pre class="{r}"><code>#| classes: output-highlight
-#| class-output: sas
-#| echo: true
-#| eval: false
-
-/* Läs in CSV-filen i SAS */
-
-/* Läs in filen med löpnummer till ett SAS-dataset (vi kallar det `individer`) */
-proc import datafile="din_sökväg_till_csv_filen.csv"
-    out=individer&gt;
-    dbms=csv
-    replace;
-    getnames=yes; /* Sätt till no om csv-filen saknar rubriker */
-run;
-
-/* Om CSV-filen saknar rubrik kan du lägga till följande steg för att namnge kolumnen manuellt */
-data individer;
-    set individer(rename=(var1=löpnummer)); /* Byt "var1" till korrekt variabelnamn */
-run;
-
-/* Filtrera datasetet `pelle` baserat på löpnummer */
-
-/* Vi använder en hash-lookup för att göra filtreringen effektiv. Hash-lookup är snabbare än traditionella merge-metoder. */
-data pelle_filtered;
-    if _n_ = 1 then do;
-        declare hash h(dataset: "individer");
-        h.definekey("löpnummer");
-        h.definedone();
-    end;
-    set pelle;
-    if h.find() = 0; /* Endast matchande löpnummer */
-run;
-
-/* Exportera det filtrerade datasetet till en ny CSV-fil */
-
-/* Använd proc export för att spara resultatet */
-proc export data=pelle_filtered
-    outfile="din_sökväg_till_ny_csv_fil.csv"
-    dbms=csv
-    replace;
-run;
-
-/* Effektivitetsoptimering:
-Om både `individer` och `pelle` är mycket stora, 
-kan du sortera båda och använda data step merge
-istället för hash-lookup. Hash-metoden är dock 
-generellt snabbare om det är många rader i båda 
-tabellerna. */</code></pre>
-</section>
-<section id="ide" class="level2">
-<h2 class="anchored" data-anchor-id="ide">IDE</h2>
-<ul>
-<li>RStudio displays object info from the global environment</li>
-<li>This is inefficient for big data</li>
-<li>Whole session can hang and/or crash</li>
-<li>I recommend <a href="https://positron.posit.co/">Positron</a>
-<ul>
-<li>Optimezed <code>View()</code> pane etc</li>
-<li>Active and enthusiastic development</li>
+<li>~500 MB/s (SATA SSD)</li>
+<li>~2000–7000 MB/s (NVMe SSD)</li>
 </ul></li>
-<li>Sometimes needed to ditch the IDE completely (even RGui)
+<li>standard in most modern laptops</li>
+</ul>
+</section>
+<section id="typical-sizes" class="level2">
+<h2 class="anchored" data-anchor-id="typical-sizes">Typical sizes</h2>
 <ul>
-<li>Run R from the terminal</li>
+<li>laptops: <strong>256 GB – 1 TB SSD</strong></li>
+<li>desktops / servers: <strong>1–4 TB SSD + optional HDD storage</strong></li>
+<li>network drives: often very large but slower</li>
+</ul>
+</section>
+<section id="ram-and-data-analysis-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="ram-and-data-analysis-in-r">RAM and data analysis in R</h2>
+<p>When working in R, available <strong>RAM (memory)</strong> is often the main limiting factor.</p>
+<ul>
+<li>R can typically use <strong>most of the available RAM</strong> on your machine</li>
+<li>some memory is needed by:
+<ul>
+<li>the operating system</li>
+<li>other applications</li>
+</ul></li>
+<li>a safe rule of thumb is to assume <strong>~50–75% of total RAM</strong> is available for R</li>
+</ul>
+</section>
+<section id="how-large-datasets-can-you-work-with" class="level2">
+<h2 class="anchored" data-anchor-id="how-large-datasets-can-you-work-with">How large datasets can you work with?</h2>
+<ul>
+<li>datasets must fit <strong>in memory</strong> (unless using special tools)</li>
+<li>but you also need memory for:
+<ul>
+<li>intermediate objects</li>
+<li>copies created during transformations</li>
+<li>model objects</li>
+</ul></li>
+<li>many R operations create <strong>temporary copies of data</strong></li>
+<li>memory usage can <strong>double or triple</strong> during processing</li>
+<li>running out of RAM leads to:
+<ul>
+<li>slow performance</li>
+<li>crashes</li>
 </ul></li>
 </ul>
-<hr>
-<p><img src="images/bigdata/paste-4.png" class="img-fluid"></p>
-<hr>
-<p><img src="images/bigdata/paste-5.png" class="img-fluid"></p>
-<hr>
-<p><img src="images/bigdata/paste-9.png" class="img-fluid"></p>
 </section>
-<section id="from-csv-to-r" class="level2">
-<h2 class="anchored" data-anchor-id="from-csv-to-r">From csv to R</h2>
-<ul>
-<li><code>data.table::fread()</code> is super good as long as the data can fit into RAM
-<ul>
-<li>If necessary pre-process by <code>awk</code></li>
-</ul></li>
-<li><code>{vroom}</code> use <code>ALTREP</code> and might be faster for character data</li>
-<li>Both <code>data.table::fread()</code> and <code>{vroom}</code> are multithreaded but <code>vroom</code> has lazy evaluation (good and bad)</li>
-<li><code>arrow::open_csv_dataset()</code> can be good (if data does not fit into RAM but I prefer <code>.parquette</code> if so)</li>
-</ul>
-<hr>
-<p><img src="images/bigdata/paste-11.png" class="img-fluid"></p>
-<hr>
-<p><img src="images/bigdata/paste-10.png" class="img-fluid"></p>
-</section>
-<section id="altrep" class="level2">
-<h2 class="anchored" data-anchor-id="altrep"><code>ALTREP</code>?</h2>
-<ul>
-<li><strong>ALT</strong>ernative <strong>REP</strong>resentation of R Objects</li>
-<li>Since R version 3.5.0</li>
-<li>Applies to the C-level representation of R objects under the hood</li>
-<li>Used by some base R packages/functions + specialized packages</li>
-</ul>
-<blockquote class="blockquote">
-<p>allow vector data to be in a memory-mapped file; distributed, e.g.&nbsp;within Apache Spark or Hadoop; shared with other applications, e.g.&nbsp;with Apache Arrow; allow compact representation of arithmetic sequences; allow adding meta-data to objects; allow computations/allocations to be deferred; support alternative representations of environments.</p>
-</blockquote>
-</section>
-<section id="database" class="level2">
-<h2 class="anchored" data-anchor-id="database">Database?</h2>
-</section>
-<section id="database-1" class="level2">
-<h2 class="anchored" data-anchor-id="database-1">Database?</h2>
-<ul>
-<li>I don’t want to administer Microsoft SQL Server myself!
-<ul>
-<li>(They had R support for a couple of years but not any more)</li>
-</ul></li>
-<li>SQLight is easy to use …</li>
-<li>but (as SQL server) it is row based 🙁</li>
-<li>Some complicated ones are column based 😀 (Snowflake, Google Big Query)
-<ul>
-<li>… but I don’t want to administer those either …</li>
-</ul></li>
-<li>DuckDB comes for rescue!</li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="example-7" class="level2">
+<h2 class="anchored" data-anchor-id="example-7">Example</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Indices
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Never forget to set proper indices if needed!</p>
+<p>Rule of thumb: you can usually work comfortably with data that is <strong>at most ~1/3 to 1/2 of your available RAM</strong></p>
 </div>
 </div>
-<hr>
-<p><img src="images/bigdata/paste-12.png" class="img-fluid"></p>
-</section>
-<section id="duckdb-1" class="level2">
-<h2 class="anchored" data-anchor-id="duckdb-1">DuckDB</h2>
+<p>If you have:</p>
 <ul>
-<li>Free and open source (backed by foundation)</li>
-<li>Column based</li>
-<li>Very easy to set up</li>
-<li>Very efficient!</li>
-<li>Integration with tidyverse in R</li>
-<li>Can be used both with disk data and data in RAM</li>
-<li>… but I had some bad experience and now I am scared 😢</li>
-</ul>
-</section>
-<section id="from-csv-to-parquet" class="level2">
-<h2 class="anchored" data-anchor-id="from-csv-to-parquet">From CSV to Parquet</h2>
+<li><strong>16 GB RAM</strong> → usable ≈ 8–12 GB<br>
+→ practical dataset size ≈ 3–6 GB<br>
+</li>
+<li>Modern R is <strong>64-bit</strong> → can use large amounts of memory
 <ul>
-<li>CSV is not very nice 🙁
-<ul>
-<li>No meta data</li>
-<li>Sensitive to errors (missing values, decimal point, numbers with leading 0 etc, although <code>fread</code> can take care of this)</li>
-<li>Encoding, BOM, whatever …</li>
-</ul></li>
-<li>Write to Parquet files</li>
-<li>I don’t think it is possible to convert csv to parquett on disk (first read csv, then write parquette)
-<ul>
-<li>But it can be done in chunks (read portion of csv and write to individual parquet file which are later “combined”)</li>
+<li>(32-bit R was limited to ~4 GB — mostly obsolete today)</li>
 </ul></li>
 </ul>
-<hr>
-<p><img src="images/bigdata/paste-13.png" class="img-fluid"></p>
 </section>
-<section id="parquet-1" class="level2">
-<h2 class="anchored" data-anchor-id="parquet-1">Parquet</h2>
+<section id="practical-advice" class="level2">
+<h2 class="anchored" data-anchor-id="practical-advice">Practical advice</h2>
 <ul>
-<li>From Apache Arrow</li>
-<li>Open format</li>
-<li>flat files with possible hierarchical structure by transparent structure of folders and filenames</li>
-<li>Integrates with DuckDB (which integrates with R/tidyverse)</li>
-<li>See example later!</li>
+<li>check memory: <code>ps::ps_system_memory()</code></li>
+<li>avoid unnecessary copies of large objects
+<ul>
+<li>Use <code>{data.table}</code> for reference semantics</li>
+<li>or Parquet files to read only the necessary data</li>
+</ul></li>
+<li>consider pipelines (<code>targets</code>) or chunked processing</li>
 </ul>
 </section>
-<section id="r-specific-data-files" class="level2">
-<h2 class="anchored" data-anchor-id="r-specific-data-files">R specific data files?</h2>
+<section id="numeric-vs-integer-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="numeric-vs-integer-in-r">Numeric vs integer in R</h2>
+<p>R’s default numeric type is <strong>double precision (numeric)</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">1</span>) <span class="co"># "double"</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="dv">1</span>L) <span class="co"># weird syntax to get "integer"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-this-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
 <ul>
-<li>I use <code>.qd</code>-files (previously <code>.qs</code>) to cache non-tabular or intermediate data objects</li>
-</ul>
-<blockquote class="blockquote">
-<p>{qs2}: a framework for efficient serialization … The qs2 format directly uses R serialization (via the R_Serialize/R_Unserialize C API) while improving underlying compression and disk IO patterns.</p>
-</blockquote>
+<li>integers use <strong>less memory</strong> (4 bytes vs 8 bytes)<br>
+</li>
+<li>can be important for large datasets<br>
+</li>
+<li>100 million values:
 <ul>
-<li><code>.RData</code> is terribly slow!</li>
-<li><code>.rds</code> should now be much faster than before (serialized)</li>
-<li><code>.fst</code> might be better in some cases but <code>.qd/.qs</code> is more generic (I think)</li>
-</ul>
-<hr>
-<p><img src="images/bigdata/paste-14.png" class="img-fluid"></p>
-</section>
-<section id="data-management" class="level2">
-<h2 class="anchored" data-anchor-id="data-management">Data management</h2>
-<p><img src="images/bigdata/paste-16.png" class="img-fluid"></p>
-<hr>
-<ul>
-<li>Let’s say data fits into RAM</li>
-<li>base R and tidyverse works … but might be terribly slow …</li>
-<li><code>{data.table}</code>! 😀</li>
+<li>numeric ≈ 800 MB<br>
+</li>
+<li>integer ≈ 400 MB</li>
+</ul></li>
 </ul>
 <hr>
-<p><img src="images/bigdata/paste-15.png" class="img-fluid"></p>
 </section>
-<section id="data.table-1" class="level2">
-<h2 class="anchored" data-anchor-id="data.table-1">{data.table}</h2>
+<section id="in-practice-1" class="level3">
+<h3 class="anchored" data-anchor-id="in-practice-1">In practice</h3>
 <ul>
-<li>Share basic properties with data frames (<code>dt[i, j]; merge()</code>)</li>
-<li>Print method inspired by <code>{tibble}</code></li>
-<li>Some old friends from <code>{reshape2}: melt(), dcast()</code></li>
-<li>Has been around since 2006 (stable and well used, older than tidyverse)</li>
-<li>faster alternatives to base: <code>fifelse(), fcase(), forder(), fread(), fcoalesce(), as.IDate(), %chin%</code></li>
-<li>C and GForce (some difficulties on Mac …)</li>
-<li>integer based keys and indices (compare data bases)</li>
-<li>Reference semantics (no need to copy on modification)</li>
-<li>Very flexible and compact (but perhaps unusual) syntax</li>
+<li>R often converts to numeric automatically<br>
+</li>
+<li>some tools (e.g.&nbsp;<code>data.table</code>) use integers efficiently
+<ul>
+<li>compare <code>as.IDate()</code> vs <code>as.Date()</code></li>
+</ul></li>
+<li>useful when working with:
+<ul>
+<li>IDs<br>
+</li>
+<li>categories<br>
+</li>
+<li>counts</li>
+</ul></li>
 </ul>
+<p>💡 <strong>Key message:</strong><br>
+Choosing the right data type can significantly reduce memory usage.</p>
 </section>
-<section id="example-7" class="level2">
-<h2 class="anchored" data-anchor-id="example-7">Example</h2>
+</section>
+<section id="altrep-alternative-representation" class="level2">
+<h2 class="anchored" data-anchor-id="altrep-alternative-representation">ALTREP (Alternative Representation)</h2>
+<p>R can represent some objects in a <strong>compact or lazy way</strong>.</p>
+<ul>
+<li>introduced in R 3.5.0<br>
+</li>
+<li>avoids allocating full memory immediately</li>
+</ul>
 <pre class="{r}"><code>#| echo: true
-library(data.table)
-dt &lt;- iris
-setDT(dt)
-setkey(iris)
-iris
-dt[, .N, Species]
-dt[, date := as.IDate(Sys.Date()) + .GRP, Species][]
-dt[, names(.SD) := lapply(.SD, as.character), .SDcols = is.factor][]</code></pre>
-<hr>
-<p><img src="images/bigdata/paste-21.png" class="img-fluid"></p>
+x &lt;- 1:1e9
+lobstr::obj_size(x) # actual memory used
+format(object.size(x), units = "GB") # reserved memory
+## as.numeric(x) # will use the reserved memory</code></pre>
 </section>
-<section id="if-it-doesnt-fit" class="level2">
-<h2 class="anchored" data-anchor-id="if-it-doesnt-fit">If it doesn’t fit?</h2>
+<section id="what-happens" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens">What happens?</h2>
 <ul>
-<li>Connect to parquet file.</li>
-<li>Use DuckDB to process the data (while still on disk)</li>
-<li>Use <code>{dplyr}</code> to translate its syntax into SQL code</li>
-<li>Process data on disk</li>
-<li>Only read the results into memory</li>
+<li>data is generated <strong>on demand</strong><br>
+</li>
+<li>not all values are stored in memory</li>
 </ul>
+<p>💡 <strong>Key message:</strong><br>
+Not all objects in R are fully materialised — some are computed when needed.</p>
 </section>
-<section id="example-8" class="level2">
-<h2 class="anchored" data-anchor-id="example-8">Example</h2>
-<pre class="{r}"><code>#| echo: true
-#| eval: false
-library(tidyverse)
-db1 &lt;-
-  arrow::open_dataset("file1.parquet") |&gt;
-  arrow::to_duckdb() |&gt;
-  select(col1:col3) |&gt;
-  filter(...) |&gt;
-  pivot_wider(..) 
-
-db2 &lt;-
-  arrow::open_dataset("file2.parquet") |&gt;
-  arrow::to_duckdb() |&gt;
-  count(x, y) |&gt;
-  filter(...)
-
-df &lt;- 
-  db1 |&gt;  
-  left_join(db2) |&gt;
-  collect() # Only the resulting part should be collected!
-  </code></pre>
-<hr>
-<section id="pros" class="level3">
-<h3 class="anchored" data-anchor-id="pros">Pros 👍</h3>
+<section id="other-memory-optimisations-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="other-memory-optimisations-in-r">Other memory optimisations in R</h2>
+<p>R uses several mechanisms to reduce memory usage (not only ALTREP).</p>
 <ul>
-<li>Lazy: nothing evaluated until it is actually needed (collected)</li>
-<li>Many basic functions are translated from R to SQL</li>
-<li>DuckDB is parallelized (<code>{data.table}</code> is mostly sequential)</li>
-<li>Familiar syntax from tidyverse</li>
-</ul>
-</section>
-<section id="cons" class="level3">
-<h3 class="anchored" data-anchor-id="cons">Cons 👎</h3>
+<li><strong>Shared strings (string interning)</strong>
 <ul>
-<li>tidyverse -&gt; SQL translation not perfect (non optimized)</li>
-<li>might be relatively slow if intermediate steps are not cached and needs to be performed repeatedly</li>
-</ul>
-<hr>
-<p><img src="images/bigdata/paste-17.png" class="img-fluid"></p>
-</section>
-</section>
-<section id="duckplyr" class="level2">
-<h2 class="anchored" data-anchor-id="duckplyr">DuckPlyr</h2>
-<ul>
-<li>New package with API-calls to DuckDB (no standard SQL code in between … I think)</li>
-<li>Drop-in-replacement of {dplyr}</li>
-<li>Automatically fail-safe to collect and use standard {dplyr} if needed</li>
-<li>Uptimized engine to not touch more data than necessary!</li>
-<li>Although very limited functionality so far (but wait and see!)</li>
-</ul>
-<hr>
-<pre class="{r}"><code>#| eval: false
-#| echo: true
-out &lt;-
-  palmerpenguins::penguins %&gt;%
-  # CAVEAT: factor columns are not supported yet
-  mutate(across(where(is.factor), as.character)) %&gt;%
-  duckplyr::as_duckplyr_tibble() %&gt;%
-  mutate(bill_area = bill_length_mm * bill_depth_mm) %&gt;%
-  summarize(.by = c(species, sex), mean_bill_area = mean(bill_area)) %&gt;%
-  filter(species != "Gentoo")
-
-out %&gt;%
-  explain()</code></pre>
-<pre class="{verbatim}"><code>#&gt; ┌---------------------------┐
-#&gt; │          ORDER_BY         │
-#&gt; │    --------------------   │
-#&gt; │      dataframe_42_42      │
-#&gt; │    42.___row_number ASC   │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │           FILTER          │
-#&gt; │    --------------------   │
-#&gt; │   "r_base::!="(species,   │
-#&gt; │         'Gentoo')         │
-#&gt; │                           │
-#&gt; │          ~34 Rows         │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │         PROJECTION        │
-#&gt; │    --------------------   │
-#&gt; │             #0            │
-#&gt; │             #1            │
-#&gt; │             #2            │
-#&gt; │             #3            │
-#&gt; │                           │
-#&gt; │         ~172 Rows         │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │      STREAMING_WINDOW     │
-#&gt; │    --------------------   │
-#&gt; │        Projections:       │
-#&gt; │    ROW_NUMBER() OVER ()   │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │          ORDER_BY         │
-#&gt; │    --------------------   │
-#&gt; │      dataframe_42_42      │
-#&gt; │    42.___row_number ASC   │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │       HASH_GROUP_BY       │
-#&gt; │    --------------------   │
-#&gt; │          Groups:          │
-#&gt; │             #0            │
-#&gt; │             #1            │
-#&gt; │                           │
-#&gt; │        Aggregates:        │
-#&gt; │          min(#2)          │
-#&gt; │          mean(#3)         │
-#&gt; │                           │
-#&gt; │         ~172 Rows         │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │         PROJECTION        │
-#&gt; │    --------------------   │
-#&gt; │          species          │
-#&gt; │            sex            │
-#&gt; │       ___row_number       │
-#&gt; │         bill_area         │
-#&gt; │                           │
-#&gt; │         ~344 Rows         │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │         PROJECTION        │
-#&gt; │    --------------------   │
-#&gt; │             #0            │
-#&gt; │             #1            │
-#&gt; │             #2            │
-#&gt; │             #3            │
-#&gt; │                           │
-#&gt; │         ~344 Rows         │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │      STREAMING_WINDOW     │
-#&gt; │    --------------------   │
-#&gt; │        Projections:       │
-#&gt; │    ROW_NUMBER() OVER ()   │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │         PROJECTION        │
-#&gt; │    --------------------   │
-#&gt; │          species          │
-#&gt; │            sex            │
-#&gt; │         bill_area         │
-#&gt; │                           │
-#&gt; │         ~344 Rows         │
-#&gt; └-------------┬-------------┘
-#&gt; ┌-------------┴-------------┐
-#&gt; │     R_DATAFRAME_SCAN      │
-#&gt; │    --------------------   │
-#&gt; │         data.frame        │
-#&gt; │                           │
-#&gt; │        Projections:       │
-#&gt; │          species          │
-#&gt; │       bill_length_mm      │
-#&gt; │       bill_depth_mm       │
-#&gt; │            sex            │
-#&gt; │                           │
-#&gt; │         ~344 Rows         │
-#&gt; └---------------------------┘</code></pre>
-<hr>
-<p><img src="images/bigdata/paste-19.png" class="img-fluid"></p>
-</section>
-<section id="dates" class="level2">
-<h2 class="anchored" data-anchor-id="dates">Dates</h2>
-<ul>
-<li>Use <code>as.IDate()</code> instead of <code>as.Date()</code> if using <code>{data.table}</code>. Integer based.</li>
-<li>Use <code>{anytime}</code> (or maybe <code>{fasttime}</code>) if conversion is needed (<code>ALTREP</code>)</li>
-</ul>
-</section>
-<section id="string-manipulation" class="level2">
-<h2 class="anchored" data-anchor-id="string-manipulation">String manipulation</h2>
-<ul>
-<li>Character manipulation in base R can be quite slow (does not use <code>ALTREP</code> and only single core by default)
-<ul>
-<li>For example regular expressions (<code>grep()</code>, <code>gsub()</code> etc)</li>
+<li>identical strings may be stored only once<br>
+</li>
+<li>reduces memory when many values are repeated</li>
 </ul></li>
-<li><code>{stringfish}</code> use multithreads and ALTREP - much faster!</li>
 </ul>
+</section>
+<section id="but-memory-still-fills-up" class="level2">
+<h2 class="anchored" data-anchor-id="but-memory-still-fills-up">But memory still fills up…</h2>
+<p>Even with smart representations:</p>
+<ul>
+<li>many operations still create real objects<br>
+</li>
+<li>temporary objects accumulate</li>
+</ul>
+<p>👉 R still needs to <strong>free memory</strong></p>
+</section>
+<section id="garbage-collection" class="level2">
+<h2 class="anchored" data-anchor-id="garbage-collection">Garbage collection</h2>
+<p>When you work in R, memory is constantly used for <strong>intermediate objects</strong>.</p>
+<ul>
+<li>many operations create temporary results<br>
+</li>
+<li>these objects are no longer needed after a step is completed<br>
+</li>
+<li>but R does not always remove them immediately</li>
+</ul>
+</section>
+<section id="what-is-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-problem">What is the problem?</h2>
+<ul>
+<li>memory can fill up with <strong>objects that are no longer used</strong><br>
+</li>
+<li>there are no active references (“pointers”) to these objects<br>
+</li>
+<li>but they still occupy memory</li>
+</ul>
+</section>
+<section id="solution-garbage-collection" class="level2">
+<h2 class="anchored" data-anchor-id="solution-garbage-collection">Solution: garbage collection</h2>
+<ul>
+<li>R periodically identifies objects that are no longer reachable<br>
+</li>
+<li>these are removed, and memory is freed<br>
+</li>
+<li>GC is triggered when R needs more memory<br>
+</li>
+<li>may cause short pauses during execution</li>
+</ul>
+</section>
+<section id="practical-advice-1" class="level2">
+<h2 class="anchored" data-anchor-id="practical-advice-1">Practical advice</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need (still takes up memory)</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>() <span class="co"># manual garbage collection (free the memory)</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># reference semantics by `{data.table}` avoids "hidden" objects</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>💡 <strong>Key message:</strong><br>
+You rarely need to manage memory explicitly — but inefficient code can still use too much of it.</p>
+</section>
+<section id="unnecassary-computations-for-large-objects" class="level2">
+<h2 class="anchored" data-anchor-id="unnecassary-computations-for-large-objects">Unnecassary computations for large objects</h2>
+<ul>
+<li>Sometimes R (or the computer hardware) is not the problem, but the IDE might be.</li>
+<li>Common for RStudio (RStudio and R both run in the same process)
+<ul>
+<li>Memory problems might make RSTudio crash</li>
+</ul></li>
+<li>Positron separates the R process from the IDE
+<ul>
+<li>Better, but still not perfect</li>
+</ul></li>
+</ul>
+<p><img src="images/paste-40.png" class="img-fluid"></p>
+<p><a href="https://github.com/posit-dev/positron/issues/12043">Still open?</a></p>
 <hr>
-<p><img src="images/bigdata/paste-20.png" class="img-fluid"></p>
+<p><img src="images/bigdata/paste-9.png" class="img-fluid"></p>
+</section>
+<section id="cpu" class="level2">
+<h2 class="anchored" data-anchor-id="cpu">CPU</h2>
+<p>The <strong>Central Processing Unit (CPU)</strong> determines how fast computations are performed.</p>
+<ul>
+<li>CPUs work in <strong>clock cycles</strong> (e.g.&nbsp;3 GHz ≈ 3 billion cycles per second)<br>
+</li>
+<li>CPU matters most when:
+<ul>
+<li>running models (e.g.&nbsp;regression, mixed models)<br>
+</li>
+<li>performing simulations<br>
+</li>
+<li>using loops or inefficient code<br>
+</li>
+</ul></li>
+<li>CPU matters less when:
+<ul>
+<li>reading data (disk/network bottleneck)<br>
+</li>
+<li>working with very large objects (RAM bottleneck)</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Writing efficient code (vectorisation) often matters more than CPU speed. Applies also to R packages on CRAN!</p>
+</div>
+</div>
+</section>
+<section id="how-r-uses-the-cpu" class="level2">
+<h2 class="anchored" data-anchor-id="how-r-uses-the-cpu">How R uses the CPU</h2>
+<ul>
+<li>R is often <strong>single-threaded</strong><br>
+</li>
+<li>many operations use only <strong>one core</strong><br>
+</li>
+<li>some libraries can use multiple cores (parallel computing)</li>
+</ul>
+<p>How many cores do you have?</p>
+<pre class="{r}"><code>#| echo: true
+benchmarkme::get_cpu()</code></pre>
+</section>
+<section id="vectorization-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="vectorization-in-r">Vectorization in R</h2>
+<ul>
+<li>R is designed to work efficiently with <strong>vectors</strong>, not loops.</li>
+<li>In R, what looks like a scalar is actually a vector of length 1</li>
+<li>vectorized operations apply to whole objects at once<br>
+</li>
+<li>loops process one element at a time (often slower)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="do">## slow</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(x))</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  result[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="do">## fast</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="why-is-vectorization-faster" class="level2">
+<h2 class="anchored" data-anchor-id="why-is-vectorization-faster">Why is vectorization faster?</h2>
+<p>Vectorized operations in R are usually implemented in <strong>compiled C code</strong>.</p>
+<ul>
+<li><p>R code (e.g.&nbsp;<code>for</code> loops) is <strong>interpreted</strong> → each step has overhead</p></li>
+<li><p>vectorized operations (e.g.&nbsp;<code>x + y</code>) are:</p>
+<ul>
+<li>implemented in C<br>
+</li>
+<li>run as tight, optimized loops</li>
+</ul></li>
+</ul>
+</section>
+<section id="parallel-computing" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-computing">Parallel computing</h2>
+<p>Parallel computing means using <strong>multiple CPU cores at the same time</strong>.</p>
+<ul>
+<li>most R code runs on a <strong>single core</strong><br>
+</li>
+<li>your computer may have many cores (e.g.&nbsp;4–16)</li>
+<li>a shared server such as TRE might have several hundreds!</li>
+</ul>
+<section id="why-use-parallel-computing" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-parallel-computing">Why use parallel computing?</h3>
+<ul>
+<li>to speed up <strong>computationally intensive tasks</strong><br>
+</li>
+<li>especially when tasks can be done independently</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+Parallel computing allows you to do multiple computations at once — but only if the problem can be split.</p>
+<hr>
+<p><img src="images/bigdata/paste-22.png" class="img-fluid"></p>
+</section>
 </section>
 <section id="paralellization" class="level2">
 <h2 class="anchored" data-anchor-id="paralellization">Paralellization</h2>
-<p><img src="images/bigdata/paste-22.png" class="img-fluid"></p>
-</section>
-<section id="paralellization-1" class="level2">
-<h2 class="anchored" data-anchor-id="paralellization-1">Paralellization</h2>
 <ul>
-<li>R is single threaded by default</li>
-<li>Some packages and functions may use multithreading by default</li>
-<li>Some functions might have arguments such as <code>nthreads</code>, <code>ncores</code> etc</li>
-<li>To handle multicore/thread computations can be (very) difficult (I’ve heard)</li>
-<li>Easy if data can be divided and conquered (split-apply-combine)</li>
-<li><code>{futureverse}</code> is my favorite (Henrik Bengtsson)
+<li>Some packages and functions may use multithreading by default
 <ul>
-<li><code>{furrr}</code> is a a drop-in replacement for <code>{purrr}</code></li>
+<li>But this is unusual</li>
 </ul></li>
+<li>Some functions might have arguments such as <code>nthreads</code>, <code>ncores</code> etc
+<ul>
+<li>You may want to use them</li>
+</ul></li>
+<li>To handle multicore/thread computations in general can be (very) difficult (I’ve heard)</li>
 </ul>
 </section>
-<section id="furrr" class="level2">
-<h2 class="anchored" data-anchor-id="furrr"><code>{furrr}</code></h2>
-<pre class="{r}"><code>#| echo: true
-## How many cores do we have?
-parallel::detectCores()
-library(furrr)
-## Save at least one for OS etc
-plan(multisession, workers = parallel::detectCores() - 1)
-
-1:10 |&gt; 
-  future_map(rnorm, n = 10, .options = furrr_options(seed = 123)) |&gt; 
-  future_map_dbl(mean)</code></pre>
+<section id="split-apply-combine" class="level2">
+<h2 class="anchored" data-anchor-id="split-apply-combine">Split-apply-combine</h2>
+<p>Parallel computing works best when:</p>
+<ul>
+<li>tasks are <strong>independent</strong></li>
+<li>tasks are <strong>computationally heavy</strong></li>
+<li>tasks can be repeated many times</li>
+</ul>
+<section id="examples-3" class="level3">
+<h3 class="anchored" data-anchor-id="examples-3">Examples</h3>
+<ul>
+<li>simulations<br>
+</li>
+<li>bootstrapping<br>
+</li>
+<li>cross-validation<br>
+</li>
+<li>applying a function many times</li>
+</ul>
+<p>💡 If tasks depend on each other, parallelisation will not help.</p>
+</section>
+</section>
+<section id="when-parallel-computing-does-not-help" class="level2">
+<h2 class="anchored" data-anchor-id="when-parallel-computing-does-not-help">When parallel computing does NOT help</h2>
+<p>Parallel computing is often not the solution.</p>
+<ul>
+<li>reading data → bottleneck is disk/network<br>
+</li>
+<li>large objects → bottleneck is RAM<br>
+</li>
+<li>inefficient code → vectorization is better</li>
+</ul>
+</section>
+<section id="example-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="example-in-r">Example in R</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) <span class="fu">slow_function</span>(i)) <span class="co"># Sequential</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>parallel<span class="sc">::</span><span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, slow_function, <span class="at">mc.cores =</span> <span class="dv">4</span>) <span class="co"># Parallel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="what-happens-1" class="level3">
+<h3 class="anchored" data-anchor-id="what-happens-1">What happens?</h3>
+<ul>
+<li>each core processes part of the work<br>
+</li>
+<li>results are combined at the end</li>
+</ul>
+<p>💡 More cores ≠ always faster</p>
+</section>
+</section>
+<section id="limitations-of-parallel-computing" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-parallel-computing">Limitations of parallel computing</h2>
+<ul>
+<li>overhead (starting processes takes time)<br>
+</li>
+<li>copying data between processes<br>
+</li>
+<li>limited by number of cores<br>
+</li>
+<li>not all functions are parallel-friendly</li>
+</ul>
 </section>
 <section id="mirai" class="level2">
-<h2 class="anchored" data-anchor-id="mirai">{mirai}</h2>
+<h2 class="anchored" data-anchor-id="mirai"><code>{mirai}</code></h2>
 <ul>
-<li>Suposed to be up to 1,000 times “faster” compared to <code>{furrr}</code>(according to some metric …)</li>
+<li>Suposed to be up to 1,000 times “faster” compared to earlier methods
+<ul>
+<li>(according to some metric …)</li>
+</ul></li>
 <li>should not block the main process while executing (haven’t tried)</li>
 </ul>
 <blockquote class="blockquote">
@@ -7603,13 +7569,49 @@ plan(multisession, workers = parallel::detectCores() - 1)
 #| echo: true
 
 library(mirai)
-daemons(11, dispatcher = "thread") # "thread" still experimental
+library(data.table)
+daemons(11)
 
 ## data.table with 1 billion rows:
 dt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))
 ## row sums (row wise )
 mirai_map(dt, sum)[.flat]</code></pre>
+<hr>
 <p><img src="images/bigdata/paste-24.png" class="img-fluid"></p>
+</section>
+<section id="purrr" class="level2">
+<h2 class="anchored" data-anchor-id="purrr"><code>{purrr}</code></h2>
+<ul>
+<li>Introduced <code>in_paralell()</code> in 2025</li>
+<li>Based on mirai but without the specialised syntax</li>
+<li>Needs to be explicit on which objects/functions to export to each worker/daemon</li>
+</ul>
+<pre class="{r}"><code>#| echo: true
+library(purrr)
+library(mirai)
+
+## Set up parallel processing (6 background processes)
+daemons(6)
+
+## Sequential version
+mtcars |&gt; map_dbl(\(x) mean(x))
+#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb
+#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81
+
+## Parallel version - just wrap your function with in_parallel()
+mtcars |&gt; map_dbl(in_parallel(\(x) mean(x)))
+#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb
+#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81
+
+## Don't forget to clean up when done
+daemons(0)</code></pre>
+</section>
+<section id="targets-1" class="level2">
+<h2 class="anchored" data-anchor-id="targets-1"><code>{targets}</code></h2>
+<ul>
+<li>The targets package does implement parallel processing efficiently (based on <code>{mirai}</code> via <code>{crew}</code>)</li>
+<li>covered in the R medecine workshop (see <a href="./EL5.html">EL5</a>)</li>
+</ul>
 </section>
 <section id="note" class="level2">
 <h2 class="anchored" data-anchor-id="note">Note</h2>
@@ -7623,52 +7625,51 @@ mirai_map(dt, sum)[.flat]</code></pre>
 <li>Hence, there is no guarantee that the over all time will decrease</li>
 <li>Often a tradeof between no of workers/threads/deamons/cores and efficiency etc</li>
 <li>“Standard” computations in <code>{data.table}</code> is optimized for single core</li>
-<li>Message handling and progress bar etc is complicated</li>
+<li>Message handling and progress bar etc is complicated
+<ul>
+<li>So is random number generation</li>
+</ul></li>
 </ul>
 </section>
-<section id="caching-1" class="level2">
-<h2 class="anchored" data-anchor-id="caching-1">Caching</h2>
+<section id="gpu" class="level2">
+<h2 class="anchored" data-anchor-id="gpu">GPU</h2>
+<p>A Graphics Processing Unit (GPU) is designed for <strong>massively parallel computations</strong>.</p>
 <ul>
-<li><p>I use <code>{ProjectTemplate}</code> to organize R projects into different steps</p></li>
-<li><p>It has an inbuilt cache mechanism through <code>ProjectTemplate::cache()</code></p></li>
-<li><p>I have my own cache-functions in my <code>.Rprofile</code></p></li>
+<li>many simple cores (thousands)<br>
+</li>
+<li>optimized for performing the same operation many times<br>
+</li>
+<li>originally developed for graphics</li>
 </ul>
-<pre class="{r}"><code>#| echo: true
-## OBS kollar inte att det verkligen finns cache-folder etc
-cache_dt &lt;- function(x, name = deparse(substitute(x)), nthreads = 5) {
-  qs2::qd_save(x, glue::glue("cache/{name}.qd"), nthreads = nthreads)
-  invisible(x)
-}
-
-decache_dt &lt;- function(name, nthreads = 5) {
-  x &lt;- qs2::qd_read(glue::glue("cache/{name}.qd"), TRUE, nthreads = nthreads)
-  if (data.table::is.data.table(x)) {
-    data.table::setDT(x)
-  }
-  assign(name, x, envir = .GlobalEnv)
-  invisible(x)
-}
-</code></pre>
 </section>
-<section id="intermediate-caching" class="level2">
-<h2 class="anchored" data-anchor-id="intermediate-caching">Intermediate caching</h2>
+<section id="how-is-it-different-from-a-cpu" class="level2">
+<h2 class="anchored" data-anchor-id="how-is-it-different-from-a-cpu">How is it different from a CPU?</h2>
 <ul>
-<li><p>For long running function calls (hours, days)</p></li>
-<li><p>Divide task into smaller pieces and execute each part in paralell if feasable</p></li>
-<li><p>Use wrapper function with some index/grouping variable to indicate which part is currently processed</p></li>
-<li><p>Cache intermediate object as soon as possible (with name based on the grouping variable)</p></li>
-<li><p>If process is disrupted and must be restarted, parts which are already executed are just retrieved from from cache</p></li>
+<li>CPU: few powerful cores → general-purpose tasks<br>
+</li>
+<li>GPU: many simple cores → parallel tasks</li>
 </ul>
-<pre class="{r}"><code>#| echo: true
-cache_wrapper &lt;- function(dt_part, name, ...) {
-  if (fs::file_exists(glue::glue("cache/{name}.qd"))) {
-    decache_dt(name)
-  } else {
-    x &lt;- do_what_should_be_done()
-    cache_dt(x, name, ...)
-    x
-  }
-}</code></pre>
+<section id="when-are-gpus-useful" class="level3">
+<h3 class="anchored" data-anchor-id="when-are-gpus-useful">When are GPUs useful?</h3>
+<ul>
+<li>machine learning / deep learning<br>
+</li>
+<li>large matrix operations<br>
+</li>
+<li>simulations that can be parallelised</li>
+</ul>
+</section>
+</section>
+<section id="in-r" class="level2">
+<h2 class="anchored" data-anchor-id="in-r">In R</h2>
+<ul>
+<li>most R code does <strong>not use the GPU</strong></li>
+<li>standard packages are <strong>CPU-based</strong></li>
+<li>GPU requires specialized tools (e.g.&nbsp;<code>torch</code>, <code>tensorflow</code>, <code>gpuR</code>)</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+GPUs can be extremely powerful — but only for specific types of problems.</p>
+<p>In most R workflows, <strong>CPU, RAM, and data access matter much more</strong>.</p>
 </section>
 <section id="profiling" class="level2">
 <h2 class="anchored" data-anchor-id="profiling">Profiling</h2>
@@ -7684,7 +7685,7 @@ cache_wrapper &lt;- function(dt_part, name, ...) {
 <li>Efficient handling of dates and strings</li>
 </ul></li>
 <li>itterate</li>
-<li>Integrated in RStudio (but not yet Positron)</li>
+<li>Integrated in RStudio (works in Positron to)</li>
 </ul>
 <hr>
 <p><img src="images/bigdata/paste-25.png" class="img-fluid"></p>
@@ -7725,12 +7726,11 @@ cache_wrapper &lt;- function(dt_part, name, ...) {
 <li>If the package use C-code it is probably already very fast</li>
 <li>If not, and you can fix it, the package must be re-compiled</li>
 <li>OS dependent</li>
-<li>Might be tricky if using restricted environments (TRE?)</li>
+<li>Might be tricky if using restricted environments (TRE)</li>
 <li>Can still be done by rhub (might need to change maintainer-e-mail temporarily)</li>
 </ul>
 <hr>
 <p><img src="images/bigdata/paste-3.png" class="img-fluid"></p>
-<hr>
 <hr>
 <p><img src="images/bigdata/paste-2.png" class="img-fluid"></p>
 </section>

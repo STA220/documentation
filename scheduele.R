@@ -108,3 +108,42 @@ readxl::read_excel("schema.xlsx") |>
   ) |>
   opt_css("th, td { white-space: normal; }") |>
   qs2::qs_save("cache/gt_schedule.qs2")
+
+
+# Literature for the exam ----------------------------------------------
+
+library(RefManageR)
+
+bib <-
+  bib2df::bib2df("references.bib") |>
+  rename_with(tolower) |>
+  mutate(bibtexkey = paste0("@", bibtexkey)) |>
+  select(bibtexkey, title) |>
+  mutate(
+    examination = case_when(
+      bibtexkey == "@nguyen2022a" ~ "Coursebook",
+      bibtexkey %in% c("@publica2025", "@görman2024") ~ "ES1",
+      bibtexkey %in%
+        c("@theunix2026", "@dataana", "@rodrigues2023", "@wickham") ~ "ECS",
+      bibtexkey %in% c("@deoliveiraandrade2025", "@baker2016") ~ "Reflect"
+    )
+  )
+
+examed_literature <-
+  lectures |>
+  filter(literature != "") |>
+  select(literature) |>
+  mutate(literature = str_split(literature, "\\], \\[")) |>
+  unnest(literature) |>
+  mutate(literature = str_remove_all(literature, "\\[|\\]")) |>
+  separate(literature, c("bibtexkey", "chapter"), sep = ", ch. ") |>
+  summarize(
+    chapters = str_flatten_comma(sort(unique(chapter))),
+    .by = bibtexkey
+  ) |>
+  left_join(bib) |>
+  #filter(is.na(examination)) |>
+  mutate(
+    pdf = gsub("@", "", bibtexkey) %in% gsub(".pdf", "", dir("articles"))
+  ) |>
+  arrange(examination, pdf)
