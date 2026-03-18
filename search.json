@@ -837,7 +837,7 @@
     "href": "ES2.html",
     "title": "ES2: Project presentations",
     "section": "",
-    "text": "Half class\nThe class will be divided into two seminar groups.\nFor projects with two students, one student should sign up for Group 1 and the other for Group 2 using\nCanvas → People → “ES2 Project Seminar”.\nPlease coordinate within your project group so that you do not sign up for the same seminar group.\n\n\nPreparation\nPrepare a short presentation of your project.\nYou may prepare the presentation together with your project partner, although each of you will give the presentation individually in different seminar groups. You may also choose to prepare your presentation independently.\nThe presentation should use the report or revealjs slides you prepared earlier, as described in ECS5. If you produced a written report, you may simply display it on screen and scroll through the document while presenting.\nAim for a 5 minute presentation.\nPresent:\n\nthe research question of your project\nthe data and analysis\nany insights or results you obtained\n\nIf you were able to obtain meaningful results, present these together with your interpretation and conclusions.\nIf you were not able to obtain clear results, instead focus on:\n\nchallenges you encountered during the project\nhow you tried to address these challenges\npossible ways forward or what you would do differently if you continued the work\n\n\n\nThe seminar\nEach student will present their project work according to the instructions above.\nAfter the presentations, we will conclude with a short discussion and reflection about the projects, including experiences from working with the data, the analysis, and the collaboration process."
+    "text": "Half class\nThe class will be divided into two seminar groups.\nFor projects with two students, one student should sign up for Group 1 and the other for Group 2 using\nCanvas → People → “ES2 Project Seminar”.\n\n\n\n\n\n\nImportant\n\n\n\nPlease coordinate within your project group so that you do not sign up for the same seminar group.\n\n\n\n\nPreparation\nPrepare a short presentation of your project.\nYou may prepare the presentation together with your project partner, although each of you will give the presentation individually in different seminar groups. You may also choose to prepare your presentation independently.\nThe presentation should use the report or revealjs slides you prepared earlier, as described in ECS5. If you produced a written report, you may simply display it on screen and scroll through the document while presenting.\nYou are also welcome to show your GitHub repository if you wish. Some of you have developed very well-organised workflows and clear README files, which could be inspiring for others to see. Others may have encountered challenges and may find it useful to ask for input or feedback from the group.\n\n\n\n\n\n\nTip\n\n\n\nAim for a 5 minute presentation.\n\n\n\nYour presentation should briefly cover:\n\nthe research question of your project\n\nthe data and analysis\n\nAll groups worked from the same overall data collection, so there is no need to describe it in general terms\n\nHowever, you may have chosen different subsets and variables, which should be briefly explained\nany insights or results you obtained\n\n\nIf you were able to obtain meaningful results, present these together with your interpretation and conclusions.\nIf you did not obtain clear results, instead focus on:\n\nchallenges you encountered during the project\nhow you tried to address these challenges\npossible ways forward or what you would do differently if you continued the work\n\n\n\n\nThe seminar\nEach student will present their project according to the instructions above.\nAfter the presentations, we will conclude with a short discussion and reflection about the projects, including experiences from working with the data, the analysis, and the collaboration process.\n\n\n\n\n\n\nNote\n\n\n\nDuring this part of the seminar, any questions and reflections are welcome. The purpose is not to assess the quality of your answers, but to create space for honest discussion and reflection.\nThink of this as an opportunity to explore challenges and uncertainties — and to prepare for a reality where working with data is rarely straightforward!"
   },
   {
     "objectID": "EL10.html#big-data",
@@ -914,7 +914,7 @@
     "href": "EL10.html#example",
     "title": "EL10: Biggish data",
     "section": "Example",
-    "text": "Example\nIf you have:\n\n\n\n\n\n\nTip\n\n\nRule of thumb: you can usually work comfortably with data that is at most ~1/3 to 1/2 of your available RAM\n\n\n\n\n16 GB RAM → usable ≈ 8–12 GB\n→ practical dataset size ≈ 3–6 GB\n\nModern R is 64-bit → can use large amounts of memory\n\n(32-bit R was limited to ~4 GB — mostly obsolete today)"
+    "text": "Example\n\n\n\n\n\n\nTip\n\n\nRule of thumb: you can usually work comfortably with data that is at most ~1/3 to 1/2 of your available RAM\n\n\n\nIf you have:\n\n16 GB RAM → usable ≈ 8–12 GB\n→ practical dataset size ≈ 3–6 GB\n\nModern R is 64-bit → can use large amounts of memory\n\n(32-bit R was limited to ~4 GB — mostly obsolete today)"
   },
   {
     "objectID": "EL10.html#practical-advice",
@@ -935,7 +935,7 @@
     "href": "EL10.html#altrep-alternative-representation",
     "title": "EL10: Biggish data",
     "section": "ALTREP (Alternative Representation)",
-    "text": "ALTREP (Alternative Representation)\nR can represent some objects in a compact or lazy way.\n\nintroduced in R 3.5.0\n\navoids allocating full memory immediately\n\n\nx &lt;- 1:1e9\nobject.size(x)\n\n4000000048 bytes\n\n\n→ much smaller than expected"
+    "text": "ALTREP (Alternative Representation)\nR can represent some objects in a compact or lazy way.\n\nintroduced in R 3.5.0\n\navoids allocating full memory immediately\n\n\nx &lt;- 1:1e9\nlobstr::obj_size(x) # actual memory used\n\n680 B\n\nformat(object.size(x), units = \"GB\") # reserved memory\n\n[1] \"3.7 Gb\"\n\n# as.numeric(x) # will use the reserved memory"
   },
   {
     "objectID": "EL10.html#what-happens",
@@ -984,21 +984,21 @@
     "href": "EL10.html#practical-advice-1",
     "title": "EL10: Biggish data",
     "section": "Practical advice",
-    "text": "Practical advice\nrm(large_object) # Remove objects you no longer need\ngc() # manual garbage collection\ndt[, new := f(old)] # eference semantics by `{data.table}`\n💡 Key message:\nYou rarely need to manage memory explicitly — but inefficient code can still use too much of it."
+    "text": "Practical advice\nrm(large_object) # Remove objects you no longer need (still takes up memory)\ngc() # manual garbage collection (free the memory)\ndt[, new := f(old)] # reference semantics by `{data.table}` avoids \"hidden\" objects\n💡 Key message:\nYou rarely need to manage memory explicitly — but inefficient code can still use too much of it."
   },
   {
     "objectID": "EL10.html#unnecassary-computations-for-large-objects",
     "href": "EL10.html#unnecassary-computations-for-large-objects",
     "title": "EL10: Biggish data",
     "section": "Unnecassary computations for large objects",
-    "text": "Unnecassary computations for large objects\n\nSometimes R (or the computer hardware) is not the problem, but the IDE might be.\nCommon for RStudio (RSTudio and R both run in the same process)\n\nMemory problems might make RSTudio crash\n\nPositron separates the R process from the IDE\n\nBetter, but still not perfect\n\n\n\nStill open?"
+    "text": "Unnecassary computations for large objects\n\nSometimes R (or the computer hardware) is not the problem, but the IDE might be.\nCommon for RStudio (RStudio and R both run in the same process)\n\nMemory problems might make RSTudio crash\n\nPositron separates the R process from the IDE\n\nBetter, but still not perfect\n\n\n\nStill open?"
   },
   {
     "objectID": "EL10.html#cpu",
     "href": "EL10.html#cpu",
     "title": "EL10: Biggish data",
     "section": "CPU",
-    "text": "CPU\nThe Central Processing Unit (CPU) determines how fast computations are performed.\n\nCPUs work in clock cycles (e.g. 3 GHz ≈ 3 billion cycles per second)\n\nCPU matters most when:\n\nrunning models (e.g. regression, mixed models)\n\nperforming simulations\n\nusing loops or inefficient code\n\n\nCPU matters less when:\n\nreading data (disk/network bottleneck)\n\nworking with very large objects (RAM bottleneck)\n\n\n\n\n\n\n\n\nNote\n\n\nWriting efficient code (vectorisation) often matters more than CPU speed!"
+    "text": "CPU\nThe Central Processing Unit (CPU) determines how fast computations are performed.\n\nCPUs work in clock cycles (e.g. 3 GHz ≈ 3 billion cycles per second)\n\nCPU matters most when:\n\nrunning models (e.g. regression, mixed models)\n\nperforming simulations\n\nusing loops or inefficient code\n\n\nCPU matters less when:\n\nreading data (disk/network bottleneck)\n\nworking with very large objects (RAM bottleneck)\n\n\n\n\n\n\n\n\nNote\n\n\nWriting efficient code (vectorisation) often matters more than CPU speed. Applies also to R packages on CRAN!"
   },
   {
     "objectID": "EL10.html#how-r-uses-the-cpu",
@@ -1089,14 +1089,35 @@
     "href": "EL10.html#note",
     "title": "EL10: Biggish data",
     "section": "Note",
-    "text": "Note\n\nData must be copied for each paralell worker\nIf all data is needed for each worker, it will be multiplied in memory\n\nThis might not be possible for big data\nIt also takes time\n\nHence, there is no guarantee that the over all time will decrease\nOften a tradeof between no of workers/threads/deamons/cores and efficiency etc\n“Standard” computations in {data.table} is optimized for single core\nMessage handling and progress bar etc is complicated"
+    "text": "Note\n\nData must be copied for each paralell worker\nIf all data is needed for each worker, it will be multiplied in memory\n\nThis might not be possible for big data\nIt also takes time\n\nHence, there is no guarantee that the over all time will decrease\nOften a tradeof between no of workers/threads/deamons/cores and efficiency etc\n“Standard” computations in {data.table} is optimized for single core\nMessage handling and progress bar etc is complicated\n\nSo is random number generation"
+  },
+  {
+    "objectID": "EL10.html#gpu",
+    "href": "EL10.html#gpu",
+    "title": "EL10: Biggish data",
+    "section": "GPU",
+    "text": "GPU\nA Graphics Processing Unit (GPU) is designed for massively parallel computations.\n\nmany simple cores (thousands)\n\noptimized for performing the same operation many times\n\noriginally developed for graphics"
+  },
+  {
+    "objectID": "EL10.html#how-is-it-different-from-a-cpu",
+    "href": "EL10.html#how-is-it-different-from-a-cpu",
+    "title": "EL10: Biggish data",
+    "section": "How is it different from a CPU?",
+    "text": "How is it different from a CPU?\n\nCPU: few powerful cores → general-purpose tasks\n\nGPU: many simple cores → parallel tasks\n\nWhen are GPUs useful?\n\nmachine learning / deep learning\n\nlarge matrix operations\n\nsimulations that can be parallelised"
+  },
+  {
+    "objectID": "EL10.html#in-r",
+    "href": "EL10.html#in-r",
+    "title": "EL10: Biggish data",
+    "section": "In R",
+    "text": "In R\n\nmost R code does not use the GPU\nstandard packages are CPU-based\nGPU requires specialized tools (e.g. torch, tensorflow, gpuR)\n\n💡 Key message:\nGPUs can be extremely powerful — but only for specific types of problems.\nIn most R workflows, CPU, RAM, and data access matter much more."
   },
   {
     "objectID": "EL10.html#profiling",
     "href": "EL10.html#profiling",
     "title": "EL10: Biggish data",
     "section": "Profiling",
-    "text": "Profiling\n\nFirst version of R script might be inneficient\nOptimazation is difficult\nMight be suboptimal if made ad hoc\n{profvis} visualise time and memory usage for each step\nimprove the most important step first\n\nFor example change {base} and {tidyverse} code to {data.table}\nset keys\nEfficient handling of dates and strings\n\nitterate\nIntegrated in RStudio (but not yet Positron)"
+    "text": "Profiling\n\nFirst version of R script might be inneficient\nOptimazation is difficult\nMight be suboptimal if made ad hoc\n{profvis} visualise time and memory usage for each step\nimprove the most important step first\n\nFor example change {base} and {tidyverse} code to {data.table}\nset keys\nEfficient handling of dates and strings\n\nitterate\nIntegrated in RStudio (works in Positron to)"
   },
   {
     "objectID": "EL10.html#modify-packages-1",
@@ -1110,7 +1131,7 @@
     "href": "EL10.html#c-code-changes",
     "title": "EL10: Biggish data",
     "section": "C-code changes",
-    "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE?)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
+    "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
   },
   {
     "objectID": "EL8.html#reading",
@@ -1372,6 +1393,27 @@
     "text": "Here is a link to a Canvas assignment (with an additional link for the GitHub Classroom assignment, the detour is used to make sure that you are simultaneously signed in to Canvas so that your Canvas and GitHub accounts can be linked)."
   },
   {
+    "objectID": "ECS5.html",
+    "href": "ECS5.html",
+    "title": "ECS5: Presentation",
+    "section": "",
+    "text": "Important\n\n\n\nThis is part of the project introduced in ECS4 and examined in ES2."
+  },
+  {
+    "objectID": "ECS5.html#suggested-tools-for-presenting-results",
+    "href": "ECS5.html#suggested-tools-for-presenting-results",
+    "title": "ECS5: Presentation",
+    "section": "Suggested tools for presenting results",
+    "text": "Suggested tools for presenting results\nFigures and tables should be presented within your Quarto document, as introduced in EL9.\nThe code that generates the figures and tables does not necessarily need to be written directly in the .qmd file. For example, the analysis may be organised in separate R scripts or within a workflow pipeline. See this example on how to integrate {targets} and Quarto.\nThe following packages are examples of tools that can help generate clear presentation-quality figures and tables (but you are free to use others).\n\n\n\nPurpose\nExamples\nNotes\n\n\n\n\nFigures\nggplot2, ggpubr, plotly, base R graphics\nUse any tool that produces clear, presentation-quality figures.\n\n\nTables\ngt, gtsummary, flextable, kableExtra\nUse any tool that produces clear, presentation-quality tables.\n\n\nInteractive tools (optional)\nshiny, shinydashboard, htmlwidgets\nThese allow interactive presentations, but may be too ambitious unless you already have experience with them."
+  },
+  {
+    "objectID": "ECS5.html#examination",
+    "href": "ECS5.html#examination",
+    "title": "ECS5: Presentation",
+    "section": "Examination",
+    "text": "Examination\nFor the examination you are expected to:\n\nUse your report or presentation as the basis for your oral seminar presentation in ES2.\nThe report/presentation should include at least one figure and one table of relevance\nInclude the Quarto source file (.qmd) that generates the report or presentation in your GitHub repository.\n\nThe repository should therefore contain the .qmd document and any files required to render the report or presentation, as well as the rendered output document.\nBoth group members should contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together)."
+  },
+  {
     "objectID": "ECS4.html",
     "href": "ECS4.html",
     "title": "ECS4: Data project",
@@ -1428,25 +1470,11 @@
     "text": "Pair programming\nIt can sometimes be useful to work together at the same computer. In such cases only one group member may commit the changes, even though both contributed.\nIndicate in the commit message that the commit was made jointly."
   },
   {
-    "objectID": "ECS5.html",
-    "href": "ECS5.html",
-    "title": "ECS5: Presentation",
+    "objectID": "ECS6.html",
+    "href": "ECS6.html",
+    "title": "ECS6: Project",
     "section": "",
-    "text": "Important\n\n\n\nThis is part of the project introduced in ECS4 and examined in ES2."
-  },
-  {
-    "objectID": "ECS5.html#suggested-tools-for-presenting-results",
-    "href": "ECS5.html#suggested-tools-for-presenting-results",
-    "title": "ECS5: Presentation",
-    "section": "Suggested tools for presenting results",
-    "text": "Suggested tools for presenting results\nFigures and tables should be presented within your Quarto document, as introduced in EL9.\nThe code that generates the figures and tables does not necessarily need to be written directly in the .qmd file. For example, the analysis may be organised in separate R scripts or within a workflow pipeline. See this example on how to integrate {targets} and Quarto.\nThe following packages are examples of tools that can help generate clear presentation-quality figures and tables (but you are free to use others).\n\n\n\nPurpose\nExamples\nNotes\n\n\n\n\nFigures\nggplot2, ggpubr, plotly, base R graphics\nUse any tool that produces clear, presentation-quality figures.\n\n\nTables\ngt, gtsummary, flextable, kableExtra\nUse any tool that produces clear, presentation-quality tables.\n\n\nInteractive tools (optional)\nshiny, shinydashboard, htmlwidgets\nThese allow interactive presentations, but may be too ambitious unless you already have experience with them."
-  },
-  {
-    "objectID": "ECS5.html#examination",
-    "href": "ECS5.html#examination",
-    "title": "ECS5: Presentation",
-    "section": "Examination",
-    "text": "Examination\nFor the examination you are expected to:\n\nUse your report or presentation as the basis for your oral seminar presentation in ES2.\nThe report/presentation should include at least one figure and one table of relevance\nInclude the Quarto source file (.qmd) that generates the report or presentation in your GitHub repository.\n\nThe repository should therefore contain the .qmd document and any files required to render the report or presentation, as well as the rendered output document.\nBoth group members should contribute to the Quarto document. This can be done either by committing changes from your own computers or by indicating in the commit messages that the work was performed jointly (for example during pair programming using one computer together)."
+    "text": "Note\n\n\n\nThis session is scheduled to support your ongoing project work. No new material will be introduced; instead, it provides an opportunity for in-person collaboration with your group and for asking questions to the instructor.\n\n\n\nInstructions for the project can be found in ECS4 and ECS5.\nPlease note that you will later present your project in accordance with ES2.\n\n\n\n\n\n\n\nTip\n\n\n\nThe material presented in EL10 may serve as inspiration for ideas you may wish to explore within your project, but this is optional and not required for the examination."
   },
   {
     "objectID": "ECS3.html",
@@ -1481,7 +1509,7 @@
     "href": "EL9.html#individual-scripts",
     "title": "EL9: Documentation",
     "section": "Individual scripts",
-    "text": "Individual scripts\n\nAs soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.\nThe commentr package is designed to maintain such context\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n###########################################################################\n#                                                                         #\n# Purpose:       My nice script                                           #\n#                                                                         #\n# Author:        Erik Bülow                                               #\n# Contact:       xxx@yyy.zzz                                              #\n# Client:        John Doe                                                 #\n#                                                                         #\n# Code created:  2026-03-17                                               #\n# Last updated:  2026-03-17                                               #\n# Source:        /Users/xbuler/STA220/documentation                       #\n#                                                                         #\n# Comment:       Bla bla bla ...                                          #\n#                                                                         #\n###########################################################################"
+    "text": "Individual scripts\n\nAs soon as you distribute an individual R script from a bigger project (by e-mail or as a printed copy) some context would get lost.\nThe commentr package is designed to maintain such context\n\nremotes::install_bitbucket(\"cancercentrum/commentr\")\n\n\n\ncommentr::header_comment(\n  \"My nice script\",\n  \"Bla bla bla ...\",\n  \"Erik Bülow\",\n  \"xxx@yyy.zzz\",\n  \"John Doe\"\n)\n\n\n###########################################################################\n#                                                                         #\n# Purpose:       My nice script                                           #\n#                                                                         #\n# Author:        Erik Bülow                                               #\n# Contact:       xxx@yyy.zzz                                              #\n# Client:        John Doe                                                 #\n#                                                                         #\n# Code created:  2026-03-18                                               #\n# Last updated:  2026-03-18                                               #\n# Source:        /Users/xbuler/STA220/documentation                       #\n#                                                                         #\n# Comment:       Bla bla bla ...                                          #\n#                                                                         #\n###########################################################################"
   },
   {
     "objectID": "EL9.html#documenting-r-functions",
@@ -1572,7 +1600,7 @@
     "href": "EL9.html#inline-code",
     "title": "EL9: Documentation",
     "section": "Inline code",
-    "text": "Inline code\nSometimes we want to insert small pieces of R output directly in the text.\nThis is called inline code.\nInline code will always just show the result of the call (not the code itself in the rendered document):\nTodays date is `r Sys.Date()` and it is `r format(Sys.time(), format = \"%H\")` \n\nTodys date is 2026-03-17 and it is 03 PM\n\nTo higlight with bold and italic:\nTodays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = \"%I %p\")`*\n\nTodays date is 2026-03-17 and it is 03 PM"
+    "text": "Inline code\nSometimes we want to insert small pieces of R output directly in the text.\nThis is called inline code.\nInline code will always just show the result of the call (not the code itself in the rendered document):\nTodays date is `r Sys.Date()` and it is `r format(Sys.time(), format = \"%H\")` \n\nTodys date is 2026-03-18 and it is 08 AM\n\nTo higlight with bold and italic:\nTodays date is **`r Sys.Date()`** and it is *`r format(Sys.time(), format = \"%I %p\")`*\n\nTodays date is 2026-03-18 and it is 08 AM"
   },
   {
     "objectID": "EL9.html#to-publish",
@@ -2608,7 +2636,7 @@
     "href": "handouts.html",
     "title": "Handouts",
     "section": "",
-    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-17."
+    "text": "NoteUpdated handouts\n\n\n\n\nThis document is generated automatically and contains all lecture slides.\nWhen modifications are made to any of the lecture slides, this should be reflected here automatically.\nIf you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking Other formats &gt; Typst in the right side menu of the page.\nIf you are reading the PDF version of the document, the HTML version is availble here\n\nThose handouts where last modified: 2026-03-18."
   },
   {
     "objectID": "handouts.html#separate-handouts-for-each-lecture",
@@ -4001,7 +4029,7 @@
     "href": "handouts.html#example-5",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\ntmz #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nogshym { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\ntmz #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
+    "text": "Example\n\nThe first time you need the data, use pxweb_interactive() from your console.\nIt will guide you through all the necessary steps.\nIt will then provide you the necessary R code to replicate the query\n\n\nlibrary(pxweb)\nlibrary(data.table)\nlibrary(ggplot2)\n\nurl &lt;- \"https://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningR1860N\"\n\n## PXWEB query\npxweb_query_list &lt;-\n  list(\n    \"Alder\" = \"*\",\n    \"Kon\" = c(\"1\", \"2\"),\n    \"ContentsCode\" = c(\"0000053A\"),\n    \"Tid\" = as.character(1864:2024)\n  )\n\npx_data &lt;-\n  pxweb_get(\n    url = url,\n    query = pxweb_query_list\n  )\n\n## A data.table with population numbers\nbef &lt;-\n  px_data |&gt;\n  as.data.frame() |&gt;\n  setDT()\n\n## Some data cleaning\nsetnames(\n  bef,\n  c(\"ålder\", \"kön\", \"år\", \"Antal\"),\n  c(\"age\", \"sex\", \"year\", \"N\")\n)\nbef[, `:=`(\n  age = as.numeric(gsub(\" år\", \"\", age)),\n  sex = factor(sex, c(\"män\", \"kvinnor\"), c(\"males\", \"females\")),\n  year = as.integer(year)\n)]\nbef &lt;- bef[!is.na(age)] # Remove totals\n\n## Aggregate for age groups\nbef[,\n  age_group := cut(\n    age,\n    c(-Inf, 17, 66, Inf),\n    c(\"children\", \"adults\", \"elderly\")\n  )\n]\nbef_ag &lt;- bef[, .(N = sum(N)), .(age_group, sex, year)]\n\n## Visualize\ngg &lt;- bef_ag |&gt;\n  ggplot(aes(year, N, color = age_group, linetype = sex)) +\n  geom_line() +\n  theme(legend.position = \"bottom\") +\n  scale_y_continuous(\n    labels = scales::label_number(scale = 1e-6, suffix = \"M\")\n  )\n\n\n\n\n\n\nxnx #| echo: false gg\n\n\n## Hierachical data\n\n\n- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)\n\n\nsqanwv { \"system\": \"ICD-10\", \"chapter\": { \"code\": \"Chapter I\", \"title\": \"Certain infectious and parasitic diseases\", \"range\": \"A00–B99\", \"blocks\": [ { \"code\": \"A00–A09\", \"title\": \"Intestinal infectious diseases\", \"categories\": [ { \"code\": \"A00\", \"title\": \"Cholera\", \"includes\": [\"Vibrio cholerae infection\"], \"excludes\": [\"Carrier state\"], \"subcategories\": [ { \"code\": \"A00.0\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar cholerae\" }, { \"code\": \"A00.1\", \"title\": \"Cholera due to Vibrio cholerae 01, biovar eltor\" } ] } ] } ] } }\n\n\n## Example\n\n\nxnx #| cache: true ## db_exec(\"INSTALL json\") db_exec(\"LOAD json\") url &lt;- \"https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json\" (icd &lt;- duckplyr::read_json_duckdb(url))"
   },
   {
     "objectID": "handouts.html#flattening",
@@ -4883,7 +4911,7 @@
     "href": "handouts.html#example-7",
     "title": "Handouts",
     "section": "Example",
-    "text": "Example\nIf you have:\n\n\n\n\n\n\nTip\n\n\n\nRule of thumb: you can usually work comfortably with data that is at most ~1/3 to 1/2 of your available RAM\n\n\n\n16 GB RAM → usable ≈ 8–12 GB\n→ practical dataset size ≈ 3–6 GB\n\nModern R is 64-bit → can use large amounts of memory\n\n(32-bit R was limited to ~4 GB — mostly obsolete today)"
+    "text": "Example\n\n\n\n\n\n\nTip\n\n\n\nRule of thumb: you can usually work comfortably with data that is at most ~1/3 to 1/2 of your available RAM\n\n\nIf you have:\n\n16 GB RAM → usable ≈ 8–12 GB\n→ practical dataset size ≈ 3–6 GB\n\nModern R is 64-bit → can use large amounts of memory\n\n(32-bit R was limited to ~4 GB — mostly obsolete today)"
   },
   {
     "objectID": "handouts.html#practical-advice",
@@ -4904,7 +4932,7 @@
     "href": "handouts.html#altrep-alternative-representation",
     "title": "Handouts",
     "section": "ALTREP (Alternative Representation)",
-    "text": "ALTREP (Alternative Representation)\nR can represent some objects in a compact or lazy way.\n\nintroduced in R 3.5.0\n\navoids allocating full memory immediately\n\n#| echo: true\nx &lt;- 1:1e9\nobject.size(x)\n→ much smaller than expected"
+    "text": "ALTREP (Alternative Representation)\nR can represent some objects in a compact or lazy way.\n\nintroduced in R 3.5.0\n\navoids allocating full memory immediately\n\n#| echo: true\nx &lt;- 1:1e9\nlobstr::obj_size(x) # actual memory used\nformat(object.size(x), units = \"GB\") # reserved memory\n## as.numeric(x) # will use the reserved memory"
   },
   {
     "objectID": "handouts.html#what-happens",
@@ -4953,21 +4981,21 @@
     "href": "handouts.html#practical-advice-1",
     "title": "Handouts",
     "section": "Practical advice",
-    "text": "Practical advice\nrm(large_object) # Remove objects you no longer need\ngc() # manual garbage collection\ndt[, new := f(old)] # eference semantics by `{data.table}`\n💡 Key message:\nYou rarely need to manage memory explicitly — but inefficient code can still use too much of it."
+    "text": "Practical advice\nrm(large_object) # Remove objects you no longer need (still takes up memory)\ngc() # manual garbage collection (free the memory)\ndt[, new := f(old)] # reference semantics by `{data.table}` avoids \"hidden\" objects\n💡 Key message:\nYou rarely need to manage memory explicitly — but inefficient code can still use too much of it."
   },
   {
     "objectID": "handouts.html#unnecassary-computations-for-large-objects",
     "href": "handouts.html#unnecassary-computations-for-large-objects",
     "title": "Handouts",
     "section": "Unnecassary computations for large objects",
-    "text": "Unnecassary computations for large objects\n\nSometimes R (or the computer hardware) is not the problem, but the IDE might be.\nCommon for RStudio (RSTudio and R both run in the same process)\n\nMemory problems might make RSTudio crash\n\nPositron separates the R process from the IDE\n\nBetter, but still not perfect\n\n\n\nStill open?"
+    "text": "Unnecassary computations for large objects\n\nSometimes R (or the computer hardware) is not the problem, but the IDE might be.\nCommon for RStudio (RStudio and R both run in the same process)\n\nMemory problems might make RSTudio crash\n\nPositron separates the R process from the IDE\n\nBetter, but still not perfect\n\n\n\nStill open?"
   },
   {
     "objectID": "handouts.html#cpu",
     "href": "handouts.html#cpu",
     "title": "Handouts",
     "section": "CPU",
-    "text": "CPU\nThe Central Processing Unit (CPU) determines how fast computations are performed.\n\nCPUs work in clock cycles (e.g. 3 GHz ≈ 3 billion cycles per second)\n\nCPU matters most when:\n\nrunning models (e.g. regression, mixed models)\n\nperforming simulations\n\nusing loops or inefficient code\n\n\nCPU matters less when:\n\nreading data (disk/network bottleneck)\n\nworking with very large objects (RAM bottleneck)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWriting efficient code (vectorisation) often matters more than CPU speed!"
+    "text": "CPU\nThe Central Processing Unit (CPU) determines how fast computations are performed.\n\nCPUs work in clock cycles (e.g. 3 GHz ≈ 3 billion cycles per second)\n\nCPU matters most when:\n\nrunning models (e.g. regression, mixed models)\n\nperforming simulations\n\nusing loops or inefficient code\n\n\nCPU matters less when:\n\nreading data (disk/network bottleneck)\n\nworking with very large objects (RAM bottleneck)\n\n\n\n\n\n\n\n\nNote\n\n\n\nWriting efficient code (vectorisation) often matters more than CPU speed. Applies also to R packages on CRAN!"
   },
   {
     "objectID": "handouts.html#how-r-uses-the-cpu",
@@ -5058,14 +5086,35 @@
     "href": "handouts.html#note",
     "title": "Handouts",
     "section": "Note",
-    "text": "Note\n\nData must be copied for each paralell worker\nIf all data is needed for each worker, it will be multiplied in memory\n\nThis might not be possible for big data\nIt also takes time\n\nHence, there is no guarantee that the over all time will decrease\nOften a tradeof between no of workers/threads/deamons/cores and efficiency etc\n“Standard” computations in {data.table} is optimized for single core\nMessage handling and progress bar etc is complicated"
+    "text": "Note\n\nData must be copied for each paralell worker\nIf all data is needed for each worker, it will be multiplied in memory\n\nThis might not be possible for big data\nIt also takes time\n\nHence, there is no guarantee that the over all time will decrease\nOften a tradeof between no of workers/threads/deamons/cores and efficiency etc\n“Standard” computations in {data.table} is optimized for single core\nMessage handling and progress bar etc is complicated\n\nSo is random number generation"
+  },
+  {
+    "objectID": "handouts.html#gpu",
+    "href": "handouts.html#gpu",
+    "title": "Handouts",
+    "section": "GPU",
+    "text": "GPU\nA Graphics Processing Unit (GPU) is designed for massively parallel computations.\n\nmany simple cores (thousands)\n\noptimized for performing the same operation many times\n\noriginally developed for graphics"
+  },
+  {
+    "objectID": "handouts.html#how-is-it-different-from-a-cpu",
+    "href": "handouts.html#how-is-it-different-from-a-cpu",
+    "title": "Handouts",
+    "section": "How is it different from a CPU?",
+    "text": "How is it different from a CPU?\n\nCPU: few powerful cores → general-purpose tasks\n\nGPU: many simple cores → parallel tasks\n\n\nWhen are GPUs useful?\n\nmachine learning / deep learning\n\nlarge matrix operations\n\nsimulations that can be parallelised"
+  },
+  {
+    "objectID": "handouts.html#in-r",
+    "href": "handouts.html#in-r",
+    "title": "Handouts",
+    "section": "In R",
+    "text": "In R\n\nmost R code does not use the GPU\nstandard packages are CPU-based\nGPU requires specialized tools (e.g. torch, tensorflow, gpuR)\n\n💡 Key message:\nGPUs can be extremely powerful — but only for specific types of problems.\nIn most R workflows, CPU, RAM, and data access matter much more."
   },
   {
     "objectID": "handouts.html#profiling",
     "href": "handouts.html#profiling",
     "title": "Handouts",
     "section": "Profiling",
-    "text": "Profiling\n\nFirst version of R script might be inneficient\nOptimazation is difficult\nMight be suboptimal if made ad hoc\n{profvis} visualise time and memory usage for each step\nimprove the most important step first\n\nFor example change {base} and {tidyverse} code to {data.table}\nset keys\nEfficient handling of dates and strings\n\nitterate\nIntegrated in RStudio (but not yet Positron)"
+    "text": "Profiling\n\nFirst version of R script might be inneficient\nOptimazation is difficult\nMight be suboptimal if made ad hoc\n{profvis} visualise time and memory usage for each step\nimprove the most important step first\n\nFor example change {base} and {tidyverse} code to {data.table}\nset keys\nEfficient handling of dates and strings\n\nitterate\nIntegrated in RStudio (works in Positron to)"
   },
   {
     "objectID": "handouts.html#modify-packages",
@@ -5086,7 +5135,7 @@
     "href": "handouts.html#c-code-changes",
     "title": "Handouts",
     "section": "C-code changes",
-    "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE?)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
+    "text": "C-code changes\n\nIf the package use C-code it is probably already very fast\nIf not, and you can fix it, the package must be re-compiled\nOS dependent\nMight be tricky if using restricted environments (TRE)\nCan still be done by rhub (might need to change maintainer-e-mail temporarily)"
   },
   {
     "objectID": "handouts.html#na",

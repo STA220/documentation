@@ -253,6 +253,10 @@ window.Quarto = {
     <a class="dropdown-item" href="./ECS5.html">
  <span class="dropdown-text">ECS5: Presentation</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./ECS6.html">
+ <span class="dropdown-text">ECS6: Project</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -750,10 +754,16 @@ window.Quarto = {
   <li><a href="#what-happens-1" id="toc-what-happens-1" class="nav-link" data-scroll-target="#what-happens-1">What happens?</a></li>
   </ul></li>
   <li><a href="#limitations-of-parallel-computing" id="toc-limitations-of-parallel-computing" class="nav-link" data-scroll-target="#limitations-of-parallel-computing">Limitations of parallel computing</a></li>
-  <li><a href="#mirai" id="toc-mirai" class="nav-link" data-scroll-target="#mirai">{mirai}</a></li>
-  <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr">{purrr}</a></li>
+  <li><a href="#mirai" id="toc-mirai" class="nav-link" data-scroll-target="#mirai"><code>{mirai}</code></a></li>
+  <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr"><code>{purrr}</code></a></li>
   <li><a href="#targets-1" id="toc-targets-1" class="nav-link" data-scroll-target="#targets-1"><code>{targets}</code></a></li>
   <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note">Note</a></li>
+  <li><a href="#gpu" id="toc-gpu" class="nav-link" data-scroll-target="#gpu">GPU</a></li>
+  <li><a href="#how-is-it-different-from-a-cpu" id="toc-how-is-it-different-from-a-cpu" class="nav-link" data-scroll-target="#how-is-it-different-from-a-cpu">How is it different from a CPU?</a>
+  <ul class="collapse">
+  <li><a href="#when-are-gpus-useful" id="toc-when-are-gpus-useful" class="nav-link" data-scroll-target="#when-are-gpus-useful">When are GPUs useful?</a></li>
+  </ul></li>
+  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r">In R</a></li>
   <li><a href="#profiling" id="toc-profiling" class="nav-link" data-scroll-target="#profiling">Profiling</a></li>
   <li><a href="#modify-packages" id="toc-modify-packages" class="nav-link" data-scroll-target="#modify-packages">Modify packages</a></li>
   <li><a href="#modify-packages-1" id="toc-modify-packages-1" class="nav-link" data-scroll-target="#modify-packages-1">Modify packages</a></li>
@@ -805,28 +815,28 @@ window.Quarto = {
 <li>If you are viewing the HTML version of the handouts, a static PDF might also be downloaded by clicking <code>Other formats &gt; Typst</code> in the right side menu of the page.</li>
 <li>If you are reading the PDF version of the document, the HTML version is availble <a href="https://sta220.github.io/documentation/handouts.html">here</a></li>
 </ul>
-<p>Those handouts where last modified: <strong>2026-03-17</strong>.</p>
+<p>Those handouts where last modified: <strong>2026-03-18</strong>.</p>
 </div>
 </div>
 <section id="separate-handouts-for-each-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="separate-handouts-for-each-lecture">Separate handouts for each lecture</h2>
-<div id="qarqyqdlja" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qarqyqdlja table {
+<div id="wbtwawyuuf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wbtwawyuuf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qarqyqdlja thead, #qarqyqdlja tbody, #qarqyqdlja tfoot, #qarqyqdlja tr, #qarqyqdlja td, #qarqyqdlja th {
+#wbtwawyuuf thead, #wbtwawyuuf tbody, #wbtwawyuuf tfoot, #wbtwawyuuf tr, #wbtwawyuuf td, #wbtwawyuuf th {
   border-style: none;
 }
 
-#qarqyqdlja p {
+#wbtwawyuuf p {
   margin: 0;
   padding: 0;
 }
 
-#qarqyqdlja .gt_table {
+#wbtwawyuuf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -852,12 +862,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_caption {
+#wbtwawyuuf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qarqyqdlja .gt_title {
+#wbtwawyuuf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -869,7 +879,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#qarqyqdlja .gt_subtitle {
+#wbtwawyuuf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -881,7 +891,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#qarqyqdlja .gt_heading {
+#wbtwawyuuf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -893,13 +903,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_bottom_border {
+#wbtwawyuuf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_col_headings {
+#wbtwawyuuf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -914,7 +924,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_col_heading {
+#wbtwawyuuf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -934,7 +944,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#qarqyqdlja .gt_column_spanner_outer {
+#wbtwawyuuf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -946,15 +956,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#qarqyqdlja .gt_column_spanner_outer:first-child {
+#wbtwawyuuf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qarqyqdlja .gt_column_spanner_outer:last-child {
+#wbtwawyuuf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qarqyqdlja .gt_column_spanner {
+#wbtwawyuuf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -966,11 +976,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#qarqyqdlja .gt_spanner_row {
+#wbtwawyuuf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qarqyqdlja .gt_group_heading {
+#wbtwawyuuf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -996,7 +1006,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#qarqyqdlja .gt_empty_group_heading {
+#wbtwawyuuf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1011,15 +1021,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#qarqyqdlja .gt_from_md > :first-child {
+#wbtwawyuuf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qarqyqdlja .gt_from_md > :last-child {
+#wbtwawyuuf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qarqyqdlja .gt_row {
+#wbtwawyuuf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1038,7 +1048,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#qarqyqdlja .gt_stub {
+#wbtwawyuuf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1051,7 +1061,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#qarqyqdlja .gt_stub_row_group {
+#wbtwawyuuf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1065,15 +1075,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#qarqyqdlja .gt_row_group_first td {
+#wbtwawyuuf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qarqyqdlja .gt_row_group_first th {
+#wbtwawyuuf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qarqyqdlja .gt_summary_row {
+#wbtwawyuuf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1083,16 +1093,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#qarqyqdlja .gt_first_summary_row {
+#wbtwawyuuf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_first_summary_row.thick {
+#wbtwawyuuf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qarqyqdlja .gt_last_summary_row {
+#wbtwawyuuf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1102,7 +1112,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_grand_summary_row {
+#wbtwawyuuf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1112,7 +1122,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#qarqyqdlja .gt_first_grand_summary_row {
+#wbtwawyuuf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1122,7 +1132,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_last_grand_summary_row_top {
+#wbtwawyuuf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1132,11 +1142,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_striped {
+#wbtwawyuuf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qarqyqdlja .gt_table_body {
+#wbtwawyuuf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1145,7 +1155,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_footnotes {
+#wbtwawyuuf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1159,7 +1169,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_footnote {
+#wbtwawyuuf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1168,7 +1178,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#qarqyqdlja .gt_sourcenotes {
+#wbtwawyuuf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1182,7 +1192,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#qarqyqdlja .gt_sourcenote {
+#wbtwawyuuf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1190,72 +1200,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#qarqyqdlja .gt_left {
+#wbtwawyuuf .gt_left {
   text-align: left;
 }
 
-#qarqyqdlja .gt_center {
+#wbtwawyuuf .gt_center {
   text-align: center;
 }
 
-#qarqyqdlja .gt_right {
+#wbtwawyuuf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qarqyqdlja .gt_font_normal {
+#wbtwawyuuf .gt_font_normal {
   font-weight: normal;
 }
 
-#qarqyqdlja .gt_font_bold {
+#wbtwawyuuf .gt_font_bold {
   font-weight: bold;
 }
 
-#qarqyqdlja .gt_font_italic {
+#wbtwawyuuf .gt_font_italic {
   font-style: italic;
 }
 
-#qarqyqdlja .gt_super {
+#wbtwawyuuf .gt_super {
   font-size: 65%;
 }
 
-#qarqyqdlja .gt_footnote_marks {
+#wbtwawyuuf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qarqyqdlja .gt_asterisk {
+#wbtwawyuuf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qarqyqdlja .gt_indent_1 {
+#wbtwawyuuf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qarqyqdlja .gt_indent_2 {
+#wbtwawyuuf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qarqyqdlja .gt_indent_3 {
+#wbtwawyuuf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qarqyqdlja .gt_indent_4 {
+#wbtwawyuuf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qarqyqdlja .gt_indent_5 {
+#wbtwawyuuf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qarqyqdlja .katex-display {
+#wbtwawyuuf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qarqyqdlja div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wbtwawyuuf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4516,7 +4526,7 @@ gg &lt;- bef_ag |&gt;
 </colgroup>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>tmz #| echo: false gg</code></td>
+<td style="text-align: left;"><code>xnx #| echo: false gg</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">## Hierachical data</td>
@@ -4525,13 +4535,13 @@ gg &lt;- bef_ag |&gt;
 <td style="text-align: left;">- We like tabular data! - If we get wide data we can transform it to long data (and vice versa) - But we might sometimes encounter more hierarchical data structures - JSON (JavaScript Object Notation) most popular - XML is another format (used for example by the IRS/Skatteverket sometimes)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>ogshym { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
+<td style="text-align: left;"><code>sqanwv { "system": "ICD-10", "chapter": { "code": "Chapter I", "title": "Certain infectious and parasitic diseases", "range": "A00–B99", "blocks": [ { "code": "A00–A09", "title": "Intestinal infectious diseases", "categories": [ { "code": "A00", "title": "Cholera", "includes": ["Vibrio cholerae infection"], "excludes": ["Carrier state"], "subcategories": [ { "code": "A00.0", "title": "Cholera due to Vibrio cholerae 01, biovar cholerae" }, { "code": "A00.1", "title": "Cholera due to Vibrio cholerae 01, biovar eltor" } ] } ] } ] } }</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">## Example</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>tmz #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
+<td style="text-align: left;"><code>xnx #| cache: true ## db_exec("INSTALL json") db_exec("LOAD json") url &lt;- "https://raw.githubusercontent.com/LuChang-CS/icd_hierarchical_structure/main/ICD-10-CM/diagnosis_codes.json" (icd &lt;- duckplyr::read_json_duckdb(url))</code></td>
 </tr>
 </tbody>
 </table>
@@ -7183,7 +7193,6 @@ Data access can easily become the main bottleneck — not your code.</p>
 </section>
 <section id="example-7" class="level2">
 <h2 class="anchored" data-anchor-id="example-7">Example</h2>
-<p>If you have:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -7197,6 +7206,7 @@ Tip
 <p>Rule of thumb: you can usually work comfortably with data that is <strong>at most ~1/3 to 1/2 of your available RAM</strong></p>
 </div>
 </div>
+<p>If you have:</p>
 <ul>
 <li><strong>16 GB RAM</strong> → usable ≈ 8–12 GB<br>
 → practical dataset size ≈ 3–6 GB<br>
@@ -7273,8 +7283,9 @@ Choosing the right data type can significantly reduce memory usage.</p>
 </ul>
 <pre class="{r}"><code>#| echo: true
 x &lt;- 1:1e9
-object.size(x)</code></pre>
-<p>→ much smaller than expected</p>
+lobstr::obj_size(x) # actual memory used
+format(object.size(x), units = "GB") # reserved memory
+## as.numeric(x) # will use the reserved memory</code></pre>
 </section>
 <section id="what-happens" class="level2">
 <h2 class="anchored" data-anchor-id="what-happens">What happens?</h2>
@@ -7343,9 +7354,9 @@ Not all objects in R are fully materialised — some are computed when needed.</
 </section>
 <section id="practical-advice-1" class="level2">
 <h2 class="anchored" data-anchor-id="practical-advice-1">Practical advice</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>() <span class="co"># manual garbage collection</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># eference semantics by `{data.table}`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need (still takes up memory)</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gc</span>() <span class="co"># manual garbage collection (free the memory)</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># reference semantics by `{data.table}` avoids "hidden" objects</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>💡 <strong>Key message:</strong><br>
 You rarely need to manage memory explicitly — but inefficient code can still use too much of it.</p>
 </section>
@@ -7353,7 +7364,7 @@ You rarely need to manage memory explicitly — but inefficient code can still u
 <h2 class="anchored" data-anchor-id="unnecassary-computations-for-large-objects">Unnecassary computations for large objects</h2>
 <ul>
 <li>Sometimes R (or the computer hardware) is not the problem, but the IDE might be.</li>
-<li>Common for RStudio (RSTudio and R both run in the same process)
+<li>Common for RStudio (RStudio and R both run in the same process)
 <ul>
 <li>Memory problems might make RSTudio crash</li>
 </ul></li>
@@ -7399,7 +7410,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Writing efficient code (vectorisation) often matters more than CPU speed!</p>
+<p>Writing efficient code (vectorisation) often matters more than CPU speed. Applies also to R packages on CRAN!</p>
 </div>
 </div>
 </section>
@@ -7543,7 +7554,7 @@ Parallel computing allows you to do multiple computations at once — but only i
 </ul>
 </section>
 <section id="mirai" class="level2">
-<h2 class="anchored" data-anchor-id="mirai">{mirai}</h2>
+<h2 class="anchored" data-anchor-id="mirai"><code>{mirai}</code></h2>
 <ul>
 <li>Suposed to be up to 1,000 times “faster” compared to earlier methods
 <ul>
@@ -7565,10 +7576,11 @@ daemons(11)
 dt &lt;- data.table(x = seq_len(1e9), y = rnorm(1e9))
 ## row sums (row wise )
 mirai_map(dt, sum)[.flat]</code></pre>
+<hr>
 <p><img src="images/bigdata/paste-24.png" class="img-fluid"></p>
 </section>
 <section id="purrr" class="level2">
-<h2 class="anchored" data-anchor-id="purrr">{purrr}</h2>
+<h2 class="anchored" data-anchor-id="purrr"><code>{purrr}</code></h2>
 <ul>
 <li>Introduced <code>in_paralell()</code> in 2025</li>
 <li>Based on mirai but without the specialised syntax</li>
@@ -7613,8 +7625,51 @@ daemons(0)</code></pre>
 <li>Hence, there is no guarantee that the over all time will decrease</li>
 <li>Often a tradeof between no of workers/threads/deamons/cores and efficiency etc</li>
 <li>“Standard” computations in <code>{data.table}</code> is optimized for single core</li>
-<li>Message handling and progress bar etc is complicated</li>
+<li>Message handling and progress bar etc is complicated
+<ul>
+<li>So is random number generation</li>
+</ul></li>
 </ul>
+</section>
+<section id="gpu" class="level2">
+<h2 class="anchored" data-anchor-id="gpu">GPU</h2>
+<p>A Graphics Processing Unit (GPU) is designed for <strong>massively parallel computations</strong>.</p>
+<ul>
+<li>many simple cores (thousands)<br>
+</li>
+<li>optimized for performing the same operation many times<br>
+</li>
+<li>originally developed for graphics</li>
+</ul>
+</section>
+<section id="how-is-it-different-from-a-cpu" class="level2">
+<h2 class="anchored" data-anchor-id="how-is-it-different-from-a-cpu">How is it different from a CPU?</h2>
+<ul>
+<li>CPU: few powerful cores → general-purpose tasks<br>
+</li>
+<li>GPU: many simple cores → parallel tasks</li>
+</ul>
+<section id="when-are-gpus-useful" class="level3">
+<h3 class="anchored" data-anchor-id="when-are-gpus-useful">When are GPUs useful?</h3>
+<ul>
+<li>machine learning / deep learning<br>
+</li>
+<li>large matrix operations<br>
+</li>
+<li>simulations that can be parallelised</li>
+</ul>
+</section>
+</section>
+<section id="in-r" class="level2">
+<h2 class="anchored" data-anchor-id="in-r">In R</h2>
+<ul>
+<li>most R code does <strong>not use the GPU</strong></li>
+<li>standard packages are <strong>CPU-based</strong></li>
+<li>GPU requires specialized tools (e.g.&nbsp;<code>torch</code>, <code>tensorflow</code>, <code>gpuR</code>)</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+GPUs can be extremely powerful — but only for specific types of problems.</p>
+<p>In most R workflows, <strong>CPU, RAM, and data access matter much more</strong>.</p>
 </section>
 <section id="profiling" class="level2">
 <h2 class="anchored" data-anchor-id="profiling">Profiling</h2>
@@ -7630,7 +7685,7 @@ daemons(0)</code></pre>
 <li>Efficient handling of dates and strings</li>
 </ul></li>
 <li>itterate</li>
-<li>Integrated in RStudio (but not yet Positron)</li>
+<li>Integrated in RStudio (works in Positron to)</li>
 </ul>
 <hr>
 <p><img src="images/bigdata/paste-25.png" class="img-fluid"></p>
@@ -7671,7 +7726,7 @@ daemons(0)</code></pre>
 <li>If the package use C-code it is probably already very fast</li>
 <li>If not, and you can fix it, the package must be re-compiled</li>
 <li>OS dependent</li>
-<li>Might be tricky if using restricted environments (TRE?)</li>
+<li>Might be tricky if using restricted environments (TRE)</li>
 <li>Can still be done by rhub (might need to change maintainer-e-mail temporarily)</li>
 </ul>
 <hr>

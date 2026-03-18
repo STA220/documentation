@@ -378,7 +378,6 @@ Data access can easily become the main bottleneck — not your code.</p>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p>If you have:</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -392,6 +391,7 @@ Data access can easily become the main bottleneck — not your code.</p>
 </div>
 </div>
 </div>
+<p>If you have:</p>
 <ul>
 <li><strong>16 GB RAM</strong> → usable ≈ 8–12 GB<br>
 → practical dataset size ≈ 3–6 GB<br>
@@ -466,12 +466,16 @@ Choosing the right data type can significantly reduce memory usage.</p>
 </ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fl">1e9</span></span>
-<span id="cb2-2"><a></a><span class="fu">object.size</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a></a>lobstr<span class="sc">::</span><span class="fu">obj_size</span>(x) <span class="co"># actual memory used</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>4000000048 bytes</code></pre>
+<pre><code>680 B</code></pre>
 </div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">format</span>(<span class="fu">object.size</span>(x), <span class="at">units =</span> <span class="st">"GB"</span>) <span class="co"># reserved memory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "3.7 Gb"</code></pre>
 </div>
-<p>→ much smaller than expected</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># as.numeric(x) # will use the reserved memory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="what-happens" class="slide level2">
 <h2>What happens?</h2>
@@ -540,9 +544,9 @@ Not all objects in R are fully materialised — some are computed when needed.</
 </section>
 <section id="practical-advice-1" class="slide level2">
 <h2>Practical advice</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need</span></span>
-<span id="cb4-2"><a></a><span class="fu">gc</span>() <span class="co"># manual garbage collection</span></span>
-<span id="cb4-3"><a></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># eference semantics by `{data.table}`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">rm</span>(large_object) <span class="co"># Remove objects you no longer need (still takes up memory)</span></span>
+<span id="cb7-2"><a></a><span class="fu">gc</span>() <span class="co"># manual garbage collection (free the memory)</span></span>
+<span id="cb7-3"><a></a>dt[, new <span class="sc">:</span><span class="er">=</span> <span class="fu">f</span>(old)] <span class="co"># reference semantics by `{data.table}` avoids "hidden" objects</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>💡 <strong>Key message:</strong><br>
 You rarely need to manage memory explicitly — but inefficient code can still use too much of it.</p>
 </section>
@@ -550,7 +554,7 @@ You rarely need to manage memory explicitly — but inefficient code can still u
 <h2>Unnecassary computations for large objects</h2>
 <ul>
 <li>Sometimes R (or the computer hardware) is not the problem, but the IDE might be.</li>
-<li>Common for RStudio (RSTudio and R both run in the same process)
+<li>Common for RStudio (RStudio and R both run in the same process)
 <ul>
 <li>Memory problems might make RSTudio crash</li>
 </ul></li>
@@ -597,7 +601,7 @@ You rarely need to manage memory explicitly — but inefficient code can still u
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>Writing efficient code (vectorisation) often matters more than CPU speed!</p>
+<p>Writing efficient code (vectorisation) often matters more than CPU speed. Applies also to R packages on CRAN!</p>
 </div>
 </div>
 </div>
@@ -613,7 +617,7 @@ You rarely need to manage memory explicitly — but inefficient code can still u
 </ul>
 <p>How many cores do you have?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>benchmarkme<span class="sc">::</span><span class="fu">get_cpu</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>benchmarkme<span class="sc">::</span><span class="fu">get_cpu</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$vendor_id
 character(0)
@@ -635,14 +639,14 @@ $no_of_cores
 </li>
 <li>loops process one element at a time (often slower)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># slow</span></span>
-<span id="cb7-2"><a></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(x))</span>
-<span id="cb7-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
-<span id="cb7-4"><a></a>  result[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
-<span id="cb7-5"><a></a>}</span>
-<span id="cb7-6"><a></a></span>
-<span id="cb7-7"><a></a><span class="co"># fast</span></span>
-<span id="cb7-8"><a></a>result <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># slow</span></span>
+<span id="cb10-2"><a></a>result <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(x))</span>
+<span id="cb10-3"><a></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb10-4"><a></a>  result[i] <span class="ot">&lt;-</span> x[i] <span class="sc">+</span> y[i]</span>
+<span id="cb10-5"><a></a>}</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a><span class="co"># fast</span></span>
+<span id="cb10-8"><a></a>result <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="why-is-vectorization-faster" class="slide level2">
 <h2>Why is vectorization faster?</h2>
@@ -726,8 +730,8 @@ Parallel computing allows you to do multiple computations at once — but only i
 </section>
 <section id="example-in-r" class="slide level2">
 <h2>Example in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) <span class="fu">slow_function</span>(i)) <span class="co"># Sequential</span></span>
-<span id="cb8-2"><a></a>parallel<span class="sc">::</span><span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, slow_function, <span class="at">mc.cores =</span> <span class="dv">4</span>) <span class="co"># Parallel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="cf">function</span>(i) <span class="fu">slow_function</span>(i)) <span class="co"># Sequential</span></span>
+<span id="cb11-2"><a></a>parallel<span class="sc">::</span><span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, slow_function, <span class="at">mc.cores =</span> <span class="dv">4</span>) <span class="co"># Parallel</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="what-happens-1">What happens?</h3>
 <ul>
 <li>each core processes part of the work<br>
@@ -749,7 +753,7 @@ Parallel computing allows you to do multiple computations at once — but only i
 </ul>
 </section>
 <section id="mirai" class="slide level2">
-<h2>{mirai}</h2>
+<h2><code>{mirai}</code></h2>
 <ul>
 <li>Suposed to be up to 1,000 times “faster” compared to earlier methods
 <ul>
@@ -761,55 +765,58 @@ Parallel computing allows you to do multiple computations at once — but only i
 <p>Designed for simplicity, a ‘mirai’ evaluates an R expression asynchronously in a parallel process, locally or distributed over the network, with the result automatically available upon completion.</p>
 </blockquote>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(mirai)</span>
-<span id="cb9-2"><a></a><span class="fu">library</span>(data.table)</span>
-<span id="cb9-3"><a></a><span class="fu">daemons</span>(<span class="dv">11</span>)</span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a><span class="co"># data.table with 1 billion rows:</span></span>
-<span id="cb9-6"><a></a>dt <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="fl">1e9</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="fl">1e9</span>))</span>
-<span id="cb9-7"><a></a><span class="co"># row sums (row wise )</span></span>
-<span id="cb9-8"><a></a><span class="fu">mirai_map</span>(dt, sum)[.flat]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(mirai)</span>
+<span id="cb12-2"><a></a><span class="fu">library</span>(data.table)</span>
+<span id="cb12-3"><a></a><span class="fu">daemons</span>(<span class="dv">11</span>)</span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a><span class="co"># data.table with 1 billion rows:</span></span>
+<span id="cb12-6"><a></a>dt <span class="ot">&lt;-</span> <span class="fu">data.table</span>(<span class="at">x =</span> <span class="fu">seq_len</span>(<span class="fl">1e9</span>), <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="fl">1e9</span>))</span>
+<span id="cb12-7"><a></a><span class="co"># row sums (row wise )</span></span>
+<span id="cb12-8"><a></a><span class="fu">mirai_map</span>(dt, sum)[.flat]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section class="slide level2">
+
 
 <img data-src="images/bigdata/paste-24.png" class="r-stretch"></section>
 <section id="purrr" class="slide level2">
-<h2>{purrr}</h2>
+<h2><code>{purrr}</code></h2>
 <ul>
 <li>Introduced <code>in_paralell()</code> in 2025</li>
 <li>Based on mirai but without the specialised syntax</li>
 <li>Needs to be explicit on which objects/functions to export to each worker/daemon</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(purrr)</span>
-<span id="cb10-2"><a></a><span class="fu">library</span>(mirai)</span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a><span class="co"># Set up parallel processing (6 background processes)</span></span>
-<span id="cb10-5"><a></a><span class="fu">daemons</span>(<span class="dv">6</span>)</span>
-<span id="cb10-6"><a></a></span>
-<span id="cb10-7"><a></a><span class="co"># Sequential version</span></span>
-<span id="cb10-8"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(\(x) <span class="fu">mean</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(purrr)</span>
+<span id="cb13-2"><a></a><span class="fu">library</span>(mirai)</span>
+<span id="cb13-3"><a></a></span>
+<span id="cb13-4"><a></a><span class="co"># Set up parallel processing (6 background processes)</span></span>
+<span id="cb13-5"><a></a><span class="fu">daemons</span>(<span class="dv">6</span>)</span>
+<span id="cb13-6"><a></a></span>
+<span id="cb13-7"><a></a><span class="co"># Sequential version</span></span>
+<span id="cb13-8"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(\(x) <span class="fu">mean</span>(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
         vs         am       gear       carb 
   0.437500   0.406250   3.687500   2.812500 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb</span></span>
-<span id="cb12-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="co"># Parallel version - just wrap your function with in_parallel()</span></span>
-<span id="cb12-5"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(<span class="fu">in_parallel</span>(\(x) <span class="fu">mean</span>(x)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb</span></span>
+<span id="cb15-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a><span class="co"># Parallel version - just wrap your function with in_parallel()</span></span>
+<span id="cb15-5"><a></a>mtcars <span class="sc">|&gt;</span> <span class="fu">map_dbl</span>(<span class="fu">in_parallel</span>(\(x) <span class="fu">mean</span>(x)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
         vs         am       gear       carb 
   0.437500   0.406250   3.687500   2.812500 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb</span></span>
-<span id="cb14-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
-<span id="cb14-3"><a></a></span>
-<span id="cb14-4"><a></a><span class="co"># Don't forget to clean up when done</span></span>
-<span id="cb14-5"><a></a><span class="fu">daemons</span>(<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co">#&gt;    mpg    cyl   disp     hp   drat     wt   qsec     vs     am   gear   carb</span></span>
+<span id="cb17-2"><a></a><span class="co">#&gt;  20.09   6.19 230.72 146.69   3.60   3.22  17.85   0.44   0.41   3.69   2.81</span></span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a><span class="co"># Don't forget to clean up when done</span></span>
+<span id="cb17-5"><a></a><span class="fu">daemons</span>(<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="targets" class="slide level2">
@@ -831,8 +838,49 @@ Parallel computing allows you to do multiple computations at once — but only i
 <li>Hence, there is no guarantee that the over all time will decrease</li>
 <li>Often a tradeof between no of workers/threads/deamons/cores and efficiency etc</li>
 <li>“Standard” computations in <code>{data.table}</code> is optimized for single core</li>
-<li>Message handling and progress bar etc is complicated</li>
+<li>Message handling and progress bar etc is complicated
+<ul>
+<li>So is random number generation</li>
+</ul></li>
 </ul>
+</section>
+<section id="gpu" class="slide level2">
+<h2>GPU</h2>
+<p>A Graphics Processing Unit (GPU) is designed for <strong>massively parallel computations</strong>.</p>
+<ul>
+<li>many simple cores (thousands)<br>
+</li>
+<li>optimized for performing the same operation many times<br>
+</li>
+<li>originally developed for graphics</li>
+</ul>
+</section>
+<section id="how-is-it-different-from-a-cpu" class="slide level2">
+<h2>How is it different from a CPU?</h2>
+<ul>
+<li>CPU: few powerful cores → general-purpose tasks<br>
+</li>
+<li>GPU: many simple cores → parallel tasks</li>
+</ul>
+<h3 id="when-are-gpus-useful">When are GPUs useful?</h3>
+<ul>
+<li>machine learning / deep learning<br>
+</li>
+<li>large matrix operations<br>
+</li>
+<li>simulations that can be parallelised</li>
+</ul>
+</section>
+<section id="in-r" class="slide level2">
+<h2>In R</h2>
+<ul>
+<li>most R code does <strong>not use the GPU</strong></li>
+<li>standard packages are <strong>CPU-based</strong></li>
+<li>GPU requires specialized tools (e.g.&nbsp;<code>torch</code>, <code>tensorflow</code>, <code>gpuR</code>)</li>
+</ul>
+<p>💡 <strong>Key message:</strong><br>
+GPUs can be extremely powerful — but only for specific types of problems.</p>
+<p>In most R workflows, <strong>CPU, RAM, and data access matter much more</strong>.</p>
 </section>
 <section id="profiling" class="slide level2">
 <h2>Profiling</h2>
@@ -848,7 +896,7 @@ Parallel computing allows you to do multiple computations at once — but only i
 <li>Efficient handling of dates and strings</li>
 </ul></li>
 <li>itterate</li>
-<li>Integrated in RStudio (but not yet Positron)</li>
+<li>Integrated in RStudio (works in Positron to)</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -893,7 +941,7 @@ Parallel computing allows you to do multiple computations at once — but only i
 <li>If the package use C-code it is probably already very fast</li>
 <li>If not, and you can fix it, the package must be re-compiled</li>
 <li>OS dependent</li>
-<li>Might be tricky if using restricted environments (TRE?)</li>
+<li>Might be tricky if using restricted environments (TRE)</li>
 <li>Can still be done by rhub (might need to change maintainer-e-mail temporarily)</li>
 </ul>
 </section>
