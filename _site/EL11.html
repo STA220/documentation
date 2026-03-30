@@ -6,10 +6,10 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>STA220 – EL11: Repetition</title>
+  <title>STA220 – EL11: Recap</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,8 +27,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6ae29d241dba1d02babb97ce1fbe8bdd.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="styles.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -123,23 +189,903 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EL11: Repetition</h1>
-  <p class="subtitle">Repetition before DISA exam</p>
+  <h1 class="title">EL11: Recap</h1>
+  <p class="subtitle">L1, L4-L9</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section>
+<section id="el1-intro" class="title-slide slide level1 center">
+<h1>EL1: Intro</h1>
+
+</section>
+<section id="important-aspects" class="slide level2">
+<h2>Important aspects</h2>
+<ul>
+<li>Data (where does is come from, what does it contain)</li>
+<li>Ethics and legal (how to handle sensitive data, what laws and regulations apply)</li>
+<li>Project management (how to plan and execute a data project, version control, reproducibility, R specific packages for efficient data handling)</li>
+</ul>
+</section>
+<section id="data-what-is-it" class="slide level2">
+<h2>Data – what is it?</h2>
+<p><strong>EU Data Act | Article 2, Definitions:</strong></p>
+<dl>
+<dt>data</dt>
+<dd>
+any digital representation of acts, facts or information and any compilation of such acts, facts or information, including in the form of sound, visual or audio-visual recording
+</dd>
+<dt>metadata</dt>
+<dd>
+a structured description of the contents or the use of data facilitating the discovery or use of that data;
+</dd>
+</dl>
+</section>
+<section id="inclusionexclusion-criteria" class="slide level2">
+<h2>Inclusion/exclusion criteria</h2>
+<ul>
+<li><p>👍 Defines the target study/register population</p></li>
+<li><p>👎 Define exceptions to the general rules</p></li>
+</ul>
+</section>
+<section id="coverage-and-completeness" class="slide level2">
+<h2>Coverage and completeness</h2>
+<ul>
+<li>🏥 <strong>Institutional coverage</strong>: proportion of all eligible units/clinics that are connected to the registry</li>
+<li>🤒 <strong>Case coverage</strong>: proportion of patients who should have been reported from connected units that are actually included</li>
+<li><strong>Data completeness</strong>: proportion of required data fields that are filled in for the registered patients</li>
+</ul>
+</section>
+<section id="data-linking" class="slide level2">
+<h2>Data linking</h2>
+<ul>
+<li>Unique personal identifier
+<ul>
+<li>Not in every country!</li>
+<li>Social security number similar purpose but not as widely used</li>
+</ul></li>
+</ul>
+</section>
+<section id="working-with-health-care-data" class="slide level2">
+<h2>Working with health care data</h2>
+<ul>
+<li><strong>Legalities</strong>
+<ul>
+<li>Do I have the right to access this data?</li>
+<li>What am I allowed to do?</li>
+<li>What am I not allowed to do?</li>
+</ul></li>
+<li><strong>Data management</strong>
+<ul>
+<li>large datasets</li>
+<li>multiple datasets</li>
+<li>different formats</li>
+<li>missing data</li>
+<li>data cleaning, transformation, wrangling, munging, governance, engineering</li>
+</ul></li>
+<li><strong>Planning</strong>
+<ul>
+<li>What is the purpose?</li>
+<li>How can I achieve my goals?</li>
+<li>What if I change my plans later?</li>
+<li>Can I redo my analysis?</li>
+<li>How do I present/communicate my results?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="el4-tooling" class="title-slide slide level1 center">
+<h1>EL4: Tooling</h1>
+<blockquote>
+<p>It is widely acknowledged that the <strong>most fundamental developments in statistics</strong> in the past 60 years are <strong>driven by information technology (IT)</strong>. We should not underestimate the importance of pen and paper as a form of IT but it is since people start using <strong>computers to do statistical analysis</strong> that we really changed the role statistics plays in our research as well as normal life.</p>
+</blockquote>
+<blockquote>
+<p>Although: “Let’s not kid ourselves: the most widely used piece of software for statistics is Excel.”” /Brian Ripley (2002)</p>
+</blockquote>
+<p><a href="https://vsni.co.uk/evolution-of-statistical-computing/?utm_source=chatgpt.com">Short overview</a></p>
+</section>
 <section class="slide level2">
 
 
+<img data-src="images/paste-17.png" class="r-stretch"></section>
+<section id="panta-rei" class="slide level2">
+<h2>Panta rei!</h2>
+<ul>
+<li>We teach you the present</li>
+<li>But your work is in the future</li>
+<li>We might use history to predict the future?</li>
+<li>At least we should learn that things changes constantly!</li>
+</ul>
+</section>
+<section id="version-control" class="slide level2">
+<h2>Version control</h2>
+
+<img data-src="images/paste-6.png" class="r-stretch"></section>
+<section id="git" class="slide level2">
+<h2>Git</h2>
+<p>Design principles:</p>
+<ul>
+<li>Distributed architecture</li>
+<li>Fast local operations</li>
+<li>Strong support for branching and merging</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-5.png" class="r-stretch"></section>
+<section id="version-control-today" class="slide level2">
+<h2>Version Control Today</h2>
+<p>Modern usage includes:</p>
+<ul>
+<li>Code</li>
+<li>Documentation</li>
+<li>Data analysis (scripts, notebooks)</li>
+<li>Configuration and infrastructure</li>
+</ul>
+<p>Git is integrated into:</p>
+<ul>
+<li>IDEs (RStudio, VS Code, Positron)</li>
+<li>Cloud platforms</li>
+</ul>
+</section>
+<section id="version-control-beyond-code" class="slide level2">
+<h2>Version Control Beyond Code</h2>
+<p>Today, version control supports:</p>
+<ul>
+<li>Reproducible research</li>
+<li>Collaborative writing</li>
+<li>Data science workflows</li>
+<li>Teaching and learning</li>
+</ul>
+</section>
+<section id="warning" class="slide level2">
+<h2>WARNING!</h2>
+<ul>
+<li>Not everything should be shared!</li>
+<li>Scripts and documentation yes!</li>
+<li>But <strong>Health data is sensitive!</strong></li>
+<li><code>.gitignore</code></li>
+</ul>
+</section>
+<section id="statistics-projects" class="slide level2">
+<h2>Statistics projects</h2>
+<ul>
+<li>Real projects are more complex than a single R script!</li>
+<li>Multiple scripts</li>
+<li>Multiple data files</li>
+<li>Documentation</li>
+<li>Reports</li>
+<li>Version control</li>
+<li>Reproducible workflows</li>
+</ul>
+</section>
+<section id="project-structure" class="slide level2">
+<h2>Project structure</h2>
+<p>Common file structures</p>
+<ul>
+<li>Help you organize your thoughts</li>
+<li>Help others to collaborate</li>
+<li>simplifies paths used in your code</li>
+</ul>
+
+<img data-src="images/paste-1.png" class="r-stretch"></section></section>
+<section>
+<section id="el5-reproducibility" class="title-slide slide level1 center">
+<h1>EL5: Reproducibility</h1>
+<blockquote>
+<p>An <strong>article</strong> about computational science in a scientific publication is not the scholarship itself, it is <strong>merely advertising of the scholarship</strong>. The <strong>actual scholarship</strong> is the <strong>complete software development environment and the complete set of instructions</strong> which generated the figures. / Buckheit &amp; Donoho</p>
+</blockquote>
+<blockquote>
+<p>[It is important to have] a clear understanding of how data analysis was conducted when critical life and death decisions must be made. / Peng et al.&nbsp;2021</p>
+</blockquote>
+</section>
+<section id="reproducible-analysis" class="slide level2">
+<h2>Reproducible analysis</h2>
+<blockquote>
+<p>A published data analysis is reproducible if the analytic data sets and the computer code used to create the data analysis are made available to others for independent study and analysis</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-8.png" class="r-stretch"></section>
+<section id="pipeline" class="slide level2">
+<h2>Pipeline</h2>
+<ul>
+<li>Define steps in your analysis as targets</li>
+<li>Define dependencies between targets</li>
+<li>Automatically track changes and rerun only necessary parts</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-2.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-9.png" class="r-stretch"></section>
+<section id="different-operating-systems" class="slide level2">
+<h2>Different operating systems</h2>
+<ul>
+<li><p>R should behave similar on different operating systems.</p></li>
+<li><p>Exceptions nevertheless exist!</p></li>
+</ul>
+
+<img data-src="images/paste-10.png" class="r-stretch"></section>
+<section id="tre" class="slide level2">
+<h2>TRE</h2>
+<p>Different names, same concept:</p>
+<ul>
+<li>Secure Research Envoronemnt (SRE),</li>
+<li>Trusted Research Envoronment (TRE),</li>
+<li>Secure Data Environment (SDE),</li>
+<li>Data Clean Room,</li>
+<li>Data Safe Havens,</li>
+<li>…</li>
+</ul>
+</section>
+<section id="in-practice" class="slide level2">
+<h2>In practice</h2>
+<ul>
+<li><p>Connect through VPN</p></li>
+<li><p>2-factor authentication (BankID common in Sweden)</p></li>
+<li><p>Remote Desktop</p></li>
+<li><p>Limited internet access from within the environment (maybe possible to install CRAN-packages tied to a certain historical snapshot but not the latest released/developed versions).</p></li>
+<li><p>Data import and exports goes through administrator</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p><strong>Pros</strong>: Secure, centralized backups, possibility to scale/share large computing resources (CPU, RAM, GPU etc), less dependent on individual computer (laptop), might aid collaboration</p></li>
+<li><p><strong>Cons</strong>: needs internet connection, restrictions on what software (packages) to use, difficult to export results and/or import script files etc, mentally exhausting to use for example a Mac Keyboard when working in Windows, can be expensive (pay per clock-cycle of CPU usage etc instead of simply purchasing a computer once).</p></li>
+</ul>
+</section></section>
+<section>
+<section id="el6-data-formats" class="title-slide slide level1 center">
+<h1>EL6: Data formats</h1>
 
 </section>
+<section id="sas7bdat" class="slide level2">
+<h2>.sas7bdat</h2>
+<ul>
+<li>Many govermental agencies are using SAS</li>
+<li>Their standard format when delivering big data sets</li>
+<li>SAS is great for handling big data sets (no need to read everything into memory)</li>
+<li>But you don’t know how to use SAS 😩</li>
+</ul>
+</section>
+<section id="first-try" class="slide level2">
+<h2>First try</h2>
+<ul>
+<li>It is often possible to read medium-sized SAS files to R by <code>haven::read_sas()</code></li>
+<li>But let’s say this did not work for your data! 😩</li>
+<li>Best practice for current SAS version (9.4) is to export only nessecary data to csv</li>
+<li>The exported csv file can later be read into R</li>
+</ul>
+</section>
+<section id="databases" class="slide level2">
+<h2>Databases</h2>
+<ul>
+<li><p>a database is a collection of “tables” (tabular data frames)</p></li>
+<li><p>Differences between data frames and database tables:</p>
+<ul>
+<li>Database tables are stored on disk and can be arbitrarily large.</li>
+<li>Data frames are stored in memory</li>
+<li>Database tables almost always have indexes; makes it possible to quickly find rows of interest
+<ul>
+<li>Data frames and tibbles don’t have indexes, but <code>data.table</code>s do, which is one of the reasons that they’re so fast.</li>
+</ul></li>
+<li>No fixed row order in a table</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-28.png" class="r-stretch"></section>
+<section id="row-vs-column-oriented" class="slide level2">
+<h2>Row vs column oriented</h2>
+<ul>
+<li><p>Most classical databases are optimized for rapidly <strong>collecting</strong> data, <strong>not analyzing existing data</strong>.</p></li>
+<li><p>These databases are called row-oriented because the data is stored row-by-row, rather than column-by-column like R.</p></li>
+<li><p>More recently, there’s been much development of column-oriented databases that make analyzing the existing data much faster.</p></li>
+</ul>
+</section>
+<section id="sql" class="slide level2">
+<h2>SQL</h2>
+<ul>
+<li>Different database systems may use different query languages.</li>
+<li>The <strong>Structured Query Language (SQL)</strong> is the most widely used for relational databases.</li>
+<li>Defined by international standards (ANSI/ISO).</li>
+</ul>
+</section>
+<section id="a-simple-example" class="slide level2">
+<h2>A Simple Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">SELECT</span> name, age</span>
+<span id="cb1-2"><a></a><span class="kw">FROM</span> students</span>
+<span id="cb1-3"><a></a><span class="kw">WHERE</span> age <span class="op">&gt;=</span> <span class="dv">18</span></span>
+<span id="cb1-4"><a></a><span class="kw">ORDER</span> <span class="kw">BY</span> age;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This query:</p>
+<ul>
+<li>Selects two columns</li>
+<li>Filters rows</li>
+<li>Sorts the result</li>
+</ul>
+</section>
+<section id="duckdb" class="slide level2">
+<h2>DuckDB</h2>
+<ul>
+<li>Free and open source (backed by foundation)</li>
+<li>R implementation by <a href="https://duckplyr.tidyverse.org">duckplyr</a></li>
+<li>Can be used both with disk data and data in RAM</li>
+</ul>
+</section>
+<section id="duckdb-and-data-files" class="slide level2">
+<h2>DuckDB and Data Files</h2>
+<p>DuckDB can query files directly:</p>
+<ul>
+<li>Parquet</li>
+<li>CSV</li>
+<li>JSON</li>
+</ul>
+<p>No data import (to your computers Random Access Memory [RAM]) is required!</p>
+</section>
+<section id="faster-in-memory" class="slide level2">
+<h2>Faster in memory?</h2>
+<ul>
+<li>DuckDB and <code>{duckplyr}</code> makes it possible to work with data which does not fit into memory</li>
+<li>But what if data would fit (which is more common)?
+<ul>
+<li>You can use tibbles and dplyr etc as usual …
+<ul>
+<li>… but it might be slooooooooooooow … for big enough data</li>
+</ul></li>
+</ul></li>
+<li><code>{data.table}</code> is much more efficient!</li>
+</ul>
+</section>
+<section id="data.table" class="slide level2">
+<h2>data.table</h2>
+<ul>
+<li>Comparable to working with <code>data.frame</code> in base R or <code>tibble</code> in the tidyverse</li>
+<li>Core components implemented in C for performance</li>
+<li>Uses concepts similar to databases:
+<ul>
+<li>Integer-based keys and indices<br>
+</li>
+<li>Efficient joins and grouping</li>
+</ul></li>
+<li>Reference semantics</li>
+</ul>
+</section>
+<section id="external-api" class="slide level2">
+<h2>External API</h2>
+<ul>
+<li>Some data can also be openly accessed by an Programming Application Interface (API)</li>
+<li>The PX-WEB API is used by a large number of statistical authorities (and others) world-widea to provide access to aggregated data</li>
+<li>The <code>{pxweb}</code> R package simplifies the process</li>
+</ul>
+</section></section>
+<section>
+<section id="el7-medical-coding" class="title-slide slide level1 center">
+<h1>EL7: Medical coding</h1>
+
+</section>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<ul>
+<li>Standardized vocabularies, controlled vocabularies, terminologies and ontologies …</li>
+<li>This is a field of its own (health informatics)</li>
+<li>Let’s just call it “medical coding” for now.</li>
+</ul>
+</section>
+<section id="icd-international-classification-of-diseases" class="slide level2">
+<h2>ICD – International Classification of Diseases</h2>
+<ul>
+<li>Maintained by the World Health Organization (WHO)</li>
+<li>Global standard for coding diseases and causes of death</li>
+<li>Used for:
+<ul>
+<li>Clinical documentation</li>
+<li>Mortality statistics</li>
+<li>Epidemiological research</li>
+<li>Health system planning and monitoring</li>
+</ul></li>
+</ul>
+</section>
+<section id="historical-background" class="slide level2">
+<h2>Historical Background</h2>
+<ul>
+<li>First version: 1893 (International List of Causes of Death)</li>
+<li>WHO assumed responsibility in 1948 (ICD-6)</li>
+<li>Major revisions approximately every 10–20 years</li>
+<li>Each revision reflects:
+<ul>
+<li>Advances in medical knowledge</li>
+<li>Changes in disease concepts</li>
+<li>Administrative and reporting needs</li>
+</ul></li>
+</ul>
+<p>ICD has evolved from a mortality list to a comprehensive disease classification.</p>
+</section>
+<section id="national-modifications" class="slide level2">
+<h2>National Modifications</h2>
+<p>Several countries use national adaptations:</p>
+<ul>
+<li>ICD-10-CM (USA; Clinical Modification)</li>
+<li>ICD-10-CA (Canada)</li>
+<li>ICD-10-SE (Sweden)</li>
+</ul>
+</section>
+<section id="what-does-an-icd-code-represent" class="slide level2">
+<h2>What Does an ICD Code Represent?</h2>
+<p>An ICD code reflects:</p>
+<ul>
+<li>Clinical documentation</li>
+<li>Coding rules</li>
+<li>Administrative structure</li>
+<li>Local practice</li>
+</ul>
+</section>
+<section id="crosswalks-between-versions" class="slide level2">
+<h2>Crosswalks Between Versions</h2>
+<p>When analyzing long time series:</p>
+<ul>
+<li>Mapping tables (“crosswalks”) are often used</li>
+<li>Mapping may be:
+<ul>
+<li>One-to-one</li>
+<li>One-to-many</li>
+<li>Many-to-one</li>
+</ul></li>
+</ul>
+<p>Crosswalks are rarely exact. Information loss or ambiguity is common.</p>
+<p>Aggregation to broader diagnostic groups is often necessary.</p>
+</section>
+<section id="atc-for-drugs" class="slide level2">
+<h2>ATC for drugs</h2>
+<ul>
+<li>Anatomical Therapeutic Chemical (ATC) classification</li>
+<li>categorizing therapeutic drugs,</li>
+<li>introduced in the 1960s</li>
+<li>In 1980, the World Health Organization (WHO) recommended the ATC system as the “state of the art”</li>
+</ul>
+</section>
+<section id="procedure-codes" class="slide level2">
+<h2>Procedure codes</h2>
+<ul>
+<li>We use ICD for diagnoses and medical condition</li>
+<li>But how are patients with such diagnosis treated?</li>
+<li>What actions (in addition to the prescription of medicines) do we have?</li>
+<li>USA has a special version of ICD for this: ICD-10-PCS
+<ul>
+<li>PCS = Procedure Coding System</li>
+</ul></li>
+</ul>
+</section>
+<section id="nomesco" class="slide level2">
+<h2>NOMESCO</h2>
+<p>In Sweden, medical procedures are coded using the <strong>NOMESCO Classification of Surgical Procedures (NCSP)</strong>.</p>
+<ul>
+<li>Developed by the Nordic Medico-Statistical Committee (NOMESCO)</li>
+<li>Used in Sweden, Denmark, Finland, Norway, and Iceland</li>
+<li>Primarily for on surgical procedures</li>
+</ul>
+</section>
+<section id="kvå" class="slide level2">
+<h2>KVÅ</h2>
+<ul>
+<li>In Sweden implemented through <strong>KVÅ</strong> (Klassifikation av vårdåtgärder)</li>
+<li>Maintained nationally by Socialstyrelsen</li>
+<li>Includes the NOMESCO-NCSP codes for surgery</li>
+<li>Also includes additional codes for non-surgical treatments and activities
+<ul>
+<li>Administration of chemotherapy (cytostatic treatment)</li>
+<li>Radiotherapy sessions</li>
+<li>Dialysis treatment (hemodialysis, peritoneal dialysis)</li>
+<li>Blood transfusion</li>
+<li>Vaccination</li>
+<li>Advanced wound care (non-surgical)</li>
+<li>Multidisciplinary team conference (MDT conference)</li>
+<li>…</li>
+</ul></li>
+</ul>
+</section>
+<section id="snomed-ct-what-is-it" class="slide level2">
+<h2>SNOMED CT – What Is It?</h2>
+<p><strong>SNOMED CT (Systematized Nomenclature of Medicine – Clinical Terms)</strong> is a large clinical terminology system.</p>
+<ul>
+<li>Maintained by <strong>SNOMED International</strong></li>
+<li>Contains <strong>hundreds of thousands of clinical concepts</strong></li>
+<li>Designed for <strong>structured documentation in electronic health records</strong></li>
+</ul>
+<p>Unlike ICD or ATC, SNOMED CT is primarily a <strong>terminology</strong>, not a statistical classification.</p>
+</section>
+<section id="terminology-vs-classification" class="slide level2">
+<h2>Terminology vs Classification</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ICD</td>
+<td>Classification</td>
+<td>Epidemiology and health statistics</td>
+</tr>
+<tr class="even">
+<td>ATC</td>
+<td>Classification</td>
+<td>Drug classification</td>
+</tr>
+<tr class="odd">
+<td>KVÅ / NOMESCO</td>
+<td>Classification</td>
+<td>Medical procedures</td>
+</tr>
+<tr class="even">
+<td><strong>SNOMED CT</strong></td>
+<td>Terminology</td>
+<td>Detailed clinical documentation</td>
+</tr>
+</tbody>
+</table>
+<p>Classification systems simplify reality for <strong>statistics and reporting</strong>, while terminologies allow <strong>very detailed clinical descriptions</strong>.</p>
+</section>
+<section id="regular-expressions-regex" class="slide level2">
+<h2>Regular Expressions (Regex)</h2>
+<ul>
+<li>A way to describe <strong>patterns in text</strong></li>
+<li>Used to:
+<ul>
+<li>Identify diagnosis codes (ICD-10)</li>
+<li>Identify drug codes (ATC)</li>
+<li>Clean register data</li>
+<li>Validate variables</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="el8-health-care-registers" class="title-slide slide level1 center">
+<h1>EL8: Health care registers</h1>
+
+</section>
+<section id="types-of-registers" class="slide level2">
+<h2>Types of registers</h2>
+<h3 id="national-health-registers">National health registers</h3>
+<ul>
+<li>mandated by law</li>
+<li>Sometimes with regional data collection and yearly updates</li>
+<li>Governed by state authority</li>
+</ul>
+<h3 id="quality-registers">Quality registers</h3>
+<ul>
+<li>Volontary for health care providers but commonly adopted</li>
+<li>opt-out for individuals</li>
+<li>more than 100 in Sweden</li>
+<li>But similar data collections in other countries by other names</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/paste-32.png" class="r-stretch"></section>
+<section id="swedish-medical-birth-register" class="slide level2">
+<h2>Swedish Medical Birth Register</h2>
+<ul>
+<li>Established in <strong>1973</strong></li>
+<li>Covers pregnancies resulting in delivery in Sweden</li>
+<li>Includes <strong>live births and stillbirths</strong> from gestational week 22+0</li>
+<li>Contains information reported by <strong>maternal care, delivery care, and neonatal care</strong></li>
+</ul>
+</section>
+<section id="the-total-population-register-tpr" class="slide level2">
+<h2>The Total population Register (TPR)</h2>
+<ul>
+<li>maintained by Statistics Sweden (SCB)</li>
+<li>based on data from the Population registration</li>
+<li>structured for statistical analysis and research</li>
+<li>used as the sampling frame for surveys and register-based studies</li>
+</ul>
+</section>
+<section id="childhood" class="slide level2">
+<h2>Childhood</h2>
+<p>During childhood and school years, health information is collected through:</p>
+<ul>
+<li>Child health services (BVC)</li>
+<li>School health services</li>
+<li>Vaccination records</li>
+<li>Examinations by school nurses or physicians</li>
+<li>dentists etc</li>
+</ul>
+<p>In contrast to many other stages of life in Sweden, these data are <strong>not collected in a national register</strong>.</p>
+</section>
+<section id="vaccination-register" class="slide level2">
+<h2>Vaccination Register</h2>
+<ul>
+<li>National register maintained by the Public Health Agency of Sweden (Folkhälsomyndigheten)</li>
+<li>Established in <strong>2013</strong></li>
+<li>Primarily covers vaccinations given within <strong>national vaccination programmes</strong></li>
+</ul>
+</section>
+<section id="military-conscription" class="slide level2">
+<h2>Military conscription</h2>
+<p>The conscription register contains information from military conscription examination</p>
+<ul>
+<li>physical measurements (e.g.&nbsp;height, weight), cognitive ability tests, psychological assessments, health status and diagnoses, physical fitness</li>
+<li>covers most Swedish men born roughly <strong>1951–1990</strong></li>
+<li>Inactive 2010-2016</li>
+<li>Both men and women since 2017 (but only approximately 25 %)</li>
+<li>examinations typically performed at <strong>age 18–19</strong></li>
+<li>data collected by the <strong>Swedish Armed Forces</strong></li>
+</ul>
+</section>
+<section id="swedish-dental-health-register" class="slide level2">
+<h2>Swedish Dental Health Register</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Established in <strong>2008</strong></li>
+<li>Includes adults (≥20 years)</li>
+<li>based on reports submitted within the national dental care subsidy system</li>
+<li>includes both public and private dental care providers</li>
+</ul>
+</section>
+<section id="screening-registers" class="slide level2">
+<h2>Screening registers</h2>
+<ul>
+<li>breast cancer (mammography)</li>
+<li>cervical cancer</li>
+<li>colorectal cancer</li>
+</ul>
+<p>These programmes aim to <strong>detect disease at an early stage</strong> in otherwise healthy individuals.</p>
+<p>Data from screening programmes are often stored in <strong>regional systems</strong></p>
+</section>
+<section id="national-patient-register-npr" class="slide level2">
+<h2>National Patient Register (NPR)</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Covers <strong>specialised health care in Sweden</strong></li>
+<li>Data are collected by <strong>regions and healthcare providers</strong> and then reported to the national register</li>
+</ul>
+<h3 id="coverage">Coverage</h3>
+<ul>
+<li>inpatient care since the <strong>1960s</strong></li>
+<li>nationwide coverage since <strong>1987</strong></li>
+<li>specialised outpatient care since <strong>2001</strong></li>
+</ul>
+</section>
+<section id="main-variables-include" class="slide level2">
+<h2>Main variables include:</h2>
+<ul>
+<li>diagnoses (<strong>ICD codes</strong>)</li>
+<li>procedures (<strong>KVÅ codes – Swedish classification of healthcare interventions</strong>)</li>
+<li>dates of admission and discharge</li>
+<li>hospital or clinic</li>
+<li>patient demographics</li>
+</ul>
+</section>
+<section id="primary-care-data" class="slide level2">
+<h2>Primary care data</h2>
+<p>Primary care accounts for a large share of health care contacts in Sweden, but <strong>there is still no comprehensive national primary care register</strong> comparable to NPR.</p>
+<ul>
+<li>most primary care data are stored in <strong>regional electronic health record systems</strong></li>
+<li>reporting practices differ between regions</li>
+<li>national coverage for research and statistics is therefore limited</li>
+</ul>
+</section>
+<section id="prescribed-drug-register-pdr" class="slide level2">
+<h2>Prescribed Drug Register (PDR)</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Covers dispensed prescription drugs from Swedish pharmacies</li>
+<li>Established in 2005</li>
+<li>Nationwide coverage</li>
+</ul>
+</section>
+<section id="pdr-does-not-include" class="slide level2">
+<h2>PDR does not include</h2>
+<ul>
+<li>drugs administered in hospitals</li>
+<li>over-the-counter drugs
+<ul>
+<li>since 2009, many non-prescription drugs can also be sold outside pharmacies (e.g.&nbsp;supermarkets and petrol stations)</li>
+</ul></li>
+<li>most herbal medicines or dietary supplements</li>
+</ul>
+<p>Dispension does not guarantee that the patient <strong>actually used the medication</strong></p>
+</section>
+<section id="cancer-register" class="slide level2">
+<h2>Cancer Register</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Established in <strong>1958</strong></li>
+<li>Covers <strong>all newly diagnosed malignant (and some benign) tumors in Sweden</strong></li>
+<li>Based on “primary tumour”</li>
+</ul>
+</section>
+<section id="cause-of-death-register" class="slide level2">
+<h2>Cause of Death Register</h2>
+<ul>
+<li>National register maintained by the National Board of Health and Welfare (Socialstyrelsen)</li>
+<li>Established in <strong>1952</strong></li>
+<li>Covers <strong>all deaths among persons registered in Sweden</strong></li>
+<li>Information is based on <strong>death certificates completed by physicians</strong>.</li>
+<li>Diagnoses are classified using <strong>ICD codes</strong>. Currently ICD-10 (WHO version, not ICD-10-SE)</li>
+</ul>
+</section>
+<section id="lisa" class="slide level2">
+<h2>LISA</h2>
+<p>Not a health care register but often used for background data.</p>
+<ul>
+<li>education level</li>
+<li>income and taxation</li>
+<li>employment status</li>
+<li>occupation and workplace</li>
+<li>social insurance benefits</li>
+<li>family situation</li>
+</ul>
+</section>
+<section id="national-quality-registers" class="slide level2">
+<h2>National Quality Registers</h2>
+<p>National quality registers collect detailed clinical information on specific diseases or treatments.</p>
+<p>They are designed to:</p>
+<ul>
+<li>monitor and improve quality of care</li>
+<li>support clinical quality improvement</li>
+</ul>
+<p>But they can also be used for research</p>
+<p>Typical characteristics:</p>
+<ul>
+<li>focus on specific diagnoses, treatments, or procedures</li>
+<li>contain more detailed clinical data than national health data registers</li>
+<li>participation is generally voluntary for healthcare providers</li>
+</ul>
+<p>There are currently <strong>around 100 national quality registers</strong> in Sweden.</p>
+</section>
+<section id="the-swedish-register-ecosystem" class="slide level2">
+<h2>The Swedish register ecosystem</h2>
+<p>Key characteristics:</p>
+<ul>
+<li><strong>Nationwide coverage</strong> for many registers</li>
+<li>Longitudinal data spanning several decades</li>
+<li>Possibility of individual-level linkage across registers by the individual personal number</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>some sectors lack national registers (e.g.&nbsp;<strong>primary care, school health services</strong>)</li>
+<li>coverage and data quality may vary across registers, health care providers (private vs public, secondary vs “tertary” care and over time)</li>
+</ul>
+</section>
+<section id="countries-with-similar-register-infrastructures" class="slide level2">
+<h2>Countries with similar register infrastructures</h2>
+<p>The Nordic countries have relatively similar systems based on:</p>
+<ul>
+<li>nationwide administrative registers</li>
+<li>universal healthcare systems</li>
+<li>personal identification numbers</li>
+</ul>
+<p>These countries are therefore often used in <strong>comparative register-based research</strong>.</p>
+</section>
+<section id="examples-from-other-countries" class="slide level2">
+<h2>Examples from other countries</h2>
+<p>Health data systems in other countries are often organised differently:</p>
+<ul>
+<li>United Kingdom: NHS administrative datasets</li>
+<li>Netherlands: population registers linked with health insurance data</li>
+<li>United States: insurance claims databases and cohort studies</li>
+<li>Canada: provincial administrative health data</li>
+</ul>
+<p><strong>These systems can provide valuable data, but often lack:</strong></p>
+<ul>
+<li>nationwide coverage</li>
+<li>consistent linkage across registers</li>
+<li>very long follow-up periods</li>
+</ul>
+</section></section>
+<section>
+<section id="el9-documentation" class="title-slide slide level1 center">
+<h1>EL9: Documentation</h1>
+
+</section>
+<section id="levels-of-documentation" class="slide level2">
+<h2>Levels of documentation</h2>
+<ul>
+<li><strong>Code level</strong>
+<ul>
+<li>scripts (comments, e.g.&nbsp;<code># clean data and merge cohorts</code>)</li>
+<li>functions (<a href="https://roxygen2.r-lib.org/index.html">Roxygen2</a> documentation)</li>
+<li>notes and reminders (e.g.&nbsp;<code># TODO:</code>)</li>
+</ul></li>
+<li><strong>Project level</strong>
+<ul>
+<li><code>README.md</code></li>
+<li>(GitHub repos may also have a wiki or a polished website)</li>
+</ul></li>
+<li><strong>Output level</strong>
+<ul>
+<li>figures and tables</li>
+<li>reports (PDF / HTML)</li>
+<li>presentations (slides)</li>
+</ul></li>
+</ul>
+</section>
+<section id="reproducible-workflows" class="slide level2">
+<h2>Reproducible Workflows</h2>
+<p>Modern biostatistics projects rarely involve only statistics.</p>
+<ul>
+<li>data cleaning and preprocessing</li>
+<li>statistical modelling</li>
+<li>visualisation</li>
+<li>interpretation of results</li>
+<li>reporting and documentation</li>
+</ul>
+<p>A good workflow should make it possible to <strong>combine all of these steps in one place</strong>.</p>
+</section>
+<section id="what" class="slide level2">
+<h2>What?</h2>
+<p><strong>Quarto</strong> is a publishing system for scientific and technical documents.</p>
+<p>It allows you to combine:</p>
+<ul>
+<li>text</li>
+<li>R code</li>
+<li>statistical results</li>
+<li>tables and figures</li>
+</ul>
+<p>in a <strong>single workflow</strong>.</p>
+<p>This makes it easier to create <strong>reproducible statistical reports</strong>.</p>
+</section>
+<section id="audience" class="slide level2">
+<h2>Audience</h2>
+<dl>
+<dt>Decision makers, stake holders, friends or the public</dt>
+<dd>
+might not care about R. Disable R code (echoing the code itself), warnings and messages
+</dd>
+<dt>collaborators</dt>
+<dd>
+Might still care less about verbose R messages and warnings (they trust that you have already considered those). May still need the underlaying R code for deeper understaing Use <code>code-fold</code>.
+</dd>
+</dl>
+</section>
+<section id="manuscripts" class="slide level2">
+<h2>Manuscripts</h2>
+<ul>
+<li><a href="https://quarto.org/docs/manuscripts/">Quarto Manuscript</a></li>
+<li>framework for writing and publishing scholarly articles</li>
+<li>Something for your later thesis work?</li>
+<li>Handles references</li>
+<li>Export to Word documents (<code>.docx</code>) etc
+<ul>
+<li>which is still the most common format for submission to medical/epidemiological journals</li>
+<li>Still used for collaborative work with non-statisticians etc</li>
+</ul></li>
+</ul>
+</section>
+<section id="online-portfolio" class="slide level2">
+<h2>Online portfolio</h2>
+<ul>
+<li>Looking for a job after you fininsh the master program?</li>
+<li>An online portfolia might increase your visability!</li>
+<li>Perhaps add your course project to such portfolio?</li>
+<li><a href="https://deepshamenghani.quarto.pub/portfolio-with-quarto-workshop/#/title-slide">Demo</a></li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -301,7 +1247,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

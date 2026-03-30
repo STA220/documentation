@@ -13,6 +13,7 @@ format:
 bibliography: references.bib
 params:
   site_url: "https://sta220.github.io/documentation"
+  prepare_el11: false # Use to "Manually" prepare new recap version 
 ---
 
 ::: {.callout-note}
@@ -52,7 +53,6 @@ if (!knitr::pandoc_to("typst")) {
 #| echo: false
 
 # För att testa:
-# params <- list(site_url = "https://sta220.github.io/documentation")
 make_slides_link <- function(stem) {
   base <- params$site_url
   url <- sprintf("%s/%s.html", base, stem)
@@ -130,7 +130,7 @@ replace_iframes_with_links <- function(lines) {
 
 files <- list.files(
   path = ".",
-  pattern = "^EL[0-9]+\\.qmd$",
+  pattern = "^EL([0-9]{1}|10)\\.qmd$",
   full.names = TRUE
 )
 
@@ -171,6 +171,39 @@ extract_citation_blocks <- function(lines, f) {
   unique(blocks)
 }
 
+# Prepary summary/recap lecture ------------------------------------------
+
+if (params$prepare_el11) {
+  # Då EL10 inte är obligatorisk skippar vi den
+  files <- setdiff(files, sprintf("./EL%d.qmd", c(2:3, 10)))
+  FILE <- "EL11_raw.qmd"
+  APPEND <- TRUE
+  fs::file_create(FILE)
+  readr::write_file(
+    '---
+title: "EL11: Recap"
+subtitle: ""
+reading: ""
+format:
+  revealjs:
+    transition: fade
+    slide-number: true
+    css: styles.css
+    smaller: true
+    scrollable: true
+    incremental: false
+bibliography: references.bib
+execute:
+  eval: false
+---
+
+',
+    FILE
+  )
+} else {
+  FILE <- ""
+  APPEND <- FALSE
+}
 
 # Include slides from all lectures ---------------------------------------
 
@@ -182,24 +215,35 @@ for (f in files) {
   }
 
   # (valfritt) skriv en rubrik per fil
-  cat("# ", rmarkdown::yaml_front_matter(f)$title, "\n\n", sep = "")
+  cat(
+    "# ",
+    rmarkdown::yaml_front_matter(f)$title,
+    "\n\n",
+    sep = "",
+    file = FILE,
+    append = APPEND
+  )
 
-  # Link to slides
-  cat(make_slides_link(gsub("\\./|.qmd", "", f)))
+  # Läslista till handouts men inte recap
+  if (!params$prepare_el11) {
+    # Link to slides
+    cat(make_slides_link(gsub("\\./|.qmd", "", f)))
 
-  # Skriv ut reading list
-  cat("::: {.callout-tip}\n")
-  cat("\n\n# Associated litterature (References at the end)\n\n")
-  cat(paste0("- ", extract_citation_blocks(body, f), collapse = "\n"), "\n\n")
-  cat(":::\n\n")
-
+    # Skriv ut reading list
+    cat("::: {.callout-tip}\n")
+    cat("\n\n# Associated litterature (References at the end)\n\n")
+    cat(
+      paste0("- ", extract_citation_blocks(body, f), collapse = "\n"),
+      "\n\n"
+    )
+    cat(":::\n\n")
+  }
   # skriv ut innehållet som markdown
-  cat(paste(body, collapse = "\n"))
-  cat("\n\n")
+  cat(paste(body, collapse = "\n"), file = FILE, append = APPEND)
+  cat("\n\n", file = FILE, append = APPEND)
 }
 
 cat(
   "# Complete Reading list\n\n Articles might be obtained through the GU library <a href='https://www.ub.gu.se/sv'> (UB) </a> or as PDF files uploaded to <a href='https://canvas.gu.se/courses/97348/pages/pdf-s-to-read?module_item_id=1578820'> Canvas </a>."
 )
-
 ```
