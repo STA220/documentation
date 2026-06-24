@@ -21,7 +21,7 @@ execute:
 
 ## Important aspects
 
--   Data (where does is come from, what does it contain)
+-   Data (where does it come from, what does it contain)
 -   Ethics and legal (how to handle sensitive data, what laws and regulations apply)
 -   Project management (how to plan and execute a data project, version control, reproducibility, R specific packages for efficient data handling)
 
@@ -47,7 +47,7 @@ execute:
 -   A data project with written report and presentation
 -   Final exam 😱
 -   Instruction web page [in addition to Canvas](https://sta220.github.io/documentation/)
--   Litterature: accessible through [GU library](https://www.ub.gu.se) ([O'Reilly Learning for Higher Education](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)) or otherwise shared (no need to purchase books)
+-   Literature: accessible through [GU library](https://www.ub.gu.se) ([O'Reilly Learning for Higher Education](https://learning.oreilly.com/playlists/9f4347b3-6227-4ab8-9dce-bd31dee3ce8c)) or otherwise shared (no need to purchase books)
 
 ## Different types of data
 
@@ -3929,4 +3929,3 @@ The full reference will appear automatically in the bibliography.
 -   [Demo](https://deepshamenghani.quarto.pub/portfolio-with-quarto-workshop/#/title-slide)
 
 ------------------------------------------------------------------------
-
