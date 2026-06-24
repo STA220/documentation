@@ -56,7 +56,7 @@ We will use [GitHub Pull Requests](https://open-vsx.org/extension/GitHub/vscode-
 
 [Instructions for Git in Positron](https://code.visualstudio.com/docs/sourcecontrol/quickstart#_set-up-git-in-vs-code)
 
-# Litterature
+# Literature
 
 Course books are available for GU students through the "O'Reilly Learning for Higher Education". [Instructions for access](https://databaser.ub.gu.se/oreilly-learning-for-higher-education/189306?lang=en)
 
@@ -78,14 +78,14 @@ The DISA exam will examine:
 
 -   The course book @nguyen2022a (selected parts of chapter 1-4)
 
--   All PDF:s found in the [Canvas module](https://canvas.gu.se/courses/97348/pages/pdf-s-to-read?module_item_id=1578820)
+-   All PDFs found in the [Canvas module](https://canvas.gu.se/courses/97348/pages/pdf-s-to-read?module_item_id=1578820)
 
     -   Most tables and detailed methods sections can be skipped
 
 -   Lecture handouts, excluding:
 
     -   [EL3](EL3.qmd) (examined only as part of [ES1](ES1.qmd))
-    -   [EL8](EL8.qmd) where @hiyoshi2026 (one of the PDF:s) is a sufficient reference
+    -   [EL8](EL8.qmd) where @hiyoshi2026 (one of the PDFs) is a sufficient reference
     -   [EL10](EL10.qmd) which is formally not examined but which might be useful for the project component of the course.
 
 The written examination will assess your understanding of the main themes covered in the course. The purpose of the exam is not to test memorization of details, but your ability to explain concepts and reflect on methodological issues in health data research.

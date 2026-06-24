@@ -11,7 +11,7 @@ execute:
 ::: callout-note
 # Take your time
 
-You might not finish all the exercises during the scheduled hours. No, worries. Continue later! Please do the exercises yourself (on your computer). However, you are allowed to help each other!
+You might not finish all the exercises during the scheduled hours. No worries. Continue later! Please do the exercises yourself (on your computer). However, you are allowed to help each other!
 :::
 
 ## Preparations
@@ -23,7 +23,7 @@ If you have not already done so, please install the following software on your c
 2.  Install Git: <https://git-scm.com/downloads>
 
 -   Windows: Download and install binary version
--   MacOS: Git may already be installed. Type `$ git` and see what happens! Otherwise `$ xcode-select --install` but more recent version with `$ brew install git` (where `$` indicates that this is a command to be run from a terminal, but which itself is not part of the command).
+-   macOS: Git may already be installed. Type `$ git` and see what happens! Otherwise `$ xcode-select --install`, or install a newer version with `$ brew install git` (where `$` indicates that this is a command to be run from a terminal, but which itself is not part of the command).
 
 3.  Create a GitHub account (if you do not already have one): [https://github.com]()
 
@@ -47,10 +47,10 @@ You have now cloned an existing public repo from GitHub, made some changes which
 
 Let's make a new project from scratch!
 
-You will now re-use your data and R-scripts from the first computer exercise in the course (with questionaire data led by AGE). This will be referred to as `CSQ` below.
+You will now re-use your data and R-scripts from the first computer exercise in the course (with questionnaire data led by AGE). This will be referred to as `CSQ` below.
 
 1.  Press the folder button in the upper right corner of Positron and select "New folder from template" \> R project and specify a folder name as well as a parent folder. Check the box "Create a git repository". Choose which version of R you are using but don't use "renv" (it's a good tool but that can wait to some other time). Open the new project.
-2.  Create a "data" sub-folder (use the "Explorer" pane from the left side bar to navigate through your files or use the terminal if you feel confident (`mkdir data`) ... or perhaps the [fs package](https://fs.r-lib.org) `fs::dir_create("data)`). This is a good place to store your data later.
+2.  Create a "data" sub-folder (use the "Explorer" pane from the left sidebar to navigate through your files or use the terminal if you feel confident (`mkdir data`) ... or perhaps the [fs package](https://fs.r-lib.org) `fs::dir_create("data")`). This is a good place to store your data later.
 3.  Create an "R" folder where you can later save your R scripts.
 4.  Open the already existing `.gitignore` file. This is a file where you specify which files to NOT include for version control. It is already populated to avoid adding some unnecessary files (and hence to avoid unintentionally sharing those files with the rest of the world).
 5.  You should never share any sensitive data (and healthcare data is sensitive) so let's add that we do not want to commit anything which is later found in the "data" sub-folder. Simply type `data/**` on a new line in the `.gitignore` file and save the file.
@@ -73,9 +73,9 @@ To share your repo using GitHub (or Git alone or another provider such as GitLab
 
 ## Source code for the STA220 website
 
-The course web site is itself a GitHub repo! You can see a small link and icon "View source" in the right hand menu. Clone the repo locally, "fork it", play around! File an issue or make some edits if you find anything to improve! Make a "pull request" if you have concrete suggestions!
+The course website is itself a GitHub repo! You can see a small link and icon "View source" in the right-hand menu. Clone the repo locally, "fork it", play around! File an issue or make some edits if you find anything to improve! Make a "pull request" if you have concrete suggestions!
 
-Note, it is technically easy to reuse code from GitHub. Some repositories might nevertheless have associated licenses, which you should of course respect. Take a look at the `LICENSE` file for the popular [dplyr package](https://github.com/tidyverse/dplyr/blob/main/LICENSE.md). R packages which are also distributed through CRAN have permissive licenses but their exact content may vary. There is no license file attached to the course web site yet, you might suggest one in a pull request or file an issue :-)
+Note, it is technically easy to reuse code from GitHub. Some repositories might nevertheless have associated licenses, which you should of course respect. Take a look at the `LICENSE` file for the popular [dplyr package](https://github.com/tidyverse/dplyr/blob/main/LICENSE.md). R packages which are also distributed through CRAN have permissive licenses but their exact content may vary. There is no license file attached to the course website yet, you might suggest one in a pull request or file an issue :-)
 
 ## (Try to) contribute to an R package
 
@@ -84,9 +84,9 @@ ROpenSci is an open community of R developers. Help them according to their inst
 1.  Read the instructions above.
 2.  Look for an open issue (start with the "good first issue" or "documentation" issue lists)
 3.  Read everything that is written/discussed in your issue of choice and try to understand the problem/task.
-4.  When you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which file(s) etc should be modified in order to fix/investigate the issue further.
-5.  Try to fix the issue! Note that this can be (VERY!) difficult and you don't have to actually fix it if it seems impossible. But don't give up to easy!
-6.  Submit your changes locally with an informative message and a reference to `#N` (where `N` is the issue number). Do this regardless if you fixed the issue or not.
+4.  When you have picked an issue, clone the relevant GitHub repo to your computer and try to identify which files should be modified in order to fix or investigate the issue further.
+5.  Try to fix the issue! Note that this can be (VERY!) difficult and you don't have to actually fix it if it seems impossible. But don't give up too easily!
+6.  Submit your changes locally with an informative message and a reference to `#N` (where `N` is the issue number). Do this regardless of whether you fixed the issue.
 7.  If you were able to fix the issue, submit your suggested changes back to GitHub (don't do this if you were not able to fix it).
 8.  If you were not able to fix the issue, but if you gained some insights which might be relevant for the community, share those in the open issue! This might be as simple as reacting to an already stated comment (for example click on the smiley at the end of a comment you agree with and chose a relevant emoji).
 

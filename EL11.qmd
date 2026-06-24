@@ -22,7 +22,7 @@ execute:
 ## Important aspects
 
 Data 
-: where does is come from, what does it contain
+: where does it come from, what does it contain
 
 Ethics and legal
 : How to handle sensitive data, what laws and regulations apply
